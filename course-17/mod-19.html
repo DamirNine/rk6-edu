@@ -34,24 +34,24 @@
 <div>4) Переменные типа потока для идеальных источников переменной типа потенциала (далее ток идеальных источников ЭДС).</div>
 <br>
 <div>Система уравнений будет иметь вид:</div>
-<div>f(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=1/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=2/?k=10">)=0          -  формулы численного интегрирования</div>
-<div>f(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=1/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=2/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=3/?k=10">)=0       -  компонентно-топологические уравнения, связывающие напряжение на элемента типа С и типа L с потенциалами</div>
-<div>I(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=1/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=2/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=3/?k=10">,I<sub class="eSub">E</sub>)=0    -   уравнения равновесия типа первого закона Кирхгофа</div>
-<div>f(U,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=3/?k=10">)=0                -   топологические уравнения для элементов типа Е</div>
+<div>f(<img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_1.png">,<img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_2.png">)=0          -  формулы численного интегрирования</div>
+<div>f(<img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_1.png">,<img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_2.png">,<img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_3.png">)=0       -  компонентно-топологические уравнения, связывающие напряжение на элемента типа С и типа L с потенциалами</div>
+<div>I(<img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_1.png">,<img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_2.png">,<img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_3.png">,I<sub class="eSub">E</sub>)=0    -   уравнения равновесия типа первого закона Кирхгофа</div>
+<div>f(U,<img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_3.png">)=0                -   топологические уравнения для элементов типа Е</div>
 <br>
 <div>Приведем  линеаризованную ММС для схемы рис.1, в предположении, что для  решения системы нелинейных уравнений используется метод Ньютона.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Mod/ras_uz_metod.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
-<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=4/?k=10">  <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=5/?k=10">  =  <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=6/?k=10"></div>
+<div><img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_4.png">  <img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_5.png">  =  <img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_6.png"></div>
 <br>
 <div>Здесь предполагается, что численного интегрирования используется неявный метод Эйлера, в случае применения других методов изменению подлежат только два первых уравнения.</div>
 <br>
 <div>Просмотровый алгоритм узлового метода предполагает у каждого двухполюсного или многополюсного элемента локальной матрицы узловых проводимостей и вектора токов через внешние узлы, которые совместно и являются математической моделью элемента (при использовании метода Ньютона для решения систем нелинейных уравнений). Глобальная матрица узловых проводимостей  и вектор невязок образуются аддитивными вкладами в них локальных матриц элементов в соответствии с их узлами подключений. Подобный алгоритм сохраняется и в расширенном узловом методе, но некоторые отличия появляются для реактивных элементов. Для математической модели элемента С аддитивный вклад в правую и левую части системы уравнений   Y(X)ΔX=-F(X)   будет выглядеть следующим образом:</div>
-<div> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=7/?k=10">  <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=8/?k=10">  =   - <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=9/?k=10"></div>
+<div> <img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_7.png">  <img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_8.png">  =   - <img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_9.png"></div>
 <div>Для элемента L этот вклад имеет вид:</div>
-<div> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=10/?k=10">  <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=11/?k=10">  =   - <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/ras_uz_metod.mod/?n=12/?k=10">.</div>
+<div> <img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_10.png">  <img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_11.png">  =   - <img align="absmiddle" src="/rk6-edu/imgs/Mod_ras_uz_metod.mod_12.png">.</div>
 <div>Достоинства расширенного узлового метода:</div>
 <ol class="eList"><li>Почти нет ограничений на вид компонентного уравнения .</li>
 <li>Библиотека методов численного интегрирования не связана с библиотекой математических моделей элементов.</li>

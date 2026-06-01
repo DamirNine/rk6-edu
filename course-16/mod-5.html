@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Решение линейных одномерных стационарных краевых задач с помощью МКР</a>
 </div>
 <div>Предположим необходимо определить распределение температуры в стержне, теплоизолированном с цилиндрической стороны, и с заданной температурой на боковых гранях.</div>
-<div>Одномерное стационарное уравнение теплопроводности для изотропной среды выглядит следующим образом:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=1/?k=10"><br></div>
+<div>Одномерное стационарное уравнение теплопроводности для изотропной среды выглядит следующим образом:<br><img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_1.png"><br></div>
 <a name="T2039822428"></a>
 <div>В соотвествии с <a class="term" data-term="алгоритмом решения стационарных краевых задач методом конечных разностей" href="javascript:void(0)">алгоритмом решения стационарных краевых задач методом конечных разностей</a> наносим на объект равномерную сетку, как это показано на рис.&nbsp;1.</div>
 <div class="eImage">
@@ -35,23 +35,23 @@
 <tbody><tr><td><img src="/?img/?doc=Mkr/one_mkr.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
 <div>Для каждого внутреннего узла сетки записываем разностный аналог исходного дифференциального уравнения:</div>
-<ul class="eList"><li>для узла 1:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=2/?k=10"><br></li>
-<li>для узла 2:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=3/?k=10"><br></li>
+<ul class="eList"><li>для узла 1:<br><img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_2.png"><br></li>
+<li>для узла 2:<br><img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_3.png"><br></li>
 </ul>
 <a name="T1939952474"></a>
-<div>В результате получили замкнутую систему линейных алгебраических уравнений, где неизвестными являются <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=4/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=5/?k=10">, а <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=6/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=7/?k=10"> — известные <a class="term" data-term="граничные условия" href="javascript:void(0)">граничные условия</a>.</div>
-<div>Решив систему уравнений, получим <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=8/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=9/?k=10">. Это решение является точным, поскольку в исходной постановке задача линейная.</div>
+<div>В результате получили замкнутую систему линейных алгебраических уравнений, где неизвестными являются <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_4.png"> и <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_5.png">, а <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_6.png"> и <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_7.png"> — известные <a class="term" data-term="граничные условия" href="javascript:void(0)">граничные условия</a>.</div>
+<div>Решив систему уравнений, получим <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_8.png"> и <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_9.png">. Это решение является точным, поскольку в исходной постановке задача линейная.</div>
 <a name="T354256103"></a>
-<div>Рассмотрим теперь решение задачи с <a class="term" data-term="краевым условием" href="javascript:void(0)">краевым условием</a> второго рода, на правой границе стержня задан тепловой поток:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=10/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
-<div>Пусть <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=11/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=12/?k=10">.</div>
+<div>Рассмотрим теперь решение задачи с <a class="term" data-term="краевым условием" href="javascript:void(0)">краевым условием</a> второго рода, на правой границе стержня задан тепловой поток:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_10.png"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
+<div>Пусть <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_11.png"> и <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_12.png">.</div>
 <div>Запишем разностные аналоги для внутренних узлов сетки:</div>
-<ul class="eList"><li>для узла 1:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=2/?k=10"><br></li>
-<li>для узла 2<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=3/?k=10"><br></li>
+<ul class="eList"><li>для узла 1:<br><img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_2.png"><br></li>
+<li>для узла 2<br><img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_3.png"><br></li>
 </ul>
-<div>Получили незамкнутую систему алгебраических уравнений (неизвестными являются <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=4/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=5/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=7/?k=10">), дополнить которую можно разностным аналогом краевого условия (1).</div>
+<div>Получили незамкнутую систему алгебраических уравнений (неизвестными являются <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_4.png">, <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_5.png"> и <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_7.png">), дополнить которую можно разностным аналогом краевого условия (1).</div>
 <a name="T947554540"></a>
-<div>Проще всего воспользоваться <a class="term" data-term="левой разностью" href="javascript:void(0)">левой разностью</a>:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=13/?k=10"><br></div>
-<div>Решая эту систему уравнений, получим <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=14/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=15/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=16/?k=10">.</div>
+<div>Проще всего воспользоваться <a class="term" data-term="левой разностью" href="javascript:void(0)">левой разностью</a>:<br><img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_13.png"><br></div>
+<div>Решая эту систему уравнений, получим <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_14.png">, <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_15.png">, <img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_16.png">.</div>
 <div>Однако можно заметить, что аппроксимация задачи во внутренних узлах имеет второй порядок точности, а на границе — первый.</div>
 <a name="T1701571044"></a>
 <div>Можно вспомнить, что аппроксимация первой производной с помощью <a class="term" data-term="центральной разности" href="javascript:void(0)">центральной разности</a> имеет второй порядок точности, но для этого необходимо, чтобы граничный узел 3 был бы центральным узлом. Используется следующий прием: вводиться дополнительный фиктивный узел за пределами области, бывший граничный узел 3 становиться как бы внутренним (см. рис.&nbsp;2)</div>
@@ -60,11 +60,11 @@
 <tbody><tr><td><img src="/?img/?doc=Mkr/one_mkr.mod/?n=2"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
 <div>Теперь можно записать следующую систему конечно-разностных уравнений:</div>
-<ul class="eList"><li>для узла 1:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=2/?k=10"><br></li>
-<li>для узла 2:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=17/?k=10"><br></li>
-<li>для узла 3:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=18/?k=10"><br></li>
+<ul class="eList"><li>для узла 1:<br><img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_2.png"><br></li>
+<li>для узла 2:<br><img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_17.png"><br></li>
+<li>для узла 3:<br><img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_18.png"><br></li>
 <a name="T108068573"></a>
-<li><a class="term" data-term="граничное условие второго рода" href="javascript:void(0)">граничное условие второго рода</a>:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_mkr.mod/?n=19/?k=10"><br></li>
+<li><a class="term" data-term="граничное условие второго рода" href="javascript:void(0)">граничное условие второго рода</a>:<br><img align="absmiddle" src="/rk6-edu/imgs/Mkr_one_mkr.mod_19.png"><br></li>
 </ul>
 <div>За повышение точности пришлось заплатить увеличением размерности системы конечно-разностных уравнений.</div>
 </div>

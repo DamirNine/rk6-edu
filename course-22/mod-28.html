@@ -77,7 +77,7 @@
 !HPF$ PROCESSORS PROC1(5)
 !HPF$ DISTRIBUTE(BLOCK) ONTO PROC1 :: ARRAY1
 </pre>
-<div>Данный фрагмент программы специфицирует массив <span class="eOperator">ARRAY1</span> из 1000 элементов, 5 абстрактных <a class="term" data-term="процессоров" href="javascript:void(0)">процессоров</a> c именами <span class="eOperator">PROC1</span>(1), …, <span class="eOperator">PROC1</span>(5), а также разбивает указанный массив на блоки по 200 элементов в каждом и размещает первые 200 элементов массива <span class="eOperator">ARRAY1</span> на процессоре <span class="eOperator">PROC1</span>(1), вторые 200 элементов – на процессоре <span class="eOperator">PROC1</span>(2) и т.д<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020504.mod/?n=1/?k=10"></div>
+<div>Данный фрагмент программы специфицирует массив <span class="eOperator">ARRAY1</span> из 1000 элементов, 5 абстрактных <a class="term" data-term="процессоров" href="javascript:void(0)">процессоров</a> c именами <span class="eOperator">PROC1</span>(1), …, <span class="eOperator">PROC1</span>(5), а также разбивает указанный массив на блоки по 200 элементов в каждом и размещает первые 200 элементов массива <span class="eOperator">ARRAY1</span> на процессоре <span class="eOperator">PROC1</span>(1), вторые 200 элементов – на процессоре <span class="eOperator">PROC1</span>(2) и т.д<img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020504.mod/?n=1/?k=10"></div>
 </div>
 <div>Размер блоков может быть также указан явно.</div>
 <a name="T1385343832"></a>
@@ -90,7 +90,7 @@
 <div>Данный фрагмент программы разбивает массив ARRAY2 на блоки по 100 элементов в каждом и размещает их следующим образом:</div>
 <ul class="eList"><li>на <a class="term" data-term="процессоре" href="javascript:void(0)">процессоре</a> PROC2(1) элементы с 1 по 100, с 1001 по 1100, с 2001 по 2100 и т.д.;</li>
 <li>на <a class="term" data-term="процессоре" href="javascript:void(0)">процессоре</a> PROC2(1) элементы с 101 по 200, с 1101 по 1200, с 2101 по 2100 и т.д.;</li>
-<li>…<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020504.mod/?n=2/?k=10"></li>
+<li>…<img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020504.mod/?n=2/?k=10"></li>
 </ul>
 </div>
 <div>Для многомерного массива можно указывать способ распределения по каждому из его измерений.</div>
@@ -102,7 +102,7 @@
 !HPF$ DISTRIBUTE (BLOCK) ONTO PROC1 :: ARRAY1
 !HPF$ ALIGN ARRAY2(:) WITH ARRAY1(:)
 </pre>
-<div>Данный фрагмент программы вызывает такое же распределение элементов массива <span class="eOperator">ARRAY2</span> по <a class="term" data-term="процессорам" href="javascript:void(0)">процессорам</a> <span class="eOperator">PROC1</span>(1), …, <span class="eOperator">PROC1</span>(5), как и распределение по этим процессорам элементов массива <span class="eOperator">ARRAY1</span> (см. прим.&nbsp;1)<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020504.mod/?n=1/?k=10"></div>
+<div>Данный фрагмент программы вызывает такое же распределение элементов массива <span class="eOperator">ARRAY2</span> по <a class="term" data-term="процессорам" href="javascript:void(0)">процессорам</a> <span class="eOperator">PROC1</span>(1), …, <span class="eOperator">PROC1</span>(5), как и распределение по этим процессорам элементов массива <span class="eOperator">ARRAY1</span> (см. прим.&nbsp;1)<img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020504.mod/?n=1/?k=10"></div>
 </div>
 <div>Аналогично, директива REALIGN выполняет динамическое согласованное распределение элементов массивов во время выполнения программы.</div>
 <div><span style="">Директива</span> <span class="eOperator">TEMPLATE.</span> Директива <span class="eOperator">TEMPLATE</span> позволяет выполнить <a class="term" data-term="согласованное распределение массивов по процессорам" href="javascript:void(0)">согласованное распределение массивов по процессорам</a> с помощью абстрактного массива – шаблона.</div>
@@ -113,7 +113,7 @@
 !HPF$ DISTRIBUTE (BLOCK) ONTO PROC3 :: T
 !HPF$ ALIGN ARRAY3(:) WITH T(:)
 </pre>
-<div>Шаблон (Т — в данном примере) объявляется как обычный массив, но не имеет элементов<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020504.mod/?n=1/?k=10"></div>
+<div>Шаблон (Т — в данном примере) объявляется как обычный массив, но не имеет элементов<img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020504.mod/?n=1/?k=10"></div>
 </div>
 <div>Для <a class="term" data-term="распараллеливания" href="javascript:void(0)">распараллеливания</a> циклов <a class="term" data-term="язык" href="javascript:void(0)">язык</a> HPF использует специальные конструкции языка (оператор <span class="eOperator">FORALL)</span> и директиву <span class="eOperator">INDEPENDENT</span>.</div>
 <div>По сравнению с MPI (см. параграф 7) <a class="term" data-term="язык" href="javascript:void(0)">язык</a> HPF намного упрощает написание параллельных программ. Программы на языке HPF существенно короче функционально идентичных программ, использующих прямые вызовы функций обмена сообщениями.</div>

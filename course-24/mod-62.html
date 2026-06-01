@@ -47,35 +47,35 @@
 <div>Элементу номер 0 массива <span class="eOperator">id </span>присваивается код символа<span class="eOperator"> 'j'</span>.</div>
 </div>
 <div>Результат операции доступа к элементу массива — значение, хранящееся по адресу необходимого элемента массива. Этот адрес определяется следующим образом:</div>
-<div><br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=1/?k=10"><br></div>
+<div><br><img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=1/?k=10"><br></div>
 <a name="T1341315124"></a>
 <div><a class="term" data-term="Смещение" href="javascript:void(0)">Смещение</a> — это разность между адресом данного элемента массива и начальным адресом массива.</div>
 <div>Для одномерного массива смещение определяется по формуле:</div>
-<div><br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=2/?k=10"><br></div>
+<div><br><img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=2/?k=10"><br></div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><div><span class="eOperator">char id[8];</span></div>
 <div><span class="eOperator">id[3] = id[0];</span></div>
 <div>Байт из элемента <span class="eOperator">id[0]</span> копируется в элемент <span class="eOperator">id[3].</span></div>
 <div>Адрес элемента id[3]:</div>
-<div><br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=3/?k=10"><br></div>
+<div><br><img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=3/?k=10"><br></div>
 </div>
 <div class="auto">Пример 3</div>
 <div class="eExample"><div><span class="eOperator">float price[3];</span></div>
 <div><span class="eOperator">price[num] = price[num-1]*2;</span></div>
 <div>Если значение <span class="eOperator">num</span> равно 2, то <span class="eOperator">price[2] = price[1]*2;</span></div>
 <div>Адрес элемента price[2]:</div>
-<div>начальный адрес массива price + смещение = начальный адрес массива price + 2<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=4/?k=10">4</div>
+<div>начальный адрес массива price + смещение = начальный адрес массива price + 2<img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=4/?k=10">4</div>
 </div>
 <div>Для массива произвольной размерности смещение определяется по формуле:</div>
-<div><br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=5/?k=10"><br></div>
+<div><br><img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=5/?k=10"><br></div>
 <div class="auto">Пример 4</div>
 <div class="eExample"><div><span class="eOperator">int table[4][3];</span> <span class="eOperator">/*table[длина 2-го измерения][длина 1-го измерения]*/</span></div>
 <div><span class="eOperator">printf ("%d\n", table[2][1]);</span> <span class="eOperator">/*table[индекс2][индекс1]*/</span></div>
 <div>Печатает целое число, хранящееся в 3-й строке 2-го столбца массива <span class="eOperator">table</span> .</div>
 <div>Адрес элемента table[2][1]:</div>
 <div>начальный адрес массива table + смещение =</div>
-<div>начальный адрес массива table + (индекс2 <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=4/?k=10"> (длина 1-го измерения ) + индекс1) <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=4/?k=10"> длина элемента в байтах =</div>
-<div>начальный адрес массива table + (2<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=4/?k=10">3 + 1)<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=4/?k=10">4</div>
+<div>начальный адрес массива table + (индекс2 <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=4/?k=10"> (длина 1-го измерения ) + индекс1) <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=4/?k=10"> длина элемента в байтах =</div>
+<div>начальный адрес массива table + (2<img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=4/?k=10">3 + 1)<img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=OP2/dostup.mod/?n=4/?k=10">4</div>
 </div>
 <div class="auto">Пример 5</div>
 <div class="eExample"><div><span class="eOperator">/* Запоминает рост вклада по годам в массиве и печатает его */</span></div>

@@ -28,15 +28,15 @@
 </div>
 <a name="T1389339944"></a>
 <div><a class="term" data-term="асинхронная модель" href="javascript:void(0)">Асинхронная</a> математическая модель функциональной схемы может быть задана в виде:</div>
-<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/asinch_mod.mod/?n=1/?k=10">                (1) </div>
+<div><img align="absmiddle" src="/rk6-edu/imgs/Mod_asinch_mod.mod_1.png">                (1) </div>
 <div>где V - вектор внутренних и выходных переменных, U - вектор входных переменных, Δt- такт моделирования. В каждом такте моделирования в правую часть уравнения (1) подставляются значения входных переменных в соответствии с временной диаграммой работы устройства, заданной разработчиком и значения внутренних и выходных переменных, полученные в предыдущем такте. Длительность такта моделирования исходя из соображений точности должна выбираться достаточно малой.</div>
-<div>При асинхронном двоичном моделировании для каждого элемента задаются конкретные значения задержек сигналов <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/asinch_mod.mod/?n=2/?k=10">  (естественно они могут быть одинаковыми для всех элементов). На следующем рисунке показан результат "с" моделирования элемента И-НЕ  в двоичном алфавите, отметим, что Δt&lt;<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/asinch_mod.mod/?n=2/?k=10"> .Двоичное асинхронное моделирование позволяет обнаруживать <a class="term" data-term="риски сбоев" href="javascript:void(0)">риски сбоев</a> в при конкретных значениях задержек в элементах.</div>
+<div>При асинхронном двоичном моделировании для каждого элемента задаются конкретные значения задержек сигналов <img align="absmiddle" src="/rk6-edu/imgs/Mod_asinch_mod.mod_2.png">  (естественно они могут быть одинаковыми для всех элементов). На следующем рисунке показан результат "с" моделирования элемента И-НЕ  в двоичном алфавите, отметим, что Δt&lt;<img align="absmiddle" src="/rk6-edu/imgs/Mod_asinch_mod.mod_2.png"> .Двоичное асинхронное моделирование позволяет обнаруживать <a class="term" data-term="риски сбоев" href="javascript:void(0)">риски сбоев</a> в при конкретных значениях задержек в элементах.</div>
 <br>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Mod/asinch_mod.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
-<div>При асинхронном троичном моделировании возможен учет разбросов задержек элементов, задаваемый диапазоном <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/asinch_mod.mod/?n=2/?k=10"><sub class="eSub">min</sub> - <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/asinch_mod.mod/?n=2/?k=10"><sub class="eSub">max</sub>.</div>
+<div>При асинхронном троичном моделировании возможен учет разбросов задержек элементов, задаваемый диапазоном <img align="absmiddle" src="/rk6-edu/imgs/Mod_asinch_mod.mod_2.png"><sub class="eSub">min</sub> - <img align="absmiddle" src="/rk6-edu/imgs/Mod_asinch_mod.mod_2.png"><sub class="eSub">max</sub>.</div>
 <div>Выходной переменной элемента присваивается неопределенное значение, если модельное время находится в этом интервале. На рис.1 серым цветом отмечено такое состояние выхода элемента "с" с индексом "тр". Троичное асинхронное моделирование позволяет обнаруживать риски сбоев в условиях разброса задержек. Однако обнаруженные риски еще не означают , что помехи действительно возникнут.</div>
 <a name="T965736398"></a>
 <div>Асинхронное моделирование позволяет обнаруживать любые <a class="term" data-term="риски сбоев" href="javascript:void(0)">риски сбоев</a>.</div>

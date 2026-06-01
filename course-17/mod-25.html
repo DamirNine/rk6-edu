@@ -32,12 +32,12 @@
 <div>Для <a class="term" data-term="асинхронных моделей" href="javascript:void(0)">асинхронных моделей</a> логических схем используются два метода моделирования - пошаговый и событийный. Пошаговый метод рассмотрен в статье "Асинхронные модели логических схем". Событийный метод будет рассмотрен здесь.</div>
 <div>Моделирование синхронных моделей  логических схем выполняется методами решения систем логических уравнений, к ним относятся метод простой итерации и метод Зейделя.</div>
 <div>Для схемы (рис.1) математическая модель есть система следующих логических уравнений</div>
-<div>1)    e=a<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=1/?k=10">c </div>
-<div>2)   <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=2/?k=10"></div>
-<div>3)   <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=3/?k=10"></div>
-<div>4)   f=b<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=1/?k=10">c</div>
-<div>5)    h=<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=4/?k=10"></div>
-<div>6)<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=5/?k=10"></div>
+<div>1)    e=a<img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_1.png">c </div>
+<div>2)   <img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_2.png"></div>
+<div>3)   <img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_3.png"></div>
+<div>4)   f=b<img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_1.png">c</div>
+<div>5)    h=<img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_4.png"></div>
+<div>6)<img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_5.png"></div>
 <div>Входные сигналы меняют свое состояние следующим образом     a   0-0,  b 1-0,  c 1-1,  d  0-1.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
@@ -46,31 +46,31 @@
 <div> </div>
 <div>В таблице 1 представлено ее решение методом простой итерации.</div>
 <div>                                                                                      Таблица 1</div>
-<div>                                      <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=6/?k=10"></div>
+<div>                                      <img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_6.png"></div>
 <br>
 <div>Итерации прекращаются, когда два идущих друг за другом набора сигналов совпадают. Согласно этому методу в уравнения подставляются значения полученные на предыдущей итерации.</div>
 <div>В методе Зейделя в уравнения подставляются значения получения на текущей итерации. В таблице 2 представлено решение этим методом.</div>
 <br>
 <div>                                                                                      Таблица 2</div>
-<div>                                      <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=7/?k=10"></div>
+<div>                                      <img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_7.png"></div>
 <div>Как видно число итераций сократилось до четырех. Еще повысить эффективность решения можно использовав предварительное ранжирование уравнений модели. Ранжирование заключается в присвоении элементам и переменным модели значений рангов в соответствии со следующими правилами: 1) в схеме разрываются все контуры обратной связи, что приводит к появлению дополнительных входов (псевдовходов); 2) все входные переменные (в том числе и псевдовходы) получают ранг 0; 3) элемент и его выходные переменные получают ранг k, если у элемента все входы проранжированы и старший из них равен  k-1.</div>
 <div>В соответствии с этим для схемы рис.1 проранжированная последовательность уравнений будет иметь вид:</div>
 <br>
-<div>1)    e=a<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=1/?k=10">c </div>
-<div>2)   f=b<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=1/?k=10">c</div>
-<div>3)   <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=2/?k=10"></div>
-<div>4)    h=<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=4/?k=10"></div>
-<div>5)<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=5/?k=10"></div>
-<div>6)   <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=3/?k=10"></div>
+<div>1)    e=a<img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_1.png">c </div>
+<div>2)   f=b<img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_1.png">c</div>
+<div>3)   <img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_2.png"></div>
+<div>4)    h=<img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_4.png"></div>
+<div>5)<img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_5.png"></div>
+<div>6)   <img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_3.png"></div>
 <br>
 <div>В таблице 3 представлено решение  методом Зейделя.</div>
 <div>                                                                                  Таблица 3</div>
-<div>                                          <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=8/?k=10"></div>
+<div>                                          <img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_8.png"></div>
 <div>Таким образом число итераций сократилось до двух.</div>
 <br>
 <div>Решение исходной системы уравнений событийным методом представлено в таблице 4.</div>
 <div>                                                                                                                                     Таблица 4</div>
-<div>         <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/mo_log.mod/?n=9/?k=10"></div>
+<div>         <img align="absmiddle" src="/rk6-edu/imgs/Mod_mo_log.mod_9.png"></div>
 <div>решение прекращается, когда исчезают изменяемые переменные.</div>
 <br>
 <div>Поскольку в больших схемах количество меняющихся одновременно переменных составляет малый процент от общего количества, событийный метод является наиболее эффективным методом решения.</div>
