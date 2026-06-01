@@ -30,18 +30,18 @@
 <div>Существуют грамматики, в которых одна и та же цепочка может быть получена с помощью различных выводов. Например, в грамматике Г<sub class="eSub">1.10</sub> цепочка abc может быть получена с помощью двух различных выводов, и ей соответствуют два различных <a class="term" data-term="Синтаксическое дерево" href="javascript:void(0)">синтаксических дерева</a>.</div>
 <div>Г<sub class="eSub">1.10</sub></div>
 <div>V<sub class="eSub">т</sub> = {a, b, c, d}, V<sub class="eSub">А</sub> = {&lt;I&gt;, &lt;A&gt;, &lt;B&gt;}, </div>
-<div>R =  { &lt;I&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=1/?k=10"> &lt;A&gt;&lt;B&gt;, </div>
-<div>&lt;A&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=1/?k=10"> ac,</div>
-<div>&lt;B&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=1/?k=10"> b,</div>
-<div>&lt;B&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=1/?k=10"> cb}.</div>
+<div>R =  { &lt;I&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_1.png"> &lt;A&gt;&lt;B&gt;, </div>
+<div>&lt;A&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_1.png"> ac,</div>
+<div>&lt;B&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_1.png"> b,</div>
+<div>&lt;B&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_1.png"> cb}.</div>
 <br>
 <div>Первый вывод этой цепочки имеет вид:</div>
 <br>
-<div>1) &lt;I&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=2/?k=10"> &lt;A&gt;&lt;B&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=2/?k=10"> &lt;A&gt;b <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=2/?k=10"> acb,</div>
+<div>1) &lt;I&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_2.png"> &lt;A&gt;&lt;B&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_2.png"> &lt;A&gt;b <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_2.png"> acb,</div>
 <br>
 <div>а второй можно получить так: </div>
 <br>
-<div>2) &lt;I&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=2/?k=10"> &lt;A&gt;&lt;B&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=2/?k=10"> &lt;A&gt;cb <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=2/?k=10"> acb</div>
+<div>2) &lt;I&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_2.png"> &lt;A&gt;&lt;B&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_2.png"> &lt;A&gt;cb <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_2.png"> acb</div>
 <br>
 <div>Этим выводам соответствуют разные синтаксические деревья и разборы: </div>
 <br>
@@ -53,14 +53,14 @@
 <div>Следующая грамматика также допускает построение одной и той же цепочки с помощью двух выводов, имеющих разные синтаксические деревья. </div>
 <div>Г<sub class="eSub">1.11</sub>:</div>
 <div>V<sub class="eSub">т</sub> = {0, +}, V<sub class="eSub">А</sub> = {&lt;I&gt;}, </div>
-<div>R = { &lt;I&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=1/?k=10"> 0,</div>
-<div>&lt;I&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=1/?k=10"> &lt;I&gt; + 0,</div>
-<div>&lt;I&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=1/?k=10"> 0 +&lt;I&gt; }</div>
+<div>R = { &lt;I&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_1.png"> 0,</div>
+<div>&lt;I&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_1.png"> &lt;I&gt; + 0,</div>
+<div>&lt;I&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_1.png"> 0 +&lt;I&gt; }</div>
 <br>
 <div>Два вывода этой грамматики, порождающие одинаковые цепочки, имеют вид:</div>
 <br>
-<div>1) &lt;I&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=2/?k=10"> &lt;I&gt; + 0 <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=2/?k=10"> &lt;I&gt; + 0 + 0 <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=2/?k=10"> 0 + 0 + 0, </div>
-<div>2) &lt;I&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=2/?k=10"> 0 + &lt;I&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=2/?k=10"> 0 + 0 +&lt;I&gt; <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram08.mod/?n=2/?k=10"> 0 + 0 + 0,</div>
+<div>1) &lt;I&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_2.png"> &lt;I&gt; + 0 <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_2.png"> &lt;I&gt; + 0 + 0 <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_2.png"> 0 + 0 + 0, </div>
+<div>2) &lt;I&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_2.png"> 0 + &lt;I&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_2.png"> 0 + 0 +&lt;I&gt; <img align="absmiddle" src="/rk6-edu/imgs/LO-SAPR_gram08.mod_2.png"> 0 + 0 + 0,</div>
 <br>
 <div>а синтаксические деревья, соответствующие этим выводам, можно изобразить так:</div>
 <br>

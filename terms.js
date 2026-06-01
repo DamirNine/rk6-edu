@@ -27,27 +27,16 @@
     } else {
       var raw = terms[term].split('\n');
       // Пропускаем первую строку (название курса)
-      var rest = raw.slice(1);
-      // Разделяем: строки с отступом в начале = псевдонимы, потом идёт определение
-      var aliases = [];
-      var defLines = [];
-      var inDef = false;
-      for (var i = 0; i < rest.length; i++) {
-        var l = rest[i];
+      // Пропускаем все строки с отступом (псевдонимы и ссылки на модули)
+      // Оставляем только строки определения (без отступа)
+      var defLines = raw.slice(1).filter(function(l) {
         var trimmed = l.trim();
-        if (!trimmed || trimmed === 'Дополнительно...') continue;
+        if (!trimmed || trimmed === 'Дополнительно...') return false;
         var code = l.charCodeAt(0);
-        var hasIndent = l.length > 0 && (code === 32 || code === 9 || code === 160);
-        if (!inDef && hasIndent) {
-          aliases.push(trimmed); // псевдоним термина
-        } else if (!hasIndent) {
-          inDef = true;
-          defLines.push(trimmed); // определение
-        }
-        // строки с отступом после определения = ссылки на модули, пропускаем
-      }
-      popupTitle.textContent = aliases.join(', ') || term;
-      popupBody.innerHTML = defLines.map(l => '<p>' + l + '</p>').join('');
+        return code !== 32 && code !== 9 && code !== 160; // без отступа
+      });
+      popupTitle.textContent = term;
+      popupBody.innerHTML = defLines.map(function(l) { return '<p>' + l.trim() + '</p>'; }).join('');
     }
     popup.style.display = 'block';
   });

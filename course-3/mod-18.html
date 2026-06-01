@@ -28,20 +28,20 @@
 </div>
 <a name="T481233736"></a>
 <div><a class="term" data-term="Преобразование Фурье" href="javascript:void(0)">Преобразование Фурье</a> — интегральное преобразование функции времени t в функцию частоты ω (в общем случае в качестве t и ω могут фигурировать любые вещественные переменные)</div>
-<div>F(ω) =<img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=1/?k=10"> <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=2/?k=10"> f(t)e<sup class="eSub">-jωt</sup>dt.</div>
+<div>F(ω) =<img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_1.png"> <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_2.png"> f(t)e<sup class="eSub">-jωt</sup>dt.</div>
 <div>Обратное преобразование Фурье:</div>
-<div>f(t) = <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=1/?k=10"> <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=2/?k=10"> F(ω)e<sup class="eSub">jωt</sup>dω.</div>
+<div>f(t) = <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_1.png"> <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_2.png"> F(ω)e<sup class="eSub">jωt</sup>dω.</div>
 <div>Здесь e<sup class="eSub">-jωt</sup> = сos(ωt) + j sin(ωt).</div>
 <div>Дискретное преобразование Фурье:</div>
-<div>A<sub class="eSub">k</sub>= <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=3/?k=10">V<sub class="eSub">n</sub>e<sup class="eSub">-2πjkn/N</sup> = <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=3/?k=10">V<sub class="eSub">n</sub>e<sup class="eSub">-2πjkt<sub class="eSub">n</sub>/T</sup> = <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=3/?k=10">V<sub class="eSub">n</sub>e<sup class="eSub">- jkωt<sub class="eSub">n</sub></sup></div>
+<div>A<sub class="eSub">k</sub>= <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_3.png">V<sub class="eSub">n</sub>e<sup class="eSub">-2πjkn/N</sup> = <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_3.png">V<sub class="eSub">n</sub>e<sup class="eSub">-2πjkt<sub class="eSub">n</sub>/T</sup> = <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_3.png">V<sub class="eSub">n</sub>e<sup class="eSub">- jkωt<sub class="eSub">n</sub></sup></div>
 <div>где A<sub class="eSub">k</sub>- комплексная амплитуда k-й гармоники сигнала v(t), иначе коэффициент Фурье, V<sub class="eSub">n</sub> — величина сигнала в n-й точке отсчета, n =[0:N-1], N — число точек отсчета на одном периоде сигнала.</div>
 <div>Обратное дискретное преобразование Фурье:</div>
-<div>V<sub class="eSub">n</sub> = 1/N <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=4/?k=10"> A<sub class="eSub">k</sub>e<sup class="eSub">2πjkn/N</sup> = 1/N <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=4/?k=10"> A<sub class="eSub">k</sub>e<sup class="eSub">jkωt<sub class="eSub">n</sub></sup></div>
+<div>V<sub class="eSub">n</sub> = 1/N <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_4.png"> A<sub class="eSub">k</sub>e<sup class="eSub">2πjkn/N</sup> = 1/N <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_4.png"> A<sub class="eSub">k</sub>e<sup class="eSub">jkωt<sub class="eSub">n</sub></sup></div>
 <div>Ряд Фурье можно представить также в виде:</div>
-<div>f(t) = <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=5/?k=10">+<img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=6/?k=10">(p<sub class="eSub">k</sub>coskt+q<sub class="eSub">k</sub>sinkt), k = 0,1,2...,</div>
+<div>f(t) = <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_5.png">+<img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_6.png">(p<sub class="eSub">k</sub>coskt+q<sub class="eSub">k</sub>sinkt), k = 0,1,2...,</div>
 <div>а коэффициенты Фурье:</div>
-<div>p<sub class="eSub">k</sub> = <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=7/?k=10"> <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=8/?k=10"> f(t) coskt dt,</div>
-<div>q<sub class="eSub">k</sub> = <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=7/?k=10"> <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=010_EDA/sch302.mod/?n=8/?k=10"> f(t) sinkt dt.</div>
+<div>p<sub class="eSub">k</sub> = <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_7.png"> <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_8.png"> f(t) coskt dt,</div>
+<div>q<sub class="eSub">k</sub> = <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_7.png"> <img align="absmiddle" src="/rk6-edu/imgs/010_EDA_sch302.mod_8.png"> f(t) sinkt dt.</div>
 </div>
 </div> 
 </body></html></div></main>
