@@ -28,11 +28,11 @@
 </div>
 <div>Дискретизация компонентных уравнений реактивных ветвей в большинстве методов формирования ММС приводит к тому, что библиотека методов численного интегрирования неразрывно связана с библиотекой математических моделей элементов. Чтобы избавиться от этого недостатка необходимо в базис метода включить производные переменных состояния.Таким образом, базис обобщенного ментода составляют: производные переменных состояния, переменные типа потока для всех ветвей и пременные типа разности потенциала для всех ветвей. То есть, по сравнению с табличным методом, базис расширен производными переменных состояния. Компенсировать это расширения, для того, чтобы получить замкнутую систему уравнений, следует формулами численного интегрирования, которые свяжут производные переменных состояния с самими переменными состояния. Для α ветвей, из которых γ реактивных ветвей будем иметь 2α+γ неизвестных. Топологические уравнения, полученные с помощью М-матрицы, дадут α уравнений, столько же будет компонентных и γ уравнений дадут формулы интегрирования.</div>
 <div> В матричном виде такая система уравнений будет выглядеть следующим образом:</div>
-<div><img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=1/?k=10">  <img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=2/?k=10">  = <img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=3/?k=10"></div>
-<div>Здесь V - вектор переменных состояния. При использовании метода Ньютона для решения этой системы нелинейных алгебраических уравнений (подвектор <img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=4/?k=10"> в данном случае нужно рассматривать как подвектор алгебраических переменных) линеаризованная ММС будет выглядеть следующим образом:</div>
-<div><img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=5/?k=10">  <img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=6/?k=10">  = <img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=7/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=1/?k=10">  <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=2/?k=10">  = <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=3/?k=10"></div>
+<div>Здесь V - вектор переменных состояния. При использовании метода Ньютона для решения этой системы нелинейных алгебраических уравнений (подвектор <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=4/?k=10"> в данном случае нужно рассматривать как подвектор алгебраических переменных) линеаризованная ММС будет выглядеть следующим образом:</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=5/?k=10">  <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=6/?k=10">  = <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=7/?k=10"></div>
 <br>
-<div>Здесь <img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=8/?k=10"> - невязки формул численного интегрироавния, <img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=9/?k=10">,<img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=10/?k=10"> - невязки компонентных уравнений.</div>
+<div>Здесь <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=8/?k=10"> - невязки формул численного интегрироавния, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=9/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=10/?k=10"> - невязки компонентных уравнений.</div>
 <div>Приведем ММС для схемы рис.1 </div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
@@ -50,7 +50,7 @@
 <tr><td class="eTable">L</td><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">1</td></tr>
 </tbody></table><br>
 <br>
-<div><img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=11/?k=10">  <img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=12/?k=10">  = <img align="absmiddle" src="/?frm/?doc=Mod/obob_metod.mod/?n=13/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=11/?k=10">  <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=12/?k=10">  = <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/obob_metod.mod/?n=13/?k=10"></div>
 <div>Здесь предполагается, что численного интегрирования используется неявный метод Эйлера, в случае применения других методов изменению подлежат только два первых уравнения.</div>
 <br>
 <div>Достоинства обобщенного метода:</div>
@@ -67,17 +67,7 @@
 <div>Метод получил название обобщенный, поскольку из него путем соответствующих преобразований могут быть получены остальные методы, в частности, для вышеприведенной модели, если исключить прозводные переменных состояния получим модель в точности соответствующую табличному методу.</div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

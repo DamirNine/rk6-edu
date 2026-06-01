@@ -51,16 +51,16 @@
 <a name="T1795483927"></a>
 <div>Каждая часть <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конвейера операций</a> называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ступенью конвейера операций</a>, а общее число ступеней - <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">длиной конвейера операций</a>.</div>
 <div class="auto">Пример 1</div>
-<div class="eExample"><div>Рассмотрим следующий 4-х ступенчатый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конвейер операций</a> сложения вещественных чисел <img align="absmiddle" src="/?frm/?doc=Parallel/ch010102.mod/?n=1/?k=10"></div>
+<div class="eExample"><div>Рассмотрим следующий 4-х ступенчатый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конвейер операций</a> сложения вещественных чисел <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010102.mod/?n=1/?k=10"></div>
 <div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
 <tbody><tr align="center"><td class="eTableT">Номер ступени</td><td class="eTableT">Наименование </td></tr>
-<tr align="center"><td class="eTable">1</td><td class="eTable">Вычитание порядков <img align="absmiddle" src="/?frm/?doc=Parallel/ch010102.mod/?n=2/?k=10"></td></tr>
-<tr align="center"><td class="eTable">2</td><td class="eTable">Сдвиг одной из мантисс <img align="absmiddle" src="/?frm/?doc=Parallel/ch010102.mod/?n=3/?k=10"></td></tr>
+<tr align="center"><td class="eTable">1</td><td class="eTable">Вычитание порядков <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010102.mod/?n=2/?k=10"></td></tr>
+<tr align="center"><td class="eTable">2</td><td class="eTable">Сдвиг одной из мантисс <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010102.mod/?n=3/?k=10"></td></tr>
 <tr align="center"><td class="eTable">3</td><td class="eTable">Сложение мантисс</td></tr>
 <tr align="center"><td class="eTable">4</td><td class="eTable">Нормализация</td></tr>
 </tbody></table><br>
-<div>Положим, что выполняется сложение двух <img align="absmiddle" src="/?frm/?doc=Parallel/ch010102.mod/?n=4/?k=10"> -векторов вещественных чисел <img align="absmiddle" src="/?frm/?doc=Parallel/ch010102.mod/?n=5/?k=10">  <img align="absmiddle" src="/?frm/?doc=Parallel/ch010102.mod/?n=6/?k=10">. Диаграмма сложения этих векторов приведена на рис.&nbsp;1<img align="absmiddle" src="/?frm/?doc=Parallel/ch010102.mod/?n=7/?k=10"></div>
+<div>Положим, что выполняется сложение двух <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010102.mod/?n=4/?k=10"> -векторов вещественных чисел <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010102.mod/?n=5/?k=10">  <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010102.mod/?n=6/?k=10">. Диаграмма сложения этих векторов приведена на рис.&nbsp;1<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010102.mod/?n=7/?k=10"></div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Parallel/ch010102.mod/?n=1"></td></tr></tbody></table>
@@ -69,14 +69,14 @@
 <a name="T1216674352"></a>
 <div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-конвейерных системах</a> в рамках одного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конвейерного функционального устройства</a> широко используется (т.е. аппаратно поддерживается) <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">зацепление конвейеров операций</a>. Покажем суть этой процедуры на примере. </div>
 <div class="auto">Пример 2</div>
-<div class="eExample"><div>Положим, что в некоторой прикладной программе, исполняемой на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-конвейерной системе</a> , необходимо вычислить <br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Parallel/ch010102.mod/?n=8/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
-<div>где <img align="absmiddle" src="/?frm/?doc=Parallel/ch010102.mod/?n=9/?k=10"> - <img align="absmiddle" src="/?frm/?doc=Parallel/ch010102.mod/?n=4/?k=10"> -векторы вещественных чисел, под произведением и делением векторов понимается их покомпонентное умножение и деление, соответственно. Иными словами, операции, указанные в выражении (1), понимаются в смысле <br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Parallel/ch010102.mod/?n=10/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br></div>
+<div class="eExample"><div>Положим, что в некоторой прикладной программе, исполняемой на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-конвейерной системе</a> , необходимо вычислить <br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010102.mod/?n=8/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
+<div>где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010102.mod/?n=9/?k=10"> - <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010102.mod/?n=4/?k=10"> -векторы вещественных чисел, под произведением и делением векторов понимается их покомпонентное умножение и деление, соответственно. Иными словами, операции, указанные в выражении (1), понимаются в смысле <br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010102.mod/?n=10/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br></div>
 <div>Положим также, что <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конвейерное функциональное устройство</a> данной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-конвейерной системы</a> имеет следующие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конвейеры операций</a>:</div>
 <ul class="eList"><li>конвейер сложения вещественных чисел;</li>
 <li>конвейер умножения вещественных чисел;</li>
 <li>конвейер деления вещественных чисел</li>
 </ul>
-<div>Тогда для повышения скорости вычисления компонент вектора E целесообразно использовать зацепление указанных конвейеров (см. рис.&nbsp;2). В результате, можно сказать, получается новый конвейер, который выполняет сложную операцию (2)<img align="absmiddle" src="/?frm/?doc=Parallel/ch010102.mod/?n=7/?k=10"></div>
+<div>Тогда для повышения скорости вычисления компонент вектора E целесообразно использовать зацепление указанных конвейеров (см. рис.&nbsp;2). В результате, можно сказать, получается новый конвейер, который выполняет сложную операцию (2)<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010102.mod/?n=7/?k=10"></div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Parallel/ch010102.mod/?n=2"></td></tr></tbody></table>
@@ -139,17 +139,7 @@
 <div>В качестве примера достаточно современной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-параллельной системы</a> приведем вычислительную систему nCube-3 (1995 г.). Система nCube-3 масштабируется от 8 до 64 К процессорных блоков, объединенных коммуникационной сетью типа «гиперкуб» (размерностью от 3D до 16D). Максимальная производительность nCube-3 составляет несколько TFLOPS. Процессоры системы могут быть объединены в группы, каждая из которых может решать свою задачу (MIMD-режим). </div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

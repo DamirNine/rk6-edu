@@ -43,17 +43,7 @@
 <div>Реализация балансировки нагрузки возможна несколькими способами. Во-первых, функции балансировки можно совместить с преобразованием <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IP-имени</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IP-адрес</a>, т.е. балансировщик воплотить в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">DNS</a>-сервере. В этом случае все однотипные серверы имеют одно общее IP-имя, но разные IP-адреса. Во-вторых, выбор одного из серверов можно совместить с установлением соединения по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протоколу TCP</a>. Способ удобен при реализации серверов на многопроцессорной системе, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кластере</a> или в ЛВС. В-третьих, выбор сервера можно связать не с установлением соединения, а с каждым запросом по уже установленному соединению. В этом способе можно получить оптимальное распределение запросов по серверам, так как учитывается характер запросов, но дополнительные затраты времени связаны именно с обработкой данных о трудоемкости выполнения запроса. В-четвертых, выбор зеркала возможен с помощью отдельной программы балансировки, которая определяет (например, по очереди) IP-адрес сервера. Этот способ не требует переделки DNS-сервера, удобен для территориальных сетей, но из-за двойного установления соединения (сначала с балансировщиком, затем с выбранным сервером) требует дополнительных затрат времени.</div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

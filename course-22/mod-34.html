@@ -60,7 +60,7 @@
 <div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Группа процессов</a> – совокупность <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>, каждый из которых имеет внутри группы уникальное имя. Процессы в группе взаимодействуют посредством <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникатора группы</a>. Процессы в группе имеют номер от 0 до (n-1), где n – количество процессов в группе.</div>
 <div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Коммуникатор</a> реализует обмены данными между <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессами</a> и их синхронизацию. Для прикладной программы коммуникатор выступает в качестве коммуникационной среды. Различают внутригрупповые коммуникаторы (intra) и  межгрупповые коммуникаторы (inter). Сообщения, использующие разные коммуникаторы, не оказывают влияния друг на друга и не взаимодействуют.</div>
 <div class="eSubTitle">Функции для работы с группами процессов и коммуникаторами.</div>
-<div>Группа конструируется из уже существующих групп путем операций над ними, как над множествами именованных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>. Базовой группой является группа <span class="eOperator">MPI_COMM_WORLD</span>, которая создается при инициализации MPI-библиотеки. Группа <span class="eOperator">MPI_COMM_WORLD</span> содержит процессы с номерами <img align="absmiddle" src="/?frm/?doc=Parallel/ch020702.mod/?n=1/?k=10">, где n – число <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a>, определенное при инициализации.</div>
+<div>Группа конструируется из уже существующих групп путем операций над ними, как над множествами именованных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>. Базовой группой является группа <span class="eOperator">MPI_COMM_WORLD</span>, которая создается при инициализации MPI-библиотеки. Группа <span class="eOperator">MPI_COMM_WORLD</span> содержит процессы с номерами <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020702.mod/?n=1/?k=10">, где n – число <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a>, определенное при инициализации.</div>
 <div>Можно создать новую группу, перечислив образующие ее элементы уже существующей группы. Определены пересечение групп, объединение групп и другие теоретико-множественные операции.</div>
 <div>Существует ряд процедур для определения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессом</a> своего положения в группе. Например:</div>
 <ol class="eList"><li>процедура <span class="eOperator">MPI_GROUP_SIZE</span><span class="eOperator">(group,</span> <span class="eOperator">size)</span> присваивает переменной size значение, равное числу <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> в группе с именем group;</li>
@@ -154,17 +154,7 @@ edges = 1, 3, 0, 3, 0, 2
 </ol>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

@@ -93,7 +93,7 @@
 <a name="T1036877558"></a>
 <li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">коммутация пакетов</a> — сообщение передается по виртуальному каналу, но оно разделяется на <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">пакеты</a>, при этом канал передачи данных занят только во время передачи пакета (без нарушения его целостности) и по ее завершении освобождается для передачи других пакетов.</li>
 </ul>
-<div>Коммутация каналов характеризуется малой задержкой <img align="absmiddle" src="/?frm/?doc=210_netw/nw001.mod/?n=1/?k=10"> при передаче сообщений. После того как канал скоммутирован, задержка определяется как сумма<br><img align="absmiddle" src="/?frm/?doc=210_netw/nw001.mod/?n=2/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=210_netw/nw001.mod/?n=3/?k=10"> — расстояние между узлами отправителя и получателя, <img align="absmiddle" src="/?frm/?doc=210_netw/nw001.mod/?n=4/?k=10"> — скорость распространения электромагнитных колебаний в среде передаче сообщений, <img align="absmiddle" src="/?frm/?doc=210_netw/nw001.mod/?n=5/?k=10"> — скорость передачи данных в линии связи, <img align="absmiddle" src="/?frm/?doc=210_netw/nw001.mod/?n=6/?k=10"> — длина передаваемого сообщения.</div>
+<div>Коммутация каналов характеризуется малой задержкой <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=210_netw/nw001.mod/?n=1/?k=10"> при передаче сообщений. После того как канал скоммутирован, задержка определяется как сумма<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=210_netw/nw001.mod/?n=2/?k=10"><br>где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=210_netw/nw001.mod/?n=3/?k=10"> — расстояние между узлами отправителя и получателя, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=210_netw/nw001.mod/?n=4/?k=10"> — скорость распространения электромагнитных колебаний в среде передаче сообщений, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=210_netw/nw001.mod/?n=5/?k=10"> — скорость передачи данных в линии связи, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=210_netw/nw001.mod/?n=6/?k=10"> — длина передаваемого сообщения.</div>
 <div>В случае коммутации пакетов задержка увеличивается, во-первых, из-за появления заголовков у всех пакетов, что увеличивает суммарную длину передаваемых пакетов, во-вторых, за счет буферизации пакетов и ожидания в очередях в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммутаторах</a>, в-третьих, за счет потерь времени на пакетизацию.</div>
 <div>Однако общая производительность сети при коммутации каналов оказывается низкой из-за обычных значительных пауз в обмене данными между участниками связи. При коммутации пакетов эти паузы заполняются передачей пакетов других сообщений, т.е. линии связи разделяются многими узлами более эффективно.</div>
 <a name="T1105460571"></a>
@@ -101,16 +101,7 @@
 <div>Коммутация пакетов возможна с установлением и без <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">установления соединения</a>. При коммутации с установлением соединения пакеты одного и того же сообщения направляются по одному и тому же маршруту, выбираемому <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">маршрутизаторами</a> предварительно во время процедуры установления соединения. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Маршрутизация</a> без установления соединения, называемая также дейтаграммной, выполняется без предварительного выбора маршрута. При этом пакеты называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">дейтаграммами</a>. Дейтаграммы передаются независимо друг от друга, каждая по своему маршруту, выбираемому маршрутизаторами в зависимости от текущего состояния сети. Поэтому дейтаграммы одного и того же сообщения могут поступать к адресату в произвольной последовательности, что требует дополнительных операций по сборке сообщения из дейтаграмм в узле-получателе. На внутренних участках маршрута контроль правильности передачи обычно не предусматривается и надежность связи обеспечивается лишь контролем в оконечном узле.</div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

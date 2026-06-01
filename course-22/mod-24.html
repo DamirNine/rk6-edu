@@ -33,35 +33,35 @@
 <div>Обычно в параллельных ЯВУ для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-конвейерных вычислительных систем</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-параллельных вычислительных систем</a> определены традиционные для последовательных ЯВУ <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">условные конструкции</a> вида</div>
 <div>if &lt;E&gt; then &lt;S1&gt;;</div>
 <div>if &lt;E&gt; then &lt;S1&gt; else &lt;S2&gt;;</div>
-<div>Здесь <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=1/?k=10"> - условное выражение, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=2/?k=10"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=3/?k=10">  - простые или составные операторы.</div>
-<div>Если в условных выражениях <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=1/?k=10"> сравниваются элементы двух соответствующих параллельных массивов, то эти приведенные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">условные конструкции</a> вызывают параллельное исполнение операторов <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=4/?k=10">,<img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=3/?k=10">.</div>
+<div>Здесь <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=1/?k=10"> - условное выражение, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=2/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=3/?k=10">  - простые или составные операторы.</div>
+<div>Если в условных выражениях <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=1/?k=10"> сравниваются элементы двух соответствующих параллельных массивов, то эти приведенные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">условные конструкции</a> вызывают параллельное исполнение операторов <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=4/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=3/?k=10">.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Условная конструкция</a> (здесь и далее полагается, что все переменные определены) на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке</a> Actus</div>
 <div>if a[10:90] &lt; a[10:90 shift-1] then a[#]:=a[#]+1 else a[#]:=a[#]-1;</div>
-<div>вызывает увеличение значений элемента <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=5/?k=10">,<img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=6/?k=10"> массива <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=7/?k=10"> на единицу, если он меньше своего левого соседа; иначе значение элемента уменьшается на единицу. Обработка все элементов <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=5/?k=10">,<img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=6/?k=10"> производится параллельно<img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=8/?k=10"></div>
+<div>вызывает увеличение значений элемента <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=5/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=6/?k=10"> массива <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=7/?k=10"> на единицу, если он меньше своего левого соседа; иначе значение элемента уменьшается на единицу. Обработка все элементов <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=5/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=6/?k=10"> производится параллельно<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=8/?k=10"></div>
 </div>
 <a name="T2002920278"></a>
 <div>В параллельных ЯВУ обычно определены также <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операторы выбора</a> вида</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=9/?k=10">case &lt;CS&gt; of</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=10/?k=10">&lt;L1&gt;: &lt;S1&gt;;</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=10/?k=10">&lt;L2&gt;: &lt;S2&gt;;</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=10/?k=10">...</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=10/?k=10">&lt;LN&gt;: &lt;SN&gt;</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=9/?k=10">end;</div>
-<div>Здесь <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=11/?k=10"> простые или составные операторы.</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=9/?k=10">case &lt;CS&gt; of</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=10/?k=10">&lt;L1&gt;: &lt;S1&gt;;</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=10/?k=10">&lt;L2&gt;: &lt;S2&gt;;</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=10/?k=10">...</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=10/?k=10">&lt;LN&gt;: &lt;SN&gt;</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=9/?k=10">end;</div>
+<div>Здесь <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=11/?k=10"> простые или составные операторы.</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><div>Рассмотрим фрагмент Actus-программы с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператором выбора</a></div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">type</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=13/?k=10">colour = (black, white, red, brown, green);</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">var</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=13/?k=10">flower: array[1:50] of colour;</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">begin</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">case flower [1:50] of</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=13/?k=10">white: statement1;</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=13/?k=10">red, green: statement2;</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=13/?k=10">black, brown: statement3</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">end;</div>
-<div>Программа вызывает параллельную обработку всех элементов массива <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=14/?k=10">. В зависимости от значений этих элементов параллельно выполняются <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=15/?k=10">1, 2 или 3. Например, если в массиве <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=14/?k=10"> имеется по 10 элементов со значениями <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=16/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=17/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=18/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=19/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=20/?k=10">, то при исполнении программы будет параллельно выполняться десять раз <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=15/?k=10">1, двадцать раз - <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=15/?k=10">2 и двадцать раз - <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=15/?k=10">3 (всего 50!)<img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=8/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">type</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=13/?k=10">colour = (black, white, red, brown, green);</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">var</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=13/?k=10">flower: array[1:50] of colour;</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">begin</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">case flower [1:50] of</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=13/?k=10">white: statement1;</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=13/?k=10">red, green: statement2;</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=13/?k=10">black, brown: statement3</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">end;</div>
+<div>Программа вызывает параллельную обработку всех элементов массива <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=14/?k=10">. В зависимости от значений этих элементов параллельно выполняются <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=15/?k=10">1, 2 или 3. Например, если в массиве <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=14/?k=10"> имеется по 10 элементов со значениями <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=16/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=17/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=18/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=19/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=20/?k=10">, то при исполнении программы будет параллельно выполняться десять раз <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=15/?k=10">1, двадцать раз - <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=15/?k=10">2 и двадцать раз - <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=15/?k=10">3 (всего 50!)<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=8/?k=10"></div>
 </div>
 <div class="eSubTitle">Циклические операторы.</div>
 <a name="T10358152"></a>
@@ -69,43 +69,33 @@
 <div>while &lt;E&gt; do &lt;S&gt;;</div>
 <div>repeat &lt;S&gt; until &lt;E&gt;;</div>
 <div>for &lt;INDEX&gt; := &lt;LOWER&gt; by &lt;INC&gt; to &lt;UPPER&gt; do &lt;S&gt;;</div>
-<div>Здесь <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=1/?k=10"> - условное выражение, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=21/?k=10"> - простой или составной оператор, INDEX – массив параметров цикла, LOWER, UPPER, INC – массивы, содержащие нижние, верхние границы и инкременты соответствующих параметров цикла.</div>
+<div>Здесь <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=1/?k=10"> - условное выражение, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=21/?k=10"> - простой или составной оператор, INDEX – массив параметров цикла, LOWER, UPPER, INC – массивы, содержащие нижние, верхние границы и инкременты соответствующих параметров цикла.</div>
 <div class="auto">Пример 3</div>
 <div class="eExample"><div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Оператор цикла</a> языка Actus</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">while a[1:50]&lt;b[1:50] do a[#]:=a[#]+1;</div>
-<div>производит параллельное увеличение всех 50 первых элементов массива <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=7/?k=10"> на единицу до тех пор, пока элемент <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=5/?k=10"> не станет больше или равен элементу <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=22/?k=10"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=8/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">while a[1:50]&lt;b[1:50] do a[#]:=a[#]+1;</div>
+<div>производит параллельное увеличение всех 50 первых элементов массива <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=7/?k=10"> на единицу до тех пор, пока элемент <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=5/?k=10"> не станет больше или равен элементу <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=22/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=8/?k=10"></div>
 </div>
 <div class="auto">Пример 4</div>
 <div class="eExample"><div>Рассмотрим фрагмент Actus-программы</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">const</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">sq=1:50;</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">var</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">i: array [1:50] of integer;</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">aa: array [1:50,1..100] of real;</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">begin</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">………………..</div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">for i[1:50]:= seq by 2 to 100 do aa[#,i[#]]:=aa[#,i[#]]+1.0;</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">const</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">sq=1:50;</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">var</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">i: array [1:50] of integer;</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">aa: array [1:50,1..100] of real;</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">begin</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">………………..</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=12/?k=10">for i[1:50]:= seq by 2 to 100 do aa[#,i[#]]:=aa[#,i[#]]+1.0;</div>
 <div>Эта программа на каждом «витке» цикла вызывает увеличение значений параметров цикла на 2 до тех пор, пока они не достигнут 100. После 25 «витков» цикла уровень параллелизма начнет уменьшаться:</div>
-<div>первый «виток» - <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=23/?k=10">;</div>
-<div>второй «виток» - <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=24/?k=10">;</div>
+<div>первый «виток» - <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=23/?k=10">;</div>
+<div>второй «виток» - <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=24/?k=10">;</div>
 <div>………..</div>
-<div>25-й «виток» - <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=25/?k=10">;</div>
-<div>26-й «виток» - <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=26/?k=10">, но 101-го элемента нет в массиве <img align="absmiddle" src="/?frm/?doc=Parallel/ch020403.mod/?n=27/?k=10"></div>
+<div>25-й «виток» - <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=25/?k=10">;</div>
+<div>26-й «виток» - <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=26/?k=10">, но 101-го элемента нет в массиве <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020403.mod/?n=27/?k=10"></div>
 <div>………..</div>
 </div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

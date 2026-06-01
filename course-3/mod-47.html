@@ -47,7 +47,7 @@
 </tbody></table><br>
 <a name="T885663735"></a>
 <div>Введение в язык VHDL-AMS средств аналогового, многоаспектного и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">смешанного моделирования</a> потребовало реализации следующих возможностей. Во-первых, это появление средств описания дифференциальных и алгебраических уравнений. При этом подразумевается наличие в интерпретаторе языка VHDL-AMS средств для численного решения уравнений, хотя сами методы решения в стандарте не определяются. Во-вторых, компоненты общей модели могут быть аналоговыми или дискретными, взаимодействие компонентов происходит через порты, а порты могут быть как дискретного, так и аналогового типов. В-третьих, предусматривается синхронизация событий в дискретной части с временными характеристиками процессов в непрерывной части модели. В-четвертых, имеется возможность моделирования не только во временной, но и в частотной областях.</div>
-<div>Наряду с такими объектами, как компоненты, сигналы, константы в язык введены непрерывные переменные <span class="eOperator">quantity</span>, имеющие тип <span class="eOperator">real</span>. Производная <img align="absmiddle" src="/?frm/?doc=010_EDA/eda069.mod/?n=1/?k=10"> непрерывной переменной <img align="absmiddle" src="/?frm/?doc=010_EDA/eda069.mod/?n=2/?k=10"> обозначаются как X'<span class="eOperator">Dot</span>, а интеграл от переменной <img align="absmiddle" src="/?frm/?doc=010_EDA/eda069.mod/?n=2/?k=10"> от 0 до текущего момента времени — X'<span class="eOperator">Integ</span>.</div>
+<div>Наряду с такими объектами, как компоненты, сигналы, константы в язык введены непрерывные переменные <span class="eOperator">quantity</span>, имеющие тип <span class="eOperator">real</span>. Производная <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=010_EDA/eda069.mod/?n=1/?k=10"> непрерывной переменной <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=010_EDA/eda069.mod/?n=2/?k=10"> обозначаются как X'<span class="eOperator">Dot</span>, а интеграл от переменной <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=010_EDA/eda069.mod/?n=2/?k=10"> от 0 до текущего момента времени — X'<span class="eOperator">Integ</span>.</div>
 <div>Появляется новый тип операторов для записи уравнений (simultaneous statement), в которых фигурируют переменные <span class="eOperator">quantity</span>. Примером simultaneous statement может служить следующая запись:</div>
 <pre class="eListing">x'dot == a*x + b*y;
 </pre>
@@ -78,17 +78,7 @@ end unit;
 <div>Поскольку численное решение является приближенным, то вводится понятие допусковой группы, каждая непрерывная величина и simultaneous statement принадлежат к определенной допусковой группе. Поэтому для переменных <span class="eOperator">quantity</span> наряду с записью их типа (<span class="eOperator">real</span>) обычно указывается допуск.</div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

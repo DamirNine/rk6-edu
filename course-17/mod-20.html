@@ -33,14 +33,14 @@
 <div>4) силы идеальных источников скорости. </div>
 <br>
 <div>Система уравнений будет иметь вид:</div>
-<div>f(<img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=1/?k=10">,<img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=2/?k=10">)=0                 -  формулы численного интегрирования</div>
-<div>f(<img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=3/?k=10">dt,<img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=2/?k=10">)=0                - формулы вычисления перемещений по скоростям ( вычисление определенных интегралов)</div>
-<div>f(<img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=1/?k=10">,<img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=3/?k=10">dt,V,F<sub class="eSub">v</sub>) =0    - уравнения равновесия</div>
-<div>f(<img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=2/?k=10">,<img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=4/?k=10">)=0                   -   топологические уравнения для идеальных источников скорости.</div>
+<div>f(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=1/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=2/?k=10">)=0                 -  формулы численного интегрирования</div>
+<div>f(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=3/?k=10">dt,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=2/?k=10">)=0                - формулы вычисления перемещений по скоростям ( вычисление определенных интегралов)</div>
+<div>f(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=1/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=3/?k=10">dt,V,F<sub class="eSub">v</sub>) =0    - уравнения равновесия</div>
+<div>f(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=2/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=4/?k=10">)=0                   -   топологические уравнения для идеальных источников скорости.</div>
 <br>
 <div>Линеаризованная математическая модель, при  использовании метода Ньютона для решения системы нелинейных алгебраических уравнений, метода Эйлера для численного интегрирования  и медота прямоугольников для вычисления определенных интегралов в матричном виде будет выгдядеть следующим образом.</div>
-<div><img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=5/?k=10"> <img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=6/?k=10">  =  <img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=7/?k=10"></div>
-<div>Здесь <img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=8/?k=10"> - матрица масс, <img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=9/?k=10"> - матрица упругостей,   <img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=10/?k=10"> - матрица трений, "<img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=11/?k=10">" - матрицы, содержащие "+1" и "-1", в соответствии с узлами подключения идеальных источников скорости.</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=5/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=6/?k=10">  =  <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=7/?k=10"></div>
+<div>Здесь <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=8/?k=10"> - матрица масс, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=9/?k=10"> - матрица упругостей,   <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=10/?k=10"> - матрица трений, "<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=11/?k=10">" - матрицы, содержащие "+1" и "-1", в соответствии с узлами подключения идеальных источников скорости.</div>
 <div>Рассмотрим получение ММС для объекта, представленного на рис.1</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
@@ -53,20 +53,10 @@
 <div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
 <div>Направление силы считается положительным, если она направлена из узла.  Далеее предполагается, что модель пружины представлена уравнением F=cX, где F-сила, c - коэфиициент упругости, Х - перемещение концов пружины относительно друг друга, модель трения - F=kV, где k- коэффициент трения, V - скорости узлов элемента относительно друг друга</div>
 <div>Математическая модель в расширенном узловом базисе дляч механических систем будет выглядеть следующим образом:</div>
-<div><img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=12/?k=10">  <img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=13/?k=10">  =  <img align="absmiddle" src="/?frm/?doc=Mod/rumm.mod/?n=14/?k=10"> </div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=12/?k=10">  <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=13/?k=10">  =  <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mod/rumm.mod/?n=14/?k=10"> </div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

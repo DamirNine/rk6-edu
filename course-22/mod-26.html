@@ -49,12 +49,12 @@
 <a name="T1926808446"></a>
 <a name="T1585736687"></a>
 <div>Основной проблемой при использовании <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">модели обмена данными через общие переменные </a>(или, что то же самое, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">модели обмена данными через общую память</a>) является проблема обеспечения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">взаимного исключения</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> при доступе к общей (разделяемой) переменной. Для этого используются средства низкого уровня такие, как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафоры</a>, условные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">критические секции</a>, мониторы и др., а также средства высокого уровня типа оператора <span class="eOperator">WAIT</span>.</div>
-<div><span class="eOperator">Семафоры</span>. Напомним, что бинарный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафор</a>, это целочисленный тип данных, для которых установлены три операции (<img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=1/?k=10"> – переменная типа "семафор"):</div>
+<div><span class="eOperator">Семафоры</span>. Напомним, что бинарный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафор</a>, это целочисленный тип данных, для которых установлены три операции (<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=1/?k=10"> – переменная типа "семафор"):</div>
 <ul class="eList"><li>операция инициализации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафора</a>;</li>
-<li>операция <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=2/?k=10"> опускания (закрытия) <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафора</a>, вызывающая присваивания переменной <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=3/?k=10"> значения ноль, если значение переменной S было равно единице;</li>
-<li>операция <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=4/?k=10"> поднятия (открытия) <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафора</a>, вызывающая присваивания переменной <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=3/?k=10"> значения единица, если значение переменной <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=3/?k=10"> было равно нулю.</li>
+<li>операция <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=2/?k=10"> опускания (закрытия) <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафора</a>, вызывающая присваивания переменной <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=3/?k=10"> значения ноль, если значение переменной S было равно единице;</li>
+<li>операция <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=4/?k=10"> поднятия (открытия) <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафора</a>, вызывающая присваивания переменной <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=3/?k=10"> значения единица, если значение переменной <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=3/?k=10"> было равно нулю.</li>
 </ul>
-<div>Если <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафор</a> закрыт, то <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a>, вызвавший операцию <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=5/?k=10">, ждет, пока семафор откроется (с помощью операции <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=6/?k=10"> процессом, который вызвал его закрытие).</div>
+<div>Если <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафор</a> закрыт, то <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a>, вызвавший операцию <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=5/?k=10">, ждет, пока семафор откроется (с помощью операции <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=6/?k=10"> процессом, который вызвал его закрытие).</div>
 <div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Семафоры</a> в ЯВУ для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессоров</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультикомпьютеров</a> реализуются на основе семафоров ОС.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><div>В языке 3L Parallel C <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафоры</a> вводятся с помощью ключевого слова <span class="eOperator">SEMA</span>, например, описание</div>
@@ -70,7 +70,7 @@
 <div>3) Функция открытия <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафора</a>.</div>
 <pre class="eListing">sema_signal(s)
 </pre>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=7/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=7/?k=10"></div>
 </div>
 <div>Схема организации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">взаимного исключения</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафоров</a> рассмотрена выше.</div>
 <a name="T269685739"></a>
@@ -95,12 +95,12 @@ M4: WAIT (M1)
     JOIN(М1,М2,М3,М4)
     Вывод(u,v,w,z)
 </pre>
-<div>Событие в данной программе – завершение оператора, помеченного указанной меткой. Заметим, что допустима также, например, конструкция вида <span class="eOperator">WAIT</span> (<span class="eOperator">M1</span> <span class="eOperator">AND</span> (<span class="eOperator">x</span><img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=8/?k=10"><span class="eOperator">y</span>))<img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=7/?k=10"></div>
+<div>Событие в данной программе – завершение оператора, помеченного указанной меткой. Заметим, что допустима также, например, конструкция вида <span class="eOperator">WAIT</span> (<span class="eOperator">M1</span> <span class="eOperator">AND</span> (<span class="eOperator">x</span><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=8/?k=10"><span class="eOperator">y</span>))<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=7/?k=10"></div>
 </div>
 <div class="eSubTitle">Модель обмена данными посредством передачи сообщений.</div>
 <div>В этом случае обменивающиеся данными <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессы</a> не имеют общих переменных – данные передаются между процессами и хранятся в их локальной памяти. Передача данных между процессами реализуется с помощью системных вызовов типа <span class="eOperator">send</span> и <span class="eOperator">receive</span>.</div>
 <a name="T1050456276"></a>
-<div>Модель передачи сообщений <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">"простое рандеву</a>" относится к синхронной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">модели обмена данными посредством передачи сообщений </a>(модель передачи сообщений с блокировкой). В этой модели два <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> при взаимодействии сначала синхронизируются, затем передающий процесс пересылает данные и ждет подтверждения успешного приема, а принимающий процесс принимает их и направляет подтверждение передающему процессу. После этого процессы продолжают выполняться параллельно и асинхронно - см. рис.&nbsp;1, где <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=9/?k=10"> — момент времени, в который в точку обмена "приходит" процесс <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=10/?k=10">. <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=11/?k=10"> — момент времени, в который точки обмена достигает процесс <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=12/?k=10">, (<img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=11/?k=10">- <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=9/?k=10">) — период простоя процесса <img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=10/?k=10">.</div>
+<div>Модель передачи сообщений <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">"простое рандеву</a>" относится к синхронной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">модели обмена данными посредством передачи сообщений </a>(модель передачи сообщений с блокировкой). В этой модели два <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> при взаимодействии сначала синхронизируются, затем передающий процесс пересылает данные и ждет подтверждения успешного приема, а принимающий процесс принимает их и направляет подтверждение передающему процессу. После этого процессы продолжают выполняться параллельно и асинхронно - см. рис.&nbsp;1, где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=9/?k=10"> — момент времени, в который в точку обмена "приходит" процесс <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=10/?k=10">. <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=11/?k=10"> — момент времени, в который точки обмена достигает процесс <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=12/?k=10">, (<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=11/?k=10">- <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=9/?k=10">) — период простоя процесса <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=10/?k=10">.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Parallel/ch020502.mod/?n=1"></td></tr></tbody></table>
@@ -126,7 +126,7 @@ chan_out_word(&amp;x, out port)
 <div>4) Функция передачи сообщения в порт (аналогична функции <span class="eOperator">chan_in_message</span>).</div>
 <pre class="eListing">chan_out_message(xlen, &amp;x, input port)
 </pre>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020502.mod/?n=7/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020502.mod/?n=7/?k=10"></div>
 </div>
 <a name="T1910314572"></a>
 <div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Расширенное рандеву</a> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызов удаленной процедуры</a>) происходит по следующей схеме:</div>
@@ -166,17 +166,7 @@ chan_out_word(&amp;x, out port)
 <div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;Коллекторный обмен. Жирным выделен процесс-передатчик.</div></div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

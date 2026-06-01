@@ -28,40 +28,30 @@
 </div>
 <a name="T1782899684"></a>
 <a name="T469209868"></a>
-<div>Проблема <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> выражений является наиболее изученной в параллельном программировании. Формально выражение – это ациклический <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> и к нему можно подходить так же, как в предыдущем параграфе. Однако здесь есть и принципиальное отличие – в выражениях не всегда указан порядок действий. Например, следующие выражения эквиваленты (с математической точки зрения):<br><img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=1/?k=10"><br></div>
+<div>Проблема <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> выражений является наиболее изученной в параллельном программировании. Формально выражение – это ациклический <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> и к нему можно подходить так же, как в предыдущем параграфе. Однако здесь есть и принципиальное отличие – в выражениях не всегда указан порядок действий. Например, следующие выражения эквиваленты (с математической точки зрения):<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=1/?k=10"><br></div>
 <a name="T1712654198"></a>
 <a name="T1559213074"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Задача распараллеливания выражений </a>ставится следующим образом: построить алгоритм, который каждому выражению ставит в соответствие эквивалентное ему с минимальной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">высотой ЯПФ</a>. Здесь эквивалентность понимается в смысле применения обычных законов ассоциативности <img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=2/?k=10">, коммутативности <img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=3/?k=10"> и дистрибутивности <img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=4/?k=10">.</div>
-<div>Заметим, что применение закона дистрибутивности при эквивалентных преобразованиях требует большой осторожности, поскольку при этом возможно, например, переполнение. Например, если в выражении <img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=5/?k=10">  величины <img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=6/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=7/?k=10"> – большие положительные числа, то умножение <img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=5/?k=10"> может быть выполнено без осложнений, но умножения в эквивалентном выражении <img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=8/?k=10"> могут вызвать переполнение.</div>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Задача распараллеливания выражений </a>ставится следующим образом: построить алгоритм, который каждому выражению ставит в соответствие эквивалентное ему с минимальной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">высотой ЯПФ</a>. Здесь эквивалентность понимается в смысле применения обычных законов ассоциативности <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=2/?k=10">, коммутативности <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=3/?k=10"> и дистрибутивности <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=4/?k=10">.</div>
+<div>Заметим, что применение закона дистрибутивности при эквивалентных преобразованиях требует большой осторожности, поскольку при этом возможно, например, переполнение. Например, если в выражении <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=5/?k=10">  величины <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=6/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=7/?k=10"> – большие положительные числа, то умножение <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=5/?k=10"> может быть выполнено без осложнений, но умножения в эквивалентном выражении <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=8/?k=10"> могут вызвать переполнение.</div>
 <div>Покажем на примере как может меняться <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">высота ЯПФ</a> при изменении порядка действий в выражении.</div>
 <div class="auto">Пример 1</div>
-<div class="eExample"><div>Рассмотрим выражение<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=9/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
+<div class="eExample"><div>Рассмотрим выражение<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=9/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
 <div>ЯПФ выражения (1) приведена на рис.&nbsp;1.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Parallel/ch020602.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;ЯПФ выражения (1)</div></div>
-<div>Перепишем выражение (1) в эквивалентном виде<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=10/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br></div>
-<div>ЯПФ, соответствующая этому выражению, приведена на рис.&nbsp;2<img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=11/?k=10"></div>
+<div>Перепишем выражение (1) в эквивалентном виде<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=10/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br></div>
+<div>ЯПФ, соответствующая этому выражению, приведена на рис.&nbsp;2<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=11/?k=10"></div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Parallel/ch020602.mod/?n=2"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;ЯПФ выражения (2)</div></div>
 </div>
-<div>Доказано, что любое арифметическое выражение без унарного минуса с <img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=12/?k=10"> операторами может быть вычислено на <img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=12/?k=10">/2 <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорах</a> за время порядка <img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=13/?k=10"> при сложности преобразования в максимально-параллельную форму <img align="absmiddle" src="/?frm/?doc=Parallel/ch020602.mod/?n=14/?k=10">.</div>
+<div>Доказано, что любое арифметическое выражение без унарного минуса с <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=12/?k=10"> операторами может быть вычислено на <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=12/?k=10">/2 <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорах</a> за время порядка <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=13/?k=10"> при сложности преобразования в максимально-параллельную форму <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020602.mod/?n=14/?k=10">.</div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

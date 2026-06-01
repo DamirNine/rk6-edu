@@ -83,11 +83,11 @@ RETURN m.
 </div>
 <div>В классическом варианте алгоритм Евклида используется для поиска наибольшего общего делителя пары не отрицательных целых чисел, при условии, что Hog(0,0) принимается равным 0. Для расширения области применения на поле произвольных целых чисел в предлагаемой версии алгоритма Евклида предусмотрен переход к абсолютным величинам рассматриваемых чисел. На каждом шаге основного цикла алгоритма Евклида происходит последовательное уменьшение обоих чисел, но при этом значение их наибольшего общего делителя остается неизменным, т. к.: </div>
 <br>
-<div><img align="absmiddle" src="/?frm/?doc=VU/lab1.mod/?n=1/?k=10">. </div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=VU/lab1.mod/?n=1/?k=10">. </div>
 <br>
 <div>Цикл уменьшения обоих чисел продолжается, пока на очередной итерации меньшее из чисел не станет равным 0. В этом случае большее из чисел принимается за наибольший общий делитель исходной пары, т. к.: </div>
 <br>
-<div><img align="absmiddle" src="/?frm/?doc=VU/lab1.mod/?n=2/?k=10">. </div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=VU/lab1.mod/?n=2/?k=10">. </div>
 <br>
 <div class="auto">Пример 2</div>
 <div class="eExample"><div>Hog(259,111) выполняется за 3 шага: Hog(259,111)=Hog(111,37)=Hog(3,0)=3. </div>
@@ -95,13 +95,13 @@ RETURN m.
 </div>
 <div>Сложность алгоритма Евклида пропорциональна логарифму от максимального по абсолютной величине числа из рассматриваемой пары чисел. эффективность алгоритма Евклида определяет эффективность выполнения арифметических операций над дробями по соотношениям, определенным выше. </div>
 <div>На первый взгляд кажется, что арифметические операции над дробями можно реализовать более эффективно, вычисляя наибольший общий делитель в каждой операции только один раз вместо двух. Например, при умножении {(U/U')*(V/V')}, числитель и знаменатель ответа можно получить по внешне более простым формулам: </div>
-<div> <img align="absmiddle" src="/?frm/?doc=VU/lab1.mod/?n=3/?k=10"> где <img align="absmiddle" src="/?frm/?doc=VU/lab1.mod/?n=4/?k=10">. </div>
+<div> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=VU/lab1.mod/?n=3/?k=10"> где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=VU/lab1.mod/?n=4/?k=10">. </div>
 <br>
 <div>При сложении 2-х дробей {(U/U')+(V/V')} можно представить результат в виде следующей дроби: </div>
 <br>
-<div><img align="absmiddle" src="/?frm/?doc=VU/lab1.mod/?n=5/?k=10">, </div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=VU/lab1.mod/?n=5/?k=10">, </div>
 <br>
-<div>а затем привести результирующую дробь к не сократимому виду, используя свойство: <img align="absmiddle" src="/?frm/?doc=VU/lab1.mod/?n=6/?k=10">. </div>
+<div>а затем привести результирующую дробь к не сократимому виду, используя свойство: <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=VU/lab1.mod/?n=6/?k=10">. </div>
 <br>
 <div>Однако, в обоих случаях придется оперировать с относительно большими числами на каждой итерации алгоритма Евклида. Каждая итерация будет выполнятся медленнее, чем код на в ней рассматриваются меньшие числа, которые характерны для операций обработки дробей с 2-мя вычислениями наибольшего общего делителя. Таким образом, по быстродействию оба подхода по-крайней мере равнозначны, но в первом исключена возможность переполнения разрядной сетки, что является решающим преимуществом, когда числители и знаменатели дробей являются большими числами. </div>
 <div class="eSubTitle">Программирование калькулятора дробей.</div>
@@ -178,17 +178,7 @@ void ptint(void);
 <div>  2. П. Лукас. С++ под рукой - Киев, НИПФ "ДиаСофт", 1993 г. </div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

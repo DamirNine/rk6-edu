@@ -33,18 +33,18 @@ int **pp=p;
 </pre>
 <div>порождают программные объекты, представленные на схеме размещения переменных при объявлении ( см. ниже)</div>
 <div><span style="font-size:50.0%; ">.</span> pp</div>
-<div><span style="font-size:50.0%; ">.</span> <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"></div>
-<div>p <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=2/?k=10"> . . . .</div>
-<div><span style="font-size:50.0%; ">.</span> <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"></div>
-<div>а <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=2/?k=10"> 11 12 13 14 15</div>
+<div><span style="font-size:50.0%; ">.</span> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"></div>
+<div>p <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=2/?k=10"> . . . .</div>
+<div><span style="font-size:50.0%; ">.</span> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"></div>
+<div>а <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=2/?k=10"> 11 12 13 14 15</div>
 <a name="T692921725"></a>
 <div>При выполнении операции pp-p получим нулевое значение, так как ссылки pp и p равны и указывают на начальный элемент <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">массива указателей</a>, связанного с указателем p ( на элемент p[0]). После выполнения операции pp+=2 схема изменится и примет вид:</div>
 <div>Схема размещения переменных после выполнения операции pp+=2.</div>
 <div><span style="font-size:50.0%; ">.</span> pp</div>
-<div><span style="font-size:50.0%; ">.</span> <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"></div>
-<div>p <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=2/?k=10"> . . . .</div>
-<div><span style="font-size:50.0%; ">.</span> <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"></div>
-<div>а <img align="absmiddle" src="/?frm/?doc=PYAVU/7.4.mod/?n=2/?k=10"> 10 11 12 13 14</div>
+<div><span style="font-size:50.0%; ">.</span> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"></div>
+<div>p <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=2/?k=10"> . . . .</div>
+<div><span style="font-size:50.0%; ">.</span> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=1/?k=10"></div>
+<div>а <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/7.4.mod/?n=2/?k=10"> 10 11 12 13 14</div>
 <div>Результатом выполнения вычитания pp-p будет 2, так как значение pp есть адрес третьего элемента массива p. Ссылка *pp-a тоже дает значение 2, так как обращение *pp есть адрес третьего элемента массива a, а обращение a есть адрес начального элемента массива a. При обращении с помощью ссылки **pp получим 12 — это значение третьего элемента массива a. Ссылка *pp++ даст значение четвертого элемента массива p т.е. адрес четвертого элемента массива a.</div>
 <div>Если считать, что pp=p, то обращение *++pp это значение первого элемента массива a (т.е. значение 11), операция ++*pp изменит содержимое указателя p[0], таким ИКразом, что он станет равным значению адреса элемента a[1].</div>
 <div>Сложные обращения раскрываются изнутри. Например обращение *(++(*pp)) можно разбить на следующие действия: *pp дает значение начального элемента массива p[0], далее это значение инкременируется ++(*p) в результате чего указатель p[0] станет равен значению адреса элемента a[1], и последнее действие это выборка значения по полученному адресу, т.е. значение 11. В предыдущих примерах был использован одномерный массив, рассмотрим теперь пример с многомерным массивом и указателями. Следующие объявления переменных</div>
@@ -72,17 +72,7 @@ char ***cpp=cp;
 <div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Схема размещения указателей на строки</div></div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

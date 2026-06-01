@@ -42,7 +42,7 @@
 <pre class="eListing">       GENERATE   A,B,C,D,E
 </pre>
 <div>Здесь <span class="eOperator">A</span> и <span class="eOperator">B</span> служат для задания интервалов между появлениями заявок, при этом можно использовать один из следующих вариантов:</div>
-<ul class="eList"><li>интервал — равномерно распределенная в диапазоне [A<img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=1/?k=10">B, A+B] случайная величина;</li>
+<ul class="eList"><li>интервал — равномерно распределенная в диапазоне [A<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=1/?k=10">B, A+B] случайная величина;</li>
 <li>интервал — значение функции, указанной в B, умноженной на A;</li>
 </ul>
 <div><span class="eOperator">C</span> — задержка в выработке первого транзакта; <span class="eOperator">D</span> — число вырабатываемых источником заявок; <span class="eOperator">E</span> — приоритет заявок. Если <span class="eOperator">D</span> пусто, то число вырабатываемых транзактов неограничено. Например:</div>
@@ -86,7 +86,7 @@
 </pre>
 <div>A и B имеют тот же смысл, что и в операторе <span class="eOperator">GENERATE</span>.</div>
 <div class="auto">Пример 1</div>
-<div class="eExample"><div>Обслуживание транзакта в устройстве WST продолжительностью <img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=2/?k=10"> единиц времени, где <img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=2/?k=10"> — равномерно распределенная в диапазоне [7,11] случайная величина, описывается следующим фрагментом программы</div>
+<div class="eExample"><div>Обслуживание транзакта в устройстве WST продолжительностью <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=2/?k=10"> единиц времени, где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=2/?k=10"> — равномерно распределенная в диапазоне [7,11] случайная величина, описывается следующим фрагментом программы</div>
 <pre class="eListing">       SEIZE      WST
        ADVANCE    9,2
        RELEASE    WST
@@ -111,7 +111,7 @@
 <div>Движение транзактов выполняется по маршруту, заданному последовательностью операторов в модели. Если требуется изменение естественного порядка, то используется оператор перехода. Оператор условного перехода имеет вид:</div>
 <pre class="eListing">       TEST XX    A,B,C
 </pre>
-<div>В соответствии с ним переход к оператору, помеченному меткой C, происходит, если не выполняется условие A XX B, где XX <img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=3/?k=10"> {<span class="eOperator">E</span>, <span class="eOperator">NE</span>, <span class="eOperator">L</span>, <span class="eOperator">LE</span>, <span class="eOperator">G</span>, <span class="eOperator">GE</span>}; <span class="eOperator">E</span> — равно; <span class="eOperator">NE</span> — неравно; <span class="eOperator">L</span> — меньше; <span class="eOperator">LE</span> — меньше или равно; <span class="eOperator">G</span> — больше; <span class="eOperator">GE</span> — больше или равно (XX всегда размещается в позициях 13 и 14).</div>
+<div>В соответствии с ним переход к оператору, помеченному меткой C, происходит, если не выполняется условие A XX B, где XX <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=3/?k=10"> {<span class="eOperator">E</span>, <span class="eOperator">NE</span>, <span class="eOperator">L</span>, <span class="eOperator">LE</span>, <span class="eOperator">G</span>, <span class="eOperator">GE</span>}; <span class="eOperator">E</span> — равно; <span class="eOperator">NE</span> — неравно; <span class="eOperator">L</span> — меньше; <span class="eOperator">LE</span> — меньше или равно; <span class="eOperator">G</span> — больше; <span class="eOperator">GE</span> — больше или равно (XX всегда размещается в позициях 13 и 14).</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><div>Приходящие пользователи ожидают обслуживания, если длина очереди не более 4, иначе от обслуживания отказываются. Соответствующий фрагмент программы</div>
 <pre class="eListing">       TEST LE    Q$STR,4,LBL
@@ -157,7 +157,7 @@
 <div>Важное место в СМО занимает переход по вероятности:</div>
 <pre class="eListing">       TRANSFER   A,B,C
 </pre>
-<div>Здесь A — вероятность перехода к оператору с меткой C, переход к оператору с меткой B будет происходить с вероятностью 1<img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=4/?k=10">A.</div>
+<div>Здесь A — вероятность перехода к оператору с меткой C, переход к оператору с меткой B будет происходить с вероятностью 1<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=4/?k=10">A.</div>
 <div>Оператор перехода в циклических процедурах выглядит так:</div>
 <pre class="eListing">       LOOP       A,B
 </pre>
@@ -190,8 +190,8 @@
 <tbody><tr><td><img src="/?img/?doc=110_Simul/3017.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Функция экспоненциального закона распределения</div></div>
 </div>
-<div>В этом примере использован экспоненциальный закон распределения с плотностью<br><img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=5/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=6/?k=10"> — интенсивность. Функция распределения экспоненциального закона<br><img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=7/?k=10"><br></div>
-<div>Из рис.&nbsp;1 ясно, что поскольку искомыми являются значения <img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=8/?k=10"> случайной величины <img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=9/?k=10">, то, задавая значение <img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=10/?k=10">, как равномерно распределенной в диапазоне <img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=11/?k=10"> случайной величины, по формуле<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=12/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br>находим искомое значение. Именно в соответствии с (1) в операторах <span class="eOperator">ADVANCE</span> множителями были значения <img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=13/?k=10">.</div>
+<div>В этом примере использован экспоненциальный закон распределения с плотностью<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=5/?k=10"><br>где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=6/?k=10"> — интенсивность. Функция распределения экспоненциального закона<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=7/?k=10"><br></div>
+<div>Из рис.&nbsp;1 ясно, что поскольку искомыми являются значения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=8/?k=10"> случайной величины <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=9/?k=10">, то, задавая значение <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=10/?k=10">, как равномерно распределенной в диапазоне <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=11/?k=10"> случайной величины, по формуле<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=12/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br>находим искомое значение. Именно в соответствии с (1) в операторах <span class="eOperator">ADVANCE</span> множителями были значения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=13/?k=10">.</div>
 <div>Приведем еще несколько операторов языка GPSS.</div>
 <div>Оператор изменения параметров транзактов:</div>
 <pre class="eListing">       ASSIGN     A,B
@@ -262,7 +262,7 @@
 <div>Здесь M — имя гистограммы; A — табулируемая величина; B — верхняя граница левого интервала гистограммы; C — ширина интервалов; D — число интервалов. Формирование гистограммы происходит с помощью оператора:</div>
 <pre class="eListing">       TABULATE   A
 </pre>
-<div>Выполнение этого оператора увеличивает на единицу число попаданий в <img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=14/?k=10">-й интервал гистограммы, имя которой указано в A. При этом <img align="absmiddle" src="/?frm/?doc=110_Simul/3017.mod/?n=14/?k=10">-й интервал соответствует текущему значению переменной, являющейся аргументом для гистограммы.</div>
+<div>Выполнение этого оператора увеличивает на единицу число попаданий в <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=14/?k=10">-й интервал гистограммы, имя которой указано в A. При этом <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=110_Simul/3017.mod/?n=14/?k=10">-й интервал соответствует текущему значению переменной, являющейся аргументом для гистограммы.</div>
 <div class="auto">Пример 6</div>
 <div class="eExample"><div>Требуется разработать модель процессов возникновения и устранения неисправностей в некоторой технической системе, состоящей из множества однотипных блоков; в запасе имеется один исправный блок; известны статистические данные об интенсивностях возникновения отказов и длительностях таких операций, как поиск неисправностей, замена и ремонт отказавшего блока. Поиск и замену отказавшего блока производит бригада TEAM1, а ремонт замененного блока — бригада TEAM2.</div>
 <pre class="eListing">       SIMULATE
@@ -313,17 +313,7 @@
 </div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

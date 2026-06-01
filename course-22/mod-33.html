@@ -45,7 +45,7 @@
 <a name="T1943507977"></a>
 <div>Директивы OpenMP с точки зрения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка</a> Фортран являются комментариями и начинаются с комбинации символов <span class="eOperator">!$OMP</span>, <span class="eOperator">*$OMP</span>. Директивы можно разделить на 3 категории: определение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельной области</a>, определение <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">параллельных конструкций</a>, синхронизация.</div>
 <br>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020701.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=Parallel/ch020701.mod/?n=2/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=1/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=2/?k=10"></div>
 <div>Директивы определения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельной области </a>имеют вид</div>
 <pre class="eListing">!$OMP PARALLEL [список спецификаций]
       блок
@@ -66,7 +66,7 @@ COPYIN()
 <div>При входе в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельную область</a> порождается некоторое количество N новых <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a>, т.е. образуется бригада из N нитей, а порождающая нить получает номер 0 и становится главной нитью бригады. При выходе из параллельной области главная нить дожидается завершения остальных нитей и продолжает выполнение. Число нитей определяется с помощью  переменной окружения <span class="eOperator">OMP_NUM_THREADS</span> либо путем вызова функции <span class="eOperator">OMP_SET_NUM_THREAD</span>S. Нити, соответствующие параллельной области, выполняются параллельно на разных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорах</a> мультипроцессора. Распределение нитей по процессорам <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессора</a> находится в ведении его операционной системы. </div>
 <div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Параллельные области</a> могут быть вложенными. Внутренней параллельной области при этом ставится в соответствие <span class="eOperator">одна</span> из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a> бригады нитей, которая выполняет внешнюю параллельную область.</div>
 <br>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020701.mod/?n=3/?k=10"> <img align="absmiddle" src="/?frm/?doc=Parallel/ch020701.mod/?n=4/?k=10"> <img align="absmiddle" src="/?frm/?doc=Parallel/ch020701.mod/?n=5/?k=10"> <img align="absmiddle" src="/?frm/?doc=Parallel/ch020701.mod/?n=6/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=3/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=4/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=5/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=6/?k=10"></div>
 <div>К директивам определения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)"> параллельных конструкций</a> относится директивы <span class="eOperator">DO ... ENDDO, SECTIONS ... ENDSECTIONS</span>, <span class="eOperator">SINGLE ... ENDSINGLE</span>. Параллельная конструкция определяет объем работ <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a> в бригаде, но не создает новых нитей. Конструкция <span class="eOperator">DO</span> служит для распределения витков цикла между нитями, а конструкция <span class="eOperator">SECTIONS</span> – для распределения между нитями указанных секций программы.</div>
 <div>Для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельной области</a> можно указать классы используемых в ней данных:</div>
 <ul class="eList"><a name="T298749363"></a>
@@ -109,7 +109,7 @@ ORDERED()
 !$OMP END DO
 !$OMP END PARALLEL
 </pre>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020701.mod/?n=7/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=7/?k=10"></div>
 </div>
 <div><span class="eOperator">Директивы определения параллельных секций</span> имеют вид</div>
 <pre class="eListing">!$OMP SECTIONS[список спецификаций]
@@ -140,7 +140,7 @@ REDUCTION()
    !$OMP END SECTIONS
 !$OMP END PARALLEL
 </pre>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020701.mod/?n=7/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=7/?k=10"></div>
 </div>
 <div>В Open MP имеются также директивы определения параллельной секции, которая должна исполняться одной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитью</a>:</div>
 <pre class="eListing">!$OMP SINGLE[список спецификаций]
@@ -184,7 +184,7 @@ COPYIN
 <div class="eSubTitle">Средства синхронизации.</div>
 <div>Выше уже упоминались неявные средства синхронизации OpenMP. Кроме того, имеются также директивы и подпрограммы для явной синхронизации.</div>
 <br>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020701.mod/?n=3/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=3/?k=10"></div>
 <pre class="eListing">!$OMP MASTER
    блок операторов
 !$OMP END MASTER
@@ -214,14 +214,14 @@ COPYIN
    блок операторов
 !$OMP END ORDERED
 </pre>
-<div>определяют блок внутри параллельного цикла, операторы которого должны выполняться в том порядке, в котором итерации следуют в последовательном цикле<img align="absmiddle" src="/?frm/?doc=Parallel/ch020701.mod/?n=7/?k=10"></div>
+<div>определяют блок внутри параллельного цикла, операторы которого должны выполняться в том порядке, в котором итерации следуют в последовательном цикле<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=7/?k=10"></div>
 </div>
 <div>Директива</div>
 <pre class="eListing">!$OMP FLUSH[(список переменных)]
 </pre>
 <div>определяет точку, в которой должно быть обеспечено согласованное между <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитями</a> состояние тех переменных, которые перечислены в списке. Неявно директива <span class="eOperator">FLUSH </span>присутствует в директивах <span class="eOperator">BARRIER, CRITICAL, END CRITICAL, END DO, END</span> <span class="eOperator">PARALLEL, END SECTIONS, END SINGLE, ORDERED, END ORDERED</span>. </div>
 <br>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020701.mod/?n=8/?k=10"> <img align="absmiddle" src="/?frm/?doc=Parallel/ch020701.mod/?n=9/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=8/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=9/?k=10"></div>
 <div>Процедура синхронизации</div>
 <pre class="eListing">OMP_INIT_LOCK(переменная)
 </pre>
@@ -299,17 +299,7 @@ COPYIN
 <div>Имеется также спецификация OpenMP для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языков C</a>, C++. Спецификация содержит в функциональность, в основном аналогичную рассмотренной. Отметим лишь, что вместо специальных комментариев <span class="eOperator">!$OMP</span> используются директивы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятора</a> <span class="eOperator">#pragma omp</span>.</div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

@@ -29,45 +29,45 @@
 <div>Рассмотренные выше классы параллельных вычислительных систем ориентированы на решение хорошо формализованных задач, сводящиеся к расчетам по формулам для заданных исходных данных. Однако существуют широкий класс практически важных, но плохо формализованных задач, например, таких как </div>
 <ul class="eList"><li>распознавание образов;</li>
 <li>кластеризация данных;</li>
-<li>оптимизация (<img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=1/?k=10">-полные задачи).</li>
+<li>оптимизация (<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=1/?k=10">-полные задачи).</li>
 </ul>
 <div>Нейросетевые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительные машины</a> предназначены для решения именно таких задач.</div>
 <div class="eSubTitle">Искусственный нейрон.</div>
 <a name="T1316864479"></a>
 <a name="T1653915624"></a>
 <a name="T273321915"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Нейрон</a> (см. Рис.1) задается вектором входов нейрона <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=2/?k=10"> вектором весов входов нейрона <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=3/?k=10">, <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функцией состояния нейрона</a> <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=4/?k=10">(<img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=5/?k=10">), <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функцией активации нейрона</a> <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=6/?k=10"> и выходом нейрона <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=7/?k=10">.</div>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Нейрон</a> (см. Рис.1) задается вектором входов нейрона <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=2/?k=10"> вектором весов входов нейрона <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=3/?k=10">, <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функцией состояния нейрона</a> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=4/?k=10">(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=5/?k=10">), <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функцией активации нейрона</a> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=6/?k=10"> и выходом нейрона <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=7/?k=10">.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Parallel/ch010301.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Условное изображение искусственного нейрона.</div></div>
 <div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Функция состояния нейрона</a> определяет состояние <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрона</a> в зависимости от его входов, весов входов и, возможно, предыдущих состояний <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрона</a>. Чаще всего используют следующие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции состояния нейрона</a>, не зависящие от предыдущего состояния.</div>
-<ol class="eList"><li>Скалярное произведение векторов <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=8/?k=10">,<img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=9/?k=10">:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=10/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></li>
-<li>Расстояние между векторами <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=8/?k=10">,<img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=9/?k=10"> измеренное в некоторой метрике. Например, <br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=11/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br></li>
+<ol class="eList"><li>Скалярное произведение векторов <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=8/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=9/?k=10">:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=10/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></li>
+<li>Расстояние между векторами <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=8/?k=10">,<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=9/?k=10"> измеренное в некоторой метрике. Например, <br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=11/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br></li>
 </ol>
 <a name="T137875650"></a>
 <a name="T346839294"></a>
 <div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Нейрон</a> с функцией состояния (1) называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">персептроном</a>, с функцией состояния (2) – <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">нейроном с радиальными базисными функциями</a>. </div>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Функция активации нейрона</a> определяет выход <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрона</a> как функцию его входа - <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=12/?k=10">. Наиболее распространенными являются следующие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции активации</a>:</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Функция активации нейрона</a> определяет выход <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрона</a> как функцию его входа - <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=12/?k=10">. Наиболее распространенными являются следующие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции активации</a>:</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Parallel/ch010301.mod/?n=2"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Ступенчатая пороговая функция активации.</div></div>
-<ul class="eList"><li>ступенчатая пороговая <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция активации</a> (см. рис.&nbsp;2) <br><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=13/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=14/?k=10"> – некоторая константа;</li>
+<ul class="eList"><li>ступенчатая пороговая <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция активации</a> (см. рис.&nbsp;2) <br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=13/?k=10"><br>где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=14/?k=10"> – некоторая константа;</li>
 </ul>
-<ul class="eList"><li> линейная пороговая <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция активации</a> (см. рис.&nbsp;3)<br><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=15/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=16/?k=10">  – некоторые константы;</li>
+<ul class="eList"><li> линейная пороговая <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция активации</a> (см. рис.&nbsp;3)<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=15/?k=10"><br>где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=16/?k=10">  – некоторые константы;</li>
 </ul>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Parallel/ch010301.mod/?n=3"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Линейная пороговая функция активации.</div></div>
-<ul class="eList"><li> сигмоидальная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция активации</a> (см. рис.&nbsp;4) <br><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=17/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=18/?k=10"> – некоторые константы;</li>
+<ul class="eList"><li> сигмоидальная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция активации</a> (см. рис.&nbsp;4) <br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=17/?k=10"><br>где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=18/?k=10"> – некоторые константы;</li>
 </ul>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Parallel/ch010301.mod/?n=4"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;Сигмоидальная функция активации.</div></div>
-<ul class="eList"><li>гауссова <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция активации</a> (см. Рис.5) <br><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=19/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=18/?k=10"> – некоторые константы;</li>
+<ul class="eList"><li>гауссова <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция активации</a> (см. Рис.5) <br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=19/?k=10"><br>где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=18/?k=10"> – некоторые константы;</li>
 </ul>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
@@ -105,18 +105,18 @@
 <li>при <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">смешанном обучении нейронных сетей</a> часть параметров определяется при наблюдаемом обучении, а часть – при ненаблюдаемом обучении.</li>
 </ul>
 <a name="T874096111"></a>
-<div>Введем в рассмотрение <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">пространство входов нейронной сети</a> <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=20/?k=10">. Оси координат этого пространства соответствуют входам <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронной сети</a> <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=21/?k=10">. В пространстве <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=20/?k=10"> определим множество допустимых входов нейронной сети <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=22/?k=10"> (см. рис.&nbsp;8).</div>
+<div>Введем в рассмотрение <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">пространство входов нейронной сети</a> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=20/?k=10">. Оси координат этого пространства соответствуют входам <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронной сети</a> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=21/?k=10">. В пространстве <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=20/?k=10"> определим множество допустимых входов нейронной сети <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=22/?k=10"> (см. рис.&nbsp;8).</div>
 <br>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Parallel/ch010301.mod/?n=8"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;8.&nbsp;&nbsp;Пространство входов нейронной сети <span style="font-size:120%; font-family:serif; font-weight:bold; font-style:normal;">X</span> и множество допустимых входов нейронной сети <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">D</span><sub class="eSub"><span style="font-size:120%; font-family:serif; font-weight:bold; font-style:normal;">X</span></sub>. <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">n</span>=2.</div></div>
-<div>В задачах, которые эффективно решаются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронными сетями</a>, точки множества <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=22/?k=10"> образуют связные области, все точки каждой из которых обладают одним и тем же свойством, например, принадлежат одному и тому же кластеру.</div>
-<div>Задача конструирования или обучения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронной сети</a> в этих терминах состоит в том, чтобы при принадлежности входного вектора нейронной сети <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=23/?k=10"> разным областям формировались различные выходные сигналы нейронной сети. Можно сказать, что в результате <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обучения нейронной сети</a> она запоминает расположение этих областей во множестве <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=22/?k=10">.</div>
+<div>В задачах, которые эффективно решаются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронными сетями</a>, точки множества <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=22/?k=10"> образуют связные области, все точки каждой из которых обладают одним и тем же свойством, например, принадлежат одному и тому же кластеру.</div>
+<div>Задача конструирования или обучения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронной сети</a> в этих терминах состоит в том, чтобы при принадлежности входного вектора нейронной сети <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=23/?k=10"> разным областям формировались различные выходные сигналы нейронной сети. Можно сказать, что в результате <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обучения нейронной сети</a> она запоминает расположение этих областей во множестве <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=22/?k=10">.</div>
 <div>Запоминание расположения областей по разному реализуется в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">персептронных нейронных сетях</a> и в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронных сетях с радиальными базисными функциями</a>.</div>
-<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">персептронных нейронных сетях</a> запоминание областей реализуется с помощью гиперплоскостей (см. рис.&nbsp;9). Каждый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрон</a> такой сети весами своих входов задает гиперплоскость <br><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=24/?k=10"><br></div>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">персептронных нейронных сетях</a> запоминание областей реализуется с помощью гиперплоскостей (см. рис.&nbsp;9). Каждый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрон</a> такой сети весами своих входов задает гиперплоскость <br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=24/?k=10"><br></div>
 <div>Изменение весов входов, числа <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронов</a> и графа межнейронных связей меняет набор и расположение разделяющих гиперплоскостей.</div>
-<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронных сетях с радиальными базисными функциям</a> каждый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрон</a> задет значениями весов своих входов координаты центра гипершара, а коэффициентом, связывающим <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=4/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=7/?k=10"> – радиус этого гипершара (см. рис.&nbsp;10).</div>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронных сетях с радиальными базисными функциям</a> каждый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрон</a> задет значениями весов своих входов координаты центра гипершара, а коэффициентом, связывающим <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=4/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=7/?k=10"> – радиус этого гипершара (см. рис.&nbsp;10).</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=Parallel/ch010301.mod/?n=9"></td></tr></tbody></table>
@@ -134,18 +134,18 @@
 <div class="eSubTitle">Алгоритм обратного распространения. </div>
 <div>Рассмотрим простейшую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронную сеть</a> - обучаемый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрон</a> с пороговой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцией активации</a>.</div>
 <div>Пусть имеется обучающий набор примеров </div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=25/?k=10"></div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=26/?k=10"></div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=27/?k=10"></div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=28/?k=10"></div>
-<div>Здесь <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=29/?k=10"> - входные значения <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=30/?k=10">-го примера,  <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=31/?k=10"> - правильное выходное значение <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=30/?k=10">-го примера.</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=25/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=26/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=27/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=28/?k=10"></div>
+<div>Здесь <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=29/?k=10"> - входные значения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=30/?k=10">-го примера,  <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=31/?k=10"> - правильное выходное значение <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=30/?k=10">-го примера.</div>
 <div>Считается, что <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрон</a> правильно обучен, если </div>
-<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=32/?k=10"></td><td align="right" class="eFormula">&nbsp;(3)</td></tr></tbody></table><br></div>
-<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=33/?k=10"> - выход <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрона</a> в j-ом примере, <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=34/?k=10"> – заданная допустимая величина ошибки. </div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=32/?k=10"></td><td align="right" class="eFormula">&nbsp;(3)</td></tr></tbody></table><br></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=33/?k=10"> - выход <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрона</a> в j-ом примере, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=34/?k=10"> – заданная допустимая величина ошибки. </div>
 <div>Алгоритм <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обратного распространения</a> состоит из следующих основных шагов:</div>
 <ol class="eList"><li>Присвоить весам входов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрона</a> и порогу <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции активации</a> случайные малые значения; </li>
-<li>Начиная с первого примера, подать на входы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрона</a> очередной пример <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=35/?k=10"> и определить значение выхода нейрона <img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=36/?k=10">;</li>
-<li>Изменить веса по правилу <br><img align="absmiddle" src="/?frm/?doc=Parallel/ch010301.mod/?n=37/?k=10"><br></li>
+<li>Начиная с первого примера, подать на входы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейрона</a> очередной пример <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=35/?k=10"> и определить значение выхода нейрона <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=36/?k=10">;</li>
+<li>Изменить веса по правилу <br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch010301.mod/?n=37/?k=10"><br></li>
 <li>Производить шаги 2 – 4 до тех пор, пока не выполнится условие (3).</li>
 </ol>
 <div>В алгоритме <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обратного распространения</a> для многоуровневых <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронных сетей</a> изменяется шаг 3 приведенного выше алгоритма (значительно усложняется).</div>
@@ -160,17 +160,7 @@
 <div>Современные нейрочипы имеют производительность порядка нескольких сотен MCPS. Производительность нейросетевых плат достигает десятков GCPS.</div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

@@ -55,16 +55,16 @@
 <a name="T521937145"></a>
 <a name="T1476799018"></a>
 <div><span class="eOperator">2. Классификация и кластеризация документов</span>. Под <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">кластеризацией</a> понимают выделение признаков объектов некоторого множества, характеризующих степень их взаимного сходства или различия, и формирование на основе такого выделения групп (классов) родственных объектов. Собственно отнесение объектов к тому или иному классу из числа заданных называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">классификацией</a> .</div>
-<div>Одним из методов выделения классообразующих признаков для текстовых документов является взвешивание терминов. Веса <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=1/?k=10">терминов в заданной выборке документов определяются одним из следующих способов:</div>
-<ul class="eList"><li>по наличию <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=2/?k=10">-го термина (слова) в <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=3/?k=10">-м документе (<img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=4/?k=10">=1) или его отсутствия (<img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=4/?k=10">=0);</li>
-<li>по частости <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=5/?k=10"> появления <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=2/?k=10">-го слова в <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=3/?k=10">-м документе;</li>
-<li>по относительной частости, которую можно определить как произведение частости <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=5/?k=10"> и логарифма отношения <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=6/?k=10">/<img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=7/?k=10">, где <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=6/?k=10"> — число документов в выборке, <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=7/?k=10"> — число документов, в которых встречается <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=2/?k=10">-е слово;</li>
+<div>Одним из методов выделения классообразующих признаков для текстовых документов является взвешивание терминов. Веса <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=1/?k=10">терминов в заданной выборке документов определяются одним из следующих способов:</div>
+<ul class="eList"><li>по наличию <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=2/?k=10">-го термина (слова) в <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=3/?k=10">-м документе (<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=4/?k=10">=1) или его отсутствия (<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=4/?k=10">=0);</li>
+<li>по частости <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=5/?k=10"> появления <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=2/?k=10">-го слова в <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=3/?k=10">-м документе;</li>
+<li>по относительной частости, которую можно определить как произведение частости <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=5/?k=10"> и логарифма отношения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=6/?k=10">/<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=7/?k=10">, где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=6/?k=10"> — число документов в выборке, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=7/?k=10"> — число документов, в которых встречается <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=2/?k=10">-е слово;</li>
 <li>по относительной частости с учетом длин документов</li>
 </ul>
-<div><img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=1/?k=10">= <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=8/?k=10">,</div>
-<div>где <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=9/?k=10"> — число слов в выборке.</div>
-<div>При классификации сопоставляют входящие в систему документы с сформированными классами. Отнесение документа к определенному классу выполняется по минимуму расстояния классифицируемого документа от сформированных классов. Понятие расстояния можно связать с той или иной нормой разности векторов <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=10/?k=10">=(<img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=11/?k=10">, <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=12/?k=10">,..., <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=13/?k=10">) двух сравниваемых документов, например:</div>
-<div><img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=14/?k=10"> = <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=15/?k=10">| <img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=16/?k=10">-<img align="absmiddle" src="/?frm/?doc=Ontology/ai401.mod/?n=17/?k=10"></div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=1/?k=10">= <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=8/?k=10">,</div>
+<div>где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=9/?k=10"> — число слов в выборке.</div>
+<div>При классификации сопоставляют входящие в систему документы с сформированными классами. Отнесение документа к определенному классу выполняется по минимуму расстояния классифицируемого документа от сформированных классов. Понятие расстояния можно связать с той или иной нормой разности векторов <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=10/?k=10">=(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=11/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=12/?k=10">,..., <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=13/?k=10">) двух сравниваемых документов, например:</div>
+<div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=14/?k=10"> = <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=15/?k=10">| <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=16/?k=10">-<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Ontology/ai401.mod/?n=17/?k=10"></div>
 <a name="T782216151"></a>
 <div>Для решения задач классификации используются алгоритмы, типичные для ИПС или систем <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Data Mining</a>. Например, в Data Mining находит применение алгоритм дерева решений (Decision Tree), в соответствии с которым значение каждого из исследуемых атрибутов классифицируется с использованием правил вида “если — то”. Каждый узел дерева представляет собой некий вопрос. ответ на который позволяет отнести рассматриваемый документ к тому или иному классу.</div>
 <a name="T1043171229"></a>
@@ -85,17 +85,7 @@
 </div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

@@ -63,7 +63,7 @@
 <div>Столбцы таблицы переходов обозначают символы входного алфавита, а строки соответствуют текущим состояниям <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ДКА</a>. Элементы каждой строки указывают состояния <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ДКА</a>, в которые он должен переходить из текущего состояния при получении соответствующих символов входного алфавита. В частности, из первой строки данной таблицы переходов следует, что получение символов 0 и 1 в начальном состоянии Q1 переводит <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ДКА</a> в состояния Q4 и Q2, соответственно.</div>
 <div>При распознавании входной последовательности по таблице переходов легко проследить изменения состояния <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ДКА</a> с целью определить достигается или нет одно из допускающих состояний. В частности, для бинарного вектора 01001000 с четным числом нулей и единиц рассмотренный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ДКА</a> порождает следующую последовательность переходов, где каждый переход помечен вызывающим его символом входного алфавита:</div>
 <br>
-<div>Q1 <sup class="eSub">0</sup><img align="absmiddle" src="/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q4 <sup class="eSub">1</sup><img align="absmiddle" src="/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q3 <sup class="eSub">0</sup><img align="absmiddle" src="/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q2 <sup class="eSub">0</sup><img align="absmiddle" src="/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q3 <sup class="eSub">1</sup><img align="absmiddle" src="/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q4 <sup class="eSub">1</sup><img align="absmiddle" src="/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q1 <sup class="eSub">0</sup><img align="absmiddle" src="/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q4 <sup class="eSub">0</sup><img align="absmiddle" src="/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q1</div>
+<div>Q1 <sup class="eSub">0</sup><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q4 <sup class="eSub">1</sup><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q3 <sup class="eSub">0</sup><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q2 <sup class="eSub">0</sup><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q3 <sup class="eSub">1</sup><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q4 <sup class="eSub">1</sup><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q1 <sup class="eSub">0</sup><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q4 <sup class="eSub">0</sup><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/015lex.mod/?n=1/?k=10"> Q1</div>
 <br>
 <div>Эта последовательность переходов завершается допускающим состоянием Q1, следовательно, бинарный вектор 01001000 принадлежит регулярному множеству, распознаваемому рассмотренным <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ДКА</a> и удовлетворяет приведенному выше регулярному выражению.</div>
 <a name="T1312413900"></a>
@@ -71,17 +71,7 @@
 <div>Перечисленные формальные методы реализованы во всех программах генераторов лексических анализаторов, где для спецификации лексем входного потока используются регулярные выражения. В частности, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">генератор LEX</a> автоматически конструирует <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ДКА</a> для лексического анализатора на основе построения синтаксических деревьев регулярных выражений, которые заданы во входном файле спецификации лексем разработчиком <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">лексического анализатора</a>.</div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

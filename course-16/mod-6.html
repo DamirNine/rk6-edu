@@ -27,10 +27,10 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Решение нелинейных одномерных стационарных краевых задач с помощью МКР</a>
 </div>
 <div>Предположим необходимо определить распределение температуры в стержне, теплоизолированном с цилиндрической поверхности, и с заданной температурой на боковых гранях.</div>
-<div>Одномерное стационарное уравнение теплопроводности для анизотропной среды выглядит следующим образом:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=1/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=2/?k=10"> — коэффициент теплопроводности.</div>
+<div>Одномерное стационарное уравнение теплопроводности для анизотропной среды выглядит следующим образом:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=1/?k=10"><br>где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=2/?k=10"> — коэффициент теплопроводности.</div>
 <div>Возможны нелинейности двух типов: коэффициент теплопроводности может зависеть от координаты (среда с неоднородными свойствами) и от температуры. Рассмотрим случай зависимости коэффициента теплопроводности от координаты на примере приближенного решения задачи об остываниии комнаты через окно с одинарным и двойным остеклением.</div>
-<div>Предположим, что толщина стекла <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=3/?k=10">. Температура в комнате <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=4/?k=10">, на улице — <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=5/?k=10"></div>
-<div>Тепловой поток на улицу пропорционален градиенту температуры, то есть <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=6/?k=10">.</div>
+<div>Предположим, что толщина стекла <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=3/?k=10">. Температура в комнате <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=4/?k=10">, на улице — <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=5/?k=10"></div>
+<div>Тепловой поток на улицу пропорционален градиенту температуры, то есть <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=6/?k=10">.</div>
 <div>В соотвествии с алгоритмом решения стационарных краевых задач наносим на объект равномерную сетку, в предположении, что промежуток между стеклами равен двойной толщине стекла,как это показано на рис.&nbsp;1.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
@@ -38,31 +38,21 @@
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
 <a name="T1038881380"></a>
 <div>Для каждого внутреннего узла <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетки</a> записываем разностный аналог исходного дифференциального уравнения:</div>
-<ul class="eList"><li>для узла 1: <br><img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=7/?k=10"><br></li>
-<li>для узла 2:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=8/?k=10"><br></li>
-<li>для узла 3:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=9/?k=10"><br></li>
+<ul class="eList"><li>для узла 1: <br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=7/?k=10"><br></li>
+<li>для узла 2:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=8/?k=10"><br></li>
+<li>для узла 3:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=9/?k=10"><br></li>
 </ul>
 <a name="T1939952474"></a>
-<div>В результате получили замкнутую систему линейных алгебраических уравнений, где неизвестными являются <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=10/?k=10">, <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=11/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=12/?k=10">, а <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=13/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=14/?k=10"> — заданные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">граничные условия</a>. Условно будем читать, что <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=15/?k=10"> (реальные значения <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=16/?k=10">, <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=17/?k=10">).</div>
-<div>Решив систему уравнений, получим <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=18/?k=10">, <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=19/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=20/?k=10">. В этом случае градиент температуры составит <img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=21/?k=10">, то есть двойное остекление в 20 раз эффективнее одинарного.</div>
+<div>В результате получили замкнутую систему линейных алгебраических уравнений, где неизвестными являются <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=10/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=11/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=12/?k=10">, а <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=13/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=14/?k=10"> — заданные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">граничные условия</a>. Условно будем читать, что <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=15/?k=10"> (реальные значения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=16/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=17/?k=10">).</div>
+<div>Решив систему уравнений, получим <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=18/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=19/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=20/?k=10">. В этом случае градиент температуры составит <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=21/?k=10">, то есть двойное остекление в 20 раз эффективнее одинарного.</div>
 <div>В том случае, когда коэффициент теплопроводности зависит от температуры, например для металлов он пропорционален ей, придем к следующей системе нелинейных алгебраических уравнений (для сетки из четырех узлов, два из которых внутренние):</div>
-<ul class="eList"><li>для узла 1:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=22/?k=10"><br></li>
-<li>для узла 2:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_n.mod/?n=23/?k=10"><br></li>
+<ul class="eList"><li>для узла 1:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=22/?k=10"><br></li>
+<li>для узла 2:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=23/?k=10"><br></li>
 </ul>
 <div>Данную систему придется решать итерационными методами.</div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">

@@ -43,17 +43,7 @@
 <div>Работа программного обеспечения (рис.&nbsp;1), реализующего <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">взаимодействие процессов в сетях TCP/IP</a>, кратко может быть охарактеризована следующим образом. При <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">установлении соединения</a> прикладной процесс в узле-отправителе получает номер порта (например, от операционной системы) и передает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IP-имя</a> получателя на уровень <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TCP</a>. С помощью обращения к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">службе DNS</a> IP-имя переводится в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IP-адрес</a>. На <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевом уровне</a> IP-адрес должен быть переведен в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MAC-адрес</a>. Для этого используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ARP-таблица</a> отправителя. Если в таблице есть строка с данным IP-адресом, то формируется заголовок <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пакета</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дейтаграмма</a> отправляется в сеть. Если искомой строки в таблице не оказалось, то отправитель формирует <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ARP</a>-запрос, который широковещательно рассылается по сети. Получатель откликается на запрос, посылая ARP-ответ с указанием своего MAC-адреса. Если узла с запрошенным IP-адресом в данной сети нет, то пакет направляется по MAC-адресу порта <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">маршрутизатора</a>, который пересылает пакет с IP-адресом в следующую сеть и т.д., пока пакет не достигнет сети, в которой найдется MAC-адрес, соответствующий искомому IP-адресу. Аналогичные действия выполняются при установлении обратного соединения. Во время установления соединений для каждого из них в конечных узлах (см. рис.&nbsp;1) создается модуль TCP, обслуживающий соответствующий прикладной процесс. Передача пакетов по установленным соединениям происходит более быстро, так как теперь не нужно обращаться к DNS и использовать ARP-запросы.</div>
 </div>
 <hr width="90%">
-<noindex>
-<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
-<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
-<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
-</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
-</td></tr></tbody></table></center>
-</noindex>
+
 </div> 
 </body></html></div></main>
 <nav class="module-nav module-nav-bottom">
