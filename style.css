@@ -44,12 +44,28 @@ main { max-width: 1100px; margin: 10px auto 30px; padding: 20px; background: whi
 .module-list a:hover { background: #f0f7ff; }
 
 /* Страница модуля */
-.dModul { line-height: 1.7; }
-.eTitleModul { font-size: 20px; font-weight: bold; color: #00558b; margin-bottom: 20px; display: block; }
-.dModul table { border-collapse: collapse; margin: 10px 0; }
-.dModul td, .dModul th { border: 1px solid #ccc; padding: 6px 10px; }
+.dModul { line-height: 1.9; font-size: 15px; }
+.eTitleModul { font-size: 20px; font-weight: bold; color: #00558b; margin-bottom: 24px; display: block; }
+.dModul p { margin-bottom: 14px; text-indent: 24px; }
+.dModul div { margin-bottom: 10px; }
+.dModul br + br { display: block; margin-top: 10px; }
+.dModul table { border-collapse: collapse; margin: 16px 0; }
+.dModul td, .dModul th { border: 1px solid #ccc; padding: 8px 12px; line-height: 1.6; }
 .dModul img[src=""] { display: none; }
-.dModul a[href="#"] { color: #00558b; cursor: default; text-decoration: underline dotted; }
+.dModul ul, .dModul ol { margin: 10px 0 14px 30px; }
+.dModul li { margin-bottom: 6px; }
+.dModul h2, .dModul h3, .dModul h4 { margin: 20px 0 10px; color: #333; }
+
+/* Термины — подчёркнуты пунктиром с тултипом */
+.dModul a[href="#"] {
+  color: #0055aa;
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+.dModul a[href="#"]:hover { background: #eef4ff; border-radius: 2px; }
+.eSubTitle { font-size: 16px; font-weight: bold; color: #333; margin: 18px 0 8px; display: block; }
 
 h1 { font-size: 24px; color: #00558b; margin-bottom: 6px; }
 .subtitle { color: #666; font-size: 14px; margin-bottom: 20px; }
