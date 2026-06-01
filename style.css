@@ -1,0 +1,55 @@
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; font-size: 15px; color: #222; background: #f5f5f5; }
+
+header { background: #00558b; color: white; padding: 10px 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
+.header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 20px; }
+.logo { color: white; text-decoration: none; font-size: 20px; font-weight: bold; white-space: nowrap; }
+.logo span { font-size: 13px; font-weight: normal; opacity: 0.8; display: block; }
+
+.search-box { flex: 1; position: relative; }
+#search { width: 100%; padding: 8px 14px; border-radius: 4px; border: none; font-size: 14px; }
+#search-results { position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #ccc; border-radius: 0 0 4px 4px; max-height: 400px; overflow-y: auto; z-index: 200; display: none; }
+.search-item { padding: 10px 14px; border-bottom: 1px solid #eee; cursor: pointer; }
+.search-item:hover { background: #f0f7ff; }
+.search-item-title { font-weight: bold; font-size: 13px; color: #00558b; }
+.search-item-course { font-size: 12px; color: #888; margin-top: 2px; }
+.search-item-snippet { font-size: 13px; color: #444; margin-top: 4px; }
+
+.breadcrumb { max-width: 1100px; margin: 10px auto; padding: 0 20px; font-size: 13px; color: #666; }
+.breadcrumb a { color: #00558b; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+.module-nav { max-width: 1100px; margin: 10px auto; padding: 0 20px; display: flex; gap: 10px; }
+.module-nav a { padding: 7px 16px; background: #00558b; color: white; text-decoration: none; border-radius: 4px; font-size: 13px; }
+.module-nav a:hover { background: #004070; }
+.module-nav a.disabled { background: #aaa; pointer-events: none; }
+.module-nav .spacer { flex: 1; }
+.module-nav-bottom { margin-top: 0; margin-bottom: 20px; }
+
+main { max-width: 1100px; margin: 10px auto 30px; padding: 20px; background: white; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+
+/* Главная страница */
+.courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-top: 20px; }
+.course-card { border: 1px solid #ddd; border-radius: 6px; padding: 16px; text-decoration: none; color: inherit; display: block; transition: box-shadow 0.2s; }
+.course-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.course-card h3 { color: #00558b; font-size: 16px; margin-bottom: 8px; }
+.course-card p { font-size: 13px; color: #666; line-height: 1.5; }
+.course-card .meta { font-size: 12px; color: #999; margin-top: 8px; }
+
+/* Страница курса */
+.module-list { list-style: none; margin-top: 16px; }
+.module-list li { border-bottom: 1px solid #eee; }
+.module-list a { display: block; padding: 10px 8px; color: #00558b; text-decoration: none; font-size: 14px; }
+.module-list a:hover { background: #f0f7ff; }
+
+/* Страница модуля */
+.dModul { line-height: 1.7; }
+.eTitleModul { font-size: 20px; font-weight: bold; color: #00558b; margin-bottom: 20px; display: block; }
+.dModul table { border-collapse: collapse; margin: 10px 0; }
+.dModul td, .dModul th { border: 1px solid #ccc; padding: 6px 10px; }
+.dModul img[src=""] { display: none; }
+.dModul a[href="#"] { color: #00558b; cursor: default; text-decoration: underline dotted; }
+
+h1 { font-size: 24px; color: #00558b; margin-bottom: 6px; }
+.subtitle { color: #666; font-size: 14px; margin-bottom: 20px; }
