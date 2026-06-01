@@ -25,7 +25,7 @@ header { background: #00558b; color: white; padding: 10px 20px; position: sticky
 .module-nav a:hover { background: #004070; }
 .module-nav a.disabled { background: #aaa; pointer-events: none; }
 .module-nav .spacer { flex: 1; }
-.module-nav-bottom { margin-top: 0; margin-bottom: 20px; }
+.module-nav-bottom { margin-top: 16px; margin-bottom: 20px; padding-top: 16px; border-top: 1px solid #eee; }
 
 main { max-width: 1100px; margin: 10px auto 30px; padding: 20px; background: white; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
 
