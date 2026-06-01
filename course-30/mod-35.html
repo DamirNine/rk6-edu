@@ -27,9 +27,9 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сортировка выбором</a>
 </div>
 <br>
-<div>Идея <a class="term" data-term="метода" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метода</a> состоит в том, чтобы создавать отсортированную последовательность путем присоединения к ней одного элемента за другим в правильном порядке. </div>
+<div>Идея <a class="term" data-term="метода" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метода</a> состоит в том, чтобы создавать отсортированную последовательность путем присоединения к ней одного элемента за другим в правильном порядке. </div>
 <a name="T1992766606"></a>
-<div>Будем строить готовую последовательность, начиная с левого конца <a class="term" data-term="массива" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">массива</a>. <a class="term" data-term="Алгоритм" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Алгоритм</a> состоит из n последовательных шагов, начиная от нулевого и заканчивая (n-1)-м.</div>
+<div>Будем строить готовую последовательность, начиная с левого конца <a class="term" data-term="массива" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">массива</a>. <a class="term" data-term="Алгоритм" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Алгоритм</a> состоит из n последовательных шагов, начиная от нулевого и заканчивая (n-1)-м.</div>
 <div>На i-м шаге выбираем наименьший из элементов a[i] ... a[n] и меняем его местами с a[i]. Последовательность шагов при n=5 изображена на рисунке ниже.</div>
 <br>
 <div class="eImage">
@@ -57,8 +57,8 @@ void selectSort(T a[], long size) {
 <div>Для нахождения наименьшего элемента из n+1 рассматриваемых алгоритм совершает n сравнений. С учетом того, что количество рассматриваемых на очередном шаге элементов уменьшается на единицу, общее количество операций:</div>
 <div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PO_CAD/13.2.mod/?n=1/?k=10"> </div>
 <br>
-<div>Таким образом, так как число обменов всегда будет меньше числа сравнений, время <a class="term" data-term="сортировки" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> растет квадратично относительно количества элементов.</div>
-<div>Алгоритм не использует дополнительной <a class="term" data-term="памяти" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">памяти</a>: все операции происходят "на месте".</div>
+<div>Таким образом, так как число обменов всегда будет меньше числа сравнений, время <a class="term" data-term="сортировки" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> растет квадратично относительно количества элементов.</div>
+<div>Алгоритм не использует дополнительной <a class="term" data-term="памяти" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">памяти</a>: все операции происходят "на месте".</div>
 <div>Рассмотрим последовательность из трех элементов, каждый из которых имеет два поля, а сортировка идет по первому из них. </div>
 <br>
 <div class="eImage">

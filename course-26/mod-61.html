@@ -29,7 +29,7 @@
 <a name="T755805056"></a>
 <a name="T830825773"></a>
 <a name="T171833037"></a>
-<div><a class="term" data-term="Динамическое разменщение массивов" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Динамическое разменщение массивов</a> осуществляется с помощью библиотечных функций системы программирования С: calloc() и realloc(). При <a class="term" data-term="динамическом распределении памяти" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">динамическом распределении памяти</a> для массивов следует описать соответствующий указатель и присваивать ему значение при помощи функции <a class="term" data-term="calloc" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">calloc</a>. Одномерный массив a[10] из элементов типа float можно создать следующим образом</div>
+<div><a class="term" data-term="Динамическое разменщение массивов" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Динамическое разменщение массивов</a> осуществляется с помощью библиотечных функций системы программирования С: calloc() и realloc(). При <a class="term" data-term="динамическом распределении памяти" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">динамическом распределении памяти</a> для массивов следует описать соответствующий указатель и присваивать ему значение при помощи функции <a class="term" data-term="calloc" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">calloc</a>. Одномерный массив a[10] из элементов типа float можно создать следующим образом</div>
 <pre class="eListing">float *a;
 a=(float*)(calloc(10,sizeof(float));
 </pre>
@@ -46,7 +46,7 @@ main ()
  }
 </pre>
 <a name="T3151468"></a>
-<div>Аналогичным образом можно распределить память и для трехмерного массива размером n,m,l. Следует только помнить, что ненужную для дальнейшего выполнения программы память следует освобождать при помощи функции <a class="term" data-term="free" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">free</a>.</div>
+<div>Аналогичным образом можно распределить память и для трехмерного массива размером n,m,l. Следует только помнить, что ненужную для дальнейшего выполнения программы память следует освобождать при помощи функции <a class="term" data-term="free" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">free</a>.</div>
 <pre class="eListing">#include
 main ()
  { long ***a;
@@ -156,7 +156,7 @@ int main()
   return 0;
 }
 </pre>
-<div>В качестве последнего примера рассмотрим динамическое распределение памяти для массива указателей на <a class="term" data-term="функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a>, имеющие один входной параметр типа <span class="eOperator">double</span> и возвращающие значение типа <span class="eOperator">double</span>.</div>
+<div>В качестве последнего примера рассмотрим динамическое распределение памяти для массива указателей на <a class="term" data-term="функции" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a>, имеющие один входной параметр типа <span class="eOperator">double</span> и возвращающие значение типа <span class="eOperator">double</span>.</div>
 <pre class="eListing">#include
 #include
 double cos(double);

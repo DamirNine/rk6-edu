@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Метод обменов</a>
 </div>
 <a name="T1885846268"></a>
-<div><a class="term" data-term="Метод обменов" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метод обменов</a> или метод пузырька является прямым методом <a class="term" data-term="сортировки" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> <a class="term" data-term="массива" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a>.</div>
+<div><a class="term" data-term="Метод обменов" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метод обменов</a> или метод пузырька является прямым методом <a class="term" data-term="сортировки" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> <a class="term" data-term="массива" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a>.</div>
 <div>Алгоритм метода обмена основан на сравнении пары соседних элементов. Если расположение элементов не удовлетворяет условиям сортировки, то их меняют местами. Сравнения и перестановки продолжаются до тех пор, пока не будут упорядочены все элементы. Определить, что элементы упорядочены, можно, считая количество выполненных перестановок: если количество перестановок равно нулю, то массив отсортирован.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
@@ -54,7 +54,7 @@ while(k!=0)             /*пока есть перестановки*/
      }
 
 </pre>
-<div>Оценим <a class="term" data-term="вычислительная сложность метода" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительную сложность</a> данного метода. Очевидно, что она сильно зависит от исходного расположения элементов массива. Так в лучшем случае, когда массив уже отсортирован, потребуется выполнить n-1 сравнение для проверки правильности расположения элементов массива, т.е. вычислительная сложность равна O(n).</div>
+<div>Оценим <a class="term" data-term="вычислительная сложность метода" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительную сложность</a> данного метода. Очевидно, что она сильно зависит от исходного расположения элементов массива. Так в лучшем случае, когда массив уже отсортирован, потребуется выполнить n-1 сравнение для проверки правильности расположения элементов массива, т.е. вычислительная сложность равна O(n).</div>
 <div>В худшем случае, если массив отсортирован в обратном порядке, будет выполнено n-1, n-2, ... 1 операций сравнения, т.е. всего (n<sup class="eSub">2</sup>-n)/2 операций сравнения, следовательно, вычислительная сложность равна O(n<sup class="eSub">2</sup>).</div>
 <div>Выполнить усредненную оценку данного метода достаточно сложно, так как зависимость времени выполнения от количества неправильно стоящих элементов не является линейной.</div>
 </div>

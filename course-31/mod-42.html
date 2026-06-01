@@ -29,20 +29,20 @@
 <a name="T2031917880"></a>
 <a name="T1418249701"></a>
 <a name="T925980355"></a>
-<div><a class="term" data-term="УСО для вывода данных без преобразования" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">УСО для вывода данных без преобразования</a> могут использоваться для вывода данных в параллельном формате, например для передачи их другой <a class="term" data-term="МПС" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a>. Предполагается, что на выходе УСО должны находиться данные в <a class="term" data-term="Параллельный способ передачи данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельном двоичном коде</a>.</div>
+<div><a class="term" data-term="УСО для вывода данных без преобразования" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">УСО для вывода данных без преобразования</a> могут использоваться для вывода данных в параллельном формате, например для передачи их другой <a class="term" data-term="МПС" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a>. Предполагается, что на выходе УСО должны находиться данные в <a class="term" data-term="Параллельный способ передачи данных" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельном двоичном коде</a>.</div>
 <a name="T46687875"></a>
-<div>Построение УСО выполняется на базе <a class="term" data-term="программируемого параллельного интерфейса" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программируемого параллельного интерфейса</a> (ППИ) (рис.&nbsp;1).</div>
+<div>Построение УСО выполняется на базе <a class="term" data-term="программируемого параллельного интерфейса" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программируемого параллельного интерфейса</a> (ППИ) (рис.&nbsp;1).</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_10.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
-<div>ППИ подключается к магистрали <a class="term" data-term="МПС" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> стандартным образом, обеспечивающим обращение к нему как к устройству ввода-вывода. Выход одного из портов ППИ будет являться выходом УСО. Если предположить, что выход УСО подключен к порту <span class="eOperator">А</span>, имеющему адрес <span class="eOperator">А0</span>=<span class="eOperator">А1</span>=0, запись данных в ППИ (и вывод их через УСО) выполняется командой:</div>
+<div>ППИ подключается к магистрали <a class="term" data-term="МПС" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> стандартным образом, обеспечивающим обращение к нему как к устройству ввода-вывода. Выход одного из портов ППИ будет являться выходом УСО. Если предположить, что выход УСО подключен к порту <span class="eOperator">А</span>, имеющему адрес <span class="eOperator">А0</span>=<span class="eOperator">А1</span>=0, запись данных в ППИ (и вывод их через УСО) выполняется командой:</div>
 <pre class="eListing">OUT 0000h, AL
 </pre>
 <div>В регистр <span class="eOperator">AL</span> предварительно должны быть помещены выводимые данные.</div>
 <div>Если разрядность выводимых данных больше восьми, необходимо использовать два или более 8-разрядных порта ППИ.</div>
 <a name="T541472668"></a>
-<div>Так как ППИ всегда готов к обмену, при взаимодействии УСО с ведущим устройством (МП) используется <a class="term" data-term="Синхронный обмен" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синхронный обмен</a>, сигнал готовности не используется и отсутствует.</div>
+<div>Так как ППИ всегда готов к обмену, при взаимодействии УСО с ведущим устройством (МП) используется <a class="term" data-term="Синхронный обмен" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синхронный обмен</a>, сигнал готовности не используется и отсутствует.</div>
 </div>
 <hr width="90%">
 

@@ -31,11 +31,11 @@
 <a name="T1015173096"></a>
 <a name="T33524358"></a>
 <a name="T33298498"></a>
-<div><a class="term" data-term="Структура" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Структура</a> может быть передана <a class="term" data-term="функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> как <a class="term" data-term="формальный параметр" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параметр</a>. При этом на <a class="term" data-term="стек (память)" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке</a> в <a class="term" data-term="кадре" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кадре</a> вызываемой функции размещаются значения всех элементов структуры, а затем они ставятся в соответствие формальному параметру.</div>
+<div><a class="term" data-term="Структура" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Структура</a> может быть передана <a class="term" data-term="функции" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> как <a class="term" data-term="формальный параметр" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параметр</a>. При этом на <a class="term" data-term="стек (память)" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке</a> в <a class="term" data-term="кадре" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кадре</a> вызываемой функции размещаются значения всех элементов структуры, а затем они ставятся в соответствие формальному параметру.</div>
 <div>Функция может возвращать структурное значение.</div>
 <a name="T2082564907"></a>
 <a name="T147950291"></a>
-<div>В языке Си реализована <a class="term" data-term="операция копирования структур" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операция копирования структур</a> — присваивание значений элементов одной структуры элементам другой структуры того же типа при помощи <a class="term" data-term="операции присваивания" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции присваивания</a>. Первые компиляторы Си не обеспечивали этой возможности.</div>
+<div>В языке Си реализована <a class="term" data-term="операция копирования структур" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операция копирования структур</a> — присваивание значений элементов одной структуры элементам другой структуры того же типа при помощи <a class="term" data-term="операции присваивания" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции присваивания</a>. Первые компиляторы Си не обеспечивали этой возможности.</div>
 <div>В прим.&nbsp;1 показано, как в функцию передается структура и как функция возвращает структурное значение.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
@@ -56,7 +56,7 @@ struct emp raise(struct emp person, double increase)
 </pre>
 </div>
 <a name="T541845194"></a>
-<div>Данная программа выполнялась бы более эффективно, если в функцию <span class="eOperator">raise()</span> передавался <a class="term" data-term="указатель" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на структуру. В этом случае при передаче управления в функцию передается лишь значение указателя, что делает доступными в функции элементы структуры. Этот вариант программы показан в прим.&nbsp;2.</div>
+<div>Данная программа выполнялась бы более эффективно, если в функцию <span class="eOperator">raise()</span> передавался <a class="term" data-term="указатель" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на структуру. В этом случае при передаче управления в функцию передается лишь значение указателя, что делает доступными в функции элементы структуры. Этот вариант программы показан в прим.&nbsp;2.</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
 #include "emp.h" /* содержит шаблон структуры emp */

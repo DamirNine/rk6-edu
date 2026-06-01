@@ -28,7 +28,7 @@
 </div>
 <br>
 <a name="T613466475"></a>
-<div>В <span style="font-weight:bold; ">C++</span> <a class="term" data-term="глобальные константы" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">глобальные константы</a> связаны внешним образом, а в <span style="font-weight:bold; ">C</span> – внутренним.</div>
+<div>В <span style="font-weight:bold; ">C++</span> <a class="term" data-term="глобальные константы" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">глобальные константы</a> связаны внешним образом, а в <span style="font-weight:bold; ">C</span> – внутренним.</div>
 <br>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">const double PI = 3.1415926 &lt;=&gt; static const double PI = 3.1415926
@@ -37,7 +37,7 @@
 </div>
 <br>
 <a name="T176682325"></a>
-<div>Правило, существующее в <span style="font-weight:bold; ">C++</span>, нацелено на упрощение использования <a class="term" data-term="констант" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">констант</a> в заголовочных файлах. Если константа связана внутренним образом, тогда каждый файл, включающий заголовочный файл, получает свою копию константы. Если константа связана внешним образом, тогда в одном из файлов должно существовать определенное объявление, в то время как остальные файлы должны содержать ссылочные объявления на файл, содержащий ключевое слово external. В некоторых случаях в <span style="font-weight:bold; ">C++</span> можно использовать слово extern, чтобы создавать значения const, имеющие внешнее связывание. Тогда в обоих языках могут быть созданы константы, связанные внешним и внутренним образом.</div>
+<div>Правило, существующее в <span style="font-weight:bold; ">C++</span>, нацелено на упрощение использования <a class="term" data-term="констант" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">констант</a> в заголовочных файлах. Если константа связана внутренним образом, тогда каждый файл, включающий заголовочный файл, получает свою копию константы. Если константа связана внешним образом, тогда в одном из файлов должно существовать определенное объявление, в то время как остальные файлы должны содержать ссылочные объявления на файл, содержащий ключевое слово external. В некоторых случаях в <span style="font-weight:bold; ">C++</span> можно использовать слово extern, чтобы создавать значения const, имеющие внешнее связывание. Тогда в обоих языках могут быть созданы константы, связанные внешним и внутренним образом.</div>
 <div>Различие между <span style="font-weight:bold; ">C</span> и <span style="font-weight:bold; ">C++</span> заключается только в том, какого типа константы используются по умолчанию.</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><pre class="eListing">const int APS = 100;

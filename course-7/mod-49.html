@@ -30,9 +30,9 @@
 <a name="T1318805004"></a>
 <a name="T412171630"></a>
 <a name="T1523926472"></a>
-<div>Наряду с <a class="term" data-term="языком Express" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языком Express</a>, для описания <a class="term" data-term="моделей" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">моделей</a> объектов в <a class="term" data-term="CALS" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">CALS</a> технологиях используется <a class="term" data-term="язык XML" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык XML</a>. Для отражения специфических особенностей промышленных изделий создаются соответствующие подмножества XML. Среди них наиболее заметен язык <a class="term" data-term="3D XML" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">3D XML</a>, разработанный компаниями Dassault Systèmes и Lattice Technology.</div>
+<div>Наряду с <a class="term" data-term="языком Express" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языком Express</a>, для описания <a class="term" data-term="моделей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">моделей</a> объектов в <a class="term" data-term="CALS" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">CALS</a> технологиях используется <a class="term" data-term="язык XML" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык XML</a>. Для отражения специфических особенностей промышленных изделий создаются соответствующие подмножества XML. Среди них наиболее заметен язык <a class="term" data-term="3D XML" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">3D XML</a>, разработанный компаниями Dassault Systèmes и Lattice Technology.</div>
 <a name="T1968667247"></a>
-<div>Описание модели объекта на языке 3D XML должно включать ссылку на <a class="term" data-term="XML схему" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML схему</a>:</div>
+<div>Описание модели объекта на языке 3D XML должно включать ссылку на <a class="term" data-term="XML схему" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML схему</a>:</div>
 <pre class="eListing">&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;Model_3dxml xmlns="http://www.3ds.com/xsd/3DXML"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -40,14 +40,14 @@ xsi:schemaLocation="http://www.3ds.com/xsd/3DXML
 http://www.3ds.com/xsd/3DXML/3DXML.xsd"&gt;
 </pre>
 <a name="T193573435"></a>
-<div>В структуре XML документа в общем случае присутствуют следующие <a class="term" data-term="контейнеры" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контейнеры</a> (обязательными являются &lt;Header&gt; и &lt;ProductStructure&gt;):</div>
+<div>В структуре XML документа в общем случае присутствуют следующие <a class="term" data-term="контейнеры" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контейнеры</a> (обязательными являются &lt;Header&gt; и &lt;ProductStructure&gt;):</div>
 <pre class="eListing">&lt;Header&gt;
 &lt;DefaultSessionProperties&gt;
 &lt;ProductStructure&gt;
 &lt;GeometricRepresentationSet&gt;
 </pre>
 <a name="T100241030"></a>
-<div>Заголовок &lt;Header&gt; содержит такие <a class="term" data-term="атрибуты" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибуты</a> как версия схемы, название, имя автора, дата создания документа, например:</div>
+<div>Заголовок &lt;Header&gt; содержит такие <a class="term" data-term="атрибуты" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибуты</a> как версия схемы, название, имя автора, дата создания документа, например:</div>
 <pre class="eListing">&lt;Header&gt;
   &lt;SchemaVersion&gt;1.0&lt;/SchemaVersion&gt;
   &lt;Title&gt;letter&lt;/Title&gt;
@@ -70,7 +70,7 @@ http://www.3ds.com/xsd/3DXML/3DXML.xsd"&gt;
 &lt;/Instance3D&gt;
 </pre>
 <a name="T791151752"></a>
-<div>В этом примере с помощью элемента &lt;IsAggregatedBy&gt; описывается вхождение конструктива xi в сборку zk. C помощью &lt;IsInstanceOf&gt; указывается <a class="term" data-term="наследование" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">наследование</a> конструктивом xi данных, описанных в конструктиве с id="x". Элемент &lt;RelativeMatrix&gt; предназначен для описания положения конструктива в сборке zk.</div>
+<div>В этом примере с помощью элемента &lt;IsAggregatedBy&gt; описывается вхождение конструктива xi в сборку zk. C помощью &lt;IsInstanceOf&gt; указывается <a class="term" data-term="наследование" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">наследование</a> конструктивом xi данных, описанных в конструктиве с id="x". Элемент &lt;RelativeMatrix&gt; предназначен для описания положения конструктива в сборке zk.</div>
 <div>Собственные геометрические параметры конструктива помещаются в контейнер &lt;AssociatedData&gt;, вложенный в контейнер &lt;GeometricRepresentationSet&gt;:</div>
 <pre class="eListing">&lt;GeometricRepresentationSet&gt;
   &lt;Representation id=... format=... version=...&gt;

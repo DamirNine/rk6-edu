@@ -27,9 +27,9 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Глобальные базисные функции</a>
 </div>
 <a name="T2127319247"></a>
-<div><a class="term" data-term="глобальные базисные функции" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Глобальные базисные фунции</a> должны обладать следующим свойствами:</div>
+<div><a class="term" data-term="глобальные базисные функции" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Глобальные базисные фунции</a> должны обладать следующим свойствами:</div>
 <ol class="eList"><a name="T1435986003"></a>
-<li>В узле аппроксимации должны принимать значение равное единице. <a class="term" data-term="Узел аппроксимации" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Узел аппроксимации</a> - узел сетки, после разбиения области на конечные элементы.</li>
+<li>В узле аппроксимации должны принимать значение равное единице. <a class="term" data-term="Узел аппроксимации" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Узел аппроксимации</a> - узел сетки, после разбиения области на конечные элементы.</li>
 <li>Должны быть отличны от нуля только в подобластях (конечных элементах), включающих данный узел аппроксимации, во всех остальных подобластях должны быть равны нулю.</li>
 </ol>
 <div>Рассмотрим одномерную область, для которой построим глобальные базисные функции (см. рис.&nbsp;1).</div>
@@ -38,9 +38,9 @@
 <tbody><tr><td><img src="/?img/?doc=Mkr/glob-base_func.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Пример глобальных базисных функций</div></div>
 <a name="T761807886"></a>
-<div>Если применим <a class="term" data-term="метод взвешенных невязок" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод взвешенных невязок</a>, то получим:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/glob-base_func.mod/?n=1/?k=10"><br></div>
+<div>Если применим <a class="term" data-term="метод взвешенных невязок" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод взвешенных невязок</a>, то получим:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/glob-base_func.mod/?n=1/?k=10"><br></div>
 <a name="T1481760493"></a>
-<div>Функцию <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/glob-base_func.mod/?n=2/?k=10"> можно исключить, поскольку можно точно удовлетворить <a class="term" data-term="граничным условиям первого рода" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">граничным условиям первого рода</a> и с помощью глобальных базисных функций:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/glob-base_func.mod/?n=3/?k=10"><br>где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/glob-base_func.mod/?n=4/?k=10">- область, соответствующая конечному элементу, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/glob-base_func.mod/?n=5/?k=10"> — количество конечных элементов.</div>
+<div>Функцию <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/glob-base_func.mod/?n=2/?k=10"> можно исключить, поскольку можно точно удовлетворить <a class="term" data-term="граничным условиям первого рода" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">граничным условиям первого рода</a> и с помощью глобальных базисных функций:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/glob-base_func.mod/?n=3/?k=10"><br>где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/glob-base_func.mod/?n=4/?k=10">- область, соответствующая конечному элементу, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/glob-base_func.mod/?n=5/?k=10"> — количество конечных элементов.</div>
 <div>Интеграл по однму конечному элементу будет включать в себя в нашем примере всего 2 ненулевые глобальные базисные функции и вычислить его будет достаточно просто.</div>
 <div>Поскольку всего лишь одна из глобальных базисных функций принимает в узле значение равное 1, а остальные равны 0, то искомые коэффициенты <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/glob-base_func.mod/?n=6/?k=10"> получают конкретный смысл — они равны значению функции в этом узле. Поэтому этап подстановки <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/glob-base_func.mod/?n=6/?k=10"> в аппроксимацию для получения решения будет отсутствовать.</div>
 </div>

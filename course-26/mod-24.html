@@ -28,7 +28,7 @@
 </div>
 <a name="T901910120"></a>
 <a name="T256200320"></a>
-<div>С помощью операции <a class="term" data-term="sizeof" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">sizeof</a> можно определить размер памяти которая соответствует <a class="term" data-term="идентификатору" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатору</a> или типу. Операция sizeof имеет следующий формат:</div>
+<div>С помощью операции <a class="term" data-term="sizeof" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">sizeof</a> можно определить размер памяти которая соответствует <a class="term" data-term="идентификатору" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатору</a> или типу. Операция sizeof имеет следующий формат:</div>
 <pre class="eListing">sizeof(выражение) .
 
 </pre>
@@ -45,7 +45,7 @@ a1 = sizeof(str);
 </div>
 <div>Переменная а1 получит значение, равное 12, в то же время если сложить длины всех используемых в структуре типов, то получим, что длина структуры str равна 7. Несоответствие имеет место в виду того, что после размещения в памяти первой переменной h длинной 1 байт, добавляется 1 байт для выравнивания адреса переменной b на границу слова (слово имеет длину 2 байта для машин серии IBM PC AT /286/287), далее осуществляется выравнивание адреса переменной f на границу двойного слова (4 байта), таким образом в результате операций выравнивания для размещения структуры в оперативной памяти требуется на 5 байт больше.</div>
 <a name="T1503632866"></a>
-<div>В связи с этим целесообразно рекомендовать при объявлении <a class="term" data-term="структур" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структур</a> и объединения располагать их элементы в порядке убывания длины типов, т.е. приведенную выше структуру следует записать в следующем виде:</div>
+<div>В связи с этим целесообразно рекомендовать при объявлении <a class="term" data-term="структур" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структур</a> и объединения располагать их элементы в порядке убывания длины типов, т.е. приведенную выше структуру следует записать в следующем виде:</div>
 <pre class="eListing">   struct  { double f;
              int b;
              char h;

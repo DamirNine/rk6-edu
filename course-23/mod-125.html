@@ -29,12 +29,12 @@
 <a name="T581415280"></a>
 <a name="T37556405"></a>
 <a name="T637542155"></a>
-<div><a class="term" data-term="Объявления прототипов функций" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявления прототипов функций</a> обработки ошибок находятся в <a class="term" data-term="файле заголовков" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эти функции, должны включать следующую <a class="term" data-term="директиву препроцессора" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div><a class="term" data-term="Объявления прототипов функций" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявления прототипов функций</a> обработки ошибок находятся в <a class="term" data-term="файле заголовков" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эти функции, должны включать следующую <a class="term" data-term="директиву препроцессора" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
 <div><span class="eOperator">#include &lt;stdio.h&gt;</span></div>
 <a name="T269665333"></a>
-<div>Каждая <a class="term" data-term="структура FILE" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структура FILE</a> содержит информацию о том, был ли достигнут конец соответствующего файла и о том, произошла ли ошибка ввода-вывода (например, попытка писать в файл, который был открыт только для чтения).</div>
+<div>Каждая <a class="term" data-term="структура FILE" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структура FILE</a> содержит информацию о том, был ли достигнут конец соответствующего файла и о том, произошла ли ошибка ввода-вывода (например, попытка писать в файл, который был открыт только для чтения).</div>
 <a name="T793848662"></a>
-<div><a class="term" data-term="Функция feof()" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция feof()</a> - стандартная функция ввода-вывода, которая проверяет достижение конца файла. </div>
+<div><a class="term" data-term="Функция feof()" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция feof()</a> - стандартная функция ввода-вывода, которая проверяет достижение конца файла. </div>
 <div>Объявление прототипа функции <span class="eOperator">feof()</span>:</div>
 <div><span class="eOperator">int feof(FILE *stream)</span></div>
 <div>Функция <span class="eOperator">feof()</span> возвращает отличное от нуля значение, если в процессе чтения или записи был достигнут конец файла,  иначе она возвращает 0.</div>
@@ -50,9 +50,9 @@
 </div>
 <div>Попытка записи в файл может быть безуспешной, если размер файла достиг максимума или исчерпалось свободное дисковое пространство.</div>
 <a name="T1516458206"></a>
-<div><a class="term" data-term="Функция ferror()" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция ferror()</a> - стандартная функция ввода-вывода, которая выполняет проверку полей структуры <span class="eOperator">FILE</span>.</div>
+<div><a class="term" data-term="Функция ferror()" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция ferror()</a> - стандартная функция ввода-вывода, которая выполняет проверку полей структуры <span class="eOperator">FILE</span>.</div>
 <a name="T486604920"></a>
-<div><a class="term" data-term="Функция clearerr()" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция clearerr()</a> - стандартная функция ввода-вывода, которая выполняет очистку полей структуры <span class="eOperator">FILE</span>.</div>
+<div><a class="term" data-term="Функция clearerr()" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция clearerr()</a> - стандартная функция ввода-вывода, которая выполняет очистку полей структуры <span class="eOperator">FILE</span>.</div>
 <div>Объявления прототипов функциий <span class="eOperator">ferror()</span> и <span class="eOperator">clearerr()</span>:</div>
 <div><span class="eOperator">int ferror(FILE *stream)</span></div>
 <div><span class="eOperator">void clearerr(FILE *stream)</span></div>

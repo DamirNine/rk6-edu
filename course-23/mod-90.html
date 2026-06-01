@@ -29,9 +29,9 @@
 <a name="T1145122579"></a>
 <a name="T1369433176"></a>
 <a name="T541845194"></a>
-<div><a class="term" data-term="Адресная арифметика" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Адресная арифметика</a> <a class="term" data-term="язык программирования Си" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка Си</a> включает в себя следующие арифметические операции над <a class="term" data-term="указателями" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателями</a>.</div>
+<div><a class="term" data-term="Адресная арифметика" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Адресная арифметика</a> <a class="term" data-term="язык программирования Си" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка Си</a> включает в себя следующие арифметические операции над <a class="term" data-term="указателями" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателями</a>.</div>
 <ul class="eList"><a name="T1133808979"></a>
-<li>Указателю можно присвоить значение указателя того же <a class="term" data-term="тип данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типа</a> или адрес объекта того же типа.</li>
+<li>Указателю можно присвоить значение указателя того же <a class="term" data-term="тип данных" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типа</a> или адрес объекта того же типа.</li>
 <li>Целое число можно сложить с указателем или вычесть из него.</li>
 <li>Указатель можно сравнивать с другим указателем.</li>
 <li>Указатель можно вычесть из другого указателя.</li>
@@ -53,12 +53,12 @@ p_int++;
 p_char++;
 </pre>
 <a name="T1747189769"></a>
-<div>Пусть переменная <span class="eOperator">a </span>имеет адрес 500, а переменная <span class="eOperator">ch</span> — 520. Тогда после инициализации значением указателя <span class="eOperator">p_int</span> будет 500, а <span class="eOperator">p_char</span> соответственно 520. <a class="term" data-term="Операция инкрементации" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Операция инкрементации</a> применительно к указателям увеличит <span class="eOperator">p_int</span> на 4, а <span class="eOperator">p_char</span> на 1.</div>
+<div>Пусть переменная <span class="eOperator">a </span>имеет адрес 500, а переменная <span class="eOperator">ch</span> — 520. Тогда после инициализации значением указателя <span class="eOperator">p_int</span> будет 500, а <span class="eOperator">p_char</span> соответственно 520. <a class="term" data-term="Операция инкрементации" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Операция инкрементации</a> применительно к указателям увеличит <span class="eOperator">p_int</span> на 4, а <span class="eOperator">p_char</span> на 1.</div>
 </div>
 <a name="T1992766606"></a>
-<div>Адресную арифметику особенно удобно использовать при обработке <a class="term" data-term="массивов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массивов</a>.</div>
+<div>Адресную арифметику особенно удобно использовать при обработке <a class="term" data-term="массивов" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массивов</a>.</div>
 <div class="eSubTitle">Типичные приемы работы с указателями</div>
-<div>В примерах приводятся три (из множества) возможных варианта функции <span class="eOperator">strlen()</span>, которая возвращает количество символов в строке вплоть до <a class="term" data-term="признака конца строки" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">признака конца строки</a> <span class="eOperator">'\0'</span> , но не включая его.</div>
+<div>В примерах приводятся три (из множества) возможных варианта функции <span class="eOperator">strlen()</span>, которая возвращает количество символов в строке вплоть до <a class="term" data-term="признака конца строки" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">признака конца строки</a> <span class="eOperator">'\0'</span> , но не включая его.</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><pre class="eListing">int strlen (register const char *s)
 {
@@ -82,7 +82,7 @@ return p-s;
 }
 </pre>
 <a name="T803028594"></a>
-<div>Данный вариант равносилен предыдущему, т.к. <a class="term" data-term="выражение" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражение</a> <span class="eOperator">*p</span> будет истинно, пока его значение не нулевой символ (не символ <span class="eOperator">'\0'</span>).</div>
+<div>Данный вариант равносилен предыдущему, т.к. <a class="term" data-term="выражение" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражение</a> <span class="eOperator">*p</span> будет истинно, пока его значение не нулевой символ (не символ <span class="eOperator">'\0'</span>).</div>
 </div>
 <div class="auto">Пример 4</div>
 <div class="eExample"><pre class="eListing">int strlen (register const char *s)
@@ -96,7 +96,7 @@ return (p-s)-1;
 </pre>
 <a name="T2042524345"></a>
 <a name="T1138660427"></a>
-<div>В данном варианте используется выражение, применяемое особенно часто: <span class="eOperator">*p++</span>. Так как <a class="term" data-term="унарные операции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">унарные операции</a> право-ассоциативные (связываются с операндами справа налево), это выражение интерпретируется как <span class="eOperator">*(p++)</span>. Это значит, что будет увеличен указатель <span class="eOperator">p</span>, но не значение выражения <span class="eOperator">*p</span>. Поскольку операция инкрементации<span class="eOperator"> ++</span> употребляется в постфиксной форме (после операнда), указатель <span class="eOperator">p</span> не увеличивается, пока его значение не использовано. Общее действие состоит в использовании ссылки <span class="eOperator">*p</span> и последующем увеличении указателя <span class="eOperator">p</span>. В <a class="term" data-term="оператор возврата return" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операторе возврата</a> из <span class="eOperator">(p-s)</span> вычитается 1. Это делается потому, что после инкрементации <span class="eOperator">p</span> указывает на следующий за нулевым символом байт.</div>
+<div>В данном варианте используется выражение, применяемое особенно часто: <span class="eOperator">*p++</span>. Так как <a class="term" data-term="унарные операции" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">унарные операции</a> право-ассоциативные (связываются с операндами справа налево), это выражение интерпретируется как <span class="eOperator">*(p++)</span>. Это значит, что будет увеличен указатель <span class="eOperator">p</span>, но не значение выражения <span class="eOperator">*p</span>. Поскольку операция инкрементации<span class="eOperator"> ++</span> употребляется в постфиксной форме (после операнда), указатель <span class="eOperator">p</span> не увеличивается, пока его значение не использовано. Общее действие состоит в использовании ссылки <span class="eOperator">*p</span> и последующем увеличении указателя <span class="eOperator">p</span>. В <a class="term" data-term="оператор возврата return" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операторе возврата</a> из <span class="eOperator">(p-s)</span> вычитается 1. Это делается потому, что после инкрементации <span class="eOperator">p</span> указывает на следующий за нулевым символом байт.</div>
 </div>
 </div>
 <hr width="90%">
