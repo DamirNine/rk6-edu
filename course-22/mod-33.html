@@ -45,7 +45,7 @@
 <a name="T1943507977"></a>
 <div>Директивы OpenMP с точки зрения <a class="term" data-term="языка" href="javascript:void(0)">языка</a> Фортран являются комментариями и начинаются с комбинации символов <span class="eOperator">!$OMP</span>, <span class="eOperator">*$OMP</span>. Директивы можно разделить на 3 категории: определение <a class="term" data-term="параллельной области" href="javascript:void(0)">параллельной области</a>, определение <a class="term" data-term="параллельных конструкций" href="javascript:void(0)">параллельных конструкций</a>, синхронизация.</div>
 <br>
-<div><img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=1/?k=10"> <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=2/?k=10"></div>
+<div><img align="absmiddle" src="/rk6-edu/imgs/Parallel_ch020701.mod_1.png"> <img align="absmiddle" src="/rk6-edu/imgs/Parallel_ch020701.mod_2.png"></div>
 <div>Директивы определения <a class="term" data-term="параллельной области " href="javascript:void(0)">параллельной области </a>имеют вид</div>
 <pre class="eListing">!$OMP PARALLEL [список спецификаций]
       блок
@@ -66,7 +66,7 @@ COPYIN()
 <div>При входе в <a class="term" data-term="параллельную область" href="javascript:void(0)">параллельную область</a> порождается некоторое количество N новых <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a>, т.е. образуется бригада из N нитей, а порождающая нить получает номер 0 и становится главной нитью бригады. При выходе из параллельной области главная нить дожидается завершения остальных нитей и продолжает выполнение. Число нитей определяется с помощью  переменной окружения <span class="eOperator">OMP_NUM_THREADS</span> либо путем вызова функции <span class="eOperator">OMP_SET_NUM_THREAD</span>S. Нити, соответствующие параллельной области, выполняются параллельно на разных <a class="term" data-term="процессорах" href="javascript:void(0)">процессорах</a> мультипроцессора. Распределение нитей по процессорам <a class="term" data-term="мультипроцессора" href="javascript:void(0)">мультипроцессора</a> находится в ведении его операционной системы. </div>
 <div><a class="term" data-term="Параллельные области" href="javascript:void(0)">Параллельные области</a> могут быть вложенными. Внутренней параллельной области при этом ставится в соответствие <span class="eOperator">одна</span> из <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a> бригады нитей, которая выполняет внешнюю параллельную область.</div>
 <br>
-<div><img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=3/?k=10"> <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=4/?k=10"> <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=5/?k=10"> <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=6/?k=10"></div>
+<div><img align="absmiddle" src="/rk6-edu/imgs/Parallel_ch020701.mod_3.png"> <img align="absmiddle" src="/rk6-edu/imgs/Parallel_ch020701.mod_4.png"> <img align="absmiddle" src="/rk6-edu/imgs/Parallel_ch020701.mod_5.png"> <img align="absmiddle" src="/rk6-edu/imgs/Parallel_ch020701.mod_6.png"></div>
 <div>К директивам определения <a class="term" data-term=" параллельных конструкций" href="javascript:void(0)"> параллельных конструкций</a> относится директивы <span class="eOperator">DO ... ENDDO, SECTIONS ... ENDSECTIONS</span>, <span class="eOperator">SINGLE ... ENDSINGLE</span>. Параллельная конструкция определяет объем работ <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a> в бригаде, но не создает новых нитей. Конструкция <span class="eOperator">DO</span> служит для распределения витков цикла между нитями, а конструкция <span class="eOperator">SECTIONS</span> – для распределения между нитями указанных секций программы.</div>
 <div>Для <a class="term" data-term="параллельной области" href="javascript:void(0)">параллельной области</a> можно указать классы используемых в ней данных:</div>
 <ul class="eList"><a name="T298749363"></a>
@@ -109,7 +109,7 @@ ORDERED()
 !$OMP END DO
 !$OMP END PARALLEL
 </pre>
-<div><img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=7/?k=10"></div>
+<div><img align="absmiddle" src="/rk6-edu/imgs/Parallel_ch020701.mod_7.png"></div>
 </div>
 <div><span class="eOperator">Директивы определения параллельных секций</span> имеют вид</div>
 <pre class="eListing">!$OMP SECTIONS[список спецификаций]
@@ -140,7 +140,7 @@ REDUCTION()
    !$OMP END SECTIONS
 !$OMP END PARALLEL
 </pre>
-<div><img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=7/?k=10"></div>
+<div><img align="absmiddle" src="/rk6-edu/imgs/Parallel_ch020701.mod_7.png"></div>
 </div>
 <div>В Open MP имеются также директивы определения параллельной секции, которая должна исполняться одной <a class="term" data-term="нитью" href="javascript:void(0)">нитью</a>:</div>
 <pre class="eListing">!$OMP SINGLE[список спецификаций]
@@ -184,7 +184,7 @@ COPYIN
 <div class="eSubTitle">Средства синхронизации.</div>
 <div>Выше уже упоминались неявные средства синхронизации OpenMP. Кроме того, имеются также директивы и подпрограммы для явной синхронизации.</div>
 <br>
-<div><img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=3/?k=10"></div>
+<div><img align="absmiddle" src="/rk6-edu/imgs/Parallel_ch020701.mod_3.png"></div>
 <pre class="eListing">!$OMP MASTER
    блок операторов
 !$OMP END MASTER
@@ -214,14 +214,14 @@ COPYIN
    блок операторов
 !$OMP END ORDERED
 </pre>
-<div>определяют блок внутри параллельного цикла, операторы которого должны выполняться в том порядке, в котором итерации следуют в последовательном цикле<img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=7/?k=10"></div>
+<div>определяют блок внутри параллельного цикла, операторы которого должны выполняться в том порядке, в котором итерации следуют в последовательном цикле<img align="absmiddle" src="/rk6-edu/imgs/Parallel_ch020701.mod_7.png"></div>
 </div>
 <div>Директива</div>
 <pre class="eListing">!$OMP FLUSH[(список переменных)]
 </pre>
 <div>определяет точку, в которой должно быть обеспечено согласованное между <a class="term" data-term="нитями" href="javascript:void(0)">нитями</a> состояние тех переменных, которые перечислены в списке. Неявно директива <span class="eOperator">FLUSH </span>присутствует в директивах <span class="eOperator">BARRIER, CRITICAL, END CRITICAL, END DO, END</span> <span class="eOperator">PARALLEL, END SECTIONS, END SINGLE, ORDERED, END ORDERED</span>. </div>
 <br>
-<div><img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=8/?k=10"> <img align="absmiddle" src="https://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=9/?k=10"></div>
+<div><img align="absmiddle" src="/rk6-edu/imgs/Parallel_ch020701.mod_8.png"> <img align="absmiddle" src="/rk6-edu/imgs/Parallel_ch020701.mod_9.png"></div>
 <div>Процедура синхронизации</div>
 <pre class="eListing">OMP_INIT_LOCK(переменная)
 </pre>

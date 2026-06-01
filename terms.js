@@ -36,7 +36,8 @@
         var l = rest[i];
         var trimmed = l.trim();
         if (!trimmed || trimmed === 'Дополнительно...') continue;
-        var hasIndent = l.length > 0 && (l[0] === ' ' || l[0] === '\t');
+        var code = l.charCodeAt(0);
+        var hasIndent = l.length > 0 && (code === 32 || code === 9 || code === 160);
         if (!inDef && hasIndent) {
           aliases.push(trimmed); // псевдоним термина
         } else if (!hasIndent) {
