@@ -29,23 +29,23 @@
 <a name="T906593840"></a>
 <a name="T1701344150"></a>
 <a name="T1182176081"></a>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Генетические алгоритмы</a> (ГА) выражают эволюцию популяции <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">хромосом</a> в направлении от начального поколения к окрестностям экстремума. Обоснование этого положения содержится в основной теореме генетического подхода – <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">теореме шаблонов</a>, называемой также schemata theorem, теоремой  схем  или теоремой Д.Холланда. Теорема шаблонов получена Д.Холландом применительно к условиям так называемого канонического ГА.</div>
+<div><a class="term" data-term="Генетические алгоритмы" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Генетические алгоритмы</a> (ГА) выражают эволюцию популяции <a class="term" data-term="хромосом" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">хромосом</a> в направлении от начального поколения к окрестностям экстремума. Обоснование этого положения содержится в основной теореме генетического подхода – <a class="term" data-term="теореме шаблонов" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">теореме шаблонов</a>, называемой также schemata theorem, теоремой  схем  или теоремой Д.Холланда. Теорема шаблонов получена Д.Холландом применительно к условиям так называемого канонического ГА.</div>
 <div>Канонический генетический алгоритм характеризуется следующими особенностями:</div>
 <ul class="eList"><li>постоянная длина хромосом;</li>
 <li>постоянный размер популяции;</li>
 <li>целочисленное кодирование;</li>
 <a name="T422781231"></a>
 <a name="T209664936"></a>
-<li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">селекция</a> по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">правилу рулетки</a> и формирование популяций только из потомков;</li>
+<li><a class="term" data-term="селекция" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">селекция</a> по <a class="term" data-term="правилу рулетки" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">правилу рулетки</a> и формирование популяций только из потомков;</li>
 <a name="T254321975"></a>
-<li>одноточечный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кроссовер</a>;</li>
+<li>одноточечный <a class="term" data-term="кроссовер" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кроссовер</a>;</li>
 <a name="T2104358968"></a>
-<li>простые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мутации</a>.</li>
+<li>простые <a class="term" data-term="мутации" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мутации</a>.</li>
 </ul>
 <a name="T697671730"></a>
 <a name="T1067547"></a>
 <a name="T1033600981"></a>
-<div>В теореме Д.Холланда вводится понятие <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">шаблона</a> (схемы), шаблон определяется как совокупность фиксированных значений <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">генов</a> в определенных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">локусах</a>. Например, в хромосоме с десятью генами один из шаблонов <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=1/?k=10">, включающая единицы в 4-м и 8-м локусах и ноль в 7-м локусе, может быть записан  в виде</div>
+<div>В теореме Д.Холланда вводится понятие <a class="term" data-term="шаблона" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">шаблона</a> (схемы), шаблон определяется как совокупность фиксированных значений <a class="term" data-term="генов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">генов</a> в определенных <a class="term" data-term="локусах" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">локусах</a>. Например, в хромосоме с десятью генами один из шаблонов <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=1/?k=10">, включающая единицы в 4-м и 8-м локусах и ноль в 7-м локусе, может быть записан  в виде</div>
 <div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=1/?k=10"> = ***1**01**                           (1)</div>
 <div>где * обозначает позиции, не входящие в шаблон.</div>
 <div>Обозначим число экземпляров шаблона <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=1/?k=10"> в поколении с номером <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=2/?k=10"> через <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=3/?k=10">(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=4/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=2/?k=10">). Введем также следующие обозначения:</div>
@@ -67,7 +67,7 @@
 <div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=3/?k=10">(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=4/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=2/?k=10">+1) = <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=3/?k=10">(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=4/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=2/?k=10">) <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=21/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=12/?k=10">(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=4/?k=10">)/<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=16/?k=10">.</div>
 <a name="T803471561"></a>
 <a name="T1906970010"></a>
-<div>Следовательно, число шаблонов из хромосом перспективных родителей (<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=12/?k=10">&gt;<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=16/?k=10">), имеющих лучшие значения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции полезности</a>, увеличивается в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">генотипах</a> популяции от поколения к поколению по показательному закону</div>
+<div>Следовательно, число шаблонов из хромосом перспективных родителей (<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=12/?k=10">&gt;<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=16/?k=10">), имеющих лучшие значения <a class="term" data-term="функции полезности" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции полезности</a>, увеличивается в <a class="term" data-term="генотипах" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">генотипах</a> популяции от поколения к поколению по показательному закону</div>
 <div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=3/?k=10">(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=4/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=2/?k=10">) = <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=3/?k=10">(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=4/?k=10">, 0) (<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=21/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=12/?k=10">(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=4/?k=10">)/<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=16/?k=10">)<sup class="eSub">t</sup>, (2)</div>
 <div>Скорость роста <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=3/?k=10">(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=4/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=2/?k=10">) тем выше, чем больше <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=12/?k=10">(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=4/?k=10">) и чем меньше длина <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=7/?k=10">(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=4/?k=10">) и порядок <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=8/?k=10">(<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=4/?k=10">) шаблона <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=045_ga/1100.mod/?n=1/?k=10">.</div>
 <div>Отметим следующее:</div>
@@ -88,5 +88,11 @@
         <a href="/rk6-edu/course-13/mod-34.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

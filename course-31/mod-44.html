@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">УСО для вывода данных с преобразованием из дискретной формы в дискретную</a>
 </div>
 <a name="T2088401324"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">УСО такого типа</a> рассмотрим на примере преобразователя "код — длительность импульса", используемого для формирования управляющего сигнала для импульсного усилителя мощности при использовании широтно-импульсной модуляции (ШИМ) для управления электродвигателем.</div>
+<div><a class="term" data-term="УСО для вывода данных с преобразованием из дискретной формы в дискретную" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">УСО такого типа</a> рассмотрим на примере преобразователя "код — длительность импульса", используемого для формирования управляющего сигнала для импульсного усилителя мощности при использовании широтно-импульсной модуляции (ШИМ) для управления электродвигателем.</div>
 <div>Управляющий сигнал в случае ШИМ представляет собой последовательность импульсов, следующих с заданной частотой (период следования импульсов обозначим <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=1/?k=10">). Длина импульса <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=2/?k=10"> является переменной и изменяется от 0 (нет импульса) до <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=1/?k=10"> (импульс занимает весь период). Отношение <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=3/?k=10">, выраженное в процентах, называется скважностью:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=4/?k=10"><br></div>
 <div>Именно изменение скважности обеспечивает управление двигателем. Следовательно, наше УСО должно формировать последовательность импульсов, следующих через заданный интервал и имеющих изменяемую скважность (конкретное значение скважности задается МП в качестве входного параметра для УСО).</div>
 <div>Построение УСО будем проводить на базе программируемого таймера (рис.&nbsp;1).</div>
@@ -47,7 +47,7 @@
 <div>Скважность получающихся импульсов ШИМ:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=9/?k=10"><br></div>
 <div>Из формулы видно, что изменение скважности обеспечивается путем изменения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=10/?k=10"> от 0 до <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=11/?k=10">. То есть числовое значение, которое должно быть преобразовано в УСО в скважность импульсов ШИМ, заносится в программируемый таймер в качестве начального значения счетчика канала 2.</div>
 <a name="T541472668"></a>
-<div>Так как занесение данных во внутренние регистры таймера возможно в любой момент, в данном УСО используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синхронный метод</a> взаимодействия с ведущим устройством — запись данных производится МП без какой-либо проверки готовности УСО.</div>
+<div>Так как занесение данных во внутренние регистры таймера возможно в любой момент, в данном УСО используется <a class="term" data-term="Синхронный обмен" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синхронный метод</a> взаимодействия с ведущим устройством — запись данных производится МП без какой-либо проверки готовности УСО.</div>
 </div>
 <hr width="90%">
 
@@ -60,5 +60,11 @@
         <a href="/rk6-edu/course-31/mod-45.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

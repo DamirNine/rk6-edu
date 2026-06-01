@@ -27,8 +27,8 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Метод выбора</a>
 </div>
 <a name="T1211975017"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метод выбора</a> - один из самых простых прямых методов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сортировки</a>. </div>
-<div>Находим минимальный элемент <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a>  размерностью <span class="eOperator">n</span>. Найденный элемент меняется местами с первым элементом. Затем процесс повторяется, начиная со второго элемента массива и т.д.</div>
+<div><a class="term" data-term="Метод выбора" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метод выбора</a> - один из самых простых прямых методов <a class="term" data-term="сортировки" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сортировки</a>. </div>
+<div>Находим минимальный элемент <a class="term" data-term="массива" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a>  размерностью <span class="eOperator">n</span>. Найденный элемент меняется местами с первым элементом. Затем процесс повторяется, начиная со второго элемента массива и т.д.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=OP2/sort1.mod/?n=1"></td></tr></tbody></table>
@@ -77,7 +77,7 @@
 <div class="auto">Примечание 1</div>
 <div class="eNote"><div>В языке Си  индексация элементов массива начинается с 0.</div>
 </div>
-<div>Оценим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительную сложность метода</a>, используя в качестве основной операции операцию сравнения.</div>
+<div>Оценим <a class="term" data-term="вычислительную сложность метода" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительную сложность метода</a>, используя в качестве основной операции операцию сравнения.</div>
 <div>Для поиска минимального элемента в каждом проходе потребуется выполнить n-1, n-2,..., 1 операцию сравнения, то есть всего n(n-1)/2 операций сравнения. Следовательно вычислительная сложность данного метода O(n<sup class="eSub">2</sup>). Причем время сортировки не зависит от исходного порядка элементов.</div>
 <pre class="eListing"></pre>
 </div>
@@ -92,5 +92,11 @@
         <a href="/rk6-edu/course-24/mod-79.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сравнение блоков памяти</a>
 </div>
 <a name="T1936219473"></a>
-<div>Сравнение блоков памяти реализует <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функция memcmp</a>. Формат ее вызова имеет вид:</div>
+<div>Сравнение блоков памяти реализует <a class="term" data-term="функция memcmp" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функция memcmp</a>. Формат ее вызова имеет вид:</div>
 <pre class="eListing">int memcmp(const void* mem1, const void* mem2, unsigned len);
 </pre>
 <div>Функция memcmp последовательно сравнивает значения первых len байтов, занимающих одинаковые позиции в областях памяти, которые адресуют указатели mem1 и mem2. Сопоставляемые байты интерпретируются как данные типа <span class="eOperator">unsigned char</span>. Процесс сопоставлений значений байтов прерывается, когда будет обнаружена первая пара несовпадающих байтов или исчерпан диапазон сравнения, который установлен значением параметра <span class="eOperator">len.</span> Результат сравнения функция memcmp передает через код возврата. Нулевой возврат имеет место, когда адресованные блоки памяти идентичны в заданном диапазоне сравнения. При наличии несовпадений код возврата функции <span class="eOperator">memcmp</span> не равен нулю. Его знак совпадает со знаком разности значений первой пары несовпадающих байтов сравниваемых областей памяти. Например, сравнение блоков памяти двух массивов, содержащих по паре 16-ти разрядных целых чисел без знака, специфицирует следующий фрагмент исходного кода:</div>
@@ -37,9 +37,9 @@ unsigned len = 2 * sizeof(unsigned short);   /* 2 * 2 */
 int rez = memcmp(july, june, len);
 </pre>
 <a name="T1992766606"></a>
-<div>В условиях этого примера функции memcmp возвращает отрицательное значение. Для реализации сравнения функция она интерпретирует <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массивы</a> july и june как блоки памяти, которые содержат следующие последовательности байтов: 6A756C79 и 6A756E65, соответственно, где каждый байт кодирует пара цифр системы счисления по основанию 16. Таким образом, результат сравнения массивов july и june определяет знак разности первой пары несовпадающих байтов со значениями 6C и 6E, которая, очевидно, меньше нуля.</div>
+<div>В условиях этого примера функции memcmp возвращает отрицательное значение. Для реализации сравнения функция она интерпретирует <a class="term" data-term="массивы" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массивы</a> july и june как блоки памяти, которые содержат следующие последовательности байтов: 6A756C79 и 6A756E65, соответственно, где каждый байт кодирует пара цифр системы счисления по основанию 16. Таким образом, результат сравнения массивов july и june определяет знак разности первой пары несовпадающих байтов со значениями 6C и 6E, которая, очевидно, меньше нуля.</div>
 <a name="T90937292"></a>
-<div>Практическое применение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции сравнения</a> блоков памяти демонстрирует исходный код прикладной функции <span class="eOperator">memident.</span> Она реализует циклический вызов функции <span class="eOperator">memcmp,</span> чтобы определить количество начальных байтов, значения которых равны в адресованных блоках памяти заданного размера.</div>
+<div>Практическое применение <a class="term" data-term="операции сравнения" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции сравнения</a> блоков памяти демонстрирует исходный код прикладной функции <span class="eOperator">memident.</span> Она реализует циклический вызов функции <span class="eOperator">memcmp,</span> чтобы определить количество начальных байтов, значения которых равны в адресованных блоках памяти заданного размера.</div>
 <pre class="eListing">/* Измерение степени совпадения блоков памяти */
 int memident(const void* mem1, const void* mem2, unsigned len) {
 int count;      /* счетчик совпадения блоков памяти */
@@ -85,5 +85,11 @@ return(count);        /* Возврат общего числа замен */
         <a href="/rk6-edu/course-26/mod-68.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

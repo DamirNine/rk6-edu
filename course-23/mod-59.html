@@ -28,17 +28,17 @@
 </div>
 <a name="T1043767464"></a>
 <a name="T74783515"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Статическая переменная</a> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">переменная</a>, значение которой сохраняется после выхода из блока до повторного входа в него. При объявлении статической переменной используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевое слово</a> <span class="eOperator">static</span>. Статической может быть объявлена как внешняя, так и внутренняя переменная.</div>
+<div><a class="term" data-term="Статическая переменная" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Статическая переменная</a> — <a class="term" data-term="переменная" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">переменная</a>, значение которой сохраняется после выхода из блока до повторного входа в него. При объявлении статической переменной используется <a class="term" data-term="ключевое слово" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевое слово</a> <span class="eOperator">static</span>. Статической может быть объявлена как внешняя, так и внутренняя переменная.</div>
 <a name="T1961386404"></a>
 <a name="T1835217675"></a>
 <a name="T522299926"></a>
-<div>Статические переменные во многом похожи на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внешние</a>. Они инициализируются нулем и существуют на протяжении жизни программы (в отличии от <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">автоматических переменных</a>, существующих лишь во <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">время жизни</a> блока).</div>
+<div>Статические переменные во многом похожи на <a class="term" data-term="внешняя переменная" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внешние</a>. Они инициализируются нулем и существуют на протяжении жизни программы (в отличии от <a class="term" data-term="автоматических переменных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">автоматических переменных</a>, существующих лишь во <a class="term" data-term="время жизни" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">время жизни</a> блока).</div>
 <a name="T1554292551"></a>
 <a name="T696383489"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Внешняя статическая переменная</a> объявляется вне <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a>, но известна лишь в том файле, в котором она объявлена (даже при использовании ключевого слова <span class="eOperator">external</span>). Если внешняя переменная используется лишь в том файле, в котором она объявлена, ее следует сделать статической. Это повышает удобочитаемость и улучшает структуру программы. Кроме того, это позволяет избежать конфликтов с другими файлами, в которых могут содержаться те же <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">имена</a> внешних переменных, используемых в других целях.</div>
+<div><a class="term" data-term="Внешняя статическая переменная" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Внешняя статическая переменная</a> объявляется вне <a class="term" data-term="функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a>, но известна лишь в том файле, в котором она объявлена (даже при использовании ключевого слова <span class="eOperator">external</span>). Если внешняя переменная используется лишь в том файле, в котором она объявлена, ее следует сделать статической. Это повышает удобочитаемость и улучшает структуру программы. Кроме того, это позволяет избежать конфликтов с другими файлами, в которых могут содержаться те же <a class="term" data-term="имена" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">имена</a> внешних переменных, используемых в других целях.</div>
 <a name="T147264199"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Внутренняя статическая переменная</a> объявляется внутри функции. В отличии от автоматической переменной, она существует на протяжении жизни всей программы.</div>
-<div>Статические переменные инициализируются лишь однажды, перед выполнением программы, и сохраняют свои значения от одного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызова функции</a> к другому.</div>
+<div><a class="term" data-term="Внутренняя статическая переменная" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Внутренняя статическая переменная</a> объявляется внутри функции. В отличии от автоматической переменной, она существует на протяжении жизни всей программы.</div>
+<div>Статические переменные инициализируются лишь однажды, перед выполнением программы, и сохраняют свои значения от одного <a class="term" data-term="вызова функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызова функции</a> к другому.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">static void errmsg (void);
 static int count;                /*внешняя статическая переменная*/
@@ -67,5 +67,11 @@ static void errmsg (void)
         <a href="/rk6-edu/course-23/mod-60.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

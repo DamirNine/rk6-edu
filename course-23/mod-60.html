@@ -28,11 +28,11 @@
 </div>
 <a name="T810580139"></a>
 <a name="T1835217675"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Регистровая переменная</a> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">автоматическая переменная</a>, располагаемая, по возможности, на машинном регистре.</div>
+<div><a class="term" data-term="Регистровая переменная" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Регистровая переменная</a> — <a class="term" data-term="автоматическая переменная" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">автоматическая переменная</a>, располагаемая, по возможности, на машинном регистре.</div>
 <a name="T74783515"></a>
 <a name="T33524358"></a>
-<div> Для объявления регистровой переменной используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевое слово</a> <span class="eOperator">register</span>. В этом случае переменная запоминается на машинном регистре, а не на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке</a>. Количество регистров, доступных для такого использования, является машинно-зависимым. Если потребность в регистровой памяти превышает число доступных аппаратных регистров, избыточные регистровые переменные трактуются как автоматические. В этом случае ключевое слово <span class="eOperator">register</span> попросту игнорируется.</div>
-<div>Регистровые переменные рекомендуется использовать для повышения быстродействия программы. Лучшими кандидатами на регистровые переменные являются переменные, к которым осуществляется частый доступ, такие как счетчики циклов или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">индексов массивов</a>.</div>
+<div> Для объявления регистровой переменной используется <a class="term" data-term="ключевое слово" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевое слово</a> <span class="eOperator">register</span>. В этом случае переменная запоминается на машинном регистре, а не на <a class="term" data-term="стек (память)" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке</a>. Количество регистров, доступных для такого использования, является машинно-зависимым. Если потребность в регистровой памяти превышает число доступных аппаратных регистров, избыточные регистровые переменные трактуются как автоматические. В этом случае ключевое слово <span class="eOperator">register</span> попросту игнорируется.</div>
+<div>Регистровые переменные рекомендуется использовать для повышения быстродействия программы. Лучшими кандидатами на регистровые переменные являются переменные, к которым осуществляется частый доступ, такие как счетчики циклов или <a class="term" data-term="индексов массивов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">индексов массивов</a>.</div>
 <a name="T1015173096"></a>
 <a name="T696383489"></a>
 <a name="T1961386404"></a>
@@ -40,7 +40,7 @@
 <a name="T1133808979"></a>
 <a name="T1435803309"></a>
 <a name="T522299926"></a>
-<div>Автоматические переменные и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формальные параметры</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> могут быть объявлены с классом памяти <span class="eOperator">register</span>. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Внешние</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">статические переменные</a> не могут быть регистровыми. Допустимые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типы данных</a> также зависят от системы, обычно это следующие типы данных: <span class="eOperator">char</span>, <span class="eOperator">int </span>и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатели</a>. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Массив</a> не может запоминаться в регистре. Регистровые переменные имеют такие же <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">область действия</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">время жизни</a>, что и автоматические переменные. Операция <span class="eOperator">&amp;</span> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операция получения адреса</a>) не может быть применима к регистровой переменной.</div>
+<div>Автоматические переменные и <a class="term" data-term="формальные параметры" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формальные параметры</a> <a class="term" data-term="функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> могут быть объявлены с классом памяти <span class="eOperator">register</span>. <a class="term" data-term="Внешние переменные" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Внешние</a> и <a class="term" data-term="статические переменные" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">статические переменные</a> не могут быть регистровыми. Допустимые <a class="term" data-term="типы данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типы данных</a> также зависят от системы, обычно это следующие типы данных: <span class="eOperator">char</span>, <span class="eOperator">int </span>и <a class="term" data-term="указатели" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатели</a>. <a class="term" data-term="Массив" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Массив</a> не может запоминаться в регистре. Регистровые переменные имеют такие же <a class="term" data-term="область действия" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">область действия</a> и <a class="term" data-term="время жизни" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">время жизни</a>, что и автоматические переменные. Операция <span class="eOperator">&amp;</span> (<a class="term" data-term="операция получения адреса" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операция получения адреса</a>) не может быть применима к регистровой переменной.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">f (register int count, register int num)
   {
@@ -59,5 +59,11 @@
         <a href="/rk6-edu/course-23/mod-61.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

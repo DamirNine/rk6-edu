@@ -29,15 +29,15 @@
 <br>
 <div class="eSubTitle">Оператор разрешения области видимости (::)</div>
 <a name="T679776955"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Оператор разрешения области видимости</a> (::) задает область видимости, которой принадлежит член и имеет следующую форму записи: </div>
+<div><a class="term" data-term="Оператор разрешения области видимости" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Оператор разрешения области видимости</a> (::) задает область видимости, которой принадлежит член и имеет следующую форму записи: </div>
 <div><span style="font-weight:bold; font-style:italic; ">имя::имя_члена</span></div>
 <a name="T1996004208"></a>
-<div> Здесь <span style="font-weight:bold; font-style:italic; ">имя</span> задает имя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a> или <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">пространства имен</a>, в котором содержится член, заданный элементом <span style="font-weight:bold; font-style:italic; ">имя_члена</span>. Другими словами, <span style="font-weight:bold; font-style:italic; ">имя</span> определяет область видимости, внутри которой может находиться идентификатор, заданный элементом <span style="font-weight:bold; font-style:italic; ">имя_члена</span>.</div>
-<div>При ссылке на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">глобальную область видимости</a> элемент <span style="font-weight:bold; font-style:italic; ">имя</span> задавать не нужно. Например, для обращения к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">глобальной переменной</a> <span style="font-weight:bold; font-style:italic; ">a</span>, которая "скрыта" за <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">локальной переменной</a> с таким же именем <span style="font-weight:bold; font-style:italic; ">a</span>, нужно использовать оператор :: следующим образом:         <span style="font-weight:bold; font-style:italic; ">::a</span></div>
+<div> Здесь <span style="font-weight:bold; font-style:italic; ">имя</span> задает имя <a class="term" data-term="класса" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a> или <a class="term" data-term="пространства имен" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">пространства имен</a>, в котором содержится член, заданный элементом <span style="font-weight:bold; font-style:italic; ">имя_члена</span>. Другими словами, <span style="font-weight:bold; font-style:italic; ">имя</span> определяет область видимости, внутри которой может находиться идентификатор, заданный элементом <span style="font-weight:bold; font-style:italic; ">имя_члена</span>.</div>
+<div>При ссылке на <a class="term" data-term="глобальную область видимости" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">глобальную область видимости</a> элемент <span style="font-weight:bold; font-style:italic; ">имя</span> задавать не нужно. Например, для обращения к <a class="term" data-term="глобальной переменной" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">глобальной переменной</a> <span style="font-weight:bold; font-style:italic; ">a</span>, которая "скрыта" за <a class="term" data-term="локальной переменной" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">локальной переменной</a> с таким же именем <span style="font-weight:bold; font-style:italic; ">a</span>, нужно использовать оператор :: следующим образом:         <span style="font-weight:bold; font-style:italic; ">::a</span></div>
 <br>
 <div class="eSubTitle">Пространства имен</div>
 <a name="T1252218203"></a>
-<div>В языке <span style="font-weight:bold; ">С++</span> можно создать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">локальную область видимости</a>, используя ключевое слово <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">namespace</a>. Пространство имен определяет некоторую декларативную область. Ее назначение - ограничить действие имен. Общая форма задания пространства имен такова:</div>
+<div>В языке <span style="font-weight:bold; ">С++</span> можно создать <a class="term" data-term="локальную область видимости" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">локальную область видимости</a>, используя ключевое слово <a class="term" data-term="namespace" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">namespace</a>. Пространство имен определяет некоторую декларативную область. Ее назначение - ограничить действие имен. Общая форма задания пространства имен такова:</div>
 <br>
 <pre class="eListing">namespace &lt;имя_пространства_имен&gt; {
 //.....
@@ -53,14 +53,14 @@ int count;
 
 </pre>
 </div>
-<div>На имена, объявленные в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространстве имен</a>, могут напрямую ссылаться другие инструкции внутри того же пространства имен. Вне своего пространства имен к именам можно получить доступ двумя путями. Во-первых, использовав <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператор разрешения области видимости</a> (::). </div>
+<div>На имена, объявленные в <a class="term" data-term="пространстве имен" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространстве имен</a>, могут напрямую ссылаться другие инструкции внутри того же пространства имен. Вне своего пространства имен к именам можно получить доступ двумя путями. Во-первых, использовав <a class="term" data-term="оператор разрешения области видимости" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператор разрешения области видимости</a> (::). </div>
 <br>
 <div class="auto">Пример 2</div>
 <div class="eExample"><pre class="eListing">MyNameSpace::count = 10;
 </pre>
 </div>
 <a name="T111582340"></a>
-<div>Во-вторых, можно использовать инструкцию <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">using</a>, которая привносит заданное имя или пространство имен в текущую область видимости.</div>
+<div>Во-вторых, можно использовать инструкцию <a class="term" data-term="using" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">using</a>, которая привносит заданное имя или пространство имен в текущую область видимости.</div>
 <br>
 <div class="auto">Пример 3</div>
 <div class="eExample"><pre class="eListing">using namespace MyNameSpace;
@@ -69,7 +69,7 @@ count = 100;
 </pre>
 </div>
 <a name="T114211"></a>
-<div>При появлении языка <span style="font-weight:bold; ">С++</span> элементы, объявленные в библиотеке <span style="font-weight:bold; ">С++</span>, относились к глобальному (т.е. безымянному) пространству имен. Однако ныне действующий стандарт <span style="font-weight:bold; ">С++</span> все эти элементы относит к пространству имен <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">std</a>.</div>
+<div>При появлении языка <span style="font-weight:bold; ">С++</span> элементы, объявленные в библиотеке <span style="font-weight:bold; ">С++</span>, относились к глобальному (т.е. безымянному) пространству имен. Однако ныне действующий стандарт <span style="font-weight:bold; ">С++</span> все эти элементы относит к пространству имен <a class="term" data-term="std" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">std</a>.</div>
 <br>
 </div>
 </div> 
@@ -81,5 +81,11 @@ count = 100;
         <a href="/rk6-edu/course-27/mod-55.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

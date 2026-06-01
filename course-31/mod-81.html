@@ -28,13 +28,13 @@
 </div>
 <div class="eSubTitle">Понятие процесса</div>
 <a name="T1017069202"></a>
-<div>В процессе работы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессор</a> все время выполняет <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">команды</a>, составляющие реализацию <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a>.</div>
+<div>В процессе работы <a class="term" data-term="МП" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессор</a> все время выполняет <a class="term" data-term="Команда микропроцессора" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">команды</a>, составляющие реализацию <a class="term" data-term="Алгоритм" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a>.</div>
 <a name="T2028118192"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Поток</a> (поток команд) — последовательность команд, выполняемых микропроцессором.</div>
+<div><a class="term" data-term="Поток" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Поток</a> (поток команд) — последовательность команд, выполняемых микропроцессором.</div>
 <a name="T469209868"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Процесс</a> — поток вместе с ресурсами, выделенными для обеспечения выполнения программы.</div>
+<div><a class="term" data-term="Процесс" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Процесс</a> — поток вместе с ресурсами, выделенными для обеспечения выполнения программы.</div>
 <a name="T2111903000"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Ресурсы</a> — любые средства вычислительной системы, которые могут быть выделены процессу. Например, память, устройства ввода вывода и, конечно, сам процессор. Таким образом, процесс представляет собой поток команд вместе с выделенными ему (процессу) ресурсами.</div>
+<div><a class="term" data-term="Ресурсы" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Ресурсы</a> — любые средства вычислительной системы, которые могут быть выделены процессу. Например, память, устройства ввода вывода и, конечно, сам процессор. Таким образом, процесс представляет собой поток команд вместе с выделенными ему (процессу) ресурсами.</div>
 <div>Вообще говоря, процесс может содержать более одного потока. Тем не менее, выделение ресурсов все равно происходит на уровне процесса, и все потоки, относящиеся к процессу, имеют доступ к выделенным ему ресурсам. В дальнейшем, для простоты изложения, будем рассматривать только однопоточные процессы.</div>
 <div>Все процессы можно классифицировать по нескольким параметрам:</div>
 <ol class="eList"><li><span style="font-weight:bold; text-decoration:underline; ">По принадлежности к ЦП:</span></li>
@@ -68,21 +68,21 @@
 </ul>
 <div>Каждый процесс характеризуется состоянием. Существуют следующие основные состояния, в которых может находиться процесс.</div>
 <ul class="eList"><a name="T1948991315"></a>
-<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Активное состояние</a> (<span class="eOperator">A</span>). Процесс выполняется на процессоре и использует все необходимые ему ресурсы.</li>
+<li><a class="term" data-term="Активное состояние" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Активное состояние</a> (<span class="eOperator">A</span>). Процесс выполняется на процессоре и использует все необходимые ему ресурсы.</li>
 <a name="T394020448"></a>
-<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Состояние готовности</a> (<span class="eOperator">R</span>). Процессу выделены все необходимые ресурсы, за исключением процессора. Процесс не исполняется и ожидает момента, когда в его распоряжение будет предоставлен процессор.</li>
+<li><a class="term" data-term="Состояние готовности" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Состояние готовности</a> (<span class="eOperator">R</span>). Процессу выделены все необходимые ресурсы, за исключением процессора. Процесс не исполняется и ожидает момента, когда в его распоряжение будет предоставлен процессор.</li>
 <a name="T963726541"></a>
-<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Состояние ожидания</a> (блокировки) (<span class="eOperator">L</span>). Процесс не исполняется и ожидает, когда в его распоряжение будут предоставлены все необходимые ресурсы.</li>
+<li><a class="term" data-term="Состояние ожидания" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Состояние ожидания</a> (блокировки) (<span class="eOperator">L</span>). Процесс не исполняется и ожидает, когда в его распоряжение будут предоставлены все необходимые ресурсы.</li>
 </ul>
 <div>Состояние процесса может изменяться в соответствии со следующей диаграммой (рис.&nbsp;1):</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_10.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
-<div>Если обратиться к примерам из модуля <a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Задачи управления в микропроцессорной системе</a>, то в случае <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">асинхронного обмена</a> при ожидании готовности ведомого устройства <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> переводится из активного состояния в состояние блокировки до получения сигнала готовности от внешнего устройства. При получении такого сигнала процесс переводится в состояние готовности, а после освобождения процессора — в активное состояние.</div>
+<div>Если обратиться к примерам из модуля <a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Задачи управления в микропроцессорной системе</a>, то в случае <a class="term" data-term="Асинхронный обмен" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">асинхронного обмена</a> при ожидании готовности ведомого устройства <a class="term" data-term="Процесс" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> переводится из активного состояния в состояние блокировки до получения сигнала готовности от внешнего устройства. При получении такого сигнала процесс переводится в состояние готовности, а после освобождения процессора — в активное состояние.</div>
 <div>В случае нелинейной системы стабилизации процессы <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_10.mod/?n=1/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_10.mod/?n=2/?k=10"> попеременно переводятся в состояния активное и готовности при наступлении события смены знака произведения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_10.mod/?n=3/?k=10">.</div>
 <a name="T648248918"></a>
-<div>Задача изменения состояния процесса в соответствии с определенными правилами при наступлении определенных событий называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">задачей диспетчеризации</a>.</div>
+<div>Задача изменения состояния процесса в соответствии с определенными правилами при наступлении определенных событий называется <a class="term" data-term="Задача диспетчеризации" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">задачей диспетчеризации</a>.</div>
 <div class="eSubTitle">Понятие ресурса</div>
 <div>Как уже было сказано ранее, под ресурсами понимаются любые средства вычислительной системы, которые могут быть выделены процессу. Например, память, устройства ввода-вывода и, конечно, сам процессор. Ресурсы могут быть классифицированы по следующим категориям:</div>
 <ol class="eList"><li><span style="font-weight:bold; text-decoration:underline; ">По реальности существования:</span></li>
@@ -127,5 +127,11 @@
         <a href="/rk6-edu/course-31/mod-82.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

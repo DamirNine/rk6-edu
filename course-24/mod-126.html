@@ -28,17 +28,17 @@
 </div>
 <a name="T645587003"></a>
 <a name="T168464512"></a>
-<div>Компиляторы языка Си обычно дополняются набором библиотечных функций для обработки строк. В системах <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС UNIX</a> эти функции обычно содержатся в стандартной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеке</a> Си <span class="eOperator">/lib/libc.a</span></div>
+<div>Компиляторы языка Си обычно дополняются набором библиотечных функций для обработки строк. В системах <a class="term" data-term="ОС UNIX" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС UNIX</a> эти функции обычно содержатся в стандартной <a class="term" data-term="библиотеке" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеке</a> Си <span class="eOperator">/lib/libc.a</span></div>
 <a name="T696383489"></a>
 <a name="T1329324165"></a>
 <a name="T1992557309"></a>
-<div>файл заголовков <span class="eOperator">&lt;string.h&gt;</span> — файл, в котором объявляются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> обработки строк, а так же типов, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поименованных констант</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">макросов</a>.</div>
+<div>файл заголовков <span class="eOperator">&lt;string.h&gt;</span> — файл, в котором объявляются <a class="term" data-term="функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> обработки строк, а так же типов, <a class="term" data-term="поименованных констант" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поименованных констант</a> и <a class="term" data-term="макросов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">макросов</a>.</div>
 <a name="T1045484691"></a>
-<div>Программы, использующие эти функции, должны включать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора include</a>:</div>
+<div>Программы, использующие эти функции, должны включать <a class="term" data-term="директиву препроцессора include" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора include</a>:</div>
 <div><span class="eOperator">#include &lt;sting.h&gt;</span></div>
 <a name="T541845194"></a>
 <a name="T525529701"></a>
-<div>Один или более параметров этих функций имеют тип <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателя</a> на символ (<span class="eOperator">char *</span>). Это означает, что в качестве значения параметра ожидается адрес символа, например, начальный адрес <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">символьного массива</a>.</div>
+<div>Один или более параметров этих функций имеют тип <a class="term" data-term="указателя" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателя</a> на символ (<span class="eOperator">char *</span>). Это означает, что в качестве значения параметра ожидается адрес символа, например, начальный адрес <a class="term" data-term="символьного массива" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">символьного массива</a>.</div>
 <div class="eSubTitle">Некоторые функции обработки строк</div>
 <div><span class="eOperator">char *strcat (char *s1, char *s2)</span></div>
 <div>Функция присоединяет строку <span class="eOperator">s2</span> к строке <span class="eOperator">s1</span> и возвращает значение <span class="eOperator">s1</span>.</div>
@@ -100,5 +100,11 @@ if (strlcmp(input, password) != 0)
         <a href="/rk6-edu/course-24/mod-127.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

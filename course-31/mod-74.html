@@ -31,14 +31,14 @@
 <a name="T1932195852"></a>
 <a name="T14724256"></a>
 <a name="T1397025690"></a>
-<div>Попытка уйти от перезагрузки полного блока сделана в архитектуре <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ассоциативного ЛЗУ</a>. В данном случае из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОЗУ</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЛЗУ</a> может загружаться содержимое отдельной ячейки. Таким образом, каждая ячейка ЛЗУ содержит информацию из какой-либо ячейки ОЗУ. Но в этом случае для каждой ячейки ЛЗУ необходимо хранить адрес той ячейки основного ЗУ, данные которой она содержит. Этот адрес называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">тэгом адреса</a> (tag) и хранится он в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">таблице тэгов</a>.</div>
+<div>Попытка уйти от перезагрузки полного блока сделана в архитектуре <a class="term" data-term="ассоциативного ЛЗУ" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ассоциативного ЛЗУ</a>. В данном случае из <a class="term" data-term="ОЗУ" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОЗУ</a> в <a class="term" data-term="ЛЗУ" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЛЗУ</a> может загружаться содержимое отдельной ячейки. Таким образом, каждая ячейка ЛЗУ содержит информацию из какой-либо ячейки ОЗУ. Но в этом случае для каждой ячейки ЛЗУ необходимо хранить адрес той ячейки основного ЗУ, данные которой она содержит. Этот адрес называется <a class="term" data-term="тэгом адреса" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">тэгом адреса</a> (tag) и хранится он в <a class="term" data-term="таблице тэгов" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">таблице тэгов</a>.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_07_5.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
 <a name="T1017069202"></a>
 <a name="T1375744212"></a>
-<div>При поступлении от <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МП</a> запроса на чтение данных, контроллер ЛЗУ проверяет по таблице тэгов, есть ли данные, соответствующие данному адресу, в ЛЗУ. Если есть — они возвращаются МП, если нет (случай "<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кэш-промаха</a>"), данные загружаются из основной памяти, помещаются в одну из ячеек ЛЗУ и выдаются в МП. Таким образом, в ситуации "кэш-промаха" перезагружается только одна ячейка ЛЗУ. Это экономит время и является главным преимуществом данной архитектуры.</div>
+<div>При поступлении от <a class="term" data-term="МП" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МП</a> запроса на чтение данных, контроллер ЛЗУ проверяет по таблице тэгов, есть ли данные, соответствующие данному адресу, в ЛЗУ. Если есть — они возвращаются МП, если нет (случай "<a class="term" data-term="кэш-промаха" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кэш-промаха</a>"), данные загружаются из основной памяти, помещаются в одну из ячеек ЛЗУ и выдаются в МП. Таким образом, в ситуации "кэш-промаха" перезагружается только одна ячейка ЛЗУ. Это экономит время и является главным преимуществом данной архитектуры.</div>
 <div>Однако в такой схеме есть один серьезный недостаток. Для того чтобы определить, есть ли нужные данные в ЛЗУ, контроллер должен просмотреть всю таблицу тэгов. Длина ее равна количеству ячеек. Такой поиск может занять сравнительно много времени, сводя таким образом на нет выигрыш, полученный путем минимизации перезагрузок. Именно поэтому такая схема не получила большого распространения на практике и применяется в настоящий момент только в небольшом внутреннем кеше некоторых быстродействующих МП.</div>
 <div>Недостатком является также необходимость хранения в таблице тэгов полных адресов ячеек. За счет этого таблица тэгов занимает много места, соответственно полезный объем ЛЗУ (пригодный для хранения данных) уменьшается.</div>
 </div>
@@ -53,5 +53,11 @@
         <a href="/rk6-edu/course-31/mod-75.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

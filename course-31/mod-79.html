@@ -28,7 +28,7 @@
 </div>
 <a name="T530437270"></a>
 <a name="T1418249701"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Задача управления</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> заключается в распределении ресурсов МПС между несколькими <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программами</a>. Задача управления в МПС решается <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операционной системой</a>. Возможна такая структура <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a> управления, при которой будет существовать несколько управляющих программ, между которыми будет осуществляться переключение при наступлении определенного события.</div>
+<div><a class="term" data-term="Задача управления" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Задача управления</a> в <a class="term" data-term="МПС" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> заключается в распределении ресурсов МПС между несколькими <a class="term" data-term="Программа" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программами</a>. Задача управления в МПС решается <a class="term" data-term="Операционная система" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операционной системой</a>. Возможна такая структура <a class="term" data-term="Алгоритм" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a> управления, при которой будет существовать несколько управляющих программ, между которыми будет осуществляться переключение при наступлении определенного события.</div>
 <div class="eSubTitle">Нелинейная система стабилизации</div>
 <div>Рассмотрим систему следующего вида (рис.&nbsp;1):</div>
 <div class="eImage">
@@ -62,7 +62,7 @@
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_08.mod/?n=6"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;</div></div>
 <div class="eSubTitle">Асинхронный обмен</div>
-<div>Как мы уже знаем, основным элементом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">асинхронного обмена</a> является запрос <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ведущим устройством</a> готовности <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ведомого.</a> Если ведомое устройство не готово, ведущее ожидает наступления готовности. Выполнение программы оказывается заблокированным в цикле ожидания. Однако проверку готовности ведомого устройства можно возложить на операционную систему, которая будет активизировать программу в момент поступления сигнала готовности. В этом случае программа, выполняющая асинхронный обмен, может быть заблокирована на время ожидания готовности ведомого устройства, а центральный процессор может быть предоставлен, например, для выполнения другой программы.</div>
+<div>Как мы уже знаем, основным элементом <a class="term" data-term="Асинхронный обмен" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">асинхронного обмена</a> является запрос <a class="term" data-term="Ведущее устройство" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ведущим устройством</a> готовности <a class="term" data-term="Ведомое устройство" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ведомого.</a> Если ведомое устройство не готово, ведущее ожидает наступления готовности. Выполнение программы оказывается заблокированным в цикле ожидания. Однако проверку готовности ведомого устройства можно возложить на операционную систему, которая будет активизировать программу в момент поступления сигнала готовности. В этом случае программа, выполняющая асинхронный обмен, может быть заблокирована на время ожидания готовности ведомого устройства, а центральный процессор может быть предоставлен, например, для выполнения другой программы.</div>
 </div>
 <hr width="90%">
 
@@ -75,5 +75,11 @@
         <a href="/rk6-edu/course-31/mod-80.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

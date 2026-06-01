@@ -29,15 +29,15 @@
 <a name="T494492918"></a>
 <a name="T269163517"></a>
 <a name="T1233060480"></a>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Управляющий</a> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">оператор goto</a> вызывает безусловный переход управления на выполнение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператора</a>, перед которым указана соответствующая метка.</div>
+<div><a class="term" data-term="Управляющий оператор" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Управляющий</a> <a class="term" data-term="оператор goto" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">оператор goto</a> вызывает безусловный переход управления на выполнение <a class="term" data-term="оператора" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператора</a>, перед которым указана соответствующая метка.</div>
 <div><span class="eOperator">goto метка;</span></div>
 <a name="T1034263775"></a>
 <a name="T256200320"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метка</a> — это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатор</a>, завершаемый двоеточием, который помечает оператор.</div>
+<div><a class="term" data-term="Метка" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метка</a> — это <a class="term" data-term="идентификатор" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатор</a>, завершаемый двоеточием, который помечает оператор.</div>
 <a name="T403239904"></a>
 <a name="T696383489"></a>
-<div>Метка должна предшествовать оператору, в вырожденном случае — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пустому оператору</a>. Можно переходить только на метки, указанные внутри текущей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a>, нельзя перейти на метку, указанную в другой функции.</div>
-<div>Часто говорят, что <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структурное программирование</a> - это программирование без <span class="eOperator">goto</span>. Строго говоря, в этом операторе нет никакой необходимости. Оператор <span class="eOperator">goto</span> можно использовать только для выхода из глубоко вложенных циклов. В противном случае использование  <span class="eOperator">goto</span> делает структуру  программу запутанной и трудной для отладки. На использование оператора <span class="eOperator">goto</span> провоцирует плохо продуманный алгоритм.</div>
+<div>Метка должна предшествовать оператору, в вырожденном случае — <a class="term" data-term="пустому оператору" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пустому оператору</a>. Можно переходить только на метки, указанные внутри текущей <a class="term" data-term="функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a>, нельзя перейти на метку, указанную в другой функции.</div>
+<div>Часто говорят, что <a class="term" data-term="структурное программирование" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структурное программирование</a> - это программирование без <span class="eOperator">goto</span>. Строго говоря, в этом операторе нет никакой необходимости. Оператор <span class="eOperator">goto</span> можно использовать только для выхода из глубоко вложенных циклов. В противном случае использование  <span class="eOperator">goto</span> делает структуру  программу запутанной и трудной для отладки. На использование оператора <span class="eOperator">goto</span> провоцирует плохо продуманный алгоритм.</div>
 <div class="auto">Примечание 1</div>
 <div class="eNote"><div>В функции не должно быть больше одного оператора <span class="eOperator">goto</span>.</div>
 </div>
@@ -95,5 +95,11 @@ end:;
         <a href="/rk6-edu/course-24/mod-48.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

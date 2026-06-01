@@ -28,7 +28,7 @@
 </div>
 <br>
 <a name="T1356058257"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сортировка</a> слиянием построена на принципе "разделяй-и-властвуй", однако реализует его несколько по-другому, нежели quickSort. А именно, вместо разделения по опорному элементу <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a> просто делится пополам.</div>
+<div><a class="term" data-term="Сортировка" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сортировка</a> слиянием построена на принципе "разделяй-и-властвуй", однако реализует его несколько по-другому, нежели quickSort. А именно, вместо разделения по опорному элементу <a class="term" data-term="массив" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a> просто делится пополам.</div>
 <br>
 <pre class="eListing">// a - сортируемый массив, его левая граница lb, правая граница ub
 template&lt;class T&gt;
@@ -54,9 +54,9 @@ void mergeSort(T a[], long lb, long ub) {
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
 </div>
 <br>
-<div>Рекурсивный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> обходит получившееся <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дерево</a> слияния в прямом порядке. Каждый уровень представляет собой проход сортировки слияния - операцию, полностью переписывающую массив.</div>
+<div>Рекурсивный <a class="term" data-term="алгоритм" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> обходит получившееся <a class="term" data-term="дерево" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дерево</a> слияния в прямом порядке. Каждый уровень представляет собой проход сортировки слияния - операцию, полностью переписывающую массив.</div>
 <div>Обратим внимание, что деление происходит до массива из единственного элемента. Такой массив можно считать упорядоченным, а значит, задача сводится к написанию функции слияния merge.</div>
-<div>Один из способов состоит в слиянии двух упорядоченных последовательностей при помощи вспомогательного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">буфера</a>, равного по размеру общему количеству имеющихся в них элементов. Элементы последовательностей будут перемещаться в этот буфер по одному за шаг.</div>
+<div>Один из способов состоит в слиянии двух упорядоченных последовательностей при помощи вспомогательного <a class="term" data-term="буфера" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">буфера</a>, равного по размеру общему количеству имеющихся в них элементов. Элементы последовательностей будут перемещаться в этот буфер по одному за шаг.</div>
 <br>
 <pre class="eListing">merge ( упорядоченные последовательности A, B , буфер C ) {
 пока A и B непусты {
@@ -130,5 +130,11 @@ void merge(T a[], long lb, long split, long ub) {
         <a href="/rk6-edu/course-30/mod-39.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

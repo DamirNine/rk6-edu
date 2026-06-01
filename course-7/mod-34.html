@@ -32,9 +32,9 @@
 <a name="T674463047"></a>
 <a name="T1133808979"></a>
 <a name="T474320637"></a>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Отношения</a> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">агрегирования</a> (типа целое-часть) или отношения  <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">обобщения</a> (функция-вариант реализации), характерные для представления структур объектов в виде альтернативных (И-ИЛИ) деревьев, в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке Express</a> выражаются в форме отношений между <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типами данных</a>. Для этого введены понятия супертипа (supertype), как более общего типа, и подтипов (subtypes), как подчиненных типов. На рис.&nbsp;1 верхняя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сущность</a> относится к супертипу, а три нижних прямоугольника изображают подтипы, линии связи прямоугольников должны быть утолщенными.</div>
+<div><a class="term" data-term="Отношения" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Отношения</a> <a class="term" data-term="агрегирования" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">агрегирования</a> (типа целое-часть) или отношения  <a class="term" data-term="обобщения" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">обобщения</a> (функция-вариант реализации), характерные для представления структур объектов в виде альтернативных (И-ИЛИ) деревьев, в <a class="term" data-term="языке Express" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке Express</a> выражаются в форме отношений между <a class="term" data-term="типами данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типами данных</a>. Для этого введены понятия супертипа (supertype), как более общего типа, и подтипов (subtypes), как подчиненных типов. На рис.&nbsp;1 верхняя <a class="term" data-term="сущность" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сущность</a> относится к супертипу, а три нижних прямоугольника изображают подтипы, линии связи прямоугольников должны быть утолщенными.</div>
 <a name="T100241030"></a>
-<div>Рассмотрим пример фрагмента <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">И-ИЛИ-дерева</a>, в котором имеется ИЛИ вершина a1 и две подчиненные ей альтернативные вершины b1 и b2. Общим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибутом</a> для b1 и b2 является size типа real, специфичный для b1 атрибут — vol типа real, а специфичный для b2 атрибут met типа string. Этот фрагмент может быть описан следующим образом:</div>
+<div>Рассмотрим пример фрагмента <a class="term" data-term="И-ИЛИ-дерева" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">И-ИЛИ-дерева</a>, в котором имеется ИЛИ вершина a1 и две подчиненные ей альтернативные вершины b1 и b2. Общим <a class="term" data-term="атрибутом" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибутом</a> для b1 и b2 является size типа real, специфичный для b1 атрибут — vol типа real, а специфичный для b2 атрибут met типа string. Этот фрагмент может быть описан следующим образом:</div>
 <pre class="eListing">ENTITY a1
 SUPERTYPE OF (ONEOF (b1,b2));
 size: REAL;
@@ -85,5 +85,11 @@ END_ENTITY;
         <a href="/rk6-edu/course-7/mod-35.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

@@ -33,7 +33,7 @@
 <div>Довольно трудно добиться правильных и одновременно хорошо читаемых спецификаций. Поэтому постарайтесь соблюдать приводимые ниже соглашения:</div>
 <br>
 <ol class="eList"><a name="T895398568"></a>
-<li>Для имен <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">лексем</a> используйте прописные буквы, для имен нетерминалов - строчные. Это правило поможет вам быстро найти виновника ошибки.</li>
+<li>Для имен <a class="term" data-term="Лексемы" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">лексем</a> используйте прописные буквы, для имен нетерминалов - строчные. Это правило поможет вам быстро найти виновника ошибки.</li>
 <li>Действия и правила размещайте на отдельных строках. Это позволит вам менять их независимо.</li>
 <li>Располагайте правила с одинаковой левой частью вместе. Левую часть записывайте только один раз, а правые части отделяйте вертикальной чертой.</li>
 <li>Точку с запятой помещайте на отдельной строке и только после последнего правила с заданной левой частью. Это позволит легко добавлять новые правила.</li>
@@ -182,5 +182,11 @@ adj: THE {$$=THE;}
         <a href="/rk6-edu/course-29/mod-61.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

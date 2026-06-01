@@ -30,11 +30,11 @@
 <a name="T1144989962"></a>
 <a name="T2134277063"></a>
 <a name="T752938439"></a>
-<div>В настоящее время все более широкое распространение приобретает технология интеграции Internet-ресурсов, основанная на <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">протоколе SOAP</a> (Simple Object Access Protocol). SOAP — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">транспортный протокол</a>, предназначенный для организации взаимодействия удаленных систем при помощи асинхронного обмена <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-документами</a>. Первоначально SOAP предназначался, в основном, для реализации удалённого вызова процедур (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">RPC</a>).</div>
+<div>В настоящее время все более широкое распространение приобретает технология интеграции Internet-ресурсов, основанная на <a class="term" data-term="протоколе SOAP" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">протоколе SOAP</a> (Simple Object Access Protocol). SOAP — <a class="term" data-term="транспортный протокол" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">транспортный протокол</a>, предназначенный для организации взаимодействия удаленных систем при помощи асинхронного обмена <a class="term" data-term="XML-документами" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-документами</a>. Первоначально SOAP предназначался, в основном, для реализации удалённого вызова процедур (<a class="term" data-term="RPC" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">RPC</a>).</div>
 <a name="T412171630"></a>
-<div>SOAP — объектная технология, в которой объектами являются Web-службы (Web Services), а для представления обращений к Web-службам используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык XML</a>. Язык разметки XML распознается разными системами, и потому технология SOAP значительно проще реализуется, чем такие технологии как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">CORBA</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">DCOM</a>. </div>
+<div>SOAP — объектная технология, в которой объектами являются Web-службы (Web Services), а для представления обращений к Web-службам используется <a class="term" data-term="язык XML" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык XML</a>. Язык разметки XML распознается разными системами, и потому технология SOAP значительно проще реализуется, чем такие технологии как <a class="term" data-term="CORBA" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">CORBA</a> или <a class="term" data-term="DCOM" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">DCOM</a>. </div>
 <a name="T555439606"></a>
-<div>Протокол SOAP обеспечивает взаимодействие распределенных систем независимо от типа объектной модели, операционной системы или языка программирования. Благодаря использованию XML, сообщения SOAP могут передаваться посредством транспортного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протокола HTTP</a>, как правило, не закрываемого <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевыми экранами</a>.</div>
+<div>Протокол SOAP обеспечивает взаимодействие распределенных систем независимо от типа объектной модели, операционной системы или языка программирования. Благодаря использованию XML, сообщения SOAP могут передаваться посредством транспортного <a class="term" data-term="протокола HTTP" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протокола HTTP</a>, как правило, не закрываемого <a class="term" data-term="сетевыми экранами" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевыми экранами</a>.</div>
 <div>В стандарте, описывающем протокол SOAP, изложены принципы, по которым может быть осуществлена привязка SOAP-сообщений к абстрактному транспортному протоколу, общая схема создания SOAP-оболочек для RPC-ориентированных интерфейсов, способы возврата сообщений о сбоях, а также конкретная реализация способа оформления сообщений SOAP в качестве содержимого команд GET и POST протокола HTTP.</div>
 <div>Структура SOAP-сообщения показана на рис.&nbsp;1.</div>
 <div class="eImage">
@@ -66,11 +66,11 @@ SOAPAction: ...
 </pre>
 <div>Прием информации, содержащейся в теле SOAP-сообщения, выполняется SOAP-процессором, который пересылает сведения из тела сообщения в запрошенную службу (например, EJB).</div>
 <div>Кроме языка XML и Интернет-протоколов, таких как HTTP, в технологии Web-служб входят следующие компоненты:</div>
-<ul class="eList"><li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык WSDL</a> (Web Service Description Language) — язык объявления возможностей (функций) Web-службы, описания на WSDL являются XML-документами;</li>
-<li>стандарт <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">UDDI</a> (Universal Description, Discovery and Integration), служащий для фиксации возможностей Web-службы.</li>
+<ul class="eList"><li><a class="term" data-term="язык WSDL" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык WSDL</a> (Web Service Description Language) — язык объявления возможностей (функций) Web-службы, описания на WSDL являются XML-документами;</li>
+<li>стандарт <a class="term" data-term="UDDI" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">UDDI</a> (Universal Description, Discovery and Integration), служащий для фиксации возможностей Web-службы.</li>
 </ul>
 <div>Стандарт UDDI помогает Web-сервис найти, WSDL — его охарактеризовать, а SOAP — взаимодействовать с ним.</div>
-<div>Механизм взаимодействия <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">клиента</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сервера</a> в технологии SOAP можно представить в виде последовательности следующих процедур (рис.&nbsp;2):</div>
+<div>Механизм взаимодействия <a class="term" data-term="клиента" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">клиента</a> и <a class="term" data-term="сервера" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сервера</a> в технологии SOAP можно представить в виде последовательности следующих процедур (рис.&nbsp;2):</div>
 <ol class="eList"><li>Клиентское приложение создает экземпляр объекта <span class="eOperator">SOAPClient</span>;</li>
 <li><span class="eOperator">SOAPClient</span> просматривает UDDI, тем самым определяется нужный метод Web-сервиса;</li>
 <li><span class="eOperator">SOAPClient</span> формирует SOAP-сообщение и отправляет его серверу;</li>
@@ -84,7 +84,7 @@ SOAPAction: ...
 <tbody><tr><td><img src="/?img/?doc=270_Web/web208.mod/?n=2"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Взаимодействие клиента и сервера в SOAP</div></div>
 <div>Пример системы интеграции Internet-ресурсов — платформа .NET Framework компании Microsoft. В нее входят семейство .NET Enterprise Servers, представляющее собой набор корпоративных серверных приложений, и визуальная среда VisualStudio.NET, поддерживающая все основные языки программирования и используемая для разработки и потребления Web-сервисов.</div>
-<div>Компания IBM предлагает сервер приложений <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">WebSphere</a> Application Server, MQ Series для управления сообщениями для объединения систем, включая поддержку SOAP и Web-сервисов на уровне СУБД DB2.</div>
+<div>Компания IBM предлагает сервер приложений <a class="term" data-term="WebSphere" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">WebSphere</a> Application Server, MQ Series для управления сообщениями для объединения систем, включая поддержку SOAP и Web-сервисов на уровне СУБД DB2.</div>
 <div class="auto">Список литературы</div>
 <div class="eLiter">1. Понимание SOAP. — http://archival.ru/?q=node/469<br>
 2. SOAP 1.1 — http://www.w3.org/TR/SOAP/<br>
@@ -102,5 +102,11 @@ SOAPAction: ...
         <a href="/rk6-edu/course-4/mod-33.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

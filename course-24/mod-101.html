@@ -31,7 +31,7 @@
 <a name="T1133808979"></a>
 <a name="T74783515"></a>
 <a name="T1239699667"></a>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Указатель</a> на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структуру</a> объявляется точно так же, как и указатель на данные простых типов: используется операция <span class="eOperator">*</span> и указывается <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">тип данных</a>. Тип данных структуры указывается заданием <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевого слова</a> <span class="eOperator">struct</span> и имени <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шаблона</a> этой структуры.</div>
+<div><a class="term" data-term="Указатель" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Указатель</a> на <a class="term" data-term="структуру" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структуру</a> объявляется точно так же, как и указатель на данные простых типов: используется операция <span class="eOperator">*</span> и указывается <a class="term" data-term="тип данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">тип данных</a>. Тип данных структуры указывается заданием <a class="term" data-term="ключевого слова" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевого слова</a> <span class="eOperator">struct</span> и имени <a class="term" data-term="шаблона структуры" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шаблона</a> этой структуры.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><div>Объявление указателей:</div>
 <pre class="eListing">int        *ip;
@@ -65,17 +65,17 @@ printf("total of salaries: %.2f\n", sal_tot);
 <tbody><tr><td><img src="/?img/?doc=OP2/struct_point.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Указатель на массив структур</div></div>
 <a name="T852933925"></a>
-<div>В прим.&nbsp;2 указатель <span class="eOperator">sp</span> после инициализации указывает на начало <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива структур</a> <span class="eOperator">staff</span>, т.е. содержит адрес первой структуры массива. Поскольку <span class="eOperator">sp</span> – указатель на структуру, то результат операции <span class="eOperator">*sp</span> является структурой, в данном случае <span class="eOperator">staff[0]</span>. Чтобы обратиться к полю <span class="eOperator">salary</span> структуры <span class="eOperator">staff[0]</span>, можно использовать следующие выражения:</div>
+<div>В прим.&nbsp;2 указатель <span class="eOperator">sp</span> после инициализации указывает на начало <a class="term" data-term="массива структур" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива структур</a> <span class="eOperator">staff</span>, т.е. содержит адрес первой структуры массива. Поскольку <span class="eOperator">sp</span> – указатель на структуру, то результат операции <span class="eOperator">*sp</span> является структурой, в данном случае <span class="eOperator">staff[0]</span>. Чтобы обратиться к полю <span class="eOperator">salary</span> структуры <span class="eOperator">staff[0]</span>, можно использовать следующие выражения:</div>
 <ul class="eList"><li><span class="eOperator">staff[0].salary</span></li>
 <a name="T114264910"></a>
-<li><span class="eOperator">(*sp).salary</span> (круглые скобки требуются в этом контексте, чтобы учесть <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">приоритет операций</a>).</li>
+<li><span class="eOperator">(*sp).salary</span> (круглые скобки требуются в этом контексте, чтобы учесть <a class="term" data-term="приоритет операций" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">приоритет операций</a>).</li>
 </ul>
 <div class="eSubTitle">Операция доступа к элементу структуры через указатель</div>
 <a name="T58583122"></a>
-<div>Ввиду того, что указатели на структуры используются очень часто , в языке Си есть специальная <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операция доступа к элементу структуры через указатель</a><span class="eOperator">(-&gt;</span>), позволяющая сослаться на элемент структуры, заданный указателем на нее:</div>
+<div>Ввиду того, что указатели на структуры используются очень часто , в языке Си есть специальная <a class="term" data-term="операция доступа к элементу структуры через указатель" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операция доступа к элементу структуры через указатель</a><span class="eOperator">(-&gt;</span>), позволяющая сослаться на элемент структуры, заданный указателем на нее:</div>
 <div><span class="eOperator">имя_указателя-&gt;имя_элемента</span></div>
 <a name="T424168142"></a>
-<div>Эта операция является первичной и находится в самой верхней строке <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">таблицы приоритетов</a> операций языка Си.</div>
+<div>Эта операция является первичной и находится в самой верхней строке <a class="term" data-term="таблицы приоритетов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">таблицы приоритетов</a> операций языка Си.</div>
 <div>После того, как указатель <span class="eOperator">sp</span> инициализирован и указывает на элемент массива структур <span class="eOperator">staff[0]</span>, следующие выражения эквиваленты:</div>
 <ul class="eList"><li><span class="eOperator">staff[0].salary</span> <span class="eOperator">/*имя_структуры.имя_элемента*/</span></li>
 <li><span class="eOperator">sp-&gt;salary</span> <span class="eOperator"> /*имя_указателя-&gt;имя_элемента*/</span></li>
@@ -92,5 +92,11 @@ printf("total of salaries: %.2f\n", sal_tot);
         <a href="/rk6-edu/course-24/mod-102.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

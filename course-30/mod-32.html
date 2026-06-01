@@ -27,11 +27,11 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Быстрая сортировка</a>
 </div>
 <br>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Метод</a> основан на подходе "разделяй-и-властвуй". Общая схема такова:</div>
+<div><a class="term" data-term="Метод" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Метод</a> основан на подходе "разделяй-и-властвуй". Общая схема такова:</div>
 <br>
 <ul class="eList"><a name="T1992766606"></a>
-<li>из <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">массива</a> выбирается некоторый опорный элемент a[i],</li>
-<li>запускается процедура разделения массива, которая перемещает все <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключи</a>, меньшие, либо равные a[i], влево от него, а все ключи, большие, либо равные a[i] - вправо,</li>
+<li>из <a class="term" data-term="массива" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">массива</a> выбирается некоторый опорный элемент a[i],</li>
+<li>запускается процедура разделения массива, которая перемещает все <a class="term" data-term="ключи" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключи</a>, меньшие, либо равные a[i], влево от него, а все ключи, большие, либо равные a[i] - вправо,</li>
 <li>теперь массив состоит из двух подмножеств, причем левое меньше, либо равно правого,</li>
 </ul>
 <div class="eImage">
@@ -43,7 +43,7 @@
 </ul>
 <br>
 <div>В конце получится полностью отсортированная последовательность.</div>
-<div>Рассмотрим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> подробнее.</div>
+<div>Рассмотрим <a class="term" data-term="алгоритм" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> подробнее.</div>
 <br>
 <div class="eSubTitle">Разделение массива</div>
 <br>
@@ -89,7 +89,7 @@ void quickSortR(T* a, long N) {
 <div>Метод неустойчив. Поведение довольно естественно, если учесть, что при частичной упорядоченности повышаются шансы разделения массива на более равные части.</div>
 <a name="T1356058257"></a>
 <a name="T33524358"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сортировка</a> использует дополнительную память, так как приблизительная глубина рекурсии составляет O(log n), а данные о рекурсивных подвызовах каждый раз добавляются в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">стек</a>.</div>
+<div><a class="term" data-term="Сортировка" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сортировка</a> использует дополнительную память, так как приблизительная глубина рекурсии составляет O(log n), а данные о рекурсивных подвызовах каждый раз добавляются в <a class="term" data-term="стек" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">стек</a>.</div>
 </div>
 <hr width="90%">
 
@@ -102,5 +102,11 @@ void quickSortR(T* a, long N) {
         <a href="/rk6-edu/course-30/mod-33.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Переменные с изменяемой структурой</a>
 </div>
 <a name="T819414727"></a>
-<div>Очень часто некоторые объекты программы относятся к одному и тому же классу, отличаясь лишь некоторыми деталями. в таких случаях используются <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">переменные с изменяемой структурой</a>  Рассмотрим, например, представление геометрических фигур. Общая информация о фигурах может включать такие элементы, как площадь, периметр. Однако соответствующая информация о геометрических размерах может оказаться различной в зависимости от их формы.</div>
+<div>Очень часто некоторые объекты программы относятся к одному и тому же классу, отличаясь лишь некоторыми деталями. в таких случаях используются <a class="term" data-term="переменные с изменяемой структурой" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">переменные с изменяемой структурой</a>  Рассмотрим, например, представление геометрических фигур. Общая информация о фигурах может включать такие элементы, как площадь, периметр. Однако соответствующая информация о геометрических размерах может оказаться различной в зависимости от их формы.</div>
 <div>Рассмотрим пример, в котором информация о геометрических фигурах представляется на основе комбинированного использования структуры и объединения.</div>
 <pre class="eListing">       struct figure {
                 double area,perimetr;  /* общие компоненты       */
@@ -45,7 +45,7 @@
                           TRIANGLE    } ;
 </pre>
 <a name="T176682325"></a>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Константы</a> <span class="eOperator">CIRCLE, BOX, TRIANGLE</span> получат значения соответственно равные 0, 1, 2. Переменная type может быть объявлена как имеющая перечислимый тип :</div>
+<div><a class="term" data-term="Константы" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Константы</a> <span class="eOperator">CIRCLE, BOX, TRIANGLE</span> получат значения соответственно равные 0, 1, 2. Переменная type может быть объявлена как имеющая перечислимый тип :</div>
 <pre class="eListing">enum figure_chess type;
 </pre>
 <div>В этом случае компилятор СИ предупредит программиста о потенциально ошибочных присвоениях, таких, например, как <span class="eOperator">figure.type = 40;</span></div>
@@ -105,5 +105,11 @@
         <a href="/rk6-edu/course-26/mod-18.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

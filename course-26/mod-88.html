@@ -31,7 +31,7 @@
 <a name="T866065539"></a>
 <a name="T1313927513"></a>
 <a name="T1782956174"></a>
-<div>Для использования функций времени и даты необходим заголовочный файл &lt;time. h&gt;. Этот файл определяет три типа данных, связанных с исчислением времени: <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">clock_t</a>, <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">time__t</a>, и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">tm</a>. Типы данных clock_t и time_t предназначены для представления системного времени и даты в виде некоторого целого значения, называемого календарным временем. Структурный тип tm содержит дату и время, разбитые на составляющие компоненты. Cтруктура tm состоит из следующих членов, содержащих дату и время:</div>
+<div>Для использования функций времени и даты необходим заголовочный файл &lt;time. h&gt;. Этот файл определяет три типа данных, связанных с исчислением времени: <a class="term" data-term="clock_t" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">clock_t</a>, <a class="term" data-term="time__t" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">time__t</a>, и <a class="term" data-term="tm" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">tm</a>. Типы данных clock_t и time_t предназначены для представления системного времени и даты в виде некоторого целого значения, называемого календарным временем. Структурный тип tm содержит дату и время, разбитые на составляющие компоненты. Cтруктура tm состоит из следующих членов, содержащих дату и время:</div>
 <pre class="eListing">int tm_sec;           /*секунды, 0-60 */
 int tm_min;           /*минуты, 0-59 */
 int tm_hour;          /*часы,   0-23   */
@@ -44,11 +44,11 @@ int tm_isdst          /*индикатор летнего времени */
 </pre>
 <div>Значение <span class="eOperator">tm_isdst</span> положительно, если действует режим летнего времени (Daylight Saving Time), равно нулю, если не действует, и отрицательно, если информация об этом недоступна. Такой формат представления времени и даты называется разделенным на компоненты календарным временем (broken-down time).</div>
 <a name="T1800435032"></a>
-<div>Кроме того, в &lt;time.h&gt; определен макрос <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">CLOCKS_PER_SEC</a>, который содержит число тактов системных часов в секунду.</div>
+<div>Кроме того, в &lt;time.h&gt; определен макрос <a class="term" data-term="CLOCKS_PER_SEC" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">CLOCKS_PER_SEC</a>, который содержит число тактов системных часов в секунду.</div>
 <a name="T110667730"></a>
 <a name="T194405881"></a>
 <a name="T1932770254"></a>
-<div>Функции геополитического окружения описаны в заголовочном файле &lt;<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">locale.h</a>&gt;. В нем определена <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структура lconv</a>, которая приведена в описании <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции localeconv</a>().</div>
+<div>Функции геополитического окружения описаны в заголовочном файле &lt;<a class="term" data-term="locale.h" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">locale.h</a>&gt;. В нем определена <a class="term" data-term="структура lconv" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структура lconv</a>, которая приведена в описании <a class="term" data-term="функции localeconv" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции localeconv</a>().</div>
 </div>
 </div> 
 </body></html></div></main>
@@ -59,5 +59,11 @@ int tm_isdst          /*индикатор летнего времени */
         <a href="/rk6-edu/course-26/mod-89.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

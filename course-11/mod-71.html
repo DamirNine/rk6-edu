@@ -29,15 +29,15 @@
 <a name="T33461281"></a>
 <a name="T1246312300"></a>
 <a name="T33640058"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Порт</a> — это "виртуальный слот" в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке протоколов</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TCP</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">UDP</a>, используемый для организации подключения между двумя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">хостами</a>, а также между уровнем TCP/UDP и фактическими приложениями, работающими на хостах.</div>
+<div><a class="term" data-term="Порт" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Порт</a> — это "виртуальный слот" в <a class="term" data-term="стеке протоколов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке протоколов</a> <a class="term" data-term="TCP" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TCP</a> и <a class="term" data-term="UDP" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">UDP</a>, используемый для организации подключения между двумя <a class="term" data-term="хостами" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">хостами</a>, а также между уровнем TCP/UDP и фактическими приложениями, работающими на хостах.</div>
 <div>Порты нумеруются целыми числами в диапазоне 0-65535, причем диапазон 0-1023 считается зарезервированным или привилегированным, а остаток (диапазон 1024-65535) — динамическим или непривилегированным .</div>
 <div>Порты можно использовать двумя основными способами:</div>
-<ul class="eList"><li>"Прослушивание" порта. Используется серверными приложениями, ожидающими подключений пользователей к одной из хорошо известных служб, например, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">HTTP</a> (TCP порт 80), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Telnet</a> (TCP порт 21), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">DNS</a> (UDP и, иногда, TCP, порт 53).</li>
+<ul class="eList"><li>"Прослушивание" порта. Используется серверными приложениями, ожидающими подключений пользователей к одной из хорошо известных служб, например, <a class="term" data-term="HTTP" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">HTTP</a> (TCP порт 80), <a class="term" data-term="Telnet" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Telnet</a> (TCP порт 21), <a class="term" data-term="DNS" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">DNS</a> (UDP и, иногда, TCP, порт 53).</li>
 <li>Открытие динамического порта. Обе стороны TCP-подключения должны идентифицироваться IP-адресами и номерами портов. Для этого на машине клиента необходимо выбрать порт с номером не менее 1024, не используемый в настоящий момент другим каналом коммуникации, и использовать его в качестве порта отправителя в новом подключении.</li>
 </ul>
-<div>Динамические порты также могут использоваться как порты для прослушивания в некоторых приложениях, в частности, в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">FTP</a>.</div>
+<div>Динамические порты также могут использоваться как порты для прослушивания в некоторых приложениях, в частности, в <a class="term" data-term="FTP" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">FTP</a>.</div>
 <a name="T1036877558"></a>
-<div>Порты с номерами 0-1023 почти всегда — серверные. Порты в диапазоне 1024-65535 обычно — динамические (т.е. открываются динамически при подключении к серверному порту). Однако, любой порт может использоваться как серверный и любой порт может использоваться как порт для "исходящих" <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пакетов</a>.</div>
+<div>Порты с номерами 0-1023 почти всегда — серверные. Порты в диапазоне 1024-65535 обычно — динамические (т.е. открываются динамически при подключении к серверному порту). Однако, любой порт может использоваться как серверный и любой порт может использоваться как порт для "исходящих" <a class="term" data-term="пакетов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пакетов</a>.</div>
 </div>
 </div> 
 </body></html></div></main>
@@ -48,5 +48,11 @@
         <a href="/rk6-edu/course-11/mod-72.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

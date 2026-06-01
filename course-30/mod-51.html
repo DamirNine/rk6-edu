@@ -30,7 +30,7 @@
 <a name="T33309882"></a>
 <a name="T823713000"></a>
 <a name="T1992766606"></a>
-<div>Предположим, что значения <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ключей</a> - отдельные небольшие числа. В этом случае простейший <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> поиска основывается на сохранении элементов в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массиве</a>, индексированном по ключам.</div>
+<div>Предположим, что значения <a class="term" data-term="ключей" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ключей</a> - отдельные небольшие числа. В этом случае простейший <a class="term" data-term="алгоритм" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> поиска основывается на сохранении элементов в <a class="term" data-term="массиве" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массиве</a>, индексированном по ключам.</div>
 <br>
 <pre class="eListing">template &lt;class Item, class Key&gt;
 class ST {
@@ -66,7 +66,7 @@ if(!st[i].null()) st[i].show(os); }
 <br>
 <a name="T1233060480"></a>
 <a name="T1356058257"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Оператор</a> new[] инициализирует все записи значением nullItem, затем мы вставляем (insert) элемент со значением ключа k, просто сохраняя его в массиве st[k], и выполняем поиск (search) элемента со значением ключа k, отыскивая его в st[k]. Для удаления (remove) элемента со значением ключа k значение nullItem помещается в st[k]. Реализация операций выбора (select), <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> (sort) и подсчёта (count) в программе использует линейный просмотр массива с пропуском нулевых элементов. Реализация предоставляет клиенту решать задачи обработки элементов с дублированными ключами и проверки таких условий, как указание операции remove для ключа, отсутствующего в таблице.</div>
+<div><a class="term" data-term="Оператор" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Оператор</a> new[] инициализирует все записи значением nullItem, затем мы вставляем (insert) элемент со значением ключа k, просто сохраняя его в массиве st[k], и выполняем поиск (search) элемента со значением ключа k, отыскивая его в st[k]. Для удаления (remove) элемента со значением ключа k значение nullItem помещается в st[k]. Реализация операций выбора (select), <a class="term" data-term="сортировки" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> (sort) и подсчёта (count) в программе использует линейный просмотр массива с пропуском нулевых элементов. Реализация предоставляет клиенту решать задачи обработки элементов с дублированными ключами и проверки таких условий, как указание операции remove для ключа, отсутствующего в таблице.</div>
 </div>
 </div> 
 </body></html></div></main>
@@ -77,5 +77,11 @@ if(!st[i].null()) st[i].show(os); }
         <a href="/rk6-edu/course-30/mod-52.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

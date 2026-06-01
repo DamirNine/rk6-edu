@@ -27,12 +27,12 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Проблема быстродействия микропроцессорной системы</a>
 </div>
 <a name="T1418249701"></a>
-<div>Классическая <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> имеет следующую структуру: (рис.&nbsp;1)</div>
+<div>Классическая <a class="term" data-term="МПС" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> имеет следующую структуру: (рис.&nbsp;1)</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_01.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Микропроцессор</a> функционирует в соответствии с программой, реализующей корректирующее устройство. Обобщенная блок-схема управляющей программы представлена на рис.&nbsp;2.</div>
+<div><a class="term" data-term="Микропроцессор" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Микропроцессор</a> функционирует в соответствии с программой, реализующей корректирующее устройство. Обобщенная блок-схема управляющей программы представлена на рис.&nbsp;2.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_01.mod/?n=2"></td></tr></tbody></table>
@@ -47,10 +47,10 @@
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_01.mod/?n=4"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
-<div>В модуле <a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Характеристики непрерывных и дискретных систем</a> показано, что при <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дискретной реализации блока управления</a> в такой системе, можно получить следующую формулу для выходного сигнала <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=1/?k=10">:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=2/?k=10"><br>т.е. от значения произведения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=3/?k=10"> зависят характеристики системы — при увеличении этого значения система может стать колебательной и вообще неустойчивой.</div>
+<div>В модуле <a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Характеристики непрерывных и дискретных систем</a> показано, что при <a class="term" data-term="Дискретная система" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дискретной реализации блока управления</a> в такой системе, можно получить следующую формулу для выходного сигнала <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=1/?k=10">:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=2/?k=10"><br>т.е. от значения произведения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=3/?k=10"> зависят характеристики системы — при увеличении этого значения система может стать колебательной и вообще неустойчивой.</div>
 <div>Это означает, что накладываются жесткие ограничения на значение <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=4/?k=10">. При слишком большом <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=4/?k=10"> система не сможет обеспечить требуемую точность (невозможно увеличивать <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=5/?k=10">) и может потерять устойчивость.</div>
 <a name="T1142726259"></a>
-<div>Что же такое <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=4/?k=10">? Это период дискретизации, равный времени выполнения одного цикла управляющей программы (рис.&nbsp;2). Время выполнения управляющей программы зависит от сложности самой программы и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">быстродействия МПС</a>. Сложность программы определяется выбранным алгоритмом коррекции и, как правило, не может быть существенно уменьшена. Следовательно, реальный путь уменьшения периода дискретизации <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=4/?k=10"> — увеличение быстродействия МПС.</div>
+<div>Что же такое <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=4/?k=10">? Это период дискретизации, равный времени выполнения одного цикла управляющей программы (рис.&nbsp;2). Время выполнения управляющей программы зависит от сложности самой программы и <a class="term" data-term="быстродействие МПС" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">быстродействия МПС</a>. Сложность программы определяется выбранным алгоритмом коррекции и, как правило, не может быть существенно уменьшена. Следовательно, реальный путь уменьшения периода дискретизации <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=4/?k=10"> — увеличение быстродействия МПС.</div>
 <div>Существуют два пути увеличения быстродействия МПС:</div>
 <ul class="eList"><li><span style="font-weight:bold; text-decoration:underline; ">Использование конвейерных структур.</span> Принцип конвейеризации процесса обработки информации заключается в разделении этого процесса на отдельные действия и выполнение их разными блоками МП с возможностью их параллельной работы.</li>
 <li><span style="font-weight:bold; text-decoration:underline; ">Использование многопроцессорных систем.</span> Алгоритмическая реализация корректирующего устройства в ряде случаев позволяет разделить вычисления на несколько параллельно выполняющихся операций. Например, вычисление суммы <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=6/?k=10"> может быть представлено в виде:<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=7/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=8/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=9/?k=10">. При этом вычисление <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=10/?k=10">и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=11/?k=10"> можно вести параллельно, на двух разных МП. Если обозначить время выполнения одного сложения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=12/?k=10"> , время вычислений в первом случае составит <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=13/?k=10"> , а во втором — <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_01.mod/?n=14/?k=10">.</li>
@@ -67,5 +67,11 @@
         <a href="/rk6-edu/course-31/mod-66.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

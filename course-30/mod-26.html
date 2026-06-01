@@ -28,10 +28,10 @@
 </div>
 <br>
 <a name="T1784863644"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Очередь с круговым буфером</a> является удобной и естественной абстрактной структурой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">данных</a> для моделирования обхода элементов по кругу в условиях задачи Иосифа по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритму</a>, который можно условно назвать алгоритмом кругового обслуживания. Алгоритм кругового обслуживания составляет следующая последовательность шагов: </div>
+<div><a class="term" data-term="Очередь с круговым буфером" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Очередь с круговым буфером</a> является удобной и естественной абстрактной структурой <a class="term" data-term="данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">данных</a> для моделирования обхода элементов по кругу в условиях задачи Иосифа по <a class="term" data-term="алгоритму" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритму</a>, который можно условно назвать алгоритмом кругового обслуживания. Алгоритм кругового обслуживания составляет следующая последовательность шагов: </div>
 <br>
 <ol class="eList"><a name="T1024523901"></a>
-<li> Заготовить пустую очередь с размером кольцевого <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">буфера</a> на 1 больше, чем число обслуживаемых элементов. </li>
+<li> Заготовить пустую очередь с размером кольцевого <a class="term" data-term="буфера" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">буфера</a> на 1 больше, чем число обслуживаемых элементов. </li>
 <li> Применяя примитив ENQUEUE соответствующее число раз, разместить номера всех обслуживаемых элементов в кольцевом буфере очереди, что эквивалентно расположению элементов по кругу. </li>
 <li> Чередуя вызовы примитивов DEQUEUE и ENQUEUE необходимое число раз, добиться чтобы в голове очереди оказался элемент с желаемым номером. </li>
 <li> Инициализировать счетчик шагов по кругу значением 1. </li>
@@ -49,5 +49,11 @@
         <a href="/rk6-edu/course-30/mod-27.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

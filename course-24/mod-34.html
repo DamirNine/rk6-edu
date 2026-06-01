@@ -31,14 +31,14 @@
 <a name="T1821205864"></a>
 <a name="T803028594"></a>
 <a name="T708113156"></a>
-<div>Если в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции присваивания</a> оба операнда  имеют один и тот же <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">тип данных</a>, то никакого <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">преобразования данных</a> не требуется. Однако, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражение</a> слева (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">именующее выражение</a>) не обязано иметь тот же тип, что и выражение справа. В этом случае делается попытка преобразования значения правого выражения к типу левого операнда.</div>
+<div>Если в <a class="term" data-term="операции присваивания" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции присваивания</a> оба операнда  имеют один и тот же <a class="term" data-term="тип данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">тип данных</a>, то никакого <a class="term" data-term="преобразования данных" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">преобразования данных</a> не требуется. Однако, <a class="term" data-term="выражение" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражение</a> слева (<a class="term" data-term="именующее выражение" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">именующее выражение</a>) не обязано иметь тот же тип, что и выражение справа. В этом случае делается попытка преобразования значения правого выражения к типу левого операнда.</div>
 <div>Возможны следующие варианты использования операции присваивания, которые потребуют преобразования данных:</div>
 <ol class="eList"><li>Объект типа <span class="eOperator">float</span> или <span class="eOperator">double</span> = значение выражения типа <span class="eOperator">char</span> или <span class="eOperator">int</span>.</li>
 <li>Объект типа <span class="eOperator">char</span> или <span class="eOperator">int</span> = значение выражениея типа <span class="eOperator">float</span> или <span class="eOperator">double</span>.</li>
 <li>Объект меньшего размера = значение выражения большего размера.</li>
 <li>Объект большего размера = значение выражения меньшего размера.</li>
 </ol>
-<div>В первом варианте присваивание обычно не влечет никакой потери данных. Значение выражение типа <span class="eOperator">char</span> или <span class="eOperator">int </span> будет помещено в область памяти, отведенную для <span class="eOperator">float</span> или <span class="eOperator">double</span>. При этом объект, представленный в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формате целых чисел</a>, преобразуется в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формат с плавающей точкой</a> для вещественных чисел.</div>
+<div>В первом варианте присваивание обычно не влечет никакой потери данных. Значение выражение типа <span class="eOperator">char</span> или <span class="eOperator">int </span> будет помещено в область памяти, отведенную для <span class="eOperator">float</span> или <span class="eOperator">double</span>. При этом объект, представленный в <a class="term" data-term="формате целых чисел" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формате целых чисел</a>, преобразуется в <a class="term" data-term="формат с плавающей точкой" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формат с плавающей точкой</a> для вещественных чисел.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><div><span class="eOperator"> int_var = 27;</span></div>
 <div><span class="eOperator"> float_var = int_var;</span><span class="eOperator"> /* float_var  теперь равно 27.0*/</span></div>
@@ -93,5 +93,11 @@
         <a href="/rk6-edu/course-24/mod-35.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

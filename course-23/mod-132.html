@@ -27,9 +27,9 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функции управления динамической памятью</a>
 </div>
 <a name="T1472977186"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функции управления динамической памятью</a> дают возможность легко управлять памятью.</div>
-<div>Они являются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функциями</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеки</a> общего назначения.</div>
-<div>Объявления этих функций находится в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">заголовочном файле</a> <span class="eOperator">&lt;stdlib.h&gt;</span>, поэтому в программах, использующих эти функции, необходимо включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div><a class="term" data-term="Функции управления динамической памятью" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функции управления динамической памятью</a> дают возможность легко управлять памятью.</div>
+<div>Они являются <a class="term" data-term="функциями" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функциями</a> <a class="term" data-term="библиотеки" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеки</a> общего назначения.</div>
+<div>Объявления этих функций находится в <a class="term" data-term="файл заголовков" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">заголовочном файле</a> <span class="eOperator">&lt;stdlib.h&gt;</span>, поэтому в программах, использующих эти функции, необходимо включать следующую <a class="term" data-term="директиву препроцессора" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
 <div><span class="eOperator">#include &lt;stdlib.h&gt;</span></div>
 <div class="eSubTitle">Выделение памяти</div>
 <div><span class="eOperator">void * malloc(size_t size)</span></div>
@@ -98,7 +98,7 @@ if ((table = calloc(3, sizeof(struct node)))==NULL)
    }
 
 </pre>
-<div>Выделяется память под <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a> из трех элементов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структур</a> <span class="eOperator">node</span>. Ссылаться на элементы можно как</div>
+<div>Выделяется память под <a class="term" data-term="массив" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a> из трех элементов <a class="term" data-term="структур" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структур</a> <span class="eOperator">node</span>. Ссылаться на элементы можно как</div>
 <div>в любом другом массиве.</div>
 <div><span class="eOperator">table[2].data = 3;</span></div>
 </div>
@@ -155,5 +155,11 @@ return (g);
         <a href="/rk6-edu/course-23/mod-133.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

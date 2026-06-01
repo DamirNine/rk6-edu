@@ -31,13 +31,13 @@
 <tbody><tr><td><img src="/?img/?doc=OP2/mem1.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
 <a name="T737644348"></a>
-<div>Диаграмма на рис.&nbsp;1 показывает <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">виртуальную память пользователя</a>. Она организована из трех сегментов: текст, данные и стек.</div>
+<div>Диаграмма на рис.&nbsp;1 показывает <a class="term" data-term="виртуальную память пользователя" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">виртуальную память пользователя</a>. Она организована из трех сегментов: текст, данные и стек.</div>
 <a name="T394050215"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Текстовый сегмент</a> – это просто выполняемый код, то есть машинный код программы.</div>
+<div><a class="term" data-term="Текстовый сегмент" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Текстовый сегмент</a> – это просто выполняемый код, то есть машинный код программы.</div>
 <a name="T1991886585"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сегмент данных</a> используется для хранения внешних (<span class="eOperator">external</span>) и статических (<span class="eOperator">static</span>) переменных. Он содержит инициализированные и неинициализированные данные. Неинициализированные данные автоматически устанавливаются равными нулю при входе в программу. Адрес внешней памяти <span class="eOperator">etext </span>обозначает конец текстового сегмента. Конец инициализированных и неинициализированных данных обозначен адресом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внешних переменных</a> <span class="eOperator">edata</span> и <span class="eOperator">end</span>, соответственно. Переменные <span class="eOperator">etext,</span> <span class="eOperator">edata</span> и <span class="eOperator">end</span> – целые.</div>
+<div><a class="term" data-term="Сегмент данных" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сегмент данных</a> используется для хранения внешних (<span class="eOperator">external</span>) и статических (<span class="eOperator">static</span>) переменных. Он содержит инициализированные и неинициализированные данные. Неинициализированные данные автоматически устанавливаются равными нулю при входе в программу. Адрес внешней памяти <span class="eOperator">etext </span>обозначает конец текстового сегмента. Конец инициализированных и неинициализированных данных обозначен адресом <a class="term" data-term="внешних переменных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внешних переменных</a> <span class="eOperator">edata</span> и <span class="eOperator">end</span>, соответственно. Переменные <span class="eOperator">etext,</span> <span class="eOperator">edata</span> и <span class="eOperator">end</span> – целые.</div>
 <div>Первоначально, граница выделяемой памяти программы – это адрес <span class="eOperator">end</span>. Граница выделяемой памяти может изменяться при вызове системных вызовов или библиотечных функций управления памятью. Однако адреса трех переменных <span class="eOperator">etext</span>, <span class="eOperator">edata</span> и <span class="eOperator">end </span>неизмены.</div>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Стек</a> программы используется для хранения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументов</a> функции и ее локальных (<span class="eOperator">automatic</span>) переменных. Стек также используется для сохранения регистров при вызове функции. Расположение вершины стека труднодоступно.</div>
+<div><a class="term" data-term="стек (память)" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Стек</a> программы используется для хранения <a class="term" data-term="аргументов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументов</a> функции и ее локальных (<span class="eOperator">automatic</span>) переменных. Стек также используется для сохранения регистров при вызове функции. Расположение вершины стека труднодоступно.</div>
 <div>Любая попытка исправить память между концом данных и вершиной стека может привести к порче памяти. Также недоступна память расположенная ниже конца стека.</div>
 <div>Можно изменить размер сегмента данных с помощью системных вызовов <span class="eOperator">brk</span> и <span class="eOperator">sbrk</span>, изменяя границы выделяемой области.</div>
 <div>В отличие от сегмента данных, стек программы автоматически увеличивается и уменьшается с каждым вызовом функции и выходом из нее, соответственно.</div>
@@ -53,5 +53,11 @@
         <a href="/rk6-edu/course-23/mod-132.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

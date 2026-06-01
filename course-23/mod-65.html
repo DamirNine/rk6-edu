@@ -28,12 +28,12 @@
 </div>
 <a name="T20056830"></a>
 <a name="T1992766606"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Инициализация массива</a> — это присваивание элементам <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a> начальных значений.</div>
+<div><a class="term" data-term="Инициализация массива" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Инициализация массива</a> — это присваивание элементам <a class="term" data-term="массива" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a> начальных значений.</div>
 <a name="T1961386404"></a>
 <a name="T1554292551"></a>
 <a name="T147264199"></a>
 <a name="T1835217675"></a>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Внешние</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">статические внешние</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">статические внутренние</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">автоматические переменные</a> составных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типов данных</a>, таких как массивы, могут быть проинициализированы при их объявлении. Любая автоматическая переменная или ее часть (например, элемент массива), которые не были инициализированы, остаются неопределенными. Любая внешняя или статическая переменная или часть ее (например, элемент массива), будучи не проинициализированными, устанавливаются в 0 или <span class="eOperator">NULL</span> (для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателей</a>).</div>
+<div><a class="term" data-term="Внешняя переменная" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Внешние</a>, <a class="term" data-term="внешная статическая переменная" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">статические внешние</a>, <a class="term" data-term="внутренняя статическая переменная" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">статические внутренние</a> и <a class="term" data-term="автоматические переменные" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">автоматические переменные</a> составных <a class="term" data-term="типов данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типов данных</a>, таких как массивы, могут быть проинициализированы при их объявлении. Любая автоматическая переменная или ее часть (например, элемент массива), которые не были инициализированы, остаются неопределенными. Любая внешняя или статическая переменная или часть ее (например, элемент массива), будучи не проинициализированными, устанавливаются в 0 или <span class="eOperator">NULL</span> (для <a class="term" data-term="указателей" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателей</a>).</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">char alpha[10];
 char beta[10] = {'a, 'b', 'c'};
@@ -55,10 +55,10 @@ int lengths[10] = {23, 56, 83};
 }
 </pre>
 <a name="T600009389"></a>
-<div>Размеры строк <span class="eOperator">gamma</span> и <span class="eOperator">local</span> равны количеству символов в строке, увеличенному на 1 (для символа <span class="eOperator">NULL </span>— <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">признака конца строки</a>).</div>
+<div>Размеры строк <span class="eOperator">gamma</span> и <span class="eOperator">local</span> равны количеству символов в строке, увеличенному на 1 (для символа <span class="eOperator">NULL </span>— <a class="term" data-term="признака конца строки" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">признака конца строки</a>).</div>
 </div>
 <a name="T828724782"></a>
-<div>Автоматические переменные инициализируются при каждом входе в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">блок</a>. Внешние и статические переменные инициализируются один раз, перед началом выполнения программы.</div>
+<div>Автоматические переменные инициализируются при каждом входе в <a class="term" data-term="блок операторов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">блок</a>. Внешние и статические переменные инициализируются один раз, перед началом выполнения программы.</div>
 </div>
 </div> 
 </body></html></div></main>
@@ -69,5 +69,11 @@ int lengths[10] = {23, 56, 83};
         <a href="/rk6-edu/course-23/mod-66.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

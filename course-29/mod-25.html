@@ -26,14 +26,14 @@
 <main><div class="dModul">
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Экранирование метасимволов</a>
 </div>
-<div>В практике <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">лексического анализа</a> часто встречается ситуация, когда в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">регулярном выражении</a> какие-либо из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метасимволов</a> должны использоваться как литералы. В этом случае их нужно экранировать либо индивидуально с помощью символа обратной дробной черты (\), либо в виде последовательности, заключенной в кавычки (").</div>
-<div>В частности, кавычки указывают, что заключенная в них последовательность должна рассматриваться как обычные текстовые символы. Например, следующее <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">регулярное выражение</a>:</div>
+<div>В практике <a class="term" data-term="лексического анализа" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">лексического анализа</a> часто встречается ситуация, когда в <a class="term" data-term="Регулярные выражения" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">регулярном выражении</a> какие-либо из <a class="term" data-term="Метасимволы" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метасимволов</a> должны использоваться как литералы. В этом случае их нужно экранировать либо индивидуально с помощью символа обратной дробной черты (\), либо в виде последовательности, заключенной в кавычки (").</div>
+<div>В частности, кавычки указывают, что заключенная в них последовательность должна рассматриваться как обычные текстовые символы. Например, следующее <a class="term" data-term="регулярное выражение" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">регулярное выражение</a>:</div>
 <br>
 <pre class="eListing">ALPHA"++"
 </pre>
 <br>
 <a name="T1437963476"></a>
-<div>удовлетворяет входной последовательности ALPHA++, где <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метасимволы</a>, обозначенные знаком плюс, теряют свой специальный смысл, потому что их экранируют кавычки. Здесь, следует обратить внимание, на то, что экранироваться может как вся строка, так и часть строки. В данном случае экранировать пять обычных символов (ALPHA) в начале этой строки нет необходимости. В общем случае <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">экранирование</a> обычных текстовых символов необязательно, хотя никакого вреда не приносит. Например, следующее регулярное выражение полностью аналогично предыдущему:</div>
+<div>удовлетворяет входной последовательности ALPHA++, где <a class="term" data-term="метасимволы" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метасимволы</a>, обозначенные знаком плюс, теряют свой специальный смысл, потому что их экранируют кавычки. Здесь, следует обратить внимание, на то, что экранироваться может как вся строка, так и часть строки. В данном случае экранировать пять обычных символов (ALPHA) в начале этой строки нет необходимости. В общем случае <a class="term" data-term="экранирование символа" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">экранирование</a> обычных текстовых символов необязательно, хотя никакого вреда не приносит. Например, следующее регулярное выражение полностью аналогично предыдущему:</div>
 <br>
 <pre class="eListing">"ALPHA++"
 </pre>
@@ -68,5 +68,11 @@
         <a href="/rk6-edu/course-29/mod-26.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

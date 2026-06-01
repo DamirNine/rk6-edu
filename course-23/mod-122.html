@@ -28,27 +28,27 @@
 </div>
 <a name="T822639261"></a>
 <a name="T696383489"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция gets()</a> — стандартная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция</a> языка Си для ввода строки.</div>
+<div><a class="term" data-term="Функция gets()" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция gets()</a> — стандартная <a class="term" data-term="функция" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция</a> языка Си для ввода строки.</div>
 <a name="T581415280"></a>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявление прототипа функции</a> <span class="eOperator">gets()</span>:</div>
+<div><a class="term" data-term="Объявление прототипа функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявление прототипа функции</a> <span class="eOperator">gets()</span>:</div>
 <div><span class="eOperator">char *gets(char *s)</span></div>
 <div><span class="eOperator"> </span></div>
 <a name="T1095077956"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция puts()</a> — стандартная функция языка Си для вывода строки.</div>
+<div><a class="term" data-term="Функция puts()" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция puts()</a> — стандартная функция языка Си для вывода строки.</div>
 <div>Объявление прототипа функции <span class="eOperator">puts()</span>:</div>
 <div><span class="eOperator">int puts(const char *s)</span></div>
 <a name="T37556405"></a>
 <a name="T637542155"></a>
-<div>Эти объявления находятся в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эти функции, должны включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div>Эти объявления находятся в <a class="term" data-term="файле заголовков" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эти функции, должны включать следующую <a class="term" data-term="директиву препроцессора" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
 <div><span class="eOperator">#include &lt;stdio.h&gt;</span></div>
 <a name="T1037302591"></a>
 <a name="T109760136"></a>
 <a name="T600009389"></a>
-<div>Функция <span class="eOperator">gets() </span>вводит входную строку из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потока</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">stdin</a>. При этом символ новой строки отбрасывается, а введенные символы дополняются в конце нулевым символом (символом '\<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">0</a>'). Необходимо позаботиться, чтобы принимающий массив символов был достаточно большим для размещения наибольшей возможной строки. Функция возвращает <span class="eOperator">NULL</span> по концу файла, если символов для чтения нет.</div>
+<div>Функция <span class="eOperator">gets() </span>вводит входную строку из <a class="term" data-term="потока" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потока</a> <a class="term" data-term="stdin" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">stdin</a>. При этом символ новой строки отбрасывается, а введенные символы дополняются в конце нулевым символом (символом '\<a class="term" data-term="0" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">0</a>'). Необходимо позаботиться, чтобы принимающий массив символов был достаточно большим для размещения наибольшей возможной строки. Функция возвращает <span class="eOperator">NULL</span> по концу файла, если символов для чтения нет.</div>
 <a name="T1717228331"></a>
-<div>В отличии от <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции scanf</a>(), использующей спецификатор <span class="eOperator">%s</span>, функция <span class="eOperator">gets()</span> читает полную строку, включая символы пробела и табуляцию.</div>
+<div>В отличии от <a class="term" data-term="функции scanf" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции scanf</a>(), использующей спецификатор <span class="eOperator">%s</span>, функция <span class="eOperator">gets()</span> читает полную строку, включая символы пробела и табуляцию.</div>
 <a name="T892396981"></a>
-<div>Функция <span class="eOperator">puts()</span>выводит заканчивающуюся нулевым символом строку символов в поток <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">stdout</a>. При этом вместо нулевого символа выводится символ новой строки.</div>
+<div>Функция <span class="eOperator">puts()</span>выводит заканчивающуюся нулевым символом строку символов в поток <a class="term" data-term="stdout" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">stdout</a>. При этом вместо нулевого символа выводится символ новой строки.</div>
 <div>Функции <span class="eOperator">fgets()</span>и <span class="eOperator">fputs()</span>подобны функциям <span class="eOperator">gets() </span>и <span class="eOperator">puts()</span>(<a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Функции чтения-записи</a>).</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
@@ -77,5 +77,11 @@ int main()
         <a href="/rk6-edu/course-23/mod-123.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

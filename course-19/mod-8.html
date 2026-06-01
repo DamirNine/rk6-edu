@@ -28,9 +28,9 @@
 </div>
 <a name="T812994027"></a>
 <a name="T628348261"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Унификацией</a> называется процесс подстановки термов на места переменных в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">п.п.ф. ИППП</a> с целью приведения этих формул к требуемому виду.</div>
+<div><a class="term" data-term="Унификацией" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Унификацией</a> называется процесс подстановки термов на места переменных в <a class="term" data-term="п.п.ф. ИППП" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">п.п.ф. ИППП</a> с целью приведения этих формул к требуемому виду.</div>
 <a name="T1820389297"></a>
-<div>Дело в том, что при доказательстве теорем (в том числе и с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">правила резолюции</a>), содержащих квантифицированные переменные, часто оказывается необходимым привести к единому виду определенные подвыражения.</div>
+<div>Дело в том, что при доказательстве теорем (в том числе и с помощью <a class="term" data-term="правила резолюции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">правила резолюции</a>), содержащих квантифицированные переменные, часто оказывается необходимым привести к единому виду определенные подвыражения.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><div>Пусть необходимо из утверждений "Все люди смертны" и "Сократ — человек" доказать формальным путем (используя ИППП) теорему "Сократ — смертен". Тогда предметные аксиомы будут иметь следующий вид (с нарушением канонического синтаксиса ИППП для предикатных букв и предметных констант):</div>
 <ul class="eList"><li><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=IPPP/unify.mod/?n=1/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=IPPP/unify.mod/?n=2/?k=10"></li>
@@ -39,7 +39,7 @@
 <div>Доказательство:</div>
 <ul class="eList"><li>а) <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=IPPP/unify.mod/?n=5/?k=10"> (правило специализации <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=IPPP/unify.mod/?n=6/?k=10"> к <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=IPPP/unify.mod/?n=7/?k=10">);</li>
 <a name="T426407258"></a>
-<li>б) <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=IPPP/unify.mod/?n=8/?k=10"> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">правило заключения</a> к <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=IPPP/unify.mod/?n=9/?k=10"> и а).</li>
+<li>б) <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=IPPP/unify.mod/?n=8/?k=10"> (<a class="term" data-term="правило заключения" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">правило заключения</a> к <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=IPPP/unify.mod/?n=9/?k=10"> и а).</li>
 </ul>
 <div>Здесь для применения правила специализации на шаге а необходимо было найти подстановку "Сократ вместо <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=IPPP/unify.mod/?n=10/?k=10">".</div>
 </div>
@@ -92,5 +92,11 @@
         <a href="/rk6-edu/course-19/mod-9.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

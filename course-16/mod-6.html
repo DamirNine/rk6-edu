@@ -37,13 +37,13 @@
 <tbody><tr><td><img src="/?img/?doc=Mkr/one_n.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
 <a name="T1038881380"></a>
-<div>Для каждого внутреннего узла <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетки</a> записываем разностный аналог исходного дифференциального уравнения:</div>
+<div>Для каждого внутреннего узла <a class="term" data-term="сетки" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетки</a> записываем разностный аналог исходного дифференциального уравнения:</div>
 <ul class="eList"><li>для узла 1: <br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=7/?k=10"><br></li>
 <li>для узла 2:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=8/?k=10"><br></li>
 <li>для узла 3:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=9/?k=10"><br></li>
 </ul>
 <a name="T1939952474"></a>
-<div>В результате получили замкнутую систему линейных алгебраических уравнений, где неизвестными являются <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=10/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=11/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=12/?k=10">, а <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=13/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=14/?k=10"> — заданные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">граничные условия</a>. Условно будем читать, что <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=15/?k=10"> (реальные значения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=16/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=17/?k=10">).</div>
+<div>В результате получили замкнутую систему линейных алгебраических уравнений, где неизвестными являются <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=10/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=11/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=12/?k=10">, а <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=13/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=14/?k=10"> — заданные <a class="term" data-term="граничные условия" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">граничные условия</a>. Условно будем читать, что <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=15/?k=10"> (реальные значения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=16/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=17/?k=10">).</div>
 <div>Решив систему уравнений, получим <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=18/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=19/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=20/?k=10">. В этом случае градиент температуры составит <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=21/?k=10">, то есть двойное остекление в 20 раз эффективнее одинарного.</div>
 <div>В том случае, когда коэффициент теплопроводности зависит от температуры, например для металлов он пропорционален ей, придем к следующей системе нелинейных алгебраических уравнений (для сетки из четырех узлов, два из которых внутренние):</div>
 <ul class="eList"><li>для узла 1:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Mkr/one_n.mod/?n=22/?k=10"><br></li>
@@ -62,5 +62,11 @@
         <a href="/rk6-edu/course-16/mod-7.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

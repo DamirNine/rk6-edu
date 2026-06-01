@@ -28,13 +28,13 @@
 </div>
 <a name="T114264910"></a>
 <a name="T803028594"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Приоритет операции</a> определяет порядок вычисления операций в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражении</a>.</div>
+<div><a class="term" data-term="Приоритет операции" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Приоритет операции</a> определяет порядок вычисления операций в <a class="term" data-term="выражении" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражении</a>.</div>
 <a name="T227581730"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Ассоциативность</a> определяет порядок вычисления операций, имеющих равный приоритет.</div>
+<div><a class="term" data-term="Ассоциативность" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Ассоциативность</a> определяет порядок вычисления операций, имеющих равный приоритет.</div>
 <a name="T424168142"></a>
-<div>Приоритет операции определяется ее положением в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">таблице приоритетов</a>. Самыми приоритетными являются первичные операции в верхней строке, затем идут унарные операции и т.д.</div>
+<div>Приоритет операции определяется ее положением в <a class="term" data-term="таблице приоритетов" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">таблице приоритетов</a>. Самыми приоритетными являются первичные операции в верхней строке, затем идут унарные операции и т.д.</div>
 <a name="T2042524345"></a>
-<div> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Унарная операция</a> - операция, имеющая  один операнд.</div>
+<div> <a class="term" data-term="Унарная операция" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Унарная операция</a> - операция, имеющая  один операнд.</div>
 <div>Если одна операция имеет более высокий приоритет, чем другая операция, она теснее связывает свои операнды, образуя неявные скобки.</div>
 <div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
@@ -59,11 +59,11 @@
 <div class="eExample"><div><span class="eOperator">X = 5 + 3 * 2</span></div>
 <div>Данное выражение включает три операции: <span class="eOperator">=</span>, <span class="eOperator">+</span> и <span class="eOperator">*</span>. Наиболее приоритетной является операция умножения <span class="eOperator">*</span>, откуда вытекает следующее отношение:</div>
 <div><span class="eOperator">X = 5 + (3 * 2)</span></div>
-<div>Операция сложения <span class="eOperator">+</span> имеет более высокий приоритет, чем <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операция присваивания</a> <span class="eOperator">=</span>, что приводит к следующему соотношению:</div>
+<div>Операция сложения <span class="eOperator">+</span> имеет более высокий приоритет, чем <a class="term" data-term="операция присваивания" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операция присваивания</a> <span class="eOperator">=</span>, что приводит к следующему соотношению:</div>
 <div><span class="eOperator">X = (5 + (3 * 2))</span></div>
 <div>И окончательно получается выражение:</div>
 <div><span class="eOperator">(X = (5 + (3 * 2)))</span></div>
-<div>Последнее выражение показывает, как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятор</a> Си будет интерпретировать исходное выражение. Переменной <span class="eOperator">Х</span> будет присвоено значение 11.</div>
+<div>Последнее выражение показывает, как <a class="term" data-term="компилятор" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятор</a> Си будет интерпретировать исходное выражение. Переменной <span class="eOperator">Х</span> будет присвоено значение 11.</div>
 </div>
 <div>Скобки можно использовать для повышения удобочитаемости или для изменения стандартной группировки операндов.</div>
 <div class="auto">Пример 2</div>
@@ -89,5 +89,11 @@
         <a href="/rk6-edu/course-24/mod-30.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

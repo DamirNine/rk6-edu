@@ -29,24 +29,24 @@
 <a name="T1369433176"></a>
 <a name="T168464512"></a>
 <a name="T696383489"></a>
-<div>В программах на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке Си</a> ввод-вывод выполняется с использованием либо стандартной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеки</a> ввода-вывода, либо системных вызовов. Системные вызовы в различных операционных системах отличаются и поэтому непереносимы. В отличие от них <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> стандартной библиотеки ввода-вывода полностью переносимы.</div>
-<div>Для уменьшения количества обращений к устройствам (например, к диску) стандартный ввод-вывод выполняется с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">буферизацией</a>.</div>
+<div>В программах на <a class="term" data-term="языке программирования Си" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке Си</a> ввод-вывод выполняется с использованием либо стандартной <a class="term" data-term="библиотеки" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеки</a> ввода-вывода, либо системных вызовов. Системные вызовы в различных операционных системах отличаются и поэтому непереносимы. В отличие от них <a class="term" data-term="функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> стандартной библиотеки ввода-вывода полностью переносимы.</div>
+<div>Для уменьшения количества обращений к устройствам (например, к диску) стандартный ввод-вывод выполняется с <a class="term" data-term="буферизацией" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">буферизацией</a>.</div>
 <a name="T987309929"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Буфер ввода-вывода</a> — это временная область в основной памяти, которая содержит считываемые или записываемые данные.</div>
+<div><a class="term" data-term="Буфер ввода-вывода" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Буфер ввода-вывода</a> — это временная область в основной памяти, которая содержит считываемые или записываемые данные.</div>
 <a name="T1329324165"></a>
-<div>Данные пересылаются на устройства (с устройств) большими порциями, размер которых определяется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поименованной константой</a> <span class="eOperator">BUFSIZ.</span></div>
+<div>Данные пересылаются на устройства (с устройств) большими порциями, размер которых определяется <a class="term" data-term="поименованной константой" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поименованной константой</a> <span class="eOperator">BUFSIZ.</span></div>
 <a name="T1037302591"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Поток</a> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">stream</a>) — обобщенный термин для обозначения источника или адресата данных, будь то файл или некоторое физическое устройство.</div>
+<div><a class="term" data-term="Поток" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Поток</a> (<a class="term" data-term="stream" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">stream</a>) — обобщенный термин для обозначения источника или адресата данных, будь то файл или некоторое физическое устройство.</div>
 <div class="eSubTitle">Шаги файлового ввода-вывода</div>
 <div>Для файлового ввода-вывода посредством стандартных библиотечных функций ввода-вывода необходимо выполнить следующие шаги:</div>
 <ol class="eList"><a name="T37556405"></a>
 <a name="T1045484691"></a>
-<li>Подключить <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файл заголовков</a>, используя следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора #include</a> &lt;stdio.h&gt;.</li>
+<li>Подключить <a class="term" data-term="файл заголовков" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файл заголовков</a>, используя следующую <a class="term" data-term="директиву препроцессора #include" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора #include</a> &lt;stdio.h&gt;.</li>
 <a name="T541845194"></a>
-<li>Объявить <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">FILE</a> для каждого файла.</li>
-<li>Открыть файл, используя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцию fopen</a>().</li>
+<li>Объявить <a class="term" data-term="указатель" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на <a class="term" data-term="FILE" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">FILE</a> для каждого файла.</li>
+<li>Открыть файл, используя <a class="term" data-term="функцию fopen" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцию fopen</a>().</li>
 <li>Использовать функции чтения-записи стандартного ввода-вывода.</li>
-<li>Закрыть файл, используя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцию fclose</a>().</li>
+<li>Закрыть файл, используя <a class="term" data-term="функцию fclose" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцию fclose</a>().</li>
 </ol>
 <div>В таблице 1 приводятся некоторые поименованные константы из файла <span class="eOperator">stdio.h</span>. Значения указанных констант зависят от реализации.</div>
 <div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
@@ -56,9 +56,9 @@
 <tr align="center"><td class="eTable"><span class="eOperator">NULL</span></td><td class="eTable">0</td></tr>
 <tr align="center"><td class="eTable"><span class="eOperator">BUFSIZ</span></td><td class="eTable">размер буфера ввода-вывода</td></tr>
 <tr align="center"><td class="eTable"><span class="eOperator">FILE</span></td><td class="eTable">структура, определенная с помощью <span class="eOperator">typedef</span>, содержащая информацию об открытом файле</td></tr>
-<tr align="center"><td class="eTable"><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">stdin</a></td><td class="eTable">указатель на <span class="eOperator">FILE</span>, открытый для стандартного ввода</td></tr>
-<tr align="center"><td class="eTable"><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">stdout</a></td><td class="eTable">указатель на <span class="eOperator">FILE</span>, открытый для стандартного вывода</td></tr>
-<tr align="center"><td class="eTable"><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">stderr</a></td><td class="eTable">указатель на <span class="eOperator">FILE</span>, открытый для стандартного вывода сообщений об ошибках</td></tr>
+<tr align="center"><td class="eTable"><a class="term" data-term="stdin" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">stdin</a></td><td class="eTable">указатель на <span class="eOperator">FILE</span>, открытый для стандартного ввода</td></tr>
+<tr align="center"><td class="eTable"><a class="term" data-term="stdout" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">stdout</a></td><td class="eTable">указатель на <span class="eOperator">FILE</span>, открытый для стандартного вывода</td></tr>
+<tr align="center"><td class="eTable"><a class="term" data-term="stderr" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">stderr</a></td><td class="eTable">указатель на <span class="eOperator">FILE</span>, открытый для стандартного вывода сообщений об ошибках</td></tr>
 </tbody></table><br>
 </div>
 </div> 
@@ -70,5 +70,11 @@
         <a href="/rk6-edu/course-23/mod-112.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

@@ -49,7 +49,7 @@
 <div>Получили расчетную схему. Для определения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=24/?k=10"> для момента времени <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=17/?k=10"> необходимо знать значение <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=25/?k=10"> для этого же момента времени, а также значения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=24/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=26/?k=10"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=27/?k=10"> для предыдущего момента времени <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=28/?k=10">.</div>
 <div>Обратите внимание, что для момента <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=29/?k=10"> мы не можем вычислить значение <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=24/?k=10"> , так как значения <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=25/?k=10"> и <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=24/?k=10"> не определены. Из этого следует, что выдача значений <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=24/?k=10"> начнется только со второго такта (<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_22.mod/?n=30/?k=10">). На первом такте работы алгоритма происходит накопление данных, необходимое для вычисления соответствующих разностей, являющихся аналогами производных. Нетрудно видеть, что количество тактов накопления равно порядку разностного уравнения.</div>
 <a name="T1748437764"></a>
-<div>Таким образом, важной особенностью расчетной схемы, полученной с использованием метода <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">непосредственного программирования</a>, является наличие тактов накопления в начальный момент работы дискретного КУ.</div>
+<div>Таким образом, важной особенностью расчетной схемы, полученной с использованием метода <a class="term" data-term="непосредственного программирования" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">непосредственного программирования</a>, является наличие тактов накопления в начальный момент работы дискретного КУ.</div>
 </div>
 <hr width="90%">
 
@@ -62,5 +62,11 @@
         <a href="/rk6-edu/course-31/mod-60.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

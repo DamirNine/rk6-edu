@@ -29,7 +29,7 @@
 <br>
 <a name="T328781301"></a>
 <a name="T1153797611"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Хеш-таблица</a> - это обычный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a> с необычной <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">адресацией</a>, задаваемой хеш-функцией. Например, на hashTable рис. 1 - это массив из 8 элементов. Каждый элемент представляет собой указатель на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">линейный список</a>, хранящий числа. Хеш-функция в этом примере просто делит <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключ</a> на 8 и использует остаток как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">индекс</a> в таблице. Это дает нам числа от 0 до 7 Поскольку для адресации в hashTable нам и нужны числа от 0 до 7, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> гарантирует допустимые значения индексов.</div>
+<div><a class="term" data-term="Хеш-таблица" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Хеш-таблица</a> - это обычный <a class="term" data-term="массив" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a> с необычной <a class="term" data-term="адресацией" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">адресацией</a>, задаваемой хеш-функцией. Например, на hashTable рис. 1 - это массив из 8 элементов. Каждый элемент представляет собой указатель на <a class="term" data-term="линейный список" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">линейный список</a>, хранящий числа. Хеш-функция в этом примере просто делит <a class="term" data-term="ключ" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключ</a> на 8 и использует остаток как <a class="term" data-term="индекс" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">индекс</a> в таблице. Это дает нам числа от 0 до 7 Поскольку для адресации в hashTable нам и нужны числа от 0 до 7, <a class="term" data-term="алгоритм" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> гарантирует допустимые значения индексов.</div>
 <br>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
@@ -38,10 +38,10 @@
 <br>
 <div>Чтобы вставить в таблицу новый элемент, мы хешируем ключ, чтобы определить список, в который его нужно добавить, затем вставляем элемент в начало этого списка. Например, чтобы добавить 11, мы делим 11 на 8 и получаем остаток 3. Таким образом, 11 следует разместить в списке, на начало которого указывает hashTable[3]. Чтобы найти число, мы его хешируем и проходим по соответствующему списку. Чтобы удалить число, мы находим его и удаляем элемент списка, его содержащий. </div>
 <a name="T2120834539"></a>
-<div>При добавлении элементов в хеш-таблицу выделяются куски <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">динамической памяти</a>, которые организуются в виде связанных списков, каждый из которых соответствует входу хеш-таблицы. Этот <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод</a> называется связыванием. Другой метод, в котором все элементы располагаются в самой хеш-таблице, известен как прямая или открытая адресация; его описание вы найдете в цитируемой литературе. </div>
+<div>При добавлении элементов в хеш-таблицу выделяются куски <a class="term" data-term="динамической памяти" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">динамической памяти</a>, которые организуются в виде связанных списков, каждый из которых соответствует входу хеш-таблицы. Этот <a class="term" data-term="метод" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод</a> называется связыванием. Другой метод, в котором все элементы располагаются в самой хеш-таблице, известен как прямая или открытая адресация; его описание вы найдете в цитируемой литературе. </div>
 <br>
 <a name="T1122385346"></a>
-<div>Если хеш-функция распределяет совокупность возможных ключей равномерно по множеству индексов, то <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">хеширование</a> эффективно разбивает множество ключей. Наихудший случай - когда все ключи хешируются в один индекс. При этом мы работаем с одним линейным списком, который и вынуждены последовательно сканировать каждый раз, когда что-нибудь делаем. Отсюда видно, как важна хорошая хеш-функция. Здесь мы рассмотрим лишь несколько из возможных подходов. При иллюстрации методов предполагается, что unsigned char располагается в 8 битах, unsigned short int - в 16, unsigned long int - в 32. </div>
+<div>Если хеш-функция распределяет совокупность возможных ключей равномерно по множеству индексов, то <a class="term" data-term="хеширование" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">хеширование</a> эффективно разбивает множество ключей. Наихудший случай - когда все ключи хешируются в один индекс. При этом мы работаем с одним линейным списком, который и вынуждены последовательно сканировать каждый раз, когда что-нибудь делаем. Отсюда видно, как важна хорошая хеш-функция. Здесь мы рассмотрим лишь несколько из возможных подходов. При иллюстрации методов предполагается, что unsigned char располагается в 8 битах, unsigned short int - в 16, unsigned long int - в 32. </div>
 <div>Деление (размер таблицы hashTableSize - простое число). Этот метод использован в последнем примере. Хеширующее значение hashValue, изменяющееся от 0 до (hashTableSize - 1), равно остатку от деления ключа на размер хеш-таблицы. Вот как это может выглядеть:</div>
 <br>
 <pre class="eListing">typedef int HashIndexType;
@@ -135,5 +135,11 @@ HashIndexType Hash(char *str) {
         <a href="/rk6-edu/course-30/mod-44.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

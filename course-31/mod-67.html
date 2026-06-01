@@ -27,10 +27,10 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Конвейеризация обработки данных</a>
 </div>
 <a name="T85794424"></a>
-<div>Обычные арифметические операции легко поддаются <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">конвейеризации</a>. Рассмотрим несколько примеров.</div>
+<div>Обычные арифметические операции легко поддаются <a class="term" data-term="конвейеризация арифметических операций" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">конвейеризации</a>. Рассмотрим несколько примеров.</div>
 <div class="eSubTitle">Конвейерный сумматор целых чисел</div>
 <a name="T57881506"></a>
-<div>В основе <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a> суммирования целых чисел лежит суммирование одного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">двоичного разряда</a> (рис.&nbsp;1).</div>
+<div>В основе <a class="term" data-term="алгоритма" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a> суммирования целых чисел лежит суммирование одного <a class="term" data-term="двоичного разряда" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">двоичного разряда</a> (рис.&nbsp;1).</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_03.mod/?n=1"></td></tr></tbody></table>
@@ -60,7 +60,7 @@
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_03.mod/?n=3"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
 <div>Данный сумматор выполняет операцию <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_03.mod/?n=11/?k=10">.</div>
-<div>В данном сумматоре суммирование разрядов производится последовательно, так как для суммирования каждого последующего разряда необходимо знать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">бит</a> переноса, полученный при суммировании предыдущего разряда. Если время суммирования каждого разряда составляет <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_03.mod/?n=12/?k=10"> , то общее время суммирования двух <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_03.mod/?n=13/?k=10">-разрядных чисел составляет <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_03.mod/?n=14/?k=10"></div>
+<div>В данном сумматоре суммирование разрядов производится последовательно, так как для суммирования каждого последующего разряда необходимо знать <a class="term" data-term="бит" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">бит</a> переноса, полученный при суммировании предыдущего разряда. Если время суммирования каждого разряда составляет <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_03.mod/?n=12/?k=10"> , то общее время суммирования двух <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_03.mod/?n=13/?k=10">-разрядных чисел составляет <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MPSU/MPSU_3_03.mod/?n=14/?k=10"></div>
 <div>Такой же сумматор в конвейерном варианте выглядит следующим образом (рис.&nbsp;4):</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
@@ -106,5 +106,11 @@
         <a href="/rk6-edu/course-31/mod-68.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

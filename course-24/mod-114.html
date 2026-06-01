@@ -28,10 +28,10 @@
 </div>
 <a name="T873242734"></a>
 <a name="T696383489"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция fopen()</a> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция</a> открытия файла.</div>
+<div><a class="term" data-term="Функция fopen()" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция fopen()</a> — <a class="term" data-term="функция" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция</a> открытия файла.</div>
 <div><span class="eOperator">FILE *fopen(const char *имя_файла, const char *тип)</span></div>
 <a name="T756911212"></a>
-<div>Первым <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументом</a> функции <span class="eOperator">fopen() </span>является адрес строки, содержащей путевое имя файла. Второй аргумент—это адрес строки, определяющей тип работы с открываемым файлом.</div>
+<div>Первым <a class="term" data-term="аргументом" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументом</a> функции <span class="eOperator">fopen() </span>является адрес строки, содержащей путевое имя файла. Второй аргумент—это адрес строки, определяющей тип работы с открываемым файлом.</div>
 <div>Заданный именем файл открывается в соответствии с указанным типом. Тип может принимать следующие значения:</div>
 <ul class="eList"><li><span class="eOperator">"r"</span> — текстовый файл открывается для чтения (read);</li>
 <li><span class="eOperator">"w"</span>- текстовый файл создается для записи; старое содержимое, если оно было, выбрасывается (write);</li>
@@ -43,13 +43,13 @@
 <a name="T541845194"></a>
 <a name="T269665333"></a>
 <a name="T326195606"></a>
-<div>Функция <span class="eOperator">fopen()</span> возвращает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структуру FILE</a>, который затем присваивается переменной. Этот указатель называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">внутренним</a>. После открытия файла к нему обращаются с использованием указателя на этот файл, имя файла больше не потребуется.</div>
+<div>Функция <span class="eOperator">fopen()</span> возвращает <a class="term" data-term="указатель" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на <a class="term" data-term="структуру FILE" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структуру FILE</a>, который затем присваивается переменной. Этот указатель называют <a class="term" data-term="внутренний указатель" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">внутренним</a>. После открытия файла к нему обращаются с использованием указателя на этот файл, имя файла больше не потребуется.</div>
 <a name="T645587003"></a>
-<div>Для обозначения двоичных файлов к типу может добавляться символ <span class="eOperator">b </span>(например, <span class="eOperator">"rb"</span>, <span class="eOperator">"wb"</span>, <span class="eOperator">"r+b"</span>). Однако, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС UNIX</a> не делает никаких различий между двоичными и текстовыми файлами, следовательно, символ <span class="eOperator">b</span> игнорируется.</div>
+<div>Для обозначения двоичных файлов к типу может добавляться символ <span class="eOperator">b </span>(например, <span class="eOperator">"rb"</span>, <span class="eOperator">"wb"</span>, <span class="eOperator">"r+b"</span>). Однако, <a class="term" data-term="ОС UNIX" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС UNIX</a> не делает никаких различий между двоичными и текстовыми файлами, следовательно, символ <span class="eOperator">b</span> игнорируется.</div>
 <a name="T581415280"></a>
 <a name="T37556405"></a>
 <a name="T637542155"></a>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявление прототипа функции</a> <span class="eOperator">fopen() </span>находится в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эту функцию, должны включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div><a class="term" data-term="Объявление прототипа функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявление прототипа функции</a> <span class="eOperator">fopen() </span>находится в <a class="term" data-term="файле заголовков" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эту функцию, должны включать следующую <a class="term" data-term="директиву препроцессора" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
 <div><span class="eOperator">#include &lt;stdio.h&gt;</span></div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
@@ -85,5 +85,11 @@ int main()
         <a href="/rk6-edu/course-24/mod-115.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

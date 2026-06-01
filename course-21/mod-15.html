@@ -27,31 +27,31 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Наилучшие алгоритмы оптимизации</a>
 </div>
 <a name="T243020152"></a>
-<div>Конкретную <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">детерминированную задачу оптимизации</a> можно решить различными алгоритмами. Отсюда возникают вопросы:</div>
+<div>Конкретную <a class="term" data-term="детерминированную задачу оптимизации" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">детерминированную задачу оптимизации</a> можно решить различными алгоритмами. Отсюда возникают вопросы:</div>
 <ul class="eList"><li>какой алгоритм выбрать?</li>
 <li>какой алгоритм является «наилучшим»?</li>
 </ul>
 <a name="T1207549686"></a>
-<div>Ответ на эти вопросы возможен только в том случае, когда определен класс функций <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=1/?k=10">, которому принадлежит <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">критерий оптимальности</a> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=2/?k=10">. Без определения этого класса ответить на поставленные вопросы невозможно – нет алгоритма, наилучшего для всех возможных функций <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=3/?k=10"> </div>
+<div>Ответ на эти вопросы возможен только в том случае, когда определен класс функций <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=1/?k=10">, которому принадлежит <a class="term" data-term="критерий оптимальности" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">критерий оптимальности</a> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=2/?k=10">. Без определения этого класса ответить на поставленные вопросы невозможно – нет алгоритма, наилучшего для всех возможных функций <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=3/?k=10"> </div>
 <div><span style="font-style:italic; ">Примеры классов функций:</span></div>
 <ul class="eList"><li>класс функций с ограниченным числом минимумов;</li>
 <li>класс функций, с ограниченными некоторой величиной первыми частными производными;</li>
 <a name="T1844852790"></a>
-<li>класс <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выпуклых функций</a>.</li>
+<li>класс <a class="term" data-term="выпуклых функций" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выпуклых функций</a>.</li>
 </ul>
 <div>Множество рассматриваемых алгоритмов оптимизации обозначим {<img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=4/?k=10">}.</div>
 <a name="T832386551"></a>
-<div>Для формальной постановки задачи определения наилучшего алгоритма из множества <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=5/?k=10"> на классе функций <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=1/?k=10"> необходимо еще ввести <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">критерий качества алгоритма оптимизации</a>. Обозначим этот критерий <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=6/?k=10">, где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=7/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=8/?k=10">. Положим, что оптимальным является наименьшее значение этого критерия.</div>
+<div>Для формальной постановки задачи определения наилучшего алгоритма из множества <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=5/?k=10"> на классе функций <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=1/?k=10"> необходимо еще ввести <a class="term" data-term="критерий качества алгоритма оптимизации" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">критерий качества алгоритма оптимизации</a>. Обозначим этот критерий <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=6/?k=10">, где <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=7/?k=10">, <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=8/?k=10">. Положим, что оптимальным является наименьшее значение этого критерия.</div>
 <div>Для построения критерия качества алгоритма на всем классе функций <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=1/?k=10"> можно воспользоваться</div>
 <ul class="eList"><li>принципом гарантированного результата:<br><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=9/?k=10"><br></li>
 <li>некоторым средним значением критерия качества алгоритма на классе функций <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=10/?k=10">.</li>
 </ul>
 <a name="T103254861"></a>
-<div>Если критерий качества алгоритма на классе функций <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=1/?k=10"> тем или иным образом определен, то задача отыскания <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">наилучшего алгоритма оптимизации</a> на этом классе функций формально может быть записана в следующем виде:</div>
+<div>Если критерий качества алгоритма на классе функций <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=1/?k=10"> тем или иным образом определен, то задача отыскания <a class="term" data-term="наилучшего алгоритма оптимизации" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">наилучшего алгоритма оптимизации</a> на этом классе функций формально может быть записана в следующем виде:</div>
 <div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=MO/ch0302.mod/?n=11/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
 <a name="T2039875528"></a>
 <a name="T1778662243"></a>
-<div>Теоретическое решение задачи (1) возможно только для алгоритмов поиска минимума <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">одномерных унимодальных функций</a>. В более сложных случаях сравнение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритмов поисковой оптимизации</a> и выбор из них наилучшего производится на основе экспериментального тестирования<span style="font-weight:bold; ">.</span> </div>
+<div>Теоретическое решение задачи (1) возможно только для алгоритмов поиска минимума <a class="term" data-term="одномерных унимодальных функций" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">одномерных унимодальных функций</a>. В более сложных случаях сравнение <a class="term" data-term="алгоритмов поисковой оптимизации" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритмов поисковой оптимизации</a> и выбор из них наилучшего производится на основе экспериментального тестирования<span style="font-weight:bold; ">.</span> </div>
 </div>
 </div> 
 </body></html></div></main>
@@ -62,5 +62,11 @@
         <a href="/rk6-edu/course-21/mod-16.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

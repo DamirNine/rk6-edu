@@ -30,10 +30,10 @@
 <a name="T86391"></a>
 <a name="T1691991437"></a>
 <a name="T2134277063"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">RDF</a> (Resource Description Framework) — модель, предложенная консорциумом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">World Wide Web</a> Consortium (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">W3C</a>) для описания <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метаданных</a> информационных ресуросов в Web. Для представления модели RDF используется язык XML. В получающемся <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-документе</a> RDF-метаданные помещаются в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контейнер XML</a> с дескриптором rdf:RDF.</div>
+<div><a class="term" data-term="RDF" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">RDF</a> (Resource Description Framework) — модель, предложенная консорциумом <a class="term" data-term="World Wide Web" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">World Wide Web</a> Consortium (<a class="term" data-term="W3C" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">W3C</a>) для описания <a class="term" data-term="метаданных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метаданных</a> информационных ресуросов в Web. Для представления модели RDF используется язык XML. В получающемся <a class="term" data-term="XML-документе" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-документе</a> RDF-метаданные помещаются в <a class="term" data-term="контейнер XML" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контейнер XML</a> с дескриптором rdf:RDF.</div>
 <a name="T1386401492"></a>
 <a name="T84300"></a>
-<div>Модель состоит из предложений вида <span class="eOperator">субъект - предикат - объект</span>, где субъект — ресурс, о котором идет речь в предложении, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">предикат</a> — ресурс, являющийся свойством субъекта, объект — ресурс, являющийся значением свойства. Ресурсами являются некоторые модельные представления об объектах реального мира, обычно описываемые в документах, имеющих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">URI</a>. Отметим, что свойство в RDF — понятие, которое может использоваться самостоятельно, вне связи с субъектом. Пример предложения:</div>
+<div>Модель состоит из предложений вида <span class="eOperator">субъект - предикат - объект</span>, где субъект — ресурс, о котором идет речь в предложении, <a class="term" data-term="предикат" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">предикат</a> — ресурс, являющийся свойством субъекта, объект — ресурс, являющийся значением свойства. Ресурсами являются некоторые модельные представления об объектах реального мира, обычно описываемые в документах, имеющих <a class="term" data-term="URI" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">URI</a>. Отметим, что свойство в RDF — понятие, которое может использоваться самостоятельно, вне связи с субъектом. Пример предложения:</div>
 <div>Команда имеет тренера, его имя Иванов.</div>
 <div>Здесь субъектом, предикатом и объектом являются команда, тренер, Иванов соответственно.</div>
 <div>Ресурсы могут объединяться в группы, называемые классами. Сами классы также являются ресурсами и идентифицируются ссылками RDF-URI. В RDF определение класса или свойства (так называемый интенсионал) отделено от множества экземпляров класса и значений свойства (от экстенсионала).  </div>
@@ -54,7 +54,7 @@
 &lt;/rdf:RDF&gt;
 </pre>
 <a name="T1996004208"></a>
-<div>Поскольку модель RDF относится к описанию семантики предметной области и служит, в частности, для согласования семантики документов из разных источников, необходимо решать проблемы возможного использования в этих документах терминов-омонимов. Проблемы омонимии решаются с помощью использования <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространств имен</a>.</div>
+<div>Поскольку модель RDF относится к описанию семантики предметной области и служит, в частности, для согласования семантики документов из разных источников, необходимо решать проблемы возможного использования в этих документах терминов-омонимов. Проблемы омонимии решаются с помощью использования <a class="term" data-term="пространств имен" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространств имен</a>.</div>
 <div>Предположим, что некоторый термин "system" имеет разный смысл в предметных областях, описываемых в документах с URI http://www.cl.edu/cont/ и http://aba.ru/technologies/elements/. Тогда на этот термин в RDF-модели нужно ссылаться с помощью составных имен (QNames), например, m1:system и m2:system, причем предварительно должны быть введены псевдонимы m1 и m2 для указанных URI. Структура RDF-модели может иметь вид (в примере использование m1:system и m2:system подразумевается в XML-предложениях внутри элементов rdf:Description):</div>
 <pre class="eListing">&lt;rdf:RDF
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -93,5 +93,11 @@
         <a href="/rk6-edu/course-4/mod-49.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

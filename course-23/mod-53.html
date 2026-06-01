@@ -31,7 +31,7 @@
 <a name="T756911212"></a>
 <a name="T1015173096"></a>
 <a name="T33298498"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Стек</a> — это область памяти, используемая выполняемой программой для временного запоминания значений. При <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызове функции</a> все значения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">фактических параметров</a> функции помещаются на стек. Затем запоминаются значения существенных регистров, таких как, например, указатель текущей команды. Значения регистров восстанавливаются при завершении управления вызванной функцией. При передаче управления вызванной функции значения фактических параметров связываются с соответствующими областями памяти на стеке, выделенными под <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формальные параметры</a>. Затем определяется расположение на стеке для локальных (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">автоматических</a>) <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">переменных</a>. Этот набор параметров, регистров и автоматических переменных для вызова функции называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">кадром</a> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">frame</a>). Если вызванная функция выполняет вызов другой функции, на стек помещается еще один кадр. Только один кадр является активным в любой момент времени. Активная часть стека "растет" при вызове функции и "сокращается" при выходе из функции. Стековое пространство все время повторно используется, и это является причиной того, почему автоматические переменные имеют до инициализации неопределенные значения. Они зависят от того, какие значения запоминались в соответствующем месте памяти до данного вызова функции.</div>
+<div><a class="term" data-term="стек (память)" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Стек</a> — это область памяти, используемая выполняемой программой для временного запоминания значений. При <a class="term" data-term="вызове функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызове функции</a> все значения <a class="term" data-term="фактических параметров" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">фактических параметров</a> функции помещаются на стек. Затем запоминаются значения существенных регистров, таких как, например, указатель текущей команды. Значения регистров восстанавливаются при завершении управления вызванной функцией. При передаче управления вызванной функции значения фактических параметров связываются с соответствующими областями памяти на стеке, выделенными под <a class="term" data-term="формальные параметры" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формальные параметры</a>. Затем определяется расположение на стеке для локальных (<a class="term" data-term="автоматические переменные" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">автоматических</a>) <a class="term" data-term="переменных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">переменных</a>. Этот набор параметров, регистров и автоматических переменных для вызова функции называется <a class="term" data-term="кадром" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">кадром</a> (<a class="term" data-term="frame" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">frame</a>). Если вызванная функция выполняет вызов другой функции, на стек помещается еще один кадр. Только один кадр является активным в любой момент времени. Активная часть стека "растет" при вызове функции и "сокращается" при выходе из функции. Стековое пространство все время повторно используется, и это является причиной того, почему автоматические переменные имеют до инициализации неопределенные значения. Они зависят от того, какие значения запоминались в соответствующем месте памяти до данного вызова функции.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">int main()
 {
@@ -52,7 +52,7 @@ int count;
 }
 </pre>
 </div>
-<div>Показанная на рис.&nbsp;1 диаграмма показывает гипотетическую систему построения стека. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Компиляторы</a> Си управляют стеком различными способами. Например, стек может расти от больших адресов к меньшим или наоборот; количество запоминаемых регистров зависит от системы; стековое пространство в некоторых системах может выделяться динамически по мере требований и т.д.</div>
+<div>Показанная на рис.&nbsp;1 диаграмма показывает гипотетическую систему построения стека. <a class="term" data-term="Компиляторы" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Компиляторы</a> Си управляют стеком различными способами. Например, стек может расти от больших адресов к меньшим или наоборот; количество запоминаемых регистров зависит от системы; стековое пространство в некоторых системах может выделяться динамически по мере требований и т.д.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=OP2/stak.mod/?n=1"></td></tr></tbody></table>
@@ -69,5 +69,11 @@ int count;
         <a href="/rk6-edu/course-23/mod-54.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

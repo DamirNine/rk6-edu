@@ -28,14 +28,14 @@
 </div>
 <a name="T1932195852"></a>
 <a name="T1346497122"></a>
-<div>В простейшей схеме <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЛЗУ</a>, изображенной на рис.&nbsp;1, в ЛЗУ загружается целиком блок последовательно расположенных данных из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОЗУ</a>. Размер этого блока определяется размером ЛЗУ.</div>
+<div>В простейшей схеме <a class="term" data-term="ЛЗУ" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЛЗУ</a>, изображенной на рис.&nbsp;1, в ЛЗУ загружается целиком блок последовательно расположенных данных из <a class="term" data-term="ОЗУ" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОЗУ</a>. Размер этого блока определяется размером ЛЗУ.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_07_2.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
 <a name="T860435050"></a>
 <a name="T1375744212"></a>
-<div>Когда <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МП</a> запрашивает данные по определенному <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">адресу</a>, контроллер ЛЗУ проверяет, есть ли они в ЛЗУ и в случае "<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кэш-попадания</a>", возвращает их в МП. В случае "<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кэш-промаха</a>", контроллер ЛЗУ обновляет полностью все данные в ЛЗУ.</div>
+<div>Когда <a class="term" data-term="МП" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МП</a> запрашивает данные по определенному <a class="term" data-term="адресу" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">адресу</a>, контроллер ЛЗУ проверяет, есть ли они в ЛЗУ и в случае "<a class="term" data-term="кэш-попадания" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кэш-попадания</a>", возвращает их в МП. В случае "<a class="term" data-term="кэш-промаха" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кэш-промаха</a>", контроллер ЛЗУ обновляет полностью все данные в ЛЗУ.</div>
 <div>Достоинство данной схемы — ее простота. Недостаток — данные в ЛЗУ обновляются всем блоком. При большом количестве промахов это будет приводить к задержкам в работе ЛЗУ и потере его эффективности.</div>
 <div>Такая простейшая схема будет эффективно работать только при очень хорошо оптимизированной программе, когда максимальное количество данных сразу попадает в ЛЗУ.</div>
 <div class="eSubTitle">Переключающееся ЛЗУ</div>
@@ -44,19 +44,19 @@
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_07_2.mod/?n=2"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
 <a name="T2037129275"></a>
-<div>Идея <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">переключающегося ЛЗУ</a> представлена на рис.&nbsp;2. По сути дела мы имеем здесь два ЛЗУ, которые работают независимо, но под управлением одного контроллера. Например, одно ЛЗУ может использоваться для данных, другое — для команд. В этом случае вероятность "кэш-промахов" снижается, так как данные и команды как правило лежат компактно, но отдельно.</div>
+<div>Идея <a class="term" data-term="переключающегося ЛЗУ" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">переключающегося ЛЗУ</a> представлена на рис.&nbsp;2. По сути дела мы имеем здесь два ЛЗУ, которые работают независимо, но под управлением одного контроллера. Например, одно ЛЗУ может использоваться для данных, другое — для команд. В этом случае вероятность "кэш-промахов" снижается, так как данные и команды как правило лежат компактно, но отдельно.</div>
 <div>Другой вариант использования такой схемы — разделение ЛЗУ на две части. Пока осуществляется поиск данных в одной части ЛЗУ, может "подкачиваться" информация в другую часть. Таким образом, экономится время на обновление ЛЗУ в случае фиксации "кэш-промаха".</div>
 <div class="eSubTitle">Двухпортовое ЛЗУ</div>
 <a name="T504531053"></a>
 <a name="T953603266"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Двухпортовое ЛЗУ</a> строится на основе двухпортового <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЗУ</a>, архитектура которого представлена на рис.&nbsp;3.</div>
+<div><a class="term" data-term="Двухпортовое ЛЗУ" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Двухпортовое ЛЗУ</a> строится на основе двухпортового <a class="term" data-term="ЗУ" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЗУ</a>, архитектура которого представлена на рис.&nbsp;3.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_07_2.mod/?n=3"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
 <div>Двухпортовое ЗУ позволяет выполнять одновременный доступ по двум каналам, например, одновременно считывать и записывать. Таким образом, подкачка данных в ЛЗУ может выполняться одновременно с поиском данных в нем.</div>
 <div>Недостатоком двухпортового ЛЗУ является большая стоимость двухпортового ЗУ.</div>
-<div>Главной отличительной чертой всех простейших ЛЗУ и их главным недостатком является необходимость переноса из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОЗУ</a> в ЛЗУ сразу целого блока данных. Это приводит к большим потерям времени в случае "кэш-промаха", так как нужно подгружать из ОЗУ большой объем данных.</div>
+<div>Главной отличительной чертой всех простейших ЛЗУ и их главным недостатком является необходимость переноса из <a class="term" data-term="ОЗУ" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОЗУ</a> в ЛЗУ сразу целого блока данных. Это приводит к большим потерям времени в случае "кэш-промаха", так как нужно подгружать из ОЗУ большой объем данных.</div>
 </div>
 <hr width="90%">
 
@@ -69,5 +69,11 @@
         <a href="/rk6-edu/course-31/mod-74.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

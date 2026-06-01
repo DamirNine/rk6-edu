@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Протокол Telnet</a>
 </div>
 <a name="T841519932"></a>
-<div>С помощью <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">протокола Telnet</a> пользователь сети <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Internet</a> может работать на удаленном компьютере. В частности, с помощью протокола Telnet осуществляется доступ к базам данных удаленных ЭВМ с эмуляцией удаленной машины на ЭВМ пользователя.</div>
+<div>С помощью <a class="term" data-term="протокола Telnet" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">протокола Telnet</a> пользователь сети <a class="term" data-term="Internet" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Internet</a> может работать на удаленном компьютере. В частности, с помощью протокола Telnet осуществляется доступ к базам данных удаленных ЭВМ с эмуляцией удаленной машины на ЭВМ пользователя.</div>
 <div>Связь с удаленной машиной устанавливается при обращении к Telnet-программе командой</div>
 <pre class="eListing">telnet &lt;имя базы данных или системы каталогов&gt;
 </pre>
@@ -35,7 +35,7 @@
 <pre class="eListing">telnet &lt;имя удаленного компьютера&gt;
 </pre>
 <div>После установления связи пользователь с клавиатуры локального компьютера управляет вычислительным процессом, происходящим на удаленном сервере. Коды, набираемые на клавиатуре локального компьютера, передаются в удаленный компьютер, а содержимое экрана удаленного компьютера отображается на экране пользователя. Для возвращения в свой компьютер (т.е. в командный режим клиентской программы Telnet) нужно нажать соответствующую клавишу (например, Ctrl-). Примеры команд в клиентской программе: установление связи (<span class="eOperator">open</span>), возвращение в командный режим (<span class="eOperator">close</span>), завершение работы (<span class="eOperator">quit</span>).</div>
-<div>Работа по протоколу Telnet может происходить в гетерогенной среде, т.е. в условиях разных аппаратных платформ <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">клиента</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сервера</a>. Такая возможность обеспечивается, благодаря промежуточному виртуальному терминалу. В терминале содержатся таблицы соответствия различных символов управления, используемых во взаимодействующих компьютерах.</div>
+<div>Работа по протоколу Telnet может происходить в гетерогенной среде, т.е. в условиях разных аппаратных платформ <a class="term" data-term="клиента" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">клиента</a> и <a class="term" data-term="сервера" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сервера</a>. Такая возможность обеспечивается, благодаря промежуточному виртуальному терминалу. В терминале содержатся таблицы соответствия различных символов управления, используемых во взаимодействующих компьютерах.</div>
 <div>Необходимо предусматривать выход из блокировок, возникающих, например, вследствие зацикливания процесса на сервере; он осуществляется очисткой серверного буфера.</div>
 </div>
 </div> 
@@ -47,5 +47,11 @@
         <a href="/rk6-edu/course-2/mod-61.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

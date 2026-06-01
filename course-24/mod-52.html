@@ -29,16 +29,16 @@
 <a name="T756911212"></a>
 <a name="T803028594"></a>
 <a name="T1248933124"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Фактический параметр</a> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражение</a>, которое указывается в круглых скобках в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызове функции.</a> Часто фактические параметры функции называют <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументами</a>.</div>
-<div>В вызове функции должно быть указано правильное количество фактических параметров. Желательно явно привести фактические параметры к требуемому  типу. Для этого используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операция приведения</a> <span class="eOperator">(type)</span>.</div>
+<div><a class="term" data-term="Фактический параметр" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Фактический параметр</a> — <a class="term" data-term="выражение" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражение</a>, которое указывается в круглых скобках в <a class="term" data-term="вызове функции." href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызове функции.</a> Часто фактические параметры функции называют <a class="term" data-term="аргументами" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументами</a>.</div>
+<div>В вызове функции должно быть указано правильное количество фактических параметров. Желательно явно привести фактические параметры к требуемому  типу. Для этого используется <a class="term" data-term="операция приведения" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операция приведения</a> <span class="eOperator">(type)</span>.</div>
 <a name="T2026410311"></a>
-<div>Компилятор <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стандарта ANSI языка Си</a> проверяет согласованность фактических параметров вызова функции ее формальным  параметрам  в следующих случаях:</div>
-<ul class="eList"><li>если <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция объявлена</a> в программе перед ее вызовом;</li>
-<li>если <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция определена</a> в исходном файле перед вызовом.</li>
+<div>Компилятор <a class="term" data-term="стандарта ANSI языка Си" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стандарта ANSI языка Си</a> проверяет согласованность фактических параметров вызова функции ее формальным  параметрам  в следующих случаях:</div>
+<ul class="eList"><li>если <a class="term" data-term="функция объявлена" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция объявлена</a> в программе перед ее вызовом;</li>
+<li>если <a class="term" data-term="функция определена" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция определена</a> в исходном файле перед вызовом.</li>
 </ul>
 <a name="T1821205864"></a>
 <a name="T1133808979"></a>
-<div>Компилятор ANSI Си проверяет правильность вызова функции: правильно ли указано количество фактических параметров и их типы. Если необходимо, компилятор выполнит автоматическое <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">преобразование</a> фактических параметров вызова функции к соответствующему <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типу</a>. Если преобразование не имеет смысла, во время компиляции выдается сообщение об ошибке.</div>
+<div>Компилятор ANSI Си проверяет правильность вызова функции: правильно ли указано количество фактических параметров и их типы. Если необходимо, компилятор выполнит автоматическое <a class="term" data-term="преобразование данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">преобразование</a> фактических параметров вызова функции к соответствующему <a class="term" data-term="тип данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типу</a>. Если преобразование не имеет смысла, во время компиляции выдается сообщение об ошибке.</div>
 <div>В функцию передается значение аргумента или фактического параметра, которое присваивается соответствующему формальному параметру.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
@@ -65,7 +65,7 @@ Value after 1 year: 268.75
 main: amount is 250.00
 </pre>
 <a name="T1015173096"></a>
-<div>При вызове в функцию <span class="eOperator">print_growth()</span> передаются значения фактических параметров: в данном случае значения переменных <span class="eOperator">amount</span> и <span class="eOperator">interest</span>. Эти значения присваиваются новым переменным (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формальным параметрам</a>) <span class="eOperator">val </span>и <span class="eOperator">rate</span>, имеющим свои собственные адреса в памяти. Значение переменных <span class="eOperator">amount</span> и <span class="eOperator">interest</span> не изменяются вызовом функции <span class="eOperator">print_growth()</span>.</div>
+<div>При вызове в функцию <span class="eOperator">print_growth()</span> передаются значения фактических параметров: в данном случае значения переменных <span class="eOperator">amount</span> и <span class="eOperator">interest</span>. Эти значения присваиваются новым переменным (<a class="term" data-term="формальным параметрам" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формальным параметрам</a>) <span class="eOperator">val </span>и <span class="eOperator">rate</span>, имеющим свои собственные адреса в памяти. Значение переменных <span class="eOperator">amount</span> и <span class="eOperator">interest</span> не изменяются вызовом функции <span class="eOperator">print_growth()</span>.</div>
 </div>
 </div>
 </div> 
@@ -77,5 +77,11 @@ main: amount is 250.00
         <a href="/rk6-edu/course-24/mod-53.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

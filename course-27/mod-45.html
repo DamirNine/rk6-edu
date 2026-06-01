@@ -29,7 +29,7 @@
 <br>
 <a name="T934904975"></a>
 <a name="T2145470045"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Линейный связный список</a> - последовательность ячеек, связанных в некотором порядке. Каждая ячейка имеет два поля: в одном из них находится элемент <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">списка</a>, в другом – указатель, сообщающий положение следующей ячейки. </div>
+<div><a class="term" data-term="Линейный связный список" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Линейный связный список</a> - последовательность ячеек, связанных в некотором порядке. Каждая ячейка имеет два поля: в одном из них находится элемент <a class="term" data-term="списка" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">списка</a>, в другом – указатель, сообщающий положение следующей ячейки. </div>
 <br>
 <div class="auto">Пример 1</div>
 <div class="eExample"><br>
@@ -50,7 +50,7 @@ Next[2] &lt;- Next[7]
 <div class="eSubTitle">Двусвязные списки</div>
 <br>
 <a name="T239383029"></a>
-<div>Двусвязные (двунаправленные) линейные списки - линейные списки, записи которых связаны посредством пары <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателей</a>, хранимых в адресных полях записей списка. Логическую структуру <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">двусвязного списка</a> иллюстрирует следующая диаграмма </div>
+<div>Двусвязные (двунаправленные) линейные списки - линейные списки, записи которых связаны посредством пары <a class="term" data-term="указателей" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателей</a>, хранимых в адресных полях записей списка. Логическую структуру <a class="term" data-term="двусвязного списка" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">двусвязного списка</a> иллюстрирует следующая диаграмма </div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=VU/040.mod/?n=1"></td></tr></tbody></table>
@@ -58,7 +58,7 @@ Next[2] &lt;- Next[7]
 <div>В каждой записи поле prev содержит адрес предыдущей записи, поле - next - адрес последующей записи, а data обозначает информационные поля. Для доступа к списку могут быть использованы адреса начальной (start), конечной (end) и текущей (this) записей списка. Индикатором начальной и конечной записей являются нулевые (NULL) значения адресных полей Start и end, соответственно. </div>
 <br>
 <a name="T273993089"></a>
-<div>Любая функциональная обработка списка строится на основе процедур модификации и просмотра. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Процедуры модификации списка</a> должны обеспечивать вставки и исключение записей списка. Частным случаем процедур вставки и исключения являются процедуры добавить и удалить начальную или конечную запись списка. Следующая диаграмма иллюстрирует процедуру вставки новой записи Z после записи Y (или перед записью X) </div>
+<div>Любая функциональная обработка списка строится на основе процедур модификации и просмотра. <a class="term" data-term="Процедуры модификации списка" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Процедуры модификации списка</a> должны обеспечивать вставки и исключение записей списка. Частным случаем процедур вставки и исключения являются процедуры добавить и удалить начальную или конечную запись списка. Следующая диаграмма иллюстрирует процедуру вставки новой записи Z после записи Y (или перед записью X) </div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=VU/040.mod/?n=2"></td></tr></tbody></table>
@@ -69,7 +69,7 @@ Next[2] &lt;- Next[7]
 <tbody><tr><td><img src="/?img/?doc=VU/040.mod/?n=3"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
 <a name="T497524277"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Процедуры просмотра списка</a> должны обеспечивать смещение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателя</a> текущей записи (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">this</a>) на требуемое число позиций в направлении начала или конца списка, как показано на следующей диаграмме. </div>
+<div><a class="term" data-term="Процедуры просмотра списка" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Процедуры просмотра списка</a> должны обеспечивать смещение <a class="term" data-term="указателя" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателя</a> текущей записи (<a class="term" data-term="this" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">this</a>) на требуемое число позиций в направлении начала или конца списка, как показано на следующей диаграмме. </div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=VU/040.mod/?n=4"></td></tr></tbody></table>
@@ -87,5 +87,11 @@ Next[2] &lt;- Next[7]
         <a href="/rk6-edu/course-27/mod-46.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

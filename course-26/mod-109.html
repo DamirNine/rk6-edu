@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Методы организации и хранения линейных списков</a>
 </div>
 <a name="T1676359876"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Линейный список </a>— это конечная последовательность однотипных элементов (узлов), возможно, с повторениями. Количество элементов в последовательности называется длиной списка, причем длина в процессе работы программы может изменяться. Линейный список F, состоящий из элементов D1,D2,...,Dn, записывают в виде последовательности значений заключенной в угловые скобки F=, или представляют графически :</div>
+<div><a class="term" data-term="Линейный список " href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Линейный список </a>— это конечная последовательность однотипных элементов (узлов), возможно, с повторениями. Количество элементов в последовательности называется длиной списка, причем длина в процессе работы программы может изменяться. Линейный список F, состоящий из элементов D1,D2,...,Dn, записывают в виде последовательности значений заключенной в угловые скобки F=, или представляют графически :</div>
 <div>D1 <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/9.1.mod/?n=1/?k=10"> D2 <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/9.1.mod/?n=1/?k=10"> D3 <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/9.1.mod/?n=1/?k=10"> ... <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=PYAVU/9.1.mod/?n=1/?k=10"> Dn</div>
 <div>Например, F1=&lt; 2,3,1&gt;,F2=&lt; 7,7,7,2,1,12 &gt;, F3=&lt; &gt;. Длина списков F1, F2, F3 равна соответственно 3,6,0. При работе со списками на практике чаще всего приходится выполнять следующие операции:</div>
 <ul class="eList"><li>найти элемент с заданным свойством;</li>
@@ -57,7 +57,7 @@ DL *p;               /* указатель текущего элемента   *
 DL *dl;              /* указатель на начало списка    */
 
 </pre>
-<div>Для выделения памяти под элементы хранения необходимо пользоваться <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцией</a> malloc(sizeof(DL)) или calloc(l,sizeof(DL)). Формирование списка в связанном хранении может осуществляется операторами:</div>
+<div>Для выделения памяти под элементы хранения необходимо пользоваться <a class="term" data-term="функцией" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцией</a> malloc(sizeof(DL)) или calloc(l,sizeof(DL)). Формирование списка в связанном хранении может осуществляется операторами:</div>
 <pre class="eListing">p=malloc(sizeof(DL));
 p-&gt;val=10;   p-&gt;n=NULL;
 dl=malloc(sizeof(DL));
@@ -81,5 +81,11 @@ dl-&gt;val=7;   dl-&gt;n=p;
         <a href="/rk6-edu/course-26/mod-110.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

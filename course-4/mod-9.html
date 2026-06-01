@@ -27,15 +27,15 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Кодировка текстовых документов</a>
 </div>
 <a name="T519980642"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Кодировкой</a>  называется способ представления информации с помощью  ограниченного набора символов. </div>
-<div>Проблемы кодировки текстовых документов в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Web-технологиях</a> в основном связаны с отображением текстов на русском языке. В настоящее время  используется  несколько основных кодировок кириллицы, это   КОИ-8,  Windows 1251, ISO, Unicode (UTF-8) и некоторые другие. </div>
+<div><a class="term" data-term="Кодировкой" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Кодировкой</a>  называется способ представления информации с помощью  ограниченного набора символов. </div>
+<div>Проблемы кодировки текстовых документов в <a class="term" data-term="Web-технологиях" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Web-технологиях</a> в основном связаны с отображением текстов на русском языке. В настоящее время  используется  несколько основных кодировок кириллицы, это   КОИ-8,  Windows 1251, ISO, Unicode (UTF-8) и некоторые другие. </div>
 <a name="T1002105343"></a>
-<div>Восьмибитная кодировка <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">КОИ-8</a> (KOI8), соответствующая ГОСТ 19768-74, разработана в середине семидесятых годов в СССР и в настоящее время   является основным способом кодировки для русифицированных систем на платформе UNIX (например, для http-сервера Apache) и по умолчанию  для пересылки сообщений <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">электронной почты</a> на русском языке. </div>
+<div>Восьмибитная кодировка <a class="term" data-term="КОИ-8" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">КОИ-8</a> (KOI8), соответствующая ГОСТ 19768-74, разработана в середине семидесятых годов в СССР и в настоящее время   является основным способом кодировки для русифицированных систем на платформе UNIX (например, для http-сервера Apache) и по умолчанию  для пересылки сообщений <a class="term" data-term="электронной почты" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">электронной почты</a> на русском языке. </div>
 <a name="T113916902"></a>
-<div>  Кодировка <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Windows 1251</a> предложена компанией Microsoft и получила довольно широкое распространение.    </div>
+<div>  Кодировка <a class="term" data-term="Windows 1251" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Windows 1251</a> предложена компанией Microsoft и получила довольно широкое распространение.    </div>
 <div>Кодировка ISO-8859-5 была разработана Комитетом по международным стандартам (International Standards Organization, ISO) и применяется в основном в UNIX-подобных операционных системах.  </div>
 <a name="T1377637053"></a>
-<div>В набор символов двухбайтной кодировки  <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Unicode</a> (UTF-8)  входят  буквы практически всех алфавитов мира  и множество специальных символов — математических, музыкальных, физических.  </div>
+<div>В набор символов двухбайтной кодировки  <a class="term" data-term="Unicode" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Unicode</a> (UTF-8)  входят  буквы практически всех алфавитов мира  и множество специальных символов — математических, музыкальных, физических.  </div>
 <div>Большинство современных серверных программ обладают встроенной функцией автоматического определения кодировки, используемой клиентским программным обеспечением, и перевода текста в необходимый стандарт «на лету». </div>
 </div>
 </div> 
@@ -47,5 +47,11 @@
         <a href="/rk6-edu/course-4/mod-10.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

@@ -28,11 +28,11 @@
 </div>
 <br>
 <a name="T1522234948"></a>
-<div>При <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">инициализации</a> необходимо придерживаться следующих правил: </div>
+<div>При <a class="term" data-term="инициализации" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">инициализации</a> необходимо придерживаться следующих правил: </div>
 <a name="T2040145049"></a>
-<div>1. Объявления содержащие спецификатор класса памяти extern не могут содержать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">инициаторов</a>. </div>
+<div>1. Объявления содержащие спецификатор класса памяти extern не могут содержать <a class="term" data-term="инициаторов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">инициаторов</a>. </div>
 <div>2. Глобальные переменные всегда инициализируются, и если это не сделано явно, то они инициализируются нулевым значением. </div>
-<div>3. Переменная с классом памяти static может быть инициализирована <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">константным выражением</a>. Инициализация для них выполняется один раз перед началом программы. Если явная инициализация отсутствует, то переменная инициализируется нулевым значением. </div>
+<div>3. Переменная с классом памяти static может быть инициализирована <a class="term" data-term="константным выражением" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">константным выражением</a>. Инициализация для них выполняется один раз перед началом программы. Если явная инициализация отсутствует, то переменная инициализируется нулевым значением. </div>
 <div>4. Инициализация переменных с классом памяти auto или register выполняется всякий раз при входе в блок, в котором они объявлены. Если инициализация переменных в объявлении отсутствует, то их начальное значение не определено. </div>
 <div>5. Начальными значениями для глобальных переменных и для переменных с классом памяти static должны быть константные выражения. Адреса таких переменных являются константами и эти константы можно использовать для инициализации объявленных глобально указателей. Адреса переменных с классом памяти auto или register не являются константами и их нельзя использовать в инициаторах. </div>
 <div class="auto">Пример 1</div>
@@ -45,7 +45,7 @@ int func(void)
 }
 </pre>
 </div>
-<div>В приведенном примере глобальная переменная <span class="eOperator">global_var</span> имеет глобальное время жизни и постоянный адрес в памяти, и этот адрес можно использовать для инициализации статического указателя <span class="eOperator">global_ptr.</span> Локальная переменная<span class="eOperator"> local_var</span>, имеющая класс памяти auto размещается в памяти только на время работы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> <span class="eOperator">func</span>, адрес этой переменной не является константой и не может быть использован для инициализации статической переменной <span class="eOperator">local_ptr</span>. Для инициализации локальной регистровой переменной <span class="eOperator">reg_ptr</span> можно использовать неконстантные выражения, и, в частности, адрес переменной <span class="eOperator">local_ptr</span>. </div>
+<div>В приведенном примере глобальная переменная <span class="eOperator">global_var</span> имеет глобальное время жизни и постоянный адрес в памяти, и этот адрес можно использовать для инициализации статического указателя <span class="eOperator">global_ptr.</span> Локальная переменная<span class="eOperator"> local_var</span>, имеющая класс памяти auto размещается в памяти только на время работы <a class="term" data-term="функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> <span class="eOperator">func</span>, адрес этой переменной не является константой и не может быть использован для инициализации статической переменной <span class="eOperator">local_ptr</span>. Для инициализации локальной регистровой переменной <span class="eOperator">reg_ptr</span> можно использовать неконстантные выражения, и, в частности, адрес переменной <span class="eOperator">local_ptr</span>. </div>
 </div>
 </div> 
 </body></html></div></main>
@@ -56,5 +56,11 @@ int func(void)
         <a href="/rk6-edu/course-26/mod-57.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

@@ -30,7 +30,7 @@
 <a name="T1942936499"></a>
 <a name="T1832195333"></a>
 <a name="T1405772177"></a>
-<div>Обобщенный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">интерфейс микропроцессора</a> включает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шину данных,</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шину адреса</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шину управления</a> (рис.&nbsp;1).</div>
+<div>Обобщенный <a class="term" data-term="интерфейс микропроцессора" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">интерфейс микропроцессора</a> включает <a class="term" data-term="Шина данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шину данных,</a> <a class="term" data-term="Шина адреса" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шину адреса</a> и <a class="term" data-term="Шина управления" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шину управления</a> (рис.&nbsp;1).</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_14.mod/?n=1"></td></tr></tbody></table>
@@ -39,16 +39,16 @@
 <a name="T1023149672"></a>
 <a name="T1571634844"></a>
 <a name="T1418249701"></a>
-<div>Разрядность шины данных определяется разрядностью микропроцессора. Разрядность шины адреса определяется разрядностью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">адреса,</a> используемого в данном микропроцессоре, и может отличаться от разрядности шины данных. Количество же линий в шине управления зависит от микропроцессора и способа организации в нем <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обмена</a> с другими устройствами, входящими в состав <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a>.</div>
+<div>Разрядность шины данных определяется разрядностью микропроцессора. Разрядность шины адреса определяется разрядностью <a class="term" data-term="Адрес" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">адреса,</a> используемого в данном микропроцессоре, и может отличаться от разрядности шины данных. Количество же линий в шине управления зависит от микропроцессора и способа организации в нем <a class="term" data-term="Обмен данными" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обмена</a> с другими устройствами, входящими в состав <a class="term" data-term="МПС" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a>.</div>
 <div>Обобщенный интерфейс микропроцессора представлен на рис.&nbsp;2.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_14.mod/?n=2"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
 <a name="T394314978"></a>
-<div>Он включает шину данных (в данном случае для примера — 16-ти разрядную), 16-разрядную шину адреса и шину управления, в которую входят сигналы, предназначенные для управления обменом в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельном формате</a>. Для реализации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">асинхронного обмена</a> предусмотрен сигнал проверки готовности <span class="eOperator">READY,</span> с помощью которого <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ведомое устройство</a> сообщает микропроцессору о своей готовности к обмену.</div>
+<div>Он включает шину данных (в данном случае для примера — 16-ти разрядную), 16-разрядную шину адреса и шину управления, в которую входят сигналы, предназначенные для управления обменом в <a class="term" data-term="Параллельный способ передачи данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельном формате</a>. Для реализации <a class="term" data-term="Асинхронный обмен" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">асинхронного обмена</a> предусмотрен сигнал проверки готовности <span class="eOperator">READY,</span> с помощью которого <a class="term" data-term="Ведомое устройство" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ведомое устройство</a> сообщает микропроцессору о своей готовности к обмену.</div>
 <a name="T389310717"></a>
-<div>Часто с целью уменьшения количества выводов микропроцессора, для передачи адреса и данных используют одни и те же линии. При этом передача адреса и данных происходит в разные моменты времени (разделение во времени). Такой способ организации шины получил название <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">мультиплексированная шина адреса-данных</a> (рис. 3)</div>
+<div>Часто с целью уменьшения количества выводов микропроцессора, для передачи адреса и данных используют одни и те же линии. При этом передача адреса и данных происходит в разные моменты времени (разделение во времени). Такой способ организации шины получил название <a class="term" data-term="Мультиплексированная шина адреса-данных" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">мультиплексированная шина адреса-данных</a> (рис. 3)</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_14.mod/?n=3"></td></tr></tbody></table>
@@ -58,9 +58,9 @@
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_14.mod/?n=4"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
-<div>На рисунке представлена временная диаграмма цикла асинхронного обмена (на примере операции <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">чтения</a> из внешнего устройства). Как видно, обмен начинается с выставления адреса на шине адреса. Сигнал <span class="eOperator">ALE</span> показывает, что по мультиплексированной шине передается адрес. Затем устанавливается направление обмена с помощью сигнала <span class="eOperator">RD</span>, и сигнал начала обмена <span class="eOperator">DEN</span> переходит в активное состояние. Далее происходит анализ готовности ведомого устройства. Если устройство не готово (сигнал <span class="eOperator">READY</span>=0), микропроцессор переходит в состояние ожидания. После активизации сигнала готовности происходит собственно ввод данных, предоставленных по шине данных ведомым устройством.</div>
+<div>На рисунке представлена временная диаграмма цикла асинхронного обмена (на примере операции <a class="term" data-term="Чтение информации" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">чтения</a> из внешнего устройства). Как видно, обмен начинается с выставления адреса на шине адреса. Сигнал <span class="eOperator">ALE</span> показывает, что по мультиплексированной шине передается адрес. Затем устанавливается направление обмена с помощью сигнала <span class="eOperator">RD</span>, и сигнал начала обмена <span class="eOperator">DEN</span> переходит в активное состояние. Далее происходит анализ готовности ведомого устройства. Если устройство не готово (сигнал <span class="eOperator">READY</span>=0), микропроцессор переходит в состояние ожидания. После активизации сигнала готовности происходит собственно ввод данных, предоставленных по шине данных ведомым устройством.</div>
 <a name="T1616495597"></a>
-<div>Для организации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обмена по прерываниям</a> в интерфейсе микропроцессора должны быть предусмотрены специальные управляющие сигналы (они входят в состав шины управления), (см. рис.&nbsp;5).</div>
+<div>Для организации <a class="term" data-term="Обмен по прерываниям" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обмена по прерываниям</a> в интерфейсе микропроцессора должны быть предусмотрены специальные управляющие сигналы (они входят в состав шины управления), (см. рис.&nbsp;5).</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_14.mod/?n=5"></td></tr></tbody></table>
@@ -71,7 +71,7 @@
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_14.mod/?n=6"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;</div></div>
-<div>Временной разрыв между активизацией сигналов <span class="eOperator">INT</span> и <span class="eOperator">INTA</span> вызван необходимостью завершения текущей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">команды</a> микропроцессором.</div>
+<div>Временной разрыв между активизацией сигналов <span class="eOperator">INT</span> и <span class="eOperator">INTA</span> вызван необходимостью завершения текущей <a class="term" data-term="Команда микропроцессора" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">команды</a> микропроцессором.</div>
 <div>В дополнении к указанным сигналам, на микропроцессор обязательно подаются тактовые импульсы от тактового генератора, которые позволяют синхронизировать работу всех узлов процессора (рис.&nbsp;7).</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
@@ -90,5 +90,11 @@
         <a href="/rk6-edu/course-31/mod-20.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

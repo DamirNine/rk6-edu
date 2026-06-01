@@ -28,20 +28,20 @@
 </div>
 <a name="T1503632839"></a>
 <a name="T1133808979"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Структура</a> — это набор элементов, которые могут иметь различные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типы</a>.</div>
+<div><a class="term" data-term="Структура" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Структура</a> — это набор элементов, которые могут иметь различные <a class="term" data-term="тип данных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типы</a>.</div>
 <div>Структуру можно представить себе как запись, состоящую из нескольких полей или элементов. Структуры обеспечивают удобный способ структурной организации связанных по смыслу переменных.</div>
 <a name="T949140871"></a>
 <a name="T2045169592"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Агрегатным типом</a> данных называется тип, конструируемый из элементов независимых (возможно различных) типов. Структуры являются одновременно агрегатным и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">производным типом</a> данных.</div>
+<div><a class="term" data-term="Агрегатным типом" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Агрегатным типом</a> данных называется тип, конструируемый из элементов независимых (возможно различных) типов. Структуры являются одновременно агрегатным и <a class="term" data-term="производным типом" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">производным типом</a> данных.</div>
 <div class="eSubTitle">Задание шаблонов и объявление структур</div>
 <div>Новый тип данных для структуры создается путем описания шаблона структуры.</div>
 <a name="T1239699667"></a>
 <a name="T359704857"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Шаблон структуры</a> представляет собой список <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">объявлений переменных</a>, описывающий элементы структуры .</div>
+<div><a class="term" data-term="Шаблон структуры" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Шаблон структуры</a> представляет собой список <a class="term" data-term="объявлений переменных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">объявлений переменных</a>, описывающий элементы структуры .</div>
 <div><span class="eOperator">struct [имя_шаблона] {список_элементов};</span></div>
 <a name="T828724782"></a>
 <a name="T696383489"></a>
-<div>Область действия шаблона структуры определяется также, как и для переменной. Если шаблон объявляется внутри <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">блока</a>, то он известен только в пределах этого блока. Однако, обычно шаблон структуры задается в начале файла или в заголовочном файле. Таким способом шаблон можно сделать доступным всем определенным в файле <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функциям</a>. Как только шаблон описан, его имя может быть использовано в любом месте файла для объявления соответствующих переменных.</div>
+<div>Область действия шаблона структуры определяется также, как и для переменной. Если шаблон объявляется внутри <a class="term" data-term="блок операторов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">блока</a>, то он известен только в пределах этого блока. Однако, обычно шаблон структуры задается в начале файла или в заголовочном файле. Таким способом шаблон можно сделать доступным всем определенным в файле <a class="term" data-term="функциям" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функциям</a>. Как только шаблон описан, его имя может быть использовано в любом месте файла для объявления соответствующих переменных.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">struct emp {
             char name[21];
@@ -69,7 +69,7 @@ struct emp supervisor;       /*это объявление: выделяется
 <div>Ниже рассматриваются альтернативные способы объявления структур.</div>
 <div class="eSubTitle">Одновременное задание имени структуры и объявление структурных переменных</div>
 <a name="T1961386404"></a>
-<div>По желанию программиста, переменные типа структуры могут быть объявлены сразу после описания шаблона. Если шаблон и объявление переменной задаются вне функции, то переменная является <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внешней</a>, в противном случае область ее видимости ограничивается блоком.</div>
+<div>По желанию программиста, переменные типа структуры могут быть объявлены сразу после описания шаблона. Если шаблон и объявление переменной задаются вне функции, то переменная является <a class="term" data-term="внешняя переменная" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внешней</a>, в противном случае область ее видимости ограничивается блоком.</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><pre class="eListing">struct emp {
             char   name[21];
@@ -79,7 +79,7 @@ struct emp supervisor;       /*это объявление: выделяется
 </pre>
 </div>
 <a name="T541845194"></a>
-<div>В прим.&nbsp;2 объявляется структура <span class="eOperator">prgmr</span>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив структур</a> <span class="eOperator">employee </span>и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на структуру <span class="eOperator">p</span>.</div>
+<div>В прим.&nbsp;2 объявляется структура <span class="eOperator">prgmr</span>, <a class="term" data-term="массив структур" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив структур</a> <span class="eOperator">employee </span>и <a class="term" data-term="указатель" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на структуру <span class="eOperator">p</span>.</div>
 <div class="eSubTitle">Пропуск имени структуры</div>
 <div>Другой способ состоит в том, чтобы опустить имя шаблона структуры. В этом случае все переменные данного типа должны быть перечислены после шаблона.</div>
 <div class="auto">Пример 3</div>
@@ -93,7 +93,7 @@ struct emp supervisor;       /*это объявление: выделяется
 <div class="eSubTitle">Использование объявления typedef</div>
 <a name="T1011348501"></a>
 <a name="T74783515"></a>
-<div>Третий способ состоит в том, чтобы использовать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператор typedef</a>. Это избавит программиста от необходимости писать как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевое слово</a> <span class="eOperator">struct</span>, так и имя структуры при объявлении структурных переменных. Использование оператора <span class="eOperator">typedef </span>для задания однословного имени нового типа может также способствовать повышению удобочитаемости программы.</div>
+<div>Третий способ состоит в том, чтобы использовать <a class="term" data-term="оператор typedef" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператор typedef</a>. Это избавит программиста от необходимости писать как <a class="term" data-term="ключевое слово" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевое слово</a> <span class="eOperator">struct</span>, так и имя структуры при объявлении структурных переменных. Использование оператора <span class="eOperator">typedef </span>для задания однословного имени нового типа может также способствовать повышению удобочитаемости программы.</div>
 <div class="auto">Пример 4</div>
 <div class="eExample"><pre class="eListing">typedef struct emp {
                     char   name[21];
@@ -115,5 +115,11 @@ EMPLOYEE prgmr, employee[100], *p;
         <a href="/rk6-edu/course-23/mod-98.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

@@ -27,8 +27,8 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Комментарии</a>
 </div>
 <a name="T1400024167"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Комментарии</a> языка Си — это множество символов, заключенное в "комментарные" скобки <span class="eOperator">/*</span> <span class="eOperator">*/</span>.</div>
-<div>Использование комментариев в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программе</a> очень важно. Комментарии могут значительно облегчить восприятие программы (программисты говорят: "повысить читабельность программы"). Удобство отладки и модификации программы сильно зависит от наличия ясных комментариев. Рекомендуется включать комментарии в начало каждого файла с текстом программы на языке Си и в начало каждой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a>, определяя назначение функции, смысл параметров и возвращаемого значения.  Все важные и неясные фрагменты программы также должны быть прокомментированы.</div>
+<div><a class="term" data-term="Комментарии" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Комментарии</a> языка Си — это множество символов, заключенное в "комментарные" скобки <span class="eOperator">/*</span> <span class="eOperator">*/</span>.</div>
+<div>Использование комментариев в <a class="term" data-term="программа на языке Си" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программе</a> очень важно. Комментарии могут значительно облегчить восприятие программы (программисты говорят: "повысить читабельность программы"). Удобство отладки и модификации программы сильно зависит от наличия ясных комментариев. Рекомендуется включать комментарии в начало каждого файла с текстом программы на языке Си и в начало каждой <a class="term" data-term="функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a>, определяя назначение функции, смысл параметров и возвращаемого значения.  Все важные и неясные фрагменты программы также должны быть прокомментированы.</div>
 <div>Комментарии начинаются с символов <span class="eOperator">/*</span> и заканчиваются символами <span class="eOperator">*/</span>. Они не могут быть вложенными.</div>
 <div><span class="eOperator">/*Это /* типичная */ ошибка */</span></div>
 <div>Компилятор интерпретирует фрагмент:</div>
@@ -47,5 +47,11 @@
         <a href="/rk6-edu/course-23/mod-18.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

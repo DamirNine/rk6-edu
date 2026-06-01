@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Списки и рекурсия</a>
 </div>
 <a name="T2145470045"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Список</a> - упорядоченная последовательность элементов, имеющая произвольную длину. В ПрологЕ элементы списка не обязаны принадлежать одному типу и могут быть в свою очередь списками. Список в Прологе - это либо пустой список, обозначаемый [], либо структура с функтором "."(точка) и двумя компонентами: головой и хвостом списка. Признаком конца списка служит хвост, являющийся пустым списком [].</div>
+<div><a class="term" data-term="Список" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Список</a> - упорядоченная последовательность элементов, имеющая произвольную длину. В ПрологЕ элементы списка не обязаны принадлежать одному типу и могут быть в свою очередь списками. Список в Прологе - это либо пустой список, обозначаемый [], либо структура с функтором "."(точка) и двумя компонентами: головой и хвостом списка. Признаком конца списка служит хвост, являющийся пустым списком [].</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><div>Примеры списков.</div>
 </div>
@@ -40,7 +40,7 @@
 <div>Списки, как и любые другие структуры, могут содержать переменные, например, допустим такой список [X,a,[b,X,Y],Z]. </div>
 <a name="T1983272463"></a>
 <a name="T247578677"></a>
-<div>Работа со списками основана на расщеплении их на голову и хвост. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Голова</a> - это первый элемент списка, <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">хвост</a> - список из остальных элементов.</div>
+<div>Работа со списками основана на расщеплении их на голову и хвост. <a class="term" data-term="голова списка" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Голова</a> - это первый элемент списка, <a class="term" data-term="хвост списка" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">хвост</a> - список из остальных элементов.</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><div>Расщепление списков.</div>
 </div>
@@ -95,5 +95,11 @@ member(X, [_|Y]):- member(X,Y).
         <a href="/rk6-edu/course-20/mod-9.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

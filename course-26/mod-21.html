@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Преобразования при вычислении выражений</a>
 </div>
 <a name="T508610267"></a>
-<div>При выполнении операций производится автоматическое <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">преобразование типов</a>, чтобы привести операнды выражений к общему типу или чтобы расширить короткие величины до размера целых величин, используемых в машинных командах. Выполнение преобразования зависит от специфики операций и от типа операнда или операндов. Рассмотрим общие арифметические преобразования.</div>
+<div>При выполнении операций производится автоматическое <a class="term" data-term="преобразование типов" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">преобразование типов</a>, чтобы привести операнды выражений к общему типу или чтобы расширить короткие величины до размера целых величин, используемых в машинных командах. Выполнение преобразования зависит от специфики операций и от типа операнда или операндов. Рассмотрим общие арифметические преобразования.</div>
 <div>1. Операнды типа float преобразуются к типу double.</div>
 <div>2. Если один операнд long double, то второй преобразуется к этому же типу.</div>
 <div>3. Если один операнд double, то второй также преобразуется к типу double.</div>
@@ -55,5 +55,11 @@
         <a href="/rk6-edu/course-26/mod-22.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

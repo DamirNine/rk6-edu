@@ -28,7 +28,7 @@
 </div>
 <a name="T85346913"></a>
 <a name="T1676359876"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Распределяющая сортировка</a>. Предположим, что элементы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">линейного списка</a> В есть Т-разрядные положительные десятичные числа D(j,n) — j-я справа цифра в десятичном числе n&gt;=0, т.е. D(j,n)=floor(n/m)%10, где m=10^(j-1). Пусть В0,В1,...,В9 — вспомогательные списки (карманы), вначале пустые.</div>
+<div><a class="term" data-term="Распределяющая сортировка" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Распределяющая сортировка</a>. Предположим, что элементы <a class="term" data-term="линейного списка" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">линейного списка</a> В есть Т-разрядные положительные десятичные числа D(j,n) — j-я справа цифра в десятичном числе n&gt;=0, т.е. D(j,n)=floor(n/m)%10, где m=10^(j-1). Пусть В0,В1,...,В9 — вспомогательные списки (карманы), вначале пустые.</div>
 <div>Для реализации распределяющей сортировки выполняется процедура, состоящая из двух процессов, называемых распределение и сборка для j=1,2,...,T. PАСПРЕДЕЛЕНИЕ заключается в том, что элемент Кi (i=1,N) из В добавляется как последний в список Bm, где m=D(j,Ki), и таким образом получаем десять списков, в каждом из которых j-тые разряды чисел одинаковы и равны m. СБОРКА объединяет списки В0,В1,...,В9 в этом же порядке, образуя один список В.</div>
 <div>Рассмотрим реализацию распределяющей сортировки при Т=2 для списка: B=&lt;09,07,18,03,52,04,06,08,05,13,42,30,35,26&gt; .</div>
 <pre class="eListing">      РАСПРЕДЕЛЕНИЕ-1:
@@ -116,5 +116,11 @@ SP1 *pocket(SP1 *q,int t)
         <a href="/rk6-edu/course-26/mod-125.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

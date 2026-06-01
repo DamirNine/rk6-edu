@@ -28,9 +28,9 @@
 </div>
 <a name="T1051785756"></a>
 <a name="T541845194"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Двукратный указатель</a> - это переменная, которая содержит адрес <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателя</a>, то есть это  указатель на указатель. </div>
+<div><a class="term" data-term="Двукратный указатель" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Двукратный указатель</a> - это переменная, которая содержит адрес <a class="term" data-term="указателя" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателя</a>, то есть это  указатель на указатель. </div>
 <a name="T1369433176"></a>
-<div>Двукратные указатели часто используются в системных программах. Трехкратные указатели встречаются редко. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Язык Си</a> допускает так же использование многократных указателей (например, <span class="eOperator">****p</span>).  Однако, лучше избегать этого. </div>
+<div>Двукратные указатели часто используются в системных программах. Трехкратные указатели встречаются редко. <a class="term" data-term="Язык Си" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Язык Си</a> допускает так же использование многократных указателей (например, <span class="eOperator">****p</span>).  Однако, лучше избегать этого. </div>
 <div>Объявление двукратного указателя:</div>
 <div><span class="eOperator">тип **идентификатор; </span><span class="eOperator"></span></div>
 <div class="auto">Пример 1</div>
@@ -61,7 +61,7 @@ int is_keyword(char *)
 <a name="T1992766606"></a>
 <a name="T1683975628"></a>
 <a name="T2022690627"></a>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Массив</a> <span class="eOperator">keyword</span> - это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив указателей</a> на символ, который инициализируется адресами <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">строковых констант</a>. Такие указатели обычно не изменяются во время выполнения программы. Двукратный указатель <span class="eOperator">p</span> используется для перебора элементов массива. </div>
+<div><a class="term" data-term="Массив" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Массив</a> <span class="eOperator">keyword</span> - это <a class="term" data-term="массив указателей" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив указателей</a> на символ, который инициализируется адресами <a class="term" data-term="строковых констант" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">строковых констант</a>. Такие указатели обычно не изменяются во время выполнения программы. Двукратный указатель <span class="eOperator">p</span> используется для перебора элементов массива. </div>
 <div><span class="eOperator">p</span>  содержит адрес одного из элементов массива <span class="eOperator">keyword</span>, <span class="eOperator">*p</span> - это адрес строки, записанный в этом элементе массива, а <span class="eOperator">**p</span> (в примере не используется) указывает на первый символ в этой строке.</div>
 </div>
 </div>
@@ -74,5 +74,11 @@ int is_keyword(char *)
         <a href="/rk6-edu/course-23/mod-94.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

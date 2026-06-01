@@ -29,20 +29,20 @@
 <a name="T829062930"></a>
 <a name="T696383489"></a>
 <a name="T1369433176"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция fclose()</a> - стандартная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция</a> ввода-вывода <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка Си</a>,  с помощью которой осуществляется закрытие файла.</div>
+<div><a class="term" data-term="Функция fclose()" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция fclose()</a> - стандартная <a class="term" data-term="функция" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция</a> ввода-вывода <a class="term" data-term="языка программирования Си" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка Си</a>,  с помощью которой осуществляется закрытие файла.</div>
 <div><span class="eOperator">int fclose (FILE *stream)</span></div>
 <a name="T987309929"></a>
-<div>Функция <span class="eOperator">fclose()</span> закрывает файл, на который указывает ее параметр. При закрытии файла его <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">буфер</a> записывается (вытесняется) на диск, если вывод реально выполнялся. Функция <span class="eOperator">fclose()</span> возвращает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">EOF</a> в случае ошибки и нуль в противном случае.</div>
+<div>Функция <span class="eOperator">fclose()</span> закрывает файл, на который указывает ее параметр. При закрытии файла его <a class="term" data-term="буфер ввода-вывода" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">буфер</a> записывается (вытесняется) на диск, если вывод реально выполнялся. Функция <span class="eOperator">fclose()</span> возвращает <a class="term" data-term="EOF" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">EOF</a> в случае ошибки и нуль в противном случае.</div>
 <div>Хотя открытый файл автоматически закрывается при завершении программы, даже если функция  <span class="eOperator">fclose()</span> не вызвана, рекомендуется закрывать файл явно. Во-первых, при этом освобождается место в памяти, которое может быть использовано для открытия нового файла. Во-вторых, буфер, если он  есть, записывается за приемлемое время. Одновременно в программе может быть открыто не более 20 файлов.</div>
 <div> </div>
 <a name="T581415280"></a>
 <a name="T37556405"></a>
 <a name="T637542155"></a>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявление прототипа функции</a> <span class="eOperator">fclose()</span> находится в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эту функцию, должны включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div><a class="term" data-term="Объявление прототипа функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявление прототипа функции</a> <span class="eOperator">fclose()</span> находится в <a class="term" data-term="файле заголовков" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эту функцию, должны включать следующую <a class="term" data-term="директиву препроцессора" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
 <div><span class="eOperator">#include &lt;stdio.h&gt;</span></div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><a name="T900021607"></a>
-<div>Эта программа копирует файл, заданный вторым <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументом командной строки</a> в файл, заданный третьим аргументом  командной строки.</div>
+<div>Эта программа копирует файл, заданный вторым <a class="term" data-term="аргументом командной строки" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументом командной строки</a> в файл, заданный третьим аргументом  командной строки.</div>
 <pre class="eListing">#include &lt;stdio.h&gt;
 int main(int argc, char *argv[])
 {
@@ -82,5 +82,11 @@ exit (0);
         <a href="/rk6-edu/course-23/mod-116.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

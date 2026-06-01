@@ -34,7 +34,7 @@ expr: UNARY expr
 <br>
 <div>При этом получается сильно неоднозначная грамматика с большим количеством конфликтов. В качестве правила однозначности задается предшествование для всех операций и ассоциативность бинарных операций. Этой информации достаточно для разрешения конфликтов и построения распознавателя, понимающего предшествование и ассоциативность.</div>
 <a name="T895398568"></a>
-<div>Предшествование и ассоциативность связываются с лексемами в разделе определений. Это выполняется с помощью ключевых слов %left, %right и %noassoc, за которыми идет список лексем. Все <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">лексемы</a> на одной строке обладают одним уровнем предшествования и ассоциативности. Строки перечисляются в порядке возрастания приоритета. Таким образом:</div>
+<div>Предшествование и ассоциативность связываются с лексемами в разделе определений. Это выполняется с помощью ключевых слов %left, %right и %noassoc, за которыми идет список лексем. Все <a class="term" data-term="Лексемы" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">лексемы</a> на одной строке обладают одним уровнем предшествования и ассоциативности. Строки перечисляются в порядке возрастания приоритета. Таким образом:</div>
 <br>
 <pre class="eListing">%left '+' '-'
 %left '*' '/'
@@ -87,5 +87,11 @@ expr: expr'='expr | expr '+' expr | expr '-' expr | expr '*' expr | expr '/' exp
         <a href="/rk6-edu/course-29/mod-58.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

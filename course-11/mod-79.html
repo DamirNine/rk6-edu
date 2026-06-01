@@ -30,18 +30,18 @@
 <a name="T555412631"></a>
 <a name="T1828508887"></a>
 <a name="T402447558"></a>
-<div>Продолжающийся рост числа узлов в Internet привел к появлению в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке протоколов TCP/IP</a> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">протокола IPv6</a> — шестой версии <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протокола IP</a> (в основе сети <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Internet-2</a> лежит протокол  IPv6).</div>
+<div>Продолжающийся рост числа узлов в Internet привел к появлению в <a class="term" data-term="стеке протоколов TCP/IP" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке протоколов TCP/IP</a> <a class="term" data-term="протокола IPv6" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">протокола IPv6</a> — шестой версии <a class="term" data-term="протокола IP" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протокола IP</a> (в основе сети <a class="term" data-term="Internet-2" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Internet-2</a> лежит протокол  IPv6).</div>
 <div>В протоколе IPv6 размер адреса увеличен до 128 бит. Адреса отражают иерархическую структуру сети и могут быть индивидуальными или групповыми. Индивидуальный адрес имеет следующую структуру (в скобках указан размер соответствующего поля в битах):</div>
 <ul class="eList"><li>FP = 001 — префикс, указывающий тип адреса, в данном случае адрес индивидуальный (3, в общем случае до 8);</li>
-<li>TLA — идентификатор верхнего уровня в иерархической структуре (8...13), обычно это идентификатор <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">провайдера</a>;</li>
+<li>TLA — идентификатор верхнего уровня в иерархической структуре (8...13), обычно это идентификатор <a class="term" data-term="провайдера" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">провайдера</a>;</li>
 <li>RES — зарезервированное поле (8);</li>
-<li>NLA — идентификатор среднего уровня (32), обычно это идентификатор <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">корпоративной сети</a> (абонента);</li>
+<li>NLA — идентификатор среднего уровня (32), обычно это идентификатор <a class="term" data-term="корпоративной сети" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">корпоративной сети</a> (абонента);</li>
 <li>SLA — идентификатор нижнего уровня (16), т.е. подсети в корпоративной сети;</li>
-<li>ID — идентификатор узла (48), представленный в виде шестибайтового <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MAC-адреса</a>.</li>
+<li>ID — идентификатор узла (48), представленный в виде шестибайтового <a class="term" data-term="MAC-адреса" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MAC-адреса</a>.</li>
 </ul>
 <div>Групповые адреса присваиваются группам узлов. Сообщение, адресованное группе, будет доставлено каждому члену группы.</div>
 <a name="T555412633"></a>
-<div>Совместное использование протоколов IPv6 и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IPv4</a> возможно в течение переходного периода. В частности, адреса IPv4 помещаются в заголовке IPv6 на место последних 32 бит, а предыдущие 96 бит заполняются нулями.</div>
+<div>Совместное использование протоколов IPv6 и <a class="term" data-term="IPv4" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IPv4</a> возможно в течение переходного периода. В частности, адреса IPv4 помещаются в заголовке IPv6 на место последних 32 бит, а предыдущие 96 бит заполняются нулями.</div>
 <div>В целом IP-заголовок в протоколе IPv6 состоит из 40 байт и включает следующие поля:</div>
 <ul class="eList"><li>версия протокола (4);</li>
 <li>приоритет (4);</li>
@@ -53,7 +53,7 @@
 <li>адрес отправителя (128);</li>
 <li>адрес получателя (128).</li>
 </ul>
-<div>За основным заголовком в IPv6-пакете могут следовать дополнительные, используемые для указания пользователю той или иной служебной информации, например, способа шифрования или способа фрагментации. Лимит числа переходов — это максимально допустимое число <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">маршрутизаторов</a> на пути <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дейтаграммы</a>. Превышение этого числа приводит к ликвидации пакета.</div>
+<div>За основным заголовком в IPv6-пакете могут следовать дополнительные, используемые для указания пользователю той или иной служебной информации, например, способа шифрования или способа фрагментации. Лимит числа переходов — это максимально допустимое число <a class="term" data-term="маршрутизаторов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">маршрутизаторов</a> на пути <a class="term" data-term="дейтаграммы" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дейтаграммы</a>. Превышение этого числа приводит к ликвидации пакета.</div>
 </div>
 </div> 
 </body></html></div></main>
@@ -64,5 +64,11 @@
         <a href="/rk6-edu/course-11/mod-80.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

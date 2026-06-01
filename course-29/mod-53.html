@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Действия</a>
 </div>
 <a name="T895398568"></a>
-<div>С каждым правилом может быть связано действие, выполняемое при распознавании во входном потоке объекта, удовлетворяющего правилу. Эти действия могут возвращать значения и воспринимать значения, возвращаемые другими действиями. Более того, при желании лексический анализатор может возвращать значения для выделяемых <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">лексем</a>.</div>
+<div>С каждым правилом может быть связано действие, выполняемое при распознавании во входном потоке объекта, удовлетворяющего правилу. Эти действия могут возвращать значения и воспринимать значения, возвращаемые другими действиями. Более того, при желании лексический анализатор может возвращать значения для выделяемых <a class="term" data-term="Лексемы" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">лексем</a>.</div>
 <div>Действие - это произвольный оператор языка С. В нем можно выполнять ввод-вывод, вызывать подпрограммы и изменять внешние переменные или массивы. Действие указывается как один или несколько операторов в фигурных скобках. Например, следующие фрагменты представляют собой грамматические правила с действиями:</div>
 <br>
 <pre class="eListing">A:'('B')'       { hello(1, "abc"); }
@@ -103,5 +103,11 @@ A:B $ACT C
         <a href="/rk6-edu/course-29/mod-54.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

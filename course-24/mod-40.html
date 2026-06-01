@@ -27,17 +27,17 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Операция продолжения ("запятая")</a>
 </div>
 <a name="T1483619750"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция продолжения</a> ("<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">запятая</a>") — бинарная операция языка Си, значением которой является значение правого операнда.</div>
+<div><a class="term" data-term="Операция продолжения" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция продолжения</a> ("<a class="term" data-term="Операция `запятая`" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">запятая</a>") — бинарная операция языка Си, значением которой является значение правого операнда.</div>
 <div>Операция "запятая" используется следующим образом:</div>
 <div><span class="eOperator">выражение_А, выражение_В</span></div>
 <div>Сначала вычисляется <span class="eOperator">выражение_А</span>, затем <span class="eOperator">выражение_В</span>.</div>
 <a name="T803028594"></a>
-<div>Значением всего <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражения</a> является значение <span class="eOperator">выражение_В</span>.</div>
+<div>Значением всего <a class="term" data-term="выражения" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражения</a> является значение <span class="eOperator">выражение_В</span>.</div>
 <a name="T114264910"></a>
 <a name="T424168142"></a>
-<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Приоритет</a> этой операции определен в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">таблице приоритетов</a> (<a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Приоритеты операций</a>).</div>
+<div><a class="term" data-term="Приоритет операции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Приоритет</a> этой операции определен в <a class="term" data-term="таблице приоритетов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">таблице приоритетов</a> (<a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Приоритеты операций</a>).</div>
 <a name="T798225181"></a>
-<div>В общем случае эта операция используется тогда, когда <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синтаксис языка</a> требует одного выражения, а программисту хочется выполнить два или более действия путем задания нескольких выражений. Операция "запятая" чаще всего используется для включения дополнительных выражений в заголовок <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">цикла for</a> (<a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Оператор цикла for</a>).</div>
+<div>В общем случае эта операция используется тогда, когда <a class="term" data-term="синтаксис языка" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синтаксис языка</a> требует одного выражения, а программисту хочется выполнить два или более действия путем задания нескольких выражений. Операция "запятая" чаще всего используется для включения дополнительных выражений в заголовок <a class="term" data-term="оператор цикла for" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">цикла for</a> (<a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Оператор цикла for</a>).</div>
 <pre class="eListing"></pre>
 <div>В прим. 1 приводится корректный цикл <span class="eOperator">for</span>, в котором инициализируются и увеличиваются две переменные.</div>
 <div class="auto">Пример 1</div>
@@ -54,7 +54,7 @@ while (printf("x is %d\n",x), x&lt;5000)
 </pre>
 </div>
 <a name="T1369433176"></a>
-<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке программирования Си</a> любое выражение имеет значение, например значение выражения <span class="eOperator">5+2</span> равно 7, значением выражения <span class="eOperator">х = 200</span> является 200, значением выражения <span class="eOperator">x &lt; y</span> есть 1 (истина) или 0 (ложь). В прим.&nbsp;2 в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">цикле while</a> значение выражения в круглых скобках есть значение второго выражения <span class="eOperator">x &lt; 5000</span>, которое будет либо 0 (ложью), либо 1 (истиной). <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Функция printf()</a> вычисляется каждый раз при вычислении выражения, определяющего условие продолжения цикла, однако не влияет на истинность значения проверки.</div>
+<div>В <a class="term" data-term="языке программирования Си" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке программирования Си</a> любое выражение имеет значение, например значение выражения <span class="eOperator">5+2</span> равно 7, значением выражения <span class="eOperator">х = 200</span> является 200, значением выражения <span class="eOperator">x &lt; y</span> есть 1 (истина) или 0 (ложь). В прим.&nbsp;2 в <a class="term" data-term="оператор цикла while" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">цикле while</a> значение выражения в круглых скобках есть значение второго выражения <span class="eOperator">x &lt; 5000</span>, которое будет либо 0 (ложью), либо 1 (истиной). <a class="term" data-term="Функция printf()" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Функция printf()</a> вычисляется каждый раз при вычислении выражения, определяющего условие продолжения цикла, однако не влияет на истинность значения проверки.</div>
 </div>
 </div> 
 </body></html></div></main>
@@ -65,5 +65,11 @@ while (printf("x is %d\n",x), x&lt;5000)
         <a href="/rk6-edu/course-24/mod-41.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

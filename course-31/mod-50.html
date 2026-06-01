@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Организация памяти данных микроконтроллера PIC16F877</a>
 </div>
 <a name="T1545350296"></a>
-<div>Структура <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">памяти данных</a> показана на рис.&nbsp;1.</div>
+<div>Структура <a class="term" data-term="память данных" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">памяти данных</a> показана на рис.&nbsp;1.</div>
 <div>Память данных разделена на четыре банка, которые содержат регистры общего и специального (SFR) назначения. Биты <span class="eOperator">RP1</span> (<span class="eOperator">STATUS&lt;6&gt;</span>) и <span class="eOperator">RP0</span> (<span class="eOperator">STATUS&lt;5&gt;</span>) предназначены для управления банками данных. В табл.&nbsp;1 показано состояние управляющих битов при обращении к банкам памяти данных.</div>
 <div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
@@ -37,7 +37,7 @@
 <tr><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">2</td></tr>
 <tr><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">3</td></tr>
 </tbody></table><br>
-<div>Объем банков памяти данных до 128 байт (7Fh). В начале банка размещаются регистры специального назначения, затем <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">регистры общего назначения</a> выполненные как статическое <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОЗУ</a>. Все банки содержат регистры специального назначения. Часто используемые регистры специального назначения отображаться в других банках памяти. Старшие 16 байт памяти данных в банках 1, 2 и 3 отображены в банке 0.</div>
+<div>Объем банков памяти данных до 128 байт (7Fh). В начале банка размещаются регистры специального назначения, затем <a class="term" data-term="регистры общего назначения" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">регистры общего назначения</a> выполненные как статическое <a class="term" data-term="ОЗУ" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОЗУ</a>. Все банки содержат регистры специального назначения. Часто используемые регистры специального назначения отображаться в других банках памяти. Старшие 16 байт памяти данных в банках 1, 2 и 3 отображены в банке 0.</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/%CF%E0%EC%FF%F2%FC+%E4%E0%ED%ED%FB%F5.mod/?n=1"></td></tr></tbody></table>
@@ -54,5 +54,11 @@
         <a href="/rk6-edu/course-31/mod-51.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

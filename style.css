@@ -38,10 +38,17 @@ main { max-width: 1100px; margin: 10px auto 30px; padding: 20px; background: whi
 .course-card .meta { font-size: 12px; color: #999; margin-top: 8px; }
 
 /* Страница курса */
-.module-list { list-style: none; margin-top: 16px; }
+.chapter-heading { font-weight: bold; font-size: 15px; color: #444; margin: 20px 0 4px; padding: 6px 8px; background: #f0f4f8; border-left: 3px solid #00558b; }
+.module-list { list-style: none; margin: 0 0 4px 0; }
 .module-list li { border-bottom: 1px solid #eee; }
-.module-list a { display: block; padding: 10px 8px; color: #00558b; text-decoration: none; font-size: 14px; }
+.module-list a { display: block; padding: 9px 8px 9px 20px; color: #00558b; text-decoration: none; font-size: 14px; }
 .module-list a:hover { background: #f0f7ff; }
+
+/* Попап терминов */
+.term-popup { position: fixed; bottom: 20px; right: 20px; background: white; border: 1px solid #aac; border-radius: 6px; padding: 14px 16px; max-width: 380px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); z-index: 1000; display: none; font-size: 14px; line-height: 1.6; }
+.term-popup-title { font-weight: bold; color: #00558b; margin-bottom: 8px; font-size: 15px; }
+.term-popup-close { float: right; cursor: pointer; color: #999; font-size: 18px; line-height: 1; margin: -2px -4px 0 8px; }
+.term-popup-close:hover { color: #333; }
 
 /* Страница модуля */
 .dModul { line-height: 1.9; font-size: 15px; }
@@ -56,15 +63,16 @@ main { max-width: 1100px; margin: 10px auto 30px; padding: 20px; background: whi
 .dModul li { margin-bottom: 6px; }
 .dModul h2, .dModul h3, .dModul h4 { margin: 20px 0 10px; color: #333; }
 
-/* Термины — подчёркнуты пунктиром с тултипом */
-.dModul a[href="#"] {
-  color: #0055aa;
+/* Термины */
+.dModul a.term {
+  color: inherit;
   cursor: help;
   text-decoration: underline;
   text-decoration-style: dotted;
+  text-decoration-color: #888;
   text-underline-offset: 3px;
 }
-.dModul a[href="#"]:hover { background: #eef4ff; border-radius: 2px; }
+.dModul a.term:hover { background: #f5f0e8; border-radius: 2px; }
 .eSubTitle { font-size: 16px; font-weight: bold; color: #333; margin: 18px 0 8px; display: block; }
 
 h1 { font-size: 24px; color: #00558b; margin-bottom: 6px; }

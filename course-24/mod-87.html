@@ -26,7 +26,7 @@
 <main><div class="dModul">
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Обработка матрицы по частям</a>
 </div>
-<div>Кроме задач, по приемам похожих на обработку одномерных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массивов</a>, есть большая группа задач, связанных с различными вариантами обхода <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">матриц</a>, и задач обработки разных групп элементов. В таких задачах необходимо исследовать закономерность изменения индексов.</div>
+<div>Кроме задач, по приемам похожих на обработку одномерных <a class="term" data-term="массивов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массивов</a>, есть большая группа задач, связанных с различными вариантами обхода <a class="term" data-term="матриц" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">матриц</a>, и задач обработки разных групп элементов. В таких задачах необходимо исследовать закономерность изменения индексов.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><div>Дана целочисленная матрица <span class="eOperator">F(10,10)</span>. Определить сумму отрицательных элементов матрицы и их количество, среди элементов, лежащих выше главной диагонали.</div>
 </div>
@@ -64,5 +64,11 @@ return 0;
         <a href="/rk6-edu/course-24/mod-88.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

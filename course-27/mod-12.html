@@ -26,13 +26,13 @@
 <main><div class="dModul">
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Неявный параметр this</a>
 </div>
-<div>Когда компонентная функция вызывается для конкретного объекта, то этой функции автоматически и неявно передается в качестве параметра <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на тот объект, для которого она вызывалась.  Этот указатель имеет специальное имя и определен как константный в каждой функции <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a>.</div>
+<div>Когда компонентная функция вызывается для конкретного объекта, то этой функции автоматически и неявно передается в качестве параметра <a class="term" data-term="указатель" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на тот объект, для которого она вызывалась.  Этот указатель имеет специальное имя и определен как константный в каждой функции <a class="term" data-term="класса" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a>.</div>
 <br>
 <div>&lt;<span style="font-weight:bold; ">имя класса&gt;*const this = &lt;адрес объекта&gt;</span></div>
 <br>
 <a name="T669878456"></a>
 <a name="T3559070"></a>
-<div>В соответствии с описанием этот указатель менять нельзя, однако в каждой принадлежащей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">классу</a> функции он указывает на тот объект, для которого данная функция вызывается. То есть <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">указатель this</a> является дополнительным (скрытым) параметром каждой нестатической компонентной функции. Этот параметр используется для доступа к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">полям</a> конкретного объекта. Для иллюстрации использования указателя <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">this</a> добавим в приведенный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класс</a> monstr новый метод, возвращающий ссылку на более здорового из двух монстров, один из которых вызывает метод, а другой передается ему в качестве параметра. Метод необходимо поместить в секцию <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">public</a> </div>
+<div>В соответствии с описанием этот указатель менять нельзя, однако в каждой принадлежащей <a class="term" data-term="классу" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">классу</a> функции он указывает на тот объект, для которого данная функция вызывается. То есть <a class="term" data-term="указатель this" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">указатель this</a> является дополнительным (скрытым) параметром каждой нестатической компонентной функции. Этот параметр используется для доступа к <a class="term" data-term="полям" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">полям</a> конкретного объекта. Для иллюстрации использования указателя <a class="term" data-term="this" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">this</a> добавим в приведенный <a class="term" data-term="класс" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класс</a> monstr новый метод, возвращающий ссылку на более здорового из двух монстров, один из которых вызывает метод, а другой передается ему в качестве параметра. Метод необходимо поместить в секцию <a class="term" data-term="public" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">public</a> </div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><br>
 <pre class="eListing">monstr &amp;the_best(monstr &amp;M)
@@ -51,7 +51,7 @@ void cure(int health, int ammo)
 </pre>
 </div>
 <br>
-<div>Использование параметра this не дает ощутимого преимущества при программировании, так как данные конкретного объекта уже доступны в принадлежащих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">классу</a> функциях по именам. Удобным и необходимым он становится, когда в теле принадлежащей классу функции требуется явно задать адрес, для которого она была вызвана.</div>
+<div>Использование параметра this не дает ощутимого преимущества при программировании, так как данные конкретного объекта уже доступны в принадлежащих <a class="term" data-term="классу" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">классу</a> функциях по именам. Удобным и необходимым он становится, когда в теле принадлежащей классу функции требуется явно задать адрес, для которого она была вызвана.</div>
 </div>
 </div> 
 </body></html></div></main>
@@ -62,5 +62,11 @@ void cure(int health, int ammo)
         <a href="/rk6-edu/course-27/mod-13.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

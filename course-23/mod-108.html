@@ -29,7 +29,7 @@
 <div class="eSubTitle">Файлы заголовков</div>
 <a name="T1045484691"></a>
 <a name="T2119303568"></a>
-<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Директива препроцессора include</a> влечет вставку в текущую позицию текста <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программы на языке Си</a> копии указанного файла.</div>
+<div><a class="term" data-term="Директива препроцессора include" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Директива препроцессора include</a> влечет вставку в текущую позицию текста <a class="term" data-term="программы на языке Си" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программы на языке Си</a> копии указанного файла.</div>
 <pre class="eListing">#include  &lt;file.h&gt;
 #include "file.h"
 </pre>
@@ -39,9 +39,9 @@
 <a name="T1992557309"></a>
 <a name="T581415280"></a>
 <a name="T1961386404"></a>
-<div>Подобные файлы, называемые <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">файлами заголовков</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файлами вставок</a>, обычно содержат <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директивы define</a> для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поименованных констант</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">макросов</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">объявления функций</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внешних переменных</a> и т.п., необходимые для нескольких исходных файлов. Преимущество подобного выделения в отдельный файл в том, что такие определения локализуются в общем месте. Несколько программ могут включать этот файл и быть уверенными в использовании одинаковой информации. Если необходимо изменение, его можно сделать в одном месте.</div>
+<div>Подобные файлы, называемые <a class="term" data-term="файлами заголовков" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">файлами заголовков</a> или <a class="term" data-term="файлами вставок" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файлами вставок</a>, обычно содержат <a class="term" data-term="директива препроцессора define" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директивы define</a> для <a class="term" data-term="поименованных констант" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поименованных констант</a> и <a class="term" data-term="макросов" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">макросов</a>, <a class="term" data-term="объявления функций" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">объявления функций</a>, <a class="term" data-term="внешних переменных" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внешних переменных</a> и т.п., необходимые для нескольких исходных файлов. Преимущество подобного выделения в отдельный файл в том, что такие определения локализуются в общем месте. Несколько программ могут включать этот файл и быть уверенными в использовании одинаковой информации. Если необходимо изменение, его можно сделать в одном месте.</div>
 <a name="T748507610"></a>
-<div>По соглашению, имена файлов-вставок имеют расширение <span class="eOperator">.h</span> , что означает файл заголовков (header), названных так потому, что директивы <span class="eOperator">include</span> обычно указываются в начале исходных файлов языка Си. Если имя файла заключено в угловые скобки <span class="eOperator">&lt;</span> и <span class="eOperator">&gt;</span>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">препроцессор</a> ищет файл в "стандартном месте". В операционных системах UNIX таким стандартным местом является каталог <span class="eOperator">/usr/include</span>. Если имя файла заключено в двойные кавычки <span class="eOperator">"</span>, используется стандартное соглашение операционной системы для доступа к файлу. В операционных системах UNIX может использоваться полное или относительное путевое имя.</div>
+<div>По соглашению, имена файлов-вставок имеют расширение <span class="eOperator">.h</span> , что означает файл заголовков (header), названных так потому, что директивы <span class="eOperator">include</span> обычно указываются в начале исходных файлов языка Си. Если имя файла заключено в угловые скобки <span class="eOperator">&lt;</span> и <span class="eOperator">&gt;</span>, <a class="term" data-term="препроцессор" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">препроцессор</a> ищет файл в "стандартном месте". В операционных системах UNIX таким стандартным местом является каталог <span class="eOperator">/usr/include</span>. Если имя файла заключено в двойные кавычки <span class="eOperator">"</span>, используется стандартное соглашение операционной системы для доступа к файлу. В операционных системах UNIX может использоваться полное или относительное путевое имя.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">#include "proj.h"
 #include "/local/include/x33.h"
@@ -63,15 +63,15 @@ extern double std_dev(double);
 typedef char BYTE;
 </pre>
 <a name="T998884589"></a>
-<div>В файле заголовков не должно быть ни <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">определений функций</a> (программ этих функций), ни определений внешних переменных, по которым выделяется память (например, <span class="eOperator">int x</span>). Иначе, если в нескольких файлах используется один и тот же файл заголовков, возникнут неприятности. При связывании этих файлов редактор связей может сообщить о "многократном определении идентификаторов".</div>
+<div>В файле заголовков не должно быть ни <a class="term" data-term="определений функций" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">определений функций</a> (программ этих функций), ни определений внешних переменных, по которым выделяется память (например, <span class="eOperator">int x</span>). Иначе, если в нескольких файлах используется один и тот же файл заголовков, возникнут неприятности. При связывании этих файлов редактор связей может сообщить о "многократном определении идентификаторов".</div>
 <a name="T637542155"></a>
 <a name="T1011348501"></a>
 <a name="T1239699667"></a>
-<div>В файле заголовков могут содержаться и другие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директивы препроцессора</a> и языка Си, например, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операторы typedef</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шаблоны структур</a> и объединений (<span class="eOperator">struct</span>, <span class="eOperator">union</span>) и операторы <span class="eOperator">enum</span>.</div>
+<div>В файле заголовков могут содержаться и другие <a class="term" data-term="директивы препроцессора" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директивы препроцессора</a> и языка Си, например, <a class="term" data-term="операторы typedef" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операторы typedef</a>, <a class="term" data-term="шаблоны структур" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шаблоны структур</a> и объединений (<span class="eOperator">struct</span>, <span class="eOperator">union</span>) и операторы <span class="eOperator">enum</span>.</div>
 <div class="eSubTitle">Организация файлов программы</div>
 <div>На рис.&nbsp;1 приводится типичный способ организации файлов, составляющих программу. Файл заголовков <span class="eOperator">projX.h</span> содержит директивы препроцессора <span class="eOperator">define</span>, объявления внешних переменных и оператор переопределения типа <span class="eOperator">typedef</span>, используемые в файлах с расширением <span class="eOperator">.c</span>.</div>
 <a name="T696383489"></a>
-<div>Файл <span class="eOperator">defs.c</span> определяет только внешние переменные, используемые несколькими файлами. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Функции</a> не должны включаться в этот файл.</div>
+<div>Файл <span class="eOperator">defs.c</span> определяет только внешние переменные, используемые несколькими файлами. <a class="term" data-term="Функции" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Функции</a> не должны включаться в этот файл.</div>
 <div>Файл, содержащий функцию <span class="eOperator">main()</span>, часто называют <span class="eOperator">main.c</span> для простоты идентификации.</div>
 <div>Функции, определенные в файлах <span class="eOperator">calc.c</span> и <span class="eOperator">bufct1.c </span>взаимосвязаны и являются составными частями программы .</div>
 <div class="eImage">
@@ -90,5 +90,11 @@ typedef char BYTE;
         <a href="/rk6-edu/course-23/mod-109.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>

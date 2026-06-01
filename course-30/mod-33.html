@@ -27,10 +27,10 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Поразрядная сортировка</a>
 </div>
 <br>
-<div>Поразрядный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> обладает следующими особенностями:</div>
+<div>Поразрядный <a class="term" data-term="метод" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод</a> <a class="term" data-term="сортировки" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> обладает следующими особенностями:</div>
 <br>
 <div>Во-первых, данный метод совсем не использует сравнений сортируемых элементов.</div>
-<div>Во-вторых, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключ</a>, по которому происходит сортировка, необходимо разделить на части, разряды ключа. Например, слово можно разделить по буквам, число - по цифрам... </div>
+<div>Во-вторых, <a class="term" data-term="ключ" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключ</a>, по которому происходит сортировка, необходимо разделить на части, разряды ключа. Например, слово можно разделить по буквам, число - по цифрам... </div>
 <div>До сортировки необходимо знать два параметра: <span style="font-weight:bold; ">k и m</span>, где </div>
 <br>
 <div>k - количество разрядов в самом длинном ключе</div>
@@ -38,7 +38,7 @@
 <br>
 <div>При сортировке русских слов m = 33, так как буква может принимать не более 33 значений. Если в самом длинном слове 10 букв, k = 10.</div>
 <div>Аналогично, для для шестнадцатеричных чисел m=16, если в качестве разряда брать цифру, и m=256, если использовать побайтовое деление.</div>
-<div>Эти параметры нельзя изменять в процессе работы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a>.</div>
+<div>Эти параметры нельзя изменять в процессе работы <a class="term" data-term="алгоритма" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a>.</div>
 <br>
 <div class="eSubTitle">Поразрядная сортировка беззнаковых целых чисел</div>
 <br>
@@ -47,7 +47,7 @@
 <div>unsigned short int - 2 байта, </div>
 <div>unsigned long int- 4 байта.</div>
 <a name="T2078518894"></a>
-<div>При этом большинство <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> использует обратный порядок записи: от младшего байта к старшему. Так число типа short int i = 669110 = 0x1A23 непосредственно в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">памяти</a> хранится так:</div>
+<div>При этом большинство <a class="term" data-term="процессоров" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> использует обратный порядок записи: от младшего байта к старшему. Так число типа short int i = 669110 = 0x1A23 непосредственно в <a class="term" data-term="памяти" href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">памяти</a> хранится так:</div>
 <br>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
@@ -132,14 +132,14 @@ delete counters;
 </pre>
 <br>
 <a name="T1992766606"></a>
-<div>Обратим внимание, что если число проходов нечетное(например, T=unsigned char), то из-за <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">перестановки</a> swap() реально уничтожается исходный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a>, а указатель in приобретает адрес out. Об этом следует помнить, используя указатели на сортируемый массив во внешней программе.</div>
+<div>Обратим внимание, что если число проходов нечетное(например, T=unsigned char), то из-за <a class="term" data-term="перестановки" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">перестановки</a> swap() реально уничтожается исходный <a class="term" data-term="массив" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a>, а указатель in приобретает адрес out. Об этом следует помнить, используя указатели на сортируемый массив во внешней программе.</div>
 <div>Такая организация процедуры также является прототипом для сортировки строк: достаточно сделать проходы radixPass от последней буквы к первой. </div>
 <br>
 <div class="eSubTitle">Эффективность поразрядной сортировки</div>
 <br>
 <div>Рост быстрой сортировки мы уже знаем: O(nlogn). Судя по оценке, поразрядная сортировка растет линейным образом по n, так как k,m - константы. Также она растет линейным образом по k - при увеличении длины типа(количества разрядов) соответственно возрастает число проходов. Однако, в последний пункт реальные условия вносят свои коррективы. </div>
 <div>Дело в том, что основной цикл сортировки по i-му байту состоит в движении указателя uchar* bp шагами sizeof(T) по массиву для получения очередного разряда. Когда T=char, шаг равен 1, T=short - шаг равен 2, T=long - шаг равен 4... Чем больше размер типа, тем менее последовательный доступ к памяти осуществляется, а это весьма существенно для скорости работы. Поэтому реальное время возрастает чуть быстрее, нежели теоретическое.</div>
-<div>Кроме того, поразрядная сортировка уже по своей сути неинтересна для малых массивов. Каждый проход содержит минимум 256 <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">итераций</a>, поэтому при небольших n общее время выполнения (n+m) определяется константой m=256. </div>
+<div>Кроме того, поразрядная сортировка уже по своей сути неинтересна для малых массивов. Каждый проход содержит минимум 256 <a class="term" data-term="итераций" href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">итераций</a>, поэтому при небольших n общее время выполнения (n+m) определяется константой m=256. </div>
 <div>Поведение неестественно, так как проходы выполняются полностью, вне зависимости от исходного состояния массива. Поразрядная сортировка является устойчивой.</div>
 </div>
 <hr width="90%">
@@ -153,5 +153,11 @@ delete counters;
         <a href="/rk6-edu/course-30/mod-34.html">Следующий ›</a>
       </nav>
 <script src="/rk6-edu/search.js"></script>
+<script src="/rk6-edu/terms.js"></script>
+<div class="term-popup" id="term-popup">
+  <span class="term-popup-close" onclick="document.getElementById('term-popup').style.display='none'">✕</span>
+  <div class="term-popup-title" id="term-popup-title"></div>
+  <div id="term-popup-body"></div>
+</div>
 </body>
 </html>
