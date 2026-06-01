@@ -23,7 +23,59 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-80.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Метод вставки</a>
+</div>
+<a name="T812459346"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метод вставки</a> — один из прямых методов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сортировки</a>.</div>
+<div>В исходном состоянии считаем, что сортируемая последовательность состоит из двух последовательностей: уже сортированной (на первом шаге состоит из единственного — первого элемента) и последовательности, которую еще необходимо сортировать. На каждом шаге из сортируемой последовательности извлекается элемент и вставляется в первую последовательность так, чтобы она оставалась сортированной. Поиск места вставки осуществляется с конца первой последовательности, сравнивая вставляемый элемент a<sub class="eSub">i</sub> с очередным элементом сортированной последовательности a<sub class="eSub">j</sub>. Если элемент a<sub class="eSub">i</sub> больше a<sub class="eSub">j</sub>, его вставляют вместо a<sub class="eSub">j+1</sub>, иначе сдвигают a<sub class="eSub">j</sub> вправо и уменьшают j на единицу. Поиск места вставки завершают, если элемент вставлен или достигнут левый конец <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a>. В последнем случае элемент a<sub class="eSub">i</sub> вставляют на первое место.</div>
+<div>Существует прием, который позволяет отменить проверку достижения левой границы массива. Этот прием называется "проверка с барьером". С использованием этого приема проверка осуществляется так, чтобы из цикла поиска вставки в любом случае выход происходил по первому условию. Для этого достаточно поместить вставляемый элемент перед первым элементом массива, как элемент с индексом 0. Этот элемент и станет естественным барьером для ограничения выхода за левую границу массива.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/sort2.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Алгоритм метода вставки</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/sort2.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>В программе элементы сортируемого массива расположены, начиная с индекса 1. В нулевом элементе массива будет располагаться барьер.</div>
+</div>
+<pre class="eListing"></pre>
+<pre class="eListing">/*n-число элементов сортируемого массива*/
+for (i=2; i&lt;n+1; i++) /*начиная со второго элемента до конца массива*/
+  {
+   b=a[i];
+   a[0]=b;            /*барьер*/
+   j=i-1;
+   while(b&lt;a[j])      /*пока очередной элемент сортированного массива */
+      {               /*  больше i-го элемента*/
+       a[j+1]=a[j];   /*сдвигаем элемент*/
+       j=j-1;
+       }
+    a[j+1]=b;         /*как только найдено место, туда записываем b*/
+   }
+</pre>
+<div>Оценим вычислительную сложность этого метода, определив количество операций сравнения. </div>
+<div>Для поиска места i-го элемента каждый раз потребуется выполнить от 1 до i-1 операции сравнения, т.е. в среднем i/2 операций сравнения. Значение i изменяется от 2 до n, т.е. выполняется n-1 проход, в каждом из которых происходит в среднем от 1 до n/2 сравнения. Суммарно в среднем для решения задачи требуется выполнить <img align="absmiddle" src="/?frm/?doc=OP2/sort2.mod/?n=1/?k=10"> операции сравнения. Откуда <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительная сложность метода</a> в среднем равна О<sub class="eSub">ср</sub>(n<sup class="eSub">2</sup>), хотя время выполнения примерно в два раза меньше, чем в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">методе выбора</a>. В данном случае вычислительная сложность зависит от исходного расположения элементов массива. </div>
+<div>В лучшем случае, когда массив уже упорядочен, поиск места вставки требует одного сравнения для каждого элемента, и количество сравнений равно n-1. Вычислительная сложность равна O(n).</div>
+<div>В худшем случае, если элементы в исходном состоянии расположены в обратном порядке, поиск места вставки для каждого элемента потребует 1, 2, 3,..., n-1 сравнения, следовательно,  всего потребуется n(n-1)/2 операций сравнения.  Вычислительная сложность равна O(n<sup class="eSub">2</sup>).</div>
+<div>Таким образом, за счет ускорения сортировки в лучших случаях данный метод имеет лучшие временные характеристики, чем метод выбора.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-78.html">‹ Предыдущий</a>

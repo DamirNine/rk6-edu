@@ -23,7 +23,105 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-22/mod-31.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Распараллеливание ациклических участков</a>
+</div>
+<a name="T1782899684"></a>
+<div>Алгоритм <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> ациклических участков программы состоит из четырех этапов:</div>
+<ul class="eList"><a name="T1928825366"></a>
+<li>построение <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">графа зависимостей по данным</a> между операторами программы;</li>
+<a name="T495153357"></a>
+<li>построение ярусно-параллельной формы (<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ЯПФ) программы</a>;</li>
+<li>составление по ЯПФ параллельной программы;</li>
+<a name="T1046981721"></a>
+<li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">отображение</a> полученной программы на архитектуру используемой параллельной вычислительной системы.</li>
+</ul>
+<div class="eSubTitle">Построение графа зависимостей по данным.</div>
+<a name="T524698539"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Граф зависимостей по данным</a> <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=1/?k=10"> между операторами программы (Data Dependence Graph, DDG) строится на основе информационной, логической и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">конкуренционной зависимости между операторами программы</a>. Заметим, что о зависимости по данным можно говорить на разных уровнях — от отдельных инструкций, до более крупных программных блоков.</div>
+<a name="T467394694"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Информационная зависимость между операторами программы</a>. Оператор <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10"> зависит от оператора A информационно, если оператор <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=3/?k=10"> "вырабатывает" некоторую переменную <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=4/?k=10">, которую использует оператор <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10">. Другими словами, оператор <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10"> зависит от оператора <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=3/?k=10"> информационно, если 1)существует путь от входного оператора программы, проходящий через операторы <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=3/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10">, и 2)оператор <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=3/?k=10"> является последним перед <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10"> оператором этого пути, "вырабатывающий" значение переменной <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=4/?k=10">, которое используется оператором <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10">.</div>
+<div>Формально информационную зависимость оператора <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10"> от оператор <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=3/?k=10"> можно записать в следующем виде:<br><img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=5/?k=10"><br></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=6/?k=10"> — совокупность входных переменных оператора <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=7/?k=10"> — совокупность выходных переменных оператора <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=3/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=8/?k=10"> – пустое множество.</div>
+<a name="T1614987650"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Логическая зависимость между операторами программы</a>. Оператор B зависит от оператора <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=3/?k=10"> логически, если 1)существует путь от входного оператора программы до оператора <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=3/?k=10"> и 2)оператор <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=3/?k=10"> является "распознавателем", решающим будет или нет выполняться оператор <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10">.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Конкуренционная зависимость между операторами программы</a>. Операторы <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=3/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10"> зависят друг от друга конкуренционно, если 1)существуют пути от входного оператора программы как до оператора <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=3/?k=10">, так и до оператора <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10">, и 2)операторы <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=9/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10"> "вырабатывают" одну и ту же переменную <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=4/?k=10">.</div>
+<div>Формально конкуренционную зависимость операторов <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=3/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=2/?k=10"> можно записать в следующем виде:<br><img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=10/?k=10"><br></div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Пример 1. Рассмотрим следующую задачу. Пользователь вводит относительные адреса <span class="eOperator">x</span>, <span class="eOperator">y</span> начала и конца массива. Известно, что переменная, имеющее наибольшее значение соответствует концу массива, а переменная, имеющая наименьшее значение, – началу массива. Требуется распечатать массив, а также нижнюю и верхнюю его границы.</div>
+<div>Рассмотрим также следующую программу, которая решает поставленную задачу (слева даны обозначения операторов программы; <span class="eOperator">c</span> – база массива):</div>
+<pre class="eListing">A  ввод (x, y);
+B  l := x;
+C  h := y;
+D  v := c+x;
+E  z := c+y;
+P  если x&gt;y то F иначе G;
+F  h := x; l := y;
+G  печать от min (z, v) до max (z, v);
+H  печать (l, h);
+</pre>
+<div>Граф зависимостей этой программы изображен на рис.&nbsp;1. Конкуренционная зависимость в программе имеет место, поскольку <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=11/?k=10">(<img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=12/?k=10">)<img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=13/?k=10">(<img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=14/?k=10">)<img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=15/?k=10">O, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=11/?k=10">(<img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=16/?k=10">)<img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=13/?k=10">(<img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=14/?k=10">)<img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=15/?k=10">O <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=17/?k=10"></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020601.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;К примеру 1. Граф зависимостей программы.</div></div>
+</div>
+<div>Большой размер графа <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=1/?k=10"> усложняет последующие этапы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> программы. Для уменьшения размера графа <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=1/?k=10"> целесообразно произвести сжатие линейных участков программы в обобщенные операторы, т. е. выделить в исходном графе <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=1/?k=10"> линейные подграфы и поставить в соответствие каждому из них одну обобщенную вершину графа. Сохраним за преобразованным графом обозначение <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=1/?k=10">. Таким образом, вершинами графа <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=1/?k=10"> являются операторы исходной программы, а также фрагменты исходной программы в виде линейных участков.</div>
+<div class="eSubTitle">Построение ярусно-параллельной формы программы.</div>
+<div>Алгоритм построения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ярусно-параллельной формы программы</a>:</div>
+<ol class="eList"><a name="T411822429"></a>
+<li>На первый <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ярус ЯПФ</a> заносятся все операторы, в которые не идут стрелки графа зависимостей <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=18/?k=10">;</li>
+<li>Если построено <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=19/?k=10"> ярусов, то в <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=20/?k=10">-й ярус заносятся все те операторы, которые имеют входящие стрелки только от первых k ярусов.</li>
+</ol>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>Построим ЯПФ для программы, граф зависимостей которой приведен на рис.&nbsp;2.</div>
+<div>Входящие стрелки отсутствуют только у оператора <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=21/?k=10">. Поэтому на первый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ярус ЯПФ</a> помещаем только этот оператор.</div>
+<div>Входящие стрелки только от операторов 1-го яруса имеют операторы <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=12/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=16/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=22/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=23/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=24/?k=10">. Поэтому помещаем их на второй ярус.</div>
+<div>Входящие стрелки только от операторов 1-го и 2-го ярусов имеют операторы <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=14/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=25/?k=10">. Помещаем их на третий ярус.</div>
+<div>Наконец, входящие стрелки только от операторов 1-го, 2-го и 3-го ярусов имеет только оператора <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=26/?k=10">. Помещаем этот оператор на четвертый ярус (см. рис.&nbsp;2)<img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=17/?k=10"></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020601.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Ярусно-параллельная форма для программы, граф зависимостей которой приведен на рис.&nbsp;1.</div></div>
+</div>
+<div>Из алгоритма построения ЯПФ следует, что все операторы, находящиеся на одном уровне этой формы могут выполняться параллельно. Ярус ЯПФ иногда называется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">уровнем готовности операторов</a>.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Ярусы ЯПФ</a> устанавливают между операторами отношение предшествования — к моменту начала вычислений на <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=27/?k=10">-м ярусе должны быть закончены вычисления на <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=28/?k=10">-м ярусе.</div>
+<a name="T1559213074"></a>
+<a name="T1580692175"></a>
+<a name="T501293051"></a>
+<a name="T37110062"></a>
+<a name="T1974874909"></a>
+<a name="T1920059916"></a>
+<div>С ЯПФ связан ряд важных понятий. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Высотой ЯПФ</a> называется количество ее ярусов. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Шириной яруса ЯПФ</a> называется количество операторов на этом ярусе. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Шириной ЯПФ</a> называется максимальная из ширин ярусов данной ЯПФ. ЯПФ данного алгоритма, имеющая минимальную высоту, называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">минимальной ЯПФ</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">максимально-параллельной ЯПФ</a>. Ширина минимальной ЯПФ называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">шириной алгоритма</a>, а ее высота – <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">высотой алгоритма</a>. Ширина алгоритма и высота алгоритма представляют собой примеры мер параллелизма алгоритма.</div>
+<div class="eSubTitle">Составление по ЯПФ параллельной программы.</div>
+<a name="T70414198"></a>
+<a name="T1686994031"></a>
+<a name="T469209868"></a>
+<div>Рассмотрим использование ЯПФ для разбиения последовательной программы на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">легковесные процессы</a> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нити</a>) с целью выполнения программы на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультикомпьютере</a>. В главе 1 мы отмечали, что в этом случае накладные расходы на коммуникацию минимальны, поскольку все нити разделяют одно адресное пространство, а синхронизационные операции выполняются проще и быстрее, чем для обычных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>.</div>
+<div>Очевидно, что разбиение программы на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нити</a> многовариантно. В качестве <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">критерия оптимальности</a> разбиения естественно использовать время выполнения программы. Для определения этого времени в качестве веса узлов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">графа зависимостей по данным</a> используем время выполнения этих узлов в последовательной программе.</div>
+<a name="T94067847"></a>
+<div>Время выполнения узла может быть найдено с помощью профилирования программы. Для получения более точных результатов можно воспользоваться аппаратными таймерами, имеющимися на большинстве современных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессоров</a>.</div>
+<a name="T229852493"></a>
+<div>Поскольку целью разбиения является получение выигрыша по времени, количество <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a>, на которые производится разбиение, обычно принимается равным количеству <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> в системе. По этой же причине при разбиении следует стремиться к тому, чтобы времена выполнения всех нитей были достаточно близки друг к другу (задача <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">балансировки загрузки</a> – см. главу 1).</div>
+<div>Разбиения выполняется последовательно по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ярусам ЯПФ</a> – к моменту начала разбиения <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=27/?k=10">-го яруса должно быть закончено разбиение <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=28/?k=10">-го яруса. При разбиении на <img align="absmiddle" src="/?frm/?doc=Parallel/ch020601.mod/?n=28/?k=10">-ом ярусе для каждого узла производится локально оптимальный выбор <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нити</a>, в которую он должен быть включен — делается попытка включить его в каждой из имеющихся нитей, после чего выбирается лучший вариант. Очевидно, что при этом каждый раз производится пересчет времени выполнения каждой из нитей. Оптимизация должна производиться с учетом потерь времени на синхронизацию нитей, если они обмениваются между собой данными. Организация синхронизации нитей также является задачей рассматриваемого этапа <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a>.</div>
+<div>Эффективность мультипроцессорной программы в значительной мере зависит от эффективности использования ею <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кэш-памяти</a>, поскольку близко расположенные в памяти данные преимущественно размещаются в более быстрой кэш-памяти. При разбиении программы на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нити</a> это обстоятельство также следует учитывать (путем эмуляции кэш-памяти <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессора</a>, на котором будет выполняться данная нить, и соответствующей корректировки времени выполнения узла).</div>
+<div class="eSubTitle">Отображение полученной программы на архитектуру используемой параллельной вычислительной системы.</div>
+<div>Положим, что исходная последовательная программа разбита на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нити</a> так, как описано в предыдущем разделе. Поскольку количество нитей равно количеству <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессоре</a>, данный этап не представляет сложности.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-22/">← Оглавление</a>
         <a href="/rk6-edu/course-22/mod-29.html">‹ Предыдущий</a>

@@ -23,7 +23,150 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-22/mod-35.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Библиотека MPI</a>
+</div>
+<a name="T372325522"></a>
+<a name="T1672495953"></a>
+<div>Стандарт механизма передачи сообщений MPI (Message Passing Interface) был принят в 1994 г. Стандарт готовился с 1992 по 1994 годы. группой Message Passing Interface Forum. Основная цель, которую ставили перед собой разработчики MPI – обеспечение полной независимости программ, написанных с использованием <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">библиотеки MPI</a>, от архитектуры <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорной системы</a>. </div>
+<div>Отметим, что интерфейс громоздок и сложен для прикладного программиста. Интерфейс также сложен для реализации. Поэтому практически отсутствуют реализации MPI, в которых в полной мере обеспечивается совмещение обменов с вычислениями.</div>
+<a name="T1322539629"></a>
+<div>В 1997 появился проект стандарта MPI-2, который выглядит еще более громоздким и трудным для полной реализации. Реализацией стандарта MPI-2 является <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">библиотека MPI-2</a>.</div>
+<div>Рассмотрим достаточно характерный вычислительный алгоритм, реализующий метод релаксации Якоби для решения систем линейных алгебраических уравнений. Сравним размеры его последовательной версии и двух параллельных версий (MPI, HPF). Размер в строках последовательной программы на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке</a> Fortran 77 равен 17, а размеры параллельных версий для MPI и HPF равны, соответственно, 55 и 24.</div>
+<div class="eSubTitle">Общие сведения о MPI.</div>
+<a name="T1737697059"></a>
+<div>Отметим, прежде всего, что стандарт MPI не стандартизует реализацию. Поставщики <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорных вычислительных систем</a>, как правило, предлагают свои реализации стандарта MPI для своих машин. Однако правильная <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">MPI-программа</a> (программа, написанная с использованием MPI) должна одинаково выполняться на всех реализациях.</div>
+<a name="T1307808466"></a>
+<div>Существуют стандартные "привязки" MPI к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языкам</a> С/С++, Fortran 77/90, а также бесплатные и коммерческие реализации MPI почти для всех суперкомпьютерных платформ, а также для UNIX и Windows NT <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительных кластеров</a>. Переносимой версией библиотеки МРI является библиотека МРIСН.</div>
+<a name="T469209868"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPI-программа</a> представляет собой набор независимых <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>, каждый из которых выполняет свою собственную программу, написанную на каком-либо <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке</a> высокого уровня. Процессы MPI-программы взаимодействуют друг с другом посредством передачи сообщений путем вызова коммуникационных функций <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPI-библиотеки</a>. Как правило, каждый процесс выполняется в своем собственном адресном пространстве, однако допускается и режим разделения памяти. Стандарт MPI не специфицирует модель выполнения процесса — это может быть как последовательный процесс, так и многопотоковый.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPI-библиотека</a> реализована в виде примерно 130 функций, в число которых входят следующие основные наборы функций:</div>
+<ul class="eList"><a name="T488408122"></a>
+<a name="T2086037695"></a>
+<li>функции для работы с <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">группами процессов</a> и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">коммуникаторами</a>;</li>
+<li>функции, реализующие коммуникационные операции типа точка-точка;</li>
+<li>функции, реализующие коллективные коммуникационные операции.</li>
+</ul>
+<div>Набор функций <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеки MPI</a> далеко выходит за рамки набора функций, минимально необходимого для поддержки механизма передачи сообщений. Почти любая <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPI-программа</a> может быть написана с использованием всего 6 MPI-функций, а достаточно полную и удобную среду программирования составляет набор из 24 функций.</div>
+<div>MPI не обеспечивает механизмов задания начального размещения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорам</a>. Предполагается, что для этого имеются другие средства. Эти средства должны позволять задать число процессоров и процессов, разместить процессы и данные на каждом процессоре.</div>
+<a name="T94067847"></a>
+<div>Стандарт MPI требует, чтобы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPI-программы</a> могли выполняться на гетерогенных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорных системах</a>, в которых различные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоры</a> имеют различные форматы данных одного и того же типа. MPI-программа должна работать также на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессорных вычислительных системах</a>.</div>
+<div>Основными понятиями стандарта MPI являются:</div>
+<ul class="eList"><li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a>;</li>
+<li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">группа процессов</a>;</li>
+<li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникатор</a>.</li>
+</ul>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Процесс</a> – исполнение программы на одном <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоре</a>. Процесс может содержать последовательный код, параллельные ветви, операции ввода/ вывода и пр.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Группа процессов</a> – совокупность <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>, каждый из которых имеет внутри группы уникальное имя. Процессы в группе взаимодействуют посредством <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникатора группы</a>. Процессы в группе имеют номер от 0 до (n-1), где n – количество процессов в группе.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Коммуникатор</a> реализует обмены данными между <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессами</a> и их синхронизацию. Для прикладной программы коммуникатор выступает в качестве коммуникационной среды. Различают внутригрупповые коммуникаторы (intra) и  межгрупповые коммуникаторы (inter). Сообщения, использующие разные коммуникаторы, не оказывают влияния друг на друга и не взаимодействуют.</div>
+<div class="eSubTitle">Функции для работы с группами процессов и коммуникаторами.</div>
+<div>Группа конструируется из уже существующих групп путем операций над ними, как над множествами именованных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>. Базовой группой является группа <span class="eOperator">MPI_COMM_WORLD</span>, которая создается при инициализации MPI-библиотеки. Группа <span class="eOperator">MPI_COMM_WORLD</span> содержит процессы с номерами <img align="absmiddle" src="/?frm/?doc=Parallel/ch020702.mod/?n=1/?k=10">, где n – число <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a>, определенное при инициализации.</div>
+<div>Можно создать новую группу, перечислив образующие ее элементы уже существующей группы. Определены пересечение групп, объединение групп и другие теоретико-множественные операции.</div>
+<div>Существует ряд процедур для определения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессом</a> своего положения в группе. Например:</div>
+<ol class="eList"><li>процедура <span class="eOperator">MPI_GROUP_SIZE</span><span class="eOperator">(group,</span> <span class="eOperator">size)</span> присваивает переменной size значение, равное числу <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> в группе с именем group;</li>
+<li>процедура <span class="eOperator">MPI_GROUP_RANK</span><span class="eOperator">(group,</span> <span class="eOperator">rank)</span> присваивает переменной rank значение, равное номеру <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> в группе с именем group, который выполнил этот вызов.</li>
+</ol>
+<div>Эффективность работы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникатора группы</a> можно повысить, если явно указать информационные связи между <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессами</a> (топологию группы).</div>
+<div>В стандарте MPI имеются средства для задании некоторых регулярных топологий групп (например, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">гиперкубов</a>) и произвольных топологий группы.</div>
+<div>Рассмотрим процедуру для задания произвольной топологии группы</div>
+<pre class="eListing">MPI_GRAPH_CREATE (comm_old, nnodes, index, edges, reorder, comm_graph)
+</pre>
+<div>Здесь</div>
+<div><span class="eOperator">comm_old</span> – имя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникатора</a>, соотнесенного с исходной топологией данной группы;</div>
+<div><span class="eOperator">nnodes</span> – число вершин графа информационных связей;</div>
+<div><span class="eOperator">index</span> – массив степеней вершин графа (число соседних с данной вершин);</div>
+<div><span class="eOperator">edges</span> – массив ребер графа;</div>
+<div><span class="eOperator">reorder</span> <span class="eOperator">= TRUE</span>;</div>
+<div><span class="eOperator">comm_graph</span> – <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникатор</a>, соответствующий группе с описанной топологией.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Пусть имеется 4 <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> (0, 1, 2, 3) с топологией информационных связей между ними, приведенной на Рис.1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020702.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Топология информационных связей процессов <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">Q</span><sub class="eSub">0</sub> — <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">Q</span><sub class="eSub">3</sub>.</div></div>
+<div>Тогда</div>
+<pre class="eListing">nnodes = 4;
+index = 2, 1, 1, 2;
+edges = 1, 3, 0, 3, 0, 2
+</pre>
+</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPI-библиотека</a> имеет ряд функций, позволяющих программе пользователя определить параметры топологии группы. Например, можно определить число соседей указанного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессора</a> и имена соседей.</div>
+<div>Отметим, что топология группы определяет связи между <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессами</a>, но никак не физические связи между <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорами</a>, на которых выполняются эти процессы.</div>
+<a name="T1782899684"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Группы процессов</a> являются мощным средством <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> — позволяют разделить группу процессов на несколько подгрупп, каждая из которых выполняет свою параллельную процедуру. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Коммуникаторы группы</a> позволяют ограничить область видимости сообщений рамками некоторой группы процессов, что позволяет сократить накладные расходы на коммуникации.</div>
+<div class="eSubTitle">Функции, реализующие коммуникационные операции типа точка-точка (парные обмены).</div>
+<div>Основу взаимодействия <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> составляют следующие процедуры обмена сообщениями между процессами:</div>
+<div>1) <span class="eOperator">MPI_SEND(buf, count, datatype, dest, tag, comm)</span></div>
+<div><span class="eOperator">buf</span> – начальный адрес передающего буфера;</div>
+<div><span class="eOperator">count</span> — число передаваемых элементов в сообщении;</div>
+<div><span class="eOperator">datatype</span> — тип передаваемых элементов;</div>
+<div><span class="eOperator">dest</span> — номер принимающего <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> в группе с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникатором</a> comm;</div>
+<div><span class="eOperator">gtag</span> — тэг сообщения;</div>
+<div><span class="eOperator">comm</span> – идентификатор <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникатора группы</a>, всем <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессам</a> которой посылается сообщение.</div>
+<div>2) <span class="eOperator">MPI_RECV (buf, count, datatype, source, tag, comm, status)</span></div>
+<div><span class="eOperator">buf</span> – начальный адрес приемного буфера;</div>
+<div><span class="eOperator">count</span> — число принимаемых элементов в сообщении;</div>
+<div><span class="eOperator">datatype</span> — тип принимаемых элементов;</div>
+<div><span class="eOperator">source</span> — номер процесса-отправителя в группе с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникатором</a> comm;</div>
+<div><span class="eOperator">tag</span> — тэг сообщения</div>
+<div><span class="eOperator">comm</span> — идентификатор <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникатора  группы</a></div>
+<div><span class="eOperator">status</span> — параметры принятого сообщения.</div>
+<div>Здесь</div>
+<div><span class="eOperator">tag</span> – целое число, которое используется для указания типа сообщения. В вызове процедуры <span class="eOperator">MPI_RECV</span> в качестве параметров <span class="eOperator">source, tag </span>можно использовать константы <span class="eOperator">MPI_ANY_SOURCE, MPI_ANY_TAG,</span> соответственно. При этом процедура <span class="eOperator">MPI_RECV </span>будет принимать сообщения от любых источников с любыми тэгами;</div>
+<div><span class="eOperator">status</span> – возвращает аргументы <span class="eOperator">source, tag,</span> а также длину принятого сообщения. Эти аргументы могут быть необходимы при приеме сообщения при использовании констант <span class="eOperator">MPI_ANY_SOURCE, MPI_ANY_TAG</span>.</div>
+<a name="T1050456276"></a>
+<div>Возможны два режима обмена сообщения с помощью процедур <span class="eOperator">MPI_SEND, MPI_RECV</span> – блокирующий (blocking) и не блокирующий (non blocking). В блокирующем режиме возврат из процедуры происходит после ее выполнения и освобождения всех ресурсов – синхронная модель <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">простого рандеву</a>. В не блокирующем режиме возврат из процедуры происходит до завершения ее выполнения и освобождения всех ресурсов – асинхронная модель передачи сообщений.</div>
+<div>Блокировка гарантирует корректность повторного использования всех параметров после возврата из подпрограммы. Заметим, что стандарт MPI не определяет способ обеспечения этой гарантии: копирование в промежуточный буфер или непосредственная передача <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессу</a> <span class="eOperator">dest</span>. Заметим также, что в блокирующем режиме возврат из подпрограммы <span class="eOperator">MPI_SEND</span> не означает ни того, что сообщение уже передано процессу dest, ни того, что сообщение покинуло процессорный элемент, на котором выполняется процесс, выполнивший <span class="eOperator">MPI_SEND</span></div>
+<div class="eSubTitle">Функции, реализующие коллективные коммуникационные операции.</div>
+<div>Коллективные коммуникационные операции выполняются всеми <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессами</a> данной группы (посредством вызова соответствующих процедур). Рассмотрим основные процедуры данного класса.</div>
+<div>1) M<span class="eOperator">PI_BCAST (buf, count, datatype, source, comm)</span> осуществляет широковещательную (broadcast) передачу сообщения от одного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> всем остальным процессам данной группы.</div>
+<div><span class="eOperator">buf</span> — адрес начала буфера посылки сообщения;</div>
+<div><span class="eOperator">count</span> — число передаваемых элементов в сообщении;</div>
+<div><span class="eOperator">datatype</span> — тип передаваемых элементов;</div>
+<div><span class="eOperator">source</span> — номер рассылающего <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>;</div>
+<div><span class="eOperator">comm</span> — идентификатор группы.</div>
+<div>2) <span class="eOperator">MPI_GATHER(sbuf, scount, stype, rbuf, rcount, rtype, dest, comm)</span> осуществляет сбор данных от всех <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов группы</a> в один из процессов группы.</div>
+<div><span class="eOperator">sbuf</span> — адрес начала буфера посылки;</div>
+<div><span class="eOperator">scount</span> — число элементов в посылаемом сообщении;</div>
+<div><span class="eOperator">stype</span> — тип элементов отсылаемого сообщения;</div>
+<div><span class="eOperator">rbuf</span> — адрес начала буфера сборки данных;</div>
+<div><span class="eOperator">rcount</span> — число элементов в принимаемом сообщении;</div>
+<div><span class="eOperator">rtype</span> — тип элементов принимаемого сообщения;</div>
+<div><span class="eOperator">dest</span> — номер <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>, на котором происходит сборка данных.</div>
+<div><span class="eOperator">comm</span> — идентификатор группы.</div>
+<div>3) <span class="eOperator">MPI_ALLGATHER()</span> выполняет сбор данных от всех <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов группы</a> и рассылку результата сборки всем процессам группы;</div>
+<div>4) <span class="eOperator">MPI_ALLTOALL()</span> выполняет раздачу и, одновременно, сбор данных от всех <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов группы</a> во все процессы группы.</div>
+<div class="eSubTitle">Другие функции MPI.</div>
+<ol class="eList"><li>В MPI имеются средства для вычисления минимума, максимума, суммы и т.п. данных, которые распределены по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорам</a> системы. Подобные операции могут быть также определены пользователем.</li>
+<li>Средства обработки некоторых ошибок, которые возникают при выполнении функций MPI. Это могут быть, например, ошибки для операций с плавающей точкой или при нарушении прав доступа. В MPI имеется ряд предопределенных обработчиков ошибок:</li>
+</ol>
+<ul class="eList"><li><span class="eOperator">MPI_ERRORS_ARE_FATAL</span> – обработчик, который после вызова прерывает работу программы на всех <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессах</a>;</li>
+<li><span class="eOperator">MPI_ERRORS_RETURN</span> – обработчик, который не делает ничего, кроме представления кода ошибки <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPI-программе</a> пользователя.</li>
+</ul>
+<div>Реализации могут обеспечивать дополнительные обработчики ошибок, программисты также могут написать свои собственные обработчики ошибок. Важно, что поскольку все функции MPI возвращают код ошибки, пользователь с помощью обработчиков ошибок может выполнять отладку <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPI-программы</a> или управлять ею.</div>
+<div class="eSubTitle">Интерфейс MPI-2.</div>
+<div>Уже упоминавшийся новый стандарт MPI-2 расширяет стандарт MPI, в основном, по следующим направлениям:</div>
+<ol class="eList"><a name="T1910314572"></a>
+<li>Поддержка модели обмена данными "<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">расширенное рандеву</a>", что позволяет писать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPI-программы</a> не только для расчетных математических задач, но и для системы массового обслуживания.</li>
+<li><span class="eOperator">Динамическое порождение процессов</span>. Для программирования расчетных задач это средство вряд ли нужно, однако оно необходимо для разработки систем массового обслуживания.</li>
+<li>Средства работы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файлами</a>, которые расположены на жестких дисках другого <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессора</a> (параллельное чтение/ запись).</li>
+<li>Возможность использовать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">разделяемую память</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессора</a> не только для обмена данными между <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессами</a>, но и для совместного хранения данных (механизм односторонних коммуникаций ("one-sided communications")).</li>
+</ol>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-22/">← Оглавление</a>
         <a href="/rk6-edu/course-22/mod-33.html">‹ Предыдущий</a>

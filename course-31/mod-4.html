@@ -23,7 +23,111 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-5.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Определение, устройство и принцип действия микропроцессора</a>
+</div>
+<a name="T1017069202"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Микропроцессором</a> называется функционально законченное программно управляемое устройство, предназначенное для обработки информации и управления процессом этой обработки и выполненное в виде большой интегральной схемы.</div>
+<div>Микропроцессоры подразделяются на универсальные (применяемые для решения любых задач) и специализированные (для решения ограниченного круга задач).</div>
+<div>Основными характеристиками микропроцессора являются его разрядность и тактовая частота, определяющая время выполнения микропроцессором отдельных операций по обработке данных.</div>
+<div>В основу устройства и принципа действия микропроцессора положены два постулата:</div>
+<ol class="eList"><li>Наиболее эффективной для представления чисел внутри ЭВМ является двоичная система счисления.</li>
+<li>Любой алгоритм обработки информации может быть реализован в виде набора простейших арифметических операций.</li>
+</ol>
+<div class="eSubTitle">Системы счисления</div>
+<a name="T1902915004"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Система счисления</a> — способ представления количественных величин с помощью специальных знаков, например цифр. Наиболее распространены позиционные системы счисления.</div>
+<div>В позиционной системе счисления любое число может быть представлено в виде<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=1/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br>где <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=2/?k=10"> — представляемая количественная величина (число), <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=3/?k=10"> — знак, используемый для его представления и занимающий <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=4/?k=10">-тую позицию, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=5/?k=10"> — основание системы счисления, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=6/?k=10"> — количество разрядов (знаков), используемых для представления числа.</div>
+<div>В повседневной жизни мы используем десятичную систему счисления, для которой <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=7/?k=10">.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=8/?k=10"></div>
+</div>
+<div>Максимальное число, которое может быть представлено <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=6/?k=10"> разрядами в системе счисления с основанием <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=5/?k=10"> можно вычислить следующим образом:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=9/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br>т.е. <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=6/?k=10"> разрядов в системе счисления с основанием <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=5/?k=10"> позволяют представить числа в диапазоне <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=10/?k=10">. Так, напрмер, с помощью одного разряда в десятичной системе счисления можно представить числа от 0 до 9 (<img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=11/?k=10">), с помощью двух разрядов — от 0 до 99 ( <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=12/?k=10">) и т.д.</div>
+<a name="T1286478985"></a>
+<a name="T57881506"></a>
+<a name="T1120902440"></a>
+<div>Система с основанием 2 (<img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=13/?k=10">) называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">двоичной системой счисления</a>. Один <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">разряд</a> двоичной системы счисления может иметь лишь два значения: 0 или 1. Число, представленное в двоичной системе счисления, называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">двоичным числом</a>.</div>
+<div>Попробуем определить, какая система счисления (по какому основанию) наиболее эффективна с точки зрения представления данных.</div>
+<div>Итак, пусть мы имеем систему счисления с основанием <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=5/?k=10">. Пользуясь формулой для вычисления <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=14/?k=10">, мы можем определить, какое количество разрядов необходимо для представления заданного <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=14/?k=10">:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=15/?k=10"></td><td align="right" class="eFormula">&nbsp;(3)</td></tr></tbody></table><br></div>
+<div>Для представления числа внутри ЭВМ необходимо определенное количество элементов. Оно может быть оценено по следующей формуле:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=16/?k=10"></td><td align="right" class="eFormula">&nbsp;(4)</td></tr></tbody></table><br>для двоичной системы<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=17/?k=10"><br></div>
+<div>Будем оценивать эффективность различных систем счисления с точки зрения представления информации внутри ЭВМ в сравнении с двоичной системой счисления, то есть в качестве критерия эффективности будем использовать<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=18/?k=10"></td><td align="right" class="eFormula">&nbsp;(5)</td></tr></tbody></table><br></div>
+<div>Если показатель <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=19/?k=10"> будет меньше 1, то соответствующая система счисления более эффективна, чем двоичная (см. табл.&nbsp;1).</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td width="14.285714%" class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=20/?k=10"></td><td width="14.285714%" class="eTable">2</td><td width="14.285714%" class="eTable">3</td><td width="14.285714%" class="eTable">4</td><td width="14.285714%" class="eTable">6</td><td width="14.285714%" class="eTable">8</td><td width="14.285714%" class="eTable">10</td></tr>
+<tr align="center"><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=21/?k=10"></td><td class="eTable">1</td><td class="eTable">0,946</td><td class="eTable">1</td><td class="eTable">1,148</td><td class="eTable">1,33</td><td class="eTable">1,505</td></tr>
+</tbody></table><br>
+<div>Из таблицы видно, что система счисления по основанию 3 более эффективна, однако она не нашла применения по причине сложности реализации запоминающих устройств, которые должны были бы в этом случае состоять из запоминающих элементов, имеющих три состояния.</div>
+<div>Таким образом, двоичная система представляется наиболее эффективной для хранения информации внутри ЭВМ с учетом относительной простоты ее технической реализации.</div>
+<a name="T938220263"></a>
+<div>Большое распространение получила также <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">шестнадцатеричная система счисления</a> (<img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=22/?k=10">). Для представления числовых величин в ней используются цифры от 0 до 9 и шесть первых заглавных букв латинского алфавита (A, B, C, D, E, F). Шестнадцатиричная система позволяет представлять числа более компактно, нежели двоичная. В то же время, перевод из двоичной системы в шестнадцатеричную намного проще, чем в десятичную. Таким образом, шестнадцатеричная система используется для более компактной записи двоичных чисел (см. табл.&nbsp;2).</div>
+<div class="auto" style="text-align:right">Таблица 2&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTable">Число в десятичной системе счисления</td><td class="eTable">Число в двоичной системе счисления</td><td class="eTable">Число в шестнадцатеричной системе счисления</td></tr>
+<tr align="center"><td class="eTable">0</td><td class="eTable">0000</td><td class="eTable">0</td></tr>
+<tr align="center"><td class="eTable">1</td><td class="eTable">0001</td><td class="eTable">1</td></tr>
+<tr align="center"><td class="eTable">2</td><td class="eTable">0010</td><td class="eTable">2</td></tr>
+<tr align="center"><td class="eTable">3</td><td class="eTable">0011</td><td class="eTable">3</td></tr>
+<tr align="center"><td class="eTable">4</td><td class="eTable">0100</td><td class="eTable">4</td></tr>
+<tr align="center"><td class="eTable">5</td><td class="eTable">0101</td><td class="eTable">5</td></tr>
+<tr align="center"><td class="eTable">6</td><td class="eTable">0110</td><td class="eTable">6</td></tr>
+<tr align="center"><td class="eTable">7</td><td class="eTable">0111</td><td class="eTable">7</td></tr>
+<tr align="center"><td class="eTable">8</td><td class="eTable">1000</td><td class="eTable">8</td></tr>
+<tr align="center"><td class="eTable">9</td><td class="eTable">1001</td><td class="eTable">9</td></tr>
+<tr align="center"><td class="eTable">10</td><td class="eTable">1010</td><td class="eTable">A</td></tr>
+<tr align="center"><td class="eTable">11</td><td class="eTable">1011</td><td class="eTable">B</td></tr>
+<tr align="center"><td class="eTable">12</td><td class="eTable">1100</td><td class="eTable">C</td></tr>
+<tr align="center"><td class="eTable">13</td><td class="eTable">1101</td><td class="eTable">D</td></tr>
+<tr align="center"><td class="eTable">14</td><td class="eTable">1110</td><td class="eTable">E</td></tr>
+<tr align="center"><td class="eTable">15</td><td class="eTable">1111</td><td class="eTable">F</td></tr>
+</tbody></table><br>
+<div>При записи числа с использованием шестнадцатеричной системы счисления, на конце числа обычно ставится буква h, при записи в двоичной — буква b. например 1000 — число в десятичной системе счисления, 1000h — в шестнадцатеричной, 1000b — в двоичной.</div>
+<div class="eSubTitle">Реализация алгоритмов в виде элементарных операций</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Пример 1.</span> Преобразование координат (рис.&nbsp;1).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_04.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Известны координаты точки в системе координат <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=23/?k=10"> <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=24/?k=10">. Необходимо определить координаты точки в система координат <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=25/?k=10">, повернутой на угол <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=26/?k=10"> <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=27/?k=10">:</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=28/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=29/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=30/?k=10"><br></div>
+<div>Таким образом, задача преобразования координат сведена к выполнению элементарных арифметических операций (сложение, вычитание, умножение, деление).</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Пример 2.</span> Пропорциональный регулятор (рис.&nbsp;2).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_04.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=31/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=32/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=33/?k=10"><br>Выполним замену переменных:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=34/?k=10"><br>тогда получаем следующую систему:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=35/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=36/?k=10"><br>Запишем выражения для приблизительного вычисления производной:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=37/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=38/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=39/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=40/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=41/?k=10"> — шаг интегрирования.</div>
+<div>В результате получим следующую схему интегрирования:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=42/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_04.mod/?n=43/?k=10"><br>и т.д.</div>
+<div>Эта задача также сводится к простейшим арифметическим операциям.</div>
+<div class="eSubTitle">Обобщенная структурная схема микропроцессора</div>
+<div>Обобщенная структурная схема микропроцессора представлена на рис.&nbsp;3.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_04.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<div>Микропроцессор состоит из трех основных функциональных блоков:</div>
+<ul class="eList"><a name="T756412797"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Арифметическо-логическое устройство</a> (АЛУ). Выполняет простейшие арифметические и логические операции над данными, представленными в двоичном коде, то есть занимается собственно обработкой данных.</li>
+<a name="T341753793"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Внутреннее запоминающее устройство</a> (ВЗУ). Предназначено для временного хранения данных в процессе обработки.</li>
+<a name="T805525842"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Устройство управления микропроцессора</a> управляет процессом обработки данных и самим микропроцессором.</li>
+</ul>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-3.html">‹ Предыдущий</a>

@@ -23,7 +23,61 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-82.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Матрицы</a>
+</div>
+<a name="T1647118064"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Матрица</a> — это двумерный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a>, то есть массив, имеющий два индекса.</div>
+<div>По существу, матрица является массивом одномерных массивов.</div>
+<div class="eSubTitle">Объявление матриц</div>
+<div><span class="eOperator">int a[4][5]; </span>– матрица <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">целого типа</a> из 4 строк и 5 столбцов (индексы меняются первый от 0 до 3, второй от 0 до 4).</div>
+<div><span class="eOperator">float matr[10][20];</span> – матрица вещественного типа из 10 строк и 20 столбцов</div>
+<div><span class="eOperator">double x[10][10]; </span>— матрица вещественного типа с двойной точностью из 10 строк и 10 столбцов</div>
+<div>В памяти матрицы располагаются по строкам. Быстрее изменяется второй индекс.</div>
+<div class="eSubTitle">Инициализация матриц при объявлении</div>
+<pre class="eListing">short x[3][4] ={{9,6,-56,0}, {10,3,-4,78}, {-6,8,45,7}};
+int A[4][3]={{12,45,11},{67,21,56},{90,0,-13},{44,-87,-54}};
+</pre>
+<div class="eSubTitle">Доступ к элементам матрицы</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">int a[5][4],i,j;
+a[0][1]=5.1;    /*прямой доступ*/
+i=j=3;
+a[i][j]=23;      /*косвенный доступ: значения индексов находятся в переменных*/
+</pre>
+</div>
+<div class="eSubTitle">Ввод матриц</div>
+<div>Ввод матриц оуществляется поэлементно, по строкам.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">for(i=0;i&lt;n;i++)
+   for(j=0;j&lt;m;j++)
+     scanf("%f",&amp;a[i][j]);
+</pre>
+</div>
+<div class="eSubTitle">Вывод матриц</div>
+<div>Вывод матриц осуществляется поэлементно, по строкам или по столбцам, в зависимости от требования программы.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">for(i=0;i&lt;n;i++)  /* вывод по строкам*/
+  {
+  for(j=0;j&lt;m;j++)
+     printf("%7.2f",a[i][j]);
+  printf("\n");
+  }
+</pre>
+</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><pre class="eListing">for(j=0;j&lt;m;j++)
+  {
+  for(i=0;i&lt;n;i++)  /* вывод по столбцам*/
+   
+     printf("%7.2f",a[i][j]);
+  printf("\n");
+  }
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-80.html">‹ Предыдущий</a>

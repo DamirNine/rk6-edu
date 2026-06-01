@@ -23,7 +23,123 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-127.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сортировка дисковых файлов с произвольной выборкой</a>
+</div>
+<a name="T438542280"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Дисковые файлы</a> бывают двух типов: с последовательной выборкой (доступом) и с произвольной выборкой. Если дисковый файл любого типа достаточно мал, его можно считать в память и отсортировать одной из процедур сортировки массивов, представленных выше. Однако многие дисковые файлы слишком велики для того, чтобы сортировать их в памяти, а поэтому требуют особенных приемов сортировки. Многие приложения баз данных работают с файлами с произвольной выборкой. Рассмотрим один способ сортировки таких файлов.</div>
+<div>Дисковые файлы с произвольной выборкой доступа имеют два больших преимущества перед файлами с последовательной выборкой. Во-первых, с ними легко работать. Для обновления информации не нужно копировать весь список. Во-вторых, их можно рассматривать как очень большой массив на диске, что значительно упрощает сортировку.</div>
+<a name="T495048589"></a>
+<div>Тот факт, что файл с произвольной выборкой можно рассматривать как массив, означает, что к нему можно применить <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">быструю сортировку</a> лишь с небольшим количеством изменений. Вместо обращения к элементам массива по индексу, дисковая версия быстрой сортировки должна пользоваться функцией <span class="eOperator">fseek()</span>, чтобы найти соответствующую запись на диске.</div>
+<a name="T176682325"></a>
+<div>В каждой реальной ситуации сортировка определяется конкретной структурой сортируемых данных и ключом сортировки. Тем не менее, общую идею сортировки дисковых файлов с произвольной выборкой можно понять на примере короткой программы, сортирующей структуры типа address — почтовые структуры, описанные ранее. Эта программа, приведенная ниже, сначала создает дисковый файл, содержащий неупорядоченные адреса. Затем она сортирует этот файл. Количество адресов, подлежащих сортировке, указано <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">константой</a> NUM_ELEMENTS (которая равна 4 в данной программе). Однако в реальной жизни количество записей придется отслеживать динамически. </div>
+<pre class="eListing">/* дисковая  сортировка  структур  типа  ddress.   */ #include  &lt;stdio.h&gt;
+#include  &lt;stdlib.h&gt;
+#include  &lt;string.h&gt;
+#define  NUM_ELEMENTS  4    /*   Количество элементов - произвольное число, которое должно 
+определяться динамически для каждого списка.  */
+struct address   {
+char name [30];
+char street[40] ;
+char city[20];
+char state[3];
+char zip[ll];
+}   ainfo;
+struct address addrs[NUM_ELEMENTS] = {
+"A. Alexander", "101  1st St", "Olney", "Ga", "55555", "B. Bertrand", "22 2nd Ave", "Oakland",
+"Pa", "34232", "C. Carlisle", "33   3rd  Blvd", "Ava", "Or", "92000", 
+"D.Dodger", "4  Fourth  Dr", "Fresno", "Mi", "45678"
+};
+void quick_disk (FILE *fp, int count);
+void qs_disk(FILE *fp, int left, int right);
+void swap_all_fields (FILE *fp, long i, long j); 
+char *get_zip(FILE *fp, long rec);
+int main(void) 
+{
+FILE *fp;
+/* сначала создадим файл с данными, подлежащий сортировке */ if ((fp=fopen("mlist","wb"))= =NULL)
+{
+printf("Невозможно открыть файл на запись.\n");
+exit(l); 
+}
+printf ("Запись неупорядоченных данных в дисковый файл.\n"); fwrite(addrs, sizeof(addrs), 1, fp);
+fclose(fp);
+/* теперь отсортируем файл */
+if ( (fp=fopen("mlist", "rb+") )= =NULL) {
+printf("Невозможно открыть файл на чтение/запись.\n");
+exit(l); 
+}
+printf("Сортировка дискового файла.\n");
+quick_disk(fp,   NUM_ELEMENTS);
+fclose(fp);
+printf("Файл   отсортирован.\n");
+return   0;
+} 
+
+/* Быстрая сортировка файлов. */
+void quick_disk(FILE *fp, int count)
+{
+qs_disk (fp, 0, count-1) ;
+}
+void qs_disk(FILE *fp, int left, int right)
+{
+long int i, j;
+
+char x[100];
+i = left; j = right;
+strcpy!x, get_zip(fp, (long)(i+j)/2)); /* получить средний почтовый
+индекс */
+do {
+while((strcmp(get_zip(fp,i),x) &lt; 0) &amp;&amp; (i &lt; right)) i++;
+ while((strcmp(get_zip(fp,j),x) &gt; 0) &amp;&amp; (j &gt; left)) j--;
+if(i &lt;= j) {
+swap_all_fields(fp, i, j); 
+i++; 
+j - -;
+}
+} while(i &lt;= j);
+if(left &lt; j) qs_disk(fp, left, (int) j); 
+if(i &lt; right) qs_disk(fp, (int) i, right);
+}
+void swap_all_fields(FILE *fp, long i, long j)
+{
+char a[sizeof(ainfo)], b[sizeof(ainfo)];
+/* считать в память записи i и j */
+fseek(fp, sizeof(ainfo)*i, SEEK_SET);
+fread(a, sizeof (ainfo), 1, fp);
+fseek(fp, sizeof(ainfo)*j, SEEK_SET); fread(b, sizeof(ainfo), 1, fp);
+/* потом записать их на диск, поменяв местами.*/ 
+fseek(fp, sizeof (ainfo) *j, SEEK__SET) ; 
+fwrite (a, sizeof (ainfo) ," 1, fp) ;
+fseek(fp, sizeof(ainfo)*i, SEEK_SET);
+fwrite(b, sizeof(ainfo), 1, fp);
+}
+/* Получение указателя на почтовый код записи */
+char *get_zip(FILE *fp, long rec)
+(
+struct address *p;
+p = &amp;ainfo ;
+fseek(fp, rec*sizeof(ainfo),  SEEK_SET);
+fread(p,   sizeof(ainfo),   1,   fp); return  ainfo.zip;
+}
+</pre>
+<div>Для сортировки адресных записей пришлось на¬писать две вспомогательные функции. Во фрагменте сравнения используется функция <span class="eOperator">get_zip()</span>, возвращающая указатель на поле zip сравниваемых записей. Функция <span class="eOperator">swap_all_fields() </span>выполняет обмен данных двух записей. Порядок операций чтения и записи оказывает большое влияние на скорость выполнения сортировки. При обмене двух записей программа перемешает указатель текущей записи в файле сначала на запись <span class="eOperator">i</span>, а потом на запись <span class="eOperator">j</span>. Пока головка диска находится над записью <span class="eOperator">j</span>, записываются данные записи <span class="eOperator">j</span>. Это значит, что в этот момент головку не придется перемешать на большое расстояние. Если бы код был составлен так, что первой записывалась бы запись <span class="eOperator">i</span>, понадобилось бы еще одно перемещение головки.</div>
+<br>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-125.html">‹ Предыдущий</a>

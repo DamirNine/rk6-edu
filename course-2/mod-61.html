@@ -23,7 +23,30 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-2/mod-62.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Протокол FTP</a>
+</div>
+<a name="T1170395967"></a>
+<a name="T849203328"></a>
+<div>В сети <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Internet</a> для <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">файлового обмена</a> используется прикладной <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">протокол FTP</a>. В отличие от <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протоколов HTTP</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">электронной почты</a> протокол FTP рассчитан на двусторонний обмен файлами.</div>
+<a name="T820432494"></a>
+<a name="T1372219614"></a>
+<div>Программное обеспечение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">FTP</a> состоит из FTP-сервера и FTP-клиентов. Доступ к серверу возможен в режимах <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">off-line</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">on-line</a>. В режиме off-line <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">клиент</a> посылает запрос к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">серверу</a>, который формирует и посылает ответ на запрос. В режиме on-line осуществляется интерактивный просмотр каталогов FTP-сервера, выбор и передача нужных файлов.</div>
+<div>Обращаться к FTP-серверу можно по команде:</div>
+<pre class="eListing">ftp [&lt;параметры&gt;] [&lt;имя сервера&gt;]
+</pre>
+<a name="T2128744411"></a>
+<a name="T1326552510"></a>
+<div>Квадратные скобки в записи команды означают необязательные части. Параметры используются только при отладке FTP. В качестве имени сервера указывается <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IP-имя</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IP-адрес</a> удаленного компьютера.</div>
+<div>Доступ к файлам большинства серверов разрешен только определенному кругу пользователей Internet. Иногда условием получения прав доступа является лишь предварительная регистрация пользователя, в других случаях нужно знать пароль. Но имеются также общедоступные (анонимные) серверы,. обслуживаемые организациями, заинтересованными в распространении информации определенного вида.</div>
+<div>После выполнения команды обращения к серверу FTP-клиент переходит в командный режим.</div>
+<a name="T841519932"></a>
+<div>Каждый обмен порождает два процесса. Управляющий (командный) процесс инициирован во время всего сеанса связи и осуществляется через <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протокол Telnet</a>, а процесс передачи файла — только на время передачи. Номера протокольных портов сервера 20 и 21, у клиента могут быть различные номера портов, в том числе несколько одновременно. Для одновременного обслуживания нескольких клиентов создаются копии программного обеспечения FTP-процессов в сервере и у клиентов.</div>
+<div>К командам протокола FTP относятся: вход в FTP-режим, выход из FTP-режима, установка типа передаваемых файлов (текстовый или двоичный), выбор или создание каталога на сервере, выбор локального каталога, загрузка файлов на локальный компьютер и выгрузка файлов на сервер (одиночная или групповая) и некоторые другие.</div>
+<div>Протокол FTP реализован в утилитах основных операционных систем и в популярных Web-браузерах.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-2/">← Оглавление</a>
         <a href="/rk6-edu/course-2/mod-60.html">‹ Предыдущий</a>

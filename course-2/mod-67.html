@@ -23,7 +23,59 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-2/mod-68.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Реализация стандарта H.323</a>
+</div>
+<a name="T67914510"></a>
+<a name="T2089996031"></a>
+<div>Все устройства, использующие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">H.323</a>, можно поделить на четыре категории: терминалы, шлюзы, <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">гейткиперы</a> (Gatekeeper — привратник) и точки многопунктового контроля (Multipoint Control Unit — MTU).</div>
+<a name="T33726940"></a>
+<div>Терминалы, также называемые конечными точками (endpoints), предоставляют пользовательский интерфейс к протоколу H.323 и обеспечивают двустороннюю мультимедийную связь реального времени. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Шлюзы</a> выполняют роль "переводчиков" для обеспечения взаимодействия между H.323 и не-H.323 сущностями. Шлюзы, так же как и терминалы, рассматриваются как конечные точки. MCU обеспечивают возможность конференций.</div>
+<a name="T749733531"></a>
+<a name="T438193249"></a>
+<div>В число "объектов" H.323, как они названы в стандарте, включаются терминалы, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультимедиа</a> шлюзы, устройства управления <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многоточечными видеоконференциями</a> и контроллеры зоны (Gatekeeper).</div>
+<div>Терминал (Terminal) — оконечное мультимедийное (голос, видео, данные) устройство, предназначенное для участия в конференции</div>
+<div>Мультимедиа шлюз (Gateway) — устройство, предназначенное для преобразвания мультимедийной и управляющей информации при сопряжении разнородных сетей.</div>
+<div>Устройство управления многоточечными конференциями (Multipoint Control Unit — MCU) — предназначено для организации конференций с участием трех и более участников</div>
+<div>Контроллер зоны (Gatekeeper, Привратник, Конференц-менеджер) — выполняет функции виртуальной телефонной станции, т.е. контролируют вызовы, а также управляет трансляцией адресов и занимаемой полосой пропускания.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=210_netw/nw618.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Базовая архитектура стандарта H.323</div></div>
+<div>Под терминалом стандарт понимает оборудование конечных точек сети, которое позволяет пользователям общаться друг с другом в реальном времени.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=210_netw/nw618.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Структура терминала H.323</div></div>
+<a name="T1105460571"></a>
+<div>Терминалы должны поддерживать протоколы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">H.245</a> — согласование параметров соединения, Q.931 — для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">установления соединения</a> и согласования параметров этого соединения, канал RAS (Registration/Admission/Status) взаимодействия с контроллером зоны (Gatekeeper), протокол RTP/RTCP для работы с потоками аудио и видео пакетов, протокол <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">G.711</a> для сжатия аудиопотока.</div>
+<div>Согласно рекомендациям, для терминала H.323 опциональной является поддержка видеокодеков, протокола T.120, и возможностей MCU.</div>
+<a name="T1032671253"></a>
+<div>Несмотря на то, что стандарт считает функции видео необязательными, все терминалы с видеовозможностями должны поддерживать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кодек</a> H.261, опционально возможна поддержка H.263.</div>
+<div>H.263 является развитием кодека H.261, видеокартинка, полученная с помощью кодека H.263 обладает лучшим качеством, поскольку используется полупиксельная технология предсказания движения. Кроме того, используемое кодирование по Хаффману оптимизировано для работы с более низкими скоростями передачи.</div>
+<div>Согласно H.323, мультимедиа шлюз — это опциональный элемент в конференции H.323. Он может выполнять много различных функций. Типичной его функцией являются задача преобразования форматов протоколов передачи (например, H.225.0 и H.221). Обычно мультимедиа шлюзы используются для поддержки взаимодействия между разнородными сетями. На Рис.3. показан шлюз H.323/PSTN.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=210_netw/nw618.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Мультимедиа шлюз H.323/PSTN</div></div>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. Михаил Виноградов, Вадим Метлицкий. — http://h323.com.ru/page2.htm<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-2/">← Оглавление</a>
         <a href="/rk6-edu/course-2/mod-66.html">‹ Предыдущий</a>

@@ -23,7 +23,68 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-25/mod-4.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Шаги компиляции Си</a>
+</div>
+<a name="T411924387"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Компиляция программы</a> - процесс преобразования исходного текста программы в исполнимый модуль, состоящий из машинных команд.</div>
+<a name="T1683739359"></a>
+<a name="T1369433176"></a>
+<a name="T645587003"></a>
+<div> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Компилятор</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка Си</a> - составная часть операционной системы, например, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС UNIX</a>, которая выполняет компиляцию программы, написанной на языке программирования Си.</div>
+<div>На рис.1 представлены шаги, через которые проходит программа на Си при ее компиляции.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/stap_komp.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Шаги компиляции Си</div></div>
+<div>На первом шаге программа "препроцессируется". Специальные директивы обрабатываются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">препроцессором</a>. Результат этой обработки - расширенный исходный текст программы на языке Си.</div>
+<div>На следующем шаге программа действительно компилируется и переводится на низкоуровневый язык ассемблера.</div>
+<div>Затем ассемблер транслирует ассемблерную программу в объектный код. Хотя объектный код - это машинный код, он еще невыполним. </div>
+<div>Исполняемый код строит программа - компоновщик, называемая в ОС UNIX редактором связей. Одна из задач редактора связей состоит в согласовании неразрешенных ссылок. </div>
+<a name="T2098663862"></a>
+<a name="T1952319033"></a>
+<a name="T1291251272"></a>
+<a name="T1248933124"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Неразрешенная ссылка</a> - ссылка на объект, который в данной части программы неопределен. Редактор связей связывает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">объявления внешних</a> переменных с соответствующими <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внешними определениями</a>. Другим типом неразрешенной ссылки является <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызов функции</a>, не определенной в программе, например, вызов функции printf(). Редактор связей ищет объектный код функции в одной или более библиотеках и включает этот код в исполнимый модуль. Результатом работы редактора связей при отсутствии ошибок является исполнимая программа.</div>
+<a name="T1346090358"></a>
+<div>В системе ОС UNIX процесс компиляции может быть остановлен после любого шага путем использования соответствующего  <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">флага команды</a> <span class="eOperator">cc</span>, который определяет режим работы команды. Создается файл с тем же именем, что и исходный файл, и окончанием <span class="eOperator">.i</span>, <span class="eOperator">.s</span> или <span class="eOperator">.o</span>, указывающем на тип файла. По умолчанию имя исполнимой программы  - <span class="eOperator">a.out</span>.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div><span class="eOperator">cc -E -o proc.i prog.c</span><span class="eOperator"></span></div>
+<div>При выполнении этой команды компиляция останавливается после работы препроцессора. Создается файл с окончанием <span class="eOperator">.i</span>. Этот режим используется при отладке для контроля подстановок препроцессора.</div>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div><span class="eOperator">cc -S prog.c</span></div>
+<div> или</div>
+<div><span class="eOperator">cc -S prog.i</span></div>
+<div>При выполнении этих команд компиляция останавливается перед ассемблированием. Создается файл с окончанием <span class="eOperator">.s</span>, содержащий ассемблерную программу.</div>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div><span class="eOperator">cc -c prog.c</span></div>
+<div>или</div>
+<div><span class="eOperator">cc -c prog.s</span></div>
+<a name="T990387577"></a>
+<div>При выполнении этих команд компиляция останавливается перед редактированием связей. Создается файл с окончанием <span class="eOperator">.o</span>. Этот режим используется при компиляции файлов, множество которых не является завершенной программой, например, файлов, не содержащих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцию main()</a>.</div>
+</div>
+<div>Любой из этих типов файлов может быть использован как аргумент команды <span class="eOperator">cc</span>  системы ОС UNIX. При этом определяется, через какие шаги компиляции прошел файл, так что шаги не повторяются. В прим.&nbsp;4 приводятся правильные команды <span class="eOperator">cc</span>, создающие исполняемые файлы, если не было ошибок.</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><div><span class="eOperator">cc  prog.i</span></div>
+<div><span class="eOperator">cc file1.i file2.c file3.o</span></div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-25/">← Оглавление</a>
         <a href="/rk6-edu/course-25/mod-2.html">‹ Предыдущий</a>

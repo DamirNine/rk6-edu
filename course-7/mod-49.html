@@ -23,7 +23,80 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-7/mod-50.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Язык 3D XML</a>
+</div>
+<a name="T2005297204"></a>
+<a name="T1318805004"></a>
+<a name="T412171630"></a>
+<a name="T1523926472"></a>
+<div>Наряду с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языком Express</a>, для описания <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">моделей</a> объектов в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">CALS</a> технологиях используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык XML</a>. Для отражения специфических особенностей промышленных изделий создаются соответствующие подмножества XML. Среди них наиболее заметен язык <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">3D XML</a>, разработанный компаниями Dassault Systèmes и Lattice Technology.</div>
+<a name="T1968667247"></a>
+<div>Описание модели объекта на языке 3D XML должно включать ссылку на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML схему</a>:</div>
+<pre class="eListing">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Model_3dxml xmlns="http://www.3ds.com/xsd/3DXML"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.3ds.com/xsd/3DXML
+http://www.3ds.com/xsd/3DXML/3DXML.xsd"&gt;
+</pre>
+<a name="T193573435"></a>
+<div>В структуре XML документа в общем случае присутствуют следующие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контейнеры</a> (обязательными являются &lt;Header&gt; и &lt;ProductStructure&gt;):</div>
+<pre class="eListing">&lt;Header&gt;
+&lt;DefaultSessionProperties&gt;
+&lt;ProductStructure&gt;
+&lt;GeometricRepresentationSet&gt;
+</pre>
+<a name="T100241030"></a>
+<div>Заголовок &lt;Header&gt; содержит такие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибуты</a> как версия схемы, название, имя автора, дата создания документа, например:</div>
+<pre class="eListing">&lt;Header&gt;
+  &lt;SchemaVersion&gt;1.0&lt;/SchemaVersion&gt;
+  &lt;Title&gt;letter&lt;/Title&gt;
+  &lt;Author&gt;Ivanov&lt;/Author&gt;
+  &lt;Date&gt;2008-03-21&lt;/Date&gt;
+&lt;/Header&gt;
+</pre>
+<div>В контейнере &lt;DefaultSessionProperties&gt; приводятся сведения о параметрах представления документа — степени прозрачности (alpha), цвете, яркости. Значениями элемента &lt;RenderingStyle&gt; могут быть SHADING, SHADING_WITH_EDGES, WIREFRAME и др.:</div>
+<pre class="eListing">&lt;DefaultSessionProperties&gt;
+  &lt;BackgroundColor alpha="..." blue="..." green="..." red="..."/&gt;
+  &lt;RenderingStyle&gt;...&lt;/Rendering Style&gt;
+&lt;/DefaultSessionProperties&gt;
+</pre>
+<div>В контейнере &lt;ProductStructure&gt; фигурируют элементы &lt;Reference3D&gt; и &lt;Instance3D&gt;, имеющие параметры "Идентификатор" (id) и "Имя" (name). Элемент &lt;Reference3D&gt; описывает конструктивы, которые используются неоднократно, а элемент &lt;Instance3D&gt; — конкретные экземпляры конструктивов. Например, ниже описан экземпляр xi конструктива x:</div>
+<pre class="eListing">&lt;Reference3D xsi:type="Reference3DType" id="x" name="y"/&gt;
+&lt;Instance3D xsi:type="Instance3DType" id="xi" name="y1"&gt;
+  &lt;IsAggregatedBy&gt;zk&lt;/IsAggregatedBy &gt;
+  &lt;IsInstanceOf&gt;. . .&lt;/IsInstanceOf&gt;
+  &lt;RelativeMatrix&gt;. . .&lt;/RelativeMatrix&gt;
+&lt;/Instance3D&gt;
+</pre>
+<a name="T791151752"></a>
+<div>В этом примере с помощью элемента &lt;IsAggregatedBy&gt; описывается вхождение конструктива xi в сборку zk. C помощью &lt;IsInstanceOf&gt; указывается <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">наследование</a> конструктивом xi данных, описанных в конструктиве с id="x". Элемент &lt;RelativeMatrix&gt; предназначен для описания положения конструктива в сборке zk.</div>
+<div>Собственные геометрические параметры конструктива помещаются в контейнер &lt;AssociatedData&gt;, вложенный в контейнер &lt;GeometricRepresentationSet&gt;:</div>
+<pre class="eListing">&lt;GeometricRepresentationSet&gt;
+  &lt;Representation id=... format=... version=...&gt;
+    &lt;AssociatedData&gt;, . .&lt;/AssociatedData&gt;
+  &lt;/Representation&gt;
+&lt;/GeometricRepresentationSet&gt;
+</pre>
+<div>Здесь можно описать атрибуты точек, линий, поверхностей, материалов, цветов и т.п. по правилам, принятым в 3D XML.</div>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. 3D XML Usre's Guide. — DS, 2006.<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-7/">← Оглавление</a>
         <a href="/rk6-edu/course-7/mod-48.html">‹ Предыдущий</a>

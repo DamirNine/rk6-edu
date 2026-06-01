@@ -23,7 +23,78 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-19/mod-9.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Унификация</a>
+</div>
+<a name="T812994027"></a>
+<a name="T628348261"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Унификацией</a> называется процесс подстановки термов на места переменных в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">п.п.ф. ИППП</a> с целью приведения этих формул к требуемому виду.</div>
+<a name="T1820389297"></a>
+<div>Дело в том, что при доказательстве теорем (в том числе и с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">правила резолюции</a>), содержащих квантифицированные переменные, часто оказывается необходимым привести к единому виду определенные подвыражения.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Пусть необходимо из утверждений "Все люди смертны" и "Сократ — человек" доказать формальным путем (используя ИППП) теорему "Сократ — смертен". Тогда предметные аксиомы будут иметь следующий вид (с нарушением канонического синтаксиса ИППП для предикатных букв и предметных констант):</div>
+<ul class="eList"><li><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=2/?k=10"></li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=3/?k=10"> <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=4/?k=10"></li>
+</ul>
+<div>Доказательство:</div>
+<ul class="eList"><li>а) <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=5/?k=10"> (правило специализации <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=6/?k=10"> к <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=7/?k=10">);</li>
+<a name="T426407258"></a>
+<li>б) <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=8/?k=10"> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">правило заключения</a> к <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=9/?k=10"> и а).</li>
+</ul>
+<div>Здесь для применения правила специализации на шаге а необходимо было найти подстановку "Сократ вместо <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=10/?k=10">".</div>
+</div>
+<div><span style="font-style:italic; ">Подстановочным частным случаем</span> некоторой п.п.ф. называется п.п.ф., получившаяся подстановкой в эту (первоначальную) п.п.ф. термов на места переменных. При этом:</div>
+<ol class="eList"><li>каждое вхождение переменной заменяется на один и тот же терм;</li>
+<li>переменная не может быть заменена термом, содержащим ту же самую переменную.</li>
+</ol>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>Для п.п.ф. <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=11/?k=10"> некоторыми подстановочными частными случаями будут:</div>
+<ul class="eList"><li><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=12/?k=10"></li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=13/?k=10"></li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=14/?k=10"></li>
+</ul>
+<div>При этом первая п.п.ф. является <span style="font-style:italic; ">алфавитным</span> вариантом подстановки, а третья называется <span style="font-style:italic; ">основным частным случаем</span>, поскольку не содержит переменных.</div>
+</div>
+<div>Подстановки принято представлять в виде множества пар "терм/переменная": <br><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=15/?k=10"><br></div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div>Для рассмотренного выше примера подстановки выглядят следующим образом:</div>
+<ul class="eList"><li><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=16/?k=10">;</li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=17/?k=10">;</li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=18/?k=10">.</li>
+</ul>
+</div>
+<div>Для обозначения подстановочного частного случая некоторой п.п.ф. <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=19/?k=10"> пишут <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=20/?k=10">.</div>
+<div>Композиция двух подстановок <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=21/?k=10"> и <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=22/?k=10">, обозначаемая как <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=23/?k=10">, получается применением <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=22/?k=10"> к термам <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=21/?k=10"> с последующим добавлением тех пар из <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=22/?k=10">, которые содержат переменные, не встречающиеся среди переменных <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=21/?k=10">.</div>
+<div>Некоторые свойства подстановок:</div>
+<div><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=24/?k=10">;</div>
+<div><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=25/?k=10">;</div>
+<div><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=26/?k=10"> в общем случае.</div>
+<div>Множество п.п.ф. <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=27/?k=10"> <span style="font-style:italic; ">унифицируемо</span>, если существует подстановка <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=28/?k=10"> такая, что <br><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=29/?k=10"><br></div>
+<div>В этом случае s называется <span style="font-style:italic; ">унификатором</span> для множества <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=27/?k=10">.</div>
+<div><span style="font-style:italic; ">Наиболее общий унификатор</span> (ноу) <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=30/?k=10"> обладает тем свойством, что, если <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=28/?k=10"> — любой унификатор для <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=27/?k=10">, то существует некоторая подстановка <img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=31/?k=10"> такая, что <br><img align="absmiddle" src="/?frm/?doc=IPPP/unify.mod/?n=32/?k=10"><br></div>
+<div>Более того, <span style="font-style:italic; ">основной частный случай</span>, порождаемый ноу, является единственным с точностью до алфавитных его вариантов.</div>
+<div>Существует много (не рассматриваемых здесь) алгоритмов, которые можно использовать для унификации конечного множества п.п.ф. [1].</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Унификация является более общим механизмом по сравнению с механизмом сопоставления с образцом (используемым в СУБД).</div>
+</div>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. Нильсен Н. Принципы искусственного интеллекта.—М.:Радио и связь, 1985.<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-19/">← Оглавление</a>
         <a href="/rk6-edu/course-19/mod-7.html">‹ Предыдущий</a>

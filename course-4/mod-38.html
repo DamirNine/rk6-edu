@@ -23,7 +23,51 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-39.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сервис-ориентированная архитектура</a>
+</div>
+<a name="T2046893884"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Корпоративные информационные системы</a> (КИС) могут состоять из большого числа подсистем, взаимосвязанных посредством сетевых технологий. Построение таких КИС целесообразно выполнять на основе сервис-ориентированных архитектур.</div>
+<a name="T361698564"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сервис-ориентированная архитектура</a> SOA (Service Oriented Architecture) — архитектура информационной системы, основанная на следующих принципах:</div>
+<ul class="eList"><li>Архитектура является распределенной, компонентно-ориентиррованной;</li>
+<a name="T771394284"></a>
+<li>Интерфейс <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компонентов</a> обеспечивает динамическое обнаружение и вызов компонентов (сервисов) на основе независящего от платформы интерфейса;</li>
+<li>Используются общепринятые стандарты.</li>
+</ul>
+<div>Согласно SOA любые компоненты информационных систем, имеющие функциональность, рассматриваются как службы (service providers, провайдеры служб), предоставляющие услуги другим частям системы.</div>
+<a name="T344720773"></a>
+<a name="T555439606"></a>
+<a name="T555117299"></a>
+<a name="T2599764"></a>
+<a name="T107605555"></a>
+<div>SOA-приложения обычно представляют собой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">web-службы</a>. Службы являются автономными, могут быть реализованы в разных программных средах, на разных языках программирования. Для интеграции служб в настоящее время используются XML-интерфейс, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протоколы HTTP</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">SOAP</a> спецификация <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">UDDI</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык WSDL</a>. Поиск web-служб происходит в UDDI-каталоге, интерфейс службы описан на WSDL, а вызов происходит по протоколу SOAP. Возможны синхронные и асинхронные вызовы служб. Механизм обмена сообщениями определяется в описании сервисов на WSDL, которое которое включает форматы сообщений, типы данных, транспортные протоколы, способы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сериализации</a>, используемые при обмене между агентами заказчика и поставщика услуг. Информация о веб-сервисах содержится в реестре UDDI. Технология UDDI дает возможность поиска и публикации нужного сервиса, как человеком, так и программой-клиентом.</div>
+<div>Сервис-ориентированная архитектура тесно связана с шиной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ESB</a>, которая является способом реализации SOA. -Однако, не все информационные системы, построенные на основе web-служб, соответствуют SOA, и SOA не обязательно должна базироваться на технологии web-служб.</div>
+<div>Службы на основе их функциональности можно условно поделить на следующие группы:</div>
+<ul class="eList"><li>Службы доступа к данным, предоставляющие чтение и изменение данных. Они предоставляют единый унифицированный интерфейс для доступа к данным вне зависимости от количества и вида используемых источников данных. Для обмена данными могут использоваться специально созданные сущностные объекты, XML данные или же объекты, инкапсулирующие таблицы БД.</li>
+<li>Службы бизнес-логики используются для выполнения различных бизнес-операций. В ходе выполнения бизнес-операций обычно вызываются методы других служб (к примеру, служб доступа к данным для получения списка проданных товаров за последнюю неделю)</li>
+<li>Компоненты внешних приложений, вызываемые через их собственные интерфейсы, например, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">CRM</a> система, хранящая данные о покупателях и предоставляющая доступ к этим данным через <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">COM</a>.</li>
+<li>Низкоуровневые вспомогательные службы, отвечающие за аутентификацию и авторизацию, мониторинг, поиск служб, регистрацию ошибок и т.п.</li>
+<li>составные службы, делегирующие работу остальным типам служб и координирующие их действия. Они интегрируют остальные службы системы и выполняют контроль за транзакциями и преобразование потока данных от одних служб к другим путем конвертации в нужные форматы</li>
+</ul>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. http://www.interface.ru/home.asp?artId=3352<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-37.html">‹ Предыдущий</a>

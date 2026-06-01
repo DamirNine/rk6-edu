@@ -23,7 +23,44 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-101.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Массивы структур</a>
+</div>
+<a name="T852933925"></a>
+<a name="T1992766606"></a>
+<a name="T1503632839"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Массив структур</a> — это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a>, каждый элемент которого является <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структурой</a>. В памяти элементы массива структур размещаются последовательно.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/mass_struct.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Массив структур</div></div>
+<div>Для обработки элементов массива структур используется операция доступа к элементу массива (квадратные скобки).</div>
+<div>Массивы структур широко используются для структурной организации данных в прикладных программах и системном программном обеспечении.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">/* Печать общей суммы зарплаты служащих */
+#include &lt;stdio.h&gt;
+#define NUM_EMPS 100
+void fillarray(struct emp *, int);
+struct emp {
+            char name[21];
+            char id[8];
+            double salary;          /*это шаблон, память не выделяется */
+           };
+int main()
+{
+  struct emp staff[NUM_EMPS];       /*выделяется память под массив структур*/
+  int num;
+  double sal_tot = 0;
+   fillarray(staff, NUM_EMPS);    /*заполняет массив структур*/
+   for (i=0; i&lt;NUM_EMPS; i++)
+      sal_tot += staff[i].salary;
+   printf ("total of salaries: %.2f\n", sal_tot);
+}
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-99.html">‹ Предыдущий</a>

@@ -23,7 +23,63 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-17/mod-20.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Расширенный узловой метод</a>
+</div>
+<div>Желательно объединить такие достоинства ообобщенного метода, как независимость библиотеки методов численного интегрировангия и библиотеки математических моделей элементов, и узлового метода - простой просмотровый алгоритм формирования модели и ее невысокая размерность. Для этого в базис узлового метода введем производные переменных состояния, но если этим ограничиться, то в формулах интегрирования будет присутствовать топологическая информация, что будет неудобно при программной реализации методов интегрирования. Поэтому в базис добавим и сами переменные состояния.</div>
+<div> Итак, базис расширенного узлового метода составляют: </div>
+<div>1) производные переменных состояния;</div>
+<div>2) переменные состояния;</div>
+<div>3) Переменные типа узловых потенциалов (далее узловые потенциалы);</div>
+<div>4) Переменные типа потока для идеальных источников переменной типа потенциала (далее ток идеальных источников ЭДС).</div>
+<br>
+<div>Система уравнений будет иметь вид:</div>
+<div>f(<img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=1/?k=10">,<img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=2/?k=10">)=0          -  формулы численного интегрирования</div>
+<div>f(<img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=1/?k=10">,<img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=2/?k=10">,<img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=3/?k=10">)=0       -  компонентно-топологические уравнения, связывающие напряжение на элемента типа С и типа L с потенциалами</div>
+<div>I(<img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=1/?k=10">,<img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=2/?k=10">,<img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=3/?k=10">,I<sub class="eSub">E</sub>)=0    -   уравнения равновесия типа первого закона Кирхгофа</div>
+<div>f(U,<img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=3/?k=10">)=0                -   топологические уравнения для элементов типа Е</div>
+<br>
+<div>Приведем  линеаризованную ММС для схемы рис.1, в предположении, что для  решения системы нелинейных уравнений используется метод Ньютона.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mod/ras_uz_metod.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div><img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=4/?k=10">  <img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=5/?k=10">  =  <img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=6/?k=10"></div>
+<br>
+<div>Здесь предполагается, что численного интегрирования используется неявный метод Эйлера, в случае применения других методов изменению подлежат только два первых уравнения.</div>
+<br>
+<div>Просмотровый алгоритм узлового метода предполагает у каждого двухполюсного или многополюсного элемента локальной матрицы узловых проводимостей и вектора токов через внешние узлы, которые совместно и являются математической моделью элемента (при использовании метода Ньютона для решения систем нелинейных уравнений). Глобальная матрица узловых проводимостей  и вектор невязок образуются аддитивными вкладами в них локальных матриц элементов в соответствии с их узлами подключений. Подобный алгоритм сохраняется и в расширенном узловом методе, но некоторые отличия появляются для реактивных элементов. Для математической модели элемента С аддитивный вклад в правую и левую части системы уравнений   Y(X)ΔX=-F(X)   будет выглядеть следующим образом:</div>
+<div> <img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=7/?k=10">  <img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=8/?k=10">  =   - <img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=9/?k=10"></div>
+<div>Для элемента L этот вклад имеет вид:</div>
+<div> <img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=10/?k=10">  <img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=11/?k=10">  =   - <img align="absmiddle" src="/?frm/?doc=Mod/ras_uz_metod.mod/?n=12/?k=10">.</div>
+<div>Достоинства расширенного узлового метода:</div>
+<ol class="eList"><li>Почти нет ограничений на вид компонентного уравнения .</li>
+<li>Библиотека методов численного интегрирования не связана с библиотекой математических моделей элементов.</li>
+<li>Сравнительно невысокая размерность ММС</li>
+<li>Простой алгоритм формирования ММС</li>
+<li>Простые алгоритмы работы с многополюснымии элементами, что позволяет разрабатывать библиотеки ММЭ с вложенными элементами</li>
+</ol>
+<br>
+<div>Недостатки расширенного узлового метода:</div>
+<ol class="eList"><li>Размерность математической модели выше, чем у узлового.</li>
+</ol>
+<br>
+<br>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-17/">← Оглавление</a>
         <a href="/rk6-edu/course-17/mod-18.html">‹ Предыдущий</a>

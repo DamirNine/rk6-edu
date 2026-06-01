@@ -23,7 +23,44 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-71.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Расслоение запоминающего устройства</a>
+</div>
+<a name="T953603266"></a>
+<a name="T1023149672"></a>
+<a name="T1647561332"></a>
+<div>Обычное <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЗУ</a> можно представить в виде одномерного массива ячеек, каждая из которых имеет свой уникальный номер — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">адрес</a>. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Расслоение ЗУ</a> подразумевает, что все ячейки распределяются между несколькими условными "слоями" или банками памяти (рис.&nbsp;1).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_06.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>На рис.&nbsp;1 приведен пример с четырьмя "слоями". Как видно из рисунка, каждые четыре последовательно расположенные ячейки ЗУ распределяются между разными слоями "расслоенного" ЗУ. Схема подключения такого ЗУ представлена на рис.&nbsp;2.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_06.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<a name="T1942936499"></a>
+<div>Идея использования расслоенного ЗУ заключается в том, что считывание из ЗУ производится "пакетными" циклами, что есть одновременно считываются данные из нескольких ячеек ЗУ (соответственно количеству слоев, в нашем примере — 4). В качестве адреса используются 14 старших линий адреса из 16, считанные из каждого слоя значения попадают в регистры-фиксаторы <span class="eOperator">F</span> и оттуда, при помощи коммутатора, направляются на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шину данных</a>. Младшие линии адреса (<span class="eOperator">A0</span>, <span class="eOperator">A1</span>), подключенные к коммутатору, позволяют менять при необходимости порядок передачи данных внутри пакета.</div>
+<div>Очевидно, что при использовании такой организации ЗУ мы получаем выигрыш в скорости, пропорционально количеству "слоев" памяти.</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Реальный выигрыш в скорости работы с ЗУ при использовании "расслоения" можно получить только в том случае, если процессору действительно необходимо считывать последовательно расположенные данные. То есть программа должна быть определенным образом оптимизирована. С точки зрения команд, должно быть минимизировано количество переходов, так как они нарушают последовательную логику выборки из ЗУ. С точки зрения данных — данные должны быть размещены компактно таким образом, чтобы максимально использовать преимущества пакетного цикла передачи.</div>
+<div>Если же программа не оптимизирована, может быть сведена на нет вся потенциальная эффективность "расслоенного" ЗУ. Предположим, процессор считывает содержимое четырех ячеек из ЗУ, а реально требуется информация только из одной ячейки. Очевидно, что эффективность "расслоенной" памяти будет в этом случае равна нулю.</div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-69.html">‹ Предыдущий</a>

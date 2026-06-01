@@ -23,7 +23,29 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-48.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Оператор continue</a>
+</div>
+<a name="T1178386617"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Оператор continue</a>, как и оператор break, используется только внутри операторов цикла, но в отличие от него выполнение программы продолжается не с оператора, следующего за прерванным оператором, а с начала прерванного оператора. Формат оператора следующий:</div>
+<pre class="eListing">continue;
+</pre>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">int main()
+{ int a,b;
+  for (a=1,b=0; a&lt;100; b+=a,a++)
+    { if (b%2) continue;
+      ... /* обработка четных сумм  */
+    }
+  return 0;
+}
+</pre>
+</div>
+<a name="T241322591"></a>
+<div>Когда сумма чисел от 1 до а становится нечетной, оператор continue передает управление на очередную итерацию цикла <span class="eOperator">for,</span> не выполняя операторы обработки четных сумм. Оператор <span class="eOperator">continue,</span> как и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператор break</a>, прерывает самый внутренний из объемлющих его циклов.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-46.html">‹ Предыдущий</a>

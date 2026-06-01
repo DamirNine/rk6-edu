@@ -23,7 +23,42 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-16/mod-8.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Решение нестационарных одномерных задач с помощью МКР</a>
+</div>
+<a name="T1657674630"></a>
+<a name="T1456593060"></a>
+<div>Для решения нестационарных задач с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МКР</a> используется та же идея <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дискретизации</a> независимой переменной, что и при решении стационарных задач, в данном случае такой независимой переменной помимо пространства является время. На ось времени наносится сетка, в узлах которой выполняется аппроксимация частной производной по времени.</div>
+<a name="T1720018381"></a>
+<div>Но поскольку при этом возможны различные сочетания <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конечных разностей</a> по оси координат и по времени, можно получить различные схемы решения нестационарных задач. Рассмотрим их на примере нестационарного уравнения теплопроводности:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Mkr/one_din.mod/?n=1/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
+<div>Пусть при записи разностей нижний индекс соответствует оси <img align="absmiddle" src="/?frm/?doc=Mkr/one_din.mod/?n=2/?k=10">, а верхний — оси времени.</div>
+<a name="T680899679"></a>
+<a name="T643307490"></a>
+<div>Первый вариант разностного уравнения, апроксимирующего исходное (1):<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Mkr/one_din.mod/?n=3/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br>называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">явной разностной схемой</a>, поскольку в этом уравнении всего одна неизвестная величина <img align="absmiddle" src="/?frm/?doc=Mkr/one_din.mod/?n=4/?k=10">, которая может быть вычислена явным образом. Остальные переменные, входящие в уравнение (2) известны либо как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">начальные условия</a> (при <img align="absmiddle" src="/?frm/?doc=Mkr/one_din.mod/?n=5/?k=10">), либо с предыдущего временного слоя.</div>
+<a name="T1574566391"></a>
+<div>Второй вариант разностного уравнения, апроксимирующего исходное (1):<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Mkr/one_din.mod/?n=6/?k=10"></td><td align="right" class="eFormula">&nbsp;(3)</td></tr></tbody></table><br>называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">неявной разностной схемой</a>, поскольку в этом уравнении несколько неизвестных величин, относящихся к <img align="absmiddle" src="/?frm/?doc=Mkr/one_din.mod/?n=7/?k=10">-му временному слою. Для их нахождения придется записать систему разностных уравнений для всех внутренних узлов сетки, и решить ее.</div>
+<div>Графическое изображение разностных уравнений получило название шаблонов решения сответствующих задач. В данном случае на рис.&nbsp;1,а представлен шаблон явной разностной схемы, а на рис.&nbsp;1,б — неявной.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mkr/one_din.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Шаблоны явной и неявной разностной схемы</div></div>
+<div>Использование шеститочечного шаблона применено в схеме Кранка-Николсона:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_din.mod/?n=8/?k=10"><br></div>
+<div>В общем случае использования шеститочечного шаблона, имеем схему с весами:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_din.mod/?n=9/?k=10"><br>которая при <img align="absmiddle" src="/?frm/?doc=Mkr/one_din.mod/?n=10/?k=10"> является неявной.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-16/">← Оглавление</a>
         <a href="/rk6-edu/course-16/mod-6.html">‹ Предыдущий</a>

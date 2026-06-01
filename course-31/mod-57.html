@@ -23,7 +23,43 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-58.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Проблема нехватки портов при организации УСО</a>
+</div>
+<a name="T1163657660"></a>
+<a name="T1396052886"></a>
+<a name="T1123606880"></a>
+<div>Для организации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">УСО</a> используются встроенные параллельные порты <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">однокристальной микроЭВМ</a>. Однако количество этих встроенных параллельных портов ограничено и может оказаться недостаточным. Например, если в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микроконтроллере MCS-51</a> используется внешняя память данных, порты <span class="eOperator">Р0</span>, <span class="eOperator">Р2</span> и две линии порта <span class="eOperator">Р3</span> оказываются заняты под альтернативные функции ввода-вывода, обеспечивающие обмен с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЗУ</a>. Если при этом нам нужно подключить, к примеру, 16-разрядный АЦП, мы сталкиваемся с проблемой <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">нехватки портов</a>, так как свободными остаются восемь линий порта <span class="eOperator">Р1</span> и шесть линий порта <span class="eOperator">Р3</span>. Следовательно, мы не можем непосредственно подключить АЦП к портам.</div>
+<div>Необходимо найти решение, позволяющее ввести 16-разрядные данные через один оставшийся свободным 8-разрядный порт <span class="eOperator">Р1</span>. Очевидно, для этого необходимо 16-разрядные данные вводить порциями по 8 разрядов (байту). Пример схемы, обеспечивающей такое подключение, представлен на рис.&nbsp;1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_13_2.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>В данном примере 16-разрядный поток информации с АЦП разделен на два 8-разрядных, которые подключены к одному порту <span class="eOperator">Р1</span> через два буферных регистра.</div>
+<div>"Отпирание" буферного регистра осуществляется подачей активного сигнала ("0") на его вход <span class="eOperator">OE</span>. Процедура ввода данных с АЦП в данном случае выглядит следующим образом:</div>
+<ol class="eList"><li>Установить бит 0 порта <span class="eOperator">Р3</span> в "0" (тем самым устанавливается логический "0" на выходе <span class="eOperator">Р3.0</span> и на входе <span class="eOperator">OE</span> нижнего буферного регистра, буферный регистр "отпирается", соединяя младшие 8 линий данных с АЦП с портом <span class="eOperator">Р1</span>).</li>
+<li>Ввести данные из порта <span class="eOperator">Р1</span> (младший байт данных с АЦП).</li>
+<li>Установить бит 0 порта <span class="eOperator">Р3</span> в "1" (тем самым устанавливается логическая "1" на выходе <span class="eOperator">Р3.0</span> и на входе <span class="eOperator">OE</span> нижнего буферного регистра, буферный регистр "запирается", отсоединяя младшие 8 линий данных АЦП от порта <span class="eOperator">Р1</span>).</li>
+<li>Установить бит 1 порта <span class="eOperator">Р3</span> в "0" (тем самым устанавливается логический "0" на выходе <span class="eOperator">Р3.1</span> и на входе <span class="eOperator">OE</span> верхнего буферного регистра, буферный регистр "отпирается", соединяя старшие 8 линий данных с АЦП с портом <span class="eOperator">Р1</span>).</li>
+<li>Ввести данные из порта <span class="eOperator">Р1</span> (старший байт данных с АЦП).</li>
+<li>Установить бит 1 порта <span class="eOperator">Р3</span> в "1" (тем самым устанавливается логическая "1" на выходе <span class="eOperator">Р3.1</span> и на входе <span class="eOperator">OE</span> верхнего буферного регистра, буферный регистр "запирается", отсоединяя старшие 8 линий данных АЦП от порта <span class="eOperator">Р1</span>).</li>
+</ol>
+<div>Представленная схема обеспечивает ввод через 8-разрядный параллельный порт данных любой разрядности при наличии соответствующего количества буферных регистров.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-56.html">‹ Предыдущий</a>

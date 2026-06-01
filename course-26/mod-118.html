@@ -23,7 +23,42 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-119.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сортировка посредством выбора</a>
+</div>
+<div>Упорядоченный список В' получается из В многократным применением выборки из В минимального элемента, удалением этого элемента из В и добавлением его в конец списка В', который первоначально должен быть пустым.</div>
+<div>Например:</div>
+<pre class="eListing">B=&lt;20,10,8,-5,7&gt;, B'=&lt; &gt;
+B=&lt;20,10,8,7&gt;,    B'=&lt;-5&gt;
+B=&lt;20,10,8&gt;,      B'=&lt;-5,7&gt;
+B=&lt;20,10&gt;,        B'=&lt;-5,7,8&gt;
+B=&lt;20&gt;,           B'=&lt;-5,7,8,10&gt;
+B=&lt; &gt;,            B'=&lt;-5,7,8,10,20&gt; .
+</pre>
+<div>Функция <span class="eOperator">select</span> упорядочивает массив <span class="eOperator">s</span> сортировкой посредством выбора.</div>
+<pre class="eListing">/*    сортировка  методом  выбора    */
+double *select( double *s, int m, int n)
+ {
+   int i,j;
+   double c;
+   for (i=m; is[j])
+     {  c=s[i];
+        s[i]=s[j];
+        s[j]=c;
+     }
+   return(s);
+ }
+</pre>
+<a name="T303672301"></a>
+<div>Здесь, как и в предыдущем примере оба списка В и В' размещаются в разных частях массива <span class="eOperator">s</span> (см. рис.1). При <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сортировке посредством выбора</a> требуется <span class="eOperator">Q=(n-m)*(n-m)</span> действий и не требуется дополнительной памяти.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PYAVU/9.9.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Схема движения индексов при сортировке выбором</div></div>
+<div>Сортировка квадратичной выборкой. Исходный список В из N элементов делится на М подсписков В1,В2,...,Вm, где М равно квадратному корню из N, и в каждом В1 находится минимальный элемент G1. Наименьший элемент всего списка В определяется как минимальный элемент Gj в списке , и выбранный элемент Gj заменяется новым наименьшим из списка Bj. Количество действий, требуемое для сортировки квадратичной выборкой, несколько меньше, чем в предыдущих методах Q= N*N, но требуется дополнительная память для хранения списка G.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-117.html">‹ Предыдущий</a>

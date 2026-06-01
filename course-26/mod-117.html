@@ -23,7 +23,41 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-118.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сортировка вставкой</a>
+</div>
+<a name="T1120440559"></a>
+<div>Алгоритм <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сортировки вставкой</a> заключается в следующем. Упорядоченный массив B' получается из В следующим образом: сначала он состоит из единственного элемента К1; далее для i=2,...,N выполняется вставка узла Кi в B' так, что B' остается упорядоченным списком длины i.</div>
+<div>Например, для начального списка B=&lt; 20,-5,10,8,7 &gt; имеем:</div>
+<pre class="eListing">B=&lt; 20,-5,10,8,7&gt;  B'=&lt; &gt;
+B=&lt; -5,10,8,7 &gt;    B'=&lt; 20 &gt;
+B=&lt; 10,8,7 &gt;       B'=&lt; -5,20 &gt;
+B=&lt; 8,7  &gt;         B'=&lt; -5,10,20 &gt;
+B=&lt; 7 &gt;            B'=&lt; -5,8,10,20 &gt;
+B=&lt; &gt;              B'=&lt; -5,7,8,10,20 &gt;
+</pre>
+<div>Функция insert реализует сортировку вставкой.</div>
+<pre class="eListing">/*    сортировка  методом   вставки      */
+float *insert(float *s, int m, int n)
+ {
+   int i,j,k;
+   float aux;
+   for (i=m+1; i&lt;=n; i++)
+     { aux=s[i];
+       for (k=m; k&lt;=i &amp;&amp; s[k]=k; j--)  s[j+1]=s[j];
+       s[k]=aux;
+     }
+   return(a);
+ }
+</pre>
+<div>Здесь оба списка <span class="eOperator">В</span> и <span class="eOperator">В'</span> размещаются в массиве <span class="eOperator">s</span>, причем список <span class="eOperator">В</span> занимает часть <span class="eOperator">s</span> c индексами от <span class="eOperator">i</span> до <span class="eOperator">n</span>, а <span class="eOperator">B'</span> — часть <span class="eOperator">s</span> c индексами от <span class="eOperator">m</span> до <span class="eOperator">i-1</span> (см. рис.1). При сортировке вставкой требуется <span class="eOperator">Q=(n-m)*(n-m)</span> сравнений и не требуется дополнительной памяти.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PYAVU/9.8.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Схема движения индексов при сортировке вставкой</div></div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-116.html">‹ Предыдущий</a>

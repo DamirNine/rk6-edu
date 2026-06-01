@@ -23,7 +23,42 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-94.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функция gmtime</a>
+</div>
+<pre class="eListing">#include   &lt;time.h&gt;
+struct   tm  *gmtime (const   time_t   *time) ;
+</pre>
+<a name="T1214678477"></a>
+<a name="T541845194"></a>
+<a name="T1782956174"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция gmtime</a>() возвращает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структуру tm</a>, содержащую календарное время в разделенной на компоненты форме. Значение time представлено в виде так называемого координированного всемирного времени (Coordinated Universal Time, ли UTC), которое, по сути, является средним временем по гринвичскому меридиану (Greenwich mean time, GMT). Функция time() возвращает указатель time. Она возвращает NULL, если система не поддерживает координированное всемирное время.</div>
+<div>Память для структуры, в которой функция gmtime() сохраняет разделенное на компоненты время, распределяется статически. Эта структура перезаписывается при каждом вызове функции. Чтобы сохранить содержимое структуры, ее необходимо скопировать в какую-нибудь другую область памяти.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Эта программа печатает местное время и координированное всемирное время (UTC) системы:</div>
+</div>
+<pre class="eListing">#include &lt;time.h&gt;
+#include  &lt;stdio.h&gt;
+/* Печать местного и координированного всемирного (UTC) времени.  */
+int main(void)
+{
+struct   tm   *local, *gm;
+time_t  t;
+t = time(NULL);
+local = localtime(&amp;t);
+printf(" Местное время и дата: %s\n", asctime(local));
+gm = gmtime(&amp;t) ;
+printf("Координированное всемирное время и дата: %s", asctime(gm));
+return  0;
+}
+</pre>
+<a name="T1328539162"></a>
+<a name="T1198290317"></a>
+<a name="T1064711968"></a>
+<div>Здесь используются зависимые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции localtime</a>(), gmtime(), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">time</a>() и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">asctime</a>().</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-92.html">‹ Предыдущий</a>

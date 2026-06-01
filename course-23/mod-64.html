@@ -23,7 +23,87 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-65.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Обработка массивов</a>
+</div>
+<div class="eSubTitle">Выход за границу массива</div>
+<a name="T1231227284"></a>
+<a name="T295013967"></a>
+<a name="T1992766606"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Выход за границу массива</a> — обращение к элементу массива, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">индексы</a> которого выходят за указанные в объявлении <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a> пределы.</div>
+<div>Программист сам должен заботиться о том, чтобы индексы элемента массива лежали в пределах, указанных при объявлении массива.</div>
+<div>Для увеличении скорости работы программы не выполняется проверка, лежит ли индекс массива в указанных при объявлении пределах. Такая проверка должна производится во время работы программы каждый раз при обращении к массиву с использованием этого индекса. Если бы Си проверял допустимость индекса массива, то программа работала бы намного медленнее.</div>
+<div>Но помимо увеличения скорости работы программы, отсутствие проверки индексов имеет и нежелательные последствия — индекс может выйти за границы массива. В этой ситуации возможно одно из двух:</div>
+<ul class="eList"><li>что-то будет прочитано или записано в память за границами массива;</li>
+<li>получившийся адрес будет лежать за пределами доступной области памяти, например, при попытке записи в блок памяти, доступной только для чтения (при этом выполнение программы аварийно прекратится).</li>
+</ul>
+<div>Программист должен обеспечивать изменение индекса массива в диапазоне от 0 до (размер_массива-1).</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">/*Пример выхода за границу массива: */
+int ray[20], i;
+i = 0;
+while (i &lt;= 20)
+   {
+    ray [i] = i*10;
+    i += 1;
+   }
+</pre>
+</div>
+<div class="eSubTitle">Копирование массивов</div>
+<div>Массивы должны копироваться поэлементно.</div>
+<a name="T147950291"></a>
+<div>Нельзя копировать массивы так, как это показано в прим.&nbsp;2. В левой части <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции присваивания</a> нельзя использовать только имя массива.</div>
+<a name="T1125359603"></a>
+<a name="T708113156"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Имя массива</a>, используемое в программе без скобок, воспринимается как адрес, начиная с которого хранится массив. Этот адрес нельзя изменить, он не является <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">именующым выражением</a>.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">int prev[20], current[20];
+prev = current;              /*Неправильно: так копировать  массив нельзя */
+</pre>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">int prev[20], current[20];
+for (i=0; i&lt;20; i+=1)        /*Правильно: копировать массив надо так */
+   prev[i] = current [i];
+
+</pre>
+</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Для обработки массивов очень удобно использовать цикл <span class="eOperator">for</span>.</div>
+</div>
+<div class="eSubTitle">Ввод массивов</div>
+<div>Ввод массивов оуществляется поэлементно:</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><div><span class="eOperator">int a[5];                 /*массив на 5 целых чисел*/</span></div>
+<div><span class="eOperator">for(i=0;i&lt;5;i++)</span></div>
+<div>    <span class="eOperator">scanf("%d", &amp;a[i]);</span></div>
+</div>
+<div class="auto">Примечание 2</div>
+<div class="eNote"><div>Использовать функцию  <span class="eOperator">scanf()</span> надо очень аккуратно и грамотно, так как при ошибке ввода она не очищает буфер ввода.</div>
+</div>
+<div class="eSubTitle">Вывод массива</div>
+<div>Вывод массива также осуществляется поэлементно:</div>
+<div class="auto">Пример 5</div>
+<div class="eExample"><div><span class="eOperator">int b[7]={-3,5,8,-45,0,-1,8};</span></div>
+<div><span class="eOperator">for(j=0;j&lt;7;i++)</span></div>
+<div>   <span class="eOperator">printf("%5d", a[j]);</span></div>
+<div><span class="eOperator">printf("\n");             /*переходим на следующую строку*/</span></div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-63.html">‹ Предыдущий</a>

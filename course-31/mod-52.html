@@ -23,7 +23,46 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-53.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Периферийные модули микроконтроллера PIC16F877</a>
+</div>
+<div>Познакомимся в работой периферийных модулей МК на примере порта ввода/вывода <span class="eOperator">PORTB</span>.</div>
+<div><span class="eOperator">PORTB</span> — это 8-разрядный двунаправленный порт. Любой разряд порта можно конфигурировать как выход или вход. Запись "1" в соответствующие разряды регистра <span class="eOperator">TRISB</span> переводит разряды порта в режим входа; запись "0" — режим выхода.</div>
+<div>Программа инициализации порта <span class="eOperator">В</span> выглядит следующим образом:</div>
+<pre class="eListing">CLRF    PORTB ;обнуление регистра выходных данных
+BANKSEL TRISB ;обращение к банку,содержащему регистр TRISB (команда MPASM)
+MOVLW   0x0F  ;константа для инициализации порта
+MOVWF   TRISB ;установка RB &lt;3:0&gt; как входов, RB &lt;7:4&gt; как выходы
+</pre>
+<div>Все разряды <span class="eOperator">PORTB</span> могут быть подтянуты к высокому уровню внутренними ключами для подключения к длинным линиям связи. Включение ключей выполняется записью "0" в разряд 7 регистра <span class="eOperator">OPTION</span> (бит <span class="eOperator">RBPU</span>). Ключи выключаются при программировании разряда порта как выход и после "Сброса".</div>
+<div>Четыре разряда <span class="eOperator">PORTB</span> (<span class="eOperator">RB7-RB4</span>) формируют прерывание при изменении состояния. Это прерывание могут вызвать только разряды, сконфигурированные как входы. Состояние сигналов на них сравнивается со старым значением, записанным при последнем чтении <span class="eOperator">PORTB.</span> Несовпадение текущего состояния со старым вызывает прерывание – поднимается флаг <span class="eOperator">RB1F</span> (<span class="eOperator">INTCON &lt; 0&gt;</span>).</div>
+<div>Можно сбросить флаг прерывания в программе обработки прерывания, выполнив следующие операции:</div>
+<ul class="eList"><li>чтение <span class="eOperator">PORTB</span>, что закончит действие условия несоответствия;</li>
+<li>сброс флажка <span class="eOperator">RBIF</span>.</li>
+</ul>
+<div>Прерывание по изменению состояния и программируемое подключение разрядов к высокому уровню этих четырех контактов позволяет создать простой интерфейс клавиатуры.</div>
+<div>Опрос <span class="eOperator">PORTB</span> не рекомендуется при использовании прерывания при изменении состояния.</div>
+<div><span class="eOperator">RB0/INT</span> вход внешнего источника прерываний, настраиваемых битом <span class="eOperator">INTEDG</span> (<span class="eOperator">OPTION_REG&lt;6&gt;</span>).</div>
+<div>Кроме цифровых портов ввода/вывода МК PIC16F877 имеет следующин периферийные модули:</div>
+<ul class="eList"><li>два 8-разрядных таймера/счетчика;</li>
+<li>один 16-разрядный таймер/счетчик с возможностью подключения внешнего резонатора;</li>
+<li>два модуля захват/сравнение/ШИМ:</li>
+<li>16-разрядный захват (максимальная разрешающая способность 12.5 нс);</li>
+<li>16-разрядный сравнение (максимальная разрешающая способность 200нс);</li>
+<li>10 разрядный ШИМ;</li>
+<li>8-канальное 10-разрядное АЦП;</li>
+<li>последовательный синхронный порт;</li>
+<a name="T82316"></a>
+<li>ведущий/ведомый режим <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">SPI</a>;</li>
+<a name="T72483"></a>
+<li>ведущий/ведомый режим <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">IIC</a>;</li>
+<a name="T81037029"></a>
+<li>последовательный асинхронный приемопередатчик <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">USART</a> c поддержкой детектирования адреса;</li>
+<li>ведомый 8-разрядный параллельный порт <span class="eOperator">PSP</span> с поддержкой внешних сигналов <span class="eOperator">#RD</span>, <span class="eOperator">#WR</span>, <span class="eOperator">#CS</span>.</li>
+</ul>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-51.html">‹ Предыдущий</a>

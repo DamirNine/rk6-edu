@@ -23,7 +23,646 @@
         <span class="spacer"></span>
         <a class="disabled">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Домашняя лабораторная работа</a>
+</div>
+<div><span style="color:#0000FF; font-weight:bold; font-style:italic; ">Цель работы:</span></div>
+<div>Изучение основных форм представления метаязыков описания грамматик. </div>
+<br>
+<div><span style="color:#0000FF; font-weight:bold; font-style:italic; ">Порядок выполнения ДЛР:</span></div>
+<div><span style="color:#0000FF; font-style:italic; ">1.</span> Получить у преподавателя задание на выполнение ДЛР.</div>
+<div><span style="color:#0000FF; font-style:italic; ">2</span>. Составить описание заданного оператора в виде металингвистических формул Бэкуса-Науэра.</div>
+<div><span style="color:#0000FF; font-style:italic; "><span style="font-style:italic; ">3.</span></span> Составить описание заданного оператора в виде синтаксических диаграмм.</div>
+<div><span style="color:#0000FF; font-style:italic; ">4.</span> Составить фрагменты программной реализации формальных элементов синтаксических диаграмм на языке С или С++ по приведенным в методичке программным фрагментам на языке C.</div>
+<div><span style="color:#0000FF; font-style:italic; ">5.</span> Составить на С или С++ программу реализации транслятора языка по созданному описанию в виде синтаксических диаграмм.</div>
+<div><span style="color:#0000FF; font-style:italic; ">6.</span> Разработать самостоятельно тест на проверку работоспособности разработанного транслятора.</div>
+<div><span style="color:#0000FF; font-style:italic; ">7.</span> Отладить разработанную программу. </div>
+<div><span style="color:#0000FF; font-style:italic; ">8. </span>Составить отчет по домашней лабораторной работе, который должен включать:</div>
+<div>- описание исходного задания;</div>
+<div>- описание задания в виде формул Бэкуса-Науэра; </div>
+<div>- описания задания в виде синтаксических диаграмм; </div>
+<div>- программные фрагменты отдельных модулей синтаксических диаграмм на языке С или С++;</div>
+<div>- текст программной реализации созданного транслятора на языке C или С++;</div>
+<a name="T164542854"></a>
+<div>- результаты тестирования программной реализации <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">транслятора</a>.</div>
+<a name="T623876021"></a>
+<div><span style="color:#0000FF; font-style:italic; ">9.</span> Составить описание задания на получение обратной <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">польской записи</a> алгебраического выражения в виде управляемых таблиц:</div>
+<div>- получить фрагменты перевода формальных блоков управляемых таблиц, используя генераторы LEX и YACC на языке С;</div>
+<div>- протестировать созданную программную реализацию разработанного транслятора на языке С;</div>
+<div>- разработать самостоятельно тест на проверку работоспособности программы.</div>
+<div><span style="color:#0000FF; font-style:italic; ">10.</span> Защитить отчет по ДЛР у преподавателя.</div>
+<br>
+<div><span style="color:#0000FF; font-weight:bold; font-style:italic; ">Методическое пособие для проведения домашней лабораторной работы</span></div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">1.<span style="font-weight:bold; font-style:italic; "><span style="font-weight:bold; font-style:italic; ">Структура языков и трансляторы. </span>Определение и структура языка</span></span></div>
+<div>Можно сделать попытку разработать транслятор для простого, «рудиментарного» языка программирования. Такая разработка может послужить примером систематического, хорошо структурированного подхода при написании программы нетривиальной сложности и размера. При этом можно продемонстрировать практическое применение методов, рассмотренных ранее. Кроме того, постараемся дать общее представление о структуре трансляторов и принципах их работы. Знание этого предмета позволит лучше разобраться в искусстве программирования на языках высокого уровня, а также облегчит программисту разработку собственных систем, предназначенных для конкретных целей и областей применения. Но, поскольку теория трансляторов - сложный и обширный предмет, в этом отношении данное пособие будет носить лишь вводный и обзорный характер. Главное, что следует уяснить, - это что структура транслятора отражает структуру языка и сложность - или простота - языка решающим образом влияет на сложность его транслятора. Поэтому начнем с описания строения языка, а затем сосредоточим внимание исключительно на простых структурах, для которых можно построить простые, модульные трансляторы. Такие простые языковые конструкции оказываются достаточными для удовлетворения практически всех потребностей, возникающих при использовании языков программирования.</div>
+<div>В основе каждого языка лежит словарь. Его элементы обычно называют словами, но в теории формальных языков их называют символами. Языки характеризуются тем, что некоторые последовательности слов считаются правильными предложениями языка, а другие - неправильными, или не принадлежащими данному языку. Чем же определяется, является ли некоторая последовательность слов правильным предложением? Обычно это определяется грамматикой, синтаксисом (можно сказать - структурой) языка. Синтаксис определяется как множество правил или формул, которые задают множество (формально правильных) предложений. Такое множество синтаксических правил не только позволяет установить, принадлежит ли некоторая заданная последовательность слов множеству предложений языка, но при этом определяет структуру предложения, которая устанавливает его смысл. Поэтому ясно, что синтаксис и семантика (==смысл) тесно связаны между собой. Следовательно, определения, связанные со структурой, всегда следует рассматривать как средство распознавания смысла. Но это не помешает изучить вначале исключительно структурные аспекты языка, отвлекаясь от их связи со смыслом, т. е. от их интерпретации.</div>
+<div>Рассмотрим, например, предложение «Кошки спят». Слово «кошки» - подлежащее, а «спят» - сказуемое. Это предложение принадлежит языку, который можно описать, например, при помощи следующих синтаксических правил:</div>
+<br>
+<div><span style="font-weight:bold; ">&lt;предложение&gt;::=&lt;подлежащее&gt; &lt;сказуемое&gt;</span></div>
+<div><span style="font-weight:bold; ">&lt;подлежащее&gt; ::= кошки \ собаки</span></div>
+<div><span style="font-weight:bold; ">&lt;сказуемое&gt; ::= спят \едят</span></div>
+<br>
+<div>Смысл этих трех строчек таков:</div>
+<ol class="eList"><li>Предложение состоит из подлежащего, за которым следует сказуемое.</li>
+<li>Подлежащее состоит либо из одного слова «кошки», либо из одного слова «собаки».</li>
+<li>Сказуемое состоит либо  из слова «спят», либо из слова «едят».</li>
+</ol>
+<br>
+<div>Идея заключается в том, что любое предложение можно получить из начального символа <span style=""><span style="font-weight:bold; ">&lt;предложение&gt;</span></span> последовательным применением правил подстановки.</div>
+<div>Формализм, или нотация, использованный при написании этих правил, называется Бэкус-Науровой формой (БНФ).</div>
+<div>Синтаксические единицы <span style="font-weight:bold; ">&lt;предложение&gt;</span>, <span style="font-weight:bold; ">&lt;подлежащее&gt;</span> и <span style="font-weight:bold; ">&lt;сказуемое&gt;</span> называются нетерминальными символами, слова <span style="font-weight:bold; ">кошки</span>, <span style="font-weight:bold; ">собаки</span>, <span style="font-weight:bold; ">спят</span> и <span style="font-weight:bold; ">едят</span> - терминальными символами, а правила - порождающими правилами. </div>
+<div>Символы <span style="font-weight:bold; ">::=</span> и <span style="font-weight:bold; ">|</span> - это метасимволы языка БНФ. Метасимволы не принадлежат описываемому языку, а относятся к языку описания. Метасимволами являются также <span style="font-weight:bold; ">&lt; &gt;</span>  - скобки нетерминальных символов. </div>
+<div>Если для краткости мы будем использовать отдельные заглавные, буквы для нетерминальных символов, то данный пример можно переписать следующим образом:</div>
+<br>
+<div><span style="font-weight:bold; ">Пример 1:</span></div>
+<div><span style="font-weight:bold; ">S::=AB</span></div>
+<div><span style="font-weight:bold; ">А::=х|у</span>                                                    (1.1)</div>
+<div><span style="font-weight:bold; ">B::=z|w</span></div>
+<br>
+<div>и язык, определенный этим синтаксисом, будет состоять из четырех предложений xz, yz, xw, yw.</div>
+<br>
+<div>Приведем теперь более точные, математические определения:</div>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">1.</span> Пусть язык <span style="font-weight:bold; font-style:italic; ">L = L(T, N, P, S)</span> задан:</div>
+<br>
+<ul class="eList"><li>словарем <span style="font-weight:bold; font-style:italic; ">Т</span> терминальных символов;</li>
+<li>множеством <span style="font-weight:bold; font-style:italic; ">N</span> нетерминальных символов (грамматических категорий);</li>
+<li>множеством <span style="font-weight:bold; font-style:italic; ">Р</span> порождающих правил (синтаксисом);</li>
+<li>символом <span style="font-weight:bold; font-style:italic; ">S</span> (из <span style="font-weight:bold; font-style:italic; ">N</span>), называемым начальным символом. </li>
+</ul>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">2.</span> Язык <span style="font-weight:bold; font-style:italic; ">L(T,N,P,S)</span> есть множество всех цепочек терминальных символов <span style="font-weight:bold; font-style:italic; ">ξ</span>, которые могут порождаться из <span style="font-weight:bold; font-style:italic; ">S</span> по правилу 3 (приведенному ниже):</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">L={ ξ | S ⇒<sup class="eSub">*</sup> ξ, ξ ∈ T*}</span>                             (1.2)</div>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">3.</span> Последовательность <span style="font-weight:bold; font-style:italic; ">σ<sub class="eSub">n</sub></span> может порождаться последовательностью <span style="font-weight:bold; font-style:italic; ">σ<sub class="eSub">0</sub></span> в том и только в том случае, если имеются последовательности <span style="font-weight:bold; font-style:italic; ">σ<sub class="eSub">1</sub>, σ<sub class="eSub">2</sub>,…, σ<sub class="eSub">n-1</sub></span>, такие, что каждое <span style="font-weight:bold; font-style:italic; ">σ<sub class="eSub">i</sub></span> может непосредственно порождаться <span style="font-weight:bold; font-style:italic; ">σ<sub class="eSub">i-1</sub></span> по правилу 4 (приведенному ниже) :</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">(σ<sub class="eSub">0</sub> ⇒<sup class="eSub">*</sup> σ<sub class="eSub">n</sub>) ⇔ ( σ<sub class="eSub">i-1</sub> ⇒<sup class="eSub">*</sup> σ<sub class="eSub">i)</sub>       i=i…n</span>         (1.3)</div>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">4.</span> Последовательность <span style="font-weight:bold; font-style:italic; ">η</span> может непосредственно порождаться последовательностью <span style="font-weight:bold; font-style:italic; ">ξ</span> в том и только в том случае, если существуют последовательности <span style="font-weight:bold; font-style:italic; ">α'</span>, <span style="font-weight:bold; font-style:italic; ">β'</span>, <span style="font-weight:bold; font-style:italic; ">ξ'</span>, <span style="font-weight:bold; font-style:italic; ">η'</span>, такие, что:</div>
+<br>
+<ul class="eList"><li><span style="font-weight:bold; font-style:italic; ">ξ = αξ'β;</span></li>
+<li><span style="font-weight:bold; font-style:italic; ">η = αη'β;</span></li>
+<li>Р содержит порождающее правило <span style="font-weight:bold; font-style:italic; ">ξ' ::= η</span>'</li>
+</ul>
+<br>
+<div>Примечание. Правило вида <span style="font-weight:bold; font-style:italic; ">α ::= β<sub class="eSub">1</sub>|β<sub class="eSub">2</sub>|…|β<sub class="eSub">n</sub></span>, используется как сокращенная запись для множества порождающих правил:</div>
+<div><span style="font-weight:bold; font-style:italic; ">α ::= β<sub class="eSub">1</sub>, α ::= β<sub class="eSub">2</sub>, ..., α ::= β<sub class="eSub">n</sub></span></div>
+<br>
+<div>Например, последовательность <span style="font-weight:bold; font-style:italic; ">xz</span> из примера 1 можно получить с помощью следующих шагов непосредственного порождения: </div>
+<div><span style="font-weight:bold; font-style:italic; ">S ⇒ AВ ⇒ xB ⇒ xz</span>; </div>
+<div>следовательно, <span style="font-weight:bold; font-style:italic; ">S ⇒<sup class="eSub">*</sup> xz</span>, и поскольку <span style="font-weight:bold; font-style:italic; ">xz ∈ T*</span>, то <span style="font-weight:bold; font-style:italic; ">xz</span> есть предложение языка, т. е. <span style="font-weight:bold; font-style:italic; ">xz ∈ L</span>. </div>
+<br>
+<div>Грамматические правила называются порождающими, потому что они определяют, как новые последовательности могут формироваться, или порождаться.</div>
+<div>Язык называется контекстно-свободным в том и только в том случае, если он может быть определен с помощью контекстно-свободного множества порождающих правил. Множество порождающих правил контекстно-свободно тогда и только тогда, когда все его члены имеют вид</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">A ::= ξ   (A ∈ N, ξ ∈ (N U T)*),</span></div>
+<br>
+<div>т. е. если его левая часть состоит из одного нетерминального символа, который может заменяться на последовательность, стоящую в правой части, независимо от контекста, в котором он встречается.</div>
+<br>
+<div>Если порождающее правило имеет вид</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">αAβ ::= αξβ</span></div>
+<br>
+<div>то оно называется контекстно-зависимым, так как замена <span style="font-weight:bold; font-style:italic; ">А</span> на <span style="font-weight:bold; font-style:italic; ">ξ</span> может иметь место только в контекстах <span style="font-weight:bold; font-style:italic; ">α</span> и <span style="font-weight:bold; font-style:italic; ">β</span>. Далее мы ограничим рассмотрение только контекстно-свободными языками.</div>
+<div>Из примера 2 видно, как при помощи рекурсии конечное множество порождающих правил может задавать бесконечное множество предложений</div>
+<div><span style="font-weight:bold; ">Пример 2:</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">S ::= xA</span>                                               (1.4)</div>
+<div><span style="font-weight:bold; font-style:italic; ">A ::= z|yA</span></div>
+<br>
+<div>Начальный символ <span style="font-weight:bold; font-style:italic; ">S</span> может порождать следующие предложения:</div>
+<div><span style="font-weight:bold; font-style:italic; ">xz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">xyz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">хууz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">xyyyz</span> и т.д.</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">2.</span> <span style="font-weight:bold; font-style:italic; ">Анализ предложений</span></div>
+<div>Задача трансляторов, или «языковых процессоров», - это в первую очередь не порождение, а распознавание предложений и их структуры. Это означает, что шаги порождения, которые формируют предложение, должны реконструироваться при чтении предложения, т. е., проходиться в обратном порядке. В принципе это очень трудная, а иногда и невыполнимая задача. Ее сложность сильно зависит от правил порождения, которые определяют язык. Разработка алгоритмов распознавания для языков с достаточно сложной структурой - задача теории синтаксического анализа. Здесь же наша цель - разработать метод построения алгоритмов распознавания, достаточно простых и эффективных для практического применения. Это значит, что вычислительные затраты на анализ предложения должны находиться в линейной зависимости от длины предложения, в самом худшем случае функция зависимости может быть n*log n, где n - длина предложения. Разумеется, мы не можем ставить задачу поиска алгоритма распознавания для любого заданного языка, будем реалистами и поступим наоборот: построим некоторый эффективный алгоритм, а затем определим, с каким классом языков он может работать.</div>
+<div>Из основного требования эффективности следует в первую очередь, что каждый очередной этап анализа должен выбираться лишь в зависимости от текущего состояния процесса и от одного следующего читаемого символа. Другое наиболее важное требование - чтобы ни к какому этапу не было повторного обращения. Эти два требования известны как технический термин просмотр на один символ вперед без возврата.</div>
+<div>Основной метод, который мы здесь разберем, называется нисходящим грамматическим разбором, поскольку, применяя этот метод, мы будем пытаться реконструировать этапы порождения (которые в принципе образуют дерево) от начального символа к конечному предложению, т. е. сверху вниз. </div>
+<div>Вернемся к примеру 1: нам дано предложение <span style="font-weight:bold; font-style:italic; ">"Собаки едят"</span>, и мы должны определить, принадлежит ли оно языку. По определению предложение принадлежит языку, только если оно может порождаться из начального символа <span style="font-weight:bold; font-style:italic; ">&lt;предложение&gt;</span>. Из грамматических правил следует, что предложение должно состоять из подлежащего, за которым следует сказуемое. Теперь мы можем разделить задачу на две подзадачи: вначале нужно определить, может ли какая-либо начальная часть предложения порождаться из символа <span style="font-weight:bold; font-style:italic; ">&lt;подлежащее&gt;</span>. Действительно, собаки может непосредственно порождаться из этого символа, поэтому мы убираем символ собаки из входного предложения (т. е. сдвигаемся на один шаг) и переходим к следующей подзадаче: определить, может ли оставшаяся часть предложения порождаться из символа (сказуемое). Поскольку ответ вновь положительный, результат анализа положительный. Процесс работы можно изобразить такой схемой, где слева показаны стоящие задачи, а справа - еще не прочитанная часть входного предложения:</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">|<span style="font-weight:bold; font-style:italic; ">&lt;предложение&gt;    |</span></span></div>
+<div><span style="font-weight:bold; font-style:italic; ">|&lt;подлежащее&gt;     | &lt;сказуемое&gt;  собаки едят</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">|<span style="font-weight:bold; font-style:italic; ">собаки                    | &lt;сказуемое&gt;  собаки едят</span></span></div>
+<div><span style="font-weight:bold; font-style:italic; ">|&lt;сказуемое&gt;         | собаки едят</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">|едят                        |              едят</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">|                                |             едят</span></div>
+<br>
+<div>Вторая схема демонстрирует процесс анализа предложения xyyz в соответствии с порождающими правилами примера 2:</div>
+<div><span style="font-weight:bold; font-style:italic; ">S                    xyyz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">хА                  xyyz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">A                     yyz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">уА                    yyz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">A                       yz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">уА                     yz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">А                         z</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">z                          z</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">-                          -</span></div>
+<br>
+<div>Поскольку обратное прослеживание этапов порождения предложения называется грамматическим разбором, описанный выше алгоритм есть алгоритм грамматического разбора. В обоих примерах отдельные подстановки можно производить однозначно при проверке одного очередного символа во входном предложении. К сожалению, это не всегда бывает возможно, что видно из следующего примера:</div>
+<br>
+<div><span style="font-weight:bold; ">Пример 3:</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">S ::= A|B</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">А ::= хА|у</span>                                                  (1.5)</div>
+<div><span style="font-weight:bold; font-style:italic; ">B ::= xB|z </span></div>
+<br>
+<div>Мы пытаемся, проанализировать предложение <span style="font-weight:bold; font-style:italic; ">xxxz</span></div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">S                      xxxz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">A                      xxxz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">хА                     xxxz</span></div>
+<div><span style="font-weight:bold; font-style:italic; "> А                        xxz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">хА                      xxz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">А                          xz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">хА                        xz</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">A                           z</span></div>
+<br>
+<div>и попадаем впросак. Трудность возникает  на самом первом шаге, когда решение о замене <span style="font-weight:bold; font-style:italic; ">S</span> на <span style="font-weight:bold; font-style:italic; ">А</span> или <span style="font-weight:bold; font-style:italic; ">В</span> нельзя принять на основе лишь первого символа. Можно прослеживать один из возможных выборов, а затем возвращаться, если этот путь не дает нужного решения. Такое действие называется возвратом. В языке примера 3 число возможных шагов, на которые приходится иногда возвращаться, не ограничено. Понятно, что подобная ситуация крайне нежелательна; следовательно, нужно избежать таких особенностей языка, которые приводят к возврату при грамматическом разборе. Поэтому мы принимаем решение, что будем рассматривать только такие грамматические системы, в которых начальные символы альтернативных правых частей порождающих правил различны.</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">Ограничение 1:</span></div>
+<div>Если дано порождающее правило</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">A ::= ξ<sub class="eSub">1</sub>|ξ<sub class="eSub">2</sub>|…|ξ<sub class="eSub">n</sub>,</span></div>
+<br>
+<div>то множества начальных символов всех предложений, которые могут порождаться из различных <span style="font-weight:bold; font-style:italic; ">ξ<sub class="eSub">j</sub></span>, не должны пересекаться, т. е.</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">first (ξ<sub class="eSub">i</sub>) ∩ first(ξ<sub class="eSub">j</sub>) = Ø для всех i ≠j.</span></div>
+<br>
+<div>Множество <span style="font-weight:bold; font-style:italic; ">first (ξ<sub class="eSub">j</sub>)</span> есть множество всех терминальных символов, которые могут встречаться в начале предложений, полученных из <span style="font-weight:bold; font-style:italic; ">ξ<sub class="eSub">j</sub></span>. </div>
+<br>
+<div>Пусть это множество вычисляется согласно следующим правилам:</div>
+<div><span style="color:#0000FF; font-style:italic; ">1.</span> Если первый символ аргумента терминальный. то</div>
+<div><span style="font-weight:bold; font-style:italic; ">first (αξ) ={α}</span></div>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">2.</span> Если первый символ нетерминальный и стоит в левой части порождающего правила</div>
+<div><span style="font-weight:bold; font-style:italic; ">A ::= α<sub class="eSub">1</sub> | α<sub class="eSub">2</sub> | ... | α<sub class="eSub">n</sub>,</span> то</div>
+<div><span style="font-weight:bold; font-style:italic; ">first (αξ) = first (α<sub class="eSub">1</sub>) U first (α<sub class="eSub">2</sub>) U ... U first (α<sub class="eSub">n</sub>).</span></div>
+<br>
+<div>В примере З можно заметить, что <span style="font-weight:bold; font-style:italic; ">х ∈ first (А)</span> и <span style="font-weight:bold; font-style:italic; ">x ∈ first(B)</span>. Следовательно, в первом порождающем правиле нарушено ограничение 1. На самом деле, легко найти синтаксис для языка примера 3, удовлетворяющий ограничению 1. Нужно отложить разделение на части до тех пор, пока не будут пройдены все <span style="font-weight:bold; font-style:italic; ">х</span>. Следующие порождающие правила эквивалентны правилам (1.5) в том смысле, что они порождают то же множество предложений:</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">S ::= C |xS,</span>                                            (1.5a)</div>
+<div><span style="font-weight:bold; font-style:italic; ">C ::= y|z</span></div>
+<br>
+<div>К сожалению, ограничение 1 недостаточно сильно, чтобы избавить нас от дальнейших неприятностей. Рассмотрим <span style="font-weight:bold; font-style:italic; ">Пример 4:</span></div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; "><span style="font-weight:bold; font-style:italic; ">S ::= Ax</span>,</span>                                                 (1.6)</div>
+<div><span style="font-weight:bold; font-style:italic; ">A ::= x|ε</span></div>
+<br>
+<div>Здесь <span style="font-weight:bold; font-style:italic; ">ε</span> обозначает нулевую последовательность символов. Если мы попытаемся разобрать предложение <span style="font-weight:bold; font-style:italic; ">х</span>, то можем попасть в следующий «тупик»:</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">S        х</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">Ах      х</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">xx      x</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">x        - </span></div>
+<br>
+<div>Трудность возникает из-за того, что мы должны были следовать правилу <span style="font-weight:bold; font-style:italic; ">А ::= ε</span> вместо <span style="font-weight:bold; font-style:italic; ">А ::= х</span>. Эта ситуация называется проблемой пустой строки, она связана со случаем, когда нетерминальный символ может порождать пустую последовательность. Чтобы ее избежать, мы вводим</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">Ограничение 2:</span></div>
+<div>Для любого символа <span style="font-weight:bold; font-style:italic; ">А ∈ N</span>, который порождает пустую последовательность <span style="font-weight:bold; ">(А ::= ε)</span>, множество начальных символов не должно пересекаться со множеством символов, которые могут появляться в предложениях языка справа от какой-либо последовательности, порождаемой <span style="font-weight:bold; font-style:italic; ">А</span> (внешними символами <span style="font-weight:bold; font-style:italic; ">А</span>), т. е.</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">first(A) ∩ follow (A) = 0</span></div>
+<br>
+<div>Множество <span style="font-weight:bold; font-style:italic; ">follow (А)</span> определяется так: берутся все порождающие правила <span style="font-weight:bold; font-style:italic; ">P<sub class="eSub">i</sub></span> вида</div>
+<div><span style="font-weight:bold; font-style:italic; ">X :: = <span style="font-weight:bold; font-style:italic; ">ξ</span>Aη,</span></div>
+<br>
+<div>затем для каждой последовательности <span style="font-weight:bold; font-style:italic; ">η<sub class="eSub">i</sub></span>, стоящей справа от <span style="font-weight:bold; font-style:italic; ">А</span>, определяется ее множество начальных символов <span style="font-weight:bold; font-style:italic; ">S<sub class="eSub">i</sub> = first(η<sub class="eSub">i</sub>)</span>. Множество <span style="font-weight:bold; font-style:italic; ">follow(A)</span> - объединение всех таких множеств <span style="font-weight:bold; font-style:italic; ">S<sub class="eSub">i</sub></span>. Если хотя бы одна <span style="font-weight:bold; font-style:italic; ">η<sub class="eSub">i</sub></span> может порождать пустую последовательность, то множество f<span style="font-weight:bold; font-style:italic; ">ollow(X)</span> следует также включить в <span style="font-weight:bold; font-style:italic; ">follow(A)</span>. В примере 4 ограничение 2 нарушается для символа <span style="font-weight:bold; font-style:italic; ">А</span>, поскольку</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">first(A) = follow(A) = {х}</span></div>
+<br>
+<div>Повторение подобных последовательностей символов в предложениях обычно задается в порождающих правилах с помощью рекурсии. Например, порождающее правило</div>
+<div><span style="font-weight:bold; font-style:italic; ">А ::= В|АВ</span></div>
+<br>
+<div>описывает множество предложений <span style="font-weight:bold; font-style:italic; ">В, ВВ, ВВВ ...</span> Однако использование такого правила теперь запрещено ограничением 1, так как</div>
+<div><span style="font-weight:bold; font-style:italic; ">first(B) ∩ first(AB) = first(B) ≠ 0</span></div>
+<br>
+<div>Если мы заменим это правило его слегка модифицированной версией</div>
+<div><span style="font-weight:bold; font-style:italic; ">А ::= ε|АВ,</span></div>
+<br>
+<div>порождающей последовательности <span style="font-weight:bold; font-style:italic; ">ε, В, ВВ, ВВВ, ...</span><span style="font-weight:bold; font-style:italic; ">,</span> то нарушим ограничение 2, поскольку</div>
+<div><span style="font-weight:bold; font-style:italic; ">first(A) = first(B)</span> и, следовательно,</div>
+<div><span style="font-weight:bold; font-style:italic; ">first(A) ∩ follow(A) ≠ 0</span></div>
+<br>
+<div>Очевидно, что два эти ограничения запрещают использование определений с «левой рекурсией». Простой способ избежать таких форм - это либо использовать правую рекурсию, либо расширить БНФ-нотацию с тем, чтобы она допускала явное выражение повторений.</div>
+<div>Поэтому определим <span style="font-weight:bold; font-style:italic; ">{В}</span> как множество последовательностей</div>
+<div><span style="font-weight:bold; font-style:italic; ">ε, В, ВВ, ВВВ ...</span></div>
+<br>
+<div>Конечно, нужно учитывать, что каждая такая конструкция может порождать пустую последовательность. (Фигурные скобки { } являются метасимволами расширенной БНФ.).</div>
+<div>Эти рассуждения, а также пример преобразования порождающих правил (1.5) в (1.5а) могут навести на мысль, что «трюки» с преобразованием грамматик позволяют решить все проблемы синтаксического анализа. Но не следует забывать, что структура предложений связана с их смыслом и что смысл синтаксических конструкций обычно выражается через смысл их компонент. Рассмотрим, например, язык, состоящий из выражений, которые включают операнды <span style="font-weight:bold; font-style:italic; ">а, b, с</span> и знак минус, обозначающий вычитание:</div>
+<div><span style="font-weight:bold; font-style:italic; ">S ::= A|S - A,</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">А ::= а|b|c</span></div>
+<br>
+<div>Согласно этой грамматике, предложение <span style="font-weight:bold; font-style:italic; ">а - b - с</span> имеет структуру, которую с использованием скобок можно выразить следующим образом: <span style="font-weight:bold; font-style:italic; ">((а - b ) - с)</span>. Но если эту грамматику преобразовать в эквивалентную, но свободную от левой рекурсии</div>
+<div><span style="font-weight:bold; font-style:italic; ">S ::= A| A - S,</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">A ::= а|b|c</span></div>
+<br>
+<div>то это же предложение получит другую структуру, которую можно выразить как <span style="font-weight:bold; font-style:italic; ">(а-( b - с))</span>. </div>
+<div>Учитывая принятое значение вычитания, мы видим, что эти две формы вовсе не эквивалентны с точки зрения семантики.</div>
+<div>Следует сделать вывод, что при определении языка, обладающего смыслом, нужно всегда принимать во внимание его семантическую структуру, поскольку синтаксис должен ее отражать.</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">3. Построение синтаксического графа</span></div>
+<div>В предыдущем разделе был описан алгоритм нисходящего распознавания, применимый к грамматикам, которые удовлетворяют ограничениям 1 и 2. Теперь мы перейдем к реализации этого алгоритма в виде конкретной программы. При этом можно использовать два различных метода. Один из них- это написать универсальную программу нисходящего грамматического разбора, пригодную для всех возможных грамматик (удовлетворяющих ограничениям 1 и 2). В этом случае конкретные грамматики задаются этой программе в виде данных некоторой структуры, которая в каком-то смысле управляет ее работой. Поэтому такая программа  называется таблично-управляемой. Другой метод - разрабатывать программу нисходящего грамматического разбора специально для заданного конкретного языка; при этом его синтаксис по определенным правилам отображается в последовательность операторов, т. е. в программу. Мы по очереди рассмотрим оба этих метода, каждый из которых имеет свои преимущества и недостатки. При построении транслятора для конкретного языка программирования вряд ли потребуется высокая гибкость и параметризация, свойственные универсальной программе, тогда как программа грамматического разбора, предназначенная специально для данного языка, обычно оказывается более эффективной и с ней легче работать, поэтому такой подход предпочтителен. В обоих случаях полезно представлять заданный синтаксис в виде так называемого синтаксического графа, или графа распознавания, Такой граф отражает управление ходом работы при грамматическом анализе предложения.</div>
+<div>Для нисходящего грамматического разбора характерно, что цель анализа известна  с самого начала. Эта цель - распознать предложение, т. е. последовательность символов, которая может порождаться из начального символа. Применение порождающего правила, т. е. замена одного символа последовательностью символов, соответствует расщеплению одной цели на некоторое число подцелей, которые должны следовать в определенном порядке. Поэтому нисходящий метод можно называть также целеориентированным грамматическим разбором. При построении программы грамматического разбора  можно воспользоваться этим очевидным соответствием между нетерминальными символами и целями: для каждого нетерминального символа строится своя процедура грамматического разбора. Цель каждой такой процедуры - распознавание части предложения, которая может порождаться, из соответствующего нетерминального символа. Поскольку мы хотим построить граф, представляющий всю программу грамматического разбора, то каждый нетерминальный символ будет отображаться в подграф. Поэтому мы приходим к таким правилам построения синтаксического графа:</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">Правила построения графа:</span></div>
+<div><span style="color:#0000FF; font-style:italic; ">А1.</span> Каждый нетерминальный символ A с соответствующим множеством порождающих правил</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">А ::= <span style="font-weight:bold; font-style:italic; ">ξ</span><sub class="eSub">1</sub>|<span style="font-weight:bold; font-style:italic; ">ξ</span><sub class="eSub">2</sub>|…|<span style="font-weight:bold; font-style:italic; ">ξ</span><sub class="eSub">n</sub></span></div>
+<br>
+<div>отображается в синтаксический граф <span style="font-weight:bold; font-style:italic; ">А</span>, структура которого определяется правой частью порождающего правила в соответствии с А2 - А6.</div>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">А2.</span> Каждое появление терминального символа <span style="font-weight:bold; font-style:italic; ">х</span> в <span style="font-weight:bold; font-style:italic; "><span style="font-weight:bold; font-style:italic; ">ξ</span><sub class="eSub">i</sub> </span>соответствует оператору распознавания этого символа во входном предложении. На графе это изображается ребром, помеченным символом <span style="font-weight:bold; font-style:italic; ">х</span>, заключенным в кружок.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div><span style="color:#0000FF; font-style:italic; ">A3.</span> Каждому появлению нетерминального символа <span style="font-weight:bold; font-style:italic; ">В</span> в <span style="font-weight:bold; font-style:italic; "><span style="font-weight:bold; font-style:italic; ">ξ</span><sub class="eSub">i</sub></span>,- соответствует обращение к процедуре распознавания <span style="font-weight:bold; font-style:italic; ">В</span>. На графе это изображается ребром, помеченным символом <span style="font-weight:bold; font-style:italic; ">В</span>, заключенным в квадрат:</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div><span style="color:#0000FF; font-style:italic; ">А4.</span> Порождающее правило, имеющее вид</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">А ::= <span style="font-weight:bold; font-style:italic; ">ξ</span><sub class="eSub">1</sub>|<span style="font-weight:bold; font-style:italic; ">ξ</span><sub class="eSub">2</sub>|…|<span style="font-weight:bold; font-style:italic; ">ξ</span><sub class="eSub">n</sub></span></div>
+<br>
+<div>отображается в граф, где каждый квадрат получен применением правил А2-А6 к <span style="font-weight:bold; font-style:italic; ">ξ</span><sub class="eSub">i</sub>.</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<div><span style="color:#0000FF; font-style:italic; ">А5</span>. Строка <span style="font-weight:bold; font-style:italic; ">ξ</span>, имеющая вид</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">ξ = α<sub class="eSub">1</sub> α<sub class="eSub">2</sub>… α<sub class="eSub">n</sub></span></div>
+<br>
+<div>отображается в граф</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<div>где каждый квадрат получен применением правил А2-А6 к <span style="font-weight:bold; font-style:italic; ">α<sub class="eSub">i</sub></span></div>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">А6.</span> Строка<span style="font-weight:bold; font-style:italic; "> ξ</span>, имеющая вид</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;</div></div>
+<div><span style="font-weight:bold; font-style:italic; ">ξ = {α}</span></div>
+<br>
+<div>отображается в граф</div>
+<br>
+<div>где <span style="font-weight:bold; font-style:italic; ">α</span> получено применением  правил А2-А6 к <span style="font-weight:bold; font-style:italic; ">α</span>.</div>
+<br>
+<div><span style="font-weight:bold; ">Пример 5:</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">А ::= х|(В),</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">B ::= AC,</span>                                                   (1.7)</div>
+<div><span style="font-weight:bold; font-style:italic; ">C ::= {+A}</span></div>
+<br>
+<div>Здесь «+», х, (, и ) - терминальные символы, а { и } принадлежит расширенной БНФ и, следовательно, являются мета-символами. Язык, порождаемый из А, состоит из выражений с операндами х, знаком операции «+» и скобками. Примеры предложений:</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">х</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">(x)</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">(x+x)</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">((х))</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">...</span></div>
+<br>
+<div>Графы, полученные с помощью применения шести правил построения графов, показаны на рис. 1.1. Заметим, что эту систему графов можно свести в один граф, подставив соответственно <span style="font-weight:bold; font-style:italic; ">С</span> в <span style="font-weight:bold; font-style:italic; ">В</span> и<span style="font-weight:bold; font-style:italic; "> В</span> в <span style="font-weight:bold; font-style:italic; ">А</span> (см. рис. 6).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=6"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;Синтаксические графы для синтаксиса прим. 5</div></div>
+<div>Синтаксический граф является эквивалентным представлением грамматики языка; его можно использовать вместо множества порождающих правил БНФ. Это очень удобная форма, и во многих (если не в большинстве) случаев она предпочтительнее БНФ. </div>
+<div>Граф является подходящим представлением, которое может служить отправной точкой для разработчика языка.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=7"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;7.&nbsp;&nbsp; Сводный синтаксический граф, соответствующий прим. 5</div></div>
+<div>Граф дает более ясное и точное представление о структуре языка, а также позволяет лучше представить себе процесс грамматического разбора.</div>
+<div>Для того чтобы обеспечить детерминированный грамматический разбор с просмотром вперед на один символ, были установлены ограничения I и 2. Как проявляются эти ограничения при графическом представлении синтаксиса? Здесь особенно наглядно видны удобство и ясность такого представления.</div>
+<ol class="eList"><li>Ограничению 1 соответствует требование, чтобы при каждом разветвлении можно было выбрать ветвь, по которой будет идти дальнейший разбор по очередному символу на этой ветви. Это означает, что никакие две ветви не должны начинаться с одного и того же символа.</li>
+<li>Ограничению 2 соответствует требование, чтобы если какой-либо граф А можно пройти, не читая вообще никаких, входных символов, то такая «нулевая ветвь» должна помечаться всеми символами, которые могут следовать за <span style="font-weight:bold; font-style:italic; ">А</span>. (Это влияет на решение о переходе на эту ветвь.)</li>
+</ol>
+<div>Легко проверить, удовлетворяет ли некоторая система графов этим двум ограничениям, не обращаясь к представлению грамматики с помощью БНФ. В качестве вспомогательного шага для каждого графа <span style="font-weight:bold; font-style:italic; ">А</span> определяются множества <span style="font-weight:bold; font-style:italic; ">first(А)</span> и <span style="font-weight:bold; font-style:italic; ">follow(А)</span>. Затем непосредственно можно проверить выполнение ограничений 1 и 2. Систему графов, которая.удовлетворяет этим двум ограничениям, мы будем называть детерминированным синтаксическим графом.</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">4. Построение программы грамматического разбора для заданного синтаксиса</span></div>
+<div>Программу, которая распознает какой-либо язык, легко построить на основе его детерминированного синтаксического графа (если такой граф существует). Этот граф фактически представляет собой блок-схему программы. Но при ее разработке рекомендуется строго следовать правилам преобразования, подобным тем, с помощью которых можно предварительно получить из БНФ графическое представление синтаксиса. Эти правила перечислены ниже. Они применяются в определенном контексте, который предполагает наличие основной программы, содержащей процедуры, которые соответствуют различным подцелям, а также процедуру перехода к очередному символу.</div>
+<div>Для простоты мы будем считать, что предложение, которое нужно анализировать, представлено входным файлом <span style="font-weight:bold; font-style:italic; ">input</span> и что терминальные символы - отдельные значения типа char. Пусть символьная переменная <span style="font-weight:bold; font-style:italic; ">char ch</span> всегда содержит очередной читаемый символ. Тогда переход к следующему символу выражается оператором: <span style="font-weight:bold; font-style:italic; ">ch = fgetc(input);</span></div>
+<div>Следует отметить, что функция <span style="font-weight:bold; font-style:italic; ">char fgetc (FILE *fp)</span> является стандартной функцией языка С для чтения символа из файла и для ее использования необходимо в начале программы подключить соответствующий заголовочный файл директивой </div>
+<br>
+<pre class="eListing">#include &lt;stdio.h&gt;
+</pre>
+<br>
+<div>Основная программа будет состоять из оператора чтения первого символа, за которым следует оператор активации основной цели грамматического разбора. Отдельные процедуры, соответствующие целям грамматического разбора или графам, получаются по следующим правилам. Пусть оператор, полученный с помощью преобразования графа <span style="font-weight:bold; font-style:italic; ">S</span>, обозначается через <span style="font-weight:bold; font-style:italic; ">Т(S)</span>. </div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">Правила преобразования графа в программу:</span></div>
+<div><span style="color:#0000FF; font-style:italic; ">В1.</span> Свести систему графов к как можно меньшему числу отдельных графов с помощью соответствующих подстановок.</div>
+<div><span style="color:#0000FF; font-style:italic; ">В2.</span> Преобразовать каждый граф в описание процедуры в соответствии с приведенными ниже правилами ВЗ-В7.</div>
+<div><span style="color:#0000FF; font-style:italic; ">В3.</span> Последовательность элементов</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=8"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;8.&nbsp;&nbsp;</div></div>
+<div>переводится в составной оператор</div>
+<div><span style="font-weight:bold; font-style:italic; ">{</span><span style="font-weight:bold; font-style:italic; ">T(S<sub class="eSub">1</sub>);</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">T(S<sub class="eSub">2</sub>);</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">...</span><span style="font-weight:bold; font-style:italic; ">;</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">T(S<sub class="eSub">n</sub>) </span></div>
+<div><span style="font-weight:bold; font-style:italic; ">}</span></div>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">В4.</span> Выбор элементов</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=9"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;9.&nbsp;&nbsp;</div></div>
+<div>переводится в условный оператор</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">if (belongsTo (ch, L<sub class="eSub">1</sub>)) T(S<sub class="eSub">1</sub>)</span><span style="font-weight:bold; font-style:italic; ">;</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">else</span> <span style="font-weight:bold; font-style:italic; ">if (belongsTo(ch, L<sub class="eSub">2</sub>)) T(S<sub class="eSub">2</sub>);</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">else</span> <span style="font-weight:bold; font-style:italic; ">...</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">if (belongsTo (ch, L<sub class="eSub">n</sub>)) T(S<sub class="eSub">n</sub>);</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">else</span> <span style="font-weight:bold; font-style:italic; ">error</span><span style="font-weight:bold; font-style:italic; ">();</span></div>
+<br>
+<div>где <span style="font-weight:bold; font-style:italic; ">L<sub class="eSub">i</sub></span> означает множество начальных символов конструкции <span style="font-weight:bold; font-style:italic; ">S<sub class="eSub">i</sub> (L<sub class="eSub">i</sub> = first (S<sub class="eSub">i</sub>))</span>.где <span style="font-weight:bold; font-style:italic; ">L</span> означает множество начальных символов конструкции <span style="font-weight:bold; font-style:italic; ">S<sub class="eSub">i</sub></span> <span style="font-weight:bold; font-style:italic; ">(L<sub class="eSub">i</sub>=first(<span style="font-weight:bold; font-style:italic; ">S<sub class="eSub">i</sub></span>))</span>, а функция<span style="font-weight:bold; font-style:italic; "> belongsTo (ch, L<sub class="eSub">i</sub>)</span> возвращает истинное значение, если символ <span style="font-weight:bold; font-style:italic; ">ch</span> принадлежит соответствующему множеству начальных символов <span style="font-weight:bold; font-style:italic; ">L<sub class="eSub">i</sub></span> и ложное значение в противном случае. </div>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">В5.</span> Цикл вида</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=10"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;10.&nbsp;&nbsp;</div></div>
+<div>переводится в оператор</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">while (belongsTo (ch, L)) T(S);</span> </div>
+<br>
+<div>где <span style="font-weight:bold; font-style:italic; ">T(S)</span> есть отображение S в соответствии с правилами ВЗ-В7, a <span style="font-weight:bold; font-style:italic; ">L</span> есть множество <span style="font-weight:bold; font-style:italic; ">L=first(S)</span> (см. предыдущее примечание).</div>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">В6.</span> Элемент графа, обозначающий другой граф <span style="font-weight:bold; font-style:italic; ">А</span></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=11"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;11.&nbsp;&nbsp;</div></div>
+<div>переводится в оператор обращения к процедуре <span style="font-weight:bold; font-style:italic; ">А.</span></div>
+<div><span style="color:#0000FF; font-style:italic; ">В7.</span> Элемент графа, обозначающий терминальный символ</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=12"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;12.&nbsp;&nbsp;</div></div>
+<div>переводится в оператор</div>
+<br>
+<pre class="eListing">if(ch == 'x')   
+  ch = fgetc(input);
+else error (); 
+</pre>
+<br>
+<div>где <span style="font-weight:bold; font-style:italic; "><span style="font-weight:bold; font-style:italic; ">error</span>()</span> - функция, к которой обращаются при появлении неправильной конструкции.</div>
+<div>Теперь покажем применение этих правил на примере преобразования редуцированного графа, изображенного на рис. 7.</div>
+<br>
+<pre class="eListing">char  ch;
+void A ()
+{
+if (ch == 'x') ch = fgetc(input); 
+else
+  if (ch == '(' )
+  {
+   ch = fgetc(input);
+   A ();
+   while (ch == '+' )
+   {
+    ch = fqetc(input);
+    А ( );
+   }
+   if(ch == '}') ch=fgetc(input);
+   else error();
+  }
+else error();
+}
+
+void main(int argc, char **argv) {
+ch = fgetc (input); 
+/* ... */}
+</pre>
+<br>
+<div>При этом преобразовании свободно применялись некоторые очевидные правила программирования, позволяющие упростить программу. Например, при буквальном переводе четвертая строка имела бы вид: </div>
+<br>
+<pre class="eListing">if (ch == 'x' )
+if (ch == 'х') ch = fgetc (input ); else error (); 
+else ...
+</pre>
+<br>
+<div>Ясно, что ее можно сократить, как это сделано в программе. Операторы чтения в восьмой и двенадцатой строках тоже получены с помощью такого же упрощения. </div>
+<div>Полезно определить, когда вообще возможны подобные упрощения, и показать это непосредственно в виде графов. Два основных случая покрываются следующими дополнительными правилами: </div>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">В4а</span></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=13"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;13.&nbsp;&nbsp;</div></div>
+<br>
+<pre class="eListing">if (ch == 'xl')
+{
+  ch = fgetc (input);
+  T(S1);
+}
+else
+if (ch == 'x2')
+{
+  ch = fgetc(input);
+  T(S2);
+}
+else
+...
+if(ch = 'xn')
+{
+   ch = fgetc(input);
+   T(Sn);
+}
+else error ( );
+</pre>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">B5a</span></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=14"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;14.&nbsp;&nbsp;</div></div>
+<br>
+<pre class="eListing">while(ch == 'x')
+{
+ch = fgetc (input); 
+T(S);
+}
+</pre>
+<br>
+<div>Кроме того, часто встречающуюся конструкцию</div>
+<br>
+<pre class="eListing">ch = fgetc(input);
+T(S);
+while(W)
+{
+ch = fgetc(input);
+Т(S);
+}
+</pre>
+<br>
+<div>можно выразить короче:</div>
+<br>
+<pre class="eListing">do {
+   ch = fgetc (input};
+   Т(S);
+} while(W);
+</pre>
+<br>
+<div>Мы намеренно не описываем пока функцию <span style="font-weight:bold; font-style:italic; ">error()</span>. Поскольку сейчас нас интересует лишь, как определить, правильно ли входное предложение, мы можем считать, что эта процедура заканчивает работу программы. Конечно, на практике в случае появления неправильных конструкции нужно использовать более тонкие приемы. </div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">5. Построение таблично-управляемой программы грамматического разбора</span></div>
+<div>Вместо того чтобы для каждого языка составлять специальную программу по правилам, изложенным в предыдущем разделе, можно построить одну, универсальную программу грамматического разбора. Конкретные грамматики задаются этой универсальной программе в виде исходных данных, предшествующих предложениям, которые нужно разобрать. Универсальная программа работает в строгом соответствии с методом простого нисходящего грамматического разбора; поэтому она довольно проста, если основана на детерминированном синтаксическом графе, т. е. если предложения можно анализировать с просмотром вперед на один символ без возврата.</div>
+<div>В данном случае грамматика (предположим, что она представлена в виде детерминированного множества синтаксических графов) преобразуется в подходящую структуру данных, а не в структуру программы. Естественный способ представить граф - это ввести узел для каждого символа и связать эти узлы с помощью ссылок. Следовательно, "таблица" - это не просто массив. Узлы этой структуры представляют собой структуры (<span style="font-weight:bold; font-style:italic; ">struct</span>) с объединениями (<span style="font-weight:bold; font-style:italic; ">union</span>). Объединение позволяет идентифицировать тип узла. Первый идентифицируется терминальным символом, который он обозначает (<span style="font-weight:bold; font-style:italic; ">tsym</span>), второй ссылкой на структуру данных, представляющую соответствующий нетерминальный символ (<span style="font-weight:bold; font-style:italic; ">nsym</span>). Оба варианта объединения содержат две ссылки: одна указывает па следующий символ, последователь (<span style="font-weight:bold; font-style:italic; ">suс</span>), а другая связана со списком возможных альтернатив (<span style="font-weight:bold; font-style:italic; ">alt</span>). </div>
+<div>Графически узел можно изобразить как</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=15"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;15.&nbsp;&nbsp;</div></div>
+<div>Также нужен элемент, представляющий пустую последовательность, символ "пусто". Мы обозначим его с помощью терминального элемента, называемого <span style="font-weight:bold; font-style:italic; ">empty</span> </div>
+<br>
+<pre class="eListing">struct  node;
+typedef node *pointer;
+struct node {
+pointer suс;
+pointer alt;
+int isTerminal;
+union {
+       char tsym;
+       hpointer nsym;
+};
+}
+</pre>
+<br>
+<div><span style="font-weight:bold; font-style:italic; "><span style="font-weight:bold; font-style:italic; ">Правила преобразования графов в структурах данных </span>(аналогичны правилам В1-В7)</span></div>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">С1.</span> Свести систему графов к как можно меньшему числу отдельных графов с помощью соответствующих подстановок.</div>
+<div><span style="color:#0000FF; font-style:italic; ">С2.</span> Преобразовать каждый граф в структуру данных согласно правилам СЗ-С5, приведенным ниже.</div>
+<div><span style="color:#0000FF; font-style:italic; ">СЗ.</span> Последовательность элементов (см. рисунок к правилу ВЗ) преобразуется в следующий список узлов:</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=16"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;16.&nbsp;&nbsp;</div></div>
+<div><span style="color:#0000FF; font-style:italic; ">С4.</span> Список альтернатив (см. рисунок к правилу В4) преобразуется в такую структуру данных:</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=17"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;17.&nbsp;&nbsp;</div></div>
+<div><span style="color:#0000FF; font-style:italic; ">С5.</span> Цикл (см. рисунок к правилу В5) преобразуется в следующую структуру:</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=18"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;18.&nbsp;&nbsp;</div></div>
+<div>В качестве примера рассмотрим построение структуры данных для сводного синтаксического графа, приведенного выше на рис. 10.2.</div>
+<div>Структура данных идентифицируется узлом-заголовком, который содержит имя нетерминального символа (цели), к которому относится структура. Вообще говоря, заголовок не является необходимым, так как можно вместо поля цели указывать непосредственно на "вход" в соответствующую структуру. Однако заголовок можно использовать для хранения выводимого на печать имени структуры:</div>
+<br>
+<pre class="eListing">struct header;
+typedef header *hpointer;
+struct header {
+pointer entry;
+char sym;
+};
+</pre>
+<br>
+<div>Программа, производящая грамматический разбор предложения, представленного в виде последовательности символов входного файла, состоит из повторяющегося оператора, описывающего переход от одного узла к следующему узлу. </div>
+<div>В поле sym для терминального символа помещается сам символ, для нетерминального ссылка на соответствующую структуру. Она оформлена как процедура, задающая интерпретацию графа; если встречается узел, представляющий нетерминальный символ, то интерпретация графа, на который ссылается данный узел, предшествует завершению интерпретации текущего графа. Следовательно, процедура интерпретации вызывается рекурсивно. Если текущий символ (<span style="font-weight:bold; font-style:italic; ">sym</span>) входного файла совпадает с символом в текущем узле структуры данных, то процедура переходит к узлу, на который указывает поле suc, иначе - к узлу, на который указывает поле <span style="font-weight:bold; font-style:italic; ">alt</span>. Полученная структура данных приведена на рис. 12.1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/lab4.mod/?n=19"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;19.&nbsp;&nbsp;</div></div>
+<br>
+<pre class="eListing">void parse (hpointer goal, int &amp;match)
+{
+  pointer s;
+  s = goal-&gt;entry;
+  do
+  {
+   if (s-&gt;isTerminal)
+     {
+      if (s-&gt;tsym == sym)
+        {
+          match = 1;
+          sym = fgetc (input) ;
+        }
+      else
+          match = (s-&gt;tsym == empty)? 1 : 0;
+    }
+   else
+      parse(s-&gt;nsym, match);
+   if(match)
+     s = s-&gt;suc;
+   else
+     s=s-&gt;alt;
+} while (s != NULL);
+}
+</pre>
+<br>
+<div>Программа грамматического разбора, приведенная выше, "стремится" к новой подцели<span style="font-weight:bold; font-style:italic; "> G</span>, как только она появляется, не проверяя даже, содержится ли текущий символ входного файла во множестве начальных символов соответствующего графа <span style="font-weight:bold; font-style:italic; ">first(G)</span>. Это предполагает, что в синтаксическом графе не должно существовать выбора между несколькими альтернативными нетерминальными элементами. В частности, если какой-либо нетерминальный символ может порождать пустую последовательность, то ни одна из правых частей соответствующих ему порождающих правил не должна начинаться с нетерминального символа. </div>
+<div>При такой организации грамматического разбора программа обычно считывает представленную в определенном формате грамматику языка, заполняя при этом соответствующие структуры данных, и только после этого читает текст на разбираемом языке и выполняет его синтаксический анализ.</div>
+<div>На основе этой программы грамматического разбора можно построить более сложные таблично-управляемые программы грамматического разбора, которые могут работать с более широкими классами грамматик. Небольшая модификация позволяет также осуществлять и возвраты, но это будет сопровождаться значительной потерей эффективности.</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">6. </span><span style="font-weight:bold; font-style:italic; ">Преобразование БНФ в структуры данных, управляющие грамматическим разбором</span></div>
+<div>Транслятор, распознающий порождающие правила БНФ и преобразующий их в какое-то другое представление, как раз служит примером программы, входные данные которой можно рассматривать как предложения, принадлежащие некоторому языку. Действительно, саму БНФ можно считать некоторым языком, имеющим свой собственный синтаксис, который, разумеется, также можно описать с помощью порождающих правил БНФ. Следовательно, его транслятор может служить примером распознавателя, который помимо этого преобразует входные данные, т. е., вообще говоря, является процессором. Поэтому мы будем действовать следующим образом:</div>
+<br>
+<div><span style="color:#0000FF; font-style:italic; ">Шаг 1.</span> Определим синтаксис метаязыка, называемого РБНФ (расширенной БНФ).</div>
+<div><span style="color:#0000FF; font-style:italic; ">Шаг 2.</span> Построим распознающую программу для РБНФ</div>
+<div><span style="color:#0000FF; font-style:italic; ">Шаг 3.</span> Расширив эту программу, превратим ее в транслятор и объединим с таблично-управляемой программой грамматического разбора.</div>
+<br>
+<div>Пусть метаязык, т. е. язык, на котором пишутся синтаксические правила, описан следующими порождающими правилами:</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; ">&lt;правило&gt;       ::= &lt;символ&gt; = &lt;выражение&gt;</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">&lt;выражение&gt; ::= &lt;терм&gt; {&lt;терм&gt;}</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">&lt;терм&gt;            ::= &lt;фактор&gt; {&lt;фактор&gt;}</span>                                    (1.12)</div>
+<div><span style="font-weight:bold; font-style:italic; ">&lt;фактор&gt;       ::= &lt;символ&gt; | [&lt;терм&gt;]</span></div>
+<br>
+<div>Заметим, что в порождающих правилах входного языка используются иные метасимволы, чем в БНФ. Это делается по двум причинам:</div>
+<ol class="eList"><li>В (1.12) нужно отличать символы языка от метасимволов.</li>
+<li>Желательно использовать более привычные символы печатающего устройства, в частности использовать один знак (=) вместо (::= ).</li>
+</ol>
+<br>
+<div>Соответствие между обычной БНФ и нашей входной версией показано в табл. 1</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTable">БНФ</td><td class="eTable">РБНФ</td></tr>
+<tr align="center"><td class="eTable">::=</td><td class="eTable">=</td></tr>
+<tr align="center"><td class="eTable">|</td><td class="eTable">,</td></tr>
+<tr align="center"><td class="eTable">{</td><td class="eTable">[</td></tr>
+<tr align="center"><td class="eTable">}</td><td class="eTable">]</td></tr>
+</tbody></table><br>
+<div>Кроме того, каждое наше порождающее правило должно заканчиваться точкой. При использовании этого входного языка для описания синтаксиса примера 1 (1.7) мы получаем</div>
+<br>
+<div><span style="font-weight:bold; font-style:italic; "><span style="font-weight:bold; font-style:italic; ">A = х, (В)</span>.</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">В = АС.</span></div>
+<div><span style="font-weight:bold; font-style:italic; ">C=[+A]</span></div>
+<br>
+<br>
+<div><span style="color:#0000FF; font-weight:bold; font-style:italic; ">Литература</span></div>
+<ol class="eList"><li>Ammann U. The Method of Structured Programming Applied to the Development of a Compiler. - International Computing Symposium 1973, A Gunther et a!., eds., Amsterdam: North-Holland Publishing Co., 1974, 93-99.</li>
+<li>Cohen D. J., Gotlieb С. С. A List Structure Form of Grammars for Syntactic Analysis.- Сотр. Surveys, 2, No. I, 1970, 65-82.</li>
+<li>Floyd R. V. The Syntax of Programming Languages - A Survey. - IEEE Trans., EC-13, 1964, 346-353.</li>
+<li>Cries D. Compiler Construction for Digital Computers. - New-York: Wiley, 1971. [Имеется перевод: ГРИС Д. Конструирование компиляторов для цифровых вычислительных машин.-М.: Мир, 1975.]</li>
+<li>Knuth D. E. Top-down Syntax Analysis. - Ada fnformatica, 1, No. 2, 1971,79-110.</li>
+<li>Lewis P. M., STEARNS R. E. Syntax-directed Transduction, /. ACM. 15, No. 3, 1968, 465-488.</li>
+<li>Naur P. Report on the Algorithmic Language ALGOL 60. - ACM, 6, No. I, 1963, 1 - 17.</li>
+<li>Schorre D. V. META II, A Syntax-oriented Compiler Writing Language. - Proc. ACM Nat I. Conl, 19, 1964, D 1 3. 1 - 11.</li>
+<li>Wirth N. The Design of a PASCAL Compiler. -Software -Practice and Experience, 1. No. 4, 1971, 309-333.</li>
+</ol>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-29/">← Оглавление</a>
         <a href="/rk6-edu/course-29/mod-70.html">‹ Предыдущий</a>

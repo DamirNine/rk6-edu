@@ -23,7 +23,51 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-24.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Параллельный программируемый интерфейс</a>
+</div>
+<a name="T1341214224"></a>
+<a name="T46687875"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">УВВ</a>, обеспечивающие обмен с внешними устройствами в параллельном формате носит название <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">параллельного программируемого интерфейса</a>, иногда также называемого параллельным портом. Архитектура его представлена на рис.&nbsp;1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_16_1.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Параллельный программируемый интерфейс</div></div>
+<a name="T1942936499"></a>
+<a name="T1418249701"></a>
+<div>Буфер шины данных — усилитель, предназначенный для подключения к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шине данных</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a>.</div>
+<div>Устройство управления управляет работой параллельного порта. К устройству управления подходят управляющие сигналы <span class="eOperator">RD,</span> <span class="eOperator">WR,</span> <span class="eOperator">CS</span>.</div>
+<div>Порт представляет собой регистр и усилитель, обеспечивающий подключение к разрядам регистра внешних линий связи. При работе порта в режиме вывода данных, информация, содержащаяся в регистре, выдается на линии порта в виде соответствующих напряжений. При работе порта в режиме ввода данных, внешнее устройство устанавливает на линиях порта напряжения, соответствующие передаваемым данным, при этом в регистре порта устанавливаются значения, соответствующие этим напряжениям, т.е. передаваемые данные.</div>
+<div>Регистр управления содержит данные, определяющие режим работы параллельного интерфейса (например, направление передачи данных через порт — ввод или вывод). Настройка интерфейса на требуемый режим работы (программирование) осуществляется путем записи соответствующего значения в регистр управления. Эта запись выполняется микропроцессором перед началом работы с УВВ.</div>
+<div>Адресные линии (<span class="eOperator">A0</span>, <span class="eOperator">A1</span>) необходимы для выбора внутреннего регистра, в который будет происходить запись (чтение) информации при выполнении цикла обмена с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МП</a>. В представленном на рисунке примере имеются только два внутренних регистра — сам порт и регистр управления. Часто в одной микросхеме помещают несколько портов.</div>
+<div>Временная диаграмма записи данных а параллельный порт представлена на рис.&nbsp;2.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_16_1.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>Микропроцессор устанавливает соответствующее значение адреса на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шине адреса</a> и данные на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шине данных</a>. После активизации сигнала разрешения записи <span class="eOperator">WR</span> данные с шины данных записываются в регистр-порт и выдаются на внешние линии связи (выходы порта). На этих выходах данные будут существовать до тех пор, пока новые данные не будут записаны в порт.</div>
+<div>Временная диаграмма чтения данных из порта представлена на рис.&nbsp;3.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_16_1.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<div>Микропроцессор устанавливает соответствующее значение адреса на шине. После активизации сигнала разрешения чтения <span class="eOperator">RD</span> данные из регистра-порта (соответствующие напряжениям на входах порта) поступают на шину данных. Внешнее устройство, разумеется, должно установить данные на линиях порта до начала указанной процедуры чтения.</div>
+<div>Запись данных в регистр управления (программирование интерфейса) происходит аналогично записи данных в регистр – порта (рис.&nbsp;2), при этом на шине адреса устанавливается адрес, соответствующие регистру управления, а данные на линиях порта, естественно, не изменяются.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-22.html">‹ Предыдущий</a>

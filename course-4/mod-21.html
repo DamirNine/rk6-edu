@@ -23,7 +23,80 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-22.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Гиперсвязи (спецификации XLink и XPointer)</a>
+</div>
+<a name="T412171630"></a>
+<a name="T83638386"></a>
+<a name="T12534469"></a>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке XML</a> расширены возможности гиперсвязей, которым посвящены спецификации <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">XLink</a> и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">XPointer</a>.  В XLink описаны связи между документами, в XPointer — связи внутри документа. </div>
+<a name="T108051180"></a>
+<div>В XML  возможны как простые связи, подобные  <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">HTML</a> гиперссылкам, так и  связи многонаправленные,  связывающие   многие документы, а также связи, встраивающие вызываемый текст  в исходный документ или в дополнительное окно.  </div>
+<div>Структура гипертекста сохраняется при изменении адресов страниц, благодаря использованию промежуточной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">БД</a> ссылок. Если в системе документов число  связей велико, то внесение изменений может потребовать чрезвычайно сложной работы по отысканию и редактированию связей.   При наличии  базы данных ссылок  (linkbase)  не нужно отслеживать связи по всему документу, достаточно редактировать эту базу. </div>
+<div>Для простановки ссылок применяют атрибут   xlink:type.  Этот атрибут, указываемый в элементах размеченного документа, может иметь  следующие основные значения:</div>
+<ul class="eList"><li>simple: простая связь; </li>
+<li>extended: расширенная  связь; </li>
+<li>locator: указание на внешний ресурс; </li>
+<li>resource: указание на внутренний ресурс; </li>
+<li>arc: последовательный обход   ресурсов. </li>
+</ul>
+<div>Пример  простой связи:</div>
+<pre class="eListing">&lt;author xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:type="simple"
+      xlink:href="http://www.library.ru/"&gt;
+  I.Ivanov
+&lt;/author&gt;
+</pre>
+<div>Здесь в элементе  author атрибут xlink:href  связывает содержание  "I.Ivanov" данного элемента   с удаленным документом, находящимся по алресу  http://www.library.ru/. Следовательно, I.Ivanov становится гиперссылкой на http://www.library.ru/. </div>
+<div>Другой пример:</div>
+<pre class="eListing">&lt;item xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:type="simple"
+      xlink:href="unit.xml"&gt; 
+  CPU
+&lt;/item&gt;
+</pre>
+<div>В элементе item значение атрибута xlink:href - это относительный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">URL</a> unit.xml. Этот связующий элемент описывает соединение элемента item текущего документа, содержание которого "CPU", с документом с именем unit.xml, находящимся на том же <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сервере</a>, в том же каталоге, что и документ, в котором появляется эта связь.</div>
+<div>В следующем примере  в отличие от предыдущего случая   активизация связи происходит автоматически, благодаря атрибуту xlink:actuate="onLoad",  а атрибут xlink:show="embed" указывает, что  результат будет встроен в текущий документ, а не заменит его:</div>
+<pre class="eListing">&lt;IMAGE xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:type="simple" xlink:href="fig.gif"
+      xlink:actuate="onLoad" xlink:show="embed"/&gt;
+</pre>
+<div>Атрибуты actuate и show могут иметь также другие значения. Например, значение onRequest атрибута actuate указывает, что связь должна активироваться только  при запросе ее выбором ссылки, как это реализовано в обычных связях HTML. Значение атрибута show, равное replace, также приводит к результату, аналогичному с  применением HTML, т.е. к замене  текущего документа вызываемым.   Если значение  show равно new, то активизация связи приводит к  открытию нового окна, в котором отображается вызываемый ресурс. Если значение  show равно other, то  приложение будет искать другую разметку,  которая должна объяснить, что делать. </div>
+<div>Расширенные связи могут быть многонаправленными  и внешними,  связывающими удаленные и локальные ресурсы. </div>
+<div>Локальный ресурс является частью элемента расширенной связи, значение атрибута xlink:type  которого равно resource.</div>
+<div> Элемент, ссылающийся на удаленный ресурс, может иметь любое имя, но включать атрибут xlink:type, значением которого является locator. Каждый элемент типа locator   содержит атрибут xlink:href, значением которого является URI  удаленного ресурса.</div>
+<div>Сами расширенные связи обозначаются с помощью значения extended атрибута xlink:type:</div>
+<pre class="eListing">&lt;device xmlns:xlink="http://www.w3.org/1999/xlink"
+       xlink:type="extended"&gt;
+  &lt;component1 xlink:type="locator"
+       xlink:href="http://..."/&gt;
+  &lt;component2 xlink:type="locator"
+       xlink:href="http://..."/&gt;
+</pre>
+<div>При многонаправленных связях возможны различные пути обхода ресурсов.    Участки пути, называемые ребрами (arc), представляются с помощью элементов, у которых значение атрибута xlink:type равно arc. Правила обхода указываются добавлением атрибутов xlink:show и xlink:actuate к элементам типа arc. </div>
+<div>Для указания направления обхода используются атрибуты to и from. Сами  ресурсы помечаются значениями атрибута xlink:label, например, xlink:label="А".    Тогда, если атрибут xlink:from равен A, а атрибут xlink:to  равен B, то тогда ребро направляется из ресурса, у которого атрибут xlink:label равен A, в ресурс, чей атрибут xlink:label равен B. Например:</div>
+<pre class="eListing">&lt;CONNECTION xlink:type="arc" 
+      xlink:from="A"
+      xlink:to="B"
+      xlink:show="replace"
+      xlink:actuate="onRequest"/&gt;
+</pre>
+<br>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-20.html">‹ Предыдущий</a>

@@ -23,7 +23,78 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-56.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">УСО для ввода информации</a>
+</div>
+<a name="T842523107"></a>
+<a name="T1163657660"></a>
+<a name="T182897913"></a>
+<div>Рассмотрим особенности организации устройств сопряжения с объектом (<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">УСО</a>) при использовании однокристальных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микроЭВМ</a> в качестве основы для построения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессорной системы управления</a> (на примере использования микроконтроллера серии <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MCS-51</a>).</div>
+<div>Рассмотрим следующие разновидности УСО: УСО для ввода данных без преобразования, для ввода данных с преобразованием из непрерывной формы в дискретную, из дискретной в дискретную и УСО для ввода данных в последовательном формате.</div>
+<div class="eSubTitle">УСО для ввода данных без преобразования</div>
+<div>Под вводом информации без преобразования следует понимать ввод информации с устройства, обеспечивающего ее передачу в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельном двоичном формате</a> (пример — цифровой датчик положения). В этом случае УСО должно включать в себя параллельный порт. Так как однокристальный микроконтроллер уже имеет в своем составе четыре параллельных порта, необходимо всего лишь подключить параллельные линии передачи информации (например, выходы цифрового датчика) ко входам соответствующего параллельного порта микроЭВМ.</div>
+<div>В случае, если разрядность принимаемых данных превышает разрядность параллельного порта (8 бит), необходимо использовать несколько параллельных портов. Для обеспечения корректности вводимых данных, с учетом того, что ввод осуществляется "побайтно", перед началом собственно ввода необходимо "зафиксировать" полное вводимое <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">двоичное число</a> в буферных регистрах с целью обеспечения его неизменности во время всего процесса ввода (рис.&nbsp;1).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_13.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>На рис.&nbsp;1 представлен вариант УСО для случая 16-разрядного датчика. Для ввода информации используются порты <span class="eOperator">Р1</span> и <span class="eOperator">Р0</span> микроконтроллера. Для фиксации данных с датчика на время цикла ввода используются два буферных регистра. Фиксация данных в буферном регистре производится по заднему фронту сигнала <span class="eOperator">STB.</span> Этот сигнал соединен с одним из выходов порта <span class="eOperator">P2</span> (<span class="eOperator">Р2.0</span>). Формирование строба на входе буферного регистра осуществляется путем последовательной установки "1" и "0" на выходе 0 порта <span class="eOperator">Р2</span>.</div>
+<div>Окончательно процедура ввода данных выглядит следующим образом:</div>
+<ol class="eList"><li>Установить нулевой бит порта <span class="eOperator">Р2</span> в "1" (начало стробирующего импульса).</li>
+<li>Установить нулевой бит порта <span class="eOperator">Р2</span> в "0" (окончание стробирующего импульса, данные фиксируются в буферных регистрах).</li>
+<li>Прочитать данные из порта <span class="eOperator">Р1</span> (ввод младшего байта данных с датчика).</li>
+<li>Прочитать данные из порта <span class="eOperator">Р0</span> (ввод старшего байта данных с датчика).</li>
+</ol>
+<div class="eSubTitle">УСО для ввода данных с преобразованием из непрерывной формы в дискретную</div>
+<a name="T1489169639"></a>
+<div>Для собственно преобразования из непрерывной формы в дискретную используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аналого-цифровой преобразователь</a> (АЦП), подключаемый к одному из параллельных портов микроконтроллера (рис.&nbsp;2).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_13.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>Для запуска АЦП можно использовать:</div>
+<ul class="eList"><li>Сигнал с внешнего генератора — для периодического запуска АЦП независимо от микроконтроллера.</li>
+<li>Стартовый импульс, формируемый на одном из выходов одного из параллельных портов микроконтроллера (рис.&nbsp;3).</li>
+</ul>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_13.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<div>В приведенной на рис.&nbsp;3 схеме для запуска АЦП необходимо установить бит 0 порта <span class="eOperator">Р0</span> в "1", формируя, таким образом, передний фронт запускающего импульса.</div>
+<a name="T409478196"></a>
+<a name="T1616495597"></a>
+<div>Для анализа готовности УСО можно использовать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">асинхронный способ</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод обмена по прерыванию</a>. Обмен с использованием <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ПДП</a> неприменим, так как он не поддерживается рассматриваемым микроконтроллером.</div>
+<div>Для организации асинхронного обмена выполняется подключение выхода готовности АЦП ко входу одного из параллельных портов микроконтроллера (рис.&nbsp;4).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_13.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<div>В приведенном на рис.&nbsp;4 примере для анализа готовности АЦП используется первый вход порта <span class="eOperator">Р0</span>. Таким образом, для того, чтобы проверить готовность АЦП к обмену необходимо проанализировать значение первого бита входного регистра порта <span class="eOperator">Р0</span>.</div>
+<div>Для организации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обмена по прерываниям</a>, сигнал готовности необходимо соединить с одним из входов запроса на прерывание. В рассматриваемом микроконтроллере таких входов два, они соответствуют входам 2 и 3 порта <span class="eOperator">Р3</span>.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_13.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;</div></div>
+<div>На рис.&nbsp;5 вход <span class="eOperator">Р3.2</span> использован в качестве входа запроса на прерывание от внешнего источника. Обратите внимание, что в этом случае порт <span class="eOperator">Р3</span> требует предварительной настройки, показывающей, что его вторая линия будет использоваться в режиме альтернативной функции (сигнал запроса на прерывание), а не как линия порта ввода-вывода.</div>
+<div class="eSubTitle">УСО для ввода данных с преобразованием из дискретной формы в дискретную</div>
+<div>УСО этого типа рассмотрены в модуле <a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">УСО для ввода данных с преобразованием из дискретной формы в дискретную</a> на примере ввода с импульсных датчиков скорости и положения. В обоих случаях основным элементом УСО является счетчик. Микроконтроллер уже имеет в своем составе внутренний счетчик, поэтому сигнал с импульсного датчика должен быть подключен к счетному входу одного из внутренних счетчиков (<span class="eOperator">Р3.4</span> или <span class="eOperator">Р3.5</span>). Вся логика работы УСО реализуется программно внутри микроконтроллера.</div>
+<div class="eSubTitle">УСО для ввода данных в последовательном формате</div>
+<div>Для ввода данных в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">последовательном формате</a> используется внутренний последовательный порт микроконтроллера, входом которого является линия <span class="eOperator">Р3.0</span>.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-54.html">‹ Предыдущий</a>

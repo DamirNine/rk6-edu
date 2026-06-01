@@ -23,7 +23,57 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-70.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Поэлементная обработка массивов</a>
+</div>
+<a name="T1436963680"></a>
+<div>Примерами <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">поэлементной обработки массивов</a>служат следующие задачи: нахождение суммы элементов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a>, произведения элементов, среднего арифметического, среднего геометрического, подсчет количества элементов, отвечающих определенному условию или обладающих некоторыми признаками, а также их суммы, произведения и т.д. Кроме того, к этой группе могут быть отнесены задачи ввода и вывода массивов, а также формирование или замена значений всех элементов значениями, подчиняющимися определенному закону. Особенностью задач класса является то, что количество обрабатываемых элементов массива известно и шаг обработки равен единице. Это позволяет использовать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">счетные циклы</a>, параметр которых обеспечивает доступ к элементам, а шаг изменения индекса равен единице или минус единице. Однако, возможно применение и других типов циклов.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Написать программу определения максимального элемента массива и его положения в массиве.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/odno_typ.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Схема алгоритма</div></div>
+<div><span class="eOperator">#include &lt;stdio.h&gt;</span></div>
+<div><span class="eOperator">int main()</span></div>
+<div><span class="eOperator">{</span><span class="eOperator"> </span><span class="eOperator">float a[5], amax;</span></div>
+<div><span class="eOperator">  int i, imax;</span></div>
+<div>    <span class="eOperator">puts("Input 5 values:");</span></div>
+<div>    <span class="eOperator">for(i=0;i&lt;5;i++)</span></div>
+<div><span class="eOperator">     scanf("%f",&amp;a[i]);</span></div>
+<div><span class="eOperator">  printf("\n");</span></div>
+<div>    <span class="eOperator">amax=a[0];</span></div>
+<div><span class="eOperator">  imax=0;</span></div>
+<div>    <span class="eOperator">for(i=1;i&lt;5;i++)</span></div>
+<div>        <span class="eOperator">if(a[i]&gt;amax)</span></div>
+<div>            <span class="eOperator">{amax=a[i];</span></div>
+<div><span class="eOperator">       imax=i;</span></div>
+<div>             <span class="eOperator">}</span></div>
+<div>    <span class="eOperator">puts("Values:");</span></div>
+<div>    <span class="eOperator">for(i=0;i&lt;5;i++)</span></div>
+<div><span class="eOperator">    printf("%7.2f",a[i]);</span></div>
+<div>   <span class="eOperator"> printf("\n");</span></div>
+<div>     <span class="eOperator">printf("Max = %7.2f number = %5d\n",amax, imax);</span></div>
+<div><span class="eOperator">}</span></div>
+</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Необходимо помнить, что подобное использование функции <span class="eOperator">scanf()</span> (без проверки кода ее завершения) может приводить к ошибкам ввода.</div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-68.html">‹ Предыдущий</a>

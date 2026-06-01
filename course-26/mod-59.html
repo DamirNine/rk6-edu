@@ -23,7 +23,48 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-60.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Операции с указателями</a>
+</div>
+<a name="T688385736"></a>
+<div>Можно выполнять некоторые <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операции с указателями</a> унарные операции: инкремент и декремент. При выполнении операций ++ и — значение указателя увеличивается или уменьшается на длину типа, на который ссылается используемый указатель.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">int *ptr, a[10];
+ptr=&amp;a[5];
+ptr++;      /* равно адресу элемента a[6] */
+ptr--;      /* равно адресу элемента a[5] */
+</pre>
+</div>
+<div>В бинарных операциях сложения и вычитания могут участвовать указатель и величина типа <span class="eOperator">int</span>. При этом результатом операции будет указатель на исходный тип, а его значение будет на указанное число элементов больше или меньше исходного.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">int *ptr1, *ptr2, a[10];
+int i=2;
+ptr1=a+(i+4);   /*  равно адресу элемента a[6] */
+ptr2=ptr1-i;    /*  равно адресу элемента a[4] */
+</pre>
+</div>
+<div>В операции вычитания могут участвовать два указателя на один и тот же тип. Результат такой операции имеет тип <span class="eOperator">int</span> и равен числу элементов исходного типа между уменьшаемым и вычитаемым, причем если первый адрес младше, то результат имеет отрицательное значение.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">int *ptr1, *ptr2, a[10];
+int i;
+ptr1=a+4;
+ptr2=a+9;
+i=ptr1-ptr2;  /*   равно 5   */
+i=ptr2-ptr1;  /*   равно -5  */
+</pre>
+</div>
+<div>Значения двух указателей на одинаковые типы можно сравнивать в операциях ==, !=, &lt;, &lt;=, &gt;, &gt;= при этом значения указателей рассматриваются просто как целые числа, а результат сравнения равен 0 (ложь) или 1 (истина).</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><pre class="eListing">int *ptr1, *ptr2, a[10];
+ptr1=a+5;
+ptr2=a+7;
+if (prt1&gt;ptr2) a[3]=4;
+</pre>
+</div>
+<div>В данном примере значение <span class="eOperator">ptr1</span> меньше значения <span class="eOperator">ptr2</span> и поэтому оператор <span class="eOperator">a[3]=4</span> не будет выполнен.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-58.html">‹ Предыдущий</a>

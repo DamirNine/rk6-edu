@@ -23,7 +23,95 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-88.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Применение монитора для решения задачи "читатели-писатели"</a>
+</div>
+<a name="T469209868"></a>
+<div>Представим себе сложный объект управления, например летательный аппарат или робот-манипулятор, управляемый цифровой системой управления. Как правило, в этих случаях используется система из нескольких приводов. Для управления каждым приводом имеется свой управляющий <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a>, рассчитывающий значение управляющего сигнала. В то же время, имеются датчики, предоставляющие информацию о текущем состоянии объекта управления. Так как информация с датчиков может потребоваться сразу нескольким управляющим процессам, ввод информации, как правило, осуществляется специальными процессами. Эти процессы получают информацию с датчиков и помещают их в ЗУ для того, чтобы управляющие процессы могли затем, обратившись к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЗУ</a>, получить эту информацию (рис.&nbsp;1).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_16.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T653404627"></a>
+<a name="T432805316"></a>
+<div>Таким образом, мы имеем несколько процессов, записывающих информацию с общее ЗУ и несколько процессов, читающих информацию из общего ЗУ. Процессы первого типа получили название "<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">процессов-писателей</a>", процессы второго типа — "<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">процессов-читателей</a>". Процессы-писатели получают данные с датчиков и записывают в ЗУ, процессы-читатели читают данные из ЗУ и используют их для решения задачи управления.</div>
+<a name="T2111903000"></a>
+<div>Совершенно очевидно, что все процессы обращаются к общему <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ресурсу</a> — ЗУ. Следовательно, должна быть предусмотрена их синхронизация. Правила синхронизации следующие:</div>
+<ul class="eList"><li>Не допускается одновременное обращение к ЗУ читателей и писателей.</li>
+<li>Только один процесс-писатель может иметь доступ к ЗУ в определенный момент времени.</li>
+<li>Несколько процессов-читателей могут иметь доступ к ЗУ в определенный момент времени.</li>
+</ul>
+<a name="T601372728"></a>
+<div>Таким образом, должна быть решена задача взаимоисключения между читателями и писателями с одной стороны, и между различными писателями – с другой стороны. Такая задача может быть решена с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">монитора</a> ресурсов. Рассмотрим пример такого монитора.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">Program Monitor 2;
+var Read_perm, Write_perm : condition;
+    Read_Queue, Write_Queue, Somb_write  : boolean;
+    Readers : integer;
+
+Procedure Start_Read;
+begin
+  If (Somb_Write Or WriteQueue) then Wait(Read_Perm);
+  Readers:=Readers+1;
+end;
+
+Procedure Finish_Read;
+begin
+  Readers:=Readers-1;
+  If (Readers=0) then Signal(Write_Perm);
+end;
+
+Procedure Start_Write;
+begin
+  If (Readers&gt;0 Or Somb_Write) then Wait(Write_Perm);
+  Somb_Write:=True;
+end;
+
+Procedure Finish_Write;
+begin
+  Somb_Write:=False;
+  If Read_Queue then Signal(Read_Perm) else Signal(Write_Perm);
+end;
+
+begin
+  Readers:=0;
+  Somb_Write:=False;
+  Read_Queue:=False;
+  Write_Queue:=False;
+end.
+</pre>
+</div>
+<div>По сути дела, в этом мониторе доступ по чтению и записи в ЗУ рассматриваются как два отдельных ресурса. Соответственно, мы имеем две пары процедур: <span class="eOperator">Start_Read</span> и <span class="eOperator">Finish_Read</span> для доступа по чтению, <span class="eOperator">Start_Write</span> и <span class="eOperator">Finish_Write</span> для доступа по записи.</div>
+<div>Глобальные переменные:</div>
+<ul class="eList"><li><span class="eOperator">Read_Perm</span> — идентификатор ресурса "доступ к ЗУ по чтению";</li>
+<li><span class="eOperator">Write_Perm</span> — идентификатор ресурса "доступ к ЗУ по записи";</li>
+<li><span class="eOperator">Read_Queue</span> — признак того, что в очередь процессов, ожидающих доступа по чтению, не пуста;</li>
+<li><span class="eOperator">Write_Queue</span> — признак того, что в очередь процессов, ожидающих доступа по записи, не пуста;</li>
+<li><span class="eOperator">Somb_Write</span> – признак того, что кто-то из процессов-писателей осуществляет запись в ЗУ в данный момент;</li>
+<li><span class="eOperator">Readers</span> — количество процессов-читетелей, имеющих доступ к ЗУ в данный момент</li>
+</ul>
+<div>Процедуры монитора:</div>
+<ul class="eList"><li><span class="eOperator">Start_Read.</span> Вызывается процессом-читаталем при попытке получить доступ к ресурсу (ЗУ). Если в этот момент доступ имеет какой-либо процесс-писатель или хотя бы один процесс-писатель стоит в очереди, процесс-читатель, вызвавший эту процедуру, помещается в очередь и блокируется (глобальной процедурой <span class="eOperator">Wait</span>). Если же никто не пишет и не хочет писать, количество читателей (<span class="eOperator">Readers</span>) увеличивается на 1 и процесс получает доступ. Таким образом, данная процедура обеспечивает процессам-писателям приоритет в получении доступа к ресурсу.</li>
+<li><span class="eOperator">Finish_Read.</span> Вызывается процессом-читаталем, закончившим чтение и желающим освободить ресурс. Уменьшает на 1 количество читателей (<span class="eOperator">Readers</span>), и если оно стало равно 0 (т.е. никто больше не читает), через глобальную процедуру <span class="eOperator">Signal</span> делается попытка предоставить доступ на запись какому-либо процессу-писателю, находящемуся в соответствующей очереди.</li>
+<li><span class="eOperator">Start_Write.</span> Вызывается процессом-писателем при попытке получить доступ к ЗУ (ресурсу) для записи. Процедура разрешает доступ только если никто не читает (<span class="eOperator">Readers=0</span>) и никто не пишет (<span class="eOperator">Somb_Write=False</span>). В противном случае процесс-писатель, вызвавший эту процедуру, помещается в очередь и блокируется (глобальной процедурой <span class="eOperator">Wait</span>).</li>
+<li><span class="eOperator">Finish_Write.</span> Вызывается процессом-писателем, закончившим запись и желающим освободить ресурс. После освобождения ресурса (<span class="eOperator">Somb_Write:=False</span>) проверяется, стоит ли какой-либо процесс в очереди на чтение. Если да — делается попытка перевести его в состояние ожидания через глобальную процедуру <span class="eOperator">Signal</span>, предоставив в его распоряжение ресурс. Если нет — через ту же процедуру <span class="eOperator">Signal</span> один из процессов писателей, находящихся в очереди, переводится в состояние готовности и получает ресурс.</li>
+</ul>
+<div>Данный монитор обеспечивает приоритет "писателей" над "читателями". Это необходимо для того, чтобы вся информация, полученная "писателями" с датчиков, была записана в ЗУ. С другой стороны, ни один "читатель" не пропустит информацию, выданную ему "писателем".</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-86.html">‹ Предыдущий</a>

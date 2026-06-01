@@ -23,7 +23,65 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-111.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Операции со списками при последовательном хранении</a>
+</div>
+<a name="T1676359876"></a>
+<a name="T1125059890"></a>
+<div>При выборе метода хранения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">линейного списка</a> следует учитывать, какие операции будут выполняться и с какой частотой, время их выполнения и объем памяти, требуемый для хранения списка. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операциями со списками при последовательном хранении</a> являются следующие: печать значения первого элемента (узла),удаление элемента, следующего за i-тым узлом, добавление нового элемента new за i-тым узлом, частичное упорядочение списка с элементами К1,К2,...,Кl в список K1',K2',...,Ks,K1,Kt",...,Kt", s+t+1=l так, чтобы K1'= K1. Пусть имеется линейный список с целыми значениями и для его хранения используется массив d (с числом элементов 100), а количество элементов в списке указывается переменной l. Реализация указанных ранее операций над списком представляется следующими фрагментами программ которые используют объявления:</div>
+<pre class="eListing">float d[100];
+int i,j,l;
+</pre>
+<div>1) печать значения первого элемента (узла)</div>
+<pre class="eListing">if (i&lt;0 || i&gt;l) printf("\n нет элемента");
+else printf("d[%d]=%f ",i,d[i]);
+</pre>
+<div>2) удаление элемента, следующего за i-тым узлом</div>
+<pre class="eListing">if (i&gt;=l) printf("\n нет следующего ");
+l--;
+for (j=i+1;j=l) printf("\n нет соседа");
+else printf("\n %d  %d",d[i-1],d[i+1]);
+</pre>
+<div>3) добавление нового элемента new за i-тым узлом</div>
+<pre class="eListing">if (i==l || i&gt;l) printf("\n нельзя добавить");
+else
+{  for (j=l; j&gt;i+1; j--) d[j+1]=d[j];
+   d[i+1]=new; l++;
+}
+</pre>
+<div>4) частичное упорядочение списка с элементами К1,К2,...,Кl в список K1',K2',...,Ks,K1,Kt",...,Kt", s+t+1=l так, чтобы K1'= K1.</div>
+<pre class="eListing">{ int t=1;
+  float aux;
+  for (i=2; i&lt;=l; i++)
+    if (d[i]=2; j--) d[j]=d[j-1];
+      { t++;
+        d[i]=aux;
+      }
+}
+</pre>
+<div>Схема движения индексов <span class="eOperator">i,j,t</span> и значения <span class="eOperator">aux=d[i]</span> при выполнении приведенного фрагмента программы приведена на рис.1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PYAVU/9.2.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Движение индексов при выполнении операций над списком в последовательном хранении</div></div>
+<div>Количество действий Q, требуемых для выполнения приведенных операций над списком, определяется соотношениями: для операций 1 и 2 — Q=1; для операции 3 — Q=l; для операции 4 — Q=l*l.</div>
+<div>Заметим, что вообще операцию 4 можно выполнить при количестве действий порядка l, а операции 3 и 2 для включения и исключения элементов в конце списка, часто встречающиеся при работе со стеками, — при количестве действий 1.</div>
+<div>Более сложная организация операций требуется при размещении в массиве d нескольких списков, или при размещении списка без привязки его начала к первому элементу массива.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-109.html">‹ Предыдущий</a>

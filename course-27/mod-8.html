@@ -23,7 +23,163 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-27/mod-9.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Конструкторы</a>
+</div>
+<a name="T1543556249"></a>
+<div>В <span style="font-weight:bold; ">C++</span> предназначены специальные методы для инициализации объектов - <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">конструкторы</a>. Они выполняются автоматически при создании объекта. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Конструктор</a> имеет то же самое имя, что и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класс</a> и обладает следующими свойствами:</div>
+<ol class="eList"><a name="T3625364"></a>
+<li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструктор</a> не возвращает значения, даже типа <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">void</a>; нельзя получить <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на конструктор</li>
+<li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класс</a> может иметь несколько <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструкторов</a> с разными параметрами для разных видов инициализации (при этом используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">перегрузка</a>)</li>
+<li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструктор</a> может не иметь параметров, тогда это конструктор по умолчанию</li>
+<li>параметры <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструктора</a> могут иметь любой тип, кроме типа этого же <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a>; можно задавать значения по умолчанию, но их может содержать только один конструктор</li>
+<a name="T1693408172"></a>
+<li>если не указано ни одного конструктора, будет вызван <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">конструктор по умолчанию</a>. Такой конструктор вызывает конструкторы по умолчанию для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">полей</a> класса и конструкторы по умолчанию базовых классов. В случае, когда класс содержит константы или цифры, при попытке создания объекта класса будет выдана ошибка, так как их необходимо инициализировать конкретными значениями, а конструктор по умолчанию этого делать не умеет</li>
+<li>конструкторы не наследуются</li>
+<li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструкторы</a> нельзя записать с модификаторами: const, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">virtual</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">static</a></li>
+<li>конструкторы глобальных объектов вызываются до вызова функции main</li>
+</ol>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">иерархии</a> классов конструкторы выполняются в порядке их "классового происхождения".</div>
+<div>Локальные объекты создаются, как только становятся активными области памяти <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструктор</a> записывается при создании временного объекта, например при передаче объекта из функции.</div>
+<div>Как и любая другая компилируемая функция, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструктор</a> может быть переопределенным, указыв. конкретные данные для различных списков параметров. Этот способ, как правило, применяется для инициализации полей объектов. В последнем случае будет вызван конструктор, соответствующий указанным в скобках параметрам. Конструктор не может сообщать значение, чтобы сообщить об ошибке во время инициализации.</div>
+<br>
+<div class="eSubTitle">Конструктор копирования</div>
+<a name="T1546265570"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Конструктор копирования</a> - специальный вид конструктора, получающий в качестве единственного параметра <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на объект того же <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a>.</div>
+<br>
+<div><span style="font-weight:bold; ">T::T(const T&amp;)</span></div>
+<div><span style="font-weight:bold; ">{</span></div>
+<div>/* Тело <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструктора</a> */</div>
+<div><span style="font-weight:bold; ">}</span></div>
+<br>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Конструктор</a> вызывается, когда новый объект создается путем копирования существующего:</div>
+<ul class="eList"><li>при передаче нового объекта с инициализацией другим объектом</li>
+<li>при передаче объекта в функцию по значению</li>
+<li>при возврате объекта из функции.</li>
+</ul>
+<div>Конструктор копирования выполняет поэлементное копирование полей. В случае, когда в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">классе</a> есть указатели или ссылки, использование конструктора копирования будет неправильным.</div>
+<br>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">monst::monstr( const monstr&amp;M )
+{
+  if( M.name )
+  {
+    name = new char[strlen(M.name)+1];
+    strcpy(name, M.name);
+  }
+  else name = 0;
+  health = M.health;
+  ammo = M.ammo;
+  skin = M.skin;
+}
+</pre>
+</div>
+<br>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструкторах</a> может использоваться список инициализации, который отделяется от заголовка конструктора символом «:» и состоит из записей вида: &lt;имя&gt;(&lt;список выражений&gt;), где в качестве имени может быть использовано:</div>
+<ol class="eList"><li>имя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поля</a> данного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a></li>
+<li>имя объекта другого класса, включенного в данный класс</li>
+<li>имя базового <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a></li>
+</ol>
+<a name="T709457140"></a>
+<div>Список выражений определяет значения, использованные для инициализации объекта. Чаще всего <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">конструктор со списком инициализации</a> применяется для задания назначенных значений объекта, в котором используются фиксированные и ссылочные поля, являющиеся объектами других, ранее определенных классов.</div>
+<a name="T537437479"></a>
+<div>Иногда возникает необходимость создать объект, не инициализируя его поля. Такой объект называется неинициализированным и под него только резервируется память. Для создания такого объекта используется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">неинициализирующий конструктор</a>. У такого конструктора нет списка параметров и отсутствует тело. В этом случае значения полей объекта не определяются.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><br>
+<pre class="eListing">/* Создается объект без имени и копируется */
+monst Super(200, 300), Vasia(50), z;
+monst x=monstr(1000);
+monst y=500;
+
+lnum color{red, green, blur} /* возможные значения цветов */
+class monstr
+{
+int health, ammo;
+color skin;
+char *name;
+
+public:
+monstr(in the = 100, int am = 10);
+monstr( color 5k);
+monstr( char * name);
+int get_health() {return health;}
+int get_ammo() {return ammo;}
+};
+
+monstr::monst(int he, int am)
+{
+health = he;
+ammo = am;
+skin = red;
+name = ?;
+}
+
+monstr::monst(color sk)
+{
+switch(sk)
+{
+case red:
+health = 100;
+ammo = 10;
+skin = red;
+name = 0;
+break;
+
+case green:
+health = 100;
+ammo = 20;
+skin = green;
+name = 0; 
+break;
+
+case blue:
+health = 100;
+ammo = 40;
+skin = blue;
+name = 0; 
+break;
+}
+}
+
+monstr::monstr(char * name)
+{
+nam = new char[strlen(name) + 1];
+strcpy(name, nam);
+health = 100;
+ammo = 10;
+skin = red;
+}
+
+</pre>
+<div>monstr *m = new monstr (“Ork”);</div>
+<div>monstr Green(green);</div>
+</div>
+<br>
+<div>Существует еще один способ инициализации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">полей</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструкторе</a> - инициализация с помощью списка инициализации, расположенного после «:» между заголовком тела и конструктором.</div>
+<br>
+<div>monstr::monst(in the, int am):health(he), ammo(am), skin(red), name(0);</div>
+<br>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Поля</a> перечисляются через запятую.  Для каждого поля в скобках указывается инициализирующее значение, которое может быть выражением. </div>
+<br>
+<div class="eSubTitle">Неконвертируемый конструктор</div>
+<a name="T552416401"></a>
+<a name="T1929091532"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Неконвертируемый конструктор</a> создается при помощи  <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">спецификатора функций</a> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">explicit</a>, который применяется только к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструкторам</a>. Обычно, если имеется конструктор, принимающий только один аргумент, то для инициализации объекта ob можно использовать варианты: ob(x), либо ob = x (т.к. при создании такого конструктора мы неявно указываем преобразование из типа аргумента в тип данного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a>). Если же конструктор определен с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">explicit</a>, то он будет задействован только в случае, когда для инициализации используется обычный синтаксис конструктора, т.е. ob(x). При этом автоматических преобразований выполняться не будет, и вариант ob = x не будет разрешен.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-27/">← Оглавление</a>
         <a href="/rk6-edu/course-27/mod-7.html">‹ Предыдущий</a>

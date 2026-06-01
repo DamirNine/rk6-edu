@@ -23,7 +23,81 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-20/mod-9.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Списки и рекурсия</a>
+</div>
+<a name="T2145470045"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Список</a> - упорядоченная последовательность элементов, имеющая произвольную длину. В ПрологЕ элементы списка не обязаны принадлежать одному типу и могут быть в свою очередь списками. Список в Прологе - это либо пустой список, обозначаемый [], либо структура с функтором "."(точка) и двумя компонентами: головой и хвостом списка. Признаком конца списка служит хвост, являющийся пустым списком [].</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Примеры списков.</div>
+</div>
+<pre class="eListing">               [] - пустой список
+          .(a,[]) - список из одного элемента a
+.(a,.(b,.(c,[]))) - список из трх элементов a,  b, c
+</pre>
+<div>В некоторых реализациях Пролога функтор "." определён как инфиксный оператор, тогда третий пример будет иметь вид a.(b.(c.[])).</div>
+<div>Однако в любом случае использование "." оказывается неудобным, поэтому в Прологе предусмотрена привычная форма записи списков: [], [a], [a,b,c]. </div>
+<div>Списки, как и любые другие структуры, могут содержать переменные, например, допустим такой список [X,a,[b,X,Y],Z]. </div>
+<a name="T1983272463"></a>
+<a name="T247578677"></a>
+<div>Работа со списками основана на расщеплении их на голову и хвост. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Голова</a> - это первый элемент списка, <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">хвост</a> - список из остальных элементов.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>Расщепление списков.</div>
+</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTableT">Список</td><td class="eTableT">Голова</td><td class="eTableT">Хвост</td></tr>
+<tr align="center"><td class="eTable">[a, b, c]</td><td class="eTable">a</td><td class="eTable">[b, c]</td></tr>
+<tr align="center"><td class="eTable">[[a, b], c]</td><td class="eTable">[a, b]</td><td class="eTable">[c]</td></tr>
+<tr align="center"><td class="eTable">[a]</td><td class="eTable">a</td><td class="eTable">[]</td></tr>
+<tr align="center"><td class="eTable">[]</td><td class="eTable">Нет</td><td class="eTable">Нет</td></tr>
+</tbody></table><br>
+<div>Пустой список [] не имеет ни головы, ни хвоста.</div>
+<div>В Прологе используется специальная форма представления списка с головой H и хвостом T - [H|T]. </div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div>Сопоставления списков.</div>
+</div>
+<pre class="eListing">?- [X,Y,Z]=[a,b,c].           X = a, Y = b, Z = c
+?- [cat]=[X|Y].               X = cat, Y = []
+?- [[a,Y]|Z]=[[X,b],[c,d]].   X = a, Y = b, Z = [[c,d]]
+</pre>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Существует ещё одна область применения списков - представление строк литер (символов): строка, заключённая в двойные кавычки (") эквивалентна списку десятичных значений ASCII. </div>
+</div>
+<div>Для работы со списками в Прологе используется рекурсия. Рассмотрим пример, в котором необходимо определить правила проверки принадлежности элемента списку. Для этого дадим рекурсивное определение принадлежности - некоторый элемент принадлежит списку, если а) он является первым элементом списка (головой списка) или б) принадлежит хвосту списка. </div>
+<pre class="eListing">member(X, [Y|Z]):- X=Y.     или
+member(X, [Y|_]):- X=Y.     иди
+member(X, [X|_]).
+member(X, [_|Y]):- member(X,Y).
+</pre>
+<div>Для правильного применения рекурсии (а это очень мощное средство) необходимо обращать внимание на два момента.</div>
+<ul class="eList"><li>Граничные условия (в примере: элемент содержится в списке или нет), которые обязательно должны учитываться в программе.</li>
+<li>Способ использования рекурсии (она каждый раз должна применяться к более короткому списку).</li>
+</ul>
+<div>Рассмотрим, как работают наши правила на следующих запросах: member(a,[a,b,c,d,e]) и member(d,[a,b,c,d,e]). </div>
+<div>При получении запроса в виде</div>
+<pre class="eListing">?-member(a,[a,b,c,d,e]).
+</pre>
+<div>Пролог устанавливает маркер на первое правило для member и начинает попарное сопоставление компонентов предиката-запроса и заголовка этого правила. При сопоставлении первых компонентов происходит конкретизация переменной X из заголовка значением a из запроса, при сопоставлении вторых - удачное сравнение двух атомов a (одного - из запроса, другого - из заголовка).</div>
+<div>При получении запроса в виде</div>
+<pre class="eListing">?-member(d,[a,b,c,d,e]).
+</pre>
+<div>Пролог закончит неудачей попытку использовать первое правило для member и установит маркер первого уровня на второе правило. Использование этого правила порождает подцель в виде member(d,[b,c,d,e]). Для реализации этой подцели Пролог вынужден опять использовать второе правило, установив на него маркер второго уровня, при этом возникает очередная подцель member(d,[c,d,e]). На третьем уровне рекурсии Пролог вновь использует второе правило, что инициирует подцель member(d,[d,e]), которая удовлетворяется на четвертом уровне рекурсии благодаря первому правилу для member.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-20/">← Оглавление</a>
         <a href="/rk6-edu/course-20/mod-7.html">‹ Предыдущий</a>

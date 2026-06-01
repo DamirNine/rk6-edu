@@ -23,7 +23,121 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-40.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">УСО для ввода данных с преобразованием из непрерывной формы в дискретную</a>
+</div>
+<a name="T1782324216"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">УСО для ввода данных с преобразованием из непрерывной формы в дискретную</a> могут использоваться для ввода данных с непрерывных датчиков или задающих устройств.</div>
+<a name="T1489169639"></a>
+<div>Непосредственно преобразование из непрерывной в дискретную форму осуществляется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аналого-цифровым преобразователем</a> (АЦП). Рассматрим его в обобщенном виде (рис.&nbsp;1):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_09_1.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T1120902440"></a>
+<div>В простейшем случае АЦП имеет один аналоговый вход. Выходом АЦП являются <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_09_1.mod/?n=1/?k=10"> параллельных линий, по которым передается <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">двоичное число</a>, пропорциональное входному сигналу — цифровой выход. АЦП может быть подключен непосредственно к магистрали <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> и участвовать в обмене, как обычное <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">УВВ</a>. Соответственно, он имеет управляющие сигналы <span class="eOperator">RD</span> (разрешение чтения) и <span class="eOperator">CS</span> (выбор микросхемы).</div>
+<div>Процесс преобразования данных в АЦП инициируется сигналом запуска (<span class="eOperator">START</span>).</div>
+<div>Сигнал <span class="eOperator">EOP</span> сообщает об окончании преобразования и готовности данных на выходе АЦП. Временная диаграмма работы АЦП представлена на рис.&nbsp;2.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_09_1.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>Время от начала преобразования (запуска АЦП) до окончания преобразования (готовности выходных данных) называется временем преобразования (<img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_09_1.mod/?n=2/?k=10">). Для различных АЦП время преобразования варьируется от десятков микросекунд до сотен миллисекунд.</div>
+<div>Задача построения УСО с использованием АЦП распадается на три подзадачи:</div>
+<ul class="eList"><li>Организация подключения АЦП к магистрали МПС.</li>
+<li>Организация запуска АЦП.</li>
+<li>Определение момента окончания преобразования и инициация процедуры обмена.</li>
+</ul>
+<div class="eSubTitle">Организация подключения АЦП к магистрали МПС</div>
+<div>Подключение АЦП к магистрали МПС осуществляется весьма просто, так как АЦП может рассматриваться с точки зрения обмена с МП в качестве обычного УВВ.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_09_1.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<div>Представленная схема обеспечивает возможность ввода данных из АЦП командой <span class="eOperator">IN</span> при установке на шине адреса значения 0000h.</div>
+<div class="eSubTitle">Организация запуска АЦП</div>
+<div>Запуск АЦП может осуществляться асинхронно, путем формирования стартового импульса через параллельный порт, или периодически, с помощью программируемого таймера.</div>
+<div>В случае асинхронного запуска линия запуска АЦП <span class="eOperator">START</span> подключается к одному из выводов параллельного порта (на рис.&nbsp;4. – вывод 0 порта <span class="eOperator">А</span> ППИ).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_09_1.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<div>Формирование собственно импульса производится путем установки в "1" младшего бита порта <span class="eOperator">А</span> ППИ, а затем – сброса его в "0" (см. рис.&nbsp;4).</div>
+<pre class="eListing">MOV AL, 0001h         ; маска - "1" в младшем разряде
+OUT 0000h, AL         ; записываем в порт 1 - начало импульса
+
+MOV AL, 0000h         ; маска - "0" в младшем разряде
+OUT 0000h, AL         ; записываем в порт 0 - окончание импульса
+</pre>
+<div>Длительность импульса определяется временным интервалом между выполнением двух команд OUT, она может быть определена по известной тактовой частоте МП и должна быть не менее требуемой для используемого АЦП.</div>
+<div>Для организации периодического запуска АЦП используется программируемый таймер (рис.&nbsp;5).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_09_1.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;</div></div>
+<div>Программируемый таймер подключается к шинам адреса, данных и управления как показано на рис.&nbsp;5. Такое подключение обеспечивает возможность обращения к нему на этапе программирования (начальной инициализации) для настройки на нужный режим работы.</div>
+<div>Таймер работает в режиме генерации последовательности одиночных импульсов с заданным интервалом. Импульсы с выхода <span class="eOperator">OUT0</span> поступают на вход запуска АЦП. Каждый импульс запускает преобразование в АЦП, таким образом, интервал между ними должен быть больше времени преобразования.</div>
+<div>На вход <span class="eOperator">CLK0</span> подаются импульсы от тактового генератора. Частота этих импульсов и начальные установки таймера определяют периодичность запуска АЦП.</div>
+<div class="eSubTitle">Определение момента окончания преобразования и инициация процедуры обмена</div>
+<a name="T541472668"></a>
+<a name="T409478196"></a>
+<a name="T1616495597"></a>
+<a name="T1018702882"></a>
+<div>Так как преобразование данных в АЦП происходит не мгновенно, данные с его выхода могут быть считаны не в любой момент времени, а только после завершения преобразования. То есть перед началом обмена должна быть проверена готовность устройства (завершенность преобразования). Поэтому в данном случае мы не можем использовать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синхронный обмен</a>, а должны использовать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обмен асинхронный</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">по прерываниям</a> или с использованием <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ПДП</a>.</div>
+<div class="eSubTitle">Использования асинхронного обмена</div>
+<div>При асинхронном обмене МП должен иметь возможность проанализировать готовность АЦП перед началом обмена. Готовность АЦП определяется значением на выход <span class="eOperator">EOP</span> — "1" означает завершенность преобразования (готовность к обмену). Следовательно, значение сигнала <span class="eOperator">EOP</span> должно быть считано МП. Для этого используется параллельный порт в режиме ввода информации (рис.&nbsp;6).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_09_1.mod/?n=6"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;</div></div>
+<div>В приведенной схеме линия готовности АЦП подключена к линии <span class="eOperator">PA0</span> ППИ — таким образом, состояние линии <span class="eOperator">EOP</span> может быть определено путем анализа младшего бита порта <span class="eOperator">А</span> ППИ.</div>
+<div>Адрес порта <span class="eOperator">А</span> ППИ при данной схеме подключения — 0000h, адрес выходного регистра АЦП — 00000100b (04h). Фрагмент программы, анализирующий состояние АЦП и выполняющий ввод данных в случае его готовности выглядит следующим образом:</div>
+<pre class="eListing">IN AL, 0000h        ; Введем значение из порта А ППИ
+AND AL, 1           ; Анализируем значение младшего бита (маска 0000001)
+JZ _NotReady        ; Если бит=0 - АЦП не готов, данные с него не вводим
+IN AL, 0004h        ; Иначе (бит=1,АЦП готов) - вводим данные с АЦП
+............        ; Обработка данных, введенных с АЦП
+_NotReady:
+............        ; Продолжение основной программы
+</pre>
+<div class="eSubTitle">Использование обмена по прерываниям</div>
+<div>Для организации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обмена по прерываниям</a> используется контроллер прерываний (рис.&nbsp;7).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_09_1.mod/?n=7"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;7.&nbsp;&nbsp;</div></div>
+<div>Контроллер прерываний подключается к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шинам адреса</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">данных</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">управления</a> как показано на рис.&nbsp;7. Такое подключение обеспечивает возможность обращения к нему на этапе программирования (начальной инициализации) для настройки на нужный режим работы. По сравнению с предыдущими схемами, шина управления здесь дополнилась сигналами <span class="eOperator">INT</span> (запрос на прерывание, посылаемый процессору) и <span class="eOperator">INTA</span> — подтверждение прерывания от МП. Сигнал готовности <span class="eOperator">EOP</span> подается на один из входов запроса прерывания контроллера (в нашем примере — <span class="eOperator">IRQ0</span>).</div>
+<div>Схема работает следующим образом. По окончании преобразования, сигнал <span class="eOperator">EOP</span> устанавливается в "1". Контроллер прерываний рассматривает его как запрос на прерывание и инициирует процедуру обмена: посылает в МП сигнал запроса <span class="eOperator">INT</span>, дожидается подтверждения от МП по линии <span class="eOperator">INTA,</span> передает в МП номер устройства, запросившего прерывание. Микропроцессор по номеру устройства вызывает соответствующую подпрограмму обработки прерывания, которая и выполняет собственно обмен. Примерный вид подпрограммы обработки прерывания для ввода данных с АЦП:</div>
+<pre class="eListing">IN AL, 0004h         ; Вводим данные с АЦП
+...........          ; Обработка данных, введенных с АЦП
+IRET                 ; Возврат из подпрограммы обработки прерывания
+</pre>
+<div>Так как АЦП сам инициирует обмен в момент завершения преобразования, проверка его готовности внутри подпрограммы обмена не производится.</div>
+<div class="eSubTitle">Использование прямого доступа в память (ПДП)</div>
+<a name="T1884460602"></a>
+<div>Для организации обмена в режиме <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ПДП</a> используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контроллер ПДП</a> (рис.&nbsp;8).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_09_1.mod/?n=8"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;8.&nbsp;&nbsp;</div></div>
+<div>Контроллер ПДП подключается к шинам адреса, данных и управления как показано на рис.&nbsp;8. Такое подключение обеспечивает возможность обращения к нему на этапе программирования (начальной инициализации) для настройки на нужный режим работы.</div>
+<div>По сравнению с предыдущими схемами, шина управления здесь дополнилась сигналами <span class="eOperator">HRQ</span> (запрос МП на предоставление шин) и <span class="eOperator">HLDA</span> (разрешение использование шин).</div>
+<div>Сигнал готовности АЦП используется в качестве запроса на выполнение прямого доступа в память. После активизации этого сигнала контроллер ПДП начинает стандартную операцию передачи данных из ВУ (АЦП) в соответствующую ячейку <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЗУ</a> (запрос разрешения у МП, формирования адреса и сигналов управления и т.п.). Таким образом, данная схема, работая независимо от МП, обеспечивает наличие в определенной ячейке ЗУ последнего актуального значения с выхода АЦП.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-38.html">‹ Предыдущий</a>

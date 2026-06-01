@@ -23,7 +23,50 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-94.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Двукратные указатели</a>
+</div>
+<a name="T1051785756"></a>
+<a name="T541845194"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Двукратный указатель</a> - это переменная, которая содержит адрес <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателя</a>, то есть это  указатель на указатель. </div>
+<a name="T1369433176"></a>
+<div>Двукратные указатели часто используются в системных программах. Трехкратные указатели встречаются редко. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Язык Си</a> допускает так же использование многократных указателей (например, <span class="eOperator">****p</span>).  Однако, лучше избегать этого. </div>
+<div>Объявление двукратного указателя:</div>
+<div><span class="eOperator">тип **идентификатор; </span><span class="eOperator"></span></div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><br>
+<pre class="eListing">/*пример сканера для идентификации команд */
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int is_keyword(char *);
+char *keyword[] = {
+                   "append",
+                   "find",
+                   "list",
+                   "remove",
+                   "replace",
+                   "substitute",
+                   (char *)NULL
+                   };
+/*возвращает индекс команды, иначе -1*/
+int is_keyword(char *)
+  {
+  char **p;
+  for (p=keyword; *p != NULL; p++)
+     if(strcmp(str, *p) == 0)
+        return p-keyword;
+  return -1;
+  }
+</pre>
+<a name="T1992766606"></a>
+<a name="T1683975628"></a>
+<a name="T2022690627"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Массив</a> <span class="eOperator">keyword</span> - это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив указателей</a> на символ, который инициализируется адресами <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">строковых констант</a>. Такие указатели обычно не изменяются во время выполнения программы. Двукратный указатель <span class="eOperator">p</span> используется для перебора элементов массива. </div>
+<div><span class="eOperator">p</span>  содержит адрес одного из элементов массива <span class="eOperator">keyword</span>, <span class="eOperator">*p</span> - это адрес строки, записанный в этом элементе массива, а <span class="eOperator">**p</span> (в примере не используется) указывает на первый символ в этой строке.</div>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-92.html">‹ Предыдущий</a>

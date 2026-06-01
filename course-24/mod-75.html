@@ -23,7 +23,53 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-76.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Асинхронная обработка массивов</a>
+</div>
+<a name="T521651246"></a>
+<div>Особенностью задач <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">асинхронной обработки массивов</a> является то, что у каждого <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a> свой индекс, свой закон и диапазон его изменения. При программировании задач этого класса можно использовать как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">счетные циклы</a>, так и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">циклы while</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">do-while</a>, причем выбор зависит от того, каков закон изменения этих индексов и как легче организовать их изменение.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Дан массив А вещественных чисел. Переписать в массив С все отрицательные элементы массива А.</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/usinx.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<pre class="eListing">int copy(float a[], float c[], int n) /* Функция копирует из первого массива
+                                          во второй только отрицательные элементы,
+                                          Возвращает размерность второго массива */
+{
+int i,j;
+j=-1;
+for(i=0;i&lt;n;i++)
+   if(a[i]&lt;0)
+     {j++;
+      c[j]=a[i];
+     }
+return j;
+}
+</pre>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Используя возможности <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции инкрементации</a> языка Си, оператор <span class="eOperator">if </span>можно написать так:</div>
+<pre class="eListing">if(a[i]&lt;0)
+   c(++j)=a[i];
+</pre>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-74.html">‹ Предыдущий</a>

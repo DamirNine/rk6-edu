@@ -23,7 +23,85 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-28.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Стековая организация данных.</a>
+</div>
+<br>
+<a name="T33524358"></a>
+<a name="T2336518"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Стек</a> (stack) это абстрактная структура данных для хранения набора элементов, обработка которого допустима только с одного конца, называемого вершиной стека. Положение вершины в стеке отображает указатель стека sp (stack pointer). Через вершину в стеке можно добавить (протолкнуть) новый элемент или извлечь (вытолкнуть) последний добавленный элемент, изменяя при этом соответствующим образом указатель стека. Извлекать элементы из стека и добавлять элементы в стек можно неоднократно, пока стек не пуст и не переполнен, соответственно. Реализуемая стеком дисциплина обслуживания набора данных называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">LIFO</a> (LastIn, FirstOut - последним пришел, первым обслужен). </div>
+<a name="T1992766606"></a>
+<a name="T1024523901"></a>
+<div> Для хранения данных в стеке выделяется специальный буфер sbuf (stack buffer). В простейшем случае буфер стека реализуется одномерным <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массивом</a>, длина которого априори устанавливает предельный размер стека ssize (stack size), задаваемый при создании стека. Такая организация стека называется стеком с фиксированным буфером (FixStack). Указатель стека в нем интерпретируется как целочисленный индекс массива, представляющего <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">буфер</a> стека. Логическую структуру стека с фиксированным буфером, в котором содержатся 3 элемента: A, B, C отображает следующий рисунок.</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/10.1.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Логическая структура стека с фиксированным буфером. </div></div>
+<br>
+<div>Для работы со стеком используются 3 примитивные процедуры: PUSH, POP и STATE, которые обеспечивают извлечение данных из стека, загрузку данных в стек и оценку состояния стека, соответственно. </div>
+<div> Примитив PUSH загружает (проталкивает) новый элемент в вершину стека и увеличивает на 1 значение указателя стека. Псевдокод процедуры PUSH выражают следующие операторы: </div>
+<br>
+<pre class="eListing">    Sbuf[sp] &lt;- V; 
+    sp &lt;- sp+1; 
+    RETURN; 
+</pre>
+<br>
+<div>где V обозначает элемент данных, добавляемый в стек. Работу примитива PUSH отображает следующая диаграмма загрузки данных в стек. </div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/10.1.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Диаграмма загрузки в стек. </div></div>
+<br>
+<div>Для стека с фиксированным буфером процедура извлечения данных необязательно является деструктивной операцией, т.е. вытолкнутые элементы не уничтожаются в буфере стека, по крайней мере, до загрузки новых данных. Очевидно, что процедура проталкивания данных в стек имеет деструктивный эффект, модифицируя содержания буфера стека. Рассмотренные примитивы PUSH и POP обеспечивают желаемую обработку стека с фиксированным буфером, когда он не переполнен (sp &lt; ssize) и не пуст (sp=0), соответственно. </div>
+<div> Для оценки текущего состояния стека используется примитив STATE. Он обеспечивает оценку состояния стека по возвращаемому значению его указателя. Целесообразной представляется следующая кодировка возврата примитива STATE. Если при оценке в буфере стека нет свободного места для размещения новых данных, т.е. буфер заполнен полностью, возвращается отрицательный код. В противном случае, когда в буфере стека есть свободное пространство для размещения новых элементов, при оценке стека примитивом STATE возвращается текущее значение указателя стека. Очевидно, когда стек пуст примитив STATE будет возвращать нулевое значение. </div>
+<a name="T1710760967"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Псевдокод</a> примитива STATE выражают следующие операторы: </div>
+<br>
+<pre class="eListing">       IF sp&lt;ssize THEN RETURN(sp); 
+          ELSE RETURN(-sp); 
+</pre>
+<br>
+<div>  На следующем рисунке представлены 3 диаграммы состояний для пустого, допустимо заполненного и переполненного стека, которые иллюстрируют принятую кодировку возврата примитива STATE. </div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/10.1.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Диаграмма состояний стека. </div></div>
+<br>
+<div>Примитив STATE следует использовать в сочетании с примитивами PUSH и POP, чтобы избежать потери значимости при переполнении стека и попытке извлечь данные из пустого стека. Следующий псевдокод блокирует потерю значимости в случае пустого стека (underflow) при использовании примитива POP для извлечения данных в переменную W: </div>
+<br>
+<pre class="eListing">      IF STATE() &gt; 0 THEN 
+             W &lt;- POP(); 
+      ELSE 
+             UNDERFLOW(); 
+</pre>
+<br>
+<div>где процедура UNDERFLOW реализует желаемую в программе последовательность обработки состояния пустого стека при попытке извлечь данные. Исключение потери значимости в случае переполнения стека (overflow) при попытке протолкнуть в стек новый элемент V, используя примитив PUSH, демонстрирует следующий псевдокод: </div>
+<br>
+<pre class="eListing">      IF STATE() &lt; 0 THEN 
+             OVERFLOW(); 
+      PUSH(V); 
+</pre>
+<br>
+<div>где процедура OVERFLOW содержит желаемую в программе последовательность обработки состояния переполнения стека, например, аварийное завершение, расширение буфера стека или переход к резервным буферам. </div>
+<br>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-26.html">‹ Предыдущий</a>

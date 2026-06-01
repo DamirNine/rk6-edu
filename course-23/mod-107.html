@@ -23,7 +23,152 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-108.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Макросы</a>
+</div>
+<a name="T1992557309"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Макрос</a> — это короткая процедура, у которой могут быть аргументы.</div>
+<a name="T575090800"></a>
+<div>Макрос определяется с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директивы препроцессора #define</a>.</div>
+<a name="T1329324165"></a>
+<div>Определение макроса похоже на определение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поименованной константы</a>.</div>
+<div><span class="eOperator">#define идентификатор(аргумент[,аргумент]...) строка-шаблон</span></div>
+<a name="T256200320"></a>
+<a name="T396025840"></a>
+<a name="T748507610"></a>
+<a name="T798225181"></a>
+<div>В скобках непосредственно после <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатора</a> могут быть указаны имена аргументов. Между идентификатором и символом <span class="eOperator">(</span> не должно быть <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">символов промежутка</a>. При расширении макроса <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">препроцессор</a> осуществляет вставку строк. Препроцессор ничего не знает о <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синтаксисе языка</a> Си или логике программы. Поэтому такие подстановки могут быть источниками синтаксических ошибок.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">#define SQUARE(X) ((X)*(X))
+#define MAX(A,B) ((A)&gt;(B)?(A):(B))
+int main()
+{
+  int int1, int2;
+  int1=SQUARE(3);
+  int2=SQUARE(int1+1);
+  printf("max = %d\n", MAX(int1,int2));
+}
+Результат препроцессирования:
+int main()
+{
+  int int1, int2;
+  int1 = ((3)*(3));
+  int2 = ((int1+1)*(int1+1));
+  printf ("max = %d\n", ((int1)&gt;(int2)?(int1):(int2)));
+}
+Вывод программы:
+max = 100
+</pre>
+</div>
+<div>Если в прим.&nbsp;1 в определении <span class="eOperator">SQUARE</span> не будут использованы скобки, то переменной <span class="eOperator">int2</span> будет присвоено другое значение:</div>
+<div><span class="eOperator">int2 = int1 + 1 * int1 + 1;</span></div>
+<div>Для просмотра результата препроцессирования надо использовать команду компиляции <span class="eOperator">cc</span> с опцией <span class="eOperator">-E</span>.</div>
+<a name="T645587003"></a>
+<div>Макрос может использовать другие ранее определенные макросы. Многие препроцессоры Си, включая препроцессор системы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС UNIX</a>, не допускают использования рекурсивных макросов.</div>
+<a name="T828724782"></a>
+<div>Иногда удобно определять макрос так, чтобы он был <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">блоком операторов</a>.</div>
+<div>Одно из преимуществ блока — возможность определить локальные переменные. Если только макрос содержит более одного оператора, эти операторы должны быть включены в блок, иначе возможны неприятности.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">/* Эти операторы следует заключить в блок */
+#define DOIT(A, B, C) A=D*2; \
+                      B=C*2;
+void f(void)
+{
+   int i, j, k;
+   if (i&lt;j)
+       DOIT(i, j, k) /* Здесь после обработки препроцессором будет синтаксическая ошибка */
+   else
+      printf("Something \n");
+}
+</pre>
+</div>
+<a name="T750557117"></a>
+<div>Хотя этот фрагмент программы и выглядит корректно, однако после расширения препроцессором компилятор обнаружит ошибку. Синтаксис <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператора if-else</a> требует единственного оператора между <span class="eOperator">if </span>и <span class="eOperator">else</span>. В такой ситуации использование блока в макросе устранит проблему.</div>
+<a name="T2026410311"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Стандарт ANSI языка Си</a> запрещает макроподстановки в строковых литералах.</div>
+<div class="eSubTitle">Операция #</div>
+<a name="T443383196"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция #</a>- операция для создания строки из аргумента макроса.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div>Определение макроса:</div>
+<div><span class="eOperator">#define string(x) #x</span></div>
+<div>Использование макроса:</div>
+<div><span class="eOperator">string(hello)</span></div>
+<div>Результат подстановки:</div>
+<div><span class="eOperator">"hello"</span></div>
+</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><pre class="eListing">#define SWAP(A,B) {int temp; \
+                    temp = A;\
+                    A = B;\
+                    B =temp; \
+                    }
+#define PRINT(A,B) \
+            printf(#A": %d, "#B": %d\n", A, B)
+int main( )
+{
+  int num1 = 30, num2 = 90;
+  PRINT(num1, num2);
+  if (num2 &gt; num1)
+     SWAP(num1, num2);
+  PRINT(num1, num2);
+}
+</pre>
+<div>Вывод программы:</div>
+<pre class="eListing">num1: 30, num2: 90
+num1: 30, num2: 90
+</pre>
+</div>
+<div class="eSubTitle">Операция ##</div>
+<a name="T859977223"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция ##</a> — операция для объединения лексем в определении макросов в одну лексему .</div>
+<div class="auto">Пример 5</div>
+<div class="eExample"><pre class="eListing">#define WheatBread 0
+#define RyeBread 1
+#define WhiteBread 2
+#define PumpernickelBread 3
+#define Bread(x) x ## Bread
+int main ()
+{
+    printf("Value of WheatBread is %d\n", Bread(Wheat));
+    printf("Value of RyeBread is %d\n", Bread(Rye));
+    printf("Value of WhiteBread is %d\n", Bread(White));
+}
+</pre>
+<div>Вывод:</div>
+<pre class="eListing">Value of WheatBread is 0
+Value of RyeBread is 1
+Value of WhiteBread is 2
+</pre>
+</div>
+<div>Вызов макроса <span class="eOperator">Bread(Rye)</span> расширяется сначала в <span class="eOperator">Rye##Bread</span>, потом – в одно слово <span class="eOperator">RyeBread</span>, заменяемое затем константой <span class="eOperator">1</span>.</div>
+<div class="eSubTitle">Сравнение функций и макросов</div>
+<a name="T696383489"></a>
+<a name="T1248933124"></a>
+<div>Большим преимуществом макросов является то, что они быстрее <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функций</a>. Потери времени при <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызове функции</a> включают в себя время на сохранение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументов</a> и регистров на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке</a> и восстановление их при возврате. При вызове макроса этого не происходит.</div>
+<div>Однако, если макрос используется много раз, исполняемая программа будет иметь больший размер, чем при использовании функций.</div>
+<a name="T1138660427"></a>
+<div>Преимуществом функций является возможность возвратить результат при помощи <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператора return</a>. В макросе оператор <span class="eOperator">return</span> вызовет немедленный выход из функции, в которой вызван макрос.</div>
+<a name="T2060402596"></a>
+<div>Кроме того, функции могут быть <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">рекурсивными</a>. Большая же часть препроцессоров Си (в том числе и в операционной системе UNIX) запрещают рекурсивные макросы.</div>
+<div>К тому же макросы сложнее для отладки, чем функции. Отлаживая макрос, надо смотреть на результат работы препроцессора. Для этого в операционной системе UNIX можно воспользоваться следующими командами:</div>
+<div><span class="eOperator">$cc  -E -o  proc.i proc.c</span></div>
+<div><span class="eOperator">$cat proc.i</span></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-106.html">‹ Предыдущий</a>

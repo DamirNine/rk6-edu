@@ -23,7 +23,91 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-18.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Переменные с изменяемой структурой</a>
+</div>
+<a name="T819414727"></a>
+<div>Очень часто некоторые объекты программы относятся к одному и тому же классу, отличаясь лишь некоторыми деталями. в таких случаях используются <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">переменные с изменяемой структурой</a>  Рассмотрим, например, представление геометрических фигур. Общая информация о фигурах может включать такие элементы, как площадь, периметр. Однако соответствующая информация о геометрических размерах может оказаться различной в зависимости от их формы.</div>
+<div>Рассмотрим пример, в котором информация о геометрических фигурах представляется на основе комбинированного использования структуры и объединения.</div>
+<pre class="eListing">       struct figure {
+                double area,perimetr;  /* общие компоненты       */
+                int type;              /* признак компонента     */
+                union                  /* перечисление компонент */
+                     { double radius;  /* окружность             */
+                       double a[2];    /* прямоугольник          */
+                       double b[3];    /* треугольник            */
+                      } geom_fig;
+                     }  fig1, fig2  ;
+</pre>
+<div>В общем случае каждый объект типа <span class="eOperator">figure</span> будет состоять из трех компонентов: <span class="eOperator">area, perimetr, type</span>. Компонент <span class="eOperator">type</span> называется меткой активного компонента, так как он используется для указания, какой из компонентов объединения <span class="eOperator">geom_fig</span> является активным в данный момент. Такая структура называется переменной структурой, потому что ее компоненты меняются в зависимости от значения метки активного компонента (значение type). Отметим, что вместо компоненты <span class="eOperator">type</span> типа <span class="eOperator">int,</span> целесообразно было бы использовать перечисляемый тип. Например, такой</div>
+<pre class="eListing">      enum figure_chess { CIRCLE,
+                          BOX,
+                          TRIANGLE    } ;
+</pre>
+<a name="T176682325"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Константы</a> <span class="eOperator">CIRCLE, BOX, TRIANGLE</span> получат значения соответственно равные 0, 1, 2. Переменная type может быть объявлена как имеющая перечислимый тип :</div>
+<pre class="eListing">enum figure_chess type;
+</pre>
+<div>В этом случае компилятор СИ предупредит программиста о потенциально ошибочных присвоениях, таких, например, как <span class="eOperator">figure.type = 40;</span></div>
+<div>В общем случае переменная структуры будет состоять из трех частей: набор общих компонент, метки активного компонента и части с меняющимися компонентами. Общая форма переменной структуры, имеет следующий вид:</div>
+<pre class="eListing">     struct { общие компоненты; метка активного компонента;
+              union { описание компоненты 1 ;
+                      описание компоненты 2 ;
+                        :::
+                      описание компоненты n ;
+                    } идентификатор-объединения ;
+            } идентификатор-структуры ;
+
+</pre>
+<div>Пример определения переменной структуры с именем <span class="eOperator">helth_record</span></div>
+<pre class="eListing">     struct {   /* общая информация */
+                char  name [25];    /* имя    */
+                int   age;          /* возраст   */
+                char  sex;          /* пол  */
+
+/*   метка   активного   компонента  */
+               /*   (семейное положение)            */
+               enum merital_status ins;
+               /* переменная часть */
+
+         union  {     /* холост        */
+                  /* нет компонент */
+                  struct {  /* состоит в браке */
+                         char marripge_date[8];
+                         char spouse_name[25];
+                         int  no_children;
+                        }  marriage_info;
+                  /* разведен */
+                  char date_divorced[8];
+                }   marital_info;
+             } health_record;
+     enum marital_status { SINGLE, /* холост   */
+                           MARRIGO, /* женат    */
+                           DIVOREED /* разведен */
+                          } ;
+
+</pre>
+<div>Обращаться к компонентам структуры можно при помощи ссылок:</div>
+<pre class="eListing">  helth_record.neme,
+  helth_record.ins,
+  helth_record.marriage_info.marriage_date .
+
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-16.html">‹ Предыдущий</a>

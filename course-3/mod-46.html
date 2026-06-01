@@ -23,7 +23,332 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-3/mod-47.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Примеры моделей на языке VHDL</a>
+</div>
+<a name="T160781068"></a>
+<a name="T107645917"></a>
+<div>Рассмотрим примеры <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">моделей схем</a> на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке VHDL</a>.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Генератор синхросигналов:</div>
+<pre class="eListing">entity clock is
+generic (t1: Time:=10 ns; t2: Time:=10 ns);
+port (c: out BIT := '0');
+-- t1 и t2 в сумме составляют период синхросигналов,
+-- начальное значение сигнала с есть низкий уровень, т.е. '0'.
+end clock;
+architecture gen of clock is
+generic (N: integer:=1000);
+-- N есть число периодов колебаний на отрезке моделирования;
+begin
+A: process
+begin
+for i in range 1 to N loop
+c &lt;= '1'; wait for t1;
+c &lt;= '0'; wait for t2;
+end loop;
+end process A;
+end gen;
+</pre>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>Возможный вариант описания D-триггера (сигнал R — установка в 0, при C = 1 на выходе Q устанавливается значение входа S):</div>
+<pre class="eListing">entity FF is
+port (R,S,C: in BIT; Q: out BIT);
+end FF;
+architecture func of FF is
+begin
+work: process (R,C)
+begin
+if R='1' then Q &lt;= '0'; elsif C='1' then Q &lt;= S; else Q &lt;= Q;
+end if;
+end process work;
+end func;
+</pre>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div>Повторение примера 2, но установка состояния S происходит по положительному фронту сигнала C. В этом случае можно сохранить предыдущую модель, лишь заменив второе условие в операторе if на выражение</div>
+<pre class="eListing">not C'STABLE and C='1'
+</pre>
+</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><div>Требуется описать операцию записи данных в восьмиразрядный регистр 1 со входа A по переднему фронту тактового сигнала C и далее данные из регистра 1 в регистр 2 по заднему фронту того же сигнала (в этом примере иллюстрируется представление сигналов битовыми векторами):</div>
+<pre class="eListing">entity REG is
+port(A: in BIT_VECTOR(0 to 7);
+C: in BIT;
+Z: out BIT_VECTOR(0 to 7));
+end REG;
+architecture alg of REG is
+signal B: BIT_VECTOR(0 to 7);
+begin
+m: block ((C='1' and not C'STABLE) or (C='0' and not C'STABLE))
+B &lt;= guarded A after t1 when C='1' and not C'STABLE;
+Z &lt;= guarded B after t2 when C='0' and not C'STABLE;
+end block m;
+end alg;
+</pre>
+</div>
+<div class="auto">Пример 5</div>
+<div class="eExample"><div>Конвертор параллельного кода в последовательный:</div>
+<pre class="eListing">entity converter is
+generic (tact: Time);
+port (paral: in BIT_VECTOR (0 to 7);
+clock: in BIT;
+seq: out BIT);
+end converter;
+architecture alg of converter is
+begin
+A: process
+variable delay: Time := tact; 
+-- переменная delay типа Time с начальным значением tact.
+begin
+wait until clock = '1';
+for i in paral'range loop
+seq &lt;= transport paral(i) after delay;
+delay := delay+tact;
+end loop;
+seq &lt;= transport '0' after delay;
+end process A;
+end alg;
+</pre>
+</div>
+<div class="auto">Пример 6</div>
+<div class="eExample"><a name="T1549591769"></a>
+<a name="T1344177986"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Автомат Мура</a> (рис.&nbsp;1), где П — память (12-разрядный регистр), КС — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">комбинационная схема</a>.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=010_EDA/eda068.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Автомат Мура</div></div>
+<pre class="eListing">entity Moore is
+generic (T: Time:=25 ns; N: integer:=12; M: integer:=9);
+port (X: in BIT_VECTOR (1 to N);
+C: in BIT;
+F: out BIT_VECTOR (1 to M));
+end Moore;
+Architecture cont of Moore is
+signal  R2: BIT_VECTOR (1 to N);
+begin
+process (R2)
+begin F &lt;= CC2 (R2);
+end process;
+-- Идентификаторами CC1 и CC2 обозначены функции, 
+-- описываюшие поведение соответствующих КС,
+-- Описания функций здесь не приведены
+process (C)
+begin R2 &lt;= CC1 (R2,X) after T;
+end process;
+end cont;
+</pre>
+</div>
+<div class="auto">Пример 7</div>
+<div class="eExample"><div>Мультиплексор, схема и таблица функционирования которого приведены на рис.&nbsp;2.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=010_EDA/eda068.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Изображение мультиплексора и его функциональность</div></div>
+<pre class="eListing">entity mpx is
+port (X: in BIT_VECTOR (1 to 4);
+A: in BIT_VECTOR (1 to 2);
+y: out BIT);
+end mpx;
+-- архитектурное тело alg1 - первоначальное поведенческое описание,
+-- выражающее алгоритм функционирования устройства.
+architecture alg1 of mpx is
+begin
+with A select y &lt;= x(1) when "00", x(2) when "01", x(3) when "10", x(4) when "11";
+end alg1;
+-- архитектурное тело alg2 - поведенческое описание в стиле потока данных,
+-- полученное после выбора элементной базы и определенной конкретизации схемных решений
+architecture alg2 of mpx is
+signal ma1,ma2: BIT_VECTOR (1 to 2);
+signal: my: BIT_VECTOR (1 to 4);
+begin
+process()
+begin
+for i in 1 to 2 loop
+ma1(i) &lt;= not A(i) after 3 ns;
+ma2(i) &lt;= not ma1(i) after 3 ns;
+end loop;
+my(1) &lt;= not (x(1) and ma1(1) and ma1(2)) after 5 ns;
+my(2) &lt;= not (x(2) and ma1(1) and ma2(2)) after 5 ns;
+my(3) &lt;= not (x(3) and ma2(1) and ma1(2)) after 5 ns;
+my(4) &lt;= not (x(4) and ma2(1) and ma2(2)) after 5 ns;
+y &lt;= not (my(1) and my(2) and my(3) and my(4)) after 5 ns;
+end process;
+end alg2;
+-- архитектурное тело schema - структурное описание,
+-- выражающее логическую схему устройства
+architecture schema of mpx is
+component ANDN3
+port (a,b.c: in BIT; z: out BIT);
+end component;
+component ANDN4
+port (a,b,c,d: in BIT; z: out BIT);
+end component;
+component INV
+port (x: in BIT; y: out BIT);
+end component;
+signal ma1,ma2: BIT_VECTOR (1 to 2);
+signal: my: BIT_VECTOR (1 to 4);
+begin
+e1: ANDN3
+port map (x(1),ma1(1),ma2(1),my(1));
+e2: ANDN3
+port map (x(2),ma1(1),ma2(2),my(2));
+e3: ANDN3
+port map (x(3),ma1(2),ma2(1),my(3));
+e4: ANDN3
+port map (x(4),ma1(2),ma2(2),my(4));
+e5: ANDN4
+port map (my(1),my(2),my(3),my(4),y);
+e6: INV
+port map (A(1),ma1(1));
+e7: INV
+port map (ma1(1),ma2(1));
+e8: INV
+port map (A(2),ma1(2));
+e9: INV
+port map (ma1(2),ma2(2));
+end schema;
+</pre>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=010_EDA/eda068.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Логическая схема мультиплексора</div></div>
+</div>
+<div class="auto">Пример 8</div>
+<div class="eExample"><div>В этом примере рассматривается возможный вариант модели двоичного сумматора, на входы которого подаются двухразрядные двоичные слагаемые A и B, на выходе получается трехразрядное двоичное число Y. Главное назначение примера — иллюстрация применения пакета (package). Поэтому в приводимой модели используется операция сложения целых десятичных чисел, что требует перевода слагаемых A и B из двоичной системы в десятичную, а полученной суммы — из десятичной системы в двоичную. Для перевода используются функции tran2_10 и tran10_2. Эти функции объединены в пакет tran.</div>
+<pre class="eListing">entity add is
+port (A: in BIT_VECTOR (0 to 1);
+B: in BIT_VECTOR (0 to 1);
+Y: out BIT_VECTOR (0 to 2));
+end add;
+package tran is
+function tran2_10 (signal X1, X2: BIT) return integer;
+function tran10_2 (signal X: integer) return BIT_VECTOR;
+end tran;
+package body tran is
+function tran2_10 (signal X1, X2: BIT)
+return integer is
+variable Z: integer := 0;
+-- функция преобразования двухразрядных двоичных чисел в десятичные;
+-- аргументы X1 и X2 - соответственно младший и старший разряды двоичного числа
+begin
+if X1='1' then X := 1;
+else X := 0;
+end if;
+if X2='1' then X := X+2;
+else X := X;
+end if;
+return X;
+end tran2_10;
+function tran10_2 (signal X: integer)
+return BIT_VECTOR is
+variable Y: BIT_VECTOR (0 to 2);
+variable t1: integer := 0;
+variable t2: integer := 0;
+-- функция преобразования десятичных чисел в диапазоне от 0 до 7
+-- в трехразрядные двоичные числа
+begin
+t1 := X;
+for i in 2 downto 0 loop
+t2 := t1/(2--i);
+t1 := t1 rem (2--i);
+if t2=1 then
+Y(i) := '1';
+else Y(i) := '0';
+end if;
+end loop;
+return Y;
+end tran10_2;
+end tran;
+architecture sum of add is
+use tran.all;
+signal aint, bint: integer range 0 to 3;
+signal yint: integer range 0 to 7;
+begin
+aint &lt;= tran2_10 (A(0), A(1));
+bint &lt;= tran2_10 (B(0), B(1));
+yint &lt;= aint + bint;
+Y &lt;= tran10_2 (yint);
+end sum;
+</pre>
+</div>
+<div class="auto">Пример 9</div>
+<div class="eExample"><a name="T807580547"></a>
+<div>В этом примере рассматривается важная особенность языка VHDL заключающаяся в возможности использования в одном <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">архитектурном теле</a> смешанных структурных и поведенческих (structure and dataflow) описаний. Смешанные описания удобны, когда проектируется сложная схема из компонентов, для которых уже определены VHDL-модели в виде сущностей (entities).</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="11.111111%" align="center"><td width="20.0%" class="eTableT">A</td><td width="20.0%" class="eTableT">B</td><td width="20.0%" class="eTableT">C1</td><td width="20.0%" class="eTableT">SUM</td><td width="20.0%" class="eTableT">C2</td></tr>
+<tr height="11.111111%" align="center"><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">0</td></tr>
+<tr height="11.111111%" align="center"><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">0</td></tr>
+<tr height="11.111111%" align="center"><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">0</td></tr>
+<tr height="11.111111%" align="center"><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">1</td></tr>
+<tr height="11.111111%" align="center"><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">0</td></tr>
+<tr height="11.111111%" align="center"><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">1</td></tr>
+<tr height="11.111111%" align="center"><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">1</td></tr>
+<tr height="11.111111%" align="center"><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">1</td></tr>
+</tbody></table><br>
+<div>Пусть требуется разработать VHDL-модель восьмиразрядного комбинационного сумматора. Логика работы схемы одного разряда сумматора задана в виде табл.&nbsp;1. Тогда модель одноразрядного сумматора может быть представлена в следующем виде:</div>
+<pre class="eListing">entity adder is
+port (A, B, C1: in BIT;
+SUM, C2: out BIT);
+end adder;
+-- A и B - слагаемые, C1 - перенос из соседнего младшего разряда,
+-- SUM - сумма, C2 - перенос в соседний старший разряд
+architecture opr of adder is
+begin
+SUM &lt;= A xor B xor C1;
+C2 &lt;= (A and B) or (A and C1) or (C1 and B);
+end opr;
+</pre>
+<div>Теперь модель восьмиразрядного сумматора получается со ссылкой на компонент adder и с помощью оператора generate:</div>
+<pre class="eListing">entity add_8 is
+port (X, Y: in BIT_VECTOR (7 downto 0);
+C0: in BIT;
+C7: out BIT;
+RES: out BIT_VECTOR (7 downto 0);
+end add_8;
+-- X и Y - слагаемые, RES - сумма
+architecture cont of add_8 is
+component adder
+port (A, B, C1: in BIT;
+SUM, C2: out BIT);
+end component;
+signal C: BIT_VECTOR (7 downto 0);
+begin
+process()
+for i in 7 downto 0 loop
+if i=0 generate
+FF: adder
+port map (X(0), Y(0), C0, RES(0), C(0));
+end generate;
+if i /= 0 generate
+FF: adder
+port map (X(i), Y(i), C(i-1), RES(i), C(i));
+end generate;
+end loop;
+C7 &lt;= C(7);
+end process;
+end cont;
+</pre>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-3/">← Оглавление</a>
         <a href="/rk6-edu/course-3/mod-45.html">‹ Предыдущий</a>

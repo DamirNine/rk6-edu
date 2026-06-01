@@ -23,7 +23,79 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-34.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Технология XML-RPC</a>
+</div>
+<a name="T752938439"></a>
+<a name="T695157399"></a>
+<a name="T2033200231"></a>
+<a name="T2134277063"></a>
+<a name="T555117299"></a>
+<a name="T1228000529"></a>
+<div>Формат обмена данными при классической модели <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">RPC</a> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">DCOM</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">CORBA</a>) является бинарным, что неудобно,  если надо организовать работу распределенной системы, где между отдельными участками сети стоят firewall/прокси-серверы. Кроме того, технология DCOM реализована только для Windows-систем, CORBA функционирует преимущественно в среде <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">J2EE</a>. Поэтому развиваются технологии, основанные на обмене данными в виде <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-документов</a>. Это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">SOAP</a> и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">XML-RPC</a>.</div>
+<a name="T555439606"></a>
+<div>Основным транспортом в XML-RPC. является <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протокол HTTP</a>. Использование XML. и HTTP снимает ограничения, налагаемые как на конфигурацию сети, так и на маршрут следования пакетов.- Вызовы XML-RPC представляют собой простые типы данных text/xml и свободно проходят сквозь шлюзы везде, где допускается ретрансляция http-трафика.</div>
+<div>Рассмотрим примеры запросов и ответов в XML-RPC. В запросе сначала задается HTTP-заголовок (в примере метод POST) [1]:</div>
+<pre class="eListing">POST /RPC2 HTTP/1.0
+User-Agent: MyAPP-Word/5.1.2 (WinNT)
+Host: server.localnet.com
+Content-Type: text/xml
+Content-length: 172
+</pre>
+<div>затем следует собственно запрос в виде XML-документа:</div>
+<pre class="eListing">&lt;? xml version="1.0"?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;имя вызываемого метода&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;значение передаваемого параметра&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;значение передаваемого параметра&lt;/value&gt;
+&lt;/param&gt;
+.  .  .
+&lt;/params&gt;
+&lt;/methodCall&gt;
+</pre>
+<div>Пример XML-RPC ответа:</div>
+<pre class="eListing">HTTP/1.1 200 OK
+Connection: close
+Content-Length: 166
+Content-Type: text/xml
+Date: Fri, 17 Jul 1998 19:55:08 GMT
+Server: MyWordCheckSerwer/5.1.2-WinNT
+&lt;? xml version="1.0"?&gt;
+&lt;methodResponse&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;значение параметра результата&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;значение параметра результата&lt;/value&gt;
+&lt;/param&gt;
+.  .  .
+&lt;/params&gt;
+&lt;/methodResponse&gt;
+</pre>
+<div>В протоколе XML-RPC для передачи параметров методу и возвращаемых значений предусмотрено семь простых типов данных и два сложных. Эти типы отображают основные типы данных реальных языков программирования. Более сложные типы, такие, например, как объекты, нужно передавать в двоичном виде или заменять структурами.</div>
+<div>Пример описания структуры из двух строковых элементов:</div>
+<pre class="eListing">&lt;struct&gt;
+&lt;member&gt;
+&lt;name&gt;FirstWord&lt;/name&gt;
+&lt;value&gt;&lt;string&gt;Hello&lt;/string&gt;&lt;/value&gt;
+&lt;/member&gt;
+&lt;member&gt;
+&lt;name&gt;SecondWord&lt;/name&gt;
+&lt;value&gt;&lt;string&gt;World!&lt;/string&gt;&lt;/value&gt;
+&lt;/member&gt;
+&lt;/struct&gt;
+</pre>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. А.Лозовюк. XML-RPC: вызов процедур посредством XML/ Сайт CitForum.<br>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-32.html">‹ Предыдущий</a>

@@ -23,7 +23,42 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-41.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Составной оператор</a>
+</div>
+<a name="T10303336"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Составной оператор</a> представляет собой несколько операторов и объявлений, заключенных в фигурные скобки: </div>
+<pre class="eListing"> { [oбъявление]
+    :
+    оператор; [оператор];
+    :
+ }
+</pre>
+<br>
+<div>Заметим, что в конце составного оператора точка с запятой не ставится. Выполнение составного оператора заключается в последовательном выполнении составляющих его операторов. </div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">int main ()
+{
+  int    q,b;
+  double t,d;
+  :
+  if (...)
+   {
+     double t,d;
+     :
+   }
+  :
+  return (0);
+}
+</pre>
+</div>
+<a name="T696383489"></a>
+<a name="T662407216"></a>
+<div>Переменные <span class="eOperator">e,g,f,q</span> будут уничтожены после выполнения составного оператора. Отметим, что переменная q является локальной в составном операторе, т.е. она никоим образом не связана с переменной q объявленной в начале <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> <span class="eOperator">main</span> с типом <span class="eOperator">int</span>. Отметим также, что выражение стоящее после <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">return</a> может быть заключено в круглые скобки, хотя наличие последних необязательно. </div>
+<br>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-39.html">‹ Предыдущий</a>

@@ -23,7 +23,45 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-66.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Инициализация массива</a>
+</div>
+<a name="T20056830"></a>
+<a name="T1992766606"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Инициализация массива</a> — это присваивание элементам <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a> начальных значений.</div>
+<a name="T1961386404"></a>
+<a name="T1554292551"></a>
+<a name="T147264199"></a>
+<a name="T1835217675"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Внешние</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">статические внешние</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">статические внутренние</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">автоматические переменные</a> составных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типов данных</a>, таких как массивы, могут быть проинициализированы при их объявлении. Любая автоматическая переменная или ее часть (например, элемент массива), которые не были инициализированы, остаются неопределенными. Любая внешняя или статическая переменная или часть ее (например, элемент массива), будучи не проинициализированными, устанавливаются в 0 или <span class="eOperator">NULL</span> (для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателей</a>).</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">char alpha[10];
+char beta[10] = {'a, 'b', 'c'};
+char gamma[10] = "This is gamma";
+char delta[5][10] ={"line 1",
+                    "line 2",
+                    "line 3"};
+int num1[10];
+int num2[10] = {2, 4, 6, 8, 10};
+int num3[5][10] ={{0, 1, 2, 3, 4},
+                   {2, 4, 6, 8, 10},
+                   {3, 6, 8, 10, 12}};
+int main ()
+{
+static char local[] = "local string";
+char errmsg[] = "name", "too", "long";
+int lengths[10] = {23, 56, 83};
+...
+}
+</pre>
+<a name="T600009389"></a>
+<div>Размеры строк <span class="eOperator">gamma</span> и <span class="eOperator">local</span> равны количеству символов в строке, увеличенному на 1 (для символа <span class="eOperator">NULL </span>— <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">признака конца строки</a>).</div>
+</div>
+<a name="T828724782"></a>
+<div>Автоматические переменные инициализируются при каждом входе в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">блок</a>. Внешние и статические переменные инициализируются один раз, перед началом выполнения программы.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-64.html">‹ Предыдущий</a>

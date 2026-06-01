@@ -23,7 +23,78 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-102.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Указатели на структуры</a>
+</div>
+<a name="T541845194"></a>
+<a name="T1503632839"></a>
+<a name="T1133808979"></a>
+<a name="T74783515"></a>
+<a name="T1239699667"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Указатель</a> на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структуру</a> объявляется точно так же, как и указатель на данные простых типов: используется операция <span class="eOperator">*</span> и указывается <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">тип данных</a>. Тип данных структуры указывается заданием <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевого слова</a> <span class="eOperator">struct</span> и имени <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шаблона</a> этой структуры.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Объявление указателей:</div>
+<pre class="eListing">int        *ip;
+struct emp *sp;
+</pre>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
+#define NUM_EMPS 100
+void fillarray(struct emp *, int);
+struct emp {                              /*это шаблон, память не выделяется */
+            char   name[21];
+            char   id[8];
+            double salary;
+            };
+int main()
+{
+struct emp staff[NUM_EMPS], *sp;    /*выделяется память под массив структур и под указатель*/
+double     sal_tot = 0;
+
+fillarray(staff , NUM_EMPS);             /*заполняет массив структур данными */
+for (sp = staff; sp != &amp;staff[NUM_EMPS]; sp++)
+      sal_tot += sp-&gt;salary;
+printf("total of salaries: %.2f\n", sal_tot);
+
+}
+</pre>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/struct_point.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Указатель на массив структур</div></div>
+<a name="T852933925"></a>
+<div>В прим.&nbsp;2 указатель <span class="eOperator">sp</span> после инициализации указывает на начало <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива структур</a> <span class="eOperator">staff</span>, т.е. содержит адрес первой структуры массива. Поскольку <span class="eOperator">sp</span> – указатель на структуру, то результат операции <span class="eOperator">*sp</span> является структурой, в данном случае <span class="eOperator">staff[0]</span>. Чтобы обратиться к полю <span class="eOperator">salary</span> структуры <span class="eOperator">staff[0]</span>, можно использовать следующие выражения:</div>
+<ul class="eList"><li><span class="eOperator">staff[0].salary</span></li>
+<a name="T114264910"></a>
+<li><span class="eOperator">(*sp).salary</span> (круглые скобки требуются в этом контексте, чтобы учесть <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">приоритет операций</a>).</li>
+</ul>
+<div class="eSubTitle">Операция доступа к элементу структуры через указатель</div>
+<a name="T58583122"></a>
+<div>Ввиду того, что указатели на структуры используются очень часто , в языке Си есть специальная <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операция доступа к элементу структуры через указатель</a><span class="eOperator">(-&gt;</span>), позволяющая сослаться на элемент структуры, заданный указателем на нее:</div>
+<div><span class="eOperator">имя_указателя-&gt;имя_элемента</span></div>
+<a name="T424168142"></a>
+<div>Эта операция является первичной и находится в самой верхней строке <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">таблицы приоритетов</a> операций языка Си.</div>
+<div>После того, как указатель <span class="eOperator">sp</span> инициализирован и указывает на элемент массива структур <span class="eOperator">staff[0]</span>, следующие выражения эквиваленты:</div>
+<ul class="eList"><li><span class="eOperator">staff[0].salary</span> <span class="eOperator">/*имя_структуры.имя_элемента*/</span></li>
+<li><span class="eOperator">sp-&gt;salary</span> <span class="eOperator"> /*имя_указателя-&gt;имя_элемента*/</span></li>
+</ul>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-100.html">‹ Предыдущий</a>

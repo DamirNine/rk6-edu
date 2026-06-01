@@ -23,7 +23,74 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-3/mod-48.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Язык VHDL-AMS</a>
+</div>
+<a name="T1950475011"></a>
+<a name="T107645917"></a>
+<div>В <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">язык VHDL-AMS</a> по сравнению с базовой версией <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">VHDL</a> введен ряд дополнений, позволяющих использовать VHDL-AMS для многоаспектного моделирования непрерывных процессов.</div>
+<a name="T1281306405"></a>
+<a name="T659151995"></a>
+<a name="T1594316252"></a>
+<a name="T293215917"></a>
+<a name="T2147378832"></a>
+<a name="T258777628"></a>
+<div>Концепция <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">многоаспектного моделирования</a> была сформулирована более двадцати лет тому назад. Она основана на аналогиях компонентных и топологических уравнений, составляющих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">математические модели</a> объектов во многих предметных областях на макроуровне. При этом под <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">макроуровнем</a> моделирования понимается совокупность моделей с сосредоточенными параметрами (т.е. описываемых системами обыкновенных дифференциальных уравнений) и методов их решения. Зависимыми переменными в этих моделях являются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">фазовые переменные</a>, которые могут быть двух типов — <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">переменными типа потенциала</a> или <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">переменными типа потока</a>. В VHDL-AMS первые из них называются переменными <span class="eOperator">across quantity</span>, вторые — <span class="eOperator">through quantity</span>. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Компонентные уравнения</a> выражают связи между <span class="eOperator">across</span> и <span class="eOperator">through</span> переменными в отдельных элементах моделируемых объектов, а <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">топологические уравнения</a> — между однотипными фазовыми переменными разных элементов. Так, в случае электрических систем примерами компонентных уравнений могут быть уравнения закона Ома, а топологических — уравнения законов Кирхгофа. Фазовые переменные, используемые в моделях разных предметных областей (Energy domains), перечислены в табл.&nbsp;1.</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTableT">Физическая система</td><td class="eTableT">across quantity</td><td class="eTableT">through quantity</td></tr>
+<tr><td class="eTable">Электрическая (electrical)</td><td class="eTable">Электрическое напряжение (voltage)</td><td class="eTable">Электрический ток (current)</td></tr>
+<tr><td class="eTable">Механическая поступательная (translational)</td><td class="eTable">Перемещение (displacement) или скорость</td><td class="eTable">Сила (force)</td></tr>
+<tr><td class="eTable">Механическая вращательная (rotational)</td><td class="eTable">Угол (angle) или угловая скорость</td><td class="eTable">Вращательный момент (torque)</td></tr>
+<tr><td class="eTable">Гидравлическая (fluidic)</td><td class="eTable">Давление (pressure)</td><td class="eTable">Объемный поток (flow rate)</td></tr>
+<tr><td class="eTable">Тепловая (thermal)</td><td class="eTable">Температура (temperature)</td><td class="eTable">Тепловой поток (heat flux)</td></tr>
+</tbody></table><br>
+<a name="T885663735"></a>
+<div>Введение в язык VHDL-AMS средств аналогового, многоаспектного и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">смешанного моделирования</a> потребовало реализации следующих возможностей. Во-первых, это появление средств описания дифференциальных и алгебраических уравнений. При этом подразумевается наличие в интерпретаторе языка VHDL-AMS средств для численного решения уравнений, хотя сами методы решения в стандарте не определяются. Во-вторых, компоненты общей модели могут быть аналоговыми или дискретными, взаимодействие компонентов происходит через порты, а порты могут быть как дискретного, так и аналогового типов. В-третьих, предусматривается синхронизация событий в дискретной части с временными характеристиками процессов в непрерывной части модели. В-четвертых, имеется возможность моделирования не только во временной, но и в частотной областях.</div>
+<div>Наряду с такими объектами, как компоненты, сигналы, константы в язык введены непрерывные переменные <span class="eOperator">quantity</span>, имеющие тип <span class="eOperator">real</span>. Производная <img align="absmiddle" src="/?frm/?doc=010_EDA/eda069.mod/?n=1/?k=10"> непрерывной переменной <img align="absmiddle" src="/?frm/?doc=010_EDA/eda069.mod/?n=2/?k=10"> обозначаются как X'<span class="eOperator">Dot</span>, а интеграл от переменной <img align="absmiddle" src="/?frm/?doc=010_EDA/eda069.mod/?n=2/?k=10"> от 0 до текущего момента времени — X'<span class="eOperator">Integ</span>.</div>
+<div>Появляется новый тип операторов для записи уравнений (simultaneous statement), в которых фигурируют переменные <span class="eOperator">quantity</span>. Примером simultaneous statement может служить следующая запись:</div>
+<pre class="eListing">x'dot == a*x + b*y;
+</pre>
+<div>Эти операторы могут появиться везде, где допускается запись операторов присваивания значений сигналам <span class="eOperator">&lt;=</span>. Порядок записи этих операторов не имеет значения, т.е. они выполняются параллельно.</div>
+<div>Указание природы приложения (energy domain) выполняется с помощью ссылки на запись общих для приложения свойств, которая должна быть сделана в специальном пакете (package). На каждое приложение составляется один пакет. В этом пакете, в частности, в конструкции <span class="eOperator">nature</span> вводятся идентификаторы для фазовых переменных типа потенциала и типа потока. Например, в пакете для электрических систем записывается</div>
+<pre class="eListing">nature electrical is
+voltage across
+current through
+electrical_ref reference;
+</pre>
+<div><span class="eOperator">voltage</span> есть <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">переменная типа потенциала</a>, а <span class="eOperator">current</span> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">переменная типа потока</a>. Последняя строка в этом фрагменте служит для указания физической природы системы. Для тепловой подсистемы идентификаторами для <span class="eOperator">across</span>, <span class="eOperator">through</span> и <span class="eOperator">reference</span> соответственно будут <span class="eOperator">temperature</span>, <span class="eOperator">heatflow</span>, <span class="eOperator">termal_ref</span> и т.п.</div>
+<div>Каждому приложению при <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многоаспектном моделировании</a> конкретного объекта соответствует своя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">эквивалентная схема</a>, представленная в декларациях <span class="eOperator">entity</span> своими внешними портами. Например, описания внешних портов в некоторой электрогидравлической системе могут выглядеть следующим образом:</div>
+<pre class="eListing">entity unit is
+port (terminal x1,x2: electrical;
+terminal g1,g2,g3: fluidic);
+end unit;
+</pre>
+<div>Здесь <span class="eOperator">x1</span>, <span class="eOperator">x2</span> — узлы в электрической подсистеме; <span class="eOperator">g1</span>, <span class="eOperator">g2</span>, <span class="eOperator">g3</span> — в гидравлической подсистеме.</div>
+<div>Входными и/или выходными переменными в моделях, описывающих потоки сигналов, могут быть переменные <span class="eOperator">quantity</span>. Тогда описание портов может быть следующим:</div>
+<pre class="eListing">port (quantity input: in real; quantity output: out real);
+</pre>
+<div>Внутренние переменные <span class="eOperator">quantity</span> декларируются в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">архитектурных телах</a>, например:</div>
+<pre class="eListing">quantity v across i1, i2 through node_a to node_d;
+</pre>
+<div>Эта запись в электрической подсистеме означает, что переменная v есть разность потенциалов между узлами node_a и node_d эквивалентной схемы, а переменные <span class="eOperator">i1</span> и <span class="eOperator">i2</span> суть токи в ветвях, инцидентных этим узлам.</div>
+<div>Начальные условия для переменных задаются в архитектурных телах с помощью оператора <span class="eOperator">break</span>.</div>
+<div>Атрибутами некоторого узла T называют переменные T'<span class="eOperator">Reference</span> и T'<span class="eOperator">Contribution</span>. Переменная T'<span class="eOperator">Reference</span> есть <span class="eOperator">across quantity</span> относительно общего узла (ground). Переменная T'<span class="eOperator">Contribution</span> — сумма переменных <span class="eOperator">through quantity</span> в ветвях, инцидентных узлу T. При этом за положительное направление для T'<span class="eOperator">Reference</span> принято направление от узла T к общему узлу.</div>
+<div>Поскольку численное решение является приближенным, то вводится понятие допусковой группы, каждая непрерывная величина и simultaneous statement принадлежат к определенной допусковой группе. Поэтому для переменных <span class="eOperator">quantity</span> наряду с записью их типа (<span class="eOperator">real</span>) обычно указывается допуск.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-3/">← Оглавление</a>
         <a href="/rk6-edu/course-3/mod-46.html">‹ Предыдущий</a>

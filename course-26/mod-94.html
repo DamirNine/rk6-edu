@@ -23,7 +23,92 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-95.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функция  localeconv</a>
+</div>
+<pre class="eListing">#include &lt;locale.h&gt;
+struct lconv *localeconv(void)
+</pre>
+<a name="T1932770254"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция localeconv</a>() возвращает указатель на структуру типа lconv, которая содержит различную информацию о геополитической среде, связанную со способом форматирования чисел.</div>
+<br>
+<a name="T194405881"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Структура lconv</a> включает следующие члены:</div>
+<br>
+<pre class="eListing">char decimal_point;      /*Символ десятичной точки для неденежных значений.*/
+char thousands_sep;      /*Разделитель тысяч для неденежных значений.*/
+char grouping;           /*Определяет группирование для неденежных значений.*/ 
+char int_curr_symbol;    /*Символ международной валюты*/
+char currency_symbol;    /* Символ местной валюты*/
+char mon_decimal_point;  /* Символ десятичной точки для денежных значений.*/
+char mon_thousands_sep;  /* Разделитель тысяч для денежных значений.*/
+char mon_grouping;       /* Определяет группирование для денежных значений.*/ 
+char positive_sign;      /*Индикатор положительных денежных значений.*/ 
+char negative_sign;      /*Индикатор отрицательных денежных значений.*/ 
+char int_frac_digits;    /*Количество цифр справа от десятичной точки для денежных значений,
+                         отображаемых в международном формате. */
+сhar frac_digits;        /* Количество цифр справа от десятичной точки для денежных значений, 
+                         отображаемых в местном формате. */
+</pre>
+<pre class="eListing">char p_cs_precedes;      /* 1-если символ валюты предшествует положительному значению,0- если 
+                         символ валюты следует за значением. */
+</pre>
+<pre class="eListing">char p_sep_by_space;     /* 1-если символ валюты отделяется от значения пробелом,0- в противном
+                         случае. В версии С99 содержит разделитель. */
+char n_cs_precedes;      /* 1- если символ валюты предшествует отрицательному значению, 
+                         0- если символ валюты следует за значением. */
+char n_sep_by_space;     /* 1- если символ валюты отделяется от отрицательного значения пробелом,
+                         0- если символ валюты следует за значением. В версии С99 содержит 
+                         разделитель. */
+сhar p_sign_posn;        /*Указывает позицию символа положительного значения. */
+char n_ sign_posn;       /* Указывает позицию символа отрицательного значения. */
+</pre>
+<pre class="eListing">/* Следующие члены добавлены в С99. */
+char _p_ cs_precedes;    /* 1 - если символ валюты предшествует положительному значению, 
+                         0 - еслисимвол валюты следует за значением. Применяется для значений 
+                         в международном формате. */
+char _p_ sep_by_space;   /* Разделитель между символом валюты, знаком и положительным значением.
+                         Применяется для значений в международном. формате. */
+Rhar_n_cs_ precedes;     /* 1 - если символ валюты предшествует отрицательному значению, 
+                         0 - если  символ валюты следует за значением. Применяется для значений 
+                         в международном  формате . */
+char _n_ sep_by_space;   /* Разделитель между символом валюты, знаком и отрицательным значением. 
+                         Применяется для значений в международном формате . */
+char _n_sign_ posn;      /* Указывает позицию символа .отрицательного значения. Применяется 
+                         для значений в международном формате.*/
+</pre>
+<div>Функция localeconv() возвращает указатель на структуру lconv. Следует помнить, что содержимое этой структуры изменять нельзя. Необходимо обратится к документации вашего транслятора для определения специфической информации, касающейся структуры lconv.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Следующая программа отображает символ десятичной точки, используемый в текущей локализации:</div>
+</div>
+<pre class="eListing">#include  &lt;stdio.h&gt;
+#include  &lt;locale.h&gt;
+int main (void)
+{
+struct  lconv lc;
+lc  =   *localeconv();
+printf("B  качестве разделителя целой и дробной части в десятичных числах используется  символ  %s\n",   lc.decimal_point);
+return  0;
+}
+</pre>
+<a name="T1492530786"></a>
+<div>При этом используется родственная <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функция setlocale</a>().</div>
+<br>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-93.html">‹ Предыдущий</a>

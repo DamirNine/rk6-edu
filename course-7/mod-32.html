@@ -23,7 +23,57 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-7/mod-33.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Структура моделей на языке Express</a>
+</div>
+<a name="T2108182528"></a>
+<a name="T674463047"></a>
+<div>Базовый для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">STEP</a>-технологий <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">язык Express</a> описан в стандарте ISO 10303, том 11. Язык является объектно-ориентированным, имеет универсальный характер, его можно использовать для описания статических структур и их свойств в различных предметных областях, несмотря на то, что язык разрабатывался прежде всего в качестве средства представления моделей промышленных изделий на разных этапах их жизненного цикла.</div>
+<a name="T334417668"></a>
+<div>Описание некоторого приложения на языке Express в рамках стандартов STEP называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Express моделью</a> (мodel). В модели декларируются множества понятий и объектов, входящих в приложение, свойства и взаимосвязи объектов.</div>
+<a name="T846898933"></a>
+<div>Модель состоит из одной или нескольких частей, называемых <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Express схемами</a> (schema) или просто схемами, и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обменного файла</a>.  Схема — раздел описания, являющийся областью определения данных. В ней вводятся необходимые типы данных. При описании свойств типов данных могут применяться средства процедурного описания — процедуры, функции, правила, константы. Обменный файл содержит  конкретные экземпляры  типов данных.  </div>
+<div>Описание схемы начинается с заголовка, состоящего из служебного слова schema и идентификатора — имени схемы. Далее следует содержательная часть — тело схемы. Описание заканчивается служебным словом end_schema:</div>
+<pre class="eListing">SCHEMA &lt;имя_схемы&gt;;
+&lt;тело_схемы&gt;;
+END_SCHEMA;
+</pre>
+<a name="T381072063"></a>
+<div>В <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">языке Express-G</a> схема представляется прямоугольником с разделительной горизонтальной линией, над этой линией записывается имя схемы, как это показано на рис.&nbsp;1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=230_CALS/cals103.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Изображение схемы в языке Express-G</div></div>
+<div>Для установления интерфейса между двумя схемами вводятся спецификации интерфейса. Применяют два типа спецификаций — use и reference. Например:</div>
+<pre class="eListing">SCHEMA s1;
+ENTITY par1;
+name: STRING;
+END_ENTITY;
+END_SCHEMA;
+SCHEMA s2; ( * в схеме s2 в качестве параметра х используется name из
+ s1.par1 *)
+USE FROM s1.par1 (name AS x);
+END_SCHEMA;
+</pre>
+<div>Ссылки типа use отличаются тем, что декларации сущностей из другой схемы используются в данной схеме как свои локальные, в то время как reference просто позволяет обращаться к декларациям другой сущности. Ограниченность reference выражается в том, что сущности из другой схемы можно использовать только в качестве типов атрибутов в сущностях данной схемы.</div>
+<div>В языке Express-G используются диаграммы двух уровней. На схемном уровне (schema level) изображаются схемы и их взаимосвязи в виде линий. На сущностном уровне (entity level) изображаются типы, сущности, атрибуты, а для ссылок на объекты другой схемы применяются специальные символы.</div>
+<div>Эти символы представляют овальными фигурами. В овале записывают имя схемы-источника и имя используемого определения. В нашем примере это ссылка на s1.par1. Овал помещается внутрь прямоугольника, в котором дополнительно указывается имя атрибута (в примере это name).</div>
+<div>Для указания межстраничной связи, что требуется, если Express-G модель размещается более чем на одной странице, используется овальный символ, внутри которого указываются через запятую номер страницы и номер ссылки.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-7/">← Оглавление</a>
         <a href="/rk6-edu/course-7/mod-31.html">‹ Предыдущий</a>

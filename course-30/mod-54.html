@@ -23,7 +23,510 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-55.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Комбинаторика и переборные алгоритмы</a>
+</div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Что такое комбинаторика?</span></div>
+<br>
+<a name="T443701412"></a>
+<div>  Вам наверняка встречались такие задачи, в которых нужно найти количество способов, которыми можно расположить некоторые предметы, сделать действие и т.д. Именно такие задачи и решает <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">комбинаторика</a>.</div>
+<br>
+<a name="T1851536349"></a>
+<a name="T1473818478"></a>
+<a name="T350955073"></a>
+<a name="T1984638707"></a>
+<div>  Основные понятия комбинаторики - <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">перестановка</a>, <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">размещение</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сочетание</a>. Также на важном месте находится <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">факториал</a>.</div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Факториал</span></div>
+<br>
+<div>n! (n факториал) - это произведение всех натуральных чисел от 1 до n (n! = 1 * 2 * 3 * ... * n).</div>
+<div>Условились считать, что 0! = 1! = 1.</div>
+<div>Факториал вычисляется очень легко: </div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><br>
+<pre class="eListing">Private Function fact (ByVal n As Integer) As Double
+       Dim i As Integer
+
+       Fact = 1
+       For i = 1 To n 'перемножаем все числа от 1 до n
+           fact = fact * i
+       Next
+End Function
+
+</pre>
+</div>
+<a name="T823713000"></a>
+<div>  Факториал можно также вычислить с помощью рекурсивного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a>:</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><br>
+<pre class="eListing">Private Function fact (ByVal n As Integer) As Double
+       If n &lt;= 0 Then 'проверяем условие выхода из рекурсии
+           fact = 1
+       Else
+           fact = num * fact (n - 1) 'перемножаем промежуточный результат и на единицу меньшее число
+       End If
+End Function 
+</pre>
+</div>
+<br>
+<div>  Заметьте, что возвращаемое значение должно иметь тип Double. Это сделано, потому что факториал растёт очень быстро и уже 13! не умещается в рамки типа Long. Тип Double позволяет вычислять факториалы чисел до 170.</div>
+<br>
+<a name="T33524358"></a>
+<div>  Лучше использовать нерекурсивный алгоритм вычисления факториала, так как этот способ быстрее и при использовании рекурсии возможно переполнение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стека</a>.</div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Последовательности</span></div>
+<br>
+<div>  Предположим, нам нужно вывести в Textbox все последовательности длины N из чисел 1, 2, 3, ..., M. Первая последовательность будет иметь следующий вид:</div>
+<br>
+<div>1, 1, 1, ..., 1</div>
+<br>
+<div>, а последняя:</div>
+<br>
+<div>M, M, M, ..., M. </div>
+<br>
+<div>  Всего таких последовательностей будет M ^ N.</div>
+<br>
+<a name="T1992766606"></a>
+<div>  Пусть последовательность находится в одномерном <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массиве</a> X. Создадим процедуру NextS, которая будет генерировать последовательность. Её нужно будет вызвать M ^ N раз. В процедуре NextS нужно перебрать все N знаков последовательности, начиная с последнего. Если знак равен M, то присваиваем ему значение 1, в ином случае увеличиваем его на единицу и выходим из цикла.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><br>
+<pre class="eListing">Dim M As Integer
+Dim N As Integer
+Dim X() As Integer
+
+Private Sub Sequences()
+Dim i As Integer
+Dim j As Integer
+
+M = CInt (InputBox ("Введите M"))
+N = CInt (InputBox ("Введите N"))
+ReDim X(N)
+
+txtOut.Text = ""
+
+For i = 1 To N
+       X(i) = 1
+Next
+Yes = False
+For i = 1 To M ^ N
+       For j = 1 To N
+txtOut.Text = txtOut.Text &amp; CStr(X(j))
+       Next
+       txtOut.Text = txtOut.Text &amp; vbCrLf
+       NextS
+Next
+End Sub
+
+Private Sub NextS()
+Dim i As Integer
+
+i = N
+Do While (i &gt; 0) And (X(i) = M)
+X(i) = 1
+i = i - 1
+Loop
+If i &gt; 0 Then (i) = X(i) + 1
+End Sub
+</pre>
+</div>
+<br>
+<div>Все последовательности можно найти также и рекурсивным алгоритмом:</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><br>
+<pre class="eListing">Dim M As Integer
+Dim N As Integer
+Dim X() As Integer
+
+Private Sub SequencesRecursion()
+M = 5
+N = 5
+ReDim X(N)
+
+txtOut.Text = ""
+
+SRGenerate 0
+End Sub
+
+Private Sub SRGenerate (ByVal K As Integer)
+Dim i As Integer
+Dim j As Integer
+
+If K = N Then
+For i = 1 To N
+txtOut.Text = txtOut.Text &amp; CStr(X(i))
+Next
+txtOut.Text = txtOut.Text &amp; vbCrLf
+Else
+For j = 1 To M
+X(K + 1) = j
+SRGenerate (K + 1)
+Next
+End If
+End Sub
+</pre>
+</div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Перестановки</span></div>
+<br>
+<div>  Число перестановок - это число различных способов, которыми можно упорядочить данное множество, состоящее из n элементов.</div>
+<br>
+<div>  Число перестановок n элементов равно n!. Его можно вычислить следующим образом:</div>
+<br>
+<div class="auto">Пример 5</div>
+<div class="eExample"><pre class="eListing">Private Function PereCount (ByVal n As Integer) As Double
+       PereCount = fact (n)
+End Function
+
+Private Function fact (ByVal n As Integer) As Double
+       Dim i As Integer
+
+       Fact = 1
+       For i = 1 To n 'перемножаем все числа от 1 до n
+           fact = fact * i
+       Next
+End Function 
+</pre>
+<br>
+</div>
+<div>  Предположим, нам нужно вывести в TextBox все перестановки чисел от 1 до N. Создадим для этого рекурсивный алгоритм, который будет выглядеть так:</div>
+<div class="auto">Пример 6</div>
+<div class="eExample"><br>
+<pre class="eListing">Dim N As Integer
+Dim X () As Integer
+
+Private Sub Perestanovki ()
+     Dim i As Integer
+
+     N = CInt (InputBox ("Введите N"))
+     ReDim X (N)
+     For i = 1 To N
+         X (i) = i
+     Next
+     PRGenerate 0
+End Sub
+
+Private Sub PRGenerate (ByVal k As Integer)
+     Dim i As Integer
+
+     If k = N Then
+         For i = 1 To N
+           txtOut.Text = txtOut.Text &amp; CStr (X (i))
+         Next
+         txtOut.Text = txtOut.Text &amp; vbCrLf
+     Else
+         For i = k + 1 To N
+           Swap X (k + 1), X (i)
+           PRGenerate k + 1
+           Swap X (k + 1), X (i)
+         Next
+     End If
+End Sub
+
+Private Sub Swap (ByRef a As Integer, ByRef b As Integer)
+     Dim c As Integer
+
+     c = a
+     a = b
+     b = c
+End Sub 
+</pre>
+</div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Сочетания</span></div>
+<br>
+<div>  Сочетание - это произвольное k-элементное подмножество n-элементного множества. Порядок элементов в подмножестве не имеет значения.</div>
+<br>
+<div>Пример сочетаний по 2 из 3:</div>
+<br>
+<div>12</div>
+<div>13</div>
+<div>23 </div>
+<br>
+<div>Число сочетаний находится по следующей формуле:</div>
+<br>
+<div><br><img align="absmiddle" src="/?frm/?doc=PO_CAD/s.1.mod/?n=1/?k=10"><br></div>
+<br>
+<div>Число сочетаний можно вычислить, используя следующий код:</div>
+<div class="auto">Пример 7</div>
+<div class="eExample"><br>
+<pre class="eListing">Private Function SochCount (ByVal n As Integer, ByVal k As Integer) As Double
+       SochCount = fact (n) / (fact (k) * fact (n-k))
+End Function
+
+Private Function fact (ByVal n As Integer) As Double
+       Dim i As Integer
+
+       Fact = 1
+       For i = 1 To n 'перемножаем все числа от 1 до n
+           fact = fact * i
+       Next
+End Function 
+</pre>
+</div>
+<br>
+<div>  Есть и другой способ вычисления количества сочетаний. Его Вы можете использовать, если n! или k! не умещаются в рамках типа Double (если n&gt;170 или k&gt;170). Этот способ заключается в использовании треугольника Паскаля (он же арифметический треугольник, он же золотой треугольник).</div>
+<br>
+<div>  В 1653 году Блез Паскаль опубликовал "Трактат об арифметическом треугольнике". Этот треугольник был известен ещё в Древней Индии (X век). В XVI веке он был вновь открыт Штифелем.</div>
+<br>
+<div>  Треугольник Паскаля строится очень легко. Его бёдра и вершина состоят из единиц, а остальные элементы получаются сложением двух элементов, стоящих непосредственно над ним. Количество сочетаний будет равным элементу k треугольника, находящемуся в строке n. n и k нумеруются от нуля.</div>
+<br>
+<div>Алгоритм вычисления числа сочетаний с использованием треугольника Паскаля представлен ниже:</div>
+<div class="auto">Пример 8</div>
+<div class="eExample"><br>
+<pre class="eListing">Private Function SochTT (ByVal n As Integer, ByVal k As Integer) As Double
+       Dim i As Integer
+       Dim j As Integer
+       Dim TT () As Double
+
+       ReDim TT (n, k)
+       For i = 0 To n
+         TT (0, i) = 1
+         TT (i, i) = 1
+       Next
+       For i = 2 To n
+         For j = 1 To i - 1
+           TT (i, j) = TT (i - 1, j - 1) + TT (i - 1, j)
+         Next
+       Next
+       SochTT = TT (n, k)
+End Function 
+</pre>
+</div>
+<br>
+<div>  Если Вам нужно вычислять число сочетаний много раз, то, возможно, будет удобнее один раз построить треугольник Паскаля, а затем получать из массива данные.</div>
+<div class="auto">Пример 9</div>
+<div class="eExample"><br>
+<pre class="eListing">Dim TT () As Double
+
+Private Sub CreateTT ()
+      ReDim TT (0, 0)
+      BuildTT 0, 0
+End Sub
+
+Private Function SochTT (ByVal n As Integer, ByVal k As Integer) As Double
+      If n &gt; Ubound (TT) Then BuildTT Ubound (TT) + 1, n
+      SochTT = TT (n, k)
+End Function
+
+Private Sub TerminateTT ()
+      ReDim TT (0, 0)
+End Sub
+
+Private Sub BuildTT (ByVal start As Integer, ByVal end As Integer)
+      Dim i As Integer
+      Dim j As Integer
+
+      ReDim Preserve TT (end, end)
+      For i = start To end
+         TT (0, i) = 1
+         TT (i, i) = 1
+      Next
+      If end &lt; 2 Then Exit Sub
+      If start &lt; 2 Then start = 2
+      For i = start To end
+         For j = 1 To i - 1
+           TT (i, j) = TT (i - 1, j - 1) + TT (i - 1, j)
+         Next
+      Next
+End Sub 
+</pre>
+</div>
+<br>
+<div>  Сначала нужно вызвать процедуру CreateTT. Затем Вы можете получать число сочетаний с помощью функции SochTT. Когда треугольник станет Вам не нужен, вызовите процедуру TerminateTT. В вышеуказанном коде при вызове функции SochTT, если треугольник ещё не достроен до необходимого уровня, то он достраивается с помощью процедуры BuildTT. Затем функция получает нужный элемент массива TT и возвращает его.</div>
+<br>
+<div>  Допустим, нам нужно вывести в TextBox все сочетания из N по K. Создадим для этого рекурсивный алгоритм, который будет выглядеть так:</div>
+<div class="auto">Пример 10</div>
+<div class="eExample"><br>
+<pre class="eListing">Dim X () As Integer
+Dim Counter () As Integer
+Dim K As Integer
+Dim N As Integer
+
+Public Sub Soch()
+Dim i As Integer
+
+N = CInt(InputBox("Введите N"))
+K = CInt(InputBox("Введите K"))
+
+K = K + 1
+
+ReDim X(N)
+
+For i = 1 To N
+      X(i) = i
+Next
+txtOut.Text = ""
+
+ReDim Counter(K)
+Counter(0) = 1
+
+SochGenerate 1
+End Sub
+
+Private Sub SochGenerate(ByVal c As Integer)
+Dim i As Integer
+Dim j As Integer
+Dim n1 As Integer
+Dim Out() As Integer
+Dim X1() As Integer
+
+    If c = K Then
+      ReDim Out(K)
+
+      X1 = X
+
+      For i = 1 To K - 1
+         n1 = 0
+         For j = 1 To N
+           If X1(j) &lt;&gt; 0 Then n1 = n1 + 1
+           If n1 = Counter(i) Then
+             Out(i) = X1(j)
+             X1(j) = 0
+             Exit For
+           End If
+         Next
+         txtOut.Text = txtOut.Text &amp; CStr(Out(i))
+      Next
+      txtOut.Text = txtOut.Text &amp; vbCrLf
+    Else
+      For Counter(c) = Counter(c - 1) To N - c + 1
+         SochGenerate c + 1
+      Next
+    End If
+End Sub 
+</pre>
+</div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Размещения</span></div>
+<br>
+<div>  Размещение - это произвольное k-элементное подмножество n-элементного множества. Порядок элементов в подмножестве имеет значение.</div>
+<br>
+<div>Пример размещений из 3 по 2:</div>
+<br>
+<div>12</div>
+<div>21</div>
+<div>13</div>
+<div>31</div>
+<div>23</div>
+<div>32</div>
+<br>
+<div>Число размещений находится по формуле:</div>
+<br>
+<div>A (n, k) =<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.1.mod/?n=2/?k=10"></div>
+<div>Число размещений можно вычислить, используя такой код:</div>
+<div class="auto">Пример 11</div>
+<div class="eExample"><br>
+<pre class="eListing">Private Function RazmCount (ByVal n As Integer, ByVal k As Integer) As Double
+     RazmCount = fact (n) / fact (n - k)
+End Function
+
+Private Function fact (ByVal n As Integer) As Double
+     Dim i As Integer
+
+     Fact = 1
+     For i = 1 To n 'перемножаем все числа от 1 до n
+       fact = fact * i
+     Next
+End Function 
+</pre>
+</div>
+<br>
+<div>  Допустим, нам нужно вывести в TextBox все размещения из N по K. Это можно сделать очень легко. Размещения - это все перестановки всех сочетаний. Мы уже знаем, как найти все сочетания и все перестановки. Создадим алгоритм нахождения всех размещений:</div>
+<div class="auto">Пример 12</div>
+<div class="eExample"><br>
+<pre class="eListing">Dim X () As Integer
+Dim Counter () As Integer
+Dim Out() As Integer
+Dim K As Integer
+Dim N As Integer
+
+Private Sub Razm ()
+Dim i As Integer
+
+N = CInt(InputBox("Введите N"))
+K = CInt(InputBox("Введите K"))
+
+K = K + 1
+
+ReDim X(N)
+   ReDim Out(K)
+
+For i = 1 To N
+     X(i) = i
+Next
+txtOut.Text = ""
+
+ReDim Counter(K)
+Counter(0) = 1
+
+RazmSochGenerate 1
+End Sub
+
+Private Sub RazmSochGenerate ()
+Dim i As Integer
+Dim j As Integer
+Dim n1 As Integer
+Dim X1() As Integer
+
+   If c = K Then
+
+     X1 = X
+
+     For i = 1 To K - 1
+       n1 = 0
+       For j = 1 To N
+         If X1(j) &lt;&gt; 0 Then n1 = n1 + 1
+         If n1 = Counter(i) Then
+           Out(i) = X1(j)
+           X1(j) = 0
+           Exit For
+         End If
+       Next
+     Next
+     PRGenerate 0
+   Else
+     For Counter(c) = Counter(c - 1) To N - c + 1
+       RazmSochGenerate c + 1
+     Next
+   End If
+End Sub
+
+Private Sub PRGenerate (ByVal k As Integer)
+   Dim i As Integer
+
+   If k = N Then
+     For i = 1 To N
+       txtOut.Text = txtOut.Text &amp; CStr (Out (i))
+     Next
+     txtOut.Text = txtOut.Text &amp; vbCrLf
+   Else
+     For i = k + 1 To N
+       Swap Out (k + 1), Out (i)
+       PRGenerate k + 1
+       Swap Out (k + 1), Out (i)
+     Next
+   End If
+End Sub
+
+Private Sub Swap (ByRef a As Integer, ByRef b As Integer)
+   Dim c As Integer
+
+   c = a
+   a = b
+   b = c
+End Sub
+</pre>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-53.html">‹ Предыдущий</a>

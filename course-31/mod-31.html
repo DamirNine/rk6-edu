@@ -23,7 +23,163 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-32.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Математическая модель микропроцессорной системы управления</a>
+</div>
+<a name="T1418249701"></a>
+<a name="T1056517565"></a>
+<div>Система автоматического управления, блок управления которой выполнен в виде <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессорной системы</a>, является <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дискретной САУ</a>. Из курса ТАУ известно, что математическая модель дискретной САУ выглядит следующим образом (рис.&nbsp;1):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Однако корректное использование математической модели цифровой системы невозможно, если неизвестно точное соответствие частей модели структурным единицам и блокам МПС. Обобщенная структурная схема МПС представлена на рис.&nbsp;2.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>На первый взгляд, соответствие структурной схемы (рис.&nbsp;2) и математической модели (рис.&nbsp;1) не просматривается. Попробуем его найти.</div>
+<div>Рассмотрим частный случай цифровой САУ — цифровой электропривод (рис.&nbsp;3):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<a name="T1017069202"></a>
+<a name="T953603266"></a>
+<a name="T1341214224"></a>
+<div>Как видно, САУ состоит из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессорной системы</a> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессор</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">запоминающее устройство</a> и 3-х <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">УВВ</a>) и непрерывной неизменяемой части (усилитель мощности, исполнительный двигатель, редуктор, нагрузка и датчик обратной связи). Выделим в этой системе четыре элемента:</div>
+<ol class="eList"><a name="T1207639226"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Канал обратной связи</a> (УВВ 1, ДОС и линии связи);</li>
+<a name="T542178932"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Канал управляющих сигналов</a> (УВВ 2 и линии связи);</li>
+<a name="T1609508096"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Канал входных сигналов</a> (УВВ 3 и линии связи);</li>
+<a name="T961350470"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Цифровой фильтр</a> (микропроцессор и запоминающее устройство).</li>
+</ol>
+<div>Таким образом, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПСУ</a> состоит из цифрового фильтра, трех каналов связи и непрерывной неизменяемой части.</div>
+<div>Почему микропроцессор и запоминающее устройство названы цифровым фильтром? В технике принято называть фильтром любое устройство, если при прохождении через него синусоидального сигнала амплитуда этого сигнала меняется. Любое корректирующее устройство представляет собой фильтр. В запоминающем устройстве хранится программа, реализующая алгоритм управления, а следовательно – осуществляющая фильтрацию сигналов, проходящих через <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС.</a> Эта фильтрация называется цифровой, поскольку микропроцессор выполняет команды за конечное время и работает с дискретными величинами. Имеет место квантование по времени и по уровню. Следовательно, микропроцессор работает как цифровой фильтр.</div>
+<div>Рассмотрим более подробно структуру трех перечисленных каналов связи и попытаемся получить их математическое описание.</div>
+<div class="eSubTitle">Канал обратных связей (КОС)</div>
+<div>Согласно схеме, приведенной на рис.&nbsp;3. КОС имеет следующую структуру (рис.&nbsp;4):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<div>Здесь Д— датчик обратной связи. Датчик может быть непрерывным и дискретным. Рассмотрим эти два варианта отдельно.</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">КОС с непрерывным датчиком</span></div>
+<div>В этом случае датчик может быть представлен в виде усилительного звена с некоторым коэффициентом усиления, которое путем структурных преобразований может быть перенесено в прямую цепь контура САУ. В результате структура КОС оказывается следующей (рис.&nbsp;5):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;</div></div>
+<a name="T1489169639"></a>
+<div>Здесь <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=1/?k=10"> — сигнал обратной связи, приходящий с датчика, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=2/?k=10"> — данные, передаваемые по шине данных и представленные в числовом виде. Из-за ограниченности разрядной сетки число <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=2/?k=10"> не может принимать любые значения в диапазоне своего изменения, имеет место квантование по уровню. Следовательно, КОС должен содержать устройство, обеспечивающее квантование сигнала по уровню. Такое устройство называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">аналого-цифровым преобразователем</a> (АЦП).</div>
+<div>Блок-схема <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a> управления для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">цифровой системы</a> имеет вид (рис.&nbsp;6):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=6"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;</div></div>
+<div>Так как каждый шаг алгоритма состоит из набора <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">команд</a> микропроцессора и выполняется за конечное время, ввод сигнала <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=1/?k=10"> производится в дискретные моменты времени, отстоящие друг от друга на величину <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=3/?k=10">, которая равна общей длительности выполнения одного цикла алгоритма управления. Следовательно, сигнал <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=2/?k=10"> (см. рис.&nbsp;5) квантован по времени. Поэтому в математической модели КОС должен присутствовать импульсный элемент, отражающий факт квантования сигнала по времени (рис.&nbsp;7).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=7"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;7.&nbsp;&nbsp;</div></div>
+<div>Здесь <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=4/?k=10"> — сигнал, квантованный по уровню, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=2/?k=10"> — сигнал, квантованный по времени и уровню. Схема на рис.&nbsp;7 представляет собой математическую модель канала обратной связи с непрерывным датчиком.</div>
+<div>Следует обратить внимание, что физически импульсного элемента не существует. Присутствие его в математической модели лишь отражает факт квантования сигнала по времени. Физически это квантование осуществляет сам микропроцессор, выполняя ввод данных в дискретные моменты времени.</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">КОС с дискретным датчиком</span></div>
+<div>В дискретном датчике преобразование непрерывного сигнала в дискретный и соответствующее квантование по уровню происходит внутри самого датчика, сигнал на его выходе представляется уже в цифровом виде. Поэтому мы можем рассматривать дискретный датчик как АЦП, понимая под АЦП здесь любое устройство, осуществляющее квантование по уровню. Следовательно, в случае дискретного датчика КОС также описывается схемой, представленной на рис.&nbsp;7.</div>
+<div class="eSubTitle">АЦП и его характеристики</div>
+<div>Обычно АЦП рассматривают как статический элемент, то есть предполагают, что запаздывание сигналов, проходящих через него, очень мало. Однако в высокоскоростных системах приходится учитывать конечность времени преобразования в АЦП непрерывного сигнала в соответствующий цифровой код.</div>
+<div>Реальный АЦП имеет следующую характеристику (рис.&nbsp;8):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=8"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;8.&nbsp;&nbsp;</div></div>
+<a name="T145398316"></a>
+<a name="T1120902440"></a>
+<div>То есть он является нелинейным элементом. Горизонтальный размер ступеньки на характеристике называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ценой младшего разряда АЦП</a> (<img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=5/?k=10">). Чем меньше цена младшего разряда, тем большее число разрядов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">двоичного числа</a> необходимо для представления преобразованного значения при одном и том же диапазоне его изменения. На практике цена младшего разряда выбирается исходя из максимально допустимой ошибки (они должны быть примерно равны): <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=6/?k=10">.</div>
+<div>Наличие нелинейного элемента в цепи обратной связи будет приводить к возникновению автоколебаний, амплитуда которых сравнима с ценой младшего разряда АЦП. Однако колебания могут демпфироваться силами трения в опорах, которые играют роль нелинейного элемента с зоной нечувствительности. На практике, для того, чтобы уйти от эффекта автоколебаний, увеличивают разрядность АЦП на 2-3 разряда по сравнению с той, которая необходима для обеспечения требуемой точности системы. В расчетах часто используется линеаризованную статическую характеристику АЦП, представляя его усилительным звеном с коэффициентом усиления <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=7/?k=10">.</div>
+<div>Подобная линеаризация оправдана при условии большого количества разрядов АЦП и малого значения <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=5/?k=10"> .Влияние нелинейных факторов на работу скорректированной системы оценивается отдельно.</div>
+<div class="eSubTitle">Канал входных сигналов</div>
+<div>Если сигнал g подается на вход МПСУ в непрерывном (аналоговом) виде, структура канала входных сигналов (КВС) такая же, как и КОС (рис.&nbsp;7).</div>
+<div>Если же входной сигнал передается от другой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> (ЭВМ), на первый взгляд он является сразу квантованным по уровню, и АЦП в канале не нужен. Но, принимая во внимание, что по своей физической сути сигнал <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=8/?k=10"> – непрерывная величина (мы рассматриваем цифровой привод), можно сказать, что квантование по уровню все равно имело место (было выполнено в ЭВМ верхнего уровня), а, следовательно, математическая модель КВС должна содержать АЦП (хотя физически — как отдельного устройства — его нет).</div>
+<div>Таким образом, КВС описывается следующей схемой (рис.&nbsp;9):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=9"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;9.&nbsp;&nbsp;</div></div>
+<div>Здесь <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=8/?k=10"> — непрерывный входной сигнал, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=9/?k=10"> — входной сигнал, квантованный по уровню, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=10/?k=10"> — входной сигнал, квантованный по уровню и времени.</div>
+<div class="eSubTitle">Канал управляющих сигналов</div>
+<a name="T2080076116"></a>
+<div>На входе этого канала (КУС) всегда находится сигнал, квантованный по уровню. На вход усилителя мощности необходимо подавать непрерывный сигнал. Следовательно, сигнал должен быть преобразован из квантованного по уровню в непрерывный. Для этого используется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">цифро-аналоговый преобразователь</a> (ЦАП). Под ЦАП будем понимать любое устройство, преобразующее квантованный по уровню сигнал в непрерывный.</div>
+<div>Кроме этого, выдача сигнала происходит в дискретные моменты времени в соответствии с алгоритмом работы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> (см. рис.&nbsp;10).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=10"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;10.&nbsp;&nbsp;</div></div>
+<a name="T169051763"></a>
+<div>Выдача сигнала на усилитель мощности в дискретные моменты времени может привести к появлению высокочастотных колебаний в приводе. Следовательно, выдаваемый сигнал должен присутствовать на выходе и в промежутках между выдачами рассчитанного значения. Для этой цели используется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">экстраполятор</a> — устройство, преобразующее сигналы, дискретные по времени, в непрерывные. Наиболее часто применяются в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> экстраполяторы нулевого порядка, заполняющие интервал <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=3/?k=10"> постоянным значением (рис.&nbsp;11):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=11"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;11.&nbsp;&nbsp;</div></div>
+<div>Экстраполятор нулевого порядка технически может быть реализован в виде регистра, хранящего последнее рассчитанное значение.</div>
+<div>Таким образом, канал управляющих сигналов может быть описан следующей структурной схемой:</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=12"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;12.&nbsp;&nbsp;</div></div>
+<div>Здесь <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=11/?k=10"> — сигнал, квантованный по времени и уровню, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=12/?k=10"> — сигнал, квантованный по времени, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=13/?k=10"> — непрерывный сигнал на выходе канала.</div>
+<div class="eSubTitle">ЦАП и его характеристики</div>
+<div>Цифро-аналоговый преобразователь имеет нелинейную характеристику, аналогичную АЦП (рис.&nbsp;8). Все рассуждения, проводившиеся для АЦП относительно возможности возникновения автоколебания и выборе цены младшего разряда, справедливы и для ЦАП. При расчетах он также условно представляется линейным элементом (усилительным звеном) с коэффициентом усиления <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=14/?k=10">.</div>
+<div class="eSubTitle">Математическая модель МПСУ</div>
+<div>Теперь, когда мы нашли описания всех каналов связи, представим их на единой структурной схеме, взяв за основу структурную схему <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПСУ</a> (рис.&nbsp;13).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=13"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;13.&nbsp;&nbsp;</div></div>
+<div>Операция вычисления ошибки реально выполняется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессором</a> (цифровым фильтром) в соответствии с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритмом</a> управления. На приведенной выше схеме она вынесена за пределы ЦФ исключительно для удобства моделирования МПС (физически представленный на схеме сумматор не существует).</div>
+<div>АЦП 1 и АЦП 2 имеют разрядности <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=15/?k=10"> и <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=16/?k=10"> соответственно. На практике, как правило, их разрядности совпадают, так как в противном случае при вычислении ошибки неизбежно будет возникать погрешность. Поэтому мы тоже можем допустить, что разрядности АЦП 1 и АЦП 2 совпадают.</div>
+<div>Рассмотрим теперь работу во времени импульсных элементов в каналах ОС и ВС.</div>
+<div>Времена их срабатывания соответствуют моментам ввода сигнала <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=1/?k=10"> и сигнала <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=8/?k=10"> (рис.&nbsp;6). Если предположить, что время выполнения расчета намного больше, чем время ввода <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=1/?k=10"> и <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=8/?k=10"> (а так и бывает в большинстве случаев), можно считать, что импульсные элементы срабатывают одновременно (то есть работают синхронно и синфазно).</div>
+<div>С учетом приведенных рассуждений, схема рис.&nbsp;13 может быть преобразована к следующему виду (рис.&nbsp;14):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=14"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;14.&nbsp;&nbsp;</div></div>
+<div>Представим АЦП в виде усилительного звена с коэффициентом усиления <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=17/?k=10">, ЦАП — в виде усилительного звена с коэффициентом усиления <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_02.mod/?n=18/?k=10">. Тогда при условии, что в ЦФ реализуются линейные алгоритмы коррекции, схема рис.&nbsp;14 может быть представлена в следующем виде (рис.&nbsp;15):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=15"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;15.&nbsp;&nbsp;</div></div>
+<div>Если пренебречь известным эффектом реализации линейных корректирующих устройств в МПС, когда дискретная реализация дает заведомо худшие показатели качества СУ, можно заменить ЦФ неким непрерывным корректирующим устройством, присоединенным к непрерывной части системы. С учетом того, что экстраполятор — то же самое, что и формирователь импульса, получим из рис.&nbsp;15 следующую модель (рис.&nbsp;16):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_02.mod/?n=16"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;16.&nbsp;&nbsp;</div></div>
+<div>Таким образом, мы пришли к классической математической модели дискретной САУ (рис.&nbsp;1).</div>
+<div>Еще раз повторим тем допущения, которые были сделаны при нахождении математической модели <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПСУ</a>:</div>
+<ol class="eList"><li>Разрядности АЦП в каналах ОС и ВС одинаковы.</li>
+<li>Пренебрегаем нелинейностью характеристик ЦАП и АЦП, заменяя их линейными усилительными звеньями.</li>
+<li>Ввод данных в микропроцессор происходит намного быстрее, чем расчет управляющего сигнала, поэтому срабатывание импульсных элементов в каналах ОС и ВС можно считать одновременным.</li>
+<li>В цифровом фильтре реализованы линейные алгоритмы управления.</li>
+</ol>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-30.html">‹ Предыдущий</a>

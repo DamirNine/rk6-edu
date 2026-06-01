@@ -23,7 +23,65 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-47.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Алгоритм поиска по бинарному дереву.</a>
+</div>
+<a name="T144922274"></a>
+<a name="T946570252"></a>
+<div>Популярным приложением бинарных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">деревьев</a>, например, в технологиях <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">баз данных</a> является поиск требуемых элементов во входном потоке информации. Наиболее быстрый поисковый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> основан на использовании <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">бинарного дерева</a> поиска. Дерево поиска - бинарное дерево, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">узлы</a> которого упорядочены по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключам</a>, таким образом, что ключ левого потомка меньше ключа предка, а ключ правого потомка больше ключа предка. Указанное соотношение порядка иллюстрирует следующий фрагмент бинарного дерева поиска.</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/4.3.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Фрагмент бинарного дерева поиска.</div></div>
+<div>В приведенном рисунке фрагмента бинарного дерева поиска ключ узла "В" меньше ключа узла "А", а ключ узла "С"больше ключа узла "А", т. е.</div>
+<div> </div>
+<div>         key(B) &lt; key(A)      и       key(C) &gt; key(A) </div>
+<br>
+<div>Правило сравнения ключей определяется типом ключевых данных. Скалярные (например, целочисленные) ключи упорядочиваются естественным образом по их величинам. Векторные ( например, символические) ключи упорядочиваются лексиграфически. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Лексиграфический порядок</a> образует упорядочивание векторов последовательно по величинам компонент. </div>
+<div>Например. вектор V=(V1,..,Vj,..,Vp) лексиграфически больше, чем вектор W=(W1,..,Wj,..,Vp), если Vj=Wj при j&lt;q и Vq&gt;Wq. </div>
+<div>Место очередного элемента в бинарном дереве поиска определяется путем сравнения его ключа с ключами существующих узлов, начиная с корня. В зависимости от результата каждого сравнения ключей, для продолжения поиска выбирается либо левое, либо правое поддерево текущего узла, если его ключ не равен ключу искомого образца. Поиск считается успешно завершенным, когда найден узел, ключ которого равен ключу искомого элемента. В противном случае, когда достигнут лист и нет соответствия образцу по ключу, необходимо расширить дерево поиска, добавив новый узел, либо в правую, либо в левую ветвь листа в зависимости от соотношения ключей. Методическая необходимость добавления новых узлов позволяет более строго называть рассмотренный алгоритм поиском по бинарному дереву со вставкой. Приведенное описание следует рассматривать как неформальное изложение данного алгоритма. Ниже рассмотрен классический пример поиска по бинарному дереву знаков зодиака. </div>
+<br>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>На следующем рисунке изображено бинарное дерево поиска знаков зодиака, которое содержит 11 узлов с символическими векторными ключами, соответствующими латинским названиям знаков зодиака.</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/4.3.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Бинарное дерево поиска знаков зодиака </div></div>
+<div> </div>
+<div>Это бинарное дерево построено последовательной вставкой новых узлов в следующем порядке: capricorn, aquarius, pisces, aries, taurus, gemini, cancer, leo, virgo, libra, scorpio, начиная с корня. Поиск существующего в дереве знака libra (весы) образует следующую последовательность сравнения ключей:</div>
+<div> </div>
+<div>        libra &gt; capricorn  - поиск в правом поддереве capricorn; </div>
+<div>        libra &lt; pisces     - поиск в левом поддереве pisces; </div>
+<div>        libra &gt; gemini     - поиск в правом поддереве gemini; </div>
+<div>        libra &gt; leo        - поиск в правом поддереве leo; </div>
+<div>        libra = libra      - поиск завершен успешно.</div>
+<div> </div>
+<div>Поиск отсутствующего в дереве знака sagittarius (стрелец) образует следующая последовательность сравнения ключей: </div>
+<br>
+<div>        sagittarius &gt; capricirn - поиск в правом поддереве capricorn; </div>
+<div> sagittarius &gt; pisces    - поиск в правом поддереве pisces; </div>
+<div> sagittarius &lt; taurus    - поиск в левом поддереве taurus; </div>
+<div> sagittarius &lt; scorpio   - поиск в левом поддереве scorpio; </div>
+<br>
+<div>Поскольку левое поддерево узла scorpio пусто, то для завершения поиска нужно добавить новый узел sagittaruis, который показан пунктиром на рисунке. Следует отметить, что если для поиска в бинарном дереве знаков зодиака использовать скалярные ключи, например, порядковые номера или диапазоны дат соответствующих знаков, то структура бинарного дерева и траектория поиска были бы иными , чем в рассмотренном варианте векторных ключей. Также другой результат был бы получен, если для ключей применить русские названия знаков зодиака, которые указаны на рисунке для перевода соответствующих латинских обозначений. </div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-45.html">‹ Предыдущий</a>

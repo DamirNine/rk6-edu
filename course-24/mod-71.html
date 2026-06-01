@@ -23,7 +23,48 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-72.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Переформирование массива без изменения его размеров</a>
+</div>
+<a name="T9288116"></a>
+<div>Примерами <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">переформирования массива без изменения его размеров</a> служат перестановки различного характера, в том числе сортировки. Особенностью этого класса задач является то, что, несмотря на постоянство количества элементов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a>, для перестановки элемента сначала его необходимо найти. Таким образом, чтобы преобразовать массив, требуется несколько раз его просмотреть. Кроме того, для размещения элемента, ему необходимо освободить место, что требует сдвига всех элементов. Поэтому, даже для одномерного массива требуется применение нескольких вложенных циклов. Рассмотрим несколько типовых приемов.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Написать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцию</a> упорядочивания массива по возрастанию его элементов.</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/pereform1.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Схема алгоритма сортировки</div></div>
+<div><span class="eOperator">int my_sort(int a[], int n)</span></div>
+<div><span class="eOperator">{</span></div>
+<div><span class="eOperator">int i,j,imin,min;</span></div>
+<div><span class="eOperator">for(i=0;i&lt;n-1;i++)</span></div>
+<div>   <span class="eOperator"> {min=a[i];</span></div>
+<div>      <span class="eOperator">imin=i;</span></div>
+<div><span class="eOperator">   for(j=i+1;j&lt;n;j++)</span></div>
+<div>          <span class="eOperator">if (a[j]&lt;min)</span></div>
+<div><span class="eOperator">        {min=a[j];</span></div>
+<div><span class="eOperator">         imin=j;</span></div>
+<div>                 <span class="eOperator">}</span></div>
+<div>      <span class="eOperator">a[imin]=a[i];</span></div>
+<div>      <span class="eOperator">a[i]=min;</span></div>
+<div>     <span class="eOperator">}</span></div>
+<div><span class="eOperator">}</span></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-70.html">‹ Предыдущий</a>

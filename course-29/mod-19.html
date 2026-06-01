@@ -23,7 +23,74 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-29/mod-20.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Магазинные автоматы</a>
+</div>
+<a name="T1233210603"></a>
+<div>КС-грамматика определяет структуру цепочек и позволяет строить цепочки определенного языка. Магазинные автоматы, подобно рассмотренным ранее конечным автоматам, позволяют решать для контекстно-свободных языков <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">задачу распознавания</a>, которая заключается в том, что по заданной цепочке необходимо определить принадлежит ли она заданному языку.</div>
+<a name="T844400656"></a>
+<div>В работах, связанных с формальными языками и грамматиками, используется модель <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">магазинного автомата</a>, состоящая из входной ленты, устройства управления и вспомогательной ленты, называемой магазином или стеком.</div>
+<div>Входная лента разделяется на клетки (позиции), в каждой из которых может быть записан символ входного алфавита. При этом предполагается, что в  неиспользуемых клетках входной ленты расположены пустые символы ε.</div>
+<a name="T84507504"></a>
+<div>Вспомогательная лента также разделена на клетки, в которых могут располагаться символы магазинного алфавита. Начало вспомогательной ленты называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">дном магазина</a>. Связь устройства управления с лентами осуществляется двумя головками, которые могут перемещаться вдоль лент.</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/gram19.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T1864233323"></a>
+<a name="T346130003"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Головка входной ленты</a> может перемещаться только в одну сторону - вправо или оставаться на месте. Она может выполнять только чтение. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Головка  вспомогательной ленты</a> способна выполнять как чтение, так и запись, но эти операции связаны с перемещением головки определенным образом:</div>
+<div>- при записи головка предварительно сдвигается на одну позицию вверх, а затем символ заносится на ленту,</div>
+<a name="T895709765"></a>
+<div>- при чтении символ, находящийся под головкой считывается с ленты, а затем головка сдвигается на одну позицию вниз, т.о.головка всегда установлена против последнего записанного символа. Позицию, находящуюся в рассматриваемый момент времени под головкой, называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">вершиной магазина</a>.</div>
+<br>
+<div><span style="color:#0000FF; font-weight:bold; font-style:italic; ">Определение.</span> Магазинный автомат М определяется следующей совокупностью семи объектов:</div>
+<br>
+<div>M = {P , S , s<sub class="eSub">о</sub> , f , F , H , h<sub class="eSub">о</sub> }, где</div>
+<br>
+<div>P - входной алфавит,</div>
+<div>S - алфавит состояний,</div>
+<div>s<sub class="eSub">о</sub> - начальное состояние,</div>
+<div>s<sub class="eSub">о</sub> <img align="absmiddle" src="/?frm/?doc=LO-SAPR/gram19.mod/?n=1/?k=10"> S ,</div>
+<div>F - множество конечных состояний, F является подмножеством S,</div>
+<div>H - алфавит магазинных символов, записываемых на вспомогательную ленту,</div>
+<div> h<sub class="eSub">о</sub> - маркер дна, он всегда записывается на дно магазина, h<sub class="eSub">о</sub> <img align="absmiddle" src="/?frm/?doc=LO-SAPR/gram19.mod/?n=1/?k=10"> H,</div>
+<div>f - функция переходов </div>
+<div>f : {P <img align="absmiddle" src="/?frm/?doc=LO-SAPR/gram19.mod/?n=2/?k=10"> { ε }} x S x H <img align="absmiddle" src="/?frm/?doc=LO-SAPR/gram19.mod/?n=3/?k=10"> S x H*, </div>
+<div> если М - автомат детерминированный, и</div>
+<div>f:{P <img align="absmiddle" src="/?frm/?doc=LO-SAPR/gram19.mod/?n=2/?k=10"> { ε }} x S x H <img align="absmiddle" src="/?frm/?doc=LO-SAPR/gram19.mod/?n=3/?k=10"> M( S x H*) ,</div>
+<div>если М - автомат недетерминированный.</div>
+<br>
+<div>Функция f отображает тройки ( p<sub class="eSub">i</sub>, s<sub class="eSub">j</sub>, h<sub class="eSub">k</sub>) в пары ( s<sub class="eSub">r</sub>, υ ), где υ <img align="absmiddle" src="/?frm/?doc=LO-SAPR/gram19.mod/?n=1/?k=10"> H* и h<sub class="eSub">k</sub> - символ в вершине магазина, для детерминированного автомата или в множество пар для недетерминированного автомата.</div>
+<div>Эта функция описывает изменение состояния магазинного автомата, происходящее при чтении символа с входной ленты и премещении входной головки.</div>
+<div>В дальнейшем при построении магазинных автоматов потребуются две разновидности функций переходов, изменяющих состояние автомата без  перемещения входной головки:</div>
+<div>1) функция переходов с пустым символом в качестве входного символа:</div>
+<br>
+<div>f<sub class="eSub">0</sub>(s, ε, h) = (s', β),</div>
+<br>
+<div>которая, независимо от того какой символ находится под читаюшей гловкой входной ленты, предписывает прочитать символ h из вершины магазина, изменить состояние автомата на s' и записать цепочку β в магазин.</div>
+<br>
+<div>2) функция переходов с определенным входным символом:</div>
+<br>
+<div>f*(s, a, h) = (s', β),</div>
+<br>
+<div>которая предписывает изменение состояния и запись цепочки в магазин при условии, что символ <span style="font-weight:bold; font-style:italic; ">a</span> читается <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">входной головкой</a>, а в вершине магазина находится символ h.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-29/">← Оглавление</a>
         <a href="/rk6-edu/course-29/mod-18.html">‹ Предыдущий</a>

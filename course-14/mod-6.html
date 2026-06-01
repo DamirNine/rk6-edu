@@ -23,7 +23,59 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-14/mod-7.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Триггеры</a>
+</div>
+<a name="T1169355835"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Триггер</a> – запоминающее устройство для хранения одного бита информации.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=200_Elbase/sch010.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Обозначение RS-триггера</div></div>
+<div>RS-триггер имеет входы S и R. Вход S (Set) -установка единицы, т.е. при S=1 триггер переходит (или подтверждает) единичное состояние Q=1. Вход R (Reset) — очистка, т.е. при R=1 и S=0 триггер переходит (или подтверждает) нулевое состояние Q=0. Входная комбинация R=1 и S=1 в RS-триггере запрещена (приводит к неопределенному состоянию триггера), а в E-, R- и S-триггерах разрешена (в E-триггере не вызывает изменения состояния, в R-триггере приводит к состоянию 0, в S-триггере — к состоянию 1). JK-триггер отличается от RS-триггера тем, что при комбинации S=1 и R=1, триггер инвертирует свое состояние.</div>
+<div>В синхронном RS-триггере имеется тактовый (или синхро-) сигнал С. Переходы в новое состояние возможны только при C=1. В асинхронном триггере тактовый сигнал отсутствует.</div>
+<div>Т-триггер имеет счетный вход T, приход на который сигнала Т=1 меняет состояние триггера на противоположное.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=200_Elbase/sch010.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Обозначение Т-триггера</div></div>
+<div>Схема синхронного RS-триггера на элементах И-НЕ показана на рис. 4, а на элементах ИЛИ-НЕ — на рис. 4.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=200_Elbase/sch010.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;RS-триггер на элементах И-НЕ</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=200_Elbase/sch010.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;RS-триггер на элементах ИЛИ-НЕ</div></div>
+<div>D-триггер (триггер задержки) хранит состояние, задаваемое входным сигналом и после его снятия.</div>
+<div>Схема D-триггера приведена на рисунке 5 вместе с его условным   обозначением.  </div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=200_Elbase/sch010.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp; D-триггер</div></div>
+<div>При С=0 состояние триггера изменяться не будет какой бы ни был сигнал на входе D, т.к. на выходах элементов DD2.1, DD2.2 будут сигналы логических нулей. При С=1 и D=1 на выходе элемента DD2.1 появится сигнал логического нуля, а на прямом выходе D-триггера – сигнал логической единицы. При С=1 и D=0 сигнал логического нуля появится на выходе элемента DD2.2, на инверсном выходе D-триггера установится логическая единица, а на прямом выходе –логический нуль.  Таким образом, D-триггер воспринимает информацию с входа D и передает ее на выход Q при C=1, и затем хранит ее сколько угодно долго (пока подключен источник питания) при С=0. Т.е. мы имеем ячейку памяти для хранения 1 бита информации. </div>
+<div>DV-триггер – это синхронный D-триггер, который при V =1 работает как D-триггер, а при V=0 просто сохраняет прежнее значение (хранит информацию).</div>
+<div>Двухтактные триггеры (рис. 6) используются в сдвиговых регистрах. Двухтактовые триггеры, обладающие свойством внутренней задержки и  обычно строятся  по схеме M-S (M-Master основная ступень и S-Slave - вспомогательная ступень): по переднему фронту синхросигнала С входной код запоминается в первую ступень M, по заднему фронту переписывается во вторую ступень S.  </div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=200_Elbase/sch010.mod/?n=6"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;Двухтактный JK-триггер</div></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-14/">← Оглавление</a>
         <a href="/rk6-edu/course-14/mod-5.html">‹ Предыдущий</a>

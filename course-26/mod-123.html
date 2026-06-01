@@ -23,7 +23,111 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-124.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Быстрая сортировка</a>
+</div>
+<div>Быстрая сортировка, придуманная Ч. А Р. Хоаром (Charles Antony Richard Hoare) и названная его именем, является одним из самых лучших методов сортировок. В ее основе лежит сортировка обменами. </div>
+<div>Быстрая сортировка построена на идее деления. Общая процедура заключается в том, чтобы выбрать некоторое значение, называемое компарандом (comparand – операнд в операции сравнения), а затем разбить массив на две части. Все элементы, большие или равные компаранду, перемещаются на одну сторону, а меньшие — на другую. Потом этот процесс повторяется для каждой части до тех пор, пока массив не будет отсортирован. Например, если исходный массив состоит из символов <span class="eOperator">fedacb</span>, а в качестве компаранда используется символ <span class="eOperator">d</span>, первый проход быстрой сортировки переупорядочит массив следующим образом:</div>
+<div>Начало</div>
+<div><span class="eOperator">fedacb</span></div>
+<div>Проход 1</div>
+<div><span class="eOperator">b с a d e f</span></div>
+<div>Затем сортировка повторяется для обеих половин массива, то есть <span class="eOperator">bса</span> и <span class="eOperator">def</span>. Этот процесс по своей сути рекурсивный, и, действительно, в чистом виде быстрая сортировка реализуется как рекурсивная функция.</div>
+<a name="T495048589"></a>
+<div>Значение компаранда можно выбирать двумя способами — случайным образом либо усреднив небольшое количество значений из массива. Для оптимальной сортировки необходимо выбирать значение, которое расположено точно в середине диапазона всех значений. Однако для большинства наборов данных это сделать непросто. В худшем случае выбранное значение оказывается одним из крайних. Тем не менее, даже в этом случае <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">быстрая сортировка</a> работает правильно. В приведенной ниже версии быстрой сортировки в качестве компаранда выбирается средний элемент массива</div>
+<pre class="eListing">/* Функция, вызывающая функцию быстрой сортировки.*/ 
+void quick(char *items, int count)
+{
+qs(items, 0, count-1);
+}
+/* Быстрая сортировка. */
+void qs(char *items, int left, int right)
+{
+register int i, j;
+char x, y;
+i = left; j = right;
+x = items[(left+right)/2]; /* выбор компаранда */
+do {
+while((items[i] &lt; x) &amp;&amp; (i &lt; right)) i++;
+ while ((x &lt; items [j]) &amp;&amp; (j &gt; left)) j -- ;
+if(i &lt;= j) {
+у = items[i];
+items[i] = items[j];
+items[j] = y;
+i ++; j--;
+}
+}   
+while(i  &lt;=  j);
+if (left  &lt;  j)   qs(items,   left,   j);
+if'(i &lt;  right) qs (items,   I,   right) ;      
+}
+
+</pre>
+<div>В этой версии функция <span class="eOperator">quick()</span> готовит вызов главной сортирующей функции <span class="eOperator">qs()</span>. Это обеспечивает общий интерфейс с параметрами <span class="eOperator">items</span> и <span class="eOperator">count</span>, но несущественно, так как можно вызывать непосредственно функцию <span class="eOperator">qs()</span> с тремя аргументами.</div>
+<div>Среднее количество сравнений равно n log n, а среднее количество обменов примерно равно n/6 log n.</div>
+<div>Эти величины намного меньше соответствующих характеристик рассмотренных ранее алгоритмов сортировки.</div>
+<div>Необходимо упомянуть об одном особенно проблематичном аспекте быстрой сортировки. Если значение компаранда в каждом делении равно наибольшему значению, быстрая сортировка становится "медленной сортировкой" со временем выполнения порядка n<sup class="eSub">2</sup>. Поэтому необходимо внимательно выбирать метод определения компаранда. Этот метод часто определяется природой сортируемых данных. Например, в очень больших списках почтовой рассылки, в которых сортировка происходит по почтовому индексу, выбор прост, потому что почтовые индексы довольно равномерно распределены и компаранд можно определить с помощью простой алгебраической функции. Однако в других базах данных зачастую лучшим выбором является случайное значение. Популярный и довольно эффективный метод — выбрать три элемента из сортируемой части массива и взять в качестве компаранда значение, расположенное между двумя другими.</div>
+<br>
+<div>Быстрая сортировка состоит в том, что список В=&lt; K1,K2,...,Kn&gt; реорганизуется в список B',&lt; K1 &gt;,B", где В' — подсписок В с элементами, не большими К1, а В" — подсписок В с элементами, большими К1. В списке B',&lt; K1 &gt;,B" элемент К1 расположен на месте, на котором он должен быть в результирующем отсортированном списке. Далее к спискам B' и В" снова применяется упорядочивание быстрой сортировкой. Приведем в качестве примера сортировку списка, отделяя упорядоченные элементы косой чертой, а элементы Ki знаками &lt; и &gt;.</div>
+<pre class="eListing">9, 7, 18, 3, 52, 4, 6, 8, 5, 13, 42, 30, 35, 26
+7, 3, 4, 6, 8, 5/ &lt;9&gt;/ 18, 52, 13, 42, 30, 35, 26
+3, 4, 6, 5/&lt;7&gt;/ 8/ 9/ 13/ &lt;18&gt;/ 52, 42, 30, 35, 26
+&lt;3&gt;/ 4, 6, 5/ 7/ 8/ 9/ 13/ 18/ 42, 30, 35, 26/ &lt;52&gt;
+3/ &lt;4&gt;/ 6, 5/ 7/ 8/ 9/ 13/ 18/ 30, 35, 26/ &lt;42&gt;/ 52
+3/ 4/ 5/ &lt;6&gt;/ 7/ 8/ 9/ 13/ 18/ 26/ &lt;30&gt;/ 35/ 42/ 52
+</pre>
+<div>Время работы по сортировке списка методом быстрой сортировки зависит от упорядоченности списка. Оно будет минимальным, если на каждом шаге разбиения получаются подсписки B' и В" приблизительно равной длины, и тогда требуется около N*log2(N) шагов. Если список близок к упорядоченному, то требуется около (N*N)/2 шагов. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Рекурсивная</a> функция <span class="eOperator">quick</span> упорядочивает участок массива <span class="eOperator">s</span> быстрой сортировкой.</div>
+<pre class="eListing">/*   быстрая сортировка     */
+double * quick(double *s,int low,int hi)
+{ double cnt,aux;
+  int i,j;
+  if (hi&gt;low)
+    { i=low;
+      j=hi;
+      cnt=s[i];
+      while(i &lt; j)
+         { if (s[i+1]&lt;=cnt)
+            {  s[i]=s[i+1];
+               s[i+1]=cnt;
+               i++;
+             }
+           else
+            {  if (s[j]&lt;=cnt)
+                {  aux=s[j];
+                   s[j]=s[i+1];
+                   s[i+1]=aux;
+                }
+                j--;
+            }
+         }
+      quick(s,low,i-1);
+      quick(s,i+1,hi);
+    }
+  return(s);
+}
+</pre>
+<div>Здесь используются два индекса <span class="eOperator">i</span> и <span class="eOperator">j</span>, проходящие части массива навстречу друг другу (см. рис.). При этом <span class="eOperator">i</span> всегда фиксирует разделяющий элемент <span class="eOperator">cnt=s[low]</span>, слева от которого находятся числа, не большие <span class="eOperator">cnt</span>, а справа от <span class="eOperator">i </span>— числа, большие <span class="eOperator">cnt</span>. Возможны три случая: при <span class="eOperator">s[i+1]&lt;=cnt</span>; при <span class="eOperator">s[i+1]&gt;cnt</span> и <span class="eOperator">s[j]&lt;=cnt</span>; при <span class="eOperator">s[i+1]&gt;cnt</span> и <span class="eOperator">s[j]&gt;cnt</span>. По окончании работы<span class="eOperator"> i=j</span>, и <span class="eOperator">cnt=s[i]</span> устанавливается на своем месте.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PYAVU/quick.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Схема быстрой сортировки.</div></div>
+<div>Быстрая сортировка требует дополнительной памяти порядка log2(N) для выполнения рекурсивной функции quick (неявный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стек</a>).</div>
+<div>Оценка среднего количества действий, необходимых для выполнения быстрой сортировки списка из N различных чисел, получена как оценка отношения числа различных возможных последовательностей из N различных чисел, равного N!, и общего количества действий C(N), необходимых для выполнения быстрой сортировки всех различных последовательностей. Доказано, что C(N)/N! &lt; 2*N*ln(N).</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-122.html">‹ Предыдущий</a>

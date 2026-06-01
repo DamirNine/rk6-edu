@@ -23,7 +23,61 @@
         <span class="spacer"></span>
         <a class="disabled">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Некоторые встроенные предикаты</a>
+</div>
+<div>Любая система программирования Пролог содержит большое количество встроенных предикатов. Здесь очень кратко описываются некоторые из них. Исчерпывающее их описание дано в документации. Справку по встроенным предикатам можно получить, выполнив запрос</div>
+<pre class="eListing">?-help(имя-предиката).
+</pre>
+<div class="eSubTitle">Классификация термов</div>
+<div><span style="font-weight:bold; ">var(X)</span> согласуется, если X - неконкретизированная переменная.</div>
+<div><span style="font-weight:bold; ">nonvar(X)</span> согласуется, если X - конкретизированная переменная.</div>
+<div><span style="font-weight:bold; ">atom(X)</span> согласуется, если X - атом.</div>
+<div><span style="font-weight:bold; ">integer(X)</span> согласуется, если X - число.</div>
+<div><span style="font-weight:bold; ">atomic(X)</span> согласуется, если X - атом или число.</div>
+<div class="eSubTitle">Работа с утверждениями</div>
+<div><span style="font-weight:bold; ">asserta(X)</span>, <span style="font-weight:bold; ">assertz(X)</span> добавляют утверждение в Пролог-программу, при этом значение X должно быть таким, чтобы могло интерпретироваться как утверждение.</div>
+<div><span style="font-weight:bold; ">retract(X)</span> удаляет из программы первое утверждение, соспоставимое (унифицируемое) с X. Рассмотренные предикаты необратимы, т.е. их действие не отменяется при возврате.</div>
+<div><span style="font-weight:bold; ">clause(X,Y)</span>  сопоставляет X и Y с заголовком и телом имеющегося в программе утверждения К этому моменту X должен быть достаточно конкретизирован. При возврате - переход на следующее утверждение. Для фактов Y конкретизируется значением true. Напоминаем, что любое утверждение Пролога - структура, где ":-", "?-", "," и т.п. - функторы, имеющие вид инфиксных операторов.</div>
+<div class="eSubTitle">Работа со стуктурами</div>
+<div><span style="font-weight:bold; ">functor(S,F,N)</span> согласуется при условии, что S - структура с функтором F и количеством аргументов N. Используется а) для анализа существующих структур и б) для создания структур с заданными функтором и количеством аргументов.</div>
+<div><span style="font-weight:bold; ">arg(N,S,X)</span> сопоставляет N-ый аргумент структуры S с X.</div>
+<div><span style="font-weight:bold; ">S=..L</span> сопоставляет структуру S со списком L, первый элемент которого рассматривается как функтор, а остальные - как аргументы. Также используется двояко.</div>
+<div><span style="font-weight:bold; "><span style="">name(A,L)</span></span> сопоставляет атом A и список десятичных ASCII-кодов L.</div>
+<div class="eSubTitle">Составные цели</div>
+<div><span style="font-weight:bold; ">","</span> - коньюнкция целевых утверждений.</div>
+<div><span style="font-weight:bold; ">";"</span> - дизъюнкция целевых утверждений.</div>
+<div><span style="font-weight:bold; ">call(X)</span> согласуется, если согласуется X, рассматриваемое как целевое утверждение.</div>
+<div><span style="font-weight:bold; ">not(X)</span> согласуется, если не согласуется X, рассматриваемое как целевое утверждение.</div>
+<div><span style=""><span style="font-weight:bold; ">bagof(T,G,L)</span></span> порождает список L всех объектов T, удовлетворяющих цели G, принимая во внимание одинаковость конкретизации остальных переменных цели G.</div>
+<div><span style="font-weight:bold; ">setof(T,G,L)</span> аналогичен bagof(), но дополнительно упорядочивает список L, исключая дублирующие элементы.</div>
+<div><span style="font-weight:bold; ">findall(T,G,L)</span> порождает список L всех объектов T, удовлетворяющих цели G, игнорируя различия в конкретизации остальных переменных цели G.</div>
+<div class="eSubTitle">Ввод-вывод</div>
+<div><span style="font-weight:bold; ">write(X)</span> записывает терм X в текущий поток вывода.</div>
+<div><span style="font-weight:bold; ">nl</span> выводит символ "новая строка".</div>
+<div><span style="font-weight:bold; ">tab(N)</span> выводит N пробелов.</div>
+<div><span style="font-weight:bold; ">put(X)</span> выводит символ, имеющий десятичный ASCII-код X.</div>
+<div><span style="font-weight:bold; ">read(X)</span> читает очередной терм из входного потока, сопоставляя его с X (при этом читаемый терм должен заканчиваться точкой).</div>
+<div><span style="font-weight:bold; ">get0(X)</span> сопоставляет X и следующий символ из входного потока.</div>
+<div><span style="font-weight:bold; ">get(X)</span> выполняет то же, что и get0(X), но только для символов, имеющих графическое изображение.</div>
+<div><span style="font-weight:bold; ">skip(X)</span> пропускает символы входного потока, пока не встретится сопоставимый с X.</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Все предикаты ввода-вывода необратимы, т.е. их действие при возврате не отменяется, пересогласовать их невозможно. </div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-20/">← Оглавление</a>
         <a href="/rk6-edu/course-20/mod-9.html">‹ Предыдущий</a>

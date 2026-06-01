@@ -23,7 +23,90 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-67.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Передача в функцию адреса массива</a>
+</div>
+<a name="T1369433176"></a>
+<a name="T1992766606"></a>
+<a name="T696383489"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Язык Си</a> не допускает копирования всего <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a> для передачи его в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцию</a>. Тем не менее, функции можно передавать элемент массива или начальный адрес массива.</div>
+<a name="T1247274070"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Адрес массива</a> — адрес первого элемента массива.</div>
+<div>Для того, чтобы функция имела доступ к массиву, ей достаточно передать адрес массива.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">/* Копирует массив с использованием функции */
+int main( )
+{
+void stringcopy (char[], char[]);
+char current[30], target[30];
+. . .
+stringcopy(current, target);
+. . .
+}
+/* Копирует str1 в str2 */
+void stringcopy(char str1[], char str2[])
+/* str1 = 600 str2 = 500 */
+{
+int i;
+for ( i = 0; str2[i]!='\0'; i++)
+   str1[i]=str2[2];                   /* адрес[смещение] */
+str1[i]='\0';
+}
+</pre>
+<a name="T803028594"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Выражение</a> типа <span class="eOperator">str2[i]</span> интерпретируется так, что означает адрес[смещение].</div>
+<a name="T1248933124"></a>
+<a name="T756911212"></a>
+<a name="T1125359603"></a>
+<a name="T1015173096"></a>
+<a name="T1869388700"></a>
+<div>Если в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызове функции</a> в качестве <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">фактического параметра</a> используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">имя массива</a> без скобок, то значением этого параметра будет начальный адрес массива. Если в примере начальные адреса массивов <span class="eOperator">current</span> и <span class="eOperator">target</span> равны соответственно 600 и 500, то в момент вызова функции <span class="eOperator">stringcopy()</span> значения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формальных параметров</a> <span class="eOperator">str1</span> и <span class="eOperator">str2</span> будут равны соответственно 600 и 500. Зная эти адреса, функция <span class="eOperator">stringcopy()</span> может обращаться к элементам массива, используя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операцию доступа к элементу массива</a> <span class="eOperator">[]</span>. Выражение <span class="eOperator">current[3]</span>, так и <span class="eOperator">str2[3]</span> будут интерпретированы как 500[3]. Доступ выполняется к значению, находящемуся по адресу:<br><img align="absmiddle" src="/?frm/?doc=OP2/adr_mas.mod/?n=1/?k=10"><br></div>
+</div>
+<div>В примере 2 показаны два способа объявления параметров функции при передаче адреса массива:</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">int main()
+{
+int str1[20], str2[20];
+void array_cpy(char[], char[]);
+void ptr_cpy(char*, char*);
+...
+array_cpy(str1, str2);
+/*ptr_cpy(str1, str2);*/
+...
+}
+void array_cpy(char one[], char two[])
+{
+int i;
+for (i = 0; two[i]!='\0'; i++)
+   one[i]=two[i];
+one[i]='\0';
+}
+</pre>
+<div>В функции <span class="eOperator">array_cpy()</span> формальные параметры объявляются с использованием операции доступа к элементу массива <span class="eOperator">[]</span>. Эта же операция применяется и в теле функции.</div>
+<pre class="eListing">void ptr_cpy(char *one, char *two)
+{
+for ( ; *two!='\0'; one++, two++)
+   *one=*two;
+*one='\0';
+}
+</pre>
+<div>В функции <span class="eOperator">ptr_cpy()</span> формальные параметра объявляется как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатели</a>. В теле функции используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операция косвенного доступа</a> <span class="eOperator">*</span>. Такая совместимость объявлений и операций настоятельно рекомендуется по стилевым причинам, но она не является необходимой. Тела двух функций можно без ущерба поменять местами. Важно помнить, что доступ к данным, хранящимся по адресу, обеспечивают обе операции <span class="eOperator">*</span> и <span class="eOperator">[]</span>. Операцию <span class="eOperator">*</span> можно применять даже к имени массива. В действительности, выражение <span class="eOperator">array_name[i]</span>преобразуется компилятором в  выражение <span class="eOperator">*(array_name + i)</span>.</div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-65.html">‹ Предыдущий</a>

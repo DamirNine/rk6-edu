@@ -23,7 +23,67 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-110.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Методы организации и хранения линейных списков</a>
+</div>
+<a name="T1676359876"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Линейный список </a>— это конечная последовательность однотипных элементов (узлов), возможно, с повторениями. Количество элементов в последовательности называется длиной списка, причем длина в процессе работы программы может изменяться. Линейный список F, состоящий из элементов D1,D2,...,Dn, записывают в виде последовательности значений заключенной в угловые скобки F=, или представляют графически :</div>
+<div>D1 <img align="absmiddle" src="/?frm/?doc=PYAVU/9.1.mod/?n=1/?k=10"> D2 <img align="absmiddle" src="/?frm/?doc=PYAVU/9.1.mod/?n=1/?k=10"> D3 <img align="absmiddle" src="/?frm/?doc=PYAVU/9.1.mod/?n=1/?k=10"> ... <img align="absmiddle" src="/?frm/?doc=PYAVU/9.1.mod/?n=1/?k=10"> Dn</div>
+<div>Например, F1=&lt; 2,3,1&gt;,F2=&lt; 7,7,7,2,1,12 &gt;, F3=&lt; &gt;. Длина списков F1, F2, F3 равна соответственно 3,6,0. При работе со списками на практике чаще всего приходится выполнять следующие операции:</div>
+<ul class="eList"><li>найти элемент с заданным свойством;</li>
+<li>определить первый элемент в линейном списке;</li>
+<li>вставить дополнительный элемент до или после указанного узла;</li>
+<li>исключить определенный элемент из списка;</li>
+<li>упорядочить узлы линейного списка в определенном порядке.</li>
+</ul>
+<div>В реальных языках программирования нет какой-либо структуры данных для представления линейного списка так, чтобы все указанные операции над ним выполнялись в одинаковой степени эффективно. Поэтому при работе с линейными списками важным является представление используемых в программе линейных списков таким образом, чтобы была обеспечена максимальная эффективность и по времени выполнения программы, и по объему требуемой памяти.</div>
+<div>Методы хранения линейных списков разделяются на методы последовательного и связанного хранения. Рассмотрим простейшие варианты этих методов для списка с целыми значениями F=&lt;7,10&gt;. При последовательном хранении элементы линейного списка размещаются в массиве d фиксированных размеров, например, 100, и длина списка указывается в переменной l, т.е. в программе необходимо иметь объявления вида</div>
+<pre class="eListing">float d[100];   int l;
+</pre>
+<div>Размер массива 100 ограничивает максимальные размеры линейного списка. Список F в массиве d формируется так:</div>
+<pre class="eListing">d[0]=7; d[1]=10; l=2;
+</pre>
+<div>Полученный список хранится в памяти согласно схеме:</div>
+<div>l: 2</div>
+<div>d: 7 10 .............</div>
+<div><span style="">.</span> [0] [1] [2] [3] ....... [98] [99]</div>
+<div>При связанном хранении в качестве элементов хранения используются структуры, связанные по одной из компонент в цепочку, на начало которой (первую структуру) указывает указатель dl. Структура образующая элемент хранения, должна кроме соответствующего элемента списка содержать и указатель на соседний элемент хранения.</div>
+<div>Описание структуры и указателя в этом случае может имееть вид:</div>
+<pre class="eListing">typedef struct snd   /* структура элемента хранения   */
+ { float  val;        /* элемент списка                */
+   struct snd *n ;     /* указатель на элемент хранения */
+ } DL;
+DL *p;               /* указатель текущего элемента   */
+DL *dl;              /* указатель на начало списка    */
+
+</pre>
+<div>Для выделения памяти под элементы хранения необходимо пользоваться <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцией</a> malloc(sizeof(DL)) или calloc(l,sizeof(DL)). Формирование списка в связанном хранении может осуществляется операторами:</div>
+<pre class="eListing">p=malloc(sizeof(DL));
+p-&gt;val=10;   p-&gt;n=NULL;
+dl=malloc(sizeof(DL));
+dl-&gt;val=7;   dl-&gt;n=p;
+
+</pre>
+<div>В последнем элементе хранения (конец списка) указатель на соседний элемент имеет значение NULL. Получаемый список изображен на рис.1</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PYAVU/9.1.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Связное хранение линейного списка</div></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-108.html">‹ Предыдущий</a>

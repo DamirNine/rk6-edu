@@ -23,7 +23,63 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-12/mod-90.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Язык BPEL</a>
+</div>
+<a name="T889762808"></a>
+<a name="T1781533359"></a>
+<div>Для совместного использования Web-сервисов при реализации различных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">бизнес-процессов</a> необходима их интеграция. Ключом для решения проблемы интеграции является наличие языка, ориентированного на описание транзакций, имеющих место при выполнении бизнес-процессов. Таким языком стал <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Business Process Execution Language</a> (BPEL или BPEL4WS) — язык описания бизнес-процессов, выполняемых с помощью Web-сервисов, т.е. язык описания, во-первых, динамики событий, во-вторых, протоколов взаимодействия приложений. BPEL можно рассматривать как описание последовательности вызовов веб-сервисов. Поэтому наряду с традиционными элементами, позаимствованными из моделей потоков работ (workflow), в BPEL имеются асинхронные вызовы веб-сервисов, "длинные" транзакции и связанные с ними механизмы обработки ошибок. BPEL вписывается в архитектуру основных Web-сервисов, построенную поверх UDDI, WSDL, XML и XML Schema.</div>
+<div>Первый вариант BPEL был представлен в марте 2003 г. и утвержден в качестве стандарта организацией <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">OASIS</a> (Organization for the Advancement of Structured Information Standards, организация по продвижению стандартов в области структурированной информации).</div>
+<div>На промышленных предприятиях BPEL используется для интеграции приложений (интеграции систем, ранее изолированных).</div>
+<a name="T412171630"></a>
+<div>BPEL — это язык со свойствами декларативного и процедурного программированя. В частности, в языке определены такие операции, как организация циклов, ветвление, параллельное выполнение, ожидание, генерация ответа и др. В основе BPEL лежит <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML</a>. Программа на BPEL интерпретируется во время исполнения, при этом выявляются ключевые слова и выполняется соответствующая обработка.</div>
+<div>Процесс, определенный в BPEL, содержит секцию деклараций, определяющую используемые Web-сервисы, и секцию действий, включенных в элемент &lt;process&gt;. К числу команд относятся:</div>
+<ul class="eList"><li>Вызов операции с помощью Web-сервиса (&lt;invoke&gt;), </li>
+<li>Ожидание внешнего сообщения (&lt;receive&gt;), </li>
+<li>Генерация ответа (&lt;reply&gt;), </li>
+<li>Ожидание в течение некоторого времени (&lt;wait&gt;), </li>
+<li>Завершение (&lt;terminate&gt;), </li>
+<li>Копирование данных (&lt;assign&gt;), </li>
+<li>Цикл (&lt;while&gt;), </li>
+<li>Выбор (&lt;case&gt;), </li>
+<li>Параллельное выполнение (&lt;flow&gt;). </li>
+</ul>
+<ul class="eList"><li>Определение последовательности выполнения действий (&lt;sequence&gt;).</li>
+<li>Ветвление с помощью оператора выбора (&lt;switch&gt;).</li>
+<li>Выполнение одного из нескольких альтернативных маршрутов (&lt;pick&gt;).</li>
+<li>Индикация ошибки или сбойной ситуации (&lt;throw&gt;).</li>
+<li>Индикация обработки ошибочной логики с помощью &lt;throw&gt; и &lt;catch&gt;.</li>
+</ul>
+<ul class="eList"><li>Отсутствие действий (&lt;empty&gt;).</li>
+</ul>
+<ul class="eList"><li>Выбор одной из альтернатив (&lt;pick&gt;).</li>
+<li>Декларация переменной (&lt;variable&gt;).</li>
+<li>Определение партнерских связей (&lt;partnerLink&gt;).</li>
+</ul>
+<a name="T1009763924"></a>
+<div>BPEL-процесс может выполняться на любом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сервере приложений</a>, имеющем механизм исполнения BPEL.</div>
+<div>Примером реализации технологии интеграции бизнес-процессов на основе BPEL является система Oracle BPEL Process Manager. Имеются средства преобразования UML-моделей в наборы BPEL и WSDL-файлов, например, Emerging Technologies Toolkit 1.1 корпорации IBM.</div>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. Стандарты описания бизнес-процессов. - http://www.bimash.kz/site/_ru/index.php?p=64&amp;a=349<br>
+2. The BPEL language/ - http://www.radikalfx.com/bpel/language.html или http://www.radikalfx.com/bpel/usage.html<br>
+3. Matjaz B. Juric. A Hands-on Introduction to BPEL. - http://www.oracle.com/technology/pub/articles/matjaz_bpel1.html<br>
+</div>
+<br>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-12/">← Оглавление</a>
         <a href="/rk6-edu/course-12/mod-88.html">‹ Предыдущий</a>

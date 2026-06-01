@@ -23,7 +23,72 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-121.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сортировка списков путем слияния</a>
+</div>
+<a name="T437825440"></a>
+<div>При <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сортировки списком путем слияния</a> для получения упорядоченного списка B' последовательность значений В=&lt;K1,K2,...,Kn&gt; разделяют на N списков В1=&lt;K1&gt;, B2=&lt;K2&gt;,...,Bn=&lt;Kn&gt;, длина каждого из которых 1. Затем осуществляется функция прохода, при которой М&gt;=2 упорядоченных списков B1,B2,...,Bm заменяется на М/2 (или (М+1)/2) упорядоченных списков, B(2i-1)-oго и B(2i)-ого ( 2i&lt;=M ) и добавлением Вm при нечетном М. Проход повторяется до тех пор пока не получится одна последовательность длины N. Приведем пример сортировки списка путем использования слияния, отделяя последовательности косой чертой, а элементы запятой.</div>
+<pre class="eListing">9 / 7 / 18 / 3 / 52 / 4 / 6 / 8 / 5 / 13 / 42 / 30 / 35 / 26;
+7,9 / 3,18 / 4 / 52 / 6 / 8 / 54 / 13 / 30 / 42 / 26 / 35;
+3,7,9,18 /  4,6,8,52 /  5,13,30,42 /  26,35;
+3,4,6,7,8,9,18,52 /  5,13,26,30,35,42;
+3,4,5,6,7,8,9,13,18,26,30,35,42,52.
+</pre>
+<div>Количество действий, требуемое для сортировки слиянием, равно Q=N*log2(N), так как за один проход выполняется N сравнений, а всего необходимо осуществить log2(N) проходов. Сортировка слиянием является очень эффективной и часто применяется для больших N, даже при использовании внешней памяти.</div>
+<div>Функция <span class="eOperator">smerge</span> упорядочивает массив <span class="eOperator">s</span> сортировкой слиянием, используя описанную ранее функцию <span class="eOperator">merge</span>.</div>
+<pre class="eListing"> /* сортировка слиянием */
+double *smerge (double *s, int m, int n)
+{ int l,low,up;
+  double *merge (double *, int, int, int);
+  l=1;
+  while(l&lt;=(n-m))
+   { low=m;
+     up=m-1;
+     while (l+up &lt; n)
+       {  up=(low+2*l-1 &lt; n) ? (low+2*l-1) : n ;
+          merge (s,low,up,l);
+          low=up-1;
+       }
+     l*=2;
+   }
+  return(a);
+}
+</pre>
+<div>Для сортировки массива путем слияния удобно использовать рекурсию. Составим рекурсивную функцию <span class="eOperator">srecmg</span> для сортировки массива либо его части. При каждом вызове сортируемый массив делится на две равных части, каждая из которых сортируется отдельно, а затем происходит их слияние, как это показано на рис.1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PYAVU/9.11.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Схема сортировки слиянием.</div></div>
+<pre class="eListing">/*    рекурсивная   сортировка слиянием  1/2    */
+double *srecmg (double *a, int m, int n)
+{ double * merge (double *, int, int, int);
+  double * smerge (double *, int, int);
+  int i;
+  if (n&gt;m)
+    { i=(n+m)/2;
+      srecmg(a,m,i);
+      srecmg(a,i+1,n);
+      merge(a,m,n,(n-m)/2+1);
+    }
+  return (a);
+}
+
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-119.html">‹ Предыдущий</a>

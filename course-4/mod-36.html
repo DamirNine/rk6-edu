@@ -23,7 +23,39 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-37.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Протокол MIME</a>
+</div>
+<a name="T555301450"></a>
+<a name="T640440638"></a>
+<a name="T299401933"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Протокол MIME</a> (Multipurpose Internet Mail Extensions) - многоцелевое расширение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">электронной почты</a>, протокол был разработан с целью представления изображений, звука и видео в письмах электронной почты.   В дальнейшем  MIME стал применяться также в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Web-технологиях</a>  для передачи документов от сервера к клиенту. </div>
+<div>Сообщение MIME имеет заголовок и собственно передаваемый документ, в заголовке  указывается вид  передаваемых данных:</div>
+<pre class="eListing">Content-Type: &lt;тип_MIME&gt;
+</pre>
+<div>Перечень  типов MIME  постоянно пополняется и может быть дополнен даже пользователем для описания своего собственного вида данных. Формат типа MIME: </div>
+<pre class="eListing">&lt;Тип&gt;/&lt;Подтип&gt;[;&lt;параметры&gt;]
+</pre>
+<div>где компонент &lt;Тип&gt;,   определяющий общий тип данных, может иметь значения: </div>
+<ul class="eList"><li>Audio - для звуковых данных </li>
+<li>Application - данные, являющиеся входными для какого-либо приложения (программы) </li>
+<li>Image - для графических образов </li>
+<li>Message - для сообщения, которое само по себе является MIME - документом </li>
+<li>Multipart - для сообщения, состоящего из нескольких MIME - документов </li>
+<li>Text - для текстовых данных в различном виде </li>
+<li>Video - для видеоданных.</li>
+</ul>
+<div>Компонент &lt;Подтип&gt; - указывает на специфический формат данных типа &lt;Тип&gt;, его значениями могут быть: </div>
+<ul class="eList"><li>text/html - текстовые данные в формате HTML; </li>
+<li>image/gif  - графические данные в формате gif </li>
+</ul>
+<div>&lt;Параметры&gt; - список параметров, необходимых для интерпретации данных.</div>
+<div>Для  обработки файлов различных типов и форматов на клиентской и серверной сторонах поддерживаются списки соответствий типов MIME и расширений файлов. Формат записи такого списка: </div>
+<div>&lt;Тип&gt;/&lt;Подтип&gt; &lt;расширение1&gt; ... &lt;расширениеN&gt; </div>
+<div> Например, запись text/html html htm означает, что  всем файлам с расширением html и htm приписывается формат  text/html и используется алгоритм обработки, предусмотренный для этого формата.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-35.html">‹ Предыдущий</a>

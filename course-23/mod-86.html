@@ -23,7 +23,40 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-87.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Одновременная обработка матриц и подмассивов</a>
+</div>
+<div>Задачи данной группы аналогичны задачам одновременной обработки одномерных массивов и подмассивов. Реализуются эти задачи использованием вложенных циклов.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Дана матрица <span class="eOperator">a </span>целого типа. Определить сумму элементов каждой строки и записать ее в новый массив <span class="eOperator">s</span>.</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/obr.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<pre class="eListing">const int N=5;
+int matr_sum(int a[][5], int n, int m, int s[])
+{ int i,j;
+for(i=0;i&lt;n;i++)
+   for (j=0,s[i]=0;j&lt;m;j++) 
+      s[i]+=a[i][j];
+}
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-85.html">‹ Предыдущий</a>

@@ -23,7 +23,76 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-7/mod-43.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Примеры моделей на языке Express</a>
+</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><a name="T674463047"></a>
+<div>Пример модели "person_organization_schema", взятый из 41-го тома "<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Интегрированные ресурсы</a>" стандарта STEP (ISO 10303.41), на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке Express</a>:</div>
+<pre class="eListing">SCHEMA person_organization_schema;
+ENTITY address;
+internal_location : optional label;
+street_number : optional label;
+street : optional label;
+postal_box : optional label;
+town : optional label;
+region : optional label;
+postal_code : optional label;
+country : optional label;
+facsimile_number : optional label;
+telephone_number : optional label;
+electronic_mail+address : optional label;
+telex_number : optional label;
+WHERE
+wr1 : EXISTS(internal_location) OR EXISTS(street_number) OR EXISTS(street)
+OR EXISTS(postal_box) OR EXISTS(town) OR EXISTS(region)
+ OR EXISTS(postal_code) 
+OR EXISTS(country) OR EXISTS(facsimile_number) OR EXISTS(telephone_number)
+OR EXISTS(electronic_mail_address) OR EXISTS(telex_number);
+END_ENTITY;
+ENTITY personal_address
+SUBTYPE OF (address);
+people : SET[1:?] OF person;
+description : text;
+END_ENTITY;
+ENTITY person;
+id : identifier;
+last_name : OPTIONAL label;
+first_name : OPTIONAL label;
+middle_names : OPTIONAL LIST[1:?] OF label;
+prefix_titles : OPTIONAL LIST[1:?] OF label;
+suffix_titles : OPTIONAL LIST[1:?] OF label;
+UNIQUE
+ur1 : id;
+WHERE
+wr1 : exists(last_name) OR exists(first_name);
+END_ENTITY;
+END_SCHEMA;
+</pre>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><a name="T381072063"></a>
+<div>Пример использования <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка Express-G</a> для представления модели "Определение изделия" из стандарта ISO 10303-41 показан на рис.&nbsp;1.</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=230_CALS/cals112.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Пример модели "Определение изделия" на языке Express-G</div></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-7/">← Оглавление</a>
         <a href="/rk6-edu/course-7/mod-41.html">‹ Предыдущий</a>

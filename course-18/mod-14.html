@@ -23,7 +23,68 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-18/mod-15.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Нечеткие нейронные сети</a>
+</div>
+<a name="T1378316623"></a>
+<a name="T1617087618"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Нечеткие искусственные нейронные сети</a> получили свое название в силу того, что для аппроксимации зависимости <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выходного сигнала</a> от <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">входного вектора</a> <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=1/?k=10"> в них используются выражения, заимствованные из нечетких систем (в частности, из систем Мамдани-Заде и Такаги-Сугено-Канга), оперирующих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нечеткими множествами</a>. Теоретически доказано, что эти выражения позволяют с произвольной точностью аппроксимировать любую непрерывную нелинейную функцию многих переменных суммой функций (называемых нечеткими) одной переменной.</div>
+<div class="eSubTitle">Сеть Такаги-Сугено-Канга</div>
+<a name="T653107362"></a>
+<div>В <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сети Такаги-Сугено-Канга</a> (сокращенно, TSK) выходной сигнал рассчитывается с помощью выражения<br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=2/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=3/?k=10"> — <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=4/?k=10">-ый полиномиальный компонент аппроксимации.</div>
+<div>Веса <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=5/?k=10"> компонентов рассчитываются по следующей формуле (с использованием рациональной формы функции Гаусса) <br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=6/?k=10"><br></div>
+<a name="T882749742"></a>
+<div>Приведенным выражениям соответствует пятислойная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нейронная сеть</a>, структурная схема которой представлена на рис.&nbsp;1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=NN/026-fuzzynets.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Структурная схема сети Такаги-Сугено-Канга</div></div>
+<a name="T1055522906"></a>
+<div>Первый слой содержит <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=7/?k=10"> узлов, каждый из которых реализует расчет функции Гаусса с параметрами <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=8/?k=10">, <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=9/?k=10"> и <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=10/?k=10">. С точки зрения нечетких систем это слой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">фуззификации</a> входных переменных. Слой называется параметрическим, поскольку в процессе обучения сети подбору подлежат параметры этого слоя.</div>
+<div>Второй слой параметров не содержит. С точки зрения нечетких систем это слой агрегирования левых частей продукций.</div>
+<div>Третий слой — генератор полиномиальных функций TSK <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=11/?k=10"> и их умножитель на весовой коэффициент <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=5/?k=10">. Это параметрический слой, в котором в процессе обучения сети адаптации подвергаются коэффициенты <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=12/?k=10">, <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=13/?k=10"> <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=14/?k=10">. Общее количество коэффициентов <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=12/?k=10"> в сети равно <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=15/?k=10">.</div>
+<div>Четвертый слой составляют два нейрона-сумматора. Первый рассчитывает взвешенную сумму сигналов <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=11/?k=10">, а второй — сумму весов <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=16/?k=10"> <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=17/?k=10">. Это непараметрический слой.</div>
+<div>Последний, пятый, слой осуществляет нормализацию весов. Это также непараметрический слой.</div>
+<div>Из описания сети TSK следует, что она содержит два параметрических слоя (первый и третий), параметры которых подлежат подбору в процессе обучения. Параметры первого слоя будем называть нелинейными, так как они относятся к нелинейной функции, а параметры третьего слоя — линейными.</div>
+<div>Общее количество параметров (линейных и нелинейных) сети TSK равно <br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=18/?k=10"><br></div>
+<div>Во многих практических приложениях это чрезмерная величина, поэтому часто для входных переменных <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=19/?k=10"> используют ограниченный набор функций <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=20/?k=10">, что уменьшает количество нелинейных параметров.</div>
+<div class="eSubTitle">Сеть Ванга-Менделя</div>
+<a name="T645563814"></a>
+<div>В <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сети Ванга-Менделя</a> выходной сигнал рассчитывается с помощью выражения<br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=21/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=22/?k=10"> — весовой коэффициент (с точки зрения нечетких систем это центр функции принадлежности правой части продукции), <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=23/?k=10"> — функция Гаусса (в экспоненциальном или рациональном виде) с параметрами центра <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=8/?k=10">, ширины <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=9/?k=10"> и формы <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=10/?k=10"> (с точки зрения нечетких систем <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=23/?k=10"> — функция принадлежности к нечеткому множеству).</div>
+<div>Легко заметить, что выражение для <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=24/?k=10"> в сети Ванга-Менделя является частным случаем аналогичного выражения в сети TSK, если в последней принять <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=25/?k=10">. Поэтому сеть Ванга-Менделя проще и имеет следующую трехслойную структуру (см. рис.&nbsp;2).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=NN/026-fuzzynets.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Структурная схема сети Ванга-Менделя</div></div>
+<div>В данной сети параметрическими являются первый и третий слои. Первый содержит <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=26/?k=10"> нелинейных параметров функции Гаусса, а третий — <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=27/?k=10"> линейных параметров <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=22/?k=10">.</div>
+<div>Нечеткие нейронные сети (как Ванга-Менделя, так и TSK) могут быть обобщены на случай многих выходных переменных. Их обучение, так же как и классических сетей, может проводиться как с учителем, так и без оного. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Обучение с учителем</a> основано на минимизации целевой функции, определяемой с использованием эвклидовой нормы <br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=28/?k=10"><br></div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Обучение без учителя</a> основано на самоорганизации сети, обеспечивающей кластеризацию входных данных.</div>
+<div class="eSubTitle">Гибридный алгоритм обучения</div>
+<div>Данный алгоритм применим к обеим описанным выше структурам, но рассмотрим его касательно сетей TSK, как более общих. Гибридный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм обучения</a> нечетких сетей можно считать вариантом гибридного алгоритма обучения радиальных сетей.</div>
+<div>Алгоритм реализуется чередованием двух этапов:</div>
+<ol class="eList"><li>при зафиксиронных значениях нелинейных параметров <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=29/?k=10">, <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=30/?k=10"> и <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=31/?k=10"> первого слоя нейронов отыскиваются значения линейных параметров <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=32/?k=10"> третьего слоя сети;</li>
+<li>при зафиксиронных значениях линейных параметров <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=32/?k=10"> третьего слоя уточняются нелинейные параметры <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=29/?k=10">, <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=30/?k=10"> и <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=31/?k=10"> первого слоя сети.</li>
+</ol>
+<div>На первом этапе обучения нелинейные параметры фиксированы. Выходной сигнал определяется как <br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=33/?k=10"><br>где <br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=34/?k=10"><br></div>
+<div>Для <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=35/?k=10"> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обучающих выборок</a> <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=36/?k=10">, <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=37/?k=10">, получаем систему <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=35/?k=10"> линейных уравнений <br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=38/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=39/?k=10"> — вектор весов третьего слоя сети, а <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=40/?k=10"> — вектор ожидаемых значений, составленный из всех <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=35/?k=10"> обучающих выборок. Матрица <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=41/?k=10"> представлена ниже:<br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=42/?k=10"><br></div>
+<div>Количество строк <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=35/?k=10"> матрицы <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=41/?k=10"> значительно больше количества ее столбцов <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=43/?k=10">. Решение этой системы линейных алгебраических уравнений может быть получено за один шаг следующим образом: <br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=44/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=45/?k=10"> — псевдоинверсия матрицы <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=41/?k=10">.</div>
+<div>На втором этапе фиксируются значения коэффициентов полиномов третьего слоя и осуществляется уточнение (обычно многократное) коэффициентов функции Гаусса для первого слоя сети стандартным методом градиента: <br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=46/?k=10"><br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=47/?k=10"><br><img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=48/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=NN/026-fuzzynets.mod/?n=49/?k=10"> — номер очередного цикла обучения (в режиме "онлайн" он совпадает с номером обучающей выборки). С технической точки зрения получение аналитических выражений для производных целевой функции по нелинейным параметрам проблем не представляет. Однако, здесь в силу громоздкости эти выражения не приводятся.</div>
+<div>Поскольку в череде этапов этап уточнения нелинейных параметров функции Гаусса имеет много меньшую скорость сходимости, то в ходе обучения реализацию этапа 1, как правило, сопровождает реализация нескольких этапов 2.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-18/">← Оглавление</a>
         <a href="/rk6-edu/course-18/mod-13.html">‹ Предыдущий</a>

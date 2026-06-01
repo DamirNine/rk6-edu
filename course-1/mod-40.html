@@ -23,7 +23,85 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-1/mod-41.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Математические модели дискретных устройств</a>
+</div>
+<a name="T430037435"></a>
+<a name="T698232909"></a>
+<div>Анализ дискретных устройств на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функционально-логическом уровне</a> требуется прежде всего при проектировании устройств вычислительной техники и цифровой автоматики. Здесь дополнительно к допущениям, принимаемым при анализе аналоговых устройств, используют дискретизацию сигналов, причем базовым является двузначное представление сигналов. Удобно этими двумя возможными значениями сигналов считать "истину" (иначе 1) и "ложь" (иначе 0), а сами сигналы рассматривать как булевы величины. Тогда для моделирования можно использовать аппарат математической логики. Находят применение также трех- и более значные модели. Смысл значений сигналов в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">многозначном моделировании</a> и причины его применения будут пояснены ниже на некоторых примерах.</div>
+<div>Элементами цифровых устройств на функционально-логическом уровне служат элементы, выполняющие логические функции и возможно функции хранения информации.</div>
+<a name="T220175056"></a>
+<div>Цифровые устройства с памятью рассматриваются как <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">конечные автоматы</a>. Конечный автомат характеризуется векторами входных сигналов <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=1/?k=10">, выходных сигналов <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=2/?k=10">, внутренних состояний <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=3/?k=10">, функциями переходов <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=4/?k=10"> и выходов <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=5/?k=10">, причем (время <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=6/?k=10"> измеряется в тактах): <br><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=7/?k=10"><br></div>
+<a name="T1549591769"></a>
+<div><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=8/?k=10"> — в случае <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">автомата Мура</a>,</div>
+<a name="T1549602487"></a>
+<div><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=9/?k=10"> — в случае <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">автомата Мили</a>.</div>
+<div>Простейшими логическими элементами являются дизъюнктор, конъюнктор, инвертор, реализующие соответственно операции дизъюнкции (ИЛИ) <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=10/?k=10">, конъюнкции (И) <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=11/?k=10">, отрицания (НЕ) <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=12/?k=10">, где <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=13/?k=10"> — выходной сигнал, <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=14/?k=10"> и <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=15/?k=10"> — входные сигналы. Число входов может быть и более двух. Условные схемные обозначения простых логических элементов показаны на рис.&nbsp;1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/3002.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Условные обозначения простых логических элементов</div></div>
+<a name="T700513838"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Математические модели</a> устройств представляют собой систему <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">математических моделей элементов</a>, входящих в устройство, при отождествлении сигналов, относящихся к одному и тому же соединению элементов.</div>
+<div>Различают синхронные и асинхронные модели.</div>
+<a name="T804045656"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Синхронная модель</a> представляет собой систему логических уравнений, в ней отсутствует такая переменная как время, синхронные модели используют для анализа установившихся состояний.</div>
+<div>Примером синхронной модели может служить следующая система уравнений, полученная для логической схемы триггера (рис.&nbsp;2):<br><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=16/?k=10"><br></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/3002.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Логическая схема триггера</div></div>
+<a name="T1389339944"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Асинхронные модели</a> отражают не только логические функции, но и временные задержки в распространении сигналов. Асинхронная модель логического элемента имеет вид<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=17/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br>где <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=18/?k=10"> — задержка сигнала в элементе; <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=19/?k=10"> — логическая функция. Запись (1) означает, что выходной сигнал <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=13/?k=10"> принимает значение логической функции, соответствующее значениям аргументов <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=20/?k=10">, в момент времени <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=21/?k=10">. Следовательно, асинхронные модели можно использовать для анализа динамических процессов в логических схемах.</div>
+<div>Термины синхронная и асинхронная модели можно объяснить ориентированностью этих моделей на синхронные и асинхронные схемы соответственно. В синхронных схемах передача сигналов между цифровыми блоками происходит только при подаче на специальные синхровходы тактовых (синхронизирующих) импульсов. Частота тактовых импульсов выбирается такой, чтобы к моменту прихода синхроимпульса переходные процессы от предыдущих передач сигналов фактически закончились. Следовательно, в синхронных схемах расчет задержек не актуален, быстродействие устройства определяется заданием тактовой частоты.</div>
+<a name="T1572017008"></a>
+<div>Синхронные модели можно использовать не только для выявления принципиальных ошибок в схемной реализации заданных функций. С их помощью можно обнаруживать места в схемах, опасные, с точки зрения, возникновения в них искажающих помех. Ситуации, связанные с потенциальной опасностью возникновения помех и сбоев, называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">рисками сбоя</a>.</div>
+<a name="T301711470"></a>
+<div>Различают статический и динамический риски сбоя. Статический риск сбоя иллюстрирует ситуация рис.&nbsp;3, если на два входа элемента И могут приходить перепады сигналов в противоположных направлениях, как это показано на рис.&nbsp;3,б. Если вместо идеального случая, когда оба перепада приходят в момент времени <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=22/?k=10">, перепады вследствие разброса задержек придут неодновременно, причем так, как показано на рис.&nbsp;3,б, то на выходе элемента появляется импульс помехи, который может исказить работу всего устройства. Для устранения таких рисков сбоя нужно уметь их выявлять. С этой целью применяют трехзначное <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">синхронное моделирование</a>.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/3002.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Статический риск сбоя</div></div>
+<div>При этом тремя возможными значениями сигналов являются <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=23/?k=10">, <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=24/?k=10"> и <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=25/?k=10">, причем значение <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=25/?k=10"> интерпретируется как неопределенность. Правила выполнения логических операций И, ИЛИ, НЕ в трехзначном алфавите очевидны из рассмотрения табл.&nbsp;1. В ней вторая строка отведена для значений одного аргумента, а первый столбец — для значений второго аргумента, значения функций представлены ниже второй строки и правее первого столбца.</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="20.0%" align="center"><td width="25.0%" class="eTableT">Операция</td><td width="25.0%" class="eTableT">И</td><td width="25.0%" class="eTableT">ИЛИ</td><td width="25.0%" class="eTableT">НЕ</td></tr>
+<tr height="20.0%" align="center"><td class="eTableT">Аргумент</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=26/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=26/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=26/?k=10"></td></tr>
+<tr height="20.0%" align="center"><td class="eTableT">0</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=27/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=26/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=28/?k=10"></td></tr>
+<tr height="20.0%" align="center"><td class="eTableT"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=29/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=30/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=31/?k=10"></td><td class="eTable">-</td></tr>
+<tr height="20.0%" align="center"><td class="eTableT">1</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=26/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=32/?k=10"></td><td class="eTable">-</td></tr>
+</tbody></table><br>
+<div>При анализе рисков сбоя на каждом такте вместо однократного решения уравнений модели производят двукратное решение, поэтому можно говорить об исходных, промежуточных (после первого решения) и итоговых (после второго решения) значениях переменных. Для входных сигналов допустимы только такие последовательности исходных, промежуточных и итоговых значений: <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=33/?k=10">. Для других переменных появление последовательности <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=34/?k=10"> или <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=35/?k=10"> означает неопределенность во время переходного процесса, т.е. возможность статического риска сбоя.</div>
+<div>Для простейшей схемы (рис.&nbsp;3,а) результаты трехзначного моделирования представлены в табл.&nbsp;2.</div>
+<div class="auto" style="text-align:right">Таблица 2&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTableT">Значение</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=36/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=37/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=38/?k=10"></td></tr>
+<tr><td class="eTableT">Исходное</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=39/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=40/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=40/?k=10"></td></tr>
+<tr><td class="eTableT">Промежуточное</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=41/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=41/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=41/?k=10"></td></tr>
+<tr><td class="eTableT">Итоговое</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=40/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=39/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=40/?k=10"></td></tr>
+</tbody></table><br>
+<div>Динамический риск сбоя иллюстрируют схема и временные диаграммы рис.&nbsp;4. Сбой выражается в появлении вместо одного перепада на выходе, что имеет место при правильном функционировании, нескольких перепадов. Обнаружение динамических рисков сбоя также выполняют с помощью двукратного решения уравнений модели, но при использовании пятизначного алфавита с множеством значений <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=42/?k=10">, где <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=43/?k=10"> интерпретируется как положительный перепад, <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=44/?k=10"> — как отрицательный перепад, остальные символы имеют прежний смысл.</div>
+<div>В отсутствие сбоев последовательности значений переменных в исходном, промежуточном и итоговом состояниях могут быть такими: <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=45/?k=10">. Последовательности <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=46/?k=10"> или <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=47/?k=10"> указывают на динамический риск сбоя.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/3002.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;Динамический риск сбоя</div></div>
+<div>Трехзначный алфавит можно использовать и в асинхронных моделях. Пусть в модели <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=48/?k=10"> в момент времени <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=49/?k=10"> входы <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=50/?k=10"> таковы, что в момент времени <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=51/?k=10"> происходит переключение выходного сигнала <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=13/?k=10">. Но если учитывать разброс задержек, то <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=18/?k=10"> принимает некоторое случайное значение в диапазоне <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=52/?k=10"> и, следовательно, в модели в интервале времени от <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=53/?k=10"> до <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=54/?k=10"> сигнал <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=13/?k=10"> должен иметь неопределенное значение <img align="absmiddle" src="/?frm/?doc=110_Simul/3002.mod/?n=25/?k=10">. Именно это и достигается с помощью трехзначного асинхронного моделирования.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-1/">← Оглавление</a>
         <a href="/rk6-edu/course-1/mod-39.html">‹ Предыдущий</a>

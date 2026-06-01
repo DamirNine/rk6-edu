@@ -23,7 +23,52 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-10.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Целый тип данных</a>
+</div>
+<a name="T1163272915"></a>
+<a name="T319893726"></a>
+<div>Для определения данных <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">целого типа данных</a> используются различные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевые слова</a>, которые определяют диапазон значений и размер области памяти, выделяемой под переменные (табл. 1).</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTableT">Тип</td><td class="eTableT">Размер памяти в байтах</td><td class="eTableT">Диапазон значений</td></tr>
+<tr align="center"><td class="eTable">char</td><td class="eTable">1</td><td class="eTable">от -128 до 127</td></tr>
+<tr align="center"><td class="eTable">int</td><td class="eTable">Для IBM XT,AT,SX,DX 2</td><td class="eTable">&nbsp;</td></tr>
+<tr align="center"><td class="eTable">short</td><td class="eTable">2</td><td class="eTable">от -32768 до 32767</td></tr>
+<tr align="center"><td class="eTable">long</td><td class="eTable">4</td><td class="eTable">от -2 147 483 648 до 2 147 483 647</td></tr>
+<tr align="center"><td class="eTable">unsigned shar</td><td class="eTable">1</td><td class="eTable">oт 0 до 255</td></tr>
+<tr align="center"><td class="eTable">unsigned int</td><td class="eTable">Для IBM XT,AT,SX,DX 2</td><td class="eTable">&nbsp;</td></tr>
+<tr align="center"><td class="eTable">unsigned short</td><td class="eTable">2</td><td class="eTable">от 0 до 65535</td></tr>
+<tr align="center"><td class="eTable">unsigned long</td><td class="eTable">4</td><td class="eTable">от 0 до 4 294 967 295</td></tr>
+</tbody></table><br>
+<div>Отметим, что ключевые слова signed и unsigned необязательны. Они указывают, как интерпретируется нулевой бит объявляемой переменной, т.е., если указано ключевое слово unsigned, то нулевой бит интерпретируется как часть числа, в противном случае нулевой бит интерпретируется как знаковый. В случае отсутствия ключевого слова unsigned целая переменная считается знаковой. В том случае, если спецификатор типа состоит из ключевого типа signed или unsigned и далее следует идентификатор переменной, то она будет рассматриваться как переменная типа int.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">unsigned int n;
+unsigned int b;
+int c; (подразумевается signed int c );
+signed f; (подразумевается signed int f ).
+</pre>
+</div>
+<a name="T256200320"></a>
+<div>Отметим, что модификатор-типа char используется для представления символа (из массива представление символов) или для объявления строковых литералов. Значением объекта типа char является код (размером 1 байт), соответствующий представляемому символу. Для представления символов русского алфавита, модификатор типа <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатора</a> данных имеет вид unsigned char, так как коды русских букв превышают величину 127.</div>
+<div>Следует сделать следующее замечание: в языке СИ не определено представление в памяти и диапазон значений для идентификаторов с модификаторами-типа int и unsigned int. Размер памяти для переменной с модификатором типа signed int определяется длиной машинного слова, которое имеет различный размер на разных машинах. Так, на 16-ти разрядных машинах размер слова равен 2-м байтам, на 32-х разрядных машинах соответственно 4-м байтам, т.е. тип int эквивалентен типам short int, или long int в зависимости от архитектуры используемой ПЭВМ. Таким образом, одна и та же программа может правильно работать на одном компьютере и неправильно на другом. Для определения длины памяти занимаемой переменной можно использовать операцию sizeof языка СИ, возвращающую значение длины указанного модификатора-типа.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">a = sizeof(int);
+b = sizeof(long int);
+c = sizeof(unsigned long);
+d = sizeof(short);
+</pre>
+</div>
+<div>Отметим также, что восьмеричные и шестнадцатеричные константы также могут иметь модификатор unsigned. Это достигается указанием префикса u или U после константы, константа без этого префикса считается знаковой.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">0xA8C (int signed );
+01786l (long signed );
+01786l (long signed );
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-8.html">‹ Предыдущий</a>

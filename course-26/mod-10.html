@@ -23,7 +23,24 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-11.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Данные плавающего типа</a>
+</div>
+<a name="T356163622"></a>
+<div>Для переменных, представляющих число с плавающей точкой используются следующие модификаторы <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">данных плавающего типа</a> : float, double, long double (в некоторых реализациях языка long double СИ отсутствует). </div>
+<br>
+<div>Величина с модификатором-типа float занимает 4 байта. Из них 1 байт отводится для знака, 8 бит для избыточной экспоненты и 23 бита для мантиссы. Отметим, что старший бит мантиссы всегда равен 1, поэтому он не заполняется, в связи с этим диапазон значений переменной с плавающей точкой приблизительно равен от 3.14E-38 до 3.14E+38. </div>
+<br>
+<div>Величина типа double занимает 8 бит в памяти. Ее формат аналогичен формату float. Биты памяти распределяются следующим образом: 1 бит для знака, 11 бит для экспоненты и 52 бита для мантиссы. С учетом опущенного старшего бита мантиссы диапазон значений равен от 1.7E-308 до 1.7E+308. </div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">float f, a, b;
+double x,y;
+</pre>
+</div>
+<br>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-9.html">‹ Предыдущий</a>

@@ -23,7 +23,178 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-22/mod-33.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Распараллеливание циклических фрагментов программ</a>
+</div>
+<a name="T1782899684"></a>
+<div>Основная работа, которую обычно производит <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЭВМ</a>, это обработка циклов и других повторяющихся участков программ. Потому теория <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> циклических участков программ представляет собой одно из важнейших направлений параллельного программирования.</div>
+<a name="T1242448883"></a>
+<div>О <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливании</a> циклов принято говорить в терминах <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">пространства итераций</a> (Лампорт Л., 70-е годы). Рассмотрим для примера следующий циклический фрагмент программы (T – тело цикла):<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=1/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Пространством итераций</a> гнезда циклов (1) называется множество целочисленных векторов<br><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=2/?k=10"><br></div>
+<div>В терминах <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространства итераций</a> задача <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> гнезда циклов (1) ставится как задача разбиения множества <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=3/?k=10"> на подмножества <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=4/?k=10"> такие, что вычисления тела цикла <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=5/?k=10"> в каждом из них могут быть выполнены одновременно (с сохранением информационных связей исходного цикла, естественно).</div>
+<a name="T1236198656"></a>
+<a name="T537769185"></a>
+<a name="T1126731372"></a>
+<a name="T1672495953"></a>
+<a name="T2127507291"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Распараллеливание</a> циклов производится <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компиляторами</a>. Если речь идет о распараллеливании для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-конвейерной вычислительной системы</a> или для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-параллельной вычислительной системы</a>, то такой компилятор называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">векторизующим компилятором</a>. Аналогично, если речь идет о распараллеливание циклов для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорной вычислительной системы</a>, то говорят о <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">распараллеливающем компиляторе</a>, общая структура которого представлена на рис.&nbsp;1.</div>
+<div>На <span class="eOperator">этапе синтаксического анализа</span> производится синтаксический анализ последовательной программы, проверяется выполнение некоторых ограничений на тела циклов (линейность индексных выражений, отсутствие операторов и обращений к подпрограммам и т.п. - см. ниже). Кроме того, на этапе <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синтаксического анализа</a> оценивается время выполнения программы. Недостающую информацию для такой оценки <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятор</a> может запрашивать у пользователя в диалоговом режиме.</div>
+<a name="T12397768"></a>
+<div>На <span class="eOperator">этапе распараллеливания циклов</span> проверяется выполнение всех необходимых ограничений на тела циклов (в частности, <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">условия Рассела</a> - см. ниже). Здесь же для каждого цикла из множества методов, реализованных в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компиляторе</a>, производится выбор метода <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a>. Для вложенных циклов анализ производится, начиная с внутренних циклов. Для циклов, которые не распараллеливаются, компилятором выдается информация о конкретных причинах невозможности распараллеливания.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020603.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Общая структура распараллеливающего компилятора.</div></div>
+<div>На <span class="eOperator">этапе оценки качества распараллеливания </span>оценивается степень <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> каждого из циклов и на этой основе производится оценка ускорения параллельной программы по сравнению с исходной последовательной программой. Если это ускорение является неудовлетворительным, то на основе информации, выданной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятором</a> на предыдущем этапе, пользователь может попытаться преобразовать циклы так, чтобы они могли быть эффективно распараллелены.</div>
+<div>На <span class="eOperator">этапе генерации параллельной программы</span> генерируется программа на параллельном ЯВУ.</div>
+<div>На <span class="eOperator">этапе генерации машинного кода</span> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятор</a> генерирует код для используемой параллельной вычислительной системы.</div>
+<div>В зависимости от типа областей <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=4/?k=10"> выделяют несколько методов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> циклов:</div>
+<ul class="eList"><li>метод параллелепипедов;</li>
+<li>метод гиперплоскостей;</li>
+<li>метод пирамид.</li>
+</ul>
+<div>Методы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> применимы только при выполнении ряда ограничений на операторы тела цикла. Эти ограничения зависят от типа <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЭВМ</a> и метода распараллеливания. Перечислим основные из этих ограничений:</div>
+<ul class="eList"><li>тело цикла не содержит условных и безусловных переходов вне тела;</li>
+<li>внутри тела цикла передача управления осуществляется только вперед;</li>
+<li>тело цикла не содержит операторов ввода-вывода и обращений к подпрограммам;</li>
+<li>все индексные выражения линейны, т.е. отсутствуют индексы вида <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=6/?k=10">;</li>
+<li>отсутствует косвенная адресация вида <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=7/?k=10">;</li>
+<li>индексы не изменяются в теле цикла;</li>
+<li>выполнено <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">условие Рассела</a> – в теле цикла не используется простая неиндексированная переменная раньше, чем этой переменной <span class="eOperator">в теле цикла</span> присваивается некоторое значение, например,</li>
+</ul>
+<pre class="eListing">FOR i=1, N
+  S:= S + X(i)
+</pre>
+<pre class="eListing"></pre>
+<div>Здесь начальное значение переменной <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=8/?k=10">, полагается, присвоено вне цикла. </div>
+<div class="eSubTitle">Метод параллелепипедов.</div>
+<a name="T656705723"></a>
+<div>Проиллюстрируем идею <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">метода параллелепипедов распараллеливания циклов</a> на примере.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Рассмотрим следующее гнездо циклов<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=9/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br></div>
+<div>Соответствующие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространство итераций</a> и информационные связи в теле гнезда циклов приведены на рис.&nbsp;2. Пространство итераций гнезда циклов (2) есть совокупность точек, обозначенных светлыми кружками.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020603.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;К прим.&nbsp;1 Структура информационных связей в теле цикла</div></div>
+<div>Из рис.&nbsp;2 следует, что в цикле (2) информационно связаны, например, следующие итерации (на рисунке выделены жирным): <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=10/?k=10"> <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=11/?k=10"> <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=12/?k=10"></div>
+<div>Из структуры информационных связей следует, что <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространство итераций</a> можно разбить на параллелепипеды так, как показано на рис.&nbsp;3.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020603.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Разбивка пространства итераций на параллелепипеды.</div></div>
+<div>Для случая, показанного на Рис.3 (а), вычисления могут быть организованы по следующей схеме:</div>
+<pre class="eListing">parbegin
+  X(2,2):= X(1,1)**2;
+  X(2,3):= X(1,2)**2;
+  X(2,4):= X(1,3)**2
+parend;
+parbegin
+  X(3,2):= X(2,1)**2;
+  X(3,3):= X(2,2)**2;
+  X(3,4):= X(2,3)**2
+parend;
+..............
+</pre>
+<div>Аналогично, для случая, показанного на рис.&nbsp;3 (б), вычисления могут быть организованы по следующей схеме:</div>
+<pre class="eListing">parbegin
+  X(2,2):= X(1,1)**2;
+  X(3,2):= X(2,1)**2;
+  X(4,2):= X(3,1)**2;
+  X(5,2):= X(4,1)**2
+parend;
+parbegin
+  X(2,3):= X(1,2)**2;
+  X(3,3):= X(2,2)**2;
+  X(4,3):= X(3,2)**2;
+  X(5,3):= X(4,2)**2
+parend;
+..............
+</pre>
+<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=13/?k=10"></div>
+</div>
+<div>Метода параллелепипедов может быть использован для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> циклов как для векторно-конвейерных и  <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вектороно-параллельных систем</a>, так и для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорных систем</a>.</div>
+<div class="eSubTitle">Метод гиперплоскостей.</div>
+<a name="T1341493861"></a>
+<div>Идея <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">метода гиперплоскостей распараллеливания циклов</a> состоит в отыскании в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространстве итераций</a> I такого семейства гиперплоскостей, чтобы любые две лежащие в одной из этих гиперплоскостей точки <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=14/?k=10"> были информационно и конкуренционно не связаны, т.е. удовлетворяли условию<br><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=15/?k=10"><br></div>
+<div>Проиллюстрируем идею метода гиперплоскостей также на примере.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>Пример 2. Рассмотрим следующее гнездо циклов</div>
+<pre class="eListing">FOR i=1, l DO
+FOR j=2, m DO
+FOR k=2, n DO
+x(j,k):= f(x(j + 1, k),x(j , k + 1),x(j - 1, k),x( j, k - 1));
+</pre>
+<div>Здесь <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространство итераций</a> <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=16/?k=10"> (является трехмерным), <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=17/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=18/?k=10">.</div>
+<div>В рассматриваемой программе в каждой точке <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=19/?k=10"> вычисление значения <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=20/?k=10"> производится с использование значений <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=21/?k=10"> в 4-х соседних точках. Причем соседи <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=22/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=23/?k=10"> точки <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=24/?k=10">, которые ближе к началу координат, лежат в плоскости <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=25/?k=10">, а соседи этой точки <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=26/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=27/?k=10"> которые расположены дальше от начала координат, лежат в плоскости <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=28/?k=10">. Другими словами, при вычислении <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=24/?k=10"> при <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=29/?k=10"> значения <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=22/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=23/?k=10"> уже вычислены при этом <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=25/?k=10">, а значения <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=26/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=27/?k=10"> — еще не вычислены, т.е. являются "старыми", вычислены при <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=30/?k=10">.</div>
+<div>Например, при вычислении <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=31/?k=10"> при <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=32/?k=10"> используются точки <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=33/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=34/?k=10">, которые еще не пересчитаны при данном <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=25/?k=10"> (т.е. лежат на плоскости <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=35/?k=10">), а также точки <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=36/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=37/?k=10">, которые уже пересчитаны при данном <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=25/?k=10"> (т.е. лежат в плоскости <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=32/?k=10">) – см. Рис.4.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020603.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;К прим.&nbsp;2 <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">m</span> = <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">n</span> = 7. Точки <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">a</span>, <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">b</span> лежат на прямой <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">k</span> = -<span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">j</span> + 7, а точки <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">c</span>, <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">d</span> — на прямой <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">k</span> = -<span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">j</span> + 5.</div></div>
+<div>Все точки <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространства итераций</a>, лежащие на плоскостях, проходящих через прямые<br><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=38/?k=10"><br></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=39/?k=10">, являются независимыми и вычисления в них могут производиться параллельно. Таким образом, рассматриваемое гнездо циклов можно распараллелить наклонив ось <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=25/?k=10"> так, чтобы она стала перпендикулярной этим плоскостям<img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=13/?k=10"></div>
+</div>
+<div>Метода гиперплоскостей, как и метод параллелепипедов может быть использован для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> циклов для векторно-конвейерных, векторно-параллельных и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорных систем</a>.</div>
+<div class="eSubTitle">Метод пирамид</div>
+<a name="T390322467"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метод пирамид распараллеливания циклов</a> ориентирован на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорные вычислительные системы</a>, в которых синхронизация и обмен данными требуют больших накладных расходов (слабосвязанные МВС). Целью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> при этом является формирование полностью независимых друг от друга ветвей.</div>
+<div>Схема алгоритма формирования таких ветвей.</div>
+<ol class="eList"><li>В цикле выбираются все результирующие итерации, т.е. итерации, "вырабатывающие" переменные, не используемые далее в теле цикла. Каждая такая итерация послужит основой для формирования отдельной параллельной ветви и будет последней итерацией в этой ветви.</li>
+<li>Ветвь формируется включением в нее всех итераций, которые информационно связаны с выделенной итерацией. Затем аналогично в ветвь включаются все итерации, информационно связанные с уже выделенными итерациями и т.д.</li>
+</ol>
+<a name="T229852493"></a>
+<div>Таким образом, в методе пирамид каждую ветвь включается вся история вычислений результирующей итерации. При этом, очевидно, различные итерации могут дублироваться в различных ветвях. Для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">балансировки загрузки</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> используемой МВС ветви затем могут быть "склеены" так, что суммарная вычислительная сложность итоговых ветвей была примерно одинаковой.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div>Рассмотрим гнездо циклов</div>
+<pre class="eListing">FOR j=1, n DO
+  FOR k=2, 5 DO
+    x(j, k):= x(j + 1, k) + x(j, k - 1));
+</pre>
+<div>Итерации, соответствующие этому гнезду циклов, имеют вид</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=40/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=41/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(<img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=40/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=41/?k=10">)</td></tr>
+<tr align="center"><td class="eTable">1</td><td class="eTable">2</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(1,2) = <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(2,2) + <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(1,1)</td></tr>
+<tr align="center"><td class="eTable">1</td><td class="eTable">3</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(1,3) = <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(2,3) + <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(1,2)</td></tr>
+<tr align="center"><td class="eTable">1</td><td class="eTable">4</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(1,4) = <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(2,4) + <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(1,3)</td></tr>
+<tr align="center"><td class="eTable">1</td><td class="eTable">5</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(1,5) = <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(2,5) + <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(1,4)</td></tr>
+<tr align="center"><td class="eTable">2</td><td class="eTable">2</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(2,2) = <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(3,2) + <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(1,1)</td></tr>
+<tr align="center"><td class="eTable">2</td><td class="eTable">3</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(2,3) = <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(3,3) + <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(1,2)</td></tr>
+<tr align="center"><td class="eTable">2</td><td class="eTable">4</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(2,4) = <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(3,4) + <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(1,3)</td></tr>
+<tr align="center"><td class="eTable">2</td><td class="eTable">5</td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(2,5) = <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(3,5) + <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=42/?k=10">(1,4)</td></tr>
+<tr align="center"><td class="eTable">...</td><td class="eTable">...</td><td class="eTable">...</td></tr>
+</tbody></table><br>
+<div>При вычислении <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=43/?k=10"> последней итераций является итерация <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=44/?k=10">. Поэтому в методе пирамид первая ветвь имеет вид<br><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=45/?k=10"><br></div>
+<div>При вычислении <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=46/?k=10"> последней итераций является итерация <img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=47/?k=10">, в которой используется ранее вычисленная переменная . Поэтому вторая ветвь имеет вид<br><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=48/?k=10"><br></div>
+<div>Аналогично, для третьей ветви<br><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=49/?k=10"><br></div>
+<div>и четвертой ветви<br><img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=50/?k=10"><br></div>
+<div>И т.д<img align="absmiddle" src="/?frm/?doc=Parallel/ch020603.mod/?n=13/?k=10"></div>
+</div>
+<div>Пример 3 показывает, что метод пирамид может приводить не просто к дублированию вычислений в разных ветвях, а к многократному дублированию.</div>
+<div class="eSubTitle">Особенности распараллеливания циклов на системах с распределенной памятью</div>
+<ol class="eList"><a name="T1686994031"></a>
+<a name="T1307808466"></a>
+<li>Обмен данными между <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорами</a> через коммуникационную систему требует значительного времени (латентность коммуникационной системы велика по сравнению со временем выполнения одной машинной команды). Поэтому вычислительная работа должна распределяться между процессорами крупными порциями. Для автоматического <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-конвейерных вычислительных системах</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-параллельных вычислительных систем</a> достаточно проанализировать на предмет возможности параллельного выполнения только внутренние циклы программы. В случае <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультикомпьютеров</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительных кластеров</a> приходилось анализировать объемлющие циклы для нахождения более крупных порций работы. Однако крупные фрагменты программы могут включать в себя вызовы процедур и функций, что требует сложного межпроцедурного анализа.</li>
+<a name="T1804257827"></a>
+<li>В отличие от многопроцессорных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЭВМ</a> с общей памятью, на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">системах с распределенной памятью</a> необходимо произвести не только распределение вычислений, но и распределение данных. Наличие распределенных данных порождает проблему обеспечения эффективного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">доступа к удаленным данным</a>. Эта проблема требует анализа индексных выражений не только внутри одного цикла, но и между разными циклами, а также поиска сегментов данных, которые должны быть пересланы с одного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессора</a> на другой.</li>
+<li>Распределение вычислений и данных по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорам</a> вычислительной системы должно быть произведено таким образом, чтобы обеспечить сбалансированность загрузки процессоров. Несбалансированность загрузки процессоров может привести к тому, что параллельная программа будет выполняться гораздо медленнее исходной последовательной программы. </li>
+</ol>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-22/">← Оглавление</a>
         <a href="/rk6-edu/course-22/mod-31.html">‹ Предыдущий</a>

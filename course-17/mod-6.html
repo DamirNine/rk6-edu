@@ -23,7 +23,66 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-17/mod-7.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Эквивалентные схемы гидравлических закрытых подсистем</a>
+</div>
+<div>В гидравлических закрытых подсистемах влиянием высоты столба жидкости на давление можно пренебречь, так как рабочее давление существенно превышают те, которые обусловлены высотой столба жидкости. </div>
+<div>Переменной типа потока является объемный расход G, переменной типа потенциала давление P.</div>
+<div>Простейшие элементы: потеря давления R, сжимаемость Cg, инерционность Lg, компонентные уравнения которых:</div>
+<div> G=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=1/?k=10">P,      G=C<sub class="eSub">g</sub><img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=2/?k=10">,         P=L<sub class="eSub">g</sub><img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=3/?k=10"></div>
+<div>и источники расхода и давления с компонентными уравнениями</div>
+<div>G=G(Z),  P=P(Z),</div>
+<div>где в качестве Z может фигурировать время или фазовая переменная.</div>
+<div>Получить компонентные уравнения простейших элементов можно следующим образом. Потери давления в трубопроводе при стационарном ламинарном течении жидкости оцениваются с помощью формулы Пуазейля:</div>
+<div>P=128<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=4/?k=10">G ,   или  G=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=1/?k=10">P,   где R= 128<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=4/?k=10">, </div>
+<div>ν - кинематическая вязкость жидкости, ρ - ее плотность, l - длина, d - диаметр трубопровода.</div>
+<div> Уравнение элемента сжимаемости (гидравлической емкости) может быть получено из определения коэффициента сжимаемости </div>
+<div>β = <img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=5/?k=10">, где H - объем жидкости, P - давление. Выполним следующие преобразования:</div>
+<div><img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=2/?k=10">=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=6/?k=10"> ,   или   G=C<sub class="eSub">g</sub><img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=2/?k=10">   ,   где Cg = Hβ.</div>
+<div>В тех случаях, когда удобнее в математических моделях использовать модуль упругости жидкости, уравнение элемента сжимаемости может быть получено из уравнения закона Гука. Предположим жидкость сжимается в цилиндрическом сосуде с площадью поперечного сечения S и высотой столба жидкости l. Согласно закону Гука <img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=7/?k=10">=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=8/?k=10"> , где E - модуль упругости жидкости, Δl - изменение высоты столба жидкости под давлением P. Продифференцировав по времени и умножив обе части уравнения на S, получим </div>
+<div><img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=9/?k=10">=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=10/?k=10">              SV=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=11/?k=10">              G=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=12/?k=10">,</div>
+<div>где V  скорость перемещения верхней границы жидкости под давлением,  Н - объем жидкости </div>
+<div>Для модуля упругости рабочих жидкостей в литературе проводятся зависимости от температуры и газосодержания которые могут быть использованы при реализации моделей в программно-методических комплексах моделирования. </div>
+<div>Уравнение элемента инерционности можно получить из уравнения Ньютона для массы жидкости m, движущейся по участку трубопровода длиной l и площадью поперечного сечения S со скоростью V: F=m<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=13/?k=10"> .  Выполним преобразования для перехода к фазовым переменным G и P.</div>
+<div> PS=ρlS<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=13/?k=10">            P=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=14/?k=10">     P=L<sub class="eSub">g</sub><img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=3/?k=10">,    где L<sub class="eSub">g</sub>=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_zakr.mod/?n=15/?k=10"></div>
+<div>Условные изображения элементов на эквивалентных схемах представлены на рис.2.8</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mod/gidr_zakr.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<br>
+<div><span style="font-weight:bold; ">Алгоритм составления эквивалентных схем</span></div>
+<div>1. Базовый узел эквивалентной схемы соответствует точке отсчета давления - либо абсолютному нулю, либо атмосферному давлению. Выбор точки отсчета зависит от реализованных в математических моделях зависимостях, например зависимости модуля упругости от газосодержания и температуры.</div>
+<div>2. В подсистеме выделяются элементы, сжимаемость жидкости в которых оказывает существенное влияние на динамику подсистемы, как правило это резервуары значительного объема. На эквивалентных схемах такие элементы одним полюсом подключаются к базовому узлу. Все взаимодействия с окружающей средой осуществляются через второй полюс.</div>
+<div>3. В гидравлических подсистемах, кроме резервуаров, из пассивных элементов присутствуют дроссели и трубопроводы. Они включаются между соответствующими резервуарами или между собой. Трубопровод, в тех случаях, когда можно пренебречь волновыми процессами, отображается элементом потерь или последовательно включенными элементом потерь и элементом инерционности, в противном случае необходимо использовать более сложные модели, например модели с распределенными параметрами.</div>
+<div>4. Активные компоненты - насосы, аккумуляторы давления отображаются на эквивалентных схемах в виде источников расхода и давления ограниченной мощности.</div>
+<div>Пример эквивалентной схемы для гидравлической подсистемы (рис.2) представлен на рис.3.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mod/gidr_zakr.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>На эквивалентной схеме дроссели Д1-Д3 представлены элементами потери давления R1-R3, трубопроводы от насоса Н к резервуарам С1-С3 элементами R4-R6.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mod/gidr_zakr.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<div> </div>
+<br>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-17/">← Оглавление</a>
         <a href="/rk6-edu/course-17/mod-5.html">‹ Предыдущий</a>

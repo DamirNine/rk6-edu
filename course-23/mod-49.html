@@ -23,7 +23,50 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-50.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Определение функции</a>
+</div>
+<a name="T998884589"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Определение функции</a>  может иметь одну из двух форм:</div>
+<pre class="eListing">возвращаемый_тип имя_функции (список объявлений формальных параметров)
+{
+   объявления   /* тело функции */
+   операторы
+}
+</pre>
+<pre class="eListing">возвращаемый_тип имя_функции (список формальных параметорв)
+объявление формальных параметров
+{
+   объявления     /* тело функции */
+   операторы
+}
+</pre>
+<a name="T2026410311"></a>
+<a name="T1456023869"></a>
+<div>Рекомендуется первая форма, соответствующая <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стандарту ANSI языка Си</a>. Вторая форма использует <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стандарт K&amp;R</a> языка Си и обеспечивает совместимость с существующими программами на языке Си.</div>
+<a name="T828724782"></a>
+<div>Тело функции – это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">составной оператор</a>.</div>
+<a name="T256200320"></a>
+<div>Именем функции является <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатор</a>. Подобно другим идентификаторам имя может содержать буквы, цифры, символ подчеркивания, но не может начинаться с цифры. Имя функции считается внешним идентификатором. Оно может использоваться внутри любой другой функции (или внутри определяемой функции). Количество значащих символов в имени зависит от системы. Рекомендуется использовать в именах строчные буквы.</div>
+<a name="T696383489"></a>
+<a name="T1015173096"></a>
+<a name="T1800284410"></a>
+<a name="T1133808979"></a>
+<a name="T74783515"></a>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцию</a> может передаваться информация извне через аргументы, которые называются <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">формальными параметрами</a>. Кроме того, функция может возвращать значение в вызывающую ее функцию, которое называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">возвращаемым значением</a>. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Тип</a> возвращаемого значения определяет <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевое слово</a>, стоящее перед именем функции в ее определении.</div>
+<div>Важным различием между определением функции в стандарте ANSI (называемым также <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">определением прототипа функции</a>) и определением функции в стандарте K&amp;R является то, что использование формы ANSI требует, чтобы при <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызове функции</a> ее аргументы были преобразованы к типу, ожидаемому функцией. Для того, чтобы эти соглашения выполнялись, вызову функции должно предшествовать определение прототипа функции или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">объявление прототипа функции</a>. Если тип фактического параметра не может быть преобразован к требуемому типу аргумента, компилятор выдает сообщение об ошибке.</div>
+<div>При использовании определения или объявления функции в форме K&amp;R Си выполняются предполагаемые по умолчанию преобразования типа.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">/*возвращает площадь круга, заданного радиусом*/
+double area_circle(double radius)
+  {
+  return 3.14159*radius*radius;
+  }
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-48.html">‹ Предыдущий</a>

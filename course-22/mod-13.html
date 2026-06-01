@@ -23,7 +23,75 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-22/mod-14.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Основные понятия многопроцессорных операционных систем</a>
+</div>
+<a name="T1672495953"></a>
+<div>ОС <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорной вычислительной системы</a> должна, прежде всего, выполнять функции обычной операционной системы: обрабатывать вызовы; управлять памятью; поддерживать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файловую систему</a>; управлять устройствами ввода-вывода. Кроме того, многопроцессорная операционная система должны выполнять ряд специфических функций. Выделим из них четыре следующие функции, рассматриваемые в данном курсе:</div>
+<ul class="eList"><a name="T469209868"></a>
+<li>функция синхронизации параллельных <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">процессов</a>;</li>
+<li>функция коммуникации параллельных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>; </li>
+<a name="T1804257827"></a>
+<li>функция управления <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распределенной памятью</a> (в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">системах с распределенной памятью</a>);</li>
+<li>функция планирования параллельных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>.</li>
+</ul>
+<a name="T797313510"></a>
+<div>Отметим, что три первые функции находят непосредственное отражение в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языках</a> программирования высокого уровня. Четвертая функция в значительной мере определяет <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">производительность</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорной системы</a>.</div>
+<div>Кроме очевидных требований надежности и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">производительности</a> к ОС многопроцессорной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЭВМ</a> предъявляются следующие требования.</div>
+<a name="T1833642210"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Прозрачность операционной системы</a> – пользователь не должен знать, где расположены те или иные ресурсы; пользователи должны разделять ресурсы автоматически (средствами ОС).</div>
+<a name="T1577510760"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Масштабируемость операционной системы</a> - выход из строя одного из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> системы или увеличение количества процессоров в ней не должны приводить к отказу ОС. Для обеспечения масштабируемости системы ни один из процессоров не должен иметь полной информации о состоянии системы, процессоры должны принимать решения на основе только локальной информации, не должны использоваться глобальные часы.</div>
+<div>Центральным понятием операционной системы для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорных вычислительных систем</a> является понятие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>. </div>
+<div class="eSubTitle">Процессы.</div>
+<div>Единицы работы, между которыми операционная система разделяет <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоры</a> и другие ресурсы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительной системы</a>, называется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессом</a>. Любая работа вычислительной системы состоит в выполнении некоторой программы. Поэтому можно сказать, что процесс – это выполнение вычислительной системой некоторой системной или прикладной программы или их фрагмента.</div>
+<a name="T1087544139"></a>
+<div>Каждому <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессу</a> в операционной системе соответствует <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">контекст процесса</a>. Этот контекст включает в себя:</div>
+<ul class="eList"><li>пользовательский контекст (соответствующий программный код, данные, размер виртуальной памяти, дескрипторы открытых <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файлов</a> и пр.);</li>
+<li> аппаратный контекст (содержимое регистра счетчика команд, регистра состояния <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессора</a>, регистр указателя стека, а также содержимое регистров общего назначения);</li>
+<li> системный контекст (состояние <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>, идентификатор соответствующего пользователя, идентификатор процесса и пр.).</li>
+</ul>
+<a name="T1400231114"></a>
+<div>Важно, что из-за большого объема данных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контекста процесса</a>, переключение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессора</a> системы с выполнения одного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> на выполнение другого процесса (<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">смена контекста процесса</a>) является относительно дорогостоящей операцией. </div>
+<a name="T70414198"></a>
+<div>Для уменьшения времени <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">смены контекста процесса</a> в современных ОС (например, в ОС UNIX) наряду с понятием <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> широко используется понятие <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">легковесного процесса</a> “light-weight process” или понятие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потока</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нити</a> "thread". <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Легковесный процесс</a> можно определить как подпроцесс некоторого <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>, выполняемый в контексте этого процесса - см. рис.&nbsp;1. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Контекст процесса</a> содержит общую для всех его <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">легковесных процессов</a> информацию - виртуальная память, дескрипторы открытых <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файлов</a> и т.д. Остальная информация из контекста процесса переходит в контексты его легковесных процессов.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020102.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;К определению легковесного процесса.</div></div>
+<div>Простейшим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессом</a> является процесс, состоящий из одного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">легковесного процесса</a>.</div>
+<div>Принципиальным является то обстоятельство, что <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нити</a> одного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> выполняются в общей виртуальной памяти, т.е. имеют равные права доступа к любым частям виртуальной памяти процесса. Операционной системой основной ресурс <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительной системы</a> – процессорное время – выделяется не процессу, а легковесному процессу.</div>
+<div>На основе сказанного, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> можно определить как некоторый контекст, включающий виртуальную память и другие системные ресурсы, в котором выполняется, по крайней мере, один <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">легковесный процесс</a>, обладающий своим собственным (более простым) контекстом. ОС «знает» о существовании двух указанных уровней контекстов и способна сравнительно быстро изменять контекст легковесного процесса, не изменяя общего <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контекста процесса</a>. Заметим, что для синхронизации легковесных процессов, работающих в общем контексте процесса, можно использовать более дешевые средства, чем для синхронизации процессов.</div>
+<div>Понятие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">легковесного процесса</a> направлено на организацию вычислений в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорной вычислительной системе</a> в случае, когда приложение, выполняемое в рамках одного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>, обладает внутренним параллелизмом. Разумеется, параллельное выполнение приложения можно организовать и на пользовательском уровне – путем создания для одного приложения нескольких процессов для каждой из параллельных работ. Однако при этом не учитывается тот факт, что эти процессы решают общую задачу, а, значит, могут иметь много общего – <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">общие данные</a>, программные коды, права доступа к ресурсам системы и пр. Кроме того, как отмечалось выше, каждый процесс требует значительных системных ресурсов, которые при такой организации параллельных вычислений неоправданно дублируются.</div>
+<div class="eSubTitle">Средства создания и завершения процессов.</div>
+<div>Рассмотрим основные средства создания и завершения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> на примере операционной системы UNIX.</div>
+<div>Системный вызов fork. Для создания нового <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> используется системный вызов fork. Все процессы ОС UNIX, кроме начального, запускаемого при «раскрутке» системы, образуются при помощи системного вызова fork. После создания процесса-потомка процесс-предок и процесс-потомок начинают «жить» своей собственной жизнью, произвольным образом изменяя свой контекст. Например, и процесс-предок, и процесс-потомок могут выполнить системный вызов exec (см. ниже), приводящий к полному изменению <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контекста процесса</a>. </div>
+<div>Системный вызов wait. Системный вызов wait используется для синхронизации процесса-предка и процессов-потомков. Выполнение этого системного вызова приводит к приостановке выполнения процесса-предка до тех пор, пока не завершится выполнение какого-либо из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>, являющегося его потомком.</div>
+<div>Сигналы. Сигнал - это способ информирования <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> со стороны ядра операционной системы о происшествии некоторого события (event) в системе, например: </div>
+<ul class="eList"><li>исключительная ситуация (выход за допустимые границы виртуальной памяти, попытка записи в область виртуальной памяти, которая доступна только для чтения и т.д.);</li>
+<li>ошибка в системном вызове (несуществующий системный вызов, ошибки в параметрах системного вызова и т.д.); </li>
+<li>прием сообщения от другого <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>;</li>
+<li>нажатия пользователем определенных клавиш на клавиатуре терминала, связанного с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессом</a>.</li>
+</ul>
+<div>Все возможные в системе сигналы имеют уникальные номера и идентификаторы. </div>
+<div>С помощью системного вызова signal пользовательская программа может осуществить «перехват» указанного в вызове сигнала – вызвать соответствующую функцию, которая выполнит обработку этого сигнала. Например, вызов signal(SIGFPE, error) вызовет выполнение функции error при переполнении или делении на ноль во время выполнения операции с плавающей запятой.</div>
+<div>ОС Unix предоставляет возможность пользовательским <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессам</a> направлять сигналы другим процессам. Например, системный вызов kill(PID, signum) посылает процессу с идентификатором PID сигнал с номером signum.</div>
+<div>Системный вызов exec. При выполнении системного вызова exec(filename,…), где filename – имя выполняемого <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файла</a>, операционная система производит реорганизацию виртуальной памяти вызывающего <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>, уничтожая в ней сегменты старого программного кода и образуя новые сегменты, в которые загружаются программный код из файла filename. </div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-22/">← Оглавление</a>
         <a href="/rk6-edu/course-22/mod-12.html">‹ Предыдущий</a>

@@ -23,7 +23,51 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-11.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Организация внутренних линий связи</a>
+</div>
+<a name="T925980355"></a>
+<div>Внутренняя магистраль микропроцессорной системы использует <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельный способ обмена</a> данными. Все линии связи, входящие в нее, могут быть условно разделены на три группы:</div>
+<ol class="eList"><a name="T1942936499"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Шина данных</a> несколько параллельно идущих линий (проводников), по которым передаются собственно данные. Количество линий в шине данных определяется разрядностью передаваемых данных. Информацию на шину данных выдает ведущее устройство — микропроцессор (если выполняется запись данных) или ведомое устройство (если выполняется чтение данных).</li>
+<a name="T1832195333"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Шина адреса</a> — несколько параллельно идущих линий (проводников), по которым передается адрес (уникальный номер) ведомого устройства (ячейки ЗУ или порта ввода-вывода). Количество линий в шине адреса определяется разрядностью адреса. Информацию (адрес) на шину адреса всегда выдает ведущее устройство (микропроцессор).</li>
+<a name="T1405772177"></a>
+<a name="T1418249701"></a>
+<a name="T1017069202"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Шина управления</a> содержит линии, по которым передаются управляющие сигналы (<span class="eOperator">RD</span>, <span class="eOperator">WR</span>, <span class="eOperator">DEN</span> и т.п.). Количество и перечень линий в шине управления определяется конструкцией конкретной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> и, прежде всего, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессора</a>.</li>
+</ol>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_09.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T389310717"></a>
+<div>Часто для передачи адреса и данных используют одни и те же линии связи, передавая по ним сначала адрес, потом данные с разделением во времени. Такое конструктивное решение получило название <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">мультиплексированная шина адреса-данных</a> (рис.&nbsp;2).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_09.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>Для определения момента времени, в который происходит передача адреса, служит сигнал "строб адреса" — на время передачи адреса по мультиплексированной шине он переводится в состояние логической "1".</div>
+<div>С учетом всего вышеизложенного, временная диаграмма синхронного параллельного обмена (при использовании мультиплексированной шины адреса-данных) будет выглядеть следующим образом (рис.&nbsp;3).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_09.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-9.html">‹ Предыдущий</a>

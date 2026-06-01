@@ -23,7 +23,36 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-77.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Наборно-ассоциативное ЛЗУ</a>
+</div>
+<a name="T1932195852"></a>
+<a name="T2023067197"></a>
+<div>Архитектуры <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ассоциативного ЛЗУ</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЛЗУ с прямым отображением</a> представляют собой крайние случаи оптимизации: в первом случае минимизируется количество промахов, во втором — минимизируется время поиска в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЛЗУ</a>. И та и другая архитектуры имеют и свои недостатки. Разумно предположить, что объединение указанных подходов позволит получить весьма эффективное решение. Такой "гибридный" вариант получил название <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">наборно-ассоциативного ЛЗУ</a>.</div>
+<div>Архитектура наборно-ассоциативного ЛЗУ похожа на архитектуру ЛЗУ прямого отображения (рис.&nbsp;1).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_07_7.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Вся основная память разделяется на страницы. Однако само ЛЗУ состоит из нескольких (в данном примере — двух) независимых блоков, каждый из которых представляет собой, по сути, ЛЗУ прямого отображения. Таким образом, ячейка ОЗУ, имеющая определенный индекс на странице, может быть загружена в одну из двух ячеек ЛЗУ, имеющих такой же индекс в блоке 0 или блоке 1. В ЛЗУ одновременно может находиться информация из двух или более ячеек основного ЗУ, имеющих одинаковый индекс и расположенных на разных страницах.</div>
+<div>Проверка наличия запрашиваемого адреса в ЛЗУ сводится к сравнению номера страницы, расположенного в соответствующей строке таблицы тэгов, с номером страницы запрашиваемого адреса. При этом количество сравнений равно количеству блоков в ЛЗУ. Поэтому скорость проверки запрашиваемого адреса практически такая же, как и для ЛЗУ прямого отображения и намного меньше, чем в случае ассоциативного ЛЗУ.</div>
+<div>При такой архитектуре вероятность "пробуксовки кеша" снижается. Однако усложняется аппаратная реализация ЛЗУ.</div>
+<div>В настоящее время ЛЗУ наборно-ассоциативной архитектуры получили наибольшее распространение благодаря удачному сочетанию преимуществ ассоциативных ЛЗУ и ЛЗУ прямого отображения.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-75.html">‹ Предыдущий</a>

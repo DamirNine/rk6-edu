@@ -23,7 +23,52 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-73.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Переформирование массива с изменением его размеров</a>
+</div>
+<a name="T1244727436"></a>
+<div>Примерами <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">переформирование массива с изменением его размеров</a> могут служить вычеркивание и вставка элементов, отвечающих определенным условиям или обладающих заданными признаками и т. д. При этом, для удаления или добавления элемента может производиться как поэлементная, так и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выборочная обработка элементов массива</a>. Особенностью этого класса задач является изменение размеров исходного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a>. Кроме того, вычеркивание или вставка элементов требуют сдвига всех элементов той части массива, которая расположена после удаляемого или вставляемого элемента. Реализация <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритмов</a> этого типа задач потребует вложенных циклов. При этом, внутренний цикл для сдвига можно выполнить, используя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">счетный цикл</a>. Внешний цикл обработки содержит переменную верхнюю границу, так как после удаления элемента количество анализируемых переменных уменьшается на единицу. Для реализации возможности изменения границ массива в процессе выполнения программы, рекомендуется использовать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">циклы while</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">do-while</a>.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Дан одномерный массив. Вычеркнуть из него все отрицательные элементы.</div>
+</div>
+<div>Для решения этой задачи есть два варианта <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a>. </div>
+<div>Первый алгоритм представлен на рис.&nbsp;1. В этом случае найденный отрицательный элемент исключается, при этом происходит сдвиг всех последующих элементов массива. Затем определяется следующий отрицательный элемент, осуществляется сдвиг и т.д. При выходе из внешнего цикла <span class="eOperator">n </span>будет определять размерность массива, из которого исключены все отрицательные элементы.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/pereform2.vjl.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>На рис.&nbsp;2 приведен второй вариант алгоритма, в котором используются две переменные для индекса. Переменная <span class="eOperator">i</span> определяет номер анализируемого элемента исходного массива, а <span class="eOperator">j</span> — номер полученного элемента нового массива. При выходе из внешнего цикла <span class="eOperator">j</span> будет определять размерность массива, из которого исключены все отрицательные элементы. Этот алгоритм является более эффективным, чем первый.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/pereform2.vjl.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div><span class="eOperator">int sorty(int b[],int n)</span>   <span class="eOperator"> /* n - размерность исходного массива */</span></div>
+<div><span class="eOperator">/* функция возвращает размерность обработанного массива */</span></div>
+<div><span class="eOperator">{</span></div>
+<div><span class="eOperator">int i,j;</span></div>
+<div><span class="eOperator">j=-1;</span></div>
+<div><span class="eOperator">for(i=0;i&lt;n;i++)</span> <span class="eOperator">         /* перезапись неотрицательных элементов</span> <span class="eOperator">*/</span></div>
+<div>   <span class="eOperator">if (b[i]&gt;=0)</span></div>
+<div><span class="eOperator">   {j=j+1;</span></div>
+<div><span class="eOperator">    b[j]=b[i];</span></div>
+<div>       <span class="eOperator">}</span></div>
+<div><span class="eOperator">return j;</span></div>
+<div><span class="eOperator">}</span></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-71.html">‹ Предыдущий</a>

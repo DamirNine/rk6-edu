@@ -23,7 +23,88 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-20.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Инициализация данных</a>
+</div>
+<a name="T359705272"></a>
+<div>При <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">объявлении переменной</a> ей можно присвоить начальное значение, присоединяя инициатор к описателю. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Инициатор</a> начинается со знака "=" и имеет следующие формы.</div>
+<pre class="eListing">Формат 1: = инициатор;
+Формат 2: = { список - инициаторов };
+</pre>
+<a name="T1988248666"></a>
+<div>Формат 1 используется при инициализации переменных основных типов и указателей, а формат 2 — при <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">инициализации данных</a> составных объектов.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">char tol = 'N';
+const long megabute = (1024 * 1024);
+static int b[2][2] = {1,2,3,4};
+static int b[2][2] = { { 1,2 }, { 3,4 } };
+static int b[3[] = { { 1,2 }, { 3,4 } };
+static int b[2][2] = { { 1,2 }, { 3 } };
+</pre>
+</div>
+<div>Переменная <span class="eOperator">tol</span> инициализируется символом <span class="eOperator">'N'</span>.</div>
+<div>Немодифицируемая переменная <span class="eOperator">megabute</span> инициализируется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">константным выражением</a> после чего она не может быть изменена.</div>
+<div>Инициализируется двухмерный массив <span class="eOperator">b</span> целых величин элементам массива присваиваются значения из списка. Эта же инициализация может быть выполнена следующим образом :</div>
+<div>При инициализации массива можно опустить одну или несколько размерностей</div>
+<div>Если при инициализации указано меньше значений для строк, то оставшиеся элементы инициализируются 0, т.е. при описании</div>
+<div>элементы первой строки получат значения 1 и 2, а второй 3 и 0.</div>
+<div>При инициализации составных объектов, нужно внимательно следить за использованием скобок и списков инициализаторов.</div>
+<div>Примеры:</div>
+<pre class="eListing">        struct complex { double real;
+                         double imag; }  comp [2][3] =
+             { { {1,1}, {2,3}, {4,5} },
+               { {6,7}, {8,9}, {10,11} } };
+
+</pre>
+<div>В данном примере инициализируется массив структур comp из двух строк и трех столбцов, где каждая структура состоит из двух элементов real и imag.</div>
+<pre class="eListing">        struct complex comp2 [2][3] = { {1,1},{2,3},{4,5}, {6,7},{8,9},{10,11} };
+
+</pre>
+<div>В этом примере компилятор интерпретирует рассматриваемые фигурные скобки следующим образом:</div>
+<div>- первая левая фигурная скобка — начало составного инициатора для массива <span class="eOperator">comp2</span>;</div>
+<div>- вторая левая фигурная скобка — начало инициализации первой строки массива <span class="eOperator">comp2[0]</span>. Значения 1,1 присваиваются двум элементам первой структуры;</div>
+<div>- первая правая скобка (после 1) указывает компилятору, что список инициаторов для строки массива окончен, и элементы оставшихся структур в строке <span class="eOperator">comp[0]</span> автоматически инициализируются нулем;</div>
+<div>- аналогично список {2,3} инициализирует первую структуру в строке <span class="eOperator">comp[1]</span>, а оставшиеся структуры массива обращаются в нули;</div>
+<div>- на следующий список инициализаторов {4,5} компилятор будет сообщать о возможной ошибке так как строка 3 в массиве <span class="eOperator">comp2</span> отсутствует.</div>
+<div>При инициализации объединения задается значение первого элемента объединения в соответствии с его типом.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">union tab { unsigned char name[10];
+int tab1;
+} pers = {'A','H','T','O','H'};
+</pre>
+</div>
+<div>Инициализируется переменная <span class="eOperator">pers.name</span>, и так как это массив, для его инициализации требуется список значений в фигурных скобках. Первые пять элементов массива инициализируются значениями из списка, остальные нулями. Инициализацию массива символов можно выполнить путем использования строкового литерала.</div>
+<pre class="eListing">char stroka[ ] = "привет";
+
+</pre>
+<div>Инициализируется массив символов из 7 элементов, последним элементом (седьмым) будет символ '\0', которым завершаются все строковые литералы. В том случае, если задается размер массива, а строковый литерал длиннее, чем размер массива, то лишние символы отбрасываются. Следующее объявление инициализирует переменную <span class="eOperator">stroka</span> как массив, состоящий из семи элементов.</div>
+<pre class="eListing">char stroka[5] = "привет";
+
+</pre>
+<div>В переменную <span class="eOperator">stroka</span> попадают первые пять элементов литерала, а символы 'Т' и '\0' отбрасываются. Если строка короче, чем размер массива, то оставшиеся элементы массива заполняются нулями. Отметим, что инициализация переменной типа <span class="eOperator">tab</span> может иметь следующий вид:</div>
+<pre class="eListing">union tab pers1 = "Антон";
+
+</pre>
+<div>и, таким образом, в символьный массив попадут символы:</div>
+<pre class="eListing">'А','Н','Т','О','Н','\0',
+
+</pre>
+<div>а остальные элементы будут инициализированы нулем.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-18.html">‹ Предыдущий</a>

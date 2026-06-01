@@ -23,7 +23,32 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-124.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Вытеснение буфера</a>
+</div>
+<a name="T797849314"></a>
+<a name="T696383489"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция fflush()</a> — стандартная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция</a> языка Си для вытеснения содержимого пользовательского буфера в файл или в системный буфер, не дожидаясь заполнения пользовательского буфера.  </div>
+<a name="T581415280"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявление прототипа функции</a> <span class="eOperator">fflush()</span>:</div>
+<div><span class="eOperator">int fflush(FILE *stream)</span></div>
+<div><span class="eOperator"> </span></div>
+<a name="T37556405"></a>
+<a name="T637542155"></a>
+<div>Это объявление находится в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эту функцию, должны включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div><span class="eOperator">#include &lt;stdio.h&gt;</span></div>
+<a name="T68828"></a>
+<div>Функция <span class="eOperator">fflush()</span> обычно используется для файлов, открытых для записи, возвращает значение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">EOF</a> в случае возникшей при записи ошибки или нуль в противном случае.</div>
+<div>Эту функцию можно использовать для сброса ввода (остатка входного файла).</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">fflush(stdin); /*не запрашивает уже выполненный ввод*/
+printf("ВВедите данные: ");
+gets(buf);
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-122.html">‹ Предыдущий</a>

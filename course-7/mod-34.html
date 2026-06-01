@@ -23,7 +23,71 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-7/mod-35.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Язык Express: Супертипы и подтипы</a>
+</div>
+<a name="T162091864"></a>
+<a name="T1096166527"></a>
+<a name="T791151752"></a>
+<a name="T674463047"></a>
+<a name="T1133808979"></a>
+<a name="T474320637"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Отношения</a> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">агрегирования</a> (типа целое-часть) или отношения  <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">обобщения</a> (функция-вариант реализации), характерные для представления структур объектов в виде альтернативных (И-ИЛИ) деревьев, в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке Express</a> выражаются в форме отношений между <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типами данных</a>. Для этого введены понятия супертипа (supertype), как более общего типа, и подтипов (subtypes), как подчиненных типов. На рис.&nbsp;1 верхняя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сущность</a> относится к супертипу, а три нижних прямоугольника изображают подтипы, линии связи прямоугольников должны быть утолщенными.</div>
+<a name="T100241030"></a>
+<div>Рассмотрим пример фрагмента <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">И-ИЛИ-дерева</a>, в котором имеется ИЛИ вершина a1 и две подчиненные ей альтернативные вершины b1 и b2. Общим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибутом</a> для b1 и b2 является size типа real, специфичный для b1 атрибут — vol типа real, а специфичный для b2 атрибут met типа string. Этот фрагмент может быть описан следующим образом:</div>
+<pre class="eListing">ENTITY a1
+SUPERTYPE OF (ONEOF (b1,b2));
+size: REAL;
+END_ENTITY;
+ENTITY b1
+SUBTYPE OF (a1);
+vol: REAL;
+END_ENTITY;
+ENTITY b2
+SUBTYPE OF (a1);
+met: STRING;
+END_ENTITY;
+</pre>
+<div>Используются также следующие правила записи супертипов и подтипов:</div>
+<ul class="eList"><li>в случае, если a1 есть И вершина, вместо oneof используется зарезервированное слово and (в более общем случае andor), т.е. вторая строчка примера будет выглядеть так: supertype of (b1 and b2);</li>
+<li>если между подтипами нет взаимосвязи, выражаемой логической функцией (в частности, ИЛИ или И вершинами), то указание в a1 факта, что это супертип, не требуется; достаточно упоминание о подчиненности подтипов в их декларациях в виде: subtype of (a1);</li>
+<li>перед декларацией supertype записывается зарезервированное слово abstract, если вершине a1 не соответствуют какие-либо экземпляры сущности, т.е. если a1 введена только для указания общих для подтипов атрибутов;</li>
+<li>у одного подтипа может быть больше одного супертипа; подтип наследует атрибуты всех своих супертипов; если в декларациях супертипов используются одинаковые идентификаторы атрибутов, то ссылка на них должна быть в виде составного идентификатора, например: a1.size.</li>
+</ul>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">ENTITY device
+SUPERTYPE OF (ONEOF (transistor, diode));
+(* device есть ИЛИ вершина И-ИЛИ-дерева с двумя альтернативами transistor и diode *)
+END_ENTITY;
+ENTITY transistor
+SUBTYPE OF (device);
+b: REAL;
+END_ENTITY;
+ENTITY diode
+SUBTYPE OF (device);
+r: REAL;
+END_ENTITY;
+</pre>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=230_CALS/cals109.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Изображение супертипов и подтипов в языке Express-G</div></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-7/">← Оглавление</a>
         <a href="/rk6-edu/course-7/mod-33.html">‹ Предыдущий</a>

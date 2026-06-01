@@ -23,7 +23,48 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-32/mod-28.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Линии уровня</a>
+</div>
+<div>Построение линий уровня (линий равного уровня) позволяет графически выделить в пространстве исследуемых параметров области  с заданными уровнями значений критериев. Примером может служить выделение областей с отрицательными вещественными частями корней системы, т.е. определение областей устойчивости системы, альтернативное D-разбиению. Другим примером служит задача выделения областей, соответствующих предельно допустимым значениям критериев качества.</div>
+<a name="T1571878315"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Линии равного уровня</a> получаются, если трехмерная поверхность пересекается рядом плоскостей, расположенных параллельно друг другу. </div>
+<a name="T1374793758"></a>
+<div>Совокупность линий уровня представляет <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">контурный график</a>, который в случае функции двух переменных  дает представление об этой функции в виде <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">линий равного уровня</a>.</div>
+<div>В пакете MATLAB имеется функция <img align="absmiddle" src="/?frm/?doc=Paransys/par6_2.mod/?n=1/?k=10"> - Изображение линий уровня для трехмерной поверхности</div>
+<div>Синтаксис:</div>
+<div>contour(Z)     contour(x,у,Z)    contour(Z,n)  contour(x,у,Z,n)</div>
+<div>contour(Z,v)  contour(x,y,Z,v) contour(..., 'тип_линии')</div>
+<div>С = contour(...)   [C, h] =contour(...)</div>
+<div>Описание:</div>
+<div>Команда contour(Z) рисует двумерные линии уровня для массива данных Z, определяющих поверхность в трехмерном пространстве без учета диапазона изменения координат х и у.</div>
+<div>Команда contour(x,у,Z), где х и у - векторы, рисует линии уровня для массива данных Z с учетом диапазона изменения координат х и у.</div>
+<div>Команды contour(Z,n), contour(x,у,Z,n) рисует n линий уровня для массива данных Z; по умолчанию, n равно 10.</div>
+<div>Команды contour(Z, v), contour(x, у, Z, v) рисуют линии уровня для заданных значений, которые указаны в векторе v.</div>
+<div>Команда contour(...,'&lt;тип линии&gt;') рисует линии уровня, тип и цвет которых определяются параметром &lt;тип линии &gt; команды plot.</div>
+<div>Функция С = contour(...) возвращает массив С описания линий уровней по аналогии с функцией contourc для последующего использования командой clabel.</div>
+<div>Функция [С, h] = contour(...) возвращает массив С и вектор-столбец дескрипторов h графических объектов line для каждой линии уровня. </div>
+<div>На рис.1 показано применение функции contour  для поверхности z=хе<sup class="eSub">-x^2-y^2</sup> в области -2<img align="absmiddle" src="/?frm/?doc=Paransys/par6_2.mod/?n=2/?k=10">x<img align="absmiddle" src="/?frm/?doc=Paransys/par6_2.mod/?n=2/?k=10">2, -2<img align="absmiddle" src="/?frm/?doc=Paransys/par6_2.mod/?n=2/?k=10">y<img align="absmiddle" src="/?frm/?doc=Paransys/par6_2.mod/?n=2/?k=10">2</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Paransys/par6_2.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Линии уровня для поверхности z=хе<sup class="eSub">-x^2-y^2</sup>, команда contour</div></div>
+<br>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-32/">← Оглавление</a>
         <a href="/rk6-edu/course-32/mod-26.html">‹ Предыдущий</a>

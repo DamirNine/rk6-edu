@@ -23,7 +23,88 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-32/mod-24.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Понятие чувствительности системы управления</a>
+</div>
+<a name="T1686841950"></a>
+<div>Процедуры <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">анализа чувствительности</a> относятся к типовым процедурам <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многовариантного анализа</a>.</div>
+<a name="T1554168953"></a>
+<div>Однако для класса систем управления понятие чувствительности формулируется также, исходя из принятых в теории автоматического управления описания систем, например, с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">передаточных функций</a>.  </div>
+<div>Рассмотрим систему с передаточной функцией объекта G(s) (рис.1)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Paransys/par5_1.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Структурная схема типовой системы управления</div></div>
+<div> На вход системы подается сигнал R(s). Выходной  сигнал Y(s). Влиянием возмущений N(s) и D(s) пока пренебрежем. Также пока не будем учитывать передаточную функцию (ПФ) входного фильтра. Для общности рассуждений предположим что замыкание системы происходит с помощью обратной связи H(s), которая может быть единичной, или  передаточной функции датчика или в общем случае – параллельного корректирующего устройства.</div>
+<div>Для замкнутой системы ее выход рассчитывается по известной формуле </div>
+<div><img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=1/?k=10"></div>
+<div>Для системы с G(s)H(s)<img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=2/?k=10">1  в рабочем диапазоне частот имеет место приближенная оценка</div>
+<div><img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=3/?k=10"></div>
+<div>Из (2) следует, что выход определяется только ПФ H(s), так что в случае H(s) равной единичной константе, выход точно равен входу. </div>
+<div>Итак, увеличение модуля  G(s)H(s) приводит к уменьшению влияния свойств ПФ объекта G(s), а значит, и уменьшения влияния вариаций его параметров. Возможно, имеется и отрицательное влияние условия  G(s)H(s)<img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=2/?k=10">1 на качество системы (колебательность или потерю устойчивости) .</div>
+<div>Преимущество системы с обратной связью проявляется в этом уменьшении влияния изменений параметров объекта управления.</div>
+<div>Получим оценку влияние изменений параметров на реакцию разомкнутой и замкнутой систем. </div>
+<div>Цепочка формул:</div>
+<div>- передаточная функция системы с вариациями параметров:</div>
+<div>Ğ(s)=G(s)+<img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=4/?k=10">G(s)                                        (3)</div>
+<div>где  <img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=4/?k=10">G(s) - приращение ПФ;</div>
+<div>-приращение выхода разомкнутой системы (в виде изображения по Лапласу): </div>
+<div><img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=4/?k=10">Y(s)=<img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=4/?k=10">G(s)R(s)                                         (4)</div>
+<div>- выход замкнутой системы с возмущенным объектом:</div>
+<div>Y(s)+<img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=4/?k=10">Y(s)=<img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=5/?k=10">R(s) , </div>
+<div>откуда</div>
+<div><img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=4/?k=10">Y(s)=<img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=6/?k=10">R(s)      (5)</div>
+<div>Для  GH(s)<img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=7/?k=10">GH(s)</div>
+<div><img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=4/?k=10">Y(s)=<img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=8/?k=10">R(s)                                  (6)</div>
+<div>Из формул (4) и (6) следует, что изменение выходной переменной в замкнутой системе вследствие вариаций параметров объектов меньше в  [1+GH(s)]<sup class="eSub">2</sup> по сравнению с разомкнутой. </div>
+<a name="T1347039387"></a>
+<div><span class="eOperator">Определение 1:</span> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Чувствительностью системы автоматического управления</a> называется отношение процентного изменения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">передаточной функции</a> системы к процентному изменению передаточной функции объекта.</div>
+<div>Для системы с передаточной функцией </div>
+<div><img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=9/?k=10"></div>
+<div>формула чувствительности в соответствии с определением:</div>
+<div><img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=10/?k=10"></div>
+<div>В пределе, при бесконечно малых изменениях параметров, имеем: </div>
+<div><img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=11/?k=10"></div>
+<a name="T364341467"></a>
+<div><span class="eOperator">Определение 2:</span> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">чувствительность системы автоматического управления (определение 2)</a> – отношение изменения ее передаточной функции к изменению <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">передаточной функции</a> (или параметров) объекта управления при условии их малости.</div>
+<div>Очевидно для разомкнутой системы   T(s)=G(s), <img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=4/?k=10">T(s)=<img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=4/?k=10">G(s), поэтому ее чувствительность равна единице.</div>
+<div>Для замкнутой системы с объектом G(s) и ПФ обратной связи H(s) ПФ:</div>
+<div><img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=12/?k=10"></div>
+<div>поэтому ее чувствительность определяется по формуле:</div>
+<div><img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=13/?k=10"></div>
+<div>Из (11) следует уже известный нам вывод о том, что чувствительность замкнутой системы можно сделать меньше, чем ее чувствительность в разомкнутом состоянии, увеличивая GH(s).</div>
+<a name="T2026853251"></a>
+<a name="T868683729"></a>
+<div><span class="eOperator">Определение 3</span>. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Чувствительность замкнутой системы к изменению передаточной функции элемента обратной связи H(s)</a>- отношение изменения ее <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">передаточной функции</a> к изменению передаточной функции (или параметров) этой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обратной связи</a> при условии их малости.</div>
+<div>В виде формулы это определение записывается так:</div>
+<div><img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=14/?k=10"></div>
+<div>Если опять рассмотреть случай GH достаточно большое, что эффективно с точки зрения уменьшения чувствительности системы, из (12) следует, что чувствительность замкнутой системы к изменению  H(s) близка к единице, поэтому изменения H(s) сильно влияют на изменение выходной переменной. Очевидно, желательно для обеспечения стабильности работы использовать в качестве элементов обратной связи малочувствительные к внешним условиям</div>
+<div>Практический интерес представляет оценка чувствительности системы к вариациям отдельных параметров α передаточной функции объекта G(s). Эта оценка весьма полезна при проведении параметрической оптимизации системы.</div>
+<div> Формула получается из правил дифференцирования сложной функции:</div>
+<div>                          <img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=15/?k=10">=<img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=16/?k=10">                                                    (13)</div>
+<div>Подставим выражение для описания ПФ замкнутой системы T(s) в виде отношения числителя N(s) и знаменателя D(s) с параметром α, зависящим от изменения внешних факторов:</div>
+<div><img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=17/?k=10"></div>
+<a name="T380984819"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Чувствительность замкнутой системы к вариациям отдельного параметра α передаточноый функции объекта G(s):</a></div>
+<div>S=<img align="absmiddle" src="/?frm/?doc=Paransys/par5_1.mod/?n=18/?k=10"></div>
+<div>где α<sub class="eSub">0</sub> – номинальное значение параметра.</div>
+<div>Вывод.</div>
+<div> Влияние вариаций параметров  объекта G(s) для замкнутой системы  уменьшается в 1+GH(s) раз по сравнению с разомкнутыми системами.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-32/">← Оглавление</a>
         <a href="/rk6-edu/course-32/mod-22.html">‹ Предыдущий</a>

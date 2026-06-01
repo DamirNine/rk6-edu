@@ -23,7 +23,87 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-112.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Операции со списками при связном хранении</a>
+</div>
+<a name="T1872867897"></a>
+<div>При простом связанном хранении каждый элемент списка представляет собой структуру nd, состоящую из двух элементов: val — предназначен для хранения элемента списка, n — для указателя на структуру, содержащую следующий элемент списка. На первый элемент списка указывает указатель dl.  <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операциями со списками при связном хранении</a> являются следующие: печать значения i-го элемента, печать обоих соседей узла(элемента), определяемого указателем p, удаление элемента, следующего за узлом, на который указывает р, вставка нового узла со значением new за элементом, определенным указателем р, частичное упорядочение списка в последовательность значений , s+t+1=l, так что K1'=K1; после упорядочения указатель v указывает на элемент K1'.  Для всех операций над списком используется описание:</div>
+<pre class="eListing">typedef struct nd
+ { float val;
+   struct nd * n;  } ND;
+int i,j;
+ND * dl, * r, * p;
+</pre>
+<div>Для реализации операций могут использоваться следующие фрагменты программ:</div>
+<div>1) печать значения i-го элемента</div>
+<pre class="eListing">r=dl;j=1;
+while(r!=NULL &amp;&amp; j++n ;
+if (r==NULL) printf("\n нет узла %d ",i);
+else printf("\n элемент %d равен %f ",i,r-&gt;val);
+</pre>
+<div>2) печать обоих соседей узла(элемента), определяемого указателем p (см. рис.1)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PYAVU/9.3.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Схема выбора соседних элементов</div></div>
+<pre class="eListing">if((r=p-&gt;n)==NULL) printf("\n нет соседа справа");
+else printf("\n  сосед  справа  %f",  r-&gt;val);
+if(dl==p) printf("\n нет соседа слева" );
+    else { r=dl;
+           while( r-&gt;n!=p ) r=r-&gt;n;
+           printf("\n левый сосед %f", r-&gt;val);
+         }
+</pre>
+<div>3) удаление элемента, следующего за узлом, на который указывает р (см. рис.2)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PYAVU/9.3.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Схема удаления элемента из списка.</div></div>
+<pre class="eListing">if ((r=p-&gt;n)==NULL) printf("\n  нет  следующего");
+ p-&gt;n=r-&gt;n; free(r-&gt;n);
+</pre>
+<div>4) вставка нового узла со значением new за элементом, определенным указателем р (см. рис.3)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PYAVU/9.3.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Схема вставки элемента в список.</div></div>
+<pre class="eListing">r=malloc(1,sizeof(ND));
+r-&gt;n=p-&gt;n;   r-&gt;val=new;   p-&gt;n=r;
+</pre>
+<div>5) частичное упорядочение списка в последовательность значений , s+t+1=l, так что K1'=K1; после упорядочения указатель v указывает на элемент K1' (см. рис.4)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PYAVU/9.3.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;Схема частичного упорядочения списка.</div></div>
+<pre class="eListing">ND *v;
+float k1;
+k1=dl-&gt;val;
+r=dl;
+while( r-&gt;n!=NULL )
+ { v=r-&gt;n;
+   if {(v-&gt;valn=v-&gt;n;
+        v-&gt;n=dl;
+        dl=v;
+       }
+    else r=v;
+ }
+</pre>
+<div>Количество действий, требуемых для выполнения указанных операций над списком в связанном хранении, оценивается соотношениями: для операций 1 и 2 — Q=l; для операций 3 и 4 — Q=1; для операции 5 — Q=l.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-110.html">‹ Предыдущий</a>

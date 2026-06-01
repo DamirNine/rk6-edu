@@ -23,7 +23,41 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-29.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Переименование типа</a>
+</div>
+<a name="T1011348501"></a>
+<a name="T1233060480"></a>
+<a name="T256200320"></a>
+<a name="T1133808979"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Оператор typedef</a> — это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператор</a> языка Си, по которому задается новое <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">имя</a> (синоним) существующему <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типу данных</a>.</div>
+<a name="T798225181"></a>
+<a name="T359704857"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Синтаксис </a>оператора <span class="eOperator">typedef</span> похож на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">объявления переменной</a>:</div>
+<div><span class="eOperator">typedef</span> <span class="eOperator">существующий_тип новое_имя</span></div>
+<div>Имена подчиняются тем же правилам, что и прочие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификаторы</a>.</div>
+<div>Хотя объявления <span class="eOperator">typedef </span>не являются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директивами препроцессора</a> языка Си, они часто используются в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файлах заголовков</a>.</div>
+<div>Оператор <span class="eOperator">typedef</span> может использоваться также для объявления <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">производных типов</a>, таких как, например, матрица 20 на 40 целых значений.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">typedef char BYTE;
+typedef unsigned short USHORT;
+typedef int MATRIX[20][40];
+typedef int WORD;
+int main()
+{
+BYTE input;
+WORD buf [512];
+MATRIX prev, current;
+. . .
+}
+</pre>
+</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Использование заглавных букв в именах типов, определенных оператором <span class="eOperator">typedef</span>, — это соглашение, а не правило.</div>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-27.html">‹ Предыдущий</a>

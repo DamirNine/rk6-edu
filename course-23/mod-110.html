@@ -23,7 +23,54 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-111.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Библиотеки в ОС UNIX</a>
+</div>
+<a name="T168464512"></a>
+<a name="T696383489"></a>
+<a name="T1683739359"></a>
+<a name="T1369433176"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Библиотека</a> - это набор <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функций</a>, которые могут быть использованы во многих программах. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Компиляторы</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка Си</a> оснащены одной или более библиотеками. Кроме того, программист сам может создавать собственные библиотеки. Обычно библиотека - это файл, содержащий объектный код различных функций, представленный в специальном формате.</div>
+<div>Ниже приводится список библиотечных функций, которые обычно поставляются вместе с компилятором Си:</div>
+<ul class="eList"><li>Ввод-вывод</li>
+<li>Обработка строк</li>
+<li>Обработка символов</li>
+<li>Распределение памяти</li>
+<li>Функции общего назначения</li>
+<li>Математические функции</li>
+</ul>
+<a name="T645587003"></a>
+<a name="T2026410311"></a>
+<div>Все эти функции поставляются с компилятором Си  <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС UNIX</a>. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Стандарт ANSI языка Си</a> языка Си специфицирует, что эти и другие функции должны быть в составе компилятора Си. Рекомендуемый список основан на составе библиотек, поставляемых вместе с компилятором Си ОС UNIX.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/library.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Библиотеки в ОС UNIX</div></div>
+<div>На рис.1 представлен сокращенный список библиотек и сопровождающих файлов, поставляемых вместе с компилятором Си ОС UNIX. Хотя места хранения этих файлов и их форматы зависят от версии системы UNIX, общая организация библиотеки такова же, как и в среде других операционных систем.</div>
+<a name="T256200320"></a>
+<div>В ОС UNIX стандартные библиотеки находятся в каталоге <span class="eOperator">in/usr/ccs/lib</span>. Особый интерес представляет файл <span class="eOperator">/usr/ccs/lib/libc.so</span>, называемый "Стандартная библиотека Си". Он содержит объектный код стандартных функций ввода-вывода, функций обработки строк и символов, функций распределения памяти и функций общего назначения. Указанный файл используется редактором связей для автоматического поиска <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатора</a>, неопределенного в используемой программе. Например, если программа использует функцию <span class="eOperator">printf()</span>, редактор связей выполняет поиск определения  <span class="eOperator">printf()</span> в каталоге <span class="eOperator">/usr/ccs/lib/libc.so</span> (разделяемой объектной библиотеке). Определение  <span class="eOperator">printf()</span> отображается в виртуальное адресное пространство программы во время выполнения. Это называется динамическим связыванием. Оно позволяет связывать разделяемые объекты с исполнимым кодом во время выполнения программ. Это позволяет обеспечить совместное использование несколькими программами размещенных в памяти библиотечных функций.</div>
+<a name="T37556405"></a>
+<div>В руководстве по некоторым функциям указано, что в использующие их программы должен быть вставлен <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файл заголовков</a>. Например, файл <span class="eOperator">stdio.h</span> - для функций ввода-вывода, <span class="eOperator">string.h</span> - для функций обработки строк. В ОС UNIX эти файлы находятся в каталоге <span class="eOperator">/usr/include</span>.</div>
+<div>В число других библиотек, поставляемых вместе с компилятором Си ОС UNIX, входят математическая библиотека <span class="eOperator">/usr/ccs/lib/libm.a</span> и библиотека функций работы с экраном <span class="eOperator">/usr/ccs/lib/libcurses.a</span>. Библиотека функций работы с экраном - набор не зависящих от типа монитора функций для управления экраном, например, очистки экрана, позиционирования курсора, подчеркивания, выделения цветом и т.д. Если используются функции из библиотеки, отличной от стандартная библиотека Си, необходимо сообщить об этом редактору связей путем указания в командной строке флага <span class="eOperator">-l</span>, который должен следовать после имени исходного файла.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div><span class="eOperator">$cc -Xa prog.c -lm</span>               используются математические функции</div>
+<div><span class="eOperator">$cc -Xa prog.c -lcurses</span>         используются  функции работы с экраном</div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-109.html">‹ Предыдущий</a>

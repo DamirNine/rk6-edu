@@ -23,7 +23,76 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-22/mod-30.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Степени параллелизма. Статическое и динамическое распараллеливание последовательных программ</a>
+</div>
+<a name="T109040626"></a>
+<a name="T1782899684"></a>
+<div>Разработка параллельной программы представляет собой, как правило, сложный, высококвалифицированный и непроизводительный труд. Параллельные программы с большими затратами переносятся между различными <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">архитектурами параллельных вычислительных систем</a>. Круг пользователей многих параллельных программ весьма узок. Эти обстоятельства являются мощным стимулом для создания средств автоматического <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> последовательных программ. </div>
+<div>Программирование на последовательном <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке</a> программирования и последующее автоматическое <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливание</a> выглядит весьма привлекательным, поскольку позволяет:</div>
+<ul class="eList"><li>применять опыт программирования, накопленный в течение многолетней эксплуатации традиционных последовательных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЭВМ</a>;</li>
+<li>разрабатывать программы, не зависящие от особенностей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">архитектуры параллельной вычислительной системы</a>;</li>
+<li>использовать программные продукты, накопленные за многие годы создания <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программного обеспечения</a> для последовательных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЭВМ</a>;</li>
+<li>не тратить силы и средства на параллельную организацию программ, полагаясь что система автоматического <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> решит все вопросы по эффективному переносу программ на любую параллельную систему.</li>
+</ul>
+<div>Однако в настоящее время последовательное программирование и последующее автоматическое <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливание</a> редко используются в промышленном программировании, поскольку редко обеспечивают достижение приемлемого уровня эффективности параллельных программ.</div>
+<div>Можно выделить четыре стадии решения задачи на параллельной вычислительной системе:</div>
+<ul class="eList"><li>выбор подходящего алгоритма (стадия А);</li>
+<li>выражение алгоритма на подходящем <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке</a> высокого уровня (ЯВУ) – написание программы (стадия Я);</li>
+<li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компиляция</a> программы в объектный код (стадия О);</li>
+<li>выполнение программы (стадия П).</li>
+</ul>
+<a name="T469209868"></a>
+<div>Степень параллелизма результатов этих стадий (алгоритма, программы, объектного кода, вычислительного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>) обозначим <img align="absmiddle" src="/?frm/?doc=Parallel/ch020600.mod/?n=1/?k=10">, соответственно. Таким образом, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020600.mod/?n=2/?k=10"> — степень параллелизма алгоритма, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020600.mod/?n=3/?k=10"> —степень параллелизма  программы, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020600.mod/?n=4/?k=10"> — степень параллелизма объектного кода, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020600.mod/?n=5/?k=10"> — степень параллелизма вычислительного процесса. Меры параллелизма будут рассмотрены позже.</div>
+<div>Очевидно, что имеют место следующие неравенства <br><img align="absmiddle" src="/?frm/?doc=Parallel/ch020600.mod/?n=6/?k=10"><br></div>
+<div>Проблема состоит в том, чтобы не растерять, а в максимальной степени сохранить параллелизм алгоритма <img align="absmiddle" src="/?frm/?doc=Parallel/ch020600.mod/?n=2/?k=10"> на пути <img align="absmiddle" src="/?frm/?doc=Parallel/ch020600.mod/?n=1/?k=10">. Параллелизм <img align="absmiddle" src="/?frm/?doc=Parallel/ch020600.mod/?n=2/?k=10"> является максимально достижимым (потенциальным) параллелизмом для всех стадий.</div>
+<div>рис.&nbsp;1, рис.&nbsp;2, рис.&nbsp;3, рис.&nbsp;4 иллюстрируют различные варианты решения задач на параллельных вычислительных системах с точки зрения сохранения параллелизм алгоритма <img align="absmiddle" src="/?frm/?doc=Parallel/ch020600.mod/?n=2/?k=10"> на пути <img align="absmiddle" src="/?frm/?doc=Parallel/ch020600.mod/?n=1/?k=10">.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020600.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Идеальный вариант сохранения параллелизма.</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020600.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Потеря и восстановление параллелизма при использовании последовательного языка программирования и распараллеливающего, в частности, векторизующего компилятора.</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020600.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Использование проблемно-ориентированного (непроцедурного) языка программирования типа языка НОРМА.</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020600.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;Использование параллельного ЯВУ, ориентированного на архитектуру данной параллельной вычислительной системы.</div></div>
+<div>Как правило, основное время выполнения последовательных программ связано с реализацией циклов. Поэтому в проблеме автоматического <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> последовательных программ распараллеливанию циклов уделяется первостепенное внимание.</div>
+<div>Наряду с автоматическим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливанием</a> в вычислительной практике широко используется автоматизированное распараллеливание последовательных программ, когда программист "подсказывает" <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятору</a> какие фрагменты следует распараллелить и каким методом. Такими подсказками для компилятора являются, по-сути, директивы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка</a> HPF (см. параграф 4.4).</div>
+<a name="T1407717462"></a>
+<a name="T1655196420"></a>
+<div>Различают статическое и динамическое распараллеливание последовательных программ. Чаще всего используют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">статическое распараллеливание последовательных программ</a> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливание</a> до выполнения программы), которым мы и ограничимся. При <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">динамическом распараллеливании последовательных программ</a> программа анализируется в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессе</a> исполнения, на основе этого анализа принимается решение о назначении различных операторов различным устройствам для параллельной обработки.</div>
+<a name="T469209605"></a>
+<div>Заметим, что, вообще говоря, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливание</a> программ можно осуществлять на уровне задач, процедур, операторов, операций и микроопераций. Целесообразность того или иного уровня распараллеливания решаться в каждом отдельном случае в зависимости от <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структуры вычислительной системы</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка</a> программирования и цели распараллеливания.</div>
+<div>Имеется множество коммерческих и некоммерческих систем автоматического и автоматизированного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> последовательных программ. Рассмотрим вкратце для примера пакет PGI, предлагаемый компанией Portland Group.</div>
+<div>Пакет PGI включает в себя набор оптимизирующих и распараллеливающих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компиляторов</a> и средств, которые облегчают <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> разработки и поддержки вычислительных приложений на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">рабочих станциях</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">серверах</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кластерах</a> на базе <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> Intel:</div>
+<ul class="eList"><li>PGHPF — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятор</a> с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка</a> HPF;</li>
+<li>PGF90 — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятор</a> Фортрана 90;</li>
+<li>PGF77 — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятор</a> Фортрана 77;</li>
+<li>PGCC — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компиляторы</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ANSI</a> C и С++.</li>
+</ul>
+<div>Пакет PGI работает в операционных системах Linux (x86), Solaris (x86) и Windows NT.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-22/">← Оглавление</a>
         <a href="/rk6-edu/course-22/mod-28.html">‹ Предыдущий</a>

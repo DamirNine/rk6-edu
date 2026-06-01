@@ -23,7 +23,57 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-11/mod-27.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Видеокарты</a>
+</div>
+<a name="T561265867"></a>
+<a name="T1801134881"></a>
+<a name="T2043079623"></a>
+<a name="T1473415941"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Видеокарта</a> (или видеоадаптер) – устройство <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компьютера</a> для вывода изображения на экран <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">монитора</a>. Видеокарта состоит из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">видеопамяти</a>, цифро-аналогового преобразователя и видеопроцессора. В видеопамять пишут и считывают данные центральный процессор компьютера и видеопроцессор. Цифро-аналоговый преобразователь преобразует цифровую информацию для вывода на аналоговый монитор, а видеопроцессор управляет всеми устройствами видеокарты.</div>
+<a name="T1550089515"></a>
+<div>Базовая <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">архитектура</a> видеопроцессора показана на рис. 1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=103_Computers/1012a.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T646062761"></a>
+<div>Процесс <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">визуализации</a> на рис. 1 представлен состоящим из операций с источником, с вершинами и с пикселями.</div>
+<div>Операции с источником получают данные о вершинах и готовят их к обработке. В вершинном процессоре данные проходят через блок вершинных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шейдеров</a>.</div>
+<a name="T236333446"></a>
+<a name="T242049880"></a>
+<div>В вершинном шейдере строится каркасная модель объекта. Первый этап операций с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пикселями</a> заключается в расстановке треугольников и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">растеризации</a>. Устанавливаются полигоны, которые растеризуются в пиксели экрана. Определяются области экрана, которые занимают полигоны. Далее область экрана разделяется на более мелкие части, обычно на горизонтальные линии пикселей, называемые фрагментами.</div>
+<div>В пиксельном процессоре полученные в процессе растеризации интерполированные данные пикселей дополняются цветом. Последний набор блоков выполняет заключительные операции визуализации, такие как затуманивание, альфа-смешивание и проверка трафарета. В результате мы получаем пиксель, который можно смешивать с данными выходного буфера, которые будут выводиться на экран.</div>
+<div>В табл. 1 приведены примеры характеристик современных видеокарт.</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTable">Тип графического процессора</td><td class="eTable">G71 (GeForce 7900)</td><td class="eTable">G80 (GeForce 8800)</td><td class="eTable">R580 (Radeon X1900)</td><td class="eTable">R600 (Radeon HD2900)</td></tr>
+<tr><td class="eTable">Число пиксельных блоков</td><td class="eTable">24</td><td class="eTable">128</td><td class="eTable">48</td><td class="eTable">320</td></tr>
+<tr><td class="eTable">Число вершинных блоков</td><td class="eTable">8</td><td class="eTable">128</td><td class="eTable">8</td><td class="eTable">320</td></tr>
+<tr><td class="eTable">Частота ядра, МГц</td><td class="eTable">650</td><td class="eTable">575</td><td class="eTable">650</td><td class="eTable">742</td></tr>
+<tr><td class="eTable">Число транзисторов (млн)</td><td class="eTable">279</td><td class="eTable">681</td><td class="eTable">384</td><td class="eTable">700</td></tr>
+<tr><td class="eTable">Объем памяти, Мбайт</td><td class="eTable">512</td><td class="eTable">768</td><td class="eTable">512</td><td class="eTable">512</td></tr>
+<tr><td class="eTable">Производительность, Гфлоп/с</td><td class="eTable">230</td><td class="eTable">518</td><td class="eTable">360</td><td class="eTable">475</td></tr>
+<tr><td class="eTable">Потребление энергии, Вт</td><td class="eTable">80</td><td class="eTable">145</td><td class="eTable">120</td><td class="eTable">215</td></tr>
+</tbody></table><br>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. Себастьен Сент-Лаурент. Глава из серии книг "Game Development". Изд-во Thomson Course Technology PTR, 2004. — http://netlib.narod.ru/library/book0053/toc.htm<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-11/">← Оглавление</a>
         <a href="/rk6-edu/course-11/mod-25.html">‹ Предыдущий</a>

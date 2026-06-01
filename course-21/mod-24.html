@@ -23,7 +23,65 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-21/mod-25.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Метод Паулла</a>
+</div>
+<a name="T191899328"></a>
+<div>Напомним, что методы, использующие квадратичную аппроксимацию, относятся к семейству <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">методов полиномиальной аппроксимации</a>.</div>
+<div>В параграфе 6 показано, что если имеются попарно не совпадающие точки <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=1/?k=10"> и соответствующие значения <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=2/?k=10"> минимизируемой функции, то аппроксимирующий квадратичный полином <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=3/?k=10"> достигает минимального значения в точке <br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=4/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=5/?k=10"> <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=6/?k=10"></div>
+<a name="T1183074747"></a>
+<a name="T2039875528"></a>
+<a name="T1869977390"></a>
+<div>Рассмотрим следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задачу безусловной оптимизации</a>: найти минимум <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">одномерной унимодальной функции</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=7/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=8/?k=10">), определенной в незамкнутой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">области допустимых значений</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=9/?k=10">,</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=10/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br></div>
+<a name="T1780330753"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метод Паулла</a> решения задачи (2) может быть весьма полезен при решении <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задач безусловной оптимизации</a> многопараметрических функций (см. далее).</div>
+<div>Схема <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метода Паулла</a>:</div>
+<ol class="eList"><li>Полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=11/?k=10">=1 и задаем начальную точку <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=12/?k=10">.</li>
+<li>Находим точку <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=13/?k=10"> где Δ – длина шага, которая должна быть величиной того же порядка, что и расстояние точки <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=12/?k=10"> до точки минимума функции <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=14/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=15/?k=10">) (оценка этого расстояния является самостоятельной проблемой).</li>
+<li>Вычисляем значения <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=16/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=17/?k=10"> функции <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=14/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=15/?k=10">) в точках <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=12/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=18/?k=10">.</li>
+<li>Находим точку <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=19/?k=10">:<br><img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=20/?k=10"><br></li>
+<li>Вычисляем значение <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=21/?k=10"> функции <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=14/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=15/?k=10">) в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=19/?k=10"> (см. рис.&nbsp;1).</li>
+<li>По формуле (1) вычисляем величину <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=22/?k=10"> и находим значение функции <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=14/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=15/?k=10">) в этой точке <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=23/?k=10">.</li>
+<li>Находим следующие три точки:</li>
+<ul class="eList"><li>а) если <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=24/?k=10">, то <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=25/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=26/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=27/?k=10">;</li>
+<li>б) если <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=28/?k=10">, то<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=29/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=26/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=30/?k=10">;</li>
+<li>в) если <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=31/?k=10">, то <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=25/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=32/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=33/?k=10"> (см. рис.&nbsp;2);</li>
+<li>г) если <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=34/?k=10">, то <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=35/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=32/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=36/?k=10"> (см. рис.&nbsp;3).</li>
+</ul>
+<li>В качестве следующего текущего интервала неопределенности принимаем <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=37/?k=10">.</li>
+<li>Если <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=38/?k=10">, то заканчиваем вычисления. Иначе - выполняем присваивание <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=11/?k=10">=<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=11/?k=10">+1 и переходим на п.6. Здесь <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=39/?k=10"> – требуемая точность решения<img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=40/?k=10"></li>
+</ol>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0407.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;К определению точки <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">x</span><sub class="eSub">3</sub><sup class="eSub">r</sup>.</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0407.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Случай x<sup class="eSub">~r</sup>&gt;<span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">x</span><sub class="eSub">3</sub><sup class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">r</span></sup>.</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0407.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Случай x<sup class="eSub">~r</sup>&lt;<span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">x</span><sub class="eSub">3</sub><sup class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">r</span></sup></div></div>
+<div>В качестве приближенного значения точки минимума <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=41/?k=10"> с равными основаниями может быть принята любая точка последнего текущего интервала неопределенности.</div>
+<div>Рассмотренный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод Паулла</a> может быть модифицирован и для <span style="font-weight:bold; ">замкнутой</span> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">области допустимых значений</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0407.mod/?n=42/?k=10">:</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-21/">← Оглавление</a>
         <a href="/rk6-edu/course-21/mod-23.html">‹ Предыдущий</a>

@@ -23,7 +23,69 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-93.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Назначение распределенных систем</a>
+</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Пример 1.</span> Исполнительный уровень СУ робота.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_28.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>БЦВМ — бортовая ЦВМ, решает задачи планирования траектории, оценки окружающей среды и т.п.</div>
+<a name="T182897913"></a>
+<div>Необходимо обеспечить обмен между исполнительными <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПСУ</a> и БЦВМ. Связь необходимо организовывать по последовательному каналу, так как параллельный канал не позволяет передавать данные на большое расстояние и характеризуется сложностью резервирования.</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Пример 2.</span> Группа роботов.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_28.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>Здесь также возникает необходимость обмена информацией.</div>
+<div>Постановка задачи:</div>
+<ol class="eList"><li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Алгоритмы</a> управления заданы (известны).</li>
+<li>Необходимо разработать систему обмена информацией.</li>
+</ol>
+<div>Одним из возможных вариантов организации обмена данными между микропроцессорными системами является использование системной шины (рис.&nbsp;3).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_28.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<div>Такой подход позволяет решить задачу обмена. Недостатком его является использование <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельного способа обмена данными</a>, следовательно, ограничения по дальности передачи и возможности резервирования.</div>
+<div>Другое решение — использование вычислительных сетей.</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Пример 3.</span> Простейшее соединение двух персональных компьютеров.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_28.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<a name="T1435705146"></a>
+<div>Для выполнения соединения используется последовательный порт (COM-порт). В качестве контроллера COM-порта используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программируемый последовательный интерфейс</a> (ППИ). ППИ обеспечивает передачу и прием одного байта данных с использованием <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">последовательного асинхронного способа</a> передачи данных.</div>
+<div>Для успешной передачи данных между двумя компьютерами в обоих направлениях, необходимо соединить двумя проводами линию <span class="eOperator">RxD</span> одного компьютера и <span class="eOperator">TxD</span> другого и наоборот (рис.&nbsp;5).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_28.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;</div></div>
+<div>Контроллер COM-порта работает на уровне передачи одного байта (символа). По окончании передачи генерируется сигнал запроса на прерывание. Этот сигнал обрабатывается специальной программой — драйвером COM-порта.</div>
+<div>Драйвер управляет контроллером, он обеспечивает передачу/прием потока данных, разбивая этот поток на отдельные байты и передавая каждый байт через контроллер. По окончании передачи байта, обрабатывая прерывание, драйвер инициирует передачу/прием следующего байта и так далее.</div>
+<div>Драйвер является частью (модулем) операционной системы. Операционная система обеспечивает возможность доступа к COM-порту нескольких вычислительных процессов</div>
+<div>Связка "ОС — драйвер — контроллер — порт" позволяет передавать поток информации (байтов). Она представляет собой реализацию соединения "точка — точка" (“ Point To Point”).</div>
+<div>Для решения же нашей главной задачи — передачи файла с одного компьютера на другой, необходимо иметь специальную прикладную программу — приложение, которая будет выполнять считывание нужного файлас диска, преобразование его в поток байт, передачу этого потока через драйвер COM-порта. Пример такой программы — Norton Link.</div>
+<div>Итак, задача решена с использованием комплекса аппаратно-программных средств, представленных на рис.&nbsp;5. Однако это решение частной задачи. Если, например, потребуется передача данных из некоей области ЗУ компьютера "А" и запись их в ЗУ компьютера "В", необходимо будет создавать уже другое решение.</div>
+<a name="T773483770"></a>
+<div>Соответственно, появляется необходимость нахождения общего решения. И такое решение есть — это <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">вычислительные сети</a>.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-91.html">‹ Предыдущий</a>

@@ -23,7 +23,79 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-35.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Преобразования при присваивании</a>
+</div>
+<a name="T147950291"></a>
+<a name="T1133808979"></a>
+<a name="T1821205864"></a>
+<a name="T803028594"></a>
+<a name="T708113156"></a>
+<div>Если в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции присваивания</a> оба операнда  имеют один и тот же <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">тип данных</a>, то никакого <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">преобразования данных</a> не требуется. Однако, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражение</a> слева (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">именующее выражение</a>) не обязано иметь тот же тип, что и выражение справа. В этом случае делается попытка преобразования значения правого выражения к типу левого операнда.</div>
+<div>Возможны следующие варианты использования операции присваивания, которые потребуют преобразования данных:</div>
+<ol class="eList"><li>Объект типа <span class="eOperator">float</span> или <span class="eOperator">double</span> = значение выражения типа <span class="eOperator">char</span> или <span class="eOperator">int</span>.</li>
+<li>Объект типа <span class="eOperator">char</span> или <span class="eOperator">int</span> = значение выражениея типа <span class="eOperator">float</span> или <span class="eOperator">double</span>.</li>
+<li>Объект меньшего размера = значение выражения большего размера.</li>
+<li>Объект большего размера = значение выражения меньшего размера.</li>
+</ol>
+<div>В первом варианте присваивание обычно не влечет никакой потери данных. Значение выражение типа <span class="eOperator">char</span> или <span class="eOperator">int </span> будет помещено в область памяти, отведенную для <span class="eOperator">float</span> или <span class="eOperator">double</span>. При этом объект, представленный в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формате целых чисел</a>, преобразуется в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формат с плавающей точкой</a> для вещественных чисел.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div><span class="eOperator"> int_var = 27;</span></div>
+<div><span class="eOperator"> float_var = int_var;</span><span class="eOperator"> /* float_var  теперь равно 27.0*/</span></div>
+</div>
+<div>Гипотетически этот вид присваивания может привести к потере данных. Например, на некотором компьютере формат целых чисел типа <span class="eOperator">int</span> может содержать 10 цифр, а формат с плавающей точкой типа <span class="eOperator">float</span> – 7 значащих цифр. Присваивание переменной типа <span class="eOperator">float</span> 10-значащего целого приведет к потере точности. Для большинства компьютеров эта проблема преодолевается путем присваивания целых переменным типа <span class="eOperator">double</span>.</div>
+<div>Во втором варианте присваивание вызывает отбрасывание дробной части. Если результат не помещается в формат типа <span class="eOperator">char</span> или <span class="eOperator">int</span>, часть значения теряется.</div>
+<div>В третьем варианте в присваиваниях вида</div>
+<ul class="eList"><li>объект типа <span class="eOperator">char</span> = значение выражение типа <span class="eOperator">int</span></li>
+<li>объект типа <span class="eOperator">float</span> = значение выражение типа <span class="eOperator">double</span></li>
+</ul>
+<div>данные могут быть потеряны.</div>
+<div>В дальнейшем термин "младшие байты" и "старшие байты" относятся к двоичному представлению значения, независимо от того, в каком порядке эти байты хранятся в памяти различных процессоров.</div>
+<div>В четвертом варианте присваивания вида</div>
+<ul class="eList"><li>объект типа <span class="eOperator">int</span> = значение выражение типа <span class="eOperator">char</span></li>
+<li>объект типа <span class="eOperator">long</span> = значение выражение типа <span class="eOperator">short</span></li>
+</ul>
+<div>преобразование выполняется следующим образом.</div>
+<div>Значение переносится в младший байт(ы). Обработка старшего байта(ов) зависит от знакового бита меньшего объекта и от используемого процессора.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>Если у значения правого выражения знаковый бит равен 0, старшие байты заполняются нулями .</div>
+<div><span class="eOperator">int_var = char_var</span></div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/preob_pris.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div>Если у значения правого выражения знаковый бит равен 1 и правый операнд имеет знаковый тип, старшие байты заполняются единицами.</div>
+<div><span class="eOperator">int_var = char_var</span></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/preob_pris.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><div>Если у значения правого выражения знаковый бит равен 1 и правый операнд имеет беззнаковый тип, старшие байты заполняются нулями.</div>
+<div><span class="eOperator">int_var = char_var</span></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/preob_pris.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-33.html">‹ Предыдущий</a>

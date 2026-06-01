@@ -23,7 +23,55 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-86.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Переформирование матрицы</a>
+</div>
+<div>Задачи данной группы аналогичны задачам переформирования одномерных массивов. Реализуются эти задачи использованием вложенных циклов.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Дана целочисленная матрица. Отсортировать ее по возрастанию элементов последнего столбца.</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/matr4.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<br>
+<pre class="eListing">int matr_sort(int b[][10], int n, int m) /*функция сортирует матрицу n на m*/ 
+{int i,j,m,k,key,c;
+key=1;
+i=0;
+while((i&lt;n-1)&amp;&amp;(key==1))
+  {key=0;
+   for(k=0;k&lt;n-i-1;k++)
+   if(b[k][m-1]&gt;b[k+1][m-1])
+     {for(j=0;j&lt;m;j++)
+        {c=b[k][j];
+         b[k][j]=b[k+1][j];
+         b[k+1][j]=c;
+        }
+      key=1;
+     }
+   i=i+1;
+  }
+}
+</pre>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Переменная <span class="eOperator">key</span>  используется для того, чтобы отслеживать ситуацию, когда массив уже отсортирован, а  полный цикл просмотра матрицы еще не закончился.</div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-84.html">‹ Предыдущий</a>

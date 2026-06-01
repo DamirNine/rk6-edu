@@ -23,7 +23,58 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-116.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функция fclose()</a>
+</div>
+<a name="T829062930"></a>
+<a name="T696383489"></a>
+<a name="T1369433176"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция fclose()</a> - стандартная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция</a> ввода-вывода <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка Си</a>,  с помощью которой осуществляется закрытие файла.</div>
+<div><span class="eOperator">int fclose (FILE *stream)</span></div>
+<a name="T987309929"></a>
+<div>Функция <span class="eOperator">fclose()</span> закрывает файл, на который указывает ее параметр. При закрытии файла его <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">буфер</a> записывается (вытесняется) на диск, если вывод реально выполнялся. Функция <span class="eOperator">fclose()</span> возвращает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">EOF</a> в случае ошибки и нуль в противном случае.</div>
+<div>Хотя открытый файл автоматически закрывается при завершении программы, даже если функция  <span class="eOperator">fclose()</span> не вызвана, рекомендуется закрывать файл явно. Во-первых, при этом освобождается место в памяти, которое может быть использовано для открытия нового файла. Во-вторых, буфер, если он  есть, записывается за приемлемое время. Одновременно в программе может быть открыто не более 20 файлов.</div>
+<div> </div>
+<a name="T581415280"></a>
+<a name="T37556405"></a>
+<a name="T637542155"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявление прототипа функции</a> <span class="eOperator">fclose()</span> находится в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эту функцию, должны включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div><span class="eOperator">#include &lt;stdio.h&gt;</span></div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><a name="T900021607"></a>
+<div>Эта программа копирует файл, заданный вторым <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументом командной строки</a> в файл, заданный третьим аргументом  командной строки.</div>
+<pre class="eListing">#include &lt;stdio.h&gt;
+int main(int argc, char *argv[])
+{
+FILE *rp, *wp;
+
+if(argc != 3)
+  {
+   printf ("Имя второго файла не определено\n");
+   exit (1);
+  }
+if((rp=fopen(argv[1],"r"))==NULL)
+  {
+   printf ("Не открыт файл %s\n",argv[1]);
+   exit (2);
+  }
+if((wp=fopen(argv[2],"w"))==NULL)
+  {
+  printf ("Не открыт файл %s\n",argv[2]);
+  fclose(rp);
+  exit (2);
+}
+/*здесь должны быть функции чтения-записи*/
+  
+fclose(rp);
+fclose(wp);
+exit (0);
+}
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-114.html">‹ Предыдущий</a>

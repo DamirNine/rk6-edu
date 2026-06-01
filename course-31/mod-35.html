@@ -23,7 +23,61 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-36.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Проектирование соединения УСО с микропроцессором</a>
+</div>
+<a name="T842523107"></a>
+<a name="T1017069202"></a>
+<a name="T1832195333"></a>
+<a name="T1942936499"></a>
+<a name="T1405772177"></a>
+<div>Соединение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">УСО</a> с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессором</a> представляет собой внутреннюю магистраль, состоящую из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шины адреса</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шины данных</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шины управления</a>. Проблема заключается в том, что во многих микропроцессорах шины адреса и данных мультиплексированы, то есть для передачи адреса и данных используются одни и те же линии с разделением во времени. На приведенной на рис.&nbsp;1 временной диаграмме представлен цикл асинхронного обмена по мультиплексированной шине адреса данных (<span class="eOperator">A/D</span>).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_06.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T647757162"></a>
+<div>Из временной диаграммы видно, что адрес и данные передаются в разные моменты времени по одним и тем же линиям <span class="eOperator">A/D</span>. Однако вспомогательные микросхемы, используемые в УСО, а также <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">запоминающее устройство</a> требуют присутствия адресной информации на своих входах в течение всего цикла обмена. К тому же они имеют различные входы для адреса и данных. Следовательно, необходимо выполнить "разделение" мультиплексированной шины адреса/данных на шину адреса (на которой адрес будет присутствовать в течение всего цикла обмена) и шину данных. Очевидно, этим должна заниматься специально разработанная схема, называемая <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">схемой демультиплексирования</a> (рис.&nbsp;2).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_06.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>Попытаемся понять, что должна делать схема демультиплексирования. С одной стороны, она должна "разделить" адрес и данные. То есть в момент, когда по мультиплексированной шине адреса-данных передается адрес (<span class="eOperator">ALE</span>=1), она должна быть соединена с шиной адреса, в момент передачи данных (<span class="eOperator">DEN</span>=0) — с шиной данных. Таким образом, схема демультиплексирования должна выполнять роль своеобразного "переключателя", подключающего мультиплексированную шину адреса-данных микропроцессора к шине адреса или шине данных. С другой стороны, адрес должен находиться на шине адреса в течение всего цикла обмена. Следовательно, он должен быть где-то "запомнен", например, в буферном регистре.</div>
+<div>На рис.&nbsp;3 представлена обобщенная функциональная схема схемы демультиплексирования.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_06.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<div>Буферный регистр обеспечивает "формирование" шины адреса, запоминая (защелкивая) адрес по сигналу <span class="eOperator">ALE</span>. Шинный формирователь обеспечивает "формирование" шины данных, выполняя функции усилителя с возможностью отключения шины данных от микропроцессора на время передачи адреса. Рассмотрим функционирование схемы демультиплексирования более подробно.</div>
+<div>Обратимся к рис.&nbsp;1. В такте 1 цикла обмена происходит выдача адреса на мультиплексированную шину адреса-данных, что сопровождается стробирующим сигналом "разрешение защелкивания адреса" <span class="eOperator">ALE.</span> Сигнал <span class="eOperator">ALE</span> подается на вход <span class="eOperator">STB</span> буферного регистра, адрес поступает с мультиплексированной шины адреса-данных на входы буферного регистра (рис.&nbsp;4).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_06.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<div>Поскольку сигнал <span class="eOperator">DEN</span> все это время находится в неактивном состоянии (логической единицы), выходы шинного формирователя находятся в Z–состоянии и адрес не может пройти на шину данных.</div>
+<div>По заднему фронту сигнала <span class="eOperator">ALE</span> (в конце 1-го такта) происходит запоминание адреса в буферном регистре.</div>
+<div>В такте 3 цикла обмена (см. рис.&nbsp;1) происходит собственно передача данных, то есть мультиплексированная шина адреса-данных должна быть "соединена" с шиной данных. Это происходит за счет того, что сигнал <span class="eOperator">DEN,</span> находящийся в этот момент в состоянии логического нуля, подается на вход <span class="eOperator">OE</span> шинного формирователя и "отпирает" его — шинный формирователь работает в режиме усилителя, направление передачи данных определяется сигналом <span class="eOperator">DT/R</span>, идущим от микропроцессора (рис.&nbsp;5).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_06.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;</div></div>
+<div>Обратите внимание, что все это время на шине адреса продолжает находиться адрес, "защелкнутый" в буферном регистре. Так как сигнал, подаваемый на вход буферного регистра, находится в состоянии логического нуля, передающиеся по мультиплексированной шины адреса-данных данные не поступают в буферный регистр и не "портят" находящуюся там адресную информацию.</div>
+<div>Построенная по такому принципу схема демультиплексирования обеспечивает решение поставленной задачи: "разделение" адреса и данных и обеспечения наличия адреса на шине адреса в течение всего цикла обмена. Наличие разделенных шин адреса и данных позволяет выполнять подключение к ним устройств, входящих в УСО.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-34.html">‹ Предыдущий</a>

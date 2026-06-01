@@ -23,7 +23,49 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-98.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функция setlocale</a>
+</div>
+<pre class="eListing">#include  &lt;locale.h&gt;
+char  *setlocale(int   type,   const  char   * locale);
+</pre>
+<a name="T1492530786"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция setlocale</a>() позволяет получить или установить некоторые параметры, которые зависят от геополитической среды выполнения программы. Если указатель <span class="eOperator">locale</span> является нулем, функция setlocale() возвращает указатель на строку текущей локализации. В противном случае функция setlocale() попытается использовать строку <span class="eOperator">locale</span> для установки локальных параметров в соответствии с параметром type. Для задания стандартных С-параметров региональной привязки надо использовать строку "С", а для задания собственных параметров среды — пустую строку (""). Чтобы получить подробную информацию о строках локализации, поддерживаемых конкретным компилятором, обратитесь к документации.</div>
+<a name="T110667730"></a>
+<div>При вызове функции setlocale() в качестве параметра <span class="eOperator">type</span> должен быть использован один из следующих макросов (определенных в заголовке &lt;<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">locale.h</a> &gt;).</div>
+<a name="T1292689092"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">LC_ALL</a></div>
+<div>LC_COLLATE</div>
+<div>LC_CTYFE</div>
+<div>LC__MONETARY</div>
+<div>LC__NUMERIC</div>
+<div>LC_TIME</div>
+<a name="T503389876"></a>
+<a name="T1026568456"></a>
+<a name="T1742357746"></a>
+<a name="T1794935512"></a>
+<a name="T1437486883"></a>
+<a name="T1447662242"></a>
+<div>Макрос LC_ALL относится ко всем категориям локализации. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Макрос LCCOLLATE</a> оказывает влияние на выполнение функции <span class="eOperator">strcoll ()</span>. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Макрос LC_CTYPE</a> изменяет характер работы символьных функций. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Макрос LC_MONETARY</a> определяет денежный формат. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Макрос LC_NUMERIC</a> изменяет символ десятичной точки для функций форматированного ввода-вывода. Наконец, <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">макрос LCJTIME</a> определяет поведение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции strftime</a>().</div>
+<div>Функция setlocale() возвращает указатель на строку, связанную с параметром type.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Эта программа отображает текущую установку локализации:</div>
+</div>
+<pre class="eListing">#include &lt;locale.h&gt;
+#include &lt;stdio.h&gt;
+int main(void) 
+{
+printf(setlocale(LC_ALL, " "));
+return 0;
+}
+</pre>
+<a name="T1932770254"></a>
+<a name="T1198290317"></a>
+<div>Здесь используются зависимые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции localeconv</a>(), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">time</a>(), strcoll()  и  strftime().</div>
+<br>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-96.html">‹ Предыдущий</a>

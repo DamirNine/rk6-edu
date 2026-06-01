@@ -23,7 +23,167 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-22/mod-36.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Библиотека PVM</a>
+</div>
+<a name="T67265704"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Система PVM </a>(Parallel Virtual Machine) была создана для объединения нескольких связанных сетью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">рабочих станций</a> в единую виртуальную параллельную <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительную машину</a>. Система представляет собой надстройку над операционной системой UNIX и используется на различных аппаратных платформах, включая и системы с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массовым параллелизмом</a>.</div>
+<div class="eSubTitle">ОбзорPVM.</div>
+<div><span class="eOperator">Основные принципы PVM</span>:</div>
+<ol class="eList"><a name="T1672495953"></a>
+<li><span style="font-style:italic; ">Гетерогенность вычислительной системы</span>. Аппаратная среда может содержать как однопроцессорные машины, так и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорные вычислительные системы</a> (как с общей, так и с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распределенной памятью</a>).</li>
+<a name="T469209868"></a>
+<li><span style="font-style:italic; ">Конфигурируемый пользователем набор вычислительных машин</span>. Необходимый для решения задачи пользователя набор машин формируется им из числа любых машин в используемой системе. Набор машин может изменяться добавлением и удалением машин в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессе</a> работы программы пользователя.</li>
+<li><span style="font-style:italic; ">Прозрачность доступа к вычислительным машинам</span>. Прикладные программы могут "видеть" аппаратную среду как группу виртуальных вычислительных элементов без атрибутов.</li>
+<li><span style="font-style:italic; ">Обмен данными меду процессами в соответствии с моделью обмена сообщениями</span>. Допускается обмен между машинами с различным представлением данных</li>
+</ol>
+<div><span class="eOperator">Вычислительная модель PVM</span> предполагает, что приложение состоит из нескольких задач. Задачи могут выполняться параллельно, синхронизуясь и обмениваясь данными.</div>
+<div><span class="eOperator">Коммуникационная модель PVM</span> В коммуникационной модели PVM принято, что любая задача может передавать сообщение любой другой задаче. Ограничения на длину и количество сообщений отсутствуют. Однако имеется "ограничительный" текущий контроль. В тех случаях, когда суммарный объем входящих сообщений превышает размер доступной памяти, PVM выдает сообщение об ошибке.</div>
+<div>PVM предоставляет функции</div>
+<ul class="eList"><li>асинхронной блокирующей передачи;</li>
+<li>асинхронного блокирующего приема;</li>
+<li>не блокирующего приема.</li>
+</ul>
+<div>Коммуникационная модель PVM поддерживает коммуникации типа "точка-точка", а также широковещательную передачу данных. Модель гарантирует сохранение порядка сообщений. Если задача 1 посылает сообщение A задаче 2, а затем эта же задача посылает сообщение B той же задаче, то сообщение A поступит задаче 2 раньше, чем сообщение B.</div>
+<div><span class="eOperator">Структура PVM</span>. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Система PVM</a> состоит из двух частей.</div>
+<a name="T350781559"></a>
+<div>Первая часть – это <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">программа-демон</a>, которая помещается на все <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компьютеры</a>, создающие виртуальную машину. Важно, что пользователи могут конфигурировать перекрывающиеся виртуальные машины.</div>
+<a name="T379710617"></a>
+<div>Вторая часть PVM – это <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">библиотека PVM</a> подпрограмм. Библиотека PVM содержит вызываемые пользователем подпрограммы для обмена сообщениями, порождения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>, координирования задач и модификации виртуальной машины.</div>
+<div><span class="eOperator">Поддерживаемые языки программирования.</span>  PVM поддерживает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языки</a> программирования C, C++ и Фортран 77.</div>
+<div>Привязка <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языков C</a> и C++ к пользовательскому интерфейсу PVM реализована в виде C-функций. Прикладные C и C++ программы получают доступ к функциям <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеки PVM</a> путем присоединения к ним библиотеки PVM (libpvm3.a).</div>
+<div>Привязка к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языку</a> Фортран 77 реализована в виде подпрограмм. Фортран-приложения требуют присоединения библиотеки (libfpvm3.a) в дополнение к библиотеке (libpvm3.a).</div>
+<a name="T1436735814"></a>
+<div><span class="eOperator">Идентификация задач.</span> Все задачи PVM идентифицируются посредством целочисленного <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">идентификатора задачи</a> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TID</a> — Task IDentifier). PVM содержит несколько подпрограмм, которые возвращают значения TID, тем самым, давая возможность пользовательскому приложению идентифицировать другие задачи в системе.</div>
+<a name="T877726388"></a>
+<div><span class="eOperator">Группы задач.</span> Любая задача PVM может войти в состав любой <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">группы задач</a> или покинуть ее в произвольный момент времени. Группы могут перекрываться, а задачи могут рассылать широковещательные сообщения, адресованные тем группам, в которых они не состоят. Для использования любой из групповых функций к программе должна быть присоединена библиотека libgpvm3.a.</div>
+<div><span class="eOperator">Схема разработки и запуска приложения с помощью PVM</span>:</div>
+<ul class="eList"><li>Пользователь пишет одну либо несколько последовательных программ на C, C++ или Фортран 77, в которые встроены вызовы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеки PVM</a> (каждая программа затем породит задачу). Одна из программ должна быть "инициирующей" — запускающей все остальные программы приложения.</li>
+<li>Каждая из программ компилируются по правилам той <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительной машины</a>, на которой она будет выполняться.</li>
+<li>Полученные объектные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файлы</a> помещаются на соответствующие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительные машины</a>.</li>
+<li>Для выполнения приложения пользователь вручную запускает "инициирующую" задачу, которая запускает остальные задачи PVM.</li>
+</ul>
+<div><span class="eOperator">Сравнение MPI и PVM.</span> MPI и PVM имеют следующие общие характеристики:</div>
+<ul class="eList"><li>и MPI и PVM призваны решать одну и ту же задачу обеспечения межпроцессорной связи,</li>
+<li>и MPI и PVM ориентированы на одну и туже MPMD парадигму программирования;</li>
+<li>и MPI и PVM представляют собой библиотеку программ;</li>
+<li>и MPI и PVM обеспечивают мобильность создаваемых программ.</li>
+</ul>
+<div>MPI и PVM имеют следующие основные отличия:</div>
+<ul class="eList"><li>интерфейс программиста PVM проще, чем такой же интерфейс MPI;</li>
+<li>PVM имеет средства динамического порождения ветвей (в стандарте MPI-2 такая возможность также имеется);</li>
+<li>в PVM возможно взаимодействие приложений, запущенных одним и тем же пользователем (в стандарте MPI-2 такая возможность также имеется).</li>
+</ul>
+<div class="eSubTitle">Функции контроля процессов.</div>
+<div>Как отмечалось выше, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеки PVM</a> содержат функции и подпрограммы для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языков C</a> и Фортран 77. Ограничимся рассмотрением функция для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка</a> С.</div>
+<div>1. Функция <span class="eOperator">int tid = pvm_mytid(void)</span> возвращает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TID</a> текущего <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>.</div>
+<div>2. Функция <span class="eOperator">int info = pvm_exit(void)</span> сообщает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программе-демону</a> о том, что <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> "покинул" среду PVM. Эта подпрограмма не завершает процесс принудительно — он может продолжать выполнять задачу наряду с другими процессами UNIX. Пользователи обычно вызывают функцию <span class="eOperator">pvm_exit</span> прямо перед выходом.</div>
+<div>3. Функция порождения потомков</div>
+<pre class="eListing">int numt = pvm_spawn(char *task, char **argv, int flag, char *where, int ntask, int *tids)
+</pre>
+<a name="T94067847"></a>
+<div>запускает до <span class="eOperator">ntask</span> копий исполняемого <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файла</a> <span class="eOperator">task</span> на виртуальной машине. Здесь <span class="eOperator">argv</span> — указатель на массив аргументов для <span class="eOperator">task</span>, <span class="eOperator">flag</span> — используется для указания опций, numt — количество успешно порожденных задач или код ошибки, если ни одна из задач не смогла стартовать. Вызов pvm_spawn() может также запускать задачи и на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессорах</a>.</div>
+<div>4. Функция <span class="eOperator">int info = pvm_kill(int tid)</span> принудительно завершает задачу PVM, идентифицированную указанным в вызове <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TID</a>.</div>
+<div>5. Функция <span class="eOperator">int info = pvm_catchout(FILE *ff)</span>. По умолчанию PVM записывает информацию о порожденных задачах в специальный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файл</a> протокола /tmp/pvml.&lt;uid&gt;. Функция pvm_catchout заставляет посылать эту информацию вызывающей задаче.</div>
+<div class="eSubTitle">Функции сбора информации о процессах.</div>
+<div>1. Функция <span class="eOperator">int tid = pvm_parent(void)</span> возвращает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TID</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>, который порожден данной задачей, или значение <span class="eOperator">PvmNoParent</span>, если он не создан с помощью функции <span class="eOperator">pvm_spawn()</span>.</div>
+<div>2. Функция <span class="eOperator">int dtid = pvm_tidtohost(int tid)</span> возвращает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TID</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программы-демона</a>, выполняющейся на той <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительной машине</a>, что и задача с указанным TID. Эта подпрограмма применима для определения того, на какой машине выполняется данная задача.</div>
+<div>3. Функция</div>
+<div><span class="eOperator">int info = pvm_config(int *nhost, int *narch, struct pvmhostinfo **hostp)</span></div>
+<div>возвращает информацию о виртуальной машине, включая количество <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительных машин</a> в ней – <span class="eOperator">nhost,</span> количество различных форматов данных – <span class="eOperator">narch</span> и прочую информацию.</div>
+<div>4. Функция</div>
+<div><span class="eOperator">int info = pvm_tasks(int which, int *ntask, struct pvmtaskinfo **taskp)</span></div>
+<div>возвращает информацию о задачах PVM, выполняющихся на виртуальной машине.</div>
+<div class="eSubTitle">Функции динамического конфигурирования.</div>
+<div>1. Функции</div>
+<pre class="eListing">int info = pvm_addhosts(char **hosts, int nhost, int *infos)
+int info = pvm_delhosts(char **hosts, int nhost, int *infos)
+</pre>
+<div>добавляют к виртуальной машине или удаляют из нее hosts узлов. Аргумент <span class="eOperator">infos</span> возвращает количество успешно добавленных узлов.</div>
+<div class="eSubTitle">Функции посылки извещений.</div>
+<div>1. Функция <span class="eOperator">int info = pvm_sendsig( int tid, int signum) </span>посылает сигнал <span class="eOperator">signum</span> задаче PVM с указанным <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TID</a>.</div>
+<div>2. Функция</div>
+<div><span class="eOperator">int info = pvm_notify(int what, int msgtag, int cnt, int tids)</span></div>
+<div>запрашивает PVM об извещении вызывающей задачи о наступлении следующих событий: <span class="eOperator">PvmTaskExit</span> — сообщение о выходе из задачи; <span class="eOperator">PvmHostDelete</span> — сообщение об удалении машины (или сбое); <span class="eOperator">PvmHostAdd</span> — сообщение о добавлении машины.</div>
+<div class="eSubTitle">Схема обмена сообщениями.</div>
+<div>Посылка сообщения в PVM осуществляется по следующей схеме.</div>
+<ul class="eList"><li>Буфер передачи инициализируется вызовом функции <span class="eOperator">pvm_initsend() </span>или функции <span class="eOperator">pvm_mkbuf()</span>.</li>
+<li>Сообщение "упаковывается" в этот буфер с помощью подпрограммы <span class="eOperator">pvm_pk</span><span class="eOperator">()</span>.</li>
+<li>Подготовленное сообщение посылается соответствующему <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессу</a> вызовом функции <span class="eOperator">pvm_send()</span> или широковещательной передачей с помощью подпрограммы pvm_mcast().</li>
+</ul>
+<div>Прием сообщения выполняется по схеме:</div>
+<ul class="eList"><li>Сообщение принимается вызовом функции блокирующего или не блокирующего приема.</li>
+<li>Каждый из упакованных фрагментов распаковывается в буфер приема.</li>
+</ul>
+<div>Функции приема могут быть настроены на прием любого сообщения, любого сообщения от указанного источника, любого сообщения с указанным тегом, только сообщения с данным тегом от данного источника. Существует "пробная" функция, которая проверяет, поступило ли сообщение, но на самом деле не принимает его.</div>
+<div class="eSubTitle">"Буферные" функции.</div>
+<div>1. Функция <span class="eOperator">int bufid = pvm_initsend(int encoding)</span> очищает буфер передачи и пересоздает его для упаковки нового сообщения. Схема кодирования, используемая при упаковке, устанавливается с помощью аргумента encoding. Новый идентификатор буфера возвращается в <span class="eOperator">bufid</span>.</div>
+<div>В PVM имеется множество других "буферных" функций, которые используются редко:</div>
+<ul class="eList"><li>функция для создания нового буфера;</li>
+<li>функция, возвращающая в свободное пользование освободившийся буфер;</li>
+<li>функция, возвращающая идентификатор активного буфера передачи;</li>
+<li>функция, возвращающая идентификатор активного буфера приема.Функции упаковки данных.</li>
+</ul>
+<div>В PVM имеется большое количество функций упаковки данных, каждая из которых упаковывает массив данных определенного типа в активный буфер передачи. Аргументами для каждой из этих функций являются:</div>
+<ul class="eList"><li>указатель на первый из элементов для упаковки;</li>
+<li><span class="eOperator">nitem</span> — суммарное число элементов для упаковки из данного массива;</li>
+<li><span class="eOperator">stride</span> – "шаг" для использования во время упаковки (так <span class="eOperator">stride=1,</span> означает последовательную упаковку вектора, <span class="eOperator">stride=2</span> — упаковку через один элемент вектора и т.д.).</li>
+</ul>
+<div>Например, функция <span class="eOperator">int info = pvm_pkbyte( char*cp, int nitem, int stride) </span>обеспечивает упаковку в буфер данные типа <span class="eOperator">char</span>.</div>
+<div class="eSubTitle">Функции передачи и приема данных.</div>
+<div>1. Функция <span class="eOperator">int info = pvm_send(int tid, int msgtag)</span> помечает сообщение целочисленным идентификатором <span class="eOperator">msgtag </span>и передает его <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессу</a> с идентификатором <span class="eOperator">tid</span>.</div>
+<div>2. Функция <span class="eOperator">int info = pvm_mcast(int *tids, int ntask, int msgtag)</span> помечает сообщение целочисленным идентификатором <span class="eOperator">msgtag</span> и широковещательно передает это сообщение всем задачам, указанным в целочисленном массиве <span class="eOperator">tids</span>. Массив <span class="eOperator">tids </span>имеет длину <span class="eOperator">ntask</span>.</div>
+<div>3. Функция <span class="eOperator">int info = pvm_psend(int tid, int msgtag, void *vp, int cnt, int type)</span> упаковывает и посылает массив данных указанного типа задаче с идентификатором <span class="eOperator">tid</span>. Аргумент <span class="eOperator">type</span> может иметь любое из следующих значений:</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTable">PVM_STR</td><td class="eTable">PVM_FLOAT</td></tr>
+<tr><td class="eTable">PVM_BYTE</td><td class="eTable">PVM_CPLX</td></tr>
+<tr><td class="eTable">PVM_SHORT</td><td class="eTable">PVM_DOUBLE</td></tr>
+<tr><td class="eTable">PVM_INT</td><td class="eTable">PVM_DCPLX</td></tr>
+<tr><td class="eTable">PVM_LONG</td><td class="eTable">PVM_UINT</td></tr>
+<tr><td class="eTable">PVM_USHORT</td><td class="eTable">PVM_ULONG</td></tr>
+</tbody></table><br>
+<div>4. Функция <span class="eOperator">int bufid = pvm_recv(int tid, int msgtag)</span> реализует блокирующей прием. Функция будет находиться в состоянии ожидания до тех пор, пока от задачи с идентификатором <span class="eOperator">tid</span> не поступит сообщение с меткой <span class="eOperator">msgtag</span>. После поступления сообщения функция помещает сообщение в новый активный буфер приема. Предыдущий активный буфер приема очищается.</div>
+<div>5. Функция <span class="eOperator">int bufid = pvm_nrecv(int tid, int msgtag)</span> реализует не блокирующий прием. Если сообщение с меткой <span class="eOperator">msgtag</span> поступило от задачи с идентификатором <span class="eOperator">tid</span>, то функция <span class="eOperator">pvm_nrecv()</span> помещает это сообщение в новый активный буфер (который она создает) и возвращает идентификатор данного буфера. Предыдущий активный буфер приема очищается.</div>
+<div>6. Функция <span class="eOperator">int bufid = pvm_probe(int tid, int msgtag)</span>. Если запрашиваемое сообщение не прибыло, то функция <span class="eOperator">pvm_probe()</span> возвращает <span class="eOperator">bufid</span>, равный 0. В противном случае она возвращает <span class="eOperator">bufid</span> сообщения, но не принимает это сообщение.</div>
+<div>7. Функция <span class="eOperator">int bufid = pvm_trecv(int tid, int msgtag, struct timeval *tmout)</span> реализует приема данных с тайм-аутом. Если ожидаемое сообщение не может прибыть (из-за ошибки или сбоя), то функция <span class="eOperator">pvm_recv()</span> может заблокировать программу. Этой блокировки можно избежать путем использования вместо функции <span class="eOperator">pvm_recv()</span> функции <span class="eOperator">pvm_trecv().</span></div>
+<div>8. Функция <span class="eOperator">int info = pvm_bufinfo(int bufid, int *bytes, int *msgtag, int *tid)</span> возвращает <span class="eOperator">msgtag</span>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TID</a> источника и длину в байтах сообщения, идентифицированного с помощью <span class="eOperator">bufid</span>.</div>
+<div>9. Функция</div>
+<div><span class="eOperator">int info = pvm_precv(int tid, int msgtag, void *vp, int cnt, int type, int *rtid, int *rtag, int *rcnt)</span></div>
+<div>сочетает в себе функции блокирующего приема и распаковки буфера приема.</div>
+<div class="eSubTitle">Функции распаковки данных.</div>
+<div>Функции распаковки данных аналогичны рассмотренным выше функция упаковки данных. Каждая из функций распаковки распаковывает данные определенного типа из активного буфера приема. На уровне приложения эти функции должны соответствовать функциям упаковки по типу, числу элементов и шагу.</div>
+<div>Пример функции распаковки:</div>
+<div><span class="eOperator">int info = pvm_upkbyte(char *cp, int nitem, int stride)</span></div>
+<div class="eSubTitle">Функции динамической группировки процессов.</div>
+<div>В целом, любая задача PVM может вызвать любую из рассмотренных ниже функций. Исключение составляют функции <span class="eOperator">pvm_lvgroup(), pvm_barrier() и pvm_reduce(),</span> природа которой требует членства вызывающей задачи в указанной группе.</div>
+<div>1. Функция <span class="eOperator">int inum = pvm_joingroup(char *group)</span> создает группу с именем <span class="eOperator">group</span> и включает в нее вызывающую задачу. Функция возвращает номер экземпляра <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> (<span class="eOperator">inum</span>) в указанной группе.</div>
+<div>2. Функция <span class="eOperator">int info = pvm_lvgroup(char *group)</span>. Чтобы помочь пользователю в управлении последовательностью назначения номеров, независимо от того, происходит присоединение или отсоединение, функция <span class="eOperator">pvm_lvgroup()</span> не завершается до тех пор, пока задача не будет достоверно извещена об этом факте.</div>
+<div>3. Функция <span class="eOperator">int tid = pvm_gettid(char *group, int inum)</span> возвращает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TID</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> с указанными именем группы и номером экземпляра процесса.</div>
+<div>4. Функция <span class="eOperator">int inum = pvm_getinst(char *group, int tid) pvm_gettid()</span> позволяет двум не знающим друг друга задачам получить <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TID</a> друг друга посредством присоединения к общей группе. Функция возвращает номер задачи с TID из указанной группы.</div>
+<div>5. Функция <span class="eOperator">int size = pvm_gsize(char *group)</span> возвращает количество членов в указанной группе.</div>
+<div>6. Функция <span class="eOperator">int info = pvm_barrier(char *group, int count)</span> блокирует <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> до тех пор, пока <span class="eOperator">count</span> членов группы не вызовут <span class="eOperator">pvm_barrier</span>.</div>
+<div>7. Функция <span class="eOperator">int info = pvm_bcast(char *group, int msgtag)</span> помечает сообщение целочисленным идентификатором <span class="eOperator">msgtag</span> и широковещательно передает его всем задачам в указанной группе, за исключением "собственной" задачи.</div>
+<div>8. Функция</div>
+<pre class="eListing">int info = pvm_reduce(void (*func()), void *data, int nitem,
+int datatype, int msgtag, char *group, int root)
+</pre>
+<div>выполняет глобальную арифметическую операцию в группе, например нахождение глобальной суммы или глобального максимума. Результат редуцирующей операции помещается в root. PVM поддерживает четыре предопределенных функции, которые пользователь может передать через <span class="eOperator">func: PvmMax, PvmMin, PvmSum, PvmProduct.</span> Редуцирующая операция над входными данными выполняется поэлементно. В дополнение, пользователи могут определить свои собственные функции для глобальных операций и указать их в <span class="eOperator">func</span>.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-22/">← Оглавление</a>
         <a href="/rk6-edu/course-22/mod-34.html">‹ Предыдущий</a>

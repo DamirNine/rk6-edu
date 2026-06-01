@@ -23,7 +23,98 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-38.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Основные принципы построения УСО</a>
+</div>
+<a name="T842523107"></a>
+<div>Рассмотрим теперь две оставшиеся задачи проектирования <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">УСО</a>: разработку собственно УСО и его соединения с объектом управления.</div>
+<a name="T1418249701"></a>
+<div>Рассмотрим основные принципы построения аппаратных средств <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> при использовании различных способов взаимодействия с ведущим устройством.</div>
+<div class="eSubTitle">Синхронный обмен между УСО и ведущим устройством</div>
+<div>Организация аппаратных средств в случае использования <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синхронного метода обмена</a> представлена на рис.&nbsp;1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_08.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T1942936499"></a>
+<a name="T1832195333"></a>
+<a name="T1405772177"></a>
+<div>УСО параллельно подключаются к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шине данных</a>. Использование <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шины адреса</a> позволяет указать, с каким из них будет выполняться обмен. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Шина управления</a> также подключена ко всем УСО и состоит из двух управляющих сигналов — разрешения записи в УВВ <span class="eOperator">IOW</span> и разрешения чтения из УВВ <span class="eOperator">IOR</span>.</div>
+<div class="eSubTitle">Асинхронный обмен между УСО и ведущим устройством</div>
+<div>Организация аппаратных средств в случае использования <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">асинхронного метода обмена</a> представлена на рис.&nbsp;2.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_08.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>Так как при асинхронном обмене предполагается возможность проверки готовности ведомого устройства к обмену, к шине управления добавляется сигнал проверки готовности <span class="eOperator">READY.</span> Он может быть общим (как на приведенной схеме) и соединятся с соответствующим входом МП, либо возможен вариант, когда сигнал готовности каждого устройства анализируется индивидуально, например, путем соединения их со входами одного из регистров параллельного порта ввода-вывода и анализа значений отдельных бит в этом регистре.</div>
+<div class="eSubTitle">Обмен между УСО и ведущим устройством с использованием прерываний</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_08.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Обмен по прерываниям</a> (рис.&nbsp;3) предполагает, что УСО само инициирует обмен с помощью специального сигнала запроса прерывания. Сигналы от каждого УСО подаются на контроллер прерываний (КП), который обеспечивает передачу в МП сигнала запроса и номера устройства, запросившего обмен.</div>
+<div class="eSubTitle">Обмен между УСО и ведущим устройством с использованием прямого доступа в память</div>
+<div>Рассмотрим обычную <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> (рис.&nbsp;4):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_08.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<div>Предположим, нам нужно ввести некоторые данные из внешнего устройства (например, с датчика) через <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">УВВ</a> и поместить их в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЗУ</a>. При классической организации МПС это можно сделать, только считав данные из УВВ в МП, а затем записав их из МП в ЗУ. Если объем данных велик, МП тратит значительное время на "техническую" работу по пересылке данных. Кроме этого, пересылка через МП является медленной, так как для передачи каждого машинного слова или байта необходимо выполнение двух циклов обмена.</div>
+<a name="T1884460602"></a>
+<div>Значительно эффективней была бы прямая передача данных из УВВ в ЗУ (или обратно) без участия МП. Для этого необходимо специальное устройство, которое взяло бы на себя роль "ведущего" вместо МП в процессе такой передачи – <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">контроллер прямого доступа в память</a> (контроллер ПДП). Контроллер ПДП должен выполнять все действия МП по управлению обменом, а самому МП предоставить возможность заниматься обработкой информации.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_08.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;</div></div>
+<a name="T1018702882"></a>
+<div>На рис.&nbsp;5 представлена структурная схема <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a>, в которой внешнее устройство (через УВВ) может обмениваться с ЗУ в режиме <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">прямого доступа в память</a> под управлением контроллера ПДП. Рассмотрим принцип ее функционирования в режиме ПДП.</div>
+<ol class="eList"><li>УВВ (внешнее устройство) инициирует начало процедуры обмена с использованием ПДП, устанавливая активный сигнал на линии <span class="eOperator">DREQ</span>.</li>
+<li>Контроллер ПДП, получив сигнал от внешнего устройства, с помощью сигнала <span class="eOperator">HRQ</span> запрашивает у МП разрешение на использование системных шин.</li>
+<li>МП выдает разрешение на занятие системных шин, устанавливая сигнал <span class="eOperator">HLDA</span> в активное состояние. При этом МП "отключается" от системных шин, переводя свои соответствующие выводы в Z-состояние. Разрешение на занятие системных шин может быть выдано микропроцессором не сразу, так как он должен завершить текущий цикл обмена. Выдача разрешения задерживается также в том случае, если исполняемая команда защищена префиксом блокировки шины <span class="eOperator">LOCK</span>.</li>
+<li>Контроллер ПДП по линии <span class="eOperator">DACK</span> сообщает внешнему устройству о начале обмена. С этого момента он принимает на себя обязанности ведущего устройства, управляющего обменом.</li>
+<li>Контроллер ПДП выдает на шину адреса адрес ячейки ЗУ, с которой будет производиться обмен информацией.</li>
+<li>Контроллер ПДП формирует на шине управления управляющие сигналы <span class="eOperator">IOR</span> и <span class="eOperator">MEMW</span> (при передаче данных из ВУ в ЗУ) или <span class="eOperator">IOW</span> и <span class="eOperator">MEMR</span> (при передаче данных из ЗУ в ВУ). В этот момент происходит собственно передача данных.</li>
+<li>По окончании передачи контроллер переводит в неактивное состояние сигнал <span class="eOperator">DACK</span> , сообщая внешнему устройству об окончании обмена, и сигнал <span class="eOperator">HOLD,</span> информируя МП о завершении использования системных шин. С этого момента функции ведущего устройства снова возвращаются к МП.</li>
+</ol>
+<div>Пункты 5 и 6 составляют собственно цикл обмена в режиме ПДП. Этот цикл может быть одиночным ("одиночная передача") или повторяющимся определенное число раз ("блочная передача"). Возможен также вариант "передача по требованию", когда циклы передачи повторяются до тех пор, пока внешнее устройство удерживает активный уровень сигнала на линии <span class="eOperator">DREQ</span>.</div>
+<div class="eSubTitle">Обобщенные архитектура и интерфейс контроллера ПДП</div>
+<div>На рис.&nbsp;6 представлены обобщенные архитектура и интерфейс контроллера ПДП.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_08.mod/?n=6"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;</div></div>
+<div>Контроллер ПДП состоит из следующих основных блоков:</div>
+<ul class="eList"><li>Буфер шины данных — обеспечивает подключение к шине данных, необходимое на этапе программирования контроллера.</li>
+<li>Устройство управления — выполняет управление работой контроллера, содержит регистры, содержание которых задается на этапе программирования и определяет режим работы контроллера.</li>
+<li>Каналы ПДП. Обычно контроллер ПДП имеет несколько каналов, к каждому из которых может быть подключено ВУ по линии запроса обмена <span class="eOperator">DACK</span>. При поступлении одновременно нескольких запросов на обмен, предпочтение отдается устройству, подключенному к каналу с наивысшим приоритетом. Приоритеты каналов задаются в процессе программирования, они могут быть жесткими или гибкими (изменятся в процессе работы, например по циклической схеме — канал, обслуженный последним, получает низший приоритет).</li>
+</ul>
+<div>К устройству управления подходят:</div>
+<ul class="eList"><li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Шина адреса</a> — используется для выдачи контроллером адреса ячейки ЗУ при работе в режиме ПДП и для выбора одного из внутренних регистров контроллера при записи информации в режиме программирования.</li>
+<li>Сигналы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шины управления</a> — <span class="eOperator">MEMR,</span> <span class="eOperator">MEMW,</span> <span class="eOperator">IOR,</span> <span class="eOperator">IOW</span> — используются для формирования сигналов управления на шине управления в режиме ПДП. Сигналы <span class="eOperator">IOR,</span> <span class="eOperator">IOW</span> используются также при занесении информации в контроллер в режиме программирования.</li>
+<li>Сигналы взаимодействия с МП — <span class="eOperator">HRQ</span> и <span class="eOperator">HLDA</span>.</li>
+</ul>
+<div class="eSubTitle">Программирование контроллера ПДП</div>
+<div>Контроллер ПДП является программируемым устройством. Перед началом работы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> должно быть выполнено его программирование — путем записи данных в соответствующие регистры контроллера задается его режим работы (а также режимы работы отдельных каналов). В процессе программирования должны быть заданы следующие параметры:</div>
+<ol class="eList"><li>Режим передачи для каждого канала – одиночная, блочная, передача по требованию.</li>
+<li>Приоритет для каждого канала, схема изменения приоритетов (если они заданы не жестко).</li>
+<li>Направление передачи данных для каждого канала (ЗУ <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_08.mod/?n=1/?k=10"> УВВ или наоборот).</li>
+<li>Адрес ячейки ЗУ, с которой будет вестись обмен (для каждого канала).</li>
+</ol>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-36.html">‹ Предыдущий</a>

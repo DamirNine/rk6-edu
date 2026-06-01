@@ -23,7 +23,39 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-29.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Буферный регистр</a>
+</div>
+<a name="T266985843"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Буферные регистры</a> используются для организации запоминающих буферов, адресных защелок, портов ввода-вывода, мультиплексоров и т.п. Условное графическое обозначение и архитектура восьмиразрядного буферного регистра представлены на рис.&nbsp;1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_17_3.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Буферный регистр состоит из собственно регистра, предназначенного для хранения информации и состоящего из триггеров, выходного усилителя, имеющего выходы с тремя состояниями и устройства управления.</div>
+<div>Назначение выводов:</div>
+<ul class="eList"><li><span class="eOperator">DI7-DI0</span> — линии входных данных;</li>
+<li><span class="eOperator">DO7-DO0</span> — линии выходных данных;</li>
+<li><span class="eOperator">STB</span> — стробирующий сигнал;</li>
+<li><span class="eOperator">OE</span> — разрешение передачи данных.</li>
+</ul>
+<div>При сигнале высокого уровня на входе <span class="eOperator">STB</span> состояние входных линий <span class="eOperator">DI7-DI0</span> передается на выходные линии <span class="eOperator">DO7-DO0</span>, то есть буферный регистр работает как импульсный усилитель с единичным коэффициентом усиления. При переходе сигнала <span class="eOperator">STB</span> от высокого уровня к низкому происходит запоминание (защелкивание) информации в регистре. После этого, пока <span class="eOperator">STB</span> находится в состоянии логического нуля, буферный регистр не воспринимает информацию, поступающую на входные линии <span class="eOperator">DI7-DI0</span>, а на выходных линиях <span class="eOperator">DO7-DO0</span> продолжают находиться данные, запомненные по заднему фронту сигнала <span class="eOperator">STB.</span></div>
+<div>Сигнал <span class="eOperator">OE</span> управляет выходными буферами. При <span class="eOperator">OE</span>=1 выходы <span class="eOperator">DO7-DO0 </span>переводятся в Z-состояние, что эквивалентно "отключению" буферного регистра от следующей за ним электрической схемы.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-27.html">‹ Предыдущий</a>

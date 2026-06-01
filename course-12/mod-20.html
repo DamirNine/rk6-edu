@@ -23,7 +23,79 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-12/mod-21.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Дублинское ядро</a>
+</div>
+<a name="T1691991437"></a>
+<a name="T931664063"></a>
+<div>Hаиболее перспективным средством формирования описательных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метаданных</a> для широкого класса цифровых объектов является, по мнению многих ученых, система метаданных Дублинского ядра DC (<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Dublin Core</a>).  </div>
+<div>Система Дублинского ядра разрабатывается с 1995 г.  </div>
+<div>Набор метаданных Дублинского ядра  состоит из 15 элементов. Все элементы являются необязательными.</div>
+<div>Hиже приводится список элементов DC, взятый из книги Вильяма Армса «Электронные библиотеки».  </div>
+<ul class="eList"><li>Title (Заголовок) — название, присвоенное ресурсу создателем или издателем.</li>
+<li>Creator (Автор) — человек или организация, имеющие непосредственное отношение к созданию   содержимого ресурса (например,  авторы;  фотографы,  иллюстраторы и т.п.).  </li>
+<li>Subject (Предмет) — тема ресурса. Обычно предмет выражается в ключевых словах или фразе, описывающей предмет или содержание ресурса.  </li>
+<li>Description (Описание) — текстовое описание содержания ресурса, включая реферат в случае документов или описание содержания в случае визуального ресурса.</li>
+<li>Publisher (Издатель) — организация, ответственная за создание ресурса в его нынешней форме — например, издательство, университетский департамент или корпорация.</li>
+<li>Contributor (Участник создания материала) — человек или организация, которые не являются авторами (не обозначены в элементе «автор»), но внесли значительный интеллектуальный вклад в ресурс, но чья роль менее значима, чем   авторов (например, редактор или переводчик).</li>
+<li>Date (Дата) — дата, указывающая на создание или появление (в доступном виде) ресурса.</li>
+<li>Type (Тип) — категория ресурса (например,  учебник,  поэма, статья, справочник, технический отчет,  словарь).</li>
+<li>Format (Формат) — формат представления данных ресурса (например, doc, xml, ftp).  </li>
+<li>Identifier (Идентификатор) — набор букв или цифр, который обычно используется для уникальной идентификации ресурса. В случае сетевых ресурсов примером является <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">URL</a>.  </li>
+<li>Source (Источник) — информация о вторичном источнике, из которого был получен настоящий ресурс.</li>
+<li>Language (Язык) — язык, на котором изложено  содержание ресурса.</li>
+<li>Relation (Связь) — идентификатор вторичного ресурса и его связь с настоящим ресурсом. Этот элемент позволяет связывать между собой близкие ресурсы, а также описания ресурса, которые необходимо показать. Примеры — издание книги и глава книги.</li>
+<li>Coverage (Охват) — характеристики местонахождения и временной продолжительности ресурса.</li>
+<li>Rights (Права) — утверждение об авторских правах и управление ими; идентификатор, связанный с таким утверждением; идентификатор, связанный с сервисом, представляющим информацию об управлении правами на данный ресурс.</li>
+</ul>
+<div>Согласно рекомендации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">RFC</a> 2413, все элементы Дублинского ядра, описанные в перечне, можно разбить на три группы:</div>
+<ul class="eList"><li>элементы, относящиеся к содержанию ресурса (Content); </li>
+<li>элементы, описывающие цифровой ресурс с точки зрения интеллектуальной собственности (Intellectual Property); </li>
+<li>элементы, относящиеся к конкретному экземпляру ресурса (Instanitation). </li>
+</ul>
+<div>В нижеприведенной таблице эта группировка раскрыта более полно:</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTable">Content </td><td class="eTable">Intellectual Property</td><td class="eTable">Instantiation</td></tr>
+<tr><td class="eTable"> Title, Subject, Description, Type, Source, Relation,  Coverage</td><td class="eTable">Creator, Publisher, Contributor, Rights </td><td class="eTable">Date,  Format,  Identifier,  Language</td></tr>
+</tbody></table><br>
+<div>Примеры использования метаданных Дублинского ядра, встроенных в HTML и RDF документы  (взяты из http://xmlhack.ru/archives/2005/06/000111.html):  </div>
+<pre class="eListing">&lt;meta name="DC.subject" content = "dublin core metadata element set"&gt;
+&lt;meta name="DC.subject" content = "networked object description"&gt;
+&lt;meta name="DC.publisher" content="OCLC Online Computer Library Center Inc."
+&lt;meta name="DC.creator" content="Weibel, Stuart L., wei...@oclc.org."&gt;
+&lt;meta name="DC.creator" content="Miller, Eric J., emil...@oclc.org."&gt;
+&lt;meta name="DC.title" content="Dublin Core Element Set Reference Page"&gt;
+&lt;meta name="DC.date" content="1996-05-28"&gt;
+&lt;meta name="DC.form" scheme="IMT" content="text/html"&gt;
+&lt;meta name="DC.language" scheme="ISO 639" content="en"&gt;
+&lt;meta name="DC.identifier" scheme="URL"
+  content="http://purl.oclc.org/metadata/dublin_core"&gt;
+</pre>
+<div>Запись в формате RDF:   </div>
+<pre class="eListing">&lt;RDF:RDF&gt;
+&lt;RDF:description RDF:about= "http://hamlet.org"&gt;
+&lt;DC:creator&gt; Shakespeare &lt;/DC:creator&gt;
+&lt;DC:type&gt; play &lt;/DC:type&gt;
+&lt;/RDF:description&gt;
+&lt;/RDF:RDF&gt;
+</pre>
+<div> К 2003 г. система метаданных Дублинского ядра официально включала 15 элементов (см.  ISO 15836:2003. Information and documentation – The Dublin Core metadata element set). В дальнейшем множество элементов может быть расширено.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-12/">← Оглавление</a>
         <a href="/rk6-edu/course-12/mod-19.html">‹ Предыдущий</a>

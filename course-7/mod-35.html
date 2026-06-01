@@ -23,7 +23,49 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-7/mod-36.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Язык  Express: ограничения</a>
+</div>
+<a name="T474320637"></a>
+<a name="T3512060"></a>
+<div>Ограничения, накладываемые на экземпляры <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сущности</a>, выражаются с помощью правил (<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">rules</a>). Правила могут быть общими или локальными.</div>
+<div>Описание правила, общего для ряда сущностей, начинается со служебного слова rule, далее следуют идентификатор правила, служебное слово for, ссылки на сущности, на которые правило распространяется, и, наконец, собственно ограничения.</div>
+<a name="T100241030"></a>
+<div>Локальные правила могут описывать ключевые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибуты</a> (uniqueness rules) или выражать ограничения, накладываемые на атрибуты некоторой сущности (domain rules). Например, если ключевой атрибут сущности Z есть составной атрибут X.Y, или, другими словами, одному сочетанию значений атрибутов X и Y должен соответствовать единственный экземпляр сущности Z, то</div>
+<pre class="eListing">ENTITY Z;
+X: INTEGER;
+Y: STRING;
+UNIQUE
+X,Y;
+END_ENTITY;
+</pre>
+<div>Ограничение на атрибуты некоторой сущности выражается с помощью правила в теле этой сущности. Ограничение записывается после слова where в виде выражения, значениями которого могут быть true, false или unknown. Допустимыми значениями атрибута будут только те, для которых выражение принимает значение true. Например, можно записать, что длина вектора vect = (x,y,z) должна быть равна единице, в виде правила <span class="eOperator">cons</span>:</div>
+<pre class="eListing">ENTITY vect;
+x,y,z: REAL;
+WHERE
+cons: x**2 + y**2 + z**2 = 1.0;
+END_ENTITY;
+</pre>
+<div>Ограничение where можно использовать в определяемых типах, например:</div>
+<pre class="eListing">TYPE size = REAL;
+WHERE SELF &lt; 12.0;
+END_TYPE;
+</pre>
+<div>Здесь служебное слово <span class="eOperator">SELF</span> заменяет идентификатор определяемого типа, т.е. в данном примере значения size должны быть меньше 12.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">ENTITY date;
+day: INTEGER; month: months; 
+year: INTEGER; 
+WHERE 
+days_ok: {1 &lt;= day &lt;= 31}; 
+year_ok: year&gt;0; 
+date_ok: valid_date(SELF); 
+END_ENTITY; 
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-7/">← Оглавление</a>
         <a href="/rk6-edu/course-7/mod-34.html">‹ Предыдущий</a>

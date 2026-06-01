@@ -23,7 +23,116 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-39.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сортировка слиянием</a>
+</div>
+<br>
+<a name="T1356058257"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сортировка</a> слиянием построена на принципе "разделяй-и-властвуй", однако реализует его несколько по-другому, нежели quickSort. А именно, вместо разделения по опорному элементу <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a> просто делится пополам.</div>
+<br>
+<pre class="eListing">// a - сортируемый массив, его левая граница lb, правая граница ub
+template&lt;class T&gt;
+void mergeSort(T a[], long lb, long ub) { 
+  long split;                   // индекс, по которому делим массив
+  if (lb &lt; ub) {                // если есть более 1 элемента
+    split = (lb + ub)/2;
+    mergeSort(a, lb, split);       // сортировать левую половину 
+    mergeSort(a, split+1, last);// сортировать правую половину 
+    merge(a, lb, split, ub);    // слить результаты в общий массив
+  }
+}
+</pre>
+<br>
+<div>Функция merge на месте двух упорядоченных массивов a[lb]...a[split] и a[split+1]...a[ub] создает единый упорядоченный массив a[lb]...a[ub].</div>
+<br>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div><span style="font-weight:bold; text-decoration:underline; ">Пример работы алгоритма на массиве 3 7 8 2 4 6 1 5.</span></div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.9.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+</div>
+<br>
+<div>Рекурсивный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> обходит получившееся <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дерево</a> слияния в прямом порядке. Каждый уровень представляет собой проход сортировки слияния - операцию, полностью переписывающую массив.</div>
+<div>Обратим внимание, что деление происходит до массива из единственного элемента. Такой массив можно считать упорядоченным, а значит, задача сводится к написанию функции слияния merge.</div>
+<div>Один из способов состоит в слиянии двух упорядоченных последовательностей при помощи вспомогательного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">буфера</a>, равного по размеру общему количеству имеющихся в них элементов. Элементы последовательностей будут перемещаться в этот буфер по одному за шаг.</div>
+<br>
+<pre class="eListing">merge ( упорядоченные последовательности A, B , буфер C ) {
+пока A и B непусты {
+cравнить первые элементы A и B 
+переместить наименьший в буфер
+            }
+если в одной из последовательностей еще есть элементы
+дописать их в конец буфера, сохраняя имеющийся порядок
+}
+</pre>
+<br>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div><span style="font-weight:bold; text-decoration:underline; ">Пример работы на последовательностях 2 3 6 7 и 1 4 5 </span></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.9.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<br>
+<div>Результатом является упорядоченная последовательность, находящаяся в буфере.</div>
+</div>
+<br>
+<div>Каждая операция слияния требует n пересылок и n сравнений, где n - общее число элементов, так что время слияния: Theta(n). </div>
+<br>
+<pre class="eListing">template&lt;class T&gt;
+void merge(T a[], long lb, long split, long ub) {
+// Слияние упорядоченных частей массива в буфер temp
+// с дальнейшим переносом содержимого temp в a[lb]...a[ub]
+  // текущая позиция чтения из первой последовательности a[lb]...a[split]
+  long pos1=lb;
+  // текущая позиция чтения из второй последовательности a[split+1]...a[ub]
+  long pos2=split+1;
+  // текущая позиция записи в temp
+  long pos3=0;  
+  T *temp = new T[ub-lb+1];
+  // идет слияние, пока есть хоть один элемент в каждой последовательности
+  while (pos1 &lt;= split &amp;&amp; pos2 &lt;= ub) {
+    if (a[pos1] &lt; a[pos2])
+      temp[pos3++] = a[pos1++];
+    else
+      temp[pos3++] = a[pos2++];
+  }
+  // одна последовательность закончилась - 
+  // копировать остаток другой в конец буфера 
+  while (pos2 &lt;= ub)   // пока вторая последовательность непуста 
+    temp[pos3++] = a[pos2++];
+  while (pos1 &lt;= split)  // пока первая последовательность непуста
+    temp[pos3++] = a[pos1++];
+  // скопировать буфер temp в a[lb]...a[ub]
+  for (pos3 = 0; pos3 &lt; ub-lb+1; pos3++)
+    a[lb+pos3] = temp[pos3];
+  delete temp[ub-lb+1];
+}
+</pre>
+<br>
+<br>
+<div>Оценим быстродействие алгоритма: время работы определяется рекурсивной формулой</div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/13.9.mod/?n=1/?k=10"></div>
+<br>
+<div>Ее решение: T(n) = n log n - результат весьма неплох, учитывая отсутствие "худшего случая". Однако, несмотря на хорошее общее быстродействие, у сортировки слиянием есть и серьезный минус: она требует Theta(n) памяти.</div>
+<div>Хорошо запрограммированная внутренняя сортировка слиянием работает немного быстрее пирамидальной, но медленнее быстрой, при этом требуя много памяти под буфер. Поэтому mergeSort используют для упорядочения массивов, лишь если требуется устойчивость метода(которой нет ни у быстрой, ни у пирамидальной сортировок).</div>
+<div>Сортировка слиянием является одним из наиболее эффективных методов для односвязных списков и файлов, когда есть лишь последовательный доступ к элементам.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-37.html">‹ Предыдущий</a>

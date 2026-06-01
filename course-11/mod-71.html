@@ -23,7 +23,24 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-11/mod-72.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Порты TCP и UDP</a>
+</div>
+<a name="T33461281"></a>
+<a name="T1246312300"></a>
+<a name="T33640058"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Порт</a> — это "виртуальный слот" в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке протоколов</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TCP</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">UDP</a>, используемый для организации подключения между двумя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">хостами</a>, а также между уровнем TCP/UDP и фактическими приложениями, работающими на хостах.</div>
+<div>Порты нумеруются целыми числами в диапазоне 0-65535, причем диапазон 0-1023 считается зарезервированным или привилегированным, а остаток (диапазон 1024-65535) — динамическим или непривилегированным .</div>
+<div>Порты можно использовать двумя основными способами:</div>
+<ul class="eList"><li>"Прослушивание" порта. Используется серверными приложениями, ожидающими подключений пользователей к одной из хорошо известных служб, например, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">HTTP</a> (TCP порт 80), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Telnet</a> (TCP порт 21), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">DNS</a> (UDP и, иногда, TCP, порт 53).</li>
+<li>Открытие динамического порта. Обе стороны TCP-подключения должны идентифицироваться IP-адресами и номерами портов. Для этого на машине клиента необходимо выбрать порт с номером не менее 1024, не используемый в настоящий момент другим каналом коммуникации, и использовать его в качестве порта отправителя в новом подключении.</li>
+</ul>
+<div>Динамические порты также могут использоваться как порты для прослушивания в некоторых приложениях, в частности, в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">FTP</a>.</div>
+<a name="T1036877558"></a>
+<div>Порты с номерами 0-1023 почти всегда — серверные. Порты в диапазоне 1024-65535 обычно — динамические (т.е. открываются динамически при подключении к серверному порту). Однако, любой порт может использоваться как серверный и любой порт может использоваться как порт для "исходящих" <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пакетов</a>.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-11/">← Оглавление</a>
         <a href="/rk6-edu/course-11/mod-70.html">‹ Предыдущий</a>

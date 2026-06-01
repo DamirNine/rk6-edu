@@ -23,7 +23,91 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-50.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Язык RDFS</a>
+</div>
+<a name="T2510463"></a>
+<a name="T1691991437"></a>
+<a name="T86391"></a>
+<a name="T1968667247"></a>
+<div>Язык <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">RDFS</a> — язык описания словарей классов и свойств Web-ресурсов, предназначен для определения, стандартизации и использования <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метаданных</a>, описывающих ресурсы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Web</a>. Так же как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML схема</a> служит для задания структуры и типов в документах XML, язык RDFS нужен для описания структуры и типов для моделей RDF.</div>
+<a name="T80980"></a>
+<div>Язык RDFS предоставляет базовую систему типов для моделей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">RDF</a> (аналогично Express в STEP). В числе типов имеются некоторые предопределенные типы, такие как <span class="eOperator">Class</span>, <span class="eOperator">subPropertyOf</span> и <span class="eOperator">subClassOf</span>, используемые всеми интегрируемыми приложениями. В RDFS вводятся понятия класса, подкласса, свойства и подсвойства, имеется возможность накладывать на них ограничения. В модели RDF используется иерархическое построение классов (сущностей) и свойств (атрибутов) предметной области, определяется, какие свойства и с какими классами могут быть использованы. Концепция RDF близка к концепции <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семантической сети</a>.</div>
+<a name="T412171630"></a>
+<div>Как и в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML</a>, в RDFS вводятся теги для задания типов и атрибутов метаданных.</div>
+<div>Множество ресурсов, родственных в том или ином смысле, является классом. Классы задаются с помощью тега<span class="eOperator"> rdfs:Class</span>, их принадлежность к некоторому надклассу описываются с помощью тега <span class="eOperator">rdfs:Resource, т.е. данный класс является ресурсом такого-то надкласса</span>. К числу классов относится <span class="eOperator">rdfs:Literal</span>, его экземплярами могут быть, например, <span class="eOperator">string</span> и <span class="eOperator">integer</span>. Экземплярами класса <span class="eOperator">rdfs:Datatype</span>, т.е. типов данных, являются подклассы класса <span class="eOperator">rdfs:Literal</span>. Принадлежность ресурса к конкретному классу задается с помощью свойства <span class="eOperator">rdf:type</span>.</div>
+<div>Класс <span class="eOperator">rdf:Property</span> служит для описания свойств ресурсов. Свойство может быть выражено литералом или быть отношением двух классов. Класс свойств <span class="eOperator">rdfs:domain</span> позволяет указать область определения свойства, т.е. классы, к которым это свойство может быть применено. Класс <span class="eOperator">rdfs:range</span> позволяет указать диапазон свойства, т.е. классы, чьи ресурсы могут появиться в качестве значений заданного свойства.</div>
+<div>Свойства <span class="eOperator">rdfs:subClassOf</span> и <span class="eOperator">rdfs:subPropertyOf</span> относятся соответственно к подклассу класса и подсвойству свойства.</div>
+<div>Например, описание класса diode как подкласса класса device со свойством material может иметь следующий вид:</div>
+<pre class="eListing"> &lt;rdfs:Class ID="diode"&gt;
+   &lt;rdfs:subClassOf rdf:resource="#device"/&gt;
+ &lt;/rdfs:Class&gt;
+ &lt;rdf:Property ID="material"&gt;
+   &lt;rdfs:domain rdf:resource="#diode"/&gt;
+   &lt;rdfs:range rdf:resource="#string"/&gt;
+ &lt;/rdf:Property&gt;
+</pre>
+<div>Свойства <span class="eOperator">rdfs:label</span> и <span class="eOperator">rdfs:comment</span> применяются для задания удобных для человека псевдонимов именам и содержимому ресурсов.</div>
+<div>В таблице 1 перечислены классы RDFS, а в таблице 2 — свойства RDFS.</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td width="50.0%" class="eTableT">Имя класса</td><td width="50.0%" class="eTableT">Пояснение</td></tr>
+<tr align="center"><td class="eTable">rdfs:Resource</td><td class="eTable">Класс-ресурс, включает "всё"</td></tr>
+<tr align="center"><td class="eTable">rdfs:Literal</td><td class="eTable">Класс литеральных значений, текстовых строк или чисел</td></tr>
+<tr align="center"><td class="eTable">rdf:XMLLiteral</td><td class="eTable">Класс XML-литералов</td></tr>
+<tr align="center"><td class="eTable">rdfs:Class</td><td class="eTable">Класс классов</td></tr>
+<tr align="center"><td class="eTable">rdf:Property</td><td class="eTable">Класс RDF-свойств</td></tr>
+<tr align="center"><td class="eTable">rdfs:Datatype</td><td class="eTable">Класс типов данных RDF</td></tr>
+<tr align="center"><td class="eTable">rdf:Statement</td><td class="eTable">Класс утверждений</td></tr>
+<tr align="center"><td class="eTable">rdf:Bag</td><td class="eTable">Класс неупорядоченных контейнеров</td></tr>
+<tr align="center"><td class="eTable">rdf:Seq</td><td class="eTable">Класс упорядоченных контейнеров</td></tr>
+<tr align="center"><td class="eTable">rdf:Alt</td><td class="eTable">Класс контейнеров-альтернатив</td></tr>
+<tr align="center"><td class="eTable">rdfs:Container</td><td class="eTable">Класс RDF-контейнеров</td></tr>
+<tr align="center"><td class="eTable">rdfs:ContainerMembership</td><td class="eTable">Класс свойств "членства" в контейнерах</td></tr>
+<tr align="center"><td class="eTable">rdf:List</td><td class="eTable">Класс RDF-списков</td></tr>
+</tbody></table><br>
+<div>Индивидами являются сущности, состоящие из единственного объекта. </div>
+<div>Описание типа rdf:type служит для связывания индивида с классом, членом которого он является. Например, в следующем предложении  Х является экземпляром класса Р:</div>
+<div>&lt;owl:Thing rdf:about="#Х"&gt; </div>
+<div>   &lt;rdf:type rdf:resource="#Р"/&gt; </div>
+<div>&lt;/owl:Thing&gt;</div>
+<div>Но то же можно выразить и таким образом:</div>
+<div>&lt;Р rdf:ID="Х" /&gt;</div>
+<div class="auto" style="text-align:right">Таблица 2&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTable">Имя свойства</td><td class="eTable">Пояснение</td><td class="eTable">Домен</td><td class="eTable">Диапазон</td></tr>
+<tr align="center"><td class="eTable">rdf:type</td><td class="eTable">Субъект является экземпляром класса</td><td class="eTable">rdfs:Resource</td><td class="eTable">rdfs:Class</td></tr>
+<tr align="center"><td class="eTable">rdfs:subClassOf</td><td class="eTable">Субъект является подклассом класса</td><td class="eTable">rdfs:Class</td><td class="eTable">rdfs:Class</td></tr>
+<tr align="center"><td class="eTable">rdfs:subPropertyOf</td><td class="eTable">Субъект является подсвойством свойства</td><td class="eTable">rdf:Property</td><td class="eTable">rdf:Property</td></tr>
+<tr align="center"><td class="eTable">rdfs:domain</td><td class="eTable">Домен свойства субъекта</td><td class="eTable">rdf:Property</td><td class="eTable">rdfs:Class</td></tr>
+<tr align="center"><td class="eTable">rdfs:range</td><td class="eTable">Диапазон свойства субъекта</td><td class="eTable">rdf:Property</td><td class="eTable">rdfs:Class</td></tr>
+<tr align="center"><td class="eTable">rdfs:label</td><td class="eTable">Человекочитаемое название субъекта</td><td class="eTable">rdfs:Resource</td><td class="eTable">rdfs:Literal</td></tr>
+<tr align="center"><td class="eTable">rdfs:comment</td><td class="eTable">Текстовое описание ресурса</td><td class="eTable">rdfs:Resource</td><td class="eTable">rdfs:Literal</td></tr>
+<tr align="center"><td class="eTable">rdfs:member</td><td class="eTable">Член ресурса субъекта</td><td class="eTable">rdfs:Resource</td><td class="eTable">rdfs:Resource</td></tr>
+<tr align="center"><td class="eTable">rdf:first</td><td class="eTable">Первый элемент списка</td><td class="eTable">rdf:List</td><td class="eTable">rdfs:Resource</td></tr>
+<tr align="center"><td class="eTable">rdf:rest</td><td class="eTable">Оставшийся за первым элементом "хвост" списка</td><td class="eTable">rdf:List</td><td class="eTable">rdf:List</td></tr>
+<tr align="center"><td class="eTable">rdfs:seeAlso</td><td class="eTable">Дополнительная информация о субъекте</td><td class="eTable">rdfs:Resource</td><td class="eTable">rdfs:Resource</td></tr>
+<tr align="center"><td class="eTable">rdfs:isDefinedBy</td><td class="eTable">Определение ресурса субъекта</td><td class="eTable">rdfs:Resource</td><td class="eTable">rdfs:Resource</td></tr>
+<tr align="center"><td class="eTable">rdf:value</td><td class="eTable">Свойство, используемое для структурированных значений</td><td class="eTable">rdfs:Resource</td><td class="eTable">rdfs:Resource</td></tr>
+<tr align="center"><td class="eTable">rdf:subject</td><td class="eTable">Субъект RDF-утверждения (см. "реификация")</td><td class="eTable">rdf:Statement</td><td class="eTable">rdfs:Resource</td></tr>
+<tr align="center"><td class="eTable">rdf:predicate</td><td class="eTable">Предикат RDF-утверждения (см. "реификация")</td><td class="eTable">rdf:Statement</td><td class="eTable">rdfs:Resource</td></tr>
+<tr align="center"><td class="eTable">rdf:object</td><td class="eTable">Объект RDF-утверждения (см. "реификация")</td><td class="eTable">rdf:Statement</td><td class="eTable">rdfs:Resource</td></tr>
+</tbody></table><br>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-48.html">‹ Предыдущий</a>

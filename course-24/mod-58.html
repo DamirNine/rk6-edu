@@ -23,7 +23,102 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-59.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Внешний класс памяти</a>
+</div>
+<a name="T1961386404"></a>
+<a name="T696383489"></a>
+<a name="T1835217675"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Внешняя переменная</a> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">переменная</a>, которая определяется извне <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a>. Она доступна всем функциям, определенным далее в файле. В отличии от <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">автоматической переменной</a>, внешняя по умолчанию имеет нулевое значение. Элементы внешнего <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a> инициализируются нулевыми значениями.</div>
+<a name="T1015173096"></a>
+<div>Преимущество внешних переменных в том, что, в отличие от автоматических переменных, к ним можно обратиться из более чем одной функции. При использовании внешних переменных программа работает быстрее, чем при передаче в функцию длинного списка <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параметров</a>. В дополнение к этому, внешние переменные обеспечивают способ разделения данных между функциями, не вызывающими друг друга.</div>
+<a name="T828724782"></a>
+<div>Тем не менее, не все переменные могут быть сделаны внешними. Для улучшения структуры программы и повышения ее читаемости лучше сделать переменную автоматической, если она используется только внутри функции или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">блока</a>. Кроме того, поскольку внешние переменные доступны всем функциям, требуется предпринимать усилия, чтобы избежать конфликтующих изменений значений этих переменных.</div>
+<div>Подобно другим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификаторам</a>, имена внешних переменных могут содержать буквы, цифры и символ подчеркивания, но не могут начинаться с цифры. Количество значащих символов в имени внешней переменной, зависит от системы.</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Некоторые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компиляторы</a> не делают различий между строчными и прописными буквами во внешних идентификаторах. Рекомендуется использовать строчные буквы.</div>
+</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">int status;            /*Внешние переменные, доступные*/
+char systname[20];     /*всем функциям, расположенным ниже*/
+
+void fillbuf(void), emptybuf(void);
+int main()
+{
+  fillbuf();
+  ...
+  emptybuf();
+  ...
+}
+char buf[1024];         /*Внешняя переменная, доступная*/
+void fillbuf(void)      /*функциям fillbuf и emptybuf*/
+{
+  ...
+}
+void emptybuf(void)
+{
+ ...
+}
+</pre>
+</div>
+<div class="eSubTitle">Множественные исходные файлы</div>
+<a name="T2119303568"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Программы на языке Си</a> часто располагаются в нескольких исходных файлах. Одним из примеров является операционная система UNIX, исходные файлы которой функционально структурированы. Существуют файлы, содержащие программы драйверов устройств, управления процессами, файловой системой и т.д. Использование нескольких исходных файлов ускоряет редактирование, компиляцию и отладку. Оно облегчает структуризацию программы и организацию коллективной работы.</div>
+<div>Для внешних переменных существует отличие между определением и объявлением.</div>
+<a name="T1291251272"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Внешнее определение</a> переменной (например, <span class="eOperator">int status;</span>) выделяет область памяти под переменную.</div>
+<a name="T1952319033"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Внешнее объявление</a> переменной (например, <span class="eOperator">external int status;</span>) памяти не выделяет, оно информирует компилятор о том, что переменная определена где-то еще. Это предотвращает выдачу сообщения об ошибке "неопределенный идентификатор" при использование переменной в файле, в котором она неопределена.</div>
+<div>Для функции объявление класса <span class="eOperator">external</span> не требуется, так как имя функция всегда определено как внешний идентификатор.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">/* Файл one.c */
+
+int status;               /*определения внешних*/
+char sysname[20];             /*переменных*/
+void fillbuf(void);
+
+main ()
+{
+    fillbuf();
+    . . .
+    if (...)
+       emptybuf();
+}
+
+/* Файл two.c */
+
+external int status;       /*объявления внешних*/
+external char sysname[20];    /*переменных*/
+char buf[1024];            /*определение внешней переменной*/
+void emptybuf(void);
+void fillbuf(void)
+{
+    . . .
+}
+void emptybuf(void)
+{
+  fillbuf();
+}
+
+</pre>
+</div>
+<div>Для создания выполнимого файла программы надо выполнить совместную компиляцию этих двух файлов, используя, например, следующую команду операционной системы UNIX:</div>
+<div>$ <span class="eOperator">cc one.c two.c</span></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-57.html">‹ Предыдущий</a>

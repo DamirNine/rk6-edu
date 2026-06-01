@@ -23,7 +23,82 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-21.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Основные типы данных</a>
+</div>
+<a name="T2006968637"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Переменные </a>– поименованные данные, которые могут изменяться в процессе выполнения программы.</div>
+<a name="T1369433176"></a>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке Си</a> все переменные должны быть объявлены явно.</div>
+<a name="T359704857"></a>
+<a name="T1233060480"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Объявление переменной</a> — это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператор</a> языка Си, который выглядит следующим образом:</div>
+<div><span class="eOperator">тип  идентификатор[=значение];</span></div>
+<a name="T74783515"></a>
+<div>Тип задается соответствующим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевым словом</a>, например,<span class="eOperator"> int </span>или <span class="eOperator">char</span>.</div>
+<a name="T1133808979"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Тип данных</a> определяет <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формат</a> представления переменной в компьютере и множество операций, которые могут выполняться над этой переменной.</div>
+<a name="T256200320"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Идентификатор</a> — в данном случае это имя переменной. В одном операторе объявления могут быть объявлено несколько переменных одного типа путем перечисления идентификаторов, отделенных друг от друга запятыми.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div><span class="eOperator">int i, y;</span></div>
+<div><span class="eOperator">double x, y;</span></div>
+</div>
+<div>Переменные при объявлении могут быть инициализированы.</div>
+<a name="T86489411"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Инициализация переменной</a> — присвоение начального значения.</div>
+<div>Для инициализации переменной необходимо при объявлении переменной определить <span class="eOperator">значение</span>.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div><span class="eOperator">int s=56;</span></div>
+</div>
+<div>На рис.&nbsp;1 приводятся основные типы данных языка Си.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/types.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Основные типы данных языка Си</div></div>
+<a name="T918537594"></a>
+<div>Размер данных определенного типа, а также <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">диапазон значений</a>, которые они могут принимать, зависят от реализации и не зафиксированы в языке Си. Это позволяет компилятору языка Си генерировать программы, выполняемые на конкретном процессоре с максимальной эффективностью. В файлах <span class="eOperator">&lt;limits.h&gt;</span> и <span class="eOperator">&lt;float.h&gt;</span> содержится информация о фактических размерах и диапазонах значений для различных компиляторов и различных процессоров.</div>
+<a name="T71364253"></a>
+<div>Данные <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">целого типа</a> могут быть определены как со знаком, так и без знака. Положительные целые числа хранятся в памяти в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">прямом коде</a>, отрицательные — в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дополнительном коде</a>.</div>
+<div>Размер данных типа <span class="eOperator">char</span> равен одному байту данного компьютера (как правило 1 байт = 8 бит).</div>
+<div>Размер данных типа <span class="eOperator">short</span> меньше или равен размеру <span class="eOperator">int</span>.</div>
+<div>Данные типа <span class="eOperator">int</span> обычно имеют размер машинного слова.</div>
+<div>Данные типа <span class="eOperator">long</span> , соответственно, имеют размер больший или равный размеру <span class="eOperator">int</span>.</div>
+<div>В общем случае, для компьютера, имеющего размер разрядной сетки, равный n, значение максимального целого числа со знаком (тип <span class="eOperator">int</span> ) равно <img align="absmiddle" src="/?frm/?doc=OP2/types.mod/?n=1/?k=10">, а наибольшее беззнаковое целое (тип<span class="eOperator"> unsigned int</span>) равно <img align="absmiddle" src="/?frm/?doc=OP2/types.mod/?n=2/?k=10">.</div>
+<a name="T1572496618"></a>
+<div>Вещественные данные хранятся в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">формате с плавающей точкой</a>. Размер данных типа <span class="eOperator">long double</span> больше или равен размеру <span class="eOperator">double</span>.</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Размер каждого типа данных на конкретном компьютере можно узнать, используя операцию <span class="eOperator">sizeof()</span>. Например, <span class="eOperator">sizeof(int)</span>.</div>
+</div>
+<div class="eSubTitle">Размещение в памяти данных целого типа </div>
+<div>В прим.&nbsp;3 показано, как хранятся данные целого типа в памяти гипотетической машины с 8-разрядным байтом и 32-разрядным машинным словом.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div><span class="eOperator">signed char a = 5, b = -5;</span></div>
+<div>Данные типа char занимают один байт – 8 разрядов:</div>
+<div>+5 0 0000101 (прямой код)</div>
+<div>-5 1 1111011 (дополнительный код)</div>
+<div><span class="eOperator">unsigned signed char a = 5;</span></div>
+<div>5 00000101</div>
+<div><span class="eOperator">signed int a = 5, b = -5;</span></div>
+<div>Данные типа int занимают одно машинное слово – 4 байта – 32 разряда:</div>
+<div>+5 0 0000000000000000000000000000101 (прямой код)</div>
+<div>-5 1 1111111111111111111111111111011 (дополнительный код)</div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-19.html">‹ Предыдущий</a>

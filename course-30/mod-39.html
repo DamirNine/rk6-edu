@@ -23,7 +23,45 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-40.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сортировка методом простого двухпутевого слияния</a>
+</div>
+<a name="T1356058257"></a>
+<div>В основе данного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метода</a> внутренней <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> лежит процедура слияния двух упорядоченных таблиц. Эти таблицы должны быть объединены таким образом, чтобы получилась одна упорядоченная таблица.</div>
+<div>Пусть имеются две таблицы А и В, упорядоченные по возрастанию <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключей</a> . Слияние заключается в поочередной пересылке элементов из таблиц А и В в зону формирования С. Порядок пересылки в зону формирования зависит от результата попарного сравнения ключей таблиц А и В.</div>
+<div>Сортировка слиянием производится на основе использования рассмотренной выше процедуры. Сущность сортировки состоит в том, что упорядочиваемая таблица разделяется на равные группы элементов. Группы упорядочиваются, а затем попарно сливаются, образуя новые группы, содержащие вдвое больше элементов.</div>
+<div>Процедура слияния двух групп должна иметь такие параметры:</div>
+<ul class="eList"><li>TAB — имя сортируемой таблицы;</li>
+<li>n — длина таблицы (количество записей);</li>
+<li>i1,i2 — начальные индексы сливаемых групп;</li>
+<li>l1,l2 — длины сливаемых групп;</li>
+<li>h — шаг слияния;</li>
+<li>PS — поле слияния.</li>
+</ul>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.7.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<br>
+<div>На первом этапе каждая группа содержит два соседних элемента исходного    <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a>. Элементы внутри групп упорядочиваются (напр., методом вставки). Затем происходит попарное слияние групп. Количество групп в списке уменьшается вдвое до тех пор, пока не будет получена одна упорядоченная группа. Если число элементов нечетное, то вводится дополнительный элемент с максимальным значением. После сортировки он отбрасывается. Если число групп, сформированных на первом этапе, нечетно, то непарная группа переписывается без слияния. Рассмотренный метод    двухпутевой сортировки слиянием весьма эффективен. Поскольку    при сортировке нужно выполнить log2(n) проходов,то необходимое суммарное число сравнений равно,примерно,n*log2(n). Одним     из недостатков данного метода является требование большого резерва памяти:</div>
+<br>
+<div>       <span class="eOperator">     S = [n/2].</span></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-38.html">‹ Предыдущий</a>

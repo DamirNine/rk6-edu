@@ -23,7 +23,62 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-14/mod-20.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Операционные усилители</a>
+</div>
+<a name="T1004999921"></a>
+<a name="T185002209"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операционный усилитель</a> (ОУ) — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">усилитель постоянного тока</a>, предназначенный для выполнения операций суммирования, дифференцирования, интегрирования, инвертирования и других действий над сигналами.</div>
+<div>Операционные усилители универсального применения должны обеспечивать значительно больший дифференциальный коэффициент усиления, чем способен дать один каскад. Поэтому обычно в схеме ОУ имеются:</div>
+<ul class="eList"><a name="T1520982578"></a>
+<li>Входной каскад, выполненный по схеме <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дифференциального усилителя</a>. Благодаря тому, что выходным сигналом дифференциального каскада является разностный ток, синфазные изменения коллекторных токов входных транзисторов взаимно компенсируются, что значительно ослабляет синфазные входные сигналы.</li>
+<a name="T1211725749"></a>
+<a name="T1090529074"></a>
+<li>Вторая ступень усиления — каскад с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">общим эмиттером</a>. Для повышения входного сопротивления этого каскада на его входе включен <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">эмиттерный повторитель</a>.</li>
+<li>Выходной каскад — двухтактный комплементарный эмиттерный повторитель.</li>
+</ul>
+<a name="T2027040037"></a>
+<div>Часто для повышения входного сопротивления на входе ОУ используют <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">полевые транзисторы</a>.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=200_Elbase/sch103.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Обозначение ОУ</div></div>
+<div>Условное обозначение ОУ на схемах представлено на рис. 1.</div>
+<div>Операционные усилители имеют очень большие значения коэффициентом усиления по напряжению и практически всегда используются с обратной связью. Коэффициент усиления схемы без обратной связи (ОС) так велик, что при наличии замкнутой петли ОС входной ток и напряжение на инвертирующем входе ОУ практически равны нулю. Поэтому в схеме рис. 2 по закону Кирхгофа</div>
+<div>U<sub class="eSub">вх</sub> = I<img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=1/?k=10">R1; U<sub class="eSub">вых</sub> = I<img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=1/?k=10">R2.</div>
+<div>Следовательно:</div>
+<div>K = <img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=2/?k=10"> = <img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=3/?k=10">,</div>
+<div>I — ток в цепи обратной связи, K — коэффициент усиления ОУ с обратной связью.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=200_Elbase/sch103.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;ОУ с обратной связью</div></div>
+<div>Если имеется несколько входов с сопротивлениями R<sub class="eSub">j</sub>, то</div>
+<div>U<sub class="eSub">вых</sub> = I<img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=1/?k=10">R2, U<sub class="eSub">вх</sub><sub class="eSub">j</sub> = I<sub class="eSub">j</sub><img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=1/?k=10">R<sub class="eSub">j</sub>, I = <img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=4/?k=10">I<sub class="eSub">j</sub> = <img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=5/?k=10">, U<sub class="eSub">вых</sub> = R2<img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=6/?k=10"> =<img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=4/?k=10">K<sub class="eSub">j</sub><img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=1/?k=10">U<sub class="eSub">вх</sub><sub class="eSub">j</sub>,</div>
+<div>т.е. ОУ становится суммирующим устройством.</div>
+<div>Если вместо сопротивления R2 включить в цепь обратной связи емкость С, то</div>
+<div><img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=7/?k=10"> = <img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=8/?k=10">, U<sub class="eSub">вх</sub> = I<img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=1/?k=10">R, U<sub class="eSub">вых</sub>= <img align="absmiddle" src="/?frm/?doc=200_Elbase/sch103.mod/?n=9/?k=10"> U<sub class="eSub">вх</sub>dt, т.е. усилитель стал интегрирующим решающим усилителем.</div>
+<div>Операционные усилители можно разделить на следующие группы:</div>
+<ul class="eList"><li>- общего применения — наиболее многочисленная группа ОУ, универсальных по использованию, со средними значениями параметров;</li>
+<li>- прецизионные, обладающие повышенной точностью установки передаточной функции, благодаря более высокому входному сопротивлению, улучшенным параметрам смещения нулевого уровня и повышенному коэффициенту усиления;</li>
+<li>- быстродействующие (широкополосные), имеющие повышенную скорость увеличения выходного напряжения и малое время установления;</li>
+<li>- маломощные, характеризуемые малой потребляемой мощностью, а также возможностью внешней регулировки тока смещения.</li>
+</ul>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-14/">← Оглавление</a>
         <a href="/rk6-edu/course-14/mod-18.html">‹ Предыдущий</a>

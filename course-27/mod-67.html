@@ -23,7 +23,96 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-27/mod-68.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Пример программной реализации игры</a>
+</div>
+<a name="T755539447"></a>
+<a name="T1367039872"></a>
+<div>При разработке данной игровой программы были применены <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">виртуальные функции</a> и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">абстрактные классы</a>.</div>
+<br>
+<pre class="eListing">#include &lt;stdlib.h&gt;
+#include &lt;iostream.h&gt;
+
+class Heap {
+  private:
+    int size;
+  public:
+    Heap(int s) : size(s) {};
+    int get(int n = 0) { size -= n; return(size); };
+};
+
+class Gambler {
+  protected:
+    Heap* heap;
+    const int limit;
+    const char* name;
+  public:
+    Gambler(Heap&amp; h, int l) : limit(l) { heap = &amp;h; };
+    virtual int move() = 0;
+    int query();
+};
+
+class Man : public Gambler {
+  public:
+    Man(Heap&amp; h, int l, char* n) : Gambler(h, l) { name = n; };
+    virtual int move();
+};
+
+class Pen : public Gambler {
+  public:
+    Pen(Heap&amp; h, int l, char* n) : Gambler(h, l) { name = n; };
+    virtual int move();
+};
+
+int Gambler::query() {
+cout &lt;&lt; "Heap = " &lt;&lt; heap-&gt;get() &lt;&lt; " " &lt;&lt; name &lt;&lt; " &gt; ";
+return(heap-&gt;get());
+}
+
+int Man::move() {
+int g;
+cin &gt;&gt; g;
+if((g &lt; 1) || (g &gt; (heap-&gt;get())) || (g &gt; limit))
+  g = 1;
+return(heap-&gt;get(g));
+}
+
+int Pen::move() {
+int rest = 0;
+int n = 0;
+int h;
+if((h = heap-&gt;get()) == 1)
+  h = heap-&gt;get(1);
+while((rest = (n*limit + n + 1)) &lt; h)
+  n++;
+if((rest &gt; h) || (rest == h))
+  rest = (n - 1)*limit + n;
+heap-&gt;get(h - rest);
+cout &lt;&lt; h - rest &lt;&lt; "\n";
+return(heap-&gt;get());
+}
+
+int main(int argc, char* argv[]) {
+int i = 0;
+Heap h(atoi(argv[1]));
+Gambler* g[] = { new Pen(h, atoi(argv[2]), "Pen"),
+                 new Man(h, atoi(argv[2]), "Man")
+               };
+while(g[i]-&gt;query() != 0) {
+  g[i]-&gt;move();
+  if(++i &gt; 1)
+    i = 0;
+}
+cout &lt;&lt; "Winner\n";
+delete g[0];
+delete g[1];
+return(0);
+}
+
+</pre>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-27/">← Оглавление</a>
         <a href="/rk6-edu/course-27/mod-66.html">‹ Предыдущий</a>

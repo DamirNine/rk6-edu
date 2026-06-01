@@ -23,7 +23,105 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-1/mod-129.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Организация в STEP информационных обменов</a>
+</div>
+<a name="T1023007636"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Обменные файлы</a> (STEP-файлы) служат для передачи данных из одной автоматизированной системы в другую.</div>
+<div>Очевидно, что обе взаимодействующие системы должны поддерживать один и тот же формат представления данных в обменном файле. В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MCAD</a> обменные файлы в основном содержат информацию о чертежах и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">геометрических моделях</a> изделий.</div>
+<a name="T2108182528"></a>
+<div>Наибольшее распространение в MCAD получили форматы IGES (стандарт <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ANSI</a>), DXF (стандарт де факто, разработанный в компании Autodesk), формат <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">STEP</a> (стандарт ISO 10303.21).</div>
+<a name="T2245196"></a>
+<div>В файле стандарта <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">IGES</a> имеется заголовочная и основная части. В основной части имеется возможность описывать точки, линии, поверхности и (начиная с версии 4.0) твердые тела.</div>
+<a name="T68146"></a>
+<div>В файле формата <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">DXF</a> имеются раздел для описания всех элементов кодируемого чертежа, блок команд, аналогичный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дисплейному файлу</a>, а также заголовок и описание типов элементов, стилей текста и т.п.</div>
+<div>В среде STEP возможны обмены через обменный файл и через базу данных SDAI.</div>
+<div>Для обмена конкретными значениями атрибутов  в STEP введен обменный файл (протокол ISO 10303-21). Файл состоит из головной и информационной секций. В головной секции (между служебными словами <span class="eOperator">HEADER</span> и <span class="eOperator">ENDSEC</span>) указываются:</div>
+<ul class="eList"><li>Entity file_name — имя и некоторые другие атрибуты данного конкретного обменного файла;</li>
+<li>Entity file_description — неформальное описание содержимого файла и требования к ПО для обработки данного файла;</li>
+<a name="T474320637"></a>
+<li>Entity file_schema — схемы, для которых далее даны экземпляры <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сущностей</a>;</li>
+<li>keyword (список типов).</li>
+</ul>
+<div>В информационной секции (между словами <span class="eOperator">DATA</span> и <span class="eOperator">ENDSEC</span>) указываются имена экземпляров сущностей и значения их атрибутов в виде следующих строк:</div>
+<pre class="eListing">#1 = POINT(0.0,0.2,0.5);
+(* экземпляр сущности типа POINT с именем 1, значения параметров 0, 0.2 и 0.5 типа REAL *)
+#2 = WIDGET(.RED.);
+(* экземпляр сущности типа WIDGET с именем 2, значение перечислимого типа RED *)
+...
+#8 = LINE(#1,#4);
+(* значениями атрибутов являются экземпляры сущностей с именами 1 и 4 *)
+</pre>
+<div>В списке параметров значения перечисляются в том же порядке, в каком они фигурировали в описании сущности.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>  Express-схема,  описывающая геометрию простой фигуры рис. 1:</div>
+<pre class="eListing">SCHEMA detail;
+ENTITY line;
+p1,p2: point;
+END_ENTITY;
+ENTITY cycle;
+p1: point;
+r: REAL;
+END_ENTITY;
+ENTITY point;
+x,y: REAL;
+END_ENTITY;
+END_SCHEMA;  
+</pre>
+<div>Обменный файл получен в следующем виде: </div>
+<pre class="eListing">ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION((),'2;1');
+FILE_NAME('model_1','2006-02-26T15:27:12',('ANONYMOUS USER'),('ANONYMOUS ORGANISATION'),
+   'EXPRESS Data Manager version 20050406',$,$);
+FILE_SCHEMA(('DETAIL'));
+ENDSEC;
+
+DATA;
+#1= POINT(0.,0.);
+#2= POINT(30.,0.);
+#3= POINT(0.,16.);
+#4= POINT(30.,16.);
+#5= POINT(18.,9.);
+#6= LINE(#1,#2);
+#7= LINE(#1,#3);
+#8= LINE(#2,#4);
+#9= LINE(#3,#4);
+#10= CYCLE(#5,5.);
+ENDSEC;
+
+END-ISO-10303-21;
+</pre>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=230_CALS/cals104.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Обменный файл используется также при связи двух систем A и B, имеющих общие данные с различными обозначениями. Пользователь должен написать перекодировщик (например, на языке Express-X), с помощью которого отождествляются идентификаторы одних и тех же сущностей, имевших разные обозначения в схемах A и B.</div>
+<a name="T1078377048"></a>
+<div>Связь через <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">интерфейс SDAI</a> отличается от способа обменных файлов тем, что здесь имеет место не просто обмен, а разделение данных многими пользователями, и SDAI фактически выступает в роли метамодели для разных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">САПР</a>. Другими словами, SDAI представляет собой интерфейс, содержащий набор функций на языках программирования, для доступа к разделяемым моделям, которые могут быть представлены в виде обменного файла.</div>
+<a name="T1301038698"></a>
+<div> Способ доступа к  STEP-файлам называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">связыванием</a>. Различают раннее и позднее связывание.</div>
+<a name="T980101722"></a>
+<div> При <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">раннем связывании</a> в язык программирования вводят описания классов (или функций), соответствующих конкретным сущностям языка Express. Очевидно, что при этом интерфейс жестко привязан к конкретным Express-схемам.</div>
+<a name="T1120724169"></a>
+<div>Более универсален способ <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">позднего связывания</a>. В язык программирования вводят функции, с помощью которых можно обращаться к любым экземплярам определенного типа. Конкретные имена сущностей,  атрибутов, их экземпляров входят в число параметров функций. </div>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ECAD</a> для обмена данными о моделях функционально-логического уровня используют языки <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">VHDL</a>, Veriilog, данные для конструкторского проектирования (списки цепей) представляют в формате EDIF (Electronic Design Interchange Format), ряд форматов разработан для передачи результатов топологического проектирования интегральных схем на генераторы изображений для изготовления фотошаблонов.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-1/">← Оглавление</a>
         <a href="/rk6-edu/course-1/mod-127.html">‹ Предыдущий</a>

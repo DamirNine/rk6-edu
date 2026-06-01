@@ -23,7 +23,49 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-32.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Операция приведения</a>
+</div>
+<a name="T1598638112"></a>
+<a name="T803028594"></a>
+<a name="T2042524345"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция приведение</a> — это операция, используемая для временного преобразования типа операнда, который является <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражением,</a> в данные другого типа. Операция приведения является <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">унарной операцией</a>:</div>
+<div><span class="eOperator">(тип)операнд</span></div>
+<a name="T74783515"></a>
+<a name="T1133808979"></a>
+<div>Тип задается <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевым словом</a>, определяющим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">тип данных</a>.</div>
+<a name="T424168142"></a>
+<div>Подобно другим операциям языка Си операция приведение <span class="eOperator">(type)</span> указана в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">таблице приоритетов</a> (<a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Приоритеты операций</a>).</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">int main ( )
+{
+  float func(float);
+  int x;
+. . .
+  func ((float)x);
+  func (x);
+. . .
+}
+float func(float y)
+{
+  float z;
+. . .
+  return z;
+}
+</pre>
+<div>При вызове <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> <span class="eOperator">func() </span>ее <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">фактический параметр</a> (переменная целого типа <span class="eOperator">x</span>) явно приводится к вещественному типу <span class="eOperator">float</span>, так как функция <span class="eOperator">func()</span> требует вещественного значения аргумента. Хорошим стилем программирования является передача функции параметров ожидаемого ею типа. Если при <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызове функции</a> не выполняется явное приведение типа фактического параметра, как во втором вызове функции <span class="eOperator">func()</span>, компилятор выполнит его сам некоторым способом (ему известно, что функция <span class="eOperator">func()</span> ожидает параметр типа <span class="eOperator">float</span> из прототипа объявления функции). Использование приведения делает текст программы более понятным, поскольку пожелания программиста указаны явно.</div>
+</div>
+<div>Другое использование операции приведения показано в прим.&nbsp;2.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">int x=15, y=4;
+float result;
+result = (float)x / (float)y;
+</pre>
+<div>Значение переменной <span class="eOperator">result</span> будет иметь дробную часть. Если бы операция приведения не использовалась, то дробная часть результата была бы потеряна.</div>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-30.html">‹ Предыдущий</a>

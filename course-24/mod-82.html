@@ -23,7 +23,33 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-83.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Особенности программирования обработки матриц</a>
+</div>
+<div>При обработке <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">матриц</a> используются вложенные циклы. Обработка матриц может производиться как по строкам, так и по столбцам.</div>
+<div>Так как матрица расположена в памяти по строкам, второй индекс меняется быстрее. Поэтому при обработке по строкам, внешний цикл индексирует строки, а внутренний столбцы.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">for(i=0;i&lt;n:i++)
+  for(j=0;j&lt;m;j++)
+    {
+    /*обработка элемента a[i][j]*/
+    }
+</pre>
+</div>
+<div>При необходимости обойти матрицу по столбцам, достаточно изменить последовательность выполнения циклов.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">for(j=0;j&lt;m:j++)
+   for(i=0;i&lt;n;i++)
+      {
+      /*обработка элемента a[i][j]*/
+      }
+</pre>
+</div>
+<div>В эприм.&nbsp;1 и прим.&nbsp;2 <span class="eOperator"> i </span>– номер элемента в строке, <span class="eOperator">j </span>— номер элемента в столбце.</div>
+<div>При  решении некоторых задач обработки матриц могут быть выделены подзадачи,  при программировании которых можно использовать приемы обработки одномерных массивов.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-81.html">‹ Предыдущий</a>

@@ -23,7 +23,343 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-54.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Комбинаторика</a>
+</div>
+<br>
+<div><span style="font-weight:bold; font-size:150.0%; ">Перебор 0-1 векторов</span></div>
+<br>
+<div>Для удобства, рассмотрим в качестве исследуемого комбинаторного объекта множество B<sup class="eSub">m</sup> наборов из m нулей и единиц. Для этого множества дадим ответы на поставленные вопросы. </div>
+<br>
+<div>Понятно, что множестве наборов из m нулей и единиц содержит ровно 2<sup class="eSub">m</sup> элементов. </div>
+<br>
+<div>Для того, чтобы создать вычислительный процесс, при котором на каждом шаге будет формироваться новый, не встречавшийся ранее, элемент рассматриваемого множества, достаточно заметить, что существует взаимнооднозначное соответствие между числами из 0…2<sup class="eSub">m</sup><img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1 и наборами 0-1 векторов. Т. е. достаточно первым взять число 0 и его двоичное представление 0, …, 0, а затем просто добавлять по единице, имитируя это на текущем наборе, пока мы не дойдем до набора из одних единиц. </div>
+<br>
+<div>Кроме рассмотренного способа перебора наборов, можно предложить другой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a>, который на каждом шаге меняет значение только одной компоненты. Этот алгоритм основан на идее рекурсии. </div>
+<div>Фиксируем нулевое значение m-й компоненты и перебираем все наборы длины m<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1 для оставшихся компонент. </div>
+<div>Меняем значение m-й компоненты с 0 на 1. Перебираем наборы длины m<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1 в обратном порядке. </div>
+<br>
+<div>Приведем таблицу, показывающую процесс перебора наборов длины 4. Столбец it показывает номер текущей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">итерации</a>, а столбец k<sub class="eSub">it</sub> — номер компоненты, которая подлежит обновлению. </div>
+<div> <img align="absmiddle" src="/?iim/?doc=PO_CAD/s.3.mod/?n=0"><img align="absmiddle" src="/?iim/?doc=PO_CAD/s.3.mod/?n=1"></div>
+<br>
+<div>Также легко можно дать ответ на вопрос о том, как перенумеровать наборы множества. Действительно, текущий набор множества — это двоичное представление некоторого числа, которое и является номером нашего набора. Таким образом, мы каждому набору можем сопоставить его численный эквивалент. </div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Коды Грея</span></div>
+<br>
+<div>Ранее мы рассматривали рекурсивный алгоритм перебора 0-1 наборов. Этот алгоритм позволяет перебирать все наборы B<sup class="eSub">m</sup> так, чтобы каждый следующий набор отличался от предыдущего только в одном разряде. Построенная с помощью этого алгоритма последовательность наборов (приводится в таблице) называется <span style="font-weight:bold; ">кодом Грея</span>. Вообще, <span style="font-weight:bold; ">n-разрядный код Грея</span> — это упорядоченная (возможно, циклическая) последовательность, состоящая из 2<sup class="eSub">n</sup> n-разрядных кодовых слов, каждое из которых отличается от соседнего в одном разряде. </div>
+<br>
+<div>Приведем еще один (на этот раз нерекуррентный) алгоритм генерации кодов Грея. Будем рассматривать бинарные коды Грея порядка n. Итак, на вход алгоритма подается единственное число n, которое указывает порядок кода Грея. По ходу выполнения алгоритма мы получим последовательность всех подмножеств n-элементного множества, в которой каждое последующее подмножество получается из предыдущего добавлением или удалением единственного элемента (наименьшим возможным изменением) — код Грея. При этом каждое подмножество будет представляться бинарной последовательностью B[1], …, B[n]. </div>
+<br>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Gray-Generation(n)</div>
+<div> 1  for i := 1 to n do B[i] := 0;</div>
+<div> 2  i := 0;</div>
+<div> 3  repeat</div>
+<div> 4      write (B[i], …, B[n]);</div>
+<div> 5      i := i + 1; p := 1; j := i;</div>
+<div> 6      while j mod 2 = 0 do</div>
+<div> 7          begin</div>
+<div> 8              j := j/2; p := p + 1;</div>
+<div> 9          end;</div>
+<div>10      if p <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=2/?k=10"> n then B[p] := 1 <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> B[p];</div>
+<div>11  until p &gt; n   </div>
+<br>
+</div>
+<br>
+<br>
+<div>Последовательность полученных подмножеств можно проиллюстрировать на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">графе</a> (n-мерном кубе), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вершины</a> которого соответствуют бинарным последовательностям длины n и две вершины которого соединены <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ребром</a>, если соответствующие последовательности отличаются лишь в одной позиции. Тогда эта последовательность соответствует гамильтонову пути в этом графе, т. е. пути, содержащему каждую вершину графа только один раз. </div>
+<div> <img align="absmiddle" src="/?iim/?doc=PO_CAD/s.3.mod/?n=2"></div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Перебор элементов прямого произведения множеств</span></div>
+<br>
+<div>Если мы рассматриваем два каких-либо множества A и B, то будем называть их прямым (декартовым) произведением (A×B) множеств A и B, множество всевозможных упорядоченных пар (i, j), где i <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=4/?k=10"> A, j <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=4/?k=10"> B. Мощность же множества, получившегося при декартовом произведении множеств, будет равна произведению мощностей этих множеств. </div>
+<br>
+<div>Более того, мы можем определить прямое произведение любого конечного числа множеств. Например, если рассматривать экземпляры только одного множества, состоящего из двух элементов 0 и 1, то прямое произведение m таких экземпляров будет представлять собой ранее расcмотренное множество B<sup class="eSub">m</sup>. </div>
+<br>
+<div>Итак, рассмотрим прямое произведение k множеств: M<sub class="eSub">1</sub>×M<sub class="eSub">2</sub>×…×M<sub class="eSub">k</sub>. Очевидно, что </div>
+<div>|M<sub class="eSub">1</sub>×M<sub class="eSub">2</sub>×…×M<sub class="eSub">k</sub>| = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=5/?k=10"> m<sub class="eSub">i</sub>, </div>
+<br>
+<div>где m<sub class="eSub">i</sub> = |M<sub class="eSub">i</sub>| — количество элементов множества M<sub class="eSub">i.</sub> </div>
+<br>
+<div>Пусть множество M<sub class="eSub">i</sub> состоит из целых чисел от 0 до m<sub class="eSub">i</sub><img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1, i <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=4/?k=10"> 1:k. Тогда каждый элемент прямого произведения M<sub class="eSub">1</sub>×M<sub class="eSub">2</sub>×…×M<sub class="eSub">k</sub> можно представить как последовательность неотрицательных чисел r<sub class="eSub">1</sub>, r<sub class="eSub">2</sub>, …, r<sub class="eSub">k</sub>, где 0 <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=6/?k=10"> r<sub class="eSub">i</sub> &lt; m<sub class="eSub">i</sub>. </div>
+<br>
+<div>Также мы можем ввести систему счисления с основанием, которое для разных разрядов может быть различным. Примерами системы счисления с переменным основанием являются измерение времени, недесятичные меры для расстояний и весов, размещение в памяти многомерных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массивов</a>. Тогда представим формулу для перехода от элемента прямого произведения к его номеру, как: </div>
+<div><span style="font-weight:bold; ">num(r<sub class="eSub">1</sub>, r<sub class="eSub">2</sub>, …, r<sub class="eSub">k</sub>) = ∑<sub class="eSub">i=1:k</sub> r<sub class="eSub">i</sub> × ∏<sub class="eSub">j=1:i−1</sub> m<sub class="eSub">j</sub>. </span></div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Перестановки</span></div>
+<br>
+<a name="T1851536349"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Перестановка</a> n-элементного множества X — это взаимно однозначная функция f: X<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=7/?k=10">X. Если для простоты принять X = {1, …, n}, то перестановкой можно назвать упорядоченный набор из n различных чисел, лежащих в промежутке от 1 до n (далее будет рассматриваться именно этот случай). </div>
+<br>
+<div>Обозначим множество всех перестановок множества X через S<sub class="eSub">n</sub>. Понятно, что |S<sub class="eSub">n</sub>| = n!, т. к. на первое место набора можно поставить любое число из n возможных, на второе — любое из n<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1 оставшихся и т. д. до последней позиции, в которую мы помещаем последний оставшийся элемент: в результате, мы получим произведение, которое и будет являться <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">факториалом</a> n. </div>
+<br>
+<div>Рассмотрим множество M<sub class="eSub">i</sub> из предыдущей части. Пусть каждое M<sub class="eSub">i</sub> будет представлять собой множество чисел от 0 до i<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1. Обозначим через T<sub class="eSub">n</sub> произведение n таких множеств. Тогда если будет существовать взаимнооднозначное соответствие между S<sub class="eSub">n</sub> и T<sub class="eSub">n</sub>, то мы сможем, в частности, перенумеровать все перестановки S<sub class="eSub">n</sub>. Предъявим механизм перехода от перестановки r<sub class="eSub">1</sub>, …, r<sub class="eSub">n</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=4/?k=10"> Sn к элементу t<sub class="eSub">1</sub>, …, t<sub class="eSub">n</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=4/?k=10"> Tn. Для этого для любого i <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=4/?k=10"> 1:n найдем номер позиции s значения i в перестановке (r<sub class="eSub">s</sub> = i) и примем в качестве ti количество элементов меньших i среди r<sub class="eSub">1</sub>, …, r<sub class="eSub">s−1</sub>. А при обратном переходе от элемента к перестановке, можно использовать то, что место любого элемента i (начиная с самого большого) на единицу больше, чем число элементов, предшествующих i, а само это число равно сумме t<sub class="eSub">i</sub> и числа элементов, бОльших i. </div>
+<br>
+<div>Кроме того, каждую перестановку f <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=4/?k=10"> S<sub class="eSub">n</sub> можно представить с помощью ориентированного графа с множеством вершин X = {1, …, n}, в котором ребро идет от x к у, когда f(x) = y. Легко можно показать, что такой граф состоит из некоторого числа элементарных циклов с различными множествами вершин, которые в сумме дают множество X. Т. е. каждую перестановку мы можем разложить на циклы. Например, рассмотрим перестановку f(1234567) = 7514236 и разобьем ее на циклы: </div>
+<div><img align="absmiddle" src="/?iim/?doc=PO_CAD/s.3.mod/?n=3"> </div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Генерирование перестановок</span></div>
+<br>
+<div>Введем некоторые обозначения для записи алгоритмов. Элементы перестановки будем запоминать в виде элементов массива P[1], …, P[n]. Обмен значениями переменных будем обозначать через P[i] :=: P[j]. Напомним, что мы рассматриваем только перестановки, заданные на множестве X = {1, …, n}. </div>
+<br>
+<div>На множестве S<sub class="eSub">n</sub> зададим <span style="font-weight:bold; ">лексикографический порядок</span>: </div>
+<div>(x1, …, xn) &lt; (y1, …, yn) <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=8/?k=10"> существует k <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=9/?k=10"> 1, такое что x<sub class="eSub">k</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=6/?k=10"> y<sub class="eSub">k</sub> и x<sub class="eSub">l</sub> = y<sub class="eSub">l</sub> для каждого l &lt; k. </div>
+<br>
+<div>Аналогично задается <span style="font-weight:bold; ">антилексикографический порядок</span>:</div>
+<div>(x<sub class="eSub">1</sub>, …, x<sub class="eSub">n</sub>) &lt; (y<sub class="eSub">1</sub>, …, y<sub class="eSub">n</sub>) <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=8/?k=10"> существует k <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=6/?k=10"> n, такое что x<sub class="eSub">k</sub> &gt; y<sub class="eSub">k</sub> и x<sub class="eSub">l</sub> = y<sub class="eSub">l </sub>для каждого l &gt; k. </div>
+<br>
+<div>Теперь представим алгоритм генерации всех перестановок в антилексикографическом порядке. Заметим, что этот алгоритм является рекурсивным. </div>
+<br>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div> 1  procedure REVERSE(m); </div>
+<div> 2  begin i := 1; j := m;</div>
+<div> 3      while i &lt; j do</div>
+<div> 4          begin P[i] :=: P[j]; i := i + 1; j := j - 1;</div>
+<div> 5          end</div>
+<div> 6  end</div>
+<div> 7  procedure ANTYLEX(m);</div>
+<div> 8  begin</div>
+<div> 9      if  m = 1 then</div>
+<div>10          write(P[1], …, P[n])</div>
+<div>11      else </div>
+<div>12          for i := 1 to m do</div>
+<div>13              begin ANTYLEX(m <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> 1);</div>
+<div>14                  if i &lt; m m then</div>
+<div>15                      begin P[i] :=: P[m]; REVERSE(m <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> 1)</div>
+<div>16                      end</div>
+<div>17              end</div>
+<div>18  end;</div>
+<div>19  begin</div>
+<div>20      for i := 1 to n do P[i] :=: i;</div>
+<div>21      ANTYLEX(n)</div>
+<div>22  end</div>
+</div>
+<br>
+<div>Среднее число <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">транспозиций</a>, приходящихся на каждую перестановку, приблизительно равно 1.543, т. е. для порождения n! перестановок используется приблизительно 3.077n! сравнений. </div>
+<br>
+<div>Можно предложить более быстрый алгоритм, в котором каждая следующая перестановка образуется из предыдущей с помощью только одной транспозиции. Приведем алгоритм генерации перестановок за минимальное число транспозиций: </div>
+<br>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div> 1  procedure B(m, i);</div>
+<div> 2  begin</div>
+<div> 3      if (m mod 2 = 0) and (m &gt; 2) then</div>
+<div> 4          if i &lt; m <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> 1 then B := i</div>
+<div> 5          else B := m <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> 2</div>
+<div> 6      else B := m <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> 1</div>
+<div> 7  end;</div>
+<br>
+<div> 8  procedure PERM(m);</div>
+<div> 9  begin</div>
+<div>10      if m = 1 then</div>
+<div>11          write(P[1], …, P[n])</div>
+<div>12      else</div>
+<div>13          for i := 1 to m do</div>
+<div>14              begin PERM(m <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> 1);</div>
+<div>15                  if i &lt; m then P[B(m, i)] :=: P[m]</div>
+<div>16              end</div>
+<div>17  end;</div>
+<br>
+<div>18  begin</div>
+<div>19      for i := 1 to n do P[i] :=: i;</div>
+<div>20      PERM(n)</div>
+<div>21  end</div>
+</div>
+<br>
+<div>Однако, существует еще более быстрый алгоритм генерирования перестановок, он строит последовательность перестановок, в которой каждая следующая образуется из предыдущей с помощью однократной транспозиции соседних элементов. Обозначим через PR[i] булеву переменную, содержащую информацию о том, переносится ли элемент i вперед (PR[i] = true) или назад. Переменнная C[i] будет показывать, какую из возможных n<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">i+1 позиций элемент i занимает относительно элементов i+1, …, n на своем пути вперед и назад. Вот его код: </div>
+<br>
+<div class="auto">Пример 4</div>
+<div class="eExample"><div> 1  begin</div>
+<div> 2    for i := 1 to n do</div>
+<div> 3        begin P[i] := i; C[i] := 1; PR[i] := true; </div>
+<div> 4        end;</div>
+<div> 5    C[n] := 0;</div>
+<div> 6    write(P[1], …, P[n]);</div>
+<div> 7    i := 1;</div>
+<div> 8    while i &lt; n do</div>
+<div> 9        begin i := 1; x := 0;</div>
+<div>10            while C[i] = n <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> i + 1 do</div>
+<div>11                begin PR[i] := not PR[i]; C[i] := 1;</div>
+<div>12                    if PR[i] then x := x + 1;</div>
+<div>13                    i := i + 1;</div>
+<div>14                end;</div>
+<div>15            if i &lt; n then</div>
+<div>16                begin</div>
+<div>17                    if PR[i] then k := C[i] + x;</div>
+<div>18                    else k := n <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> i + 1 <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> C[i] + x;</div>
+<div>19                    P[k] :=: P[k + 1];</div>
+<div>20                    write(P[1], …, P[n]);</div>
+<div>21                    C[i] := C[i] + 1</div>
+<div>22                end</div>
+<div>23      end</div>
+<div>24  end</div>
+</div>
+<br>
+<div>Последовательность перестановок, полученная с помощью данного алгоритма имеет интересную <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">интерпретацию</a>. Так, если рассмотреть граф, вешины которого соответствуют всем перестановкам и в котором две вершины, соответствующие перестановкам f и g, соединены ребром, если g образуется из f однократной транспозицией соседних элементов, то полученная последовательность является гамильтоновым путем в этом графе. На рисунке изображен граф последовательности для n = 3, 4. </div>
+<div> <img align="absmiddle" src="/?iim/?doc=PO_CAD/s.3.mod/?n=4"></div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Задача о минимуме скалярного произведения</span></div>
+<br>
+<div>Перстановки часто встречаются в самых различных областях математики и используются в разных задачах. Например, можно рассмотреть неалгебраическое использование перестановки в следующей экстремальной задаче: даны 2m чисел x<sub class="eSub">1</sub>, …, x<sub class="eSub">m</sub> и y<sub class="eSub">1</sub>, …, y<sub class="eSub">m</sub>, нужно найти такое разбиение чисел на пары (x<sub class="eSub">i</sub>, y<sub class="eSub">j</sub>), при котором значение суммы, составленной из произведений чисел каждой пары, будет наименьшим. </div>
+<br>
+<div>Несложно показать, что решение данной задачи достигается при сопоставлении возрастающей последовательности x<sub class="eSub">i</sub> и убывающей последовательности y<sub class="eSub">i</sub>, т. е. последовательностей, упорядоченных в противоположном порядке. </div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Размещения и сочетания</span></div>
+<br>
+<a name="T1473818478"></a>
+<div><span style="font-weight:bold; ">Размещение</span> из n элементов по m — это упорядоченный (здесь нам важен порядок) набор из m различных чисел, лежащих в промежутке от 1 до n (т. е. <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=4/?k=10"> X). Другими словами <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">размещение</a> — это множество с повторениями. Обозначим число его элементов через A<sub class="eSub">n,m</sub>. </div>
+<br>
+<div>Для того, чтобы вычислить значение A<sub class="eSub">n,m</sub>, нужно следовать тем же рассуждениям, что и в случае с перестановками. Тогда получим следующий результат: </div>
+<div>A<sub class="eSub">n,m</sub> =<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=10/?k=10"> </div>
+<br>
+<div>Перебор и нумерация размещений в целом схожи с соответствующими действиями с перестановками. Рассмотрение этих вопросов предлагается читателю в качестве полезного упражнения. </div>
+<br>
+<div><span style="font-weight:bold; ">Сочетание</span> из n элементов по m — это неупорядоченный набор (множество) из m различных чисел, принадлежащих множеству X. Обозначим число элементов множества сочетаний через C<sub class="eSub">n,m</sub>. </div>
+<br>
+<a name="T350955073"></a>
+<div>Т. к. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сочетание</a> является неупорядоченным набором, то каждому такому набору соответствует m! размещений (т. е. упорядоченных набора тех же элементов). Тогда получаем, что </div>
+<div>C<sub class="eSub">n,m</sub> =<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=10/?k=10"></div>
+<br>
+<div>Можно привести некоторые свойства сочетаний:</div>
+<div>1.C<sub class="eSub">n,m</sub> = C<sub class="eSub">n,n−m</sub> </div>
+<div>2.C<sub class="eSub">n,m</sub> + C<sub class="eSub">n,m+1</sub> = C<sub class="eSub">n+1,m+1</sub> </div>
+<div>3.C<sub class="eSub">n,m</sub> * C<sub class="eSub">m,k</sub> = C<sub class="eSub">n,k</sub> * C<sub class="eSub">n−k,m−k</sub> </div>
+<br>
+<div>Эти свойства следуют из самих определений и проверяются непосредственно. </div>
+<br>
+<div>Теперь приведем алгоритм генерации сочетаний в лексикографическом порядке: </div>
+<br>
+<div class="auto">Пример 5</div>
+<div class="eExample"><div> 1  begin</div>
+<div> 2      for i := 1 to k do A[i] := i;</div>
+<div> 3      p := k;</div>
+<div> 4      while p <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=2/?k=10"> 1 do</div>
+<div> 5          begin write(A[1], …, A[k]);</div>
+<div> 6              if A[k] = n then p := p <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> 1 else p := k;</div>
+<div> 7              if p <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=11/?k=10"> 1 then</div>
+<div> 8                  for i := k downto p do A[i] := A[p] + i <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> p + 1</div>
+<div> 9          end</div>
+<div>10  end</div>
+</div>
+<br>
+<br>
+<div>Нумерацию сочетаний можно организовать, используя свойство 2) сочетаний, приведенное выше. Для этого с каждым сочетанием из n по m свяжем вектор из n нулей и единиц. В этом векторе будет m единиц, а числа сочетания будут задавать номера этих единиц. Тогда такому вектору можно, в свою очередь, сопоставить траекторию, в которой единицам соответствуют горизонтальный шаги, а нулям — вертикальные. Тогда формула для номера будет выгляеть, как </div>
+<div>num(b[1:n], m) = { если b[n] = 0, то num(b[1:n<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1], m); если b[n] = 1, то C<sub class="eSub">n−1,m</sub> + num(b[1:n<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1], m<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1)}, </div>
+<br>
+<div>где b[1:n] — 0-1 вектор из n элементов. </div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Бином Ньютона</span></div>
+<br>
+<div>Если в узлах положительного квадранта прямоугольной координатной решетки поместить количество путей от начала координат до этих узлов и повернуть эту решетку так, чтобы начало координат было наверху, то мы получим <span style="font-weight:bold; ">треугольник Паскаля</span>: </div>
+<div> <img align="absmiddle" src="/?iim/?doc=PO_CAD/s.3.mod/?n=5"></div>
+<br>
+<div>По этому треугольнику удобно считать число сочетаний для небольших параметров. Кроме того, с этой схемой связана формула бинома Ньютона: </div>
+<div>(a + b)<sup class="eSub">n</sup> = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=12/?k=10"> C<sub class="eSub">n,k</sub>a<sup class="eSub">k</sup>b<sup class="eSub">n−k</sup> </div>
+<br>
+<div>В этой формуле при раскрытии степени алгебраического двучлена коэффициенты при степенях совпадают с числом сочетаний. Исходя из формулы Ньютона значения Cn,m также еще называют биномиальными коэффициентами.</div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Разбиения множества</span></div>
+<br>
+<div>Разбиение n-элементного множества X на k блоков — это семейство Q = {B<sub class="eSub">1</sub>, …, B<sub class="eSub">k</sub>}, в котором B<sub class="eSub">1</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=13/?k=10"> … <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=13/?k=10"> B<sub class="eSub">k</sub> = X, B<sub class="eSub">i </sub><img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> B<sub class="eSub">j</sub> = Ø, Bi <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=15/?k=10"> Ø, для 1 <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=6/?k=10"> i &lt; j <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=6/?k=10"> k. Обозначим множество всех разбиений множества X на k блоков через Π<sub class="eSub">k</sub>(X), а через Π(X) — множество всех разбиений. </div>
+<br>
+<div>Довольно интересным является вопрос генерирования разбиений множества. Рассмотрим идею алгоритма, отвечающего на этот вопрос, описав ее в рекуррентной форме. Сначала сделаем ряд полезных замечаний. Можно показать, что разбиение Q множества {1, …, n} однозначно определяет разбиение Q<sub class="eSub">n−1</sub> множества {1, …, n<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1}, которое получается из Q после удаления элемента n (или пустого блока) из соответствующего блока. Также, если имеется разбиение W = {B<sub class="eSub">1</sub>, …, B<sub class="eSub">k</sub>} множества {1, …, n<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1}, то можно отыскать все разбиения Q множества {1, …, n}, для которых Q<sub class="eSub">n−1</sub> = W, т. е. такие разбиения: </div>
+<div>B<sub class="eSub">1</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=13/?k=10"> {n}, …, B<sub class="eSub">k</sub>,</div>
+<div>…</div>
+<div>B<sub class="eSub">1</sub>, …, B<sub class="eSub">k</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=13/?k=10"> {n},</div>
+<div>B<sub class="eSub">1</sub>, …, B<sub class="eSub">k</sub>, {n}. </div>
+<br>
+<div>Обозначим такую последовательность через E. Тогда сформулируем несложный метод генерирования рабиений: если у нас есть список L<sub class="eSub">n−1</sub> всех разбиений множества {1, …, n<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1}, то список L<sub class="eSub">n</sub> разбиений множества {1, …, n} будем создавать, заменяя каждое разбиение Q в списке L<sub class="eSub">n−1</sub> на соответствующую ему последовательность E. Проиллюстрируем построение списка L<sub class="eSub">n</sub> для n = 1, 2, 3. </div>
+<div> <img align="absmiddle" src="/?iim/?doc=PO_CAD/s.3.mod/?n=6"></div>
+<br>
+<div><span style="font-weight:bold; font-size:150.0%; ">Числа Стирлинга второго и первого рода</span></div>
+<br>
+<div><span style="font-weight:bold; ">Число Стирлинга второго рода </span>S(n, k) — это число разбиений n-элементного множества на k блоков, т. е. </div>
+<div>S(n, k) = |Π<sub class="eSub">k</sub>(X)|, </div>
+<br>
+<div>где множество X состоит из n элементов. Например, S(4, 2) = 7. </div>
+<br>
+<div>Любопытны некоторые тождества, связанные с числами Стирлинга второго рода: </div>
+<div>S(n, n) = 1, для n <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=9/?k=10"> 0, </div>
+<div>S(n, 0) = 0, для n &gt; 0, </div>
+<div>S(n, k) = S(n<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1, k<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1) + kS(n<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1, k), для 0 &lt; k &lt; n </div>
+<div>x<sup class="eSub">n</sup> = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=12/?k=10"> S(n, k)[x]<sub class="eSub">k</sub>, для n <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=9/?k=10"> 0, где [x]<sub class="eSub">k</sub> = x(x<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1)…(x<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">k+1). </div>
+<br>
+<div>Первые две формулы очевидны. Доказательство последних формул предлагается читателю в качестве несложного упражнения. </div>
+<br>
+<div><span style="font-weight:bold; ">Число Белла</span> Bn — это число всех разбиений n-элементного множества: </div>
+<div>B<sub class="eSub">n</sub> = |Π(X)|, где |X| = n. </div>
+<br>
+<div>Рассмотрим несложное рекуррентное соотношение:</div>
+<div>B<sub class="eSub">n+1</sub> = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=16/?k=10"> C<sub class="eSub">i,n</sub>B<sub class="eSub">i</sub> </div>
+<br>
+<div>Для доказательства достаточно заметить, что множество всех разбиений множества X = {1, …, n+1} можно разделить на различные классы в зависимости от блока B, который содержит элемент n+1, или в зависимости от множества X \ B. Далее для каждого множества X \ B из {1, …, n} имеется |Π(X \ B)| = B<sub class="eSub">|X\B|</sub> разбиений множества X, которое содержит B в качестве блока. Группируя классы в зависимости от мощности множества X \ B, приходим к требуемому. </div>
+<br>
+<div><span style="font-weight:bold; ">Числа Стирлинга первого рода </span>s(n, k) — это коэффициенты при последовательных степенях переменной x в многочлене [x]<sub class="eSub">k</sub>: </div>
+<div>[x]<sub class="eSub">n</sub> = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=12/?k=10"> s(n, k)x<sup class="eSub">k</sup>. </div>
+<br>
+<div>Для них определяются аналогичные рекуррентные соотношения, что и для чисел второго рода: </div>
+<div>s(n, n) = 1, для n <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=9/?k=10"> 0, </div>
+<div>s(n, 0) = 0, для n &gt; 0, </div>
+<div>s(n, k) = s(n<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1, k<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1) + (n<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1)s(n<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1, k), для 0 &lt; k &lt; n. </div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Разбиения чисел</span></div>
+<br>
+<div>Разбиение числа (натурального) n на k слагаемых — это последовательность a1, …, ak, такая что </div>
+<div>n = a<sub class="eSub">1</sub> + … + a<sub class="eSub">k</sub>, a<sub class="eSub">1</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=9/?k=10"> … <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=9/?k=10"> a<sub class="eSub">k</sub> &gt; 0. </div>
+<br>
+<div>Существует довольно простой способ представления разбиения числа — <span style="font-weight:bold; ">диаграмма Феррерса</span>. Для разбиения a<sub class="eSub">1</sub>, …, a<sub class="eSub">k</sub> она состоит из k строк, которые соответствуют слагаемым разбиения, где i-я строка состоит из a<sub class="eSub">i </sub>точек. <span style="font-weight:bold; ">Сопряженное разбиение</span> — это разбиение, получающееся при перемене ролями строк и столбцов в диаграмме Феррерса. </div>
+<div> <img align="absmiddle" src="/?iim/?doc=PO_CAD/s.3.mod/?n=7"></div>
+<br>
+<div>Заметим, что с помощью диаграммы Феррерса можно доказать много интересных свойств числа всех разбиений рассматриваемого числа. </div>
+<br>
+<div>Рассмотрим теперь несложный алгоритм генерирования всех разбиений числа. Обозначим через S[1], …, S[d] само разбиение числа, а через R[1], …, R[d] — информацию о том, сколько раз слагаемое S[i] появляется в разбиении. </div>
+<br>
+<div class="auto">Пример 6</div>
+<div class="eExample"><div> 1  begin</div>
+<div> 2      S[1] := n; R[1] := 1; d := 1;</div>
+<div> 3      write();</div>
+<div> 4      while S[1] &gt; 1 do</div>
+<div> 5          begin sum := 0;</div>
+<div> 6              if S[d] = 1 then</div>
+<div> 7                  begin sum := sum + R[d]; d := d <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> 1;</div>
+<div> 8                  end;   </div>
+<div> 9              sum := sum + S[d]; R[d] := R[d] <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> 1; l := S[d] <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=3/?k=10"> 1;</div>
+<div>10              if R[d] &gt; 0 then d := d + 1;</div>
+<div>11              S[d] := l; R[d] := sum div l;</div>
+<div>12              l := sum mod l;</div>
+<div>13              if l <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=17/?k=10"> 0 then</div>
+<div>14                  begin d := d + 1; S[d] := l; R[d] := 1</div>
+<div>15                  end;</div>
+<div>16              write();</div>
+<div>17          end</div>
+<div>18  end</div>
+</div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Производящие функции</span></div>
+<br>
+<div>Производящая функция — это функция, которая позволяет определить явный вид общего члена рассматриваемой числовой последовательности. Так, пусть имеется последовательность {a<sub class="eSub">n</sub>}, для главного члена a которой нужно найти общую формулу. Тогда введем функцию A(x) = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=18/?k=10">a<sub class="eSub">n</sub>x<sup class="eSub">n</sup>. Если, используя свойства рассматриваемой последовательности, удастся решить составленные для A(x) уравнения, то можно будет получить искомые элементы последовательности. </div>
+<br>
+<div>Один из примеров применения производящих функций относится к <span style="font-weight:bold; ">числам Фибоначчи</span>. Они являются решением рекуррентного уравнения F<sub class="eSub">n+1</sub> = F<sub class="eSub">n</sub> + F<sub class="eSub">n−1</sub>, где F<sub class="eSub">0</sub> = F<sub class="eSub">1</sub> = 1. </div>
+<br>
+<a name="T1034263903"></a>
+<div>Рассмотрим производящую функцию F(x) = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=18/?k=10">f<sub class="eSub">n</sub>x<sup class="eSub">n</sup>. Она удовлетворяет уравнению F(x) = 1 + x + <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=19/?k=10"> (F<sub class="eSub">k−2</sub> + F<sub class="eSub">k−1</sub>)x<sup class="eSub">k</sup> = … = 1 + (x + x<sup class="eSub">2</sup>)F(x). Отсюда получаем, что F(x) = (1 <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> x <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> x<sup class="eSub">2</sup>)<sup class="eSub">−1</sup>. Далее находим разложение 1 <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> x <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> x<sup class="eSub">2</sup> = (1 <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> ax)(1 <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> bx), где a = (1 + <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=20/?k=10">5) ⁄ 2, b = (1 <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=20/?k=10">5) ⁄ 2. Далее, используя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод</a> неопределенных коэффициентов, получаем F(x) = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=21/?k=10">a<sup class="eSub">k+1</sup><img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> b<sup class="eSub">k+1</sup>)x<sup class="eSub">k</sup> ⁄ (a<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">b). </div>
+<br>
+<div>Интересно, что предел отношения f<sub class="eSub">n+1</sub> ⁄ f<sub class="eSub">n</sub> равен a, т. е. «золотому сечению». Также существует связь между числами Фибоначчи и треугольником Паскаля: можно выбрать линии, пересекающие узлы треугольника, так, чтобы сумма всех чисел на одной линии соответствовала числу Фибоначчи. </div>
+<br>
+<div>Другим примером являются <span style="font-weight:bold; ">числа Каталана</span>. Они появляются в контексте следующей задачи: нужно найти число различных последовательных действий, чтобы вычислить сумму S<sub class="eSub">0</sub>, …, S<sub class="eSub">n</sub>, складывая любые два рядом стоящих числа и результат помещая на их место. Тогда если обозначить искомое число через с<sub class="eSub">n</sub>, то производящая функция будет выглядеть, как С(x) = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=22/?k=10">c<sub class="eSub">n</sub>x<sup class="eSub">n</sup>. Следуя аналогичным рассуждениям, как и в случае с числами Фибоначчи, получим, что С(x) = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=22/?k=10">C<sub class="eSub">2n</sub><sub class="eSub">,n</sub>x<sup class="eSub">n</sup> ⁄ (n+1). </div>
+<div><span style="font-weight:bold; font-size:150.0%; ">Принцип включения и исключения</span></div>
+<br>
+<div>Для общего представления приведем иллюстрацию для трех множеств A, B и C: </div>
+<div> <img align="absmiddle" src="/?iim/?doc=PO_CAD/s.3.mod/?n=8"></div>
+<div><span style="font-weight:bold; ">Теорема</span></div>
+<br>
+<div>|<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=23/?k=10">A<sub class="eSub">i</sub>| = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=24/?k=10"> |A<sub class="eSub">i</sub>| <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=25/?k=10"> |A<sub class="eSub">i</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">j</sub>| + <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=26/?k=10"> |A<sub class="eSub">i</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">j </sub><img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">k</sub>| <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> … + (<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1)<sup class="eSub">n−1</sup>|A<sub class="eSub">1</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> … <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">n</sub>|. </div>
+<br>
+<div><span style="font-weight:bold; ">Доказательство.</span> Будем доказывать теорему по индукции. База индукции очевидно верна. Тогда пусть для A<sub class="eSub">1</sub>, …, A<sub class="eSub">n−1</sub> выполняется |<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=27/?k=10"> A<sub class="eSub">i</sub>| = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=28/?k=10"> |A<sub class="eSub">i</sub>| <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=29/?k=10"> |A<sub class="eSub">i</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=13/?k=10"> A<sub class="eSub">j</sub>| + <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=30/?k=10"> |A<sub class="eSub">i</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">j</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">k</sub>| <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> … + (<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1)<sup class="eSub">n−2</sup>|A<sub class="eSub">1</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> … <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">n−1</sub>|. Если мы применим эту формулу к сумме (A<sub class="eSub">1</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=13/?k=10"> … <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=13/?k=10"> A<sub class="eSub">n−1</sub>) <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">n</sub> = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=27/?k=10">(A<sub class="eSub">i</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">n</sub>), то получим |<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=27/?k=10"> A<sub class="eSub">i</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">n</sub>| = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=28/?k=10"> |A<sub class="eSub">i</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">n</sub>| <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=29/?k=10"> |A<sub class="eSub">i</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">j </sub><img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">n</sub>| + <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=30/?k=10"> |A<sub class="eSub">i</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">j</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">k</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">n</sub>| <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> … + (<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1)<sup class="eSub">n−2</sup>|A<sub class="eSub">1</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> … <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">n−1</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">n</sub>|. Отсюда уже получаем |<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=31/?k=10"> A<sub class="eSub">i</sub>| = |(<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=27/?k=10"> A<sub class="eSub">i</sub>) <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=13/?k=10"> A<sub class="eSub">n</sub>| = |<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=27/?k=10"> A<sub class="eSub">i</sub>| + |A<sub class="eSub">n</sub>| <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> |<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=27/?k=10"> A<sub class="eSub">i</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">n</sub>| = <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=24/?k=10"> |A<sub class="eSub">i</sub>| <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=25/?k=10"> |A<sub class="eSub">i</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">j</sub>| + <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=26/?k=10"> |A<sub class="eSub">i</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">j</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">k</sub>| <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10"> … + (<img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=1/?k=10">1)<sup class="eSub">n−1</sup>|A<sub class="eSub">1</sub> <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> … <img align="absmiddle" src="/?frm/?doc=PO_CAD/s.3.mod/?n=14/?k=10"> A<sub class="eSub">n</sub>|.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-52.html">‹ Предыдущий</a>

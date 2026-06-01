@@ -23,7 +23,73 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-55.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Оператор return</a>
+</div>
+<a name="T696383489"></a>
+<a name="T538410874"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Функция</a> может передавать одно значение обратно в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызывающую функцию</a>.</div>
+<a name="T1800284410"></a>
+<a name="T998884589"></a>
+<a name="T581415280"></a>
+<div>Тип <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">возвращаемого значения</a> определяется в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">определении прототипа функции</a> и объявляется в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">объявлении прототипа функции.</a></div>
+<a name="T1138660427"></a>
+<a name="T1233060480"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Оператора возврата return</a> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператор</a>, с помощью которого функция возвращает значение в вызывающую функцию.</div>
+<a name="T798225181"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Синтаксис</a> оператора возврата <span class="eOperator">return</span>:</div>
+<br>
+<div><span class="eOperator">return [выражение</span>]<span class="eOperator">;</span></div>
+<br>
+<a name="T1248933124"></a>
+<a name="T803028594"></a>
+<div>При выходе на оператор <span class="eOperator">return</span> выполняется возврат из функции так, что управление вновь передается в вызывающую функцию на оператор, следующий за вызовом. В случае если оператор <span class="eOperator">return</span> имеет выражение, значением <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызова функции</a> является значение этого <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражения</a>. Если оператор <span class="eOperator">return</span> не имеет выражения, значение вызова функции неопределено.</div>
+<div>Функция может иметь более одного оператора <span class="eOperator">return</span>.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">int func1(void)
+{
+...
+if (n==0 || n==1)
+   return 1;
+else
+   return 0;
+}
+</pre>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">void func2(void)
+{
+...
+return ;
+}
+</pre>
+</div>
+<a name="T71364253"></a>
+<div>В прим.&nbsp;1 функция <span class="eOperator">func1()</span> возвращает значение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">целого типа</a>. В прим.&nbsp;2 функция <span class="eOperator">func2()</span> не возвращает никакого значения.</div>
+<a name="T990387577"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Функция main()</a> может использовать оператор <span class="eOperator">return </span>для возврата некоторого целого значения в родительский процесс.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
+int main ()
+{
+   int area_rect (int, int);
+   int len = 50, width = 4, area;
+
+   area = area_rect (len, width);
+   printf ("Area is %d \n", area);
+   return 0;
+}
+
+int area_rect (int l, int w)
+{
+/*площадь прямоуголника*/
+   return l*w;
+}
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-53.html">‹ Предыдущий</a>

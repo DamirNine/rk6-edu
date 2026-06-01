@@ -23,7 +23,51 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-56.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Рекурсивные функции</a>
+</div>
+<a name="T696383489"></a>
+<a name="T1369433176"></a>
+<a name="T2060402596"></a>
+<a name="T33524358"></a>
+<a name="T33298498"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Функция</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке программирования Си</a> может быть <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">рекурсивной</a>, т.е. может вызывать сама себя. Каждый раз, когда функция вызывает себя, на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стек</a> помещается новый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кадр</a>. Функция должна вызывать себя условно, например, внутри <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператора if</a>, иначе бесконечная рекурсия переполнит стек.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">void printd (int n)
+{
+  int i;
+
+  if (n &lt; 0)
+    {
+     putchar ('-');
+     n = -n;
+    }
+  if ( (i = n/10) != 0)
+     printd(i);
+  putchar(n % 10 + '0');
+}
+</pre>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/recurc.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Рекурсивный поток управления через вызовы функции printd()</div></div>
+<div>В прим.&nbsp;1 в функцию <span class="eOperator">printd() </span>передано значение 543. Эффект этой функции состоит в том, что <span class="eOperator">printd()</span> рекурсивно разбивает значение на составляющие его цифры и затем печатает эти цифры.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-54.html">‹ Предыдущий</a>

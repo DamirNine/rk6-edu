@@ -23,7 +23,71 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-48.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Оператор goto</a>
+</div>
+<a name="T494492918"></a>
+<a name="T269163517"></a>
+<a name="T1233060480"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Управляющий</a> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">оператор goto</a> вызывает безусловный переход управления на выполнение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператора</a>, перед которым указана соответствующая метка.</div>
+<div><span class="eOperator">goto метка;</span></div>
+<a name="T1034263775"></a>
+<a name="T256200320"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метка</a> — это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатор</a>, завершаемый двоеточием, который помечает оператор.</div>
+<a name="T403239904"></a>
+<a name="T696383489"></a>
+<div>Метка должна предшествовать оператору, в вырожденном случае — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пустому оператору</a>. Можно переходить только на метки, указанные внутри текущей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a>, нельзя перейти на метку, указанную в другой функции.</div>
+<div>Часто говорят, что <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структурное программирование</a> - это программирование без <span class="eOperator">goto</span>. Строго говоря, в этом операторе нет никакой необходимости. Оператор <span class="eOperator">goto</span> можно использовать только для выхода из глубоко вложенных циклов. В противном случае использование  <span class="eOperator">goto</span> делает структуру  программу запутанной и трудной для отладки. На использование оператора <span class="eOperator">goto</span> провоцирует плохо продуманный алгоритм.</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>В функции не должно быть больше одного оператора <span class="eOperator">goto</span>.</div>
+</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">main ()
+{
+. . .
+/* не рекомендуется */
+start: оператор
+оператор
+if (выр)
+goto start;
+оператор
+оператор
+...
+}
+</pre>
+<div>прим.&nbsp;1 демонстрирует плохой стиль программирования. Такое использование оператора <span class="eOperator">goto</span> делает программу плохо структурированной, а, следовательно, плохо отлаживаемой, ненадежной и неэффективной.</div>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">main ()
+{
+...
+/* рекомендуется */
+while (выр)
+  {
+   while (выр)
+     {
+      оператор
+      while (выр)
+        {
+         while (выр)
+           {
+            оператор
+            if (выр)
+               goto end;
+            оператор
+            }
+          оператор
+          }
+      }
+   }
+end:;
+}
+</pre>
+<div>прим.&nbsp;2 демонстрирует ситуацию, когда использование оператора <span class="eOperator">goto</span> оправдано.</div>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-46.html">‹ Предыдущий</a>

@@ -23,7 +23,39 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-75.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Ассоциативное ЛЗУ</a>
+</div>
+<a name="T294674863"></a>
+<a name="T1346497122"></a>
+<a name="T1932195852"></a>
+<a name="T14724256"></a>
+<a name="T1397025690"></a>
+<div>Попытка уйти от перезагрузки полного блока сделана в архитектуре <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ассоциативного ЛЗУ</a>. В данном случае из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОЗУ</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЛЗУ</a> может загружаться содержимое отдельной ячейки. Таким образом, каждая ячейка ЛЗУ содержит информацию из какой-либо ячейки ОЗУ. Но в этом случае для каждой ячейки ЛЗУ необходимо хранить адрес той ячейки основного ЗУ, данные которой она содержит. Этот адрес называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">тэгом адреса</a> (tag) и хранится он в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">таблице тэгов</a>.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_07_5.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T1017069202"></a>
+<a name="T1375744212"></a>
+<div>При поступлении от <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МП</a> запроса на чтение данных, контроллер ЛЗУ проверяет по таблице тэгов, есть ли данные, соответствующие данному адресу, в ЛЗУ. Если есть — они возвращаются МП, если нет (случай "<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кэш-промаха</a>"), данные загружаются из основной памяти, помещаются в одну из ячеек ЛЗУ и выдаются в МП. Таким образом, в ситуации "кэш-промаха" перезагружается только одна ячейка ЛЗУ. Это экономит время и является главным преимуществом данной архитектуры.</div>
+<div>Однако в такой схеме есть один серьезный недостаток. Для того чтобы определить, есть ли нужные данные в ЛЗУ, контроллер должен просмотреть всю таблицу тэгов. Длина ее равна количеству ячеек. Такой поиск может занять сравнительно много времени, сводя таким образом на нет выигрыш, полученный путем минимизации перезагрузок. Именно поэтому такая схема не получила большого распространения на практике и применяется в настоящий момент только в небольшом внутреннем кеше некоторых быстродействующих МП.</div>
+<div>Недостатком является также необходимость хранения в таблице тэгов полных адресов ячеек. За счет этого таблица тэгов занимает много места, соответственно полезный объем ЛЗУ (пригодный для хранения данных) уменьшается.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-73.html">‹ Предыдущий</a>

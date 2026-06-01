@@ -23,7 +23,33 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-113.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Структура FILE</a>
+</div>
+<a name="T645587003"></a>
+<a name="T852933925"></a>
+<a name="T696383489"></a>
+<div>При включении в программу файла <span class="eOperator">stdio.h</span> в системе <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС UNIX</a> выделяется память для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива структур</a> <span class="eOperator">FILE</span>. Стандартные библиотечные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> используют структуру <span class="eOperator">FILE</span> для хранения информации об открытом фале.</div>
+<a name="T269665333"></a>
+<a name="T1503632839"></a>
+<a name="T1248933124"></a>
+<a name="T541845194"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Структура FILE</a> — это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структура</a>, в которой хранится информация о том, как открыт файл (например, для чтения), и где позиция следующего чтения или записи. Структура <span class="eOperator">FILE</span> инициализируется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызовом функции</a> <span class="eOperator">fopen()</span>. Она используется операционной системой и доступна различным функциям для чтения-записи. Программисту не нужно обращаться прямо к полям этой структуры и даже знать, что это за поля. Программист должен лишь объявить <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на <span class="eOperator">FILE</span> перед открытием файла. Этот указатель получает значение во время открытия файла вызовом функции <span class="eOperator">fopen()</span> и должен впоследствии передаваться как параметр другим функциям, работающим с данным файлом. Программисту никогда нельзя изменять значение этого указателя. После закрытия файла соответствующая ему переменная файлового указателя на <span class="eOperator">FILE</span> может использоваться повторно.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">/*Образец определения типа  FILE*/
+typedef struct
+{
+   int           _cnt;   /*количество оставшихся в буфере символов*/
+   unsigned char *_ptr;  /*следующая позиция в буфере*/
+   unsigned char *_base; /*размещение буфера*/
+   unsigned char _flag;  /*признак ошибки чтения-записи или конца файла*/
+   unsigned char _file;  /*дескриптор файла ситемы UNIX*/
+} FILE;
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-111.html">‹ Предыдущий</a>

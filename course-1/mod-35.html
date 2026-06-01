@@ -23,7 +23,54 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-1/mod-36.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Организация вычислительного процесса в универсальных программах анализа на макроуровне</a>
+</div>
+<a name="T1467014049"></a>
+<a name="T1340631535"></a>
+<a name="T318698003"></a>
+<div>Граф-схема вычислительного процесса при <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">анализе во временной области</a> на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">макроуровне</a> представлена на рис.&nbsp;1. Алгоритм отражает решение системы алгебро-дифференциальных уравнений<br><img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=1/?k=10"><br>На каждом шаге численного интегрирования решается система нелинейных алгебраических уравнений<br><img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=2/?k=10"><br><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">методом Ньютона</a>. На каждой итерации выполняется решение системы линейных алгебраических уравнений<br><img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=3/?k=10"><br></div>
+<div>Другие используемые обозначения:</div>
+<ul class="eList"><li><img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=4/?k=10"> — начальные условия;</li>
+<li><img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=5/?k=10"> и <img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=6/?k=10"> — шаг интегрирования и его начальное значение;</li>
+<li><img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=7/?k=10"> — вектор внешних воздействий;</li>
+<li><img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=8/?k=10"> и <img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=9/?k=10"> — число ньютоновских итераций и его максимально допустимое значение;</li>
+<li><img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=10/?k=10"> — предельно допустимая погрешность решения СНАУ;</li>
+<li><img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=11/?k=10"> — погрешность, допущенная на одном шаге интегрирования;</li>
+<li><img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=12/?k=10"> — максимально допустимое значение погрешности интегрирования на одном шаге;</li>
+<li><img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=13/?k=10"> — нижняя граница коридора рациональных погрешностей интегрирования.</li>
+</ul>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/2011.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Граф-схема вычислительного процесса при анализе во временной области на макроуровне</div></div>
+<div>Из рисунка ясно, что при <img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=14/?k=10"> фиксируется несходимость ньютоновских итераций и после дробления шага происходит возврат к интегрированию при тех же начальных для данного шага условиях. При сходимости рассчитывается <img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=15/?k=10"> и в зависимости от того, выходит погрешность за пределы диапазона <img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=16/?k=10"> или нет, шаг изменяется либо сохраняет свое прежнее значение.</div>
+<div>Параметры <img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=17/?k=10"> задаются "по умолчанию" и могут настраиваться пользователем.</div>
+<a name="T950618554"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Матрицу Якоби</a> <img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=18/?k=10"> и вектор правых частей <img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=19/?k=10"> необходимо рассчитывать по программе, составляемой для каждого нового исследуемого объекта. Составление программы выполняет компилятор, входящий в состав <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">программно-методического комплекса анализа</a>. Общая структура такого комплекса представлена на рис.&nbsp;2.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/2011.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Общая структура программного комплекса анализа на макроуровне</div></div>
+<div>Исходные данные об объекте можно задавать в графическом виде (в виде <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">эквивалентной схемы</a>) или на входном языке программы анализа. Запись на таком языке обычно представляет собой список компонентов анализируемого объекта с указанием их взаимосвязей. Вводимые данные преобразуются во внутреннее представление с помощью графического и лингвистического препроцессоров, в которых предусмотрена также диагностика нарушений формальных языковых правил. Графическое представление более удобно, особенно для малоопытных пользователей. Задав описание объекта, пользователь может приступить к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многовариантному анализу</a> либо по одной из программ такого анализа, либо в интерактивном режиме, изменяя условия моделирования между вариантами с помощью лингвистического препроцессора.</div>
+<div>Наиболее сложная часть комплекса — компилятор рабочих программ, именно в нем создаются программы расчета матрицы Якоби <img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=18/?k=10"> и вектора правых частей <img align="absmiddle" src="/?frm/?doc=110_Simul/2011.mod/?n=19/?k=10">, фигурирующих в вычислительном процессе (см. рис.&nbsp;1). Собственно рабочая программа (см. рис.&nbsp;2) — это и есть программа процесса, показанного на рис.&nbsp;1. Для каждого нового моделируемого объекта составляется своя рабочая программа. При компиляции используются заранее разработанные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">математические модели</a> типовых компонентов, известные функции для отображения входных воздействий и т.п. из соответствующих библиотек.</div>
+<a name="T659151995"></a>
+<div>Постпроцессор представляет результаты анализа в табличной и графической формах, это могут быть зависимости <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">фазовых переменных</a> от времени, значения выходных параметров-функционалов и т.п.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-1/">← Оглавление</a>
         <a href="/rk6-edu/course-1/mod-34.html">‹ Предыдущий</a>

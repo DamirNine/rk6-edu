@@ -23,7 +23,62 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-17/mod-18.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Табличный метод</a>
+</div>
+<div>Стремление снять ограничения на вид компонентного уравнения привело к появлению табличного метода. Базис этого метода составляют токи всех ветвей и напряжения всех ветвей. То есть, если всего ветвей α, то число неизвестных 2α. Необходимо и соответствующее количество уравнений. С помощью М-матрицы может быть получено α уравнений и такое же количество дают компонентные уравнения, таким образом получается замкнутая система уравнений.</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Mod/tab_metod.mod/?n=1/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
+<div>Подматрицы <img align="absmiddle" src="/?frm/?doc=Mod/tab_metod.mod/?n=2/?k=10"> ненулевые только при наличии ветвей с соответствующими компонентными уравнениями, так, например, подматрица <img align="absmiddle" src="/?frm/?doc=Mod/tab_metod.mod/?n=3/?k=10"> будет ненулевой , если есть уравнение вида I<sub class="eSub">х</sub>-f(U<sub class="eSub">вд</sub>)=0</div>
+<div>Если для решения  системы уравнений (1) используется метод Ньютона, то линеаризованная ММС будет иметь вид</div>
+<div><img align="absmiddle" src="/?frm/?doc=Mod/tab_metod.mod/?n=4/?k=10">  <img align="absmiddle" src="/?frm/?doc=Mod/tab_metod.mod/?n=5/?k=10">  =<img align="absmiddle" src="/?frm/?doc=Mod/tab_metod.mod/?n=6/?k=10"></div>
+<div>Рассмотрим получение ММС, для схемы рис.1.</div>
+<div>Граф схемы, с выбранным фундаментальным деревом, представлен на рис.2.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mod/tab_metod.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mod/tab_metod.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>М-матрица для этого графа будет выглядеть следующим образом:</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTable">&nbsp;</td><td class="eTable">R</td><td class="eTable">L</td><td class="eTable">C</td></tr>
+<tr><td class="eTable">I</td><td class="eTable">1</td><td class="eTable">&nbsp;</td><td class="eTable">1</td></tr>
+<tr><td class="eTable">E</td><td class="eTable">-1</td><td class="eTable">1</td><td class="eTable">&nbsp;</td></tr>
+</tbody></table><br>
+<br>
+<div>Математическая модель для схемы, представленной на рис.1, сформированная табличным методом, рассмотрена ниже.</div>
+<div><img align="absmiddle" src="/?frm/?doc=Mod/tab_metod.mod/?n=7/?k=10">  <img align="absmiddle" src="/?frm/?doc=Mod/tab_metod.mod/?n=8/?k=10">=<img align="absmiddle" src="/?frm/?doc=Mod/tab_metod.mod/?n=9/?k=10"></div>
+<div>Здесь  f<sub class="eSub">1</sub>(t) и f<sub class="eSub">2</sub>(t) - известные функции времени.</div>
+<br>
+<div>Достоинства табличного метода:</div>
+<ol class="eList"><li>Нет ограничений на вид компонентного уравнения.</li>
+<li>Простой алгоритм формирования ММС</li>
+<br>
+</ol>
+<div>Недостатки табличного метода:</div>
+<ol class="eList"><li>Методы численного интегрирования ОДУ растворены в компонентных уравнениях реактивных ветвей.</li>
+<li>Высокая размерность математической модели</li>
+<li>Без препроцессора невозможно работать с многополюсными элементами</li>
+</ol>
+<br>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-17/">← Оглавление</a>
         <a href="/rk6-edu/course-17/mod-16.html">‹ Предыдущий</a>

@@ -23,7 +23,117 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-22/mod-26.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">MPMD-языки высокого уровня. Средства описания процессов, средства инициализации и завершения процессов</a>
+</div>
+<a name="T469209868"></a>
+<a name="T1672495953"></a>
+<div>Разработка параллельных программ является весьма трудоемким <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессом</a>, особенно для систем <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MIMD-вычислительных систем</a>. Поэтому до начала работы по разработке параллельной программы важно правильно оценить как трудоемкость этой работы, так и ожидаемый эффект.</div>
+<div>Очевидно, что без параллельного программирования не обойтись при решении тех задач, которые в принципе не могут быть решены на однопроцессорных системах (когда для решения задачи на однопроцессорной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЭВМ</a> требуется слишком много времени, либо слишком много <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оперативной памяти</a>).</div>
+<a name="T1307808466"></a>
+<div>Для небольших задач зачастую оказывается, что параллельная версия работает медленнее, чем однопроцессорная. Особенно выпукло этот эффект можно наблюдать на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительных кластерах</a>. Разработчики широко известной параллельной библиотеки прикладных программ в области линейной алгебры ScaLAPACK дают следующую рекомендацию: для обеспечения приемлемой эффективности на один <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессор</a> должны приходиться блоки матриц размером не менее примерно 1000×1000. Причина роста эффективности <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> при увеличении размера решаемой задачи линейной алгебры проста — при увеличении размерности n решаемой задачи объем вычислительной работы растет пропорционально , а объем обменов между процессорами пропорционально . Т.е. с ростом размерности решаемой задачи снижается относительная доля коммуникационных затрат.</div>
+<div>Принято выделять следующие этапы общей схемы решения задач на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорных вычислительных системах</a>:</div>
+<ol class="eList"><li>разбиение задачи на минимально независимые подзадачи (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">partitioning</a>);</li>
+<li>установление связей между подзадачами (communication);</li>
+<li>объединение подзадач с целью минимизации коммуникаций (agglomeration);</li>
+<li>распределение укрупненных подзадач по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорам</a> таким образом, чтобы обеспечить равномерную загрузку процессоров (mapping).</li>
+</ol>
+<a name="T94067847"></a>
+<a name="T1686994031"></a>
+<div>Можно выделить две следующие парадигмы высокоуровневого программирования для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессоров</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультикомпьютеров</a>.</div>
+<ol class="eList"><a name="T1300986"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">MPMD-парадигма программирования</a> (Multiple Program Multiple Date). В этом случае на разных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорах</a> вычислительной системы выполняются разные программы, обрабатывающие разные данные. MPMD-парадигма программирования адекватна <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функциональному параллелизму</a>.</li>
+<a name="T1615809268"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">SPMD-парадигма программирования</a> (Single Program Multiple Date). В соответствие с этой парадигмой на всех <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорах</a> вычислительной системы выполняются копии одной программы, обрабатывающие разные блоки данных. SPMD-парадигма программирования адекватна параллелизму по данным.</li>
+</ol>
+<a name="T1307907309"></a>
+<div>Начнем рассмотрение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языков</a> высокого уровня (ЯВУ) для программирования <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессоров</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультикомпьютеров</a> с более широко распространенной MPMD-парадигмы. Будем называть далее такие языки высокого уровня <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">MPMD-языками высокого уровня</a>.</div>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPMD-ЯВУ</a> различают следующие основные средства организации параллельных вычислений:</div>
+<ul class="eList"><li>средства описания <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>;</li>
+<li>средства инициализации и завершения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>;</li>
+<li>средства обмена данными между <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессами</a> и средства синхронизации процессов;</li>
+<a name="T1046981721"></a>
+<li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">средства конфигурирования</a> (описания топологии взаимосвязей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> и сети <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">отображение</a> процессов на процессоры).</li>
+</ul>
+<a name="T725608823"></a>
+<div>Основным понятием параллельного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPMD-ЯВУ</a> является понятие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>. Элементарный процесс состоит из одного или совокупности последовательно выполняемых операторов в виде блоков, подпрограмм, процедур, функций, задач и пр. Объем элементарного процесса определяет степень <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">гранулированности параллельной программы</a> или степень <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">зернистости параллельной программы</a>.</div>
+<a name="T1883446854"></a>
+<a name="T1796928380"></a>
+<a name="T49552293"></a>
+<div>Программа в параллельном <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPMD-ЯВУ</a> – это система <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>, выполняемых <span style="font-style:italic; ">конкурентно</span> (путем разделения времени одного или нескольких <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a>) либо <span style="font-style:italic; ">параллельно</span> (путем выделения каждому процессору индивидуального процессора). В первом случае имеет место <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">мультипрограммирование,</a> которое обычно поддерживается ядром операционной системы. Во втором случае осуществляется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">мультипроцессорная обработка</a>, если речь идет о <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессоре</a>, или <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">распределенная обработка</a> – для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультикомпьютера</a>.</div>
+<div class="eSubTitle">Средства описания процессов.</div>
+<a name="T226690883"></a>
+<div>При описании параллельных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> используют разного рода <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операторные скобки</a>:</div>
+<pre class="eListing">parbegin
+  Процесс 1;
+  Процесс 2;
+  ...
+  Процесс n
+parend
+
+cobegin
+  Процесс 1;
+  Процесс 2;
+  ...
+  Процесс n
+coend
+</pre>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке</a> OCCAM описание параллельных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> имеет вид</div>
+<pre class="eListing">PAR
+  chen1?a
+  chen2?b
+</pre>
+<div>Данная конструкция вызывает два параллельных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>:</div>
+<ul class="eList"><li>первый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> - чтение из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">канала</a> с именем <span class="eOperator">chen1</span> значения и присваивание его переменной a.</li>
+<li>второй <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> - чтение из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">канала</a> с именем <span class="eOperator">chen2</span> значения и присваивание его переменной b<img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=1/?k=10"></li>
+</ul>
+</div>
+<div>Кроме <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операторных скобок</a> используются также <span class="eOperator">специальные операторы, отмечающие начало и конец параллельного сегмента</span>, например,</div>
+<pre class="eListing">fork (a,b,c,...,x)
+  a: Процесс 1;
+  b: Процесс 2;
+  c: Процесс 3;
+  ...
+  x: Процесс n
+join (a,b,c,...,x)
+</pre>
+<div>Здесь первый оператор открывает параллельный сегмент с ветвями, помеченными метками <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=2/?k=10">, а второй оператор – закрывает этот сегмент.</div>
+<div>Важнейшим классом параллельных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> являются <span class="eOperator">параллельные циклические процессы</span>. Для описания циклических процессов используют конструкции вида</div>
+<a name="T999129296"></a>
+<div><span class="eOperator">FOR</span> <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=3/?k=10"> <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=4/?k=10"> &lt;<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">индексное множество</a>&gt; <span class="eOperator">DO</span> &lt;тип параллелизма&gt; <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=5/?k=10"></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=3/?k=10"> – параметр цикла, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=5/?k=10"> – тело цикла. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Индексное множество</a> может задаваться тройкой чисел <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=6/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=7/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=8/?k=10"> — тело цикла выполняется при всех <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=3/?k=10"> от <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=6/?k=10"> до <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=7/?k=10"> с шагом <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=8/?k=10">; набором допустимых значений параметра цикла <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=9/?k=10"> — тело цикла выполняется при всех <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=3/?k=10"> из числа <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=10/?k=10">; логическим выражением (предикатом) <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=11/?k=10"> — тело цикла выполняется при всех <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=3/?k=10">, для которых <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=12/?k=10"> (цикл типа <span class="eOperator">WHILE</span>). Параллельный циклический <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> может содержать указание на тип параллелизма, который должен быть использован при выполнении этого процесса. Например, тип параллелизма <span class="eOperator">CONC</span> – параллельные ветви, соответствующие телу цикла при различных значениях параметра цикла, должны выполняться на одном <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоре</a> конкурентно; <span class="eOperator">AUTON</span> – каждая из указанных ветвей должна выполняться асинхронно на своем процессоре; <span class="eOperator">SIM</span> – все ветви одинаковы и должны выполняться синхронно (на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">SIMD</a> машине).</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке</a> Occam конструкция</div>
+<pre class="eListing">PAR i=0 FOR n
+  buffer(i)
+</pre>
+<div>создает <img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=13/?k=10"> параллельный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> <span class="eOperator">buffer</span><img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=14/?k=10">, <span class="eOperator">buffer</span><img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=15/?k=10">,…, <span class="eOperator">buffer</span><img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=16/?k=10">, где <span class="eOperator">buffer</span> – именованный процесс<img align="absmiddle" src="/?frm/?doc=Parallel/ch020501.mod/?n=17/?k=10"></div>
+</div>
+<div class="eSubTitle">Средства инициализации и завершения процессов.</div>
+<div>Инициализация и завершение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> в параллельных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPMD-ЯВУ</a> могут быть выражены явно или косвенно.</div>
+<div><span class="eOperator">Инициализация процессов.</span> Косвенно обычно вызывают <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессы</a>, оформленные в виде блоков. Их можно рассматривать как безымянные процедуры, неявно вызываемые в том месте, где находится определение процесса.</div>
+<div>Для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>, которые описаны как подпрограммы, процедуры, функции, задачи и т.п., языковые средства инициализации близки к конструкциям вызова аналогичных программных единиц в традиционных ЯВУ (по имени процесса со списком параметров). Существуют также модифицированные варианты этих средств, когда имени вызываемого процесса предшествует ключевое слово типа <span class="eOperator">PARCALL</span>, <span class="eOperator">CREATE</span>. Отметим, что при внешнем сходстве средств инициализации параллельных процессов с вызовом именованных программных единиц в последовательных ЯВУ, выполняемые при этом действия (и необходимое время) существенно отличаются.</div>
+<div>Существуют и более развитые средства инициализации, например, управляющее выражение в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке</a> параллельный Паскаль</div>
+<div><span class="eOperator">PATCH</span> &lt;управляющее выражение&gt; <span class="eOperator">END</span>;</div>
+<div>где &lt;управляющее выражение&gt; содержит имена <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a> и порядок их выполнения (последовательно или параллельно).</div>
+<div><span style="font-weight:bold; ">Завершение процессов</span>. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Процесс</a> оканчивается нормально, если управление достигло конца процесса (последнего его оператора) и если все подчиненные процессы (если они есть) уже закончили свое выполнение. Для нормального завершения процессов используют традиционные операторы <span class="eOperator">parend</span>, <span class="eOperator">coend</span>, <span class="eOperator">end</span>, <span class="eOperator">return</span>, <span class="eOperator">stop</span> (для завершения все задачи).</div>
+<div>Для принудительного завершения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a> используется, как в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке</a> ADA, например, оператор <span class="eOperator">ABORT</span>. Отметим, что при этом принудительно завершаются также все подчиненные процессы.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-22/">← Оглавление</a>
         <a href="/rk6-edu/course-22/mod-24.html">‹ Предыдущий</a>

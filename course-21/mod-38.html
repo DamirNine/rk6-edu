@@ -23,7 +23,68 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-21/mod-39.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Метод с возвратом при неудачном шаге. Метод наилучшей пробы</a>
+</div>
+<a name="T999714944"></a>
+<a name="T1207549686"></a>
+<div>Рассматривается следующая многомерная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задача локальной безусловной оптимизации</a>: найти минимум <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">критерия оптимальности</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=1/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=2/?k=10">), определенного в <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=3/?k=10">-мерном евклидовом пространстве <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=4/?k=10">,</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=5/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
+<a name="T228203055"></a>
+<a name="T2052456713"></a>
+<div>При решении задачи (1) <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">методом с возвратом при неудачном шаге</a> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">одношаговый метод оптимизации</a>) используется итерационная формула</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=6/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=7/?k=10"> - величина шага на <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=8/?k=10">-ой итерации, <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=9/?k=10"> - реализация <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=3/?k=10">-мерного случайного вектора, <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=10/?k=10"> - некоторая векторная норма. Обычно в качестве координат вектора <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=11/?k=10"> используют независимые случайные величины, равномерно распределенные в интервале <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=12/?k=10">.</div>
+<div class="eSubTitle">Схема метода с возвратом при неудачном шаге.</div>
+<ol class="eList"><li>Задаем начальную точку <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=13/?k=10">, начальную длину шага <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=14/?k=10"> и полагаем счетчик числа итераций <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=15/?k=10">=0.</li>
+<li>Задаем начальное значение счетчика числа неудачных попыток <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=16/?k=10">=1.</li>
+<li>Получаем реализацию случайных чисел <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=17/?k=10"> - компонент вектора <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=18/?k=10"> и по формуле (2) находим пробную точку <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=19/?k=10">.</li>
+<li>Вычисляем значение <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=20/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=19/?k=10">) функции <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=21/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=22/?k=10">) в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=19/?k=10">.</li>
+<li>Если <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=23/?k=10">, то полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=24/?k=10"> и переходим к п.3. Иначе – переходим к п.6.</li>
+<li>Полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=25/?k=10">. Если <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=26/?k=10">, то переходим к п.3. Иначе – переходим к п.7. Здесь <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=27/?k=10"> – предельное количество неудачных попыток (свободный параметр метода). Рекомендуется <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=28/?k=10">.</li>
+<li>Проверяем условие окончания поиска (см. ниже). Если условие окончания поиска выполнено, то полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=29/?k=10"> и завершаем итерации. Иначе – полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=24/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=30/?k=10"> и переходим к п. 2. Здесь <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=31/?k=10"> - коэффициент уменьшения шага (свободный параметр метода)<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=32/?k=10"></li>
+</ol>
+<a name="T1219941941"></a>
+<div>В качестве условия окончания поиска можно использоваться одно из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стандартных условий окончания итераций</a>:</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=33/?k=10"></td><td align="right" class="eFormula">&nbsp;(3)</td></tr></tbody></table><br></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=34/?k=10"> - константа, определяющая требуемую точность решения по <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=2/?k=10">;</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=35/?k=10"></td><td align="right" class="eFormula">&nbsp;(4)</td></tr></tbody></table><br></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=36/?k=10"> - константа, определяющая требуемую точность решения по <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=37/?k=10">.</div>
+<a name="T589340849"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Метод с возвратом при неудачном шаге</a> иллюстрирует рис.&nbsp;1, на котором показан фрагмент линий уровня <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции Химмельблау</a>.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0801.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Траектория поиска минимума функции Химмельблау методом с возвратом при неудачном шаге. Пунктиром на рисунке показаны неудачные шаги.</div></div>
+<a name="T532556552"></a>
+<div>Модификацией <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метода с возвратом при неудачном шаге</a> является <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">метод наилучшей пробы</a> (также <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">одношаговый метод оптимизации</a>).</div>
+<div class="eSubTitle">Схема метода наилучшей пробы.</div>
+<ol class="eList"><li>Задаем начальную точку <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=13/?k=10">, начальную длину шага <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=14/?k=10"> и полагаем счетчик числа итераций <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=15/?k=10">=0.</li>
+<li>Генерируем <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=38/?k=10"> случайных векторов <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=39/?k=10"> и по формуле (2) находим пробные точки <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=40/?k=10"> </li>
+<li>Вычисляем значения <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=20/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=41/?k=10">) функции <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=21/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=22/?k=10">) в пробных точках <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=41/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=42/?k=10">[1, <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=38/?k=10">] и находим минимальное из этих значений<br><img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=43/?k=10"><br></li>
+<li>Если <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=20/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=44/?k=10">)&lt;<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=20/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=45/?k=10">), то полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=15/?k=10">=<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=15/?k=10">+1 и переходим к п.2. Иначе – переходим к п.5.</li>
+<li>Проверяем условие окончания поиска (см. (3), (4)). Если условие окончания поиска выполнено, то полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=29/?k=10"> и завершаем итерации. Иначе – полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=15/?k=10">=<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=15/?k=10">+1, <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=46/?k=10">=<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=47/?k=10"> и переходим к п.2. Здесь <img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=31/?k=10"> - коэффициент уменьшения шага (свободный параметр метода)<img align="absmiddle" src="/?frm/?doc=MO/ch0801.mod/?n=32/?k=10"></li>
+</ol>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Метод наилучшей пробы</a> иллюстрирует рис.&nbsp;2, на котором показан фрагмент линий уровня <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции Химмельблау</a>.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0801.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Траектория поиска минимума функции Химмельблау методом наилучшей пробы. Пунктиром на рисунке показаны неудачные пробы.</div></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-21/">← Оглавление</a>
         <a href="/rk6-edu/course-21/mod-37.html">‹ Предыдущий</a>

@@ -23,7 +23,45 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-27/mod-10.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Деструкторы</a>
+</div>
+<br>
+<a name="T677497967"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Деструктор</a> - особый вид метода, применяемого для освобождения памяти, занимаемой объектом. Имя деструктора совпадает с именем <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a>, но перед ним ставится символ «~» (тильда). <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Деструктор</a> определяет операции, которые необходимо выполнить при уничтожении объекта. Деструктор вызывается автоматически, когда объект выходит из области видимости для локальных объектов - при выходе из блока, в котором они были объявлены; для глобальных – как часть процедуры выхода из main. Для объектов, заданных через указатели, деструктор выполняется неявно при использовании операции <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">delete</a>.</div>
+<div>Деструктор</div>
+<ul class="eList"><li>не имеет аргументов и возвращающего значения</li>
+<li>не может быть объявлен как const или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">static</a> (но может быть <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">virtual</a>)</li>
+<li>не наследуется</li>
+</ul>
+<div>В иерархии классов деструкторы, в отличие от <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструкторов</a> (которые выполняются в порядке своего "классового происхождения"), выполняются в обратном порядке.</div>
+<div>Если деструктор не определен явным образом, то компилятор создает автоматически пустой деструктор. Явным образом деструктор требуется описывать в случае, когда объект создает указатели на память, выделяемую динамически. Иначе при уничтожении объекта память, на которую ссылались его указатели, не будет помечена как свободная. Указатель на деструктор определить нельзя.</div>
+<br>
+<div>Деструктор можно вызывать явным образом путем указания полностью уточненного имени. </div>
+<br>
+<div>Деструкторы, вызываемые неявно. Если программа завершается с использованием exit, то вызывается деструктор только глобальных объектов. При завершении программы, в которой использовались объекты некоторого класса функции abort, деструктор не вызывается.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">class String {
+ 
+public:
+   
+// набор конструкторов
+   String();
+   String( const char* );
+   String( const String&amp; );
+ 
+   // деструктор
+   ~String();
+ 
+ private:
+...
+ }
+</pre>
+</div>
+<br>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-27/">← Оглавление</a>
         <a href="/rk6-edu/course-27/mod-8.html">‹ Предыдущий</a>

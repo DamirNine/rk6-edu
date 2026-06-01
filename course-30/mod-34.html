@@ -23,7 +23,57 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-35.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сортировка вставками</a>
+</div>
+<br>
+<div>В данном <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритме</a> на каждом шаге, начиная с i=2 и увеличения i на 1, из исходной последовательности извлекается i<sub class="eSub">й</sub> элемент и перекладывается в готовую последовательность, причём вставляется в нужное место. Таким образом, на i-м шаге исходная последовательность разделена на две части: готовую a[0]...a[i] и неупорядоченную a[i+1]...a[n].</div>
+<a name="T1992766606"></a>
+<div>На следующем, (i+1)-м каждом шаге алгоритма берем a[i+1] и вставляем на нужное место в готовую часть <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">массива</a>. </div>
+<div>Поиск подходящего места для очередного элемента входной последовательности осуществляется путем последовательных сравнений с элементом, стоящим перед ним.</div>
+<div>В зависимости от результата сравнения элемент либо остается на текущем месте(вставка завершена), либо они меняются местами и процесс повторяется.</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.3.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<br>
+<div>Таким образом, в процессе вставки мы "просеиваем" элемент x к началу массива, останавливаясь в случае, когда</div>
+<div>Hайден элемент, меньший x или Достигнуто начало последовательности.</div>
+<br>
+<pre class="eListing">template&lt;class T&gt;
+void insertSort(T a[], long size) {
+  T x;
+  long i, j;
+  for ( i=0; i &lt; size; i++) {  // цикл проходов, i - номер прохода
+    x = a[i];
+// поиск места элемента в готовой последовательности 
+    for ( j=i-1; j&gt;=0 &amp;&amp; a[j] &gt; x; j--)
+      a[j+1] = a[j];  // сдвигаем элемент направо, пока не дошли
+// место найдено, вставить элемент
+    a[j+1] = x;
+  }
+}
+</pre>
+<br>
+<a name="T1356058257"></a>
+<div>Аналогично <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сортировке</a> выбором, среднее, а также худшее число сравнений и пересылок оцениваются как Theta(n2), дополнительная память при этом не используется.</div>
+<div>Хорошим показателем сортировки является весьма естественное поведение: почти отсортированный массив будет досортирован очень быстро. Это, вкупе с устойчивостью алгоритма, делает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод</a> хорошим выбором в соответствующих ситуациях.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-33.html">‹ Предыдущий</a>

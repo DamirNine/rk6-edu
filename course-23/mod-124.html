@@ -23,7 +23,107 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-125.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Произвольный доступ</a>
+</div>
+<a name="T326195606"></a>
+<a name="T269665333"></a>
+<div>Если не выполнялись специальные действия, операции чтения и записи обращаются к последовательным байтам в файле. Позиция в файле для следующей операции чтения или записи хранится во <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внутреннем указателе</a> — поле в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структуре FILE</a>, автоматически устанавливаемом и изменяемом стандартными функциями ввода-вывода. Однако можно изменить место следующего чтения или записи, используя функцию <span class="eOperator">fseek()</span>, модифицирующую внутренний указатель.</div>
+<a name="T581415280"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявление прототипа функции</a> <span class="eOperator">fseek()</span>:</div>
+<div><span class="eOperator">int fseek(FILE *stream, long offset, int ptrname)</span></div>
+<div><span class="eOperator"> </span></div>
+<a name="T37556405"></a>
+<a name="T637542155"></a>
+<div>Это объявление находится в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эту функцию, должны включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div><span class="eOperator">#include &lt;stdio.h&gt;</span></div>
+<a name="T768887744"></a>
+<a name="T1037302591"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция fseek()</a> — стандартная функция языка Си, устанавливает позицию в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потоке</a> <span class="eOperator">stream</span> для следующей операции чтения-записи на расстоянии <span class="eOperator">offset</span> байтов от позиции <span class="eOperator">ptrname</span>, принимающей следующие значения:</div>
+<ul class="eList"><li>0 — начало</li>
+<li>1 — текущая позиция</li>
+<li>2 — конец</li>
+</ul>
+<div>Функция <span class="eOperator">fseek()</span> возвращает ненулевое значение для недопустимых установок, 0 в противном случае.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">fseek(fp, 0L, 0); /*установка в начало*/
+fseek(fp, 0L, 2); /*в конец файла*/
+fseek(fp, -sizeof(struct emp), 1); /*возврат на одну структуру*/
+</pre>
+</div>
+<div>Для реализации произвольного доступа к файлу бывает полезна функция <span class="eOperator">ftell()</span>.</div>
+<div>Объявление прототипа функции <span class="eOperator">ftell()</span>:</div>
+<div><span class="eOperator">long ftell(FILE *stream)</span></div>
+<a name="T740049095"></a>
+<a name="T696383489"></a>
+<a name="T1683739359"></a>
+<a name="T645587003"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция ftell()</a> — стандартная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция</a> языка Си, которая возвращает смещение текущей позиции внутреннего указателя относительно начала файла (например, 0, если он указывает на начало файла). Для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятора</a> языка Си в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС UNIX</a> это смещение измеряется в байтах, для других операционных систем это может быть не так.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">/*Печатает хранящуюся информацию о запрошенном объекте*/
+#include &lt;stdio.h&gt;
+struct part_info {
+                 char desc[20];
+                 int qty;
+                 int cost;
+                 }part;
+int main()
+{
+  FILE *rptr;
+  long x;
+
+  if ((rptr=fopen("p_data","r"))==NULL)
+    {
+    fprintf(stderr,"Файл данных не может быть открыт\n");
+    exit(1);
+    }
+  printf("Введите порядковый номер записи:");
+  scanf("%ld", &amp;x);
+  fseek(rptr, ((x-1)*sizeof(part)), 0);
+  fread (&amp;part, sizeof(part), 1, rptr);
+  printf("%s\t%d\t%d\n", part.desc, part.qty, part.cost);
+}
+</pre>
+</div>
+<div class="eSubTitle">Произвольный доступ при обновлении файла</div>
+<a name="T797849314"></a>
+<div>Файл может использоваться как для чтения так и для записи, если он открыт для "обновления" (<span class="eOperator">"r+"</span><span class="eOperator">, </span><span class="eOperator">"w+", "a+"</span>). В этом случае используется лишь один буфер, который должен вытесняться на диск между выполнением операций чтения и записи для обеспечения требуемой взаимной последовательности считываемых и записываемых данных. Для этого необходимо или явно вызывать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцию fflush</a>(), или использовать функцию <span class="eOperator">fseek()</span>, которая, кроме установки позиции в файле для следующего чтения или записи, вызывает функцию <span class="eOperator">fflush()</span> для вытеснения буфера.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
+...
+if ((rptr=fopen("p_data","r+")) == (FILE *)NULL)
+  {
+   fprintf(stderr,"Файл данных не может быть открыт\n");
+   exit(1);
+  }
+/*изменяет все поля cost в учетном файле, составленном из структур*/
+while (fread(&amp;part, sizeof(part), 1, fp) != 0)
+  {
+   part.cost *= 1.07;
+   fseek(fp, -sizeof(part), 1);
+   /*на одну запись назад*/
+   fwrite(&amp;part, sizeof(part), 1, fp);
+   fseek(fp, 0L, 1);
+/* вытесняет буфер перед следующим чтением */
+}
+...
+</pre>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-123.html">‹ Предыдущий</a>

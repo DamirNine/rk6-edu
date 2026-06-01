@@ -23,7 +23,141 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-133.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функции управления динамической памятью</a>
+</div>
+<a name="T1472977186"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функции управления динамической памятью</a> дают возможность легко управлять памятью.</div>
+<div>Они являются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функциями</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеки</a> общего назначения.</div>
+<div>Объявления этих функций находится в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">заголовочном файле</a> <span class="eOperator">&lt;stdlib.h&gt;</span>, поэтому в программах, использующих эти функции, необходимо включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div><span class="eOperator">#include &lt;stdlib.h&gt;</span></div>
+<div class="eSubTitle">Выделение памяти</div>
+<div><span class="eOperator">void * malloc(size_t size)</span></div>
+<div>Функция выделяет память размером <span class="eOperator">size </span>и возвращает адрес начала области памяти. При присвоении указателю происходит явное преобразование типа. Выравнивание границы происходит автоматически, но выделенная память не инициируется нулями.</div>
+<div><span class="eOperator">void realloc (void *block, size_t size)</span></div>
+<div>Функция делает размер блока по указателю <span class="eOperator">block</span> равным <span class="eOperator">size </span>байтов и возвращает указатель на блок, возможно перемещенный. В случае перемещения блока данные из исходного блока копируются в новый блок, освобождая исходный блок.</div>
+<div><span class="eOperator">void * сalloc(size_t nelem, size_t elsize)</span></div>
+<div>Функция выделяет блок, который вмещает <span class="eOperator">nelem</span> элементов размером <span class="eOperator">elsize</span> байтов каждый, возвращает адрес начала области памяти. Выделенная память инициируется нулями.</div>
+<div>У каждого блока памяти есть байты, где хранятся длина блока и признак того, занят он или свободен. Эти функции управления памятью используют системные вызовы <span class="eOperator">brk</span> и <span class="eOperator">sbrk</span>. Когда функциям <span class="eOperator">malloc</span>, <span class="eOperator">сalloc</span> и <span class="eOperator">realloc</span> нужно изменить границу выделяемой памяти, они обычно делают это с запасом. Если будущим запросам хватает выделенного пространства, они не используют системный вызов. Так библиотечные функции минимизируют число выполнения системных вызовов.</div>
+<div>Если вызов функции закончился неуспешно, то она возвращает значение <span class="eOperator">NULL</span>.</div>
+<div class="eSubTitle">Освобождение памяти</div>
+<div><span class="eOperator">void free(void *block)</span></div>
+<div>Функция освобождает блок памяти по указателю <span class="eOperator">*block</span> и делает его доступным для последующих выделений памяти. Указатель должен указывать на блок, полученный ранее вызовом <span class="eOperator">malloc</span>, <span class="eOperator">calloc </span>или <span class="eOperator">realloc</span>.</div>
+<div>Функция <span class="eOperator">free()</span> никогда не возвращает память назад ядру. Вместо этого она устанавливает признак того, что блок свободен. Будущие запросы выделения памяти ищут среди всех свободных блоков блок подходящего размера, прежде чем использовать системный вызов увеличения памяти. Смежные свободные блоки сливаются во время поиска для их более эффективного переиспользования.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">int *a;
+
+if ((a=(int *)malloc(sizeof(int)))==NULL) /* выделение памяти под целое типа int*/
+  {
+   printf("Не хватает памяти для числа.");
+   exit(1);
+   }
+*a=-244;
+*a+=10;
+free(a);                /* освобождение памяти*/
+</pre>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">struct node {
+             int         data;
+             struct node *next;
+             };
+struct node *pnode;
+if ((pnode = malloc(sizeof(struct node)))==NULL) /* выделение памяти под структуру node*/
+  {
+   printf("Не хватает памяти для структуры.");
+   exit(1);
+   }
+pnod-&gt;data=100;
+pnod-&gt;next=NULL;
+</pre>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">int *array;
+/* выделение памяти под массив из 3 элементов  типа int*/
+                                /*элементы массива равны 0*/
+if ((array = calloc(3, sizeof(int)))==NULL) /* выделение памяти под структуру node*/
+  {
+   printf("Не хватает памяти для массива.");
+   exit(1);
+   }
+for (i=0; i&lt;3; i++, array++)
+   *array=i+1;
+</pre>
+</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><pre class="eListing">struct node {
+            int          data;
+            struct node *next;
+            };
+struct node *table;
+if ((table = calloc(3, sizeof(struct node)))==NULL)
+  {
+   printf("Не хватает памяти для массива структур.");
+   exit(1);
+   }
+
+</pre>
+<div>Выделяется память под <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a> из трех элементов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структур</a> <span class="eOperator">node</span>. Ссылаться на элементы можно как</div>
+<div>в любом другом массиве.</div>
+<div><span class="eOperator">table[2].data = 3;</span></div>
+</div>
+<div class="auto">Пример 5</div>
+<div class="eExample"><div>Вставка узла в список структур</div>
+<pre class="eListing">struct node {
+            int          data;
+            struct node *next;
+            };
+struct node *insert (struct node *p, int i) /*вставка узла после узла *P*/
+{struct node *q;
+if ((q= malloc(sizeof(struct node)))==NULL)
+  {
+   printf("Не хватает памяти для структуры.");
+   exit(1);
+   }
+q-&gt;next = p-&gt;next;
+q-&gt;data = i;
+p-&gt;next = q;
+return (g);
+}
+</pre>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/mem2.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Вставка узла</div></div>
+</div>
+<div class="auto">Пример 6</div>
+<div class="eExample"><div>Уничтожение узла в списке структур</div>
+<pre class="eListing">void delete (struct node *p)
+{ struct node *q;
+  q = p-&gt;next;
+  p-&gt;data=q-&gt;data;
+  p-&gt;next=q-&gt;next;
+  free (q);
+}
+</pre>
+<div>Эта функция уничтожает данные, содержащиеся в узле с указателем <span class="eOperator">p</span>. Данные в узле с указателем <span class="eOperator">q</span> копируются в узел с указателем <span class="eOperator">p</span>. Потом узел <span class="eOperator">q</span> уничтожается. Чтобы этот алгоритм уничтожения работал со всеми узлами, включая последний в списке, пустой список должен содержать голову <span class="eOperator">head</span> и узел с нулевым указателем в поле <span class="eOperator">next</span>. Другими словами, последний узел является ограничителем и его нельзя уничтожать. Поэтому в программу надо включить следующую проверку:</div>
+<div><span class="eOperator">if(p-&gt;next==NULL) return;</span></div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/mem2.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Уничтожение узла</div></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-131.html">‹ Предыдущий</a>

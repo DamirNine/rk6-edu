@@ -23,7 +23,68 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-93.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Массивы указателей</a>
+</div>
+<a name="T1683975628"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Массив указателей</a> - это массив адресов.</div>
+<a name="T1992766606"></a>
+<div>Массив указателей объявляется также, как и прочие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массивы</a>:</div>
+<div><span class="eOperator">тип *идентификатор[целочисленное выражение]</span></div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">char buffer[30001];
+/* Текстовый буфер, заканчивающийся '\0'*/
+char *line_num[2001];
+/*Максимальное число строк - 2000*/
+void number_lines(void)
+  {
+  int i;
+  char *p;
+  line_num[0]=buffer;
+  for(p=buffer, i=1; *p != '\0'; p++)
+     if(*p == '\n')
+        if(*(p+1) != '\0')
+           line_num[i++] = p+1;
+  line_num[i] = NULL;
+  }
+</pre>
+<a name="T696383489"></a>
+<div>Предположим, что массив <span class="eOperator">buffer</span> уже заполнен текстом. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Функция</a> <span class="eOperator">number_lines() </span>занесет начальные адреса каждой из находящихся в буфере строк в массив символьных указателей <span class="eOperator">line_num</span>, то есть <span class="eOperator">line_num[0]</span>  будет указывать на первую строку, <span class="eOperator">line_num[1]</span>  будет указывать на вторую строку и т.д. Список указателей на строки завершается нулем.</div>
+</div>
+<div class="eSubTitle">Инициализация массива указателей при объявлении</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">/*пример сканера для идентификации команд */
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int is_keyword(char *);
+char *keyword[] = {
+                   "append",
+                   "find",
+                   "list",
+                   "remove",
+                   "replace",
+                   "substitute",
+                   (char *)NULL
+                   };
+/*возвращает индекс команды, иначе -1*/
+int is_keyword(char *)
+  {
+  int i;
+  for (i=0; keyword[i] != NULL; i++)
+     if(strcmp(str, keyword[i]) == 0)
+        return i;
+  return -1;
+  }
+</pre>
+<a name="T2022690627"></a>
+<a name="T600009389"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Строковые константы</a> располагаются в области данных. Их начальные адреса будут использоваться при инициалицации массива указателей. Массив указателей использует меньше памяти, чем требовалось бы для двумерного массива символов. При использовании двумерного массива символов пришлось бы найти самое длинное ключевое слово и указать его длину, увеличенную на 1 за счет символа - <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">признака  конца строки</a>, в качестве второй размерности массива. Например, имеется  30 ключевых слов и самое длинное содержит 7 символов. Тогда двумерный массив должен быть объявлен следующим образом:</div>
+<div><span class="eOperator">char keyword[30][8];</span></div>
+<div>В итоге появилось бы много неиспользуемых байтов, так как многие ключевые слова содержат менее 7 символов .</div>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-91.html">‹ Предыдущий</a>

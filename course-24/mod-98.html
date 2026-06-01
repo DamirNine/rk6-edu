@@ -23,7 +23,45 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-99.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Доступ к элементам структуры</a>
+</div>
+<a name="T1155602332"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция доступа к элементу структуры</a> — операция "точка"(<span class="eOperator">.</span>), результат которой — значение элемента структуры.</div>
+<div><span class="eOperator">имя_структуры.имя_элемента_структуры</span></div>
+<a name="T424168142"></a>
+<div>Эта операция используется для доступа к элементу структуры с тем, чтобы присвоить ему значение, напечатать его, использовать его значение в арифметической операции и т.д. Эта операция является первичной и находится в самой верхней строке <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">таблицы приоритетов</a> операций языка Си.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+struct emp {
+            char name[21];
+            char id[8];
+            double salary;      /*это шаблон, память не выделяется */
+            };
+int main()
+{
+  struct emp prgmr;   /*это объявление переменной - выделяется память */
+  int num;
+  ...
+  gets(prgmr.name);
+  gets(prgmr.id);
+  gets(buf);
+  prgmr.salary = atof(buf);
+  printf("Name: %s\n", prgmr.name);
+  printf("Id: %s\n", prgmr.id);
+  printf("salary: %.2f\n", prgmr.salary);
+
+  ...
+  prgmr.salary *= 1.15;
+
+  ...
+}
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-97.html">‹ Предыдущий</a>

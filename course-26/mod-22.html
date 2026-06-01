@@ -23,7 +23,33 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-23.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Операции отрицания и дополнения</a>
+</div>
+<a name="T625397506"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция арифметического отрицания</a> (-) вырабатывает отрицание своего операнда. Операнд должен быть целой или плавающей величиной. При выполнении осуществляются обычные арифметические преобразования.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>double u = 5;</div>
+<div>u = -u; /* переменной u присваивается ее отрицание,т.е. u принимает значение -5 */</div>
+</div>
+<a name="T1136681543"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция логического отрицания "НЕ</a>" (!) вырабатывает значение 0, если операнд есть истина (не нуль), и значение 1, если операнд равен нулю (0). Результат имеет тип <span class="eOperator">int.</span> Операнд должен быть целого или плавающего типа или типа указатель.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">int t, z=0;
+t=!z;
+</pre>
+</div>
+<div>Переменная <span class="eOperator">t</span> получит значение равное 1, так как переменная <span class="eOperator">z</span> имела значение равное 0 (ложно). Операция двоичного дополнения (~) вырабатывает двоичное дополнение своего операнда. Операнд должен быть целого типа. Осуществляется обычное арифметическое преобразование, результат имеет тип операнда после преобразования.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">char b = '9';
+unsigned char f;
+b = ~f;
+</pre>
+</div>
+<div>Шестнадцатеричное значение символа '9' равно 39. В результате операции <span class="eOperator">~f</span> будет получено шестнадцатеричное значение С6, что соответствует символу 'ц'.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-21.html">‹ Предыдущий</a>

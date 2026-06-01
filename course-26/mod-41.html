@@ -23,7 +23,69 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-42.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Оператор if</a>
+</div>
+<div>Формат оператора: </div>
+<pre class="eListing">if (выражение) оператор-1; [else оператор-2;] 
+</pre>
+<div>Выполнение оператора if начинается с вычисления выражения. Далее выполнение осуществляется по следующей схеме: </div>
+<ul class="eList"><li>если выражение истинно (т.е. отлично от 0), то выполняется оператор-1. </li>
+<li>если выражение ложно (т.е. равно 0),то выполняется оператор-2. </li>
+<li>если выражение ложно и отсутствует оператор-2 (в квадратные скобки заключена необязательная конструкция), то выполняется следующий за if оператор. </li>
+</ul>
+<div>После выполнения оператора if значение передается на следующий оператор программы, если последовательность выполнения операторов программы не будет принудительно нарушена использованием операторов перехода. </div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">if (i &lt; j)  i++:
+else { j = i-3; i++; }
+</pre>
+</div>
+<a name="T750557117"></a>
+<div>Этот пример иллюстрирует также и тот факт, что на месте <span class="eOperator">оператор-1</span>, так же как и на месте <span class="eOperator">оператор-2</span> могут находиться сложные конструкции. Допускается использование вложенных операторов <span class="eOperator">if.</span>  <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Оператор if</a> может быть включен в конструкцию <span class="eOperator">if</span> или в конструкцию <span class="eOperator">else</span> другого оператора <span class="eOperator">if</span>. Чтобы сделать программу более читабельной, рекомендуется группировать операторы и конструкции во вложенных операторах <span class="eOperator">if</span>, используя фигурные скобки. Если же фигурные скобки опущены, то компилятор связывает каждое ключевое слово <span class="eOperator">else</span> с наиболее близким <span class="eOperator">if</span>, для которого нет <span class="eOperator">else</span>. </div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">int main ( )
+{
+ int t=2, b=7, r=3;
+ if (t&gt;b)
+  {
+   if (b &lt; r)  r=b;
+  }
+ else r=t;
+ return (0);
+}
+</pre>
+</div>
+<div>В результате выполнения этой программы <span class="eOperator">r</span> станет равным 2. Если же в программе опустить фигурные скобки, стоящие после оператора if, то программа будет иметь следующий вид: </div>
+<pre class="eListing"> int main  ( )
+ {
+   int t=2,b=7,r=3;
+     if ( a&gt;b )
+      {
+        if ( b &lt; c ) t=b;
+      }
+     else r=t;
+   return (0);
+ }
+
+</pre>
+<a name="T319893726"></a>
+<div>В этом случае <span class="eOperator">r</span> получит значение равное 3, так как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевое слово</a> <span class="eOperator">else</span> относится ко второму оператору if, который не выполняется, поскольку не выполняется условие, проверяемое в первом операторе if. Следующий фрагмент иллюстрирует вложенные операторы if: </div>
+<pre class="eListing"> char ZNAC;
+ int x,y,z;
+ :
+ if (ZNAC == '-') x = y - z;
+    else  if (ZNAC == '+') x = y + z;
+        else if (ZNAC == '*') x = y * z;
+             else if (ZNAC == '/') x = y / z;
+                  else ...
+
+</pre>
+<a name="T617483820"></a>
+<div>Из рассмотрения этого примера можно сделать вывод, что конструкции использующие вложенные операторы if, являются довольно громоздкими и не всегда достаточно надежными. Другим способом организации выбора из множества различных вариантов является использование специального оператора выбора <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">switch</a>. </div>
+<br>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-40.html">‹ Предыдущий</a>

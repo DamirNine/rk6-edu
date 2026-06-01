@@ -23,7 +23,44 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-97.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функция mktime</a>
+</div>
+<pre class="eListing">#include  &lt;time.h&gt;
+time_t mktime(struct tm  *time);
+</pre>
+<a name="T1122758421"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция mktime</a>() возвращает календарный эквивалент времени, хранящийся в разделенном на компоненты виде в структуре, которая адресуется параметром-указателем <span class="eOperator">time.</span> Элементы <span class="eOperator">tm_wday</span> и <span class="eOperator">tm_yday</span> устанавливаются самой функцией, поэтому их не нужно определять при ее вызове.</div>
+<div>Если mktime() не может представить информацию в виде допустимого календарного времени, возвращается -1.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Эта программа сообщает день недели 3 января 2005 года:</div>
+</div>
+<pre class="eListing">#include &lt;time.h&gt; 
+#include &lt;stdio.h&gt;
+int main(void)
+{
+struct tm t;
+time_t  t_of_day;
+t.tm_year = 2005-1900;
+t.tm_mon = 0;
+t.tm mday = 3;
+t.tm_hour =0;   /* Час, минута, секунда не имеют значения, */
+t.tm_min =0;  /* если только они не определяют переход */
+t.tm_sec =1;   /* на новую дату */
+t.tm_isdst = 0;
+t_ of_day = mktime{&amp;t); printf(ctime(&amp;t_of_day)
+return 0;
+}
+</pre>
+<a name="T1198290317"></a>
+<a name="T896124306"></a>
+<a name="T1214678477"></a>
+<a name="T1064711968"></a>
+<div>Здесь используются зависимые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции time</a>(), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ctime</a>(), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">gmtime</a>(),  и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">asctime</a>().</div>
+<br>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-95.html">‹ Предыдущий</a>

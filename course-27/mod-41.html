@@ -23,7 +23,81 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-27/mod-42.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Стек</a>
+</div>
+<br>
+<a name="T33524358"></a>
+<a name="T110183803"></a>
+<a name="T2336518"></a>
+<a name="T2157772"></a>
+<div>Со <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">стеком</a> определены.только операции добавления и выборки элементов из <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">вершины стека</a>. При осуществлении выборки элемент исключается из стека. В стеке осуществляется принцип <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">LIFO.</a> Возможен также принцип <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">FIFO</a>. Стеки широко применяются в системном программировании при написании <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компиляторов</a> и различных рекурсивных алгоритмов. </div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">Пример программы, которая формирует стек из пяти целых чисел, и выводит его на экран:
+
+#include &lt;iostream.h&gt;
+
+struct Node
+{
+int d;
+Node *p;
+}
+
+Node *first(int d);
+void push(Node **top, int d);
+void pop(Node **top);
+
+int main()
+{
+Node *top = first(1);
+for(int i=2; i&lt;6; i++) push(&amp;top, i);
+
+while(top)
+
+cout&lt;&lt;pop(&amp;top)&lt;&lt;" ";
+
+return 0;
+}
+
+/* начальное формирование стека */
+
+Node *first (int d)
+{
+Node *Pv = new Node;
+Pv-&gt;d=d;
+Pv-&gt;d=0;
+
+return Pv;
+}
+
+/* занесение в стек */
+
+void push(Node **top, int d)
+{
+Node *Pv = new Node;
+Pv -&gt; d = d;
+Pv -&gt; p = *top;
+*top = Pv;
+}
+
+/* выборка из стека */
+
+int pop(Node **top)
+{
+int temp = (*top) -&gt; d;
+Node *Pv = *top;
+*top = (*top) -&gt; p;
+delete Pv;
+return temp;
+}
+
+/* вывод: 5 4 3 2 1 */
+
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-27/">← Оглавление</a>
         <a href="/rk6-edu/course-27/mod-40.html">‹ Предыдущий</a>

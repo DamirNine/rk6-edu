@@ -23,7 +23,153 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-21/mod-37.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Метод наискорейшего спуска. Метод дробления шага</a>
+</div>
+<a name="T999714944"></a>
+<a name="T1207549686"></a>
+<div>Рассматривается следующая многомерная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задача локальной безусловной оптимизации</a>: найти минимум <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">критерия оптимальности</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=1/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=2/?k=10">), определенного в <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=3/?k=10">-мерном евклидовом пространстве <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=4/?k=10">,</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=5/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
+<br>
+<div>Положим, что функция <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=1/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=2/?k=10">) всюду дифференцируема в <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=3/?k=10">-мерном евклидовом пространстве <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=4/?k=10">.</div>
+<a name="T106343417"></a>
+<div>Направление спуска в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">градиентных методах оптимизации</a> совпадает с направлением антиградиента минимизируемой функции <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=1/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=2/?k=10">). Итерационная формула градиентных методов оптимизации имеет вид</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=6/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br></div>
+<div>Здесь <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=7/?k=10">- длина шага на <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=8/?k=10">-ой итерации в направлении <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=9/?k=10">, где</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=10/?k=10"></td><td align="right" class="eFormula">&nbsp;(3)</td></tr></tbody></table><br></div>
+<div>единичный вектор направления антиградиента функции <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=1/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=2/?k=10">) в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=11/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=12/?k=10"> - некоторая векторная норма, например, евклидова. Напомним, что градиент функции <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=1/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=2/?k=10">) в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=11/?k=10"> есть значение вектора частных производных этой функции в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=11/?k=10">:</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=13/?k=10"><br></div>
+<div>Различные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">градиентные методы оптимизации</a> отличаются между собой правилами выбора длины шага <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=7/?k=10">.</div>
+<div class="eSubTitle">Градиентный метод наискорейшего спуска.</div>
+<a name="T398680799"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Градиентный метод наискорейшего спуска</a> в качестве длины шага <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=7/?k=10"> использует величину, при которой достигается минимум функции <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=1/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=2/?k=10">) в направлении <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=9/?k=10">:</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=14/?k=10"></td><td align="right" class="eFormula">&nbsp;(4)</td></tr></tbody></table><br></div>
+<a name="T1780330753"></a>
+<div>Задача (2) есть одномерная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задача локальной безусловной оптимизации</a>, которая может быть решена рассмотренными в главе 4 методами, например, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">методом Паулла</a> (см. параграф 4.7).</div>
+<div><span style="font-weight:bold; ">Схема метода:</span></div>
+<ol class="eList"><li>Задаем начальную точку <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=15/?k=10"> и полагаем счетчик числа итераций <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=16/?k=10">=0.</li>
+<li>По формуле (3) вычисляем компоненты вектора <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=17/?k=10">.</li>
+<li>Каким-либо методом решаем одномерную <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задачу безусловной оптимизации</a> (4) – определяем точку <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=18/?k=10">.</li>
+<li>Вычисляем величину <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=19/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=18/?k=10">) - значение функции <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=20/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=21/?k=10">) в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=18/?k=10">.</li>
+<li>Проверяем условие окончания поиска (см. ниже). Если условие окончания поиска выполнено, то полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=22/?k=10"> и завершаем итерации. Иначе – полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=23/?k=10">, переходим к п. 2<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=24/?k=10"></li>
+</ol>
+<a name="T1219941941"></a>
+<div>В качестве критерия окончания поиска можно использоваться одно из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стандартных условий окончания итераций</a></div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=25/?k=10"></td><td align="right" class="eFormula">&nbsp;(5)</td></tr></tbody></table><br></div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=26/?k=10"></td><td align="right" class="eFormula">&nbsp;(6)</td></tr></tbody></table><br></div>
+<div>В качестве критерия окончания поиска можно использоваться также условие</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=27/?k=10"></td><td align="right" class="eFormula">&nbsp;(7)</td></tr></tbody></table><br></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=28/?k=10"> - константа, определяющая требуемую точность решения по градиенту функции <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=1/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=2/?k=10">).</div>
+<a name="T589340849"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Градиентный метод наискорейшего спуска</a> иллюстрирует рис.&nbsp;1, на котором показан фрагмент линий уровня <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции Химмельблау</a>.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0701.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Траектория поиска минимума функции Химмельблау градиентным методом наискорейшего спуска.</div></div>
+<div class="eSubTitle">Градиентный метод с дроблением шага</div>
+<a name="T2136535230"></a>
+<div>В <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">градиентном методе с дроблением шага</a> точка <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=29/?k=10"> определяется по формуле</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=30/?k=10"></td><td align="right" class="eFormula">&nbsp;(8)</td></tr></tbody></table><br></div>
+<div>где величина шага <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=7/?k=10"> находится из условия</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=31/?k=10"></td><td align="right" class="eFormula">&nbsp;(9)</td></tr></tbody></table><br></div>
+<div><span style="font-weight:bold; ">Схема метода:</span></div>
+<ol class="eList"><li>Задаем начальную точку <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=15/?k=10">, начальную величину шага <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=32/?k=10"> и коэффициент дробления шага <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=33/?k=10">. Полагаем счетчик числа итераций <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=16/?k=10">=0.</li>
+<li>По формуле (8) вычисляем компоненты вектора <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=18/?k=10">.</li>
+<li>Вычисляем величину <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=19/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=34/?k=10">) - значение функции <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=20/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=21/?k=10">) в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=34/?k=10">.</li>
+<li>Если условие (9) выполнено, то переходим к следующему пункту. Иначе – переходим к пункту 6.</li>
+<li>Полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=35/?k=10">=<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=36/?k=10"> и переходим к пункту 2.</li>
+<li>Проверяем условие окончания поиска (см. ниже). Если условие окончания поиска выполнено, то полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=22/?k=10">, и завершаем итерации. Иначе – полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=16/?k=10">=<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=16/?k=10">+1 переходим к п. 2<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=24/?k=10"></li>
+</ol>
+<div>В качестве критерия окончания поиска можно использоваться условия (5) – (7).</div>
+<div>Градиентный метод дробления шага иллюстрирует рис.&nbsp;2, на котором показан фрагмент линий уровня <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции Химмельблау</a>.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0701.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Траектория поиска минимума функции Химмельблау градиентным методом дробления шага.</div></div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div><span style="font-weight:bold; ">1. Постановка задачи.</span></div>
+<div>Выполнить несколько итераций (не менее двух) решения двумерной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задачи локальной безусловной оптимизации</a></div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=37/?k=10"></td><td align="right" class="eFormula">&nbsp;(10)</td></tr></tbody></table><br></div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=38/?k=10"></td><td align="right" class="eFormula">&nbsp;(11)</td></tr></tbody></table><br></div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">градиентным методом с дроблением шага</a>, исходя из точки <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=39/?k=10">.</div>
+<div>Принять <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=40/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=41/?k=10">, в качестве нормы вектора градиента использовать евклидову норму.</div>
+<div>Траекторию поиска изобразить на рис.&nbsp;3, на котором приведены линии уровня квадратичной функции (11), полученные с помощью MATLAB-программы, приведенной в параграфе 6.1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0701.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;К примеру 1. Фрагмент (три итерации) траектории поиска минимума функции (11) градиентным методом с дроблением шага, исходя из точки <span style="font-size:120%; font-family:serif; font-weight:bold; font-style:normal;">X</span><sup class="eSub">0</sup>=(<span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">x</span><sup class="eSub">0</sup>,<span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">y</span><sup class="eSub">0</sup>)=(-2.0,1.0).</div></div>
+<div><span style="font-weight:bold; ">2. Итерационная формула</span><span style="font-weight:bold; ">.</span></div>
+<div>Итерация <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">градиентного метода с дроблением шага</a> для задачи (10), (11) имеет вид</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=42/?k=10"></td><td align="right" class="eFormula">&nbsp;(12)</td></tr></tbody></table><br></div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=43/?k=10"></td><td align="right" class="eFormula">&nbsp;(13)</td></tr></tbody></table><br></div>
+<div>а величина шага <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=44/?k=10"> находится из условия</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=45/?k=10"></td><td align="right" class="eFormula">&nbsp;(14)</td></tr></tbody></table><br></div>
+<div>Найдем явные выражения для частных производных функции (11):</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=46/?k=10"></td><td align="right" class="eFormula">&nbsp;(15)</td></tr></tbody></table><br></div>
+<div>Таким образом, из (12), (13), (15) имеем искомую итерационную формулу <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">градиентного метода с дроблением шага</a> для задачи (10), (11).</div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=47/?k=10"> <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=48/?k=10">=-<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=49/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=50/?k=10">=-<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=51/?k=10">,</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=52/?k=10"></td><td align="right" class="eFormula">&nbsp;(16)</td></tr></tbody></table><br></div>
+<div><span style="font-weight:bold; ">3.Первая итерация</span> <span style="font-weight:bold; ">(</span><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=53/?k=10"><span style="font-weight:bold; ">=0).</span></div>
+<div>Из формул (15), (16) последовательно имеем</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=54/?k=10"><br></div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=55/?k=10"> <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=56/?k=10"></div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=57/?k=10"><br></div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=58/?k=10">  <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=59/?k=10"></div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=60/?k=10"><br></div>
+<div>Таким образом, <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=61/?k=10"> (см. рис.&nbsp;3).</div>
+<div>Условие (14) на первой итерации имеет вид</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=62/?k=10"><br></div>
+<div>Поскольку</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=63/?k=10"><br></div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=64/?k=10"><br></div>
+<div>левая часть этого неравенства равна <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=65/?k=10">. Его правая часть, легко видеть, равна <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=66/?k=10">.</div>
+<div>Таким образом, на первой итерации условие (14) выполняется и величина шага <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=67/?k=10"> должна быть изменена: <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=68/?k=10"></div>
+<div><span style="font-weight:bold; ">4.Вторая итерация</span> <span style="font-weight:bold; ">(</span><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=53/?k=10"><span style="font-weight:bold; ">=1).</span></div>
+<div>Аналогично первой итерации последовательно имеем</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=69/?k=10"><br></div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=70/?k=10"> <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=71/?k=10"></div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=72/?k=10"><br></div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=73/?k=10">  <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=74/?k=10"></div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=75/?k=10"><br></div>
+<div>Таким образом, <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=76/?k=10"> (см. рис.&nbsp;3).</div>
+<div>Условие (14) на второй итерации имеет вид</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=77/?k=10"><br></div>
+<div>Поскольку</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=78/?k=10"><br></div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=79/?k=10"><br></div>
+<div>левая часть этого неравенства равна <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=80/?k=10">. Его правая часть, легко видеть, равна <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=81/?k=10">.</div>
+<div>Таким образом, на второй итерации условие (14) выполняется и величина шага <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=67/?k=10"> должна быть изменена: <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=82/?k=10">.</div>
+<div><span style="font-weight:bold; ">5.Третья итерация</span> <span style="font-weight:bold; ">(</span><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=53/?k=10"><span style="font-weight:bold; ">=2).</span></div>
+<div>Аналогично первой итерации последовательно имеем</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=83/?k=10"><br></div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=84/?k=10"> <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=85/?k=10"></div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=86/?k=10"><br></div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=87/?k=10">  <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=88/?k=10"></div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=89/?k=10"><br></div>
+<div>Таким образом, <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=90/?k=10"> (см. рис.&nbsp;3).</div>
+<div>Условие (14) на третьей итерации имеет вид</div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=91/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=92/?k=10">)-<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=91/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=93/?k=10">)<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=94/?k=10">0.5<img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=95/?k=10">.</div>
+<div>Поскольку</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=96/?k=10"><br></div>
+<div><br><img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=97/?k=10"><br></div>
+<div>левая часть этого неравенства равна <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=98/?k=10">. Его правая часть, легко видеть, равна <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=99/?k=10">.</div>
+<div>Таким образом, на третьей итерации условие (14) выполняется и величина шага <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=67/?k=10"> должна быть изменена: <img align="absmiddle" src="/?frm/?doc=MO/ch0701.mod/?n=100/?k=10">.</div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-21/">← Оглавление</a>
         <a href="/rk6-edu/course-21/mod-35.html">‹ Предыдущий</a>

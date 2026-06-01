@@ -23,7 +23,69 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-12/mod-76.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Преобразование диаграммы классов UML в XML Schema</a>
+</div>
+<a name="T268476875"></a>
+<a name="T412168747"></a>
+<a name="T1968667247"></a>
+<a name="T193573435"></a>
+<div>Преобразованию могут быть подвергнуты <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">классы</a>, имеющие атрибуты, но не имеющие методов. Каждый класс из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">UML</a> диаграммы преобразуется в элемент комплексного типа (complexType definition) <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML схемы</a>. Атрибуты класса создаются как элементы в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контейнере</a> sequence.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>На рис. 1 приведена UML-схема. Ниже дано ее описание в виде XML-схемы.</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=190_CAD/7020.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;UML-схема</div></div>
+<pre class="eListing">&lt;?xml version="1.0"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Person" type="Person"/&gt;
+  &lt;xs:complexType name="Person"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="name" type="xs:string"/&gt;
+        &lt;xs:element name="birthDate" type="xs:string"/&gt;
+        &lt;xs:element name="contactDetails" type="Contact"/&gt;
+      &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:element name="Employee" type="Employee"/&gt;
+  &lt;xs:complexType name="Employee"&gt;
+      &lt;xs:complexContent&gt;
+        &lt;xs:extension base="Person"&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name="jobTitle" type="xs:string"/&gt;
+            &lt;xs:element name="start" type="xs:date"/&gt;
+            &lt;xs:element name="department" type="xs:string"/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:extension&gt;
+      &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:element name="Contact" type="Contact"/&gt;
+    &lt;xs:complexType name="Contact"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="Phone" type="xs:string"/&gt;
+        &lt;xs:element name="email" type="xs:string"/&gt;
+        &lt;xs:element name="address" type="xs:string"/&gt;
+      &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+</pre>
+<pre class="eListing"></pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-12/">← Оглавление</a>
         <a href="/rk6-edu/course-12/mod-74.html">‹ Предыдущий</a>

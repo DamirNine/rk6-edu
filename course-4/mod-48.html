@@ -23,7 +23,79 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-49.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Модель метаданных RDF</a>
+</div>
+<a name="T80980"></a>
+<a name="T86391"></a>
+<a name="T1691991437"></a>
+<a name="T2134277063"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">RDF</a> (Resource Description Framework) — модель, предложенная консорциумом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">World Wide Web</a> Consortium (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">W3C</a>) для описания <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метаданных</a> информационных ресуросов в Web. Для представления модели RDF используется язык XML. В получающемся <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-документе</a> RDF-метаданные помещаются в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контейнер XML</a> с дескриптором rdf:RDF.</div>
+<a name="T1386401492"></a>
+<a name="T84300"></a>
+<div>Модель состоит из предложений вида <span class="eOperator">субъект - предикат - объект</span>, где субъект — ресурс, о котором идет речь в предложении, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">предикат</a> — ресурс, являющийся свойством субъекта, объект — ресурс, являющийся значением свойства. Ресурсами являются некоторые модельные представления об объектах реального мира, обычно описываемые в документах, имеющих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">URI</a>. Отметим, что свойство в RDF — понятие, которое может использоваться самостоятельно, вне связи с субъектом. Пример предложения:</div>
+<div>Команда имеет тренера, его имя Иванов.</div>
+<div>Здесь субъектом, предикатом и объектом являются команда, тренер, Иванов соответственно.</div>
+<div>Ресурсы могут объединяться в группы, называемые классами. Сами классы также являются ресурсами и идентифицируются ссылками RDF-URI. В RDF определение класса или свойства (так называемый интенсионал) отделено от множества экземпляров класса и значений свойства (от экстенсионала).  </div>
+<div>Для записи RDF-модели используют язык XML. RDF-модель документа на языке XML есть последовательность элементов Description. Каждый элемент Description применяется к одному определенному ресурсу и содержит описания свойств ресурса (т.е. содержит значение определенного поля метаданных документа).  URI этого ресурса указывается в Description в качестве атрибута about или ID. Например:</div>
+<pre class="eListing">&lt;rdf:Description about="http://..."&gt;
+</pre>
+<div>Свойство может быть  URI, строкой символов или  элементом Description. Возможно использование нескольких элементов  Description  как включаемых в модель последовательно, так и вложенных друг в друга. Свойства представляются в виде XML-элементов &lt;предикат&gt;объект&lt;/предикат&gt; или &lt;предикат rdf:resource="объект"/&gt;.</div>
+<div>Общая структура модели  имеет вид:</div>
+<pre class="eListing">&lt;?xml version="1.0"?&gt;
+&lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"&gt;
+&lt;rdf:Description rdf:about="субъект"&gt;
+  &lt;предикат&gt;объект&lt;/предикат&gt;
+&lt;/rdf:Description&gt;
+  ...
+&lt;rdf:Description rdf:about=...&gt;
+  &lt;предикат rdf:resource="объект"/&gt;  
+&lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+</pre>
+<a name="T1996004208"></a>
+<div>Поскольку модель RDF относится к описанию семантики предметной области и служит, в частности, для согласования семантики документов из разных источников, необходимо решать проблемы возможного использования в этих документах терминов-омонимов. Проблемы омонимии решаются с помощью использования <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространств имен</a>.</div>
+<div>Предположим, что некоторый термин "system" имеет разный смысл в предметных областях, описываемых в документах с URI http://www.cl.edu/cont/ и http://aba.ru/technologies/elements/. Тогда на этот термин в RDF-модели нужно ссылаться с помощью составных имен (QNames), например, m1:system и m2:system, причем предварительно должны быть введены псевдонимы m1 и m2 для указанных URI. Структура RDF-модели может иметь вид (в примере использование m1:system и m2:system подразумевается в XML-предложениях внутри элементов rdf:Description):</div>
+<pre class="eListing">&lt;rdf:RDF
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:m1="http://www.cl.edu/cont/"
+        xmlns:m2="http://aba.ru/technologies/elements/"&gt;
+&lt;rdf:Description rdf:about=...&gt;
+  ...
+&lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+</pre>
+<div>Приведем простой пример RDF-модели:</div>
+<pre class="eListing">&lt;?xml version="1.0"?&gt;
+&lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:contact="http://www.w3.org/2000/10/swap/pim/contact#"&gt;
+  &lt;rdf:Description rdf:about="http://www.work.ru/person/"&gt;
+    &lt;contact:fullName&gt;Ivan Ivanov&lt;/contact:fullName&gt;
+    &lt;PlaceOfBirth&gt;Moscow&lt;/PlaceOfBirth&gt;
+    &lt;contact:personalTitle&gt;Professor&lt;/contact:personalTitle&gt;
+  &lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+</pre>
+<div>Здесь элемент rdf:Description служит для представления метаданных документа, находящегося по адресу http://www.work.ru/person/, другими словами, .http://www.work.ru/person/ есть URI субъекта, его свойствами являются полное имя, место рождения, звание, а значениями свойств соответственно Иван Иванов, Москва и профессор.</div>
+<div>Полные URI можно  заменять псевдонимами, используя объявления ENTITY в таблице определения типов DTD. Например:</div>
+<pre class="eListing">&lt;!ENTITY dev  "http://ee.com/product/comp#"&gt;
+</pre>
+<div>Теперь полный URI (http://ee.com/product/comp#diode)  может быть заменен на  &amp;dev;diode.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-47.html">‹ Предыдущий</a>

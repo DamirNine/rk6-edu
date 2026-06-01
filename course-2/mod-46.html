@@ -23,7 +23,39 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-2/mod-47.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сетевые архитектуры для корпоративных информационных систем</a>
+</div>
+<a name="T1945387555"></a>
+<a name="T2140485681"></a>
+<a name="T1761574996"></a>
+<a name="T217407365"></a>
+<div>Сети, на базе которых строятся автоматизированные системы крупных предприятий, в том числе виртуальных предприятий, включают большое число <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">клиентов</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">серверов</a>. Связь клиентов с серверами при сосредоточении <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">узлов</a> на сравнительно небольшой площади (например, в одном здании) возможна через <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">локальную сеть</a> (ЛВС). Если <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">корпоративная сеть</a> соединяет несколько производственных площадок, удаленных друг от друга на значительные расстояния, то обычно для связи используют <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Internet</a>. Если к тому же применяются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">"тонкие клиенты"</a>, то приходится через Internet обращаться не только к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">серверам баз данных</a>, но и к ряду серверов приложений и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Web-серверов</a>, распределенных или сосредоточенных на одной из площадок.</div>
+<a name="T677591273"></a>
+<div>Доступ к Web-серверам необходим для информационного обслуживания сотрудников, для реализации многих функций таких систем, как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">SCM</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">CRM</a>. Иногда предприятие поддерживает Web-сервер, используемый для организации Web-конференций, дистанционного обучения персонала и т.п. В этих условиях ради сокращения времени ожидания пользователями ответов на запросы целесообразно создать один или более серверов, дублирующих основной Web-сервер и называемых зеркалами. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Зеркалирование</a> позволяет уменьшить длины очередей к Web-серверам.</div>
+<a name="T1393360874"></a>
+<div>Дальнейшее сокращение временных задержек достигается использованием кэширования данных в промежуточных <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">proxy</a>-серверах. При этом обращение к Web-серверу происходит через прокси-сервер, в котором запоминаются на определенное время файлы, извлекаемые с помощью Web-сервера. Поэтому повторный запрос файла уже не потребует трудоемкого обращения к Web-серверу. Чем чаще происходят повторные запросы, тем выше экономия во времени ожидания. Однако при отсутствии повторных запросов, наоборот, наблюдается снижение эффективности, так как для обращения к прокси-серверу требуется дополнительное время.</div>
+<div>В результате вариант архитектуры вычислительной сети крупного предприятия имеет вид, представленный на рис.&nbsp;1. Клиенты К извлекают нужные файлы из кэша прокси-сервера П. Если в кэше запрошенного файла не оказалось, то П обращается к Web-серверу через Internet. Балансировщик Бл распределяет клиентские запросы на обслуживание между однотипными серверами С, т.е. выбирает один из Web-серверов, который с помощью одного из серверов приложений и сервера базы данных формирует ответ клиенту. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Брандмауэр</a> выполняет функции защиты информации, пропуская только разрешенные сообщения.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=210_netw/nw602.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Возможная архитектура корпоративной вычислительной сети</div></div>
+<div>Реализация балансировки нагрузки возможна несколькими способами. Во-первых, функции балансировки можно совместить с преобразованием <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IP-имени</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IP-адрес</a>, т.е. балансировщик воплотить в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">DNS</a>-сервере. В этом случае все однотипные серверы имеют одно общее IP-имя, но разные IP-адреса. Во-вторых, выбор одного из серверов можно совместить с установлением соединения по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протоколу TCP</a>. Способ удобен при реализации серверов на многопроцессорной системе, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кластере</a> или в ЛВС. В-третьих, выбор сервера можно связать не с установлением соединения, а с каждым запросом по уже установленному соединению. В этом способе можно получить оптимальное распределение запросов по серверам, так как учитывается характер запросов, но дополнительные затраты времени связаны именно с обработкой данных о трудоемкости выполнения запроса. В-четвертых, выбор зеркала возможен с помощью отдельной программы балансировки, которая определяет (например, по очереди) IP-адрес сервера. Этот способ не требует переделки DNS-сервера, удобен для территориальных сетей, но из-за двойного установления соединения (сначала с балансировщиком, затем с выбранным сервером) требует дополнительных затрат времени.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-2/">← Оглавление</a>
         <a href="/rk6-edu/course-2/mod-45.html">‹ Предыдущий</a>

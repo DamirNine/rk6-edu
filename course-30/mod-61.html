@@ -23,7 +23,160 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-62.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Разбиение целых чисел.</a>
+</div>
+<div>Разбиением натурального числа n называется его представление в виде суммы целых положительных слагаемых:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=1/?k=10">, где p<sub class="eSub">i</sub>&gt;0</div>
+<br>
+<div>Например, одним из возможных вариантов разбиения числа 7 на 4 слагаемых является следующая сумма:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=2/?k=10"></div>
+<br>
+<div>Порядок перечисления слагаемых разбиения значения не имеет. Поэтому, например, следующие 2 разбиения числа 7 на 3 слагаемых являются эквивалентными комбинаторными объектами:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=3/?k=10"></div>
+<br>
+<div>Однако, исходя из алгоритмических соображений, более удобно располагать слагаемые разбиений в неубывающем или в невозрастающем порядке их величин:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=4/?k=10"></div>
+<br>
+<div>В частности, представленное выше разбиение числа 7 на 3 слагаемых обычно записывается в любом из следующих 2-х вариантах:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=5/?k=10">   или<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=6/?k=10"></div>
+<br>
+<div>В различных практических задачах могут быть наложены дополнительные ограничения, например, на число, величину или количество повторений слагаемых разбиений. Однако, классическими комбинаторными задачами обработки разбиений являются вычисление общего количества и систематического перечисления разбиений для любого заданного числа без каких-либо дополнительных ограничений.</div>
+<div>Суммарное количество разбиений Р(n) для любого заданного числа n можно определить по следующему рекуррентному соотношению:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=7/?k=10"></div>
+<br>
+<div>В этом соотношении предполагается, что все аргументы в правой части должны быть неотрицательны и считается, что Р(0)=1;</div>
+<div>Следующий пример демонстрирует последовательность выполнений первых 8-ми натуральных чисел:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=8/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=9/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=10/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=11/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=12/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=13/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=14/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=15/?k=10"></div>
+<br>
+<a name="T823713000"></a>
+<div>Алгоритмически более сложной комбинаторной проблемой является задача математического перечисления всех разбиений любого заданного натурального числа. Для решения этой задачи обычно применяется либо <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> Гиндербурга, открытый в 1778 году, либо более современный и значительно более эффективный алгоритм Эрлиха.</div>
+<br>
+<a name="T123727818"></a>
+<div>Алгоритм Гиндербурга обеспечивает прохождение разбиений натуральных чисел в порядке увеличения количества слагаемых, а разбиения равной длины перечисляются в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">лексиграфическом порядке</a>. Например, при генерации разбиений числа 7 по алгоритму Гиндербурга последовательно будут получены 15 разбиений:</div>
+<br>
+<ol class="eList"><li>7=7</li>
+<li>7=1+6</li>
+<li>7=2+5</li>
+<li>7=3+4</li>
+<li>7=1+1+5</li>
+<li>7=1+2+4</li>
+<li>7=1+3+3</li>
+<li>7=2+2+3</li>
+<li>7=1+1+1+4</li>
+<li>7=1+1+2+3</li>
+<li>7=1+2+2+2</li>
+<li>7=1+1+1+1+3</li>
+<li>7=1+1+1+2+2</li>
+<li>7=1+1+1+1+1+2</li>
+<li>7=1+1+1+1+1+1+1</li>
+</ol>
+<br>
+<div>На начальном шаге этого алгоритма выбирается тривиальное разбиение, состоящее только из одного слагаемого, равного n:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=16/?k=10"></div>
+<br>
+<div>У последующих разбиений число слагаемых l последовательно растёт (или по крайней мере не убывает), а сами слагаемые записываются в порядке неубывания их величин:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=17/?k=10"></div>
+<br>
+<div>Каждое очередное разбиение конструируется по текущему следующем образом. Слагаемые текущего разбиения нужно просмотреть справа налево (в направлении от p<sub class="eSub">l</sub> к p<sub class="eSub">1</sub>) с целью найти самое правое слагаемое p<sub class="eSub">i,</sub> для которого выполняется неравенство:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=18/?k=10"></div>
+<br>
+<div>Если такое слагаемое p<sub class="eSub">i</sub> существует в текущем разбиении, то значения всех слагаемых p<sub class="eSub">j</sub>, начиная с p<sub class="eSub">i</sub> до последнего слагаемого (p<sub class="eSub">l-1</sub>), нужно увеличить на 1:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=19/?k=10"> для всех <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=20/?k=10"></div>
+<br>
+<div>Иначе, когда последнее слагаемое p<sub class="eSub">l</sub> не превосходит остальные по величине больше, чем на 1, тогда значения всех слагаемых принимаются равными 1, и затем длина разбиения увеличивается на 1:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=21/?k=10">   и   <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=22/?k=10"></div>
+<br>
+<div>В любом случае значение последнего слагаемого p<sub class="eSub">l</sub> по формуле:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=23/?k=10"></div>
+<br>
+<div>Например, при генерации разбиений числа 7 на 10-м шаге получено текущее разбиение из 4-х слагаемых (l=4):</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=24/?k=10"></div>
+<br>
+<div>В этом разбиении последнее слагаемое р<sub class="eSub">4</sub> равно 3. Его значение больше на 2 слагаемого р<sub class="eSub">2</sub>, равного 1. Поэтому в следующем разбиении слагаемое р<sub class="eSub">2</sub> и р<sub class="eSub">3</sub> будут равны 2. Значение последнего слагаемого р<sub class="eSub">4</sub> вычисляется по остаточной формуле и будет также равно 2. Таким образом, очередным разбиением будет разбиение той же длины, на следующее в лексиграфическом порядке слагаемых:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=25/?k=10"></div>
+<br>
+<div>В этом разбиении последнее слагаемое р<sub class="eSub">4</sub> равно 2 и не превосходит остальные слагаемые больше, чем на 1. Поэтому в очередном разбиении нужно принять значения всех слагаемых равными 1, а затем увеличить длину разбиения ещё на одно слагаемое р<sub class="eSub">5</sub>. По остаточной формуле его значение должно быть равно 3. Следовательно, очередное разбиение будет иметь вид:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=26/?k=10"></div>
+<br>
+<div>Таким образом на каждом шаге алгоритма либо строится следующее в лексиграфическом порядке разбиение с тем же количеством слагаемых, либо число слагаемых увеличивается на 1 и получается расширенное разбиение, где все слагаемые, кроме последнего равны 1. Рассмотренный процесс генерации разбиений завершается, когда на конечном шаге получится разбиение с максимальным числом слагаемых l=n, где все слагаемые равны 1:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=27/?k=10"></div>
+<br>
+<div>Существенным недостатком алгоритма Гинденбурга, снижающим его эффективность, является необходимость обратного просмотра слагаемых каждого разбиения. Этого недостатка лишён  более совершенный в вычислительном отношении алгоритм, предложенный Г. Эрлихом. Этот алгоритм генераций разбиений натурального числа, который использует мультимножественную запись его слагаемых, порождая разбиения в словарном порядке.</div>
+<div>В мультимножественных обозначениях учитывается кратность слагаемых разбиения. Это даёт возможность записать разбиение любого натурального числа n на l мультислагаемых в следующем формате:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=28/?k=10"></div>
+<br>
+<div>В этой записи m<sub class="eSub">i</sub> обозначает кратность слагаемого p<sub class="eSub">i</sub>, а слагаемые перечислены в порядке убывания их величин:</div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=29/?k=10"></div>
+<br>
+<div>Например, один из вариантов разбиения числа 7на 2 мультислагаемых 4 и 3 может быть записан следующим образом:</div>
+<br>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=30/?k=10"></div>
+<br>
+<div>В этой записи слагаемое р<sub class="eSub">1</sub>=2 входит в разбиение с кратностью m<sub class="eSub">1</sub>=2, а слагаемое р<sub class="eSub">2</sub>=1 учтено в разбиении с кратностью m<sub class="eSub">2</sub>=3. При этом p<sub class="eSub">1</sub> трого больше p<sub class="eSub">2</sub>.</div>
+<div>Мультимножественная запись позволяет построить алгоритм прохождения разбиений, который переходит от текущего разбиения к следущему в словарном порядке, рассматриивая только самый первый элемент разбиения m<sub class="eSub">l</sub><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=31/?k=10">p<sub class="eSub">l</sub> без анализа предыдущих слагаемых как в алгоритме Гринденбурга. Способ конструирования очередного разбиения зависит от кратности m<sub class="eSub">l</sub> последнего слагаемого текущего разбиения. При этом рассматриваются 2 случая:</div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=32/?k=10"> и <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=33/?k=10"></div>
+<br>
+<div>В 1-м случае (m<sub class="eSub">l</sub>&gt;1) можно исключить из разбиения 2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=31/?k=10">p<sub class="eSub">l</sub>, чтобы иметь возможность добавить (ещё) одно слагаемое со значением (p<sub class="eSub">l</sub>+1). Во 2-м случае (m<sub class="eSub">l</sub>=1) за счёт 2-х последних мультислагаемых(m<sub class="eSub">l-1</sub><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=31/?k=10">p<sub class="eSub">l-1</sub>) и (m<sub class="eSub">l</sub><img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=31/?k=10">p<sub class="eSub">l</sub>) можно добавить ещё одно слагаемое со значением (p<sub class="eSub">l-1</sub>+1). В любом то, что остаётся от уменьшаемых мультислагаемых превращается в соответствующее число единиц последнего мультислагаемого и формируется очереднок разбиение. Указанный процесс должен начинаться с разбиения (n<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=31/?k=10">1), где слагаемые равны 1 и завершаться разбиением (1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=31/?k=10">n) из одного мультислагаемого.</div>
+<div>Выполнение шагов алгоритма Эрлиха иллюстрирует следующий пример генерации разбиений натурального числа 7:</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Начальное разбиение: 7<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1=1+1+1+1+1+1+1   <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2 и остаток 5<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1</div>
+<div>1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2+5<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1=2+(1+1+1+1+1)                                <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2 и остаток 3<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1</div>
+<div>2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2+3<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1=(2+2)+(1+1+1)                                 <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2 и остаток 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1</div>
+<div>3<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2+1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1=(2+2+2)+1                                        <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 3<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2 и 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">3 и остаток 4<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1</div>
+<div>1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">3+4<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1=3+(1+1+1+1)                                    <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2 и остаток 2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1</div>
+<div>1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">3+1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2+2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1=3+2+(1+1)                                 <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2 и остаток 0</div>
+<div>1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">3+2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2=3+(2+2)                                             <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">3 и остаток 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1</div>
+<div>2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">3+1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1=(3+1)+1                                             <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2 и 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">4 и остаток 3<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1</div>
+<div>1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">4+3<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1=4+(1+1+1)                                         <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2 и остаток 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1</div>
+<div>1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">4+1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2+1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1=4+2+1                                        <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2 и 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">3 и остаток 0</div>
+<div>1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">4+1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">3=4+3                                                    <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">4 и 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">3, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">5 и остаток 2</div>
+<div>1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">5+2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1=5+(1+1)                                             <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 2<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2 и остаток 0</div>
+<div>1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">5+1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2=5+2                                                    <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">5 и 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">6 и остаток 1</div>
+<div>1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">6+1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">1=6+1                                                    <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Исключить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">6 и 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">2, добавить 1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">7 и остаток 0</div>
+<div>1<img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=34/?k=10">7=7                                                                <img align="absmiddle" src="/?frm/?doc=PO_CAD/5.1.mod/?n=35/?k=10">   Конечное разбиение.</div>
+</div>
+<div>В заключение следует отметить линейность алгоритма Эрлиха, так как число операций, необходимых для перехода к каждому следующему разбиению, определяется константой, независимых от числа слагаемых.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-60.html">‹ Предыдущий</a>

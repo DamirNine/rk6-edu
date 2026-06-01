@@ -23,7 +23,43 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-27/mod-40.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Перегрузка операций вызова функций</a>
+</div>
+<br>
+<a name="T391754152"></a>
+<a name="T1544877146"></a>
+<div>Класс, в котором переопределен <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">оператор вызова функции</a>, называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функциональным классом</a>. У такого класса не требуется наличие других полей и методов.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><br>
+<pre class="eListing">class if_greater
+{
+public
+int operator() (int a, int b) const { return a&gt;b; }
+};
+</pre>
+</div>
+<br>
+<div>Объект данного функционального класса используется так, как если бы он был функцией.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><br>
+<pre class="eListing">if_greater x;
+cout&lt;&lt; x(1, 5)&lt;&lt; endl; /* 0 */
+cout&lt;&lt; if_greater() (5, 1)&lt;&lt; endl; /* 1 */
+</pre>
+<br>
+</div>
+<div>Поскольку в классе определена операция вызова функции с двумя аргументами, то выражение x(1, 5)  является допустимым, или это можно записать так:</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><br>
+<pre class="eListing">*operator()(1, 5)
+</pre>
+</div>
+<div>А во втором операторе вызова функции if_greater используется для вызова <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструктор по умолчанию</a> класса if_greater. </div>
+<div>Как и в предыдущем случае для этого объекта вызывается функция с двумя аргументами, записанными в круглые скобки. Операцию круглые скобки можно определить только как метод класса. Можно определить перегруженные операции вызова функции с разным количеством аргументов.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-27/">← Оглавление</a>
         <a href="/rk6-edu/course-27/mod-38.html">‹ Предыдущий</a>

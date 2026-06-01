@@ -23,7 +23,31 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-46.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Оператор while</a>
+</div>
+<div>Оператор цикла while называется циклом с предусловием и имеет следующий формат:</div>
+<pre class="eListing">while (выражение) тело ;
+</pre>
+<a name="T260422801"></a>
+<div>В качестве выражения допускается использовать любое выражение языка Си, а в качестве тела любой оператор, в том числе пустой или составной. Схема выполнения <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">оператора while</a> следующая:</div>
+<div>1. Вычисляется выражение.</div>
+<div>2. Если выражение ложно, то выполнение оператора while заканчивается и выполняется следующий по порядку оператор. Если выражение истинно, то выполняется тело оператора while.</div>
+<div>3. Процесс повторяется с пункта 1.</div>
+<div>Оператор цикла вида</div>
+<pre class="eListing">for (выражение-1; выражение-2; выражение-3) тело ;
+</pre>
+<div>может быть заменен оператором while следующим образом:</div>
+<pre class="eListing">выражение-1;
+while (выражение-2)
+ { тело
+   выражение-3;
+  }
+</pre>
+<div>Так же как и при выполнении <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператора for</a>, в операторе while вначале происходит проверка условия. Поэтому оператор while удобно использовать в ситуациях, когда тело оператора не всегда нужно выполнять. Внутри операторов for и while можно использовать локальные переменные, которые должны быть объявлены с определением соответствующих типов.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-44.html">‹ Предыдущий</a>

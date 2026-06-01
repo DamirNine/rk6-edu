@@ -23,7 +23,88 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-33.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Быстрая сортировка</a>
+</div>
+<br>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Метод</a> основан на подходе "разделяй-и-властвуй". Общая схема такова:</div>
+<br>
+<ul class="eList"><a name="T1992766606"></a>
+<li>из <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">массива</a> выбирается некоторый опорный элемент a[i],</li>
+<li>запускается процедура разделения массива, которая перемещает все <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключи</a>, меньшие, либо равные a[i], влево от него, а все ключи, большие, либо равные a[i] - вправо,</li>
+<li>теперь массив состоит из двух подмножеств, причем левое меньше, либо равно правого,</li>
+</ul>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.6.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<br>
+<ul class="eList"><li>для обоих подмассивов: если в подмассиве более двух элементов, рекурсивно запускаем для него ту же процедуру.</li>
+</ul>
+<br>
+<div>В конце получится полностью отсортированная последовательность.</div>
+<div>Рассмотрим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> подробнее.</div>
+<br>
+<div class="eSubTitle">Разделение массива</div>
+<br>
+<div>На входе массив a[0]...a[N] и опорный элемент p, по которому будет производиться разделение. </div>
+<div>Введем два указателя: i и j. В начале алгоритма они указывают, соответственно, на левый и правый конец последовательности.</div>
+<div>Будем двигать указатель i с шагом в 1 элемент по направлению к концу массива, пока не будет найден элемент a[i] &gt;= p. Затем аналогичным образом начнем двигать указатель j от конца массива к началу, пока не будет найден a[j] &lt;= p. </div>
+<div>Далее, если i &lt;= j, меняем a[i] и a[j] местами и продолжаем двигать i,j по тем же правилам...</div>
+<div>Повторяем шаг 3, пока i &lt;= j.</div>
+<div>Рассмотрим работу процедуры для массива a[0]...a[6] и опорного элемента p = a[3].</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.6.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<br>
+<div>Теперь массив разделен на две части: все элементы левой меньше либо равны p, все элементы правой - больше, либо равны p. Разделение завершено.</div>
+<br>
+<div class="eSubTitle">Общий алгоритм</div>
+<br>
+<pre class="eListing">template&lt;class T&gt;
+void quickSortR(T* a, long N) {
+// На входе - массив a[], a[N] - его последний элемент.
+  long i = 0, j = N; // поставить указатели на исходные места
+  T temp, p;
+  p = a[ N&gt;&gt;1 ];// центральный элемент
+  // процедура разделения
+  do {
+    while ( a[i] &lt; p ) i++;
+    while ( a[j] &gt; p ) j--;
+    if (i &lt;= j) {
+      temp = a[i]; a[i] = a[j]; a[j] = temp;
+      i++; j--;
+    }
+  } while ( i&lt;=j );
+  // рекурсивные вызовы, если есть, что сортировать 
+  if ( j &gt; 0 ) quickSortR(a, j);
+  if ( N &gt; i ) quickSortR(a+i, N-i);
+}
+</pre>
+<br>
+<div>Каждое разделение требует, очевидно, Theta(n) операций. Количество шагов деления(глубина рекурсии) составляет приблизительно log n, если массив делится на более-менее равные части. Таким образом, общее быстродействие: O(n log n), что и имеет место на практике.</div>
+<div>Однако, возможен случай таких входных данных, на которых алгоритм будет работать за O(n2) операций. Такое происходит, если каждый раз в качестве центрального элемента выбирается максимум или минимум входной последовательности. Если данные взяты случайно, вероятность этого равна 2/n. И эта вероятность должна реализовываться на каждом шаге... Вообще говоря, малореальная ситуация.</div>
+<div>Метод неустойчив. Поведение довольно естественно, если учесть, что при частичной упорядоченности повышаются шансы разделения массива на более равные части.</div>
+<a name="T1356058257"></a>
+<a name="T33524358"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сортировка</a> использует дополнительную память, так как приблизительная глубина рекурсии составляет O(log n), а данные о рекурсивных подвызовах каждый раз добавляются в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">стек</a>.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-31.html">‹ Предыдущий</a>

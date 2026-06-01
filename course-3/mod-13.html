@@ -23,7 +23,64 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-3/mod-14.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Модели МОП-транзисторов</a>
+</div>
+<div>На рис. 1 представлены профиль и топология КМОП (КМДП) транзисторов.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=010_EDA/eda104.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Профиль и топология КМДП-транзисторов</div></div>
+<a name="T2143680945"></a>
+<a name="T1955021989"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Эквивалентная схема</a> МОП транзистора, соответствующая <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">моделям МОП-транзисторов</a>, используемым во многих программах анализа электронных схем, представлена на рис. 1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=010_EDA/eda104.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Модель МОП-транзистора, используемая в программе Spice</div></div>
+<a name="T2005297204"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Модель</a> характеризуется следующими параметрами:</div>
+<ul class="eList"><li>R<sub class="eSub">d</sub> — cопротивление стокового слоя;</li>
+<li>R<sub class="eSub">S</sub> — сопротивление истокового слоя;</li>
+<li>BETA — удельная крутизна передаточной характеристики транзистора.</li>
+<li>BETA TC — температурный коэффициент BETA;</li>
+<li>V<sub class="eSub">TO</sub> — пороговое напряжение;</li>
+<li>V<sub class="eSub">TO</sub> TC — температурный коэффициент порогового напряжения;</li>
+<li>GAMMA — коэффициент эффекта Бодэ;</li>
+<li>P<sub class="eSub">HI</sub> — потенциал инверсии зон.</li>
+<li>LAMBDA — коэффициент модуляции канала;</li>
+<li>C<sub class="eSub">gd</sub> — емкость затвор-сток;</li>
+<li>C<sub class="eSub">gs</sub> — емкость затвор-исток;</li>
+<li>C<sub class="eSub">bs</sub>- емкость подложка-исток;</li>
+<li>C<sub class="eSub">bd</sub>- емкость подложка-сток;</li>
+<li>C<sub class="eSub">gb</sub>- емкость затвор-подложка;</li>
+<li>R<sub class="eSub">b</sub> — cопротивление слоя подложки;</li>
+<li>R<sub class="eSub">ds</sub> — сопротивление сток-исток закрытого транзистора.</li>
+</ul>
+<div>Вычисление BETA осуществляется по величине сопротивления канала транзистора на начальном участке выходных характеристик. Несложно показать, что коэффициент BETA для крутого участка ВАХ вычисляется по формуле:</div>
+<div>BETA = <img align="absmiddle" src="/?frm/?doc=010_EDA/eda104.mod/?n=1/?k=10"> ,</div>
+<div>где RON — выходное статическое сопротивление транзистора на начальном (крутом) участке характеристик (Ом);</div>
+<div>• V<sub class="eSub">gs</sub> — напряжение затвор-исток;</div>
+<div>• I<sub class="eSub">d</sub> — ток стока.</div>
+<div>Параметр Lambda определяет линейное нарастание BETA с ростом V<sub class="eSub">ds</sub>за счет модуляции длины канала.</div>
+<a name="T1167030169"></a>
+<a name="T63497630"></a>
+<div>Эквивалентная схема рис. 1 является базовой для моделей шести уровней, различающихся учетом тех или иных эффектов. Модель уровня 1 (LEVEL1) наиболее проста и используется, если не требуется высокая точность расчетов. Модель уровня 2, наоборот, довольно сложная и характеризуется большим числом трудно определяемых параметров. Широко известны <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">физические  модели</a> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">BSIM3</a> и BSIM4   (аббревиатура BSIM есть сокращение фразы Berkeley short–channel IGFET model, где IGFET - insulated-gate field-effect transistor, т.е BSIM - модель МОП-транзистора с изолированным затвором и коротким каналом, разработанная в Беркли).</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-3/">← Оглавление</a>
         <a href="/rk6-edu/course-3/mod-12.html">‹ Предыдущий</a>

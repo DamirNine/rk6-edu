@@ -23,7 +23,30 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-17.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Поля битов</a>
+</div>
+<a name="T396541069"></a>
+<a name="T1992766606"></a>
+<div>Элементом структуры может быть <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">битовое поле</a> , обеспечивающее доступ к отдельным битам памяти. Вне структур битовые поля объявлять нельзя. Нельзя также организовывать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массивы</a> битовых полей и нельзя применять к полям операцию определения адреса. В общем случае тип структуры с битовым полем задается в следующем виде:</div>
+<pre class="eListing">     struct { unsigned идентификатор 1 :  длина-поля  1;
+              unsigned идентификатор 2 :  длина-поля  2;    }
+
+</pre>
+<div>длинна — поля задается целым выражением или константой. Эта константа определяет число битов, отведенное соответствующему полю. Поле нулевой длинны обозначает выравнивание на границу следующего слова.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">struct { unsigned a1 : 1;
+unsigned a2 : 2;
+unsigned a3 : 5;
+unsigned a4 : 2; } prim;
+</pre>
+</div>
+<a name="T1503632866"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Структуры</a> битовых полей могут содержать и знаковые компоненты. Такие компоненты автоматически размещаются на соответствующих границах слов, при этом некоторые биты слов могут оставаться неиспользованными.</div>
+<div>Ссылки на поле битов выполняются точно так же, как и компоненты общих структур. Само же битовое поле рассматривается как целое число, максимальное значение которого определяется длиной поля.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-15.html">‹ Предыдущий</a>

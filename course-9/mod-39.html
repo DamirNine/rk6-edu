@@ -23,7 +23,46 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-9/mod-40.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Автоматизированное управление технологическими процессами</a>
+</div>
+<a name="T323682771"></a>
+<a name="T2017835249"></a>
+<div>В <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">автоматизированных системах управления технологическими процессами</a>, часто называемых <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">системами</a> промышленной автоматизации, можно выделить свои иерархические уровни.</div>
+<div>На верхнем (диспетчерском) уровне АСУТП осуществляются сбор и обработка данных о состоянии оборудования и протекании производственных процессов для принятия решений по загрузке станков и выполнению технологических маршрутов. Эти функции возложены на систему диспетчерского управления и сбора данных, называемую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">SCADA</a> (Supervisory Control and Data Acquisition). Кроме диспетчерских функций, система SCADA выполняет роль инструментальной системы разработки программного обеспечения (ПО) для промышленных систем компьютерной автоматизации.</div>
+<a name="T2025294386"></a>
+<a name="T1863988698"></a>
+<a name="T54695528"></a>
+<div>На уровне управления технологическим оборудованием (на уровне <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контроллеров</a>) в АСУТП выполняются запуск, тестирование, выключение станков, сигнализация о неисправностях, выработка управляющих воздействий для рабочих органов программно управляемого оборудования. Для этого в составе технологического оборудования используются системы управления на базе программируемых контроллеров — компьютеров, встроенных в технологическое оборудование. Поэтому системы промышленной автоматизации часто называют встроенными системами (<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Embedded Computing System</a>), а используемые при этом компьютеры - <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">промышленными компьютерами</a>.</div>
+<a name="T33723523"></a>
+<div>Техническое обеспечение АСУТП представлено персональными ЭВМ и микрокомпьютерами (программируемыми контроллерами), распределенными по контролируемым участкам производства и связанными друг с другом с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шин</a>.</div>
+<a name="T144922274"></a>
+<div>На верхнем уровне иерархии шин осуществляется связь компьютеров системы SCADA и серверов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">баз данных</a>, здесь используются технологии <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">локальных вычислительных сетей</a>, как правило, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сети Ethernet</a> (рис.&nbsp;1) Для связи компьютеров с высокоскоростными периферийными устройствами служат шины Infiniband, Fiber Channel, USB, FireWire 1394, с низкоскоростными устройствами связь осуществляют через интерфейсы RS-232, RS-422, RS-485.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=020_ERP/erp201.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Архитектура АСУТП</div></div>
+<a name="T1055307"></a>
+<a name="T886129643"></a>
+<div>На среднем уровне (уровне контроллеров) АСУТП для связи компьютеров с системами <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЧПУ</a> обычно применяют сети <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Fieldbus</a> — так называемые полевые шины. Особенностями Fieldbus являются режим реального времени, детерминированность поведения, повышенная надежность при работе в промышленной среде. В полевых шинах имеют место протоколы трех уровней: физического уровня, канального уровня, прикладного уровня. Примерами полевых шин являются последовательные шины Profibus, Interbus/S, CANbus. Всего на рынке имеется несколько десятков типов таких шин.</div>
+<div>На нижнем уровне АСУТП соединение модулей контроллеров, датчиков, измерительного и другого оборудования в пределах одного функционального узла (например, соединение слотов в крейте) выполняется посредством магистрально-модульных параллельных шин, таких как VMEbus, CompactPCI, или последовательных шин типа Infiniband или CompactPCI Express.</div>
+<a name="T716715864"></a>
+<div>Программное обеспечение АСУТП представлено операционными системами, программами <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">SCADA</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">драйверами</a> и прикладными программами контроллеров.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-9/">← Оглавление</a>
         <a href="/rk6-edu/course-9/mod-38.html">‹ Предыдущий</a>

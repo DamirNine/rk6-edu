@@ -23,7 +23,46 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-45.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">УСО для вывода данных с преобразованием из дискретной формы в дискретную</a>
+</div>
+<a name="T2088401324"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">УСО такого типа</a> рассмотрим на примере преобразователя "код — длительность импульса", используемого для формирования управляющего сигнала для импульсного усилителя мощности при использовании широтно-импульсной модуляции (ШИМ) для управления электродвигателем.</div>
+<div>Управляющий сигнал в случае ШИМ представляет собой последовательность импульсов, следующих с заданной частотой (период следования импульсов обозначим <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=1/?k=10">). Длина импульса <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=2/?k=10"> является переменной и изменяется от 0 (нет импульса) до <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=1/?k=10"> (импульс занимает весь период). Отношение <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=3/?k=10">, выраженное в процентах, называется скважностью:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=4/?k=10"><br></div>
+<div>Именно изменение скважности обеспечивает управление двигателем. Следовательно, наше УСО должно формировать последовательность импульсов, следующих через заданный интервал и имеющих изменяемую скважность (конкретное значение скважности задается МП в качестве входного параметра для УСО).</div>
+<div>Построение УСО будем проводить на базе программируемого таймера (рис.&nbsp;1).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_10_2.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Схема включения программируемого таймера обеспечивает доступ к нему на этапе программирования для занесения в его внутренние регистры информации, необходимой для настройки на заданный режим работы (в частности — начальных значений счетчиков).</div>
+<div>Для формирования импульсов ШИМ используются два канала таймера. Временная диаграмма работы каналов приведена на рис.&nbsp;2.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_10_2.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>Канал 1 обеспечивает формирование на выходе <span class="eOperator">OUT0</span> одиночных импульсов с периодом <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=5/?k=10">, где <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=6/?k=10"> — частота тактовых импульсов, подаваемых на вход <span class="eOperator">CLK0</span> таймера. Период следования этих импульсов равен заданному периоду следования импульсов ШИМ. Импульсы подаются на вход разрешения счета второго канала таймера. Передний фронт каждого такого импульса запускает счет в канале 2. Канал 2 работает в режиме генерации импульсов заданной длительности. То есть длительность импульсов на выходе второго канала <span class="eOperator">OUT1</span> равна <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=7/?k=10">, где <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=8/?k=10"> – частота тактовых импульсов, подаваемых на вход <span class="eOperator">CLK2</span> таймера.</div>
+<div>Выходом УСО будет являться выход второго канала таймера <span class="eOperator">OUT1</span>.</div>
+<div>Таким образом, канал 1 определяет период следования импульсов ШИМ, канал 2 — их длительность. Период следования (частота) ШИМ задается путем программирования канала 1 (занесения в его счетчик соответствующего начального значения).</div>
+<div>Скважность получающихся импульсов ШИМ:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=9/?k=10"><br></div>
+<div>Из формулы видно, что изменение скважности обеспечивается путем изменения <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=10/?k=10"> от 0 до <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_2_10_2.mod/?n=11/?k=10">. То есть числовое значение, которое должно быть преобразовано в УСО в скважность импульсов ШИМ, заносится в программируемый таймер в качестве начального значения счетчика канала 2.</div>
+<a name="T541472668"></a>
+<div>Так как занесение данных во внутренние регистры таймера возможно в любой момент, в данном УСО используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синхронный метод</a> взаимодействия с ведущим устройством — запись данных производится МП без какой-либо проверки готовности УСО.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-43.html">‹ Предыдущий</a>

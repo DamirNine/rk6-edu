@@ -23,7 +23,56 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-28/mod-5.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Бином Ньютона</a>
+</div>
+<div>Для выполнения различных математических преобразований и вычислений важно иметь возможность представить любую натуральную степень алгебраического бинома (двучлена) в развернутой форме многочлена. При малых степенях искомый многочлен несложно получить непосредственным перемножением биномов. В частности, из курса элементарной математики хорошо известны следующие формулы квадрата и куба суммы двух слагаемых:</div>
+<div><span style="font-weight:bold; ">(X + Y)<sup class="eSub">2</sup> = X<sup class="eSub">2</sup> + 2XY + Y<sup class="eSub">2</sup>    и    (X + Y)<sup class="eSub">3</sup> = X<sup class="eSub">3</sup> + 3X<sup class="eSub">2</sup>Y + 3XY<sup class="eSub">2</sup> + Y<sup class="eSub">3</sup> </span>.</div>
+<a name="T2000738017"></a>
+<div>В общем случае для произвольной натуральной степени n бинома искомое представление в форме многочлена предоставляет <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">биномиальная теорема Ньютона</a>, которая декларирует выполнение следующего равенства:</div>
+<div><span style="font-weight:bold; ">(X + Y)<sup class="eSub">n</sup> = C0nX<sup class="eSub">n</sup>Y<sup class="eSub">0</sup> + C1nX<sup class="eSub">n</sup><sup class="eSub">−1</sup>Y<sup class="eSub">1</sup> + … + Cьn X<sup class="eSub">n−m</sup>Y<sup class="eSub">m</sup> + … + Cn-1nX<sup class="eSub">1</sup>Y<sup class="eSub">n−1</sup> + CnnX<sup class="eSub">0</sup>Y<sup class="eSub">n</sup> </span></div>
+<a name="T2116071618"></a>
+<a name="T93316327"></a>
+<div>Это равенство обычно называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">бином Ньютона</a>. Многочлен в его правой части образует сумма произведений <span class="eOperator">n</span> слагаемых <span class="eOperator">X</span> и <span class="eOperator">Y</span> бинома левой части, а коэффициенты перед ними называются <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">биномиальными</a> и равны числам сочетаний с индексами, которые получаются по их степеням. Учитывая особую популярность формулы бинома Ньютона, термины <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">биномиальный коэффициент</a> и число сочетаний общепринято считать синонимами. Очевидно, что формулы квадрата и куба суммы являются частными случаями биномиальной теоремы при <span class="eOperator">n=2</span> и <span class="eOperator">n=3</span>, соответственно. Для обработки более высоких степеней <span class="eOperator">(n&gt;3</span><span class="eOperator">)</span> следует использовать формулу бинома Ньютона. Ее применение для бинома степени <span class="eOperator">n=4</span> демонстрирует следующий пример:</div>
+<div><span style="font-weight:bold; ">(1 + Z)<sup class="eSub">r</sup> = C0rZ<sup class="eSub">0</sup> + C1r Z<sup class="eSub">1</sup> + C2r Z<sup class="eSub">2</sup> + … + Ckr Z<sup class="eSub">k</sup> + …</span></div>
+<div>Например, при положительном дробном значении показателя степени <span class="eOperator">r = 1/2</span> с учетом значений биномиальных коэффициентов получается следующее разложение:</div>
+<div><span style="font-weight:bold; ">(1 + Z)<sup class="eSub">1/2</sup> =1 + 12Z - 12<sup class="eSub">2</sup>2!Z<sup class="eSub">2</sup> + 1·32<sup class="eSub">3</sup>3!Z<sup class="eSub">3</sup> - 1·3·52<sup class="eSub">4</sup>4!Z<sup class="eSub">4</sup>-...</span></div>
+<div>В общем случае формула бинома Ньютона при любом показателе является частным вариантом формулы Маклорена, которая дает разложение произвольной функции в степенной ряд. Ньютон показал, что при <span class="eOperator">|z| &lt; 1 </span>этот ряд сходится, и сумма в правой части становится конечной. При любой натуральной степени<span class="eOperator"> r = n</span> в правой части также получается конечная сумма из <span class="eOperator">(n+1)</span> первых слагаемых, так как все <span class="eOperator">C(n, k&gt;n) = 0</span>. Если теперь положить <span class="eOperator">Z=X/Y</span> и умножить левую и правую части на <span style="font-weight:bold; ">Y<sup class="eSub">n</sup></span>, то получится вариант формулы бинома Ньютона, рассмотренный выше.</div>
+<a name="T980305933"></a>
+<div>Несмотря на свою универсальность, биномиальная теорема сохраняет комбинаторный смысл только при целых неотрицательных степенях бинома. В таком варианте с ее помощью можно доказать несколько полезных тождеств из биномиальных коэффициентов. В частности, выше были рассмотрены формулы суммирования чисел сочетаний по нижнему индексу и по обоим индексам. Недостающее тождество суммирования чисел сочетаний по верхнему индексу легко получить из формулы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">бинома Ньютона</a>, положив в ней <span class="eOperator">X=Y=1</span> или<span class="eOperator"> Z=1</span>. В результате такой <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">подстановки</a> получается следующее соотношение:</div>
+<div><span style="font-weight:bold; ">C0n + C1n + ... + Cmn + ... + Cnn = 2<sup class="eSub">n</sup></span></div>
+<div>Еще одно полезное тождество устанавливает равенство сумм биномиальных коэффициентов с четными и нечетными номерами (которые совпадают с верхними индексами соответствующих чисел сочетаний). Оно немедленно получается из формулы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">бинома Ньютона</a>, если положить в ней <span class="eOperator">X=1</span> и <span class="eOperator">Y=(-1)</span> или <span class="eOperator">Z=(-1)</span>:</div>
+<div><span style="font-weight:bold; ">C0n - C1n + C2n - C3n + C4n - C5n + ... + (-1)<sup class="eSub">n</sup>Cnn=0 -&gt; C0n + C2n + C4n + ... = C1n + C3n + C5n +... </span></div>
+<div>Наконец, из обоих рассмотренных тождеств получается тождество суммы биномиальных коэффициентов только с четными или только с нечетными номерами, которое можно записать следующим образом:</div>
+<div><span style="font-weight:bold; "> C0n + C2n + C4n + ... = C1n + C3n + C5n + ... = 2<sup class="eSub">n-1</sup></span></div>
+<div>На основе рассмотренных тождества и рекуррентного правила вынесения индексов из под знака числа сочетаний можно получить целый ряд интересных соотношений. Например, если в формуле суммирования чисел сочетаний по верхнему индексу везде заменить <span class="eOperator">n</span> на <span class="eOperator">(n-1)</span> и вынести индексы в каждом слагаемом, то получится следующее соотношение:</div>
+<div><span style="font-weight:bold; ">C1n + 2C2n + ... + mCmn + ... + nCnn = n·2<sup class="eSub">n-1</sup></span></div>
+<div>Используя аналогичную технику в формуле суммы биномиальных коэффициентов с четными и нечетными номерами, можно доказать справедливость, например, следующего соотношения:</div>
+<div><span style="font-weight:bold; ">C1n - 2C2n + 3C3n - 4C4n + 5C5n + ... + (-1)<sup class="eSub">n-1</sup>nCnn = 0</span></div>
+<div>Еще одно полезное тождество позволяет легко вычислить сумму произведений симметрично расположенных биномиальных коэффициентов двух биномов произвольных степеней <span class="eOperator">n</span> и <span class="eOperator">k</span> по следующей формуле, предложенной Коши:</div>
+<div><span style="font-weight:bold; ">C0nCmk + C1nCm-1k + ... + CmnC0k = Cmn+k</span></div>
+<div>Справедливость этой формулы вытекает из необходимого равенства коэффициентов при любой степени <span class="eOperator">m</span> переменной <span class="eOperator">Z</span> в левой и правой части следующего тождественного соотношения:</div>
+<div><span style="font-weight:bold; ">(1 + Z)<sup class="eSub">n</sup> (1 + Z)<sup class="eSub">k</sup> = (1 + Z)<sup class="eSub">n+k</sup></span></div>
+<div>В частном случае, когда <span class="eOperator">n=k=m</span> при учете тождества симметрии получается более популярная формула суммы квадратов биномиальных коэффициентов, которая имеет следующий вид:</div>
+<div><span style="font-weight:bold; ">(C0n)<sup class="eSub">2</sup> + (C1n)<sup class="eSub">2</sup> + ... + (C2n)<sup class="eSub">2</sup> = Cn2n</span></div>
+<div>В обширной комбинаторной литературе можно найти много других полезных применений для биномиальных коэффициентов и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">бинома Ньютона</a>. Например, биномиальная теорема дает эффектный способ, как возвести число <span class="eOperator">11</span> в любую натуральную степень <span class="eOperator">n</span> путем подстановки <span class="eOperator">Z=10</span> в формулу бинома Ньютона. В частности, при <span class="eOperator">n=4</span> получается следующей результат:</div>
+<div><span style="font-weight:bold; ">11<sup class="eSub">4</sup> = (1 + 10)<sup class="eSub">4</sup> = 1·10<sup class="eSub">0</sup> + 4·10<sup class="eSub">1</sup> + 6·10<sup class="eSub">2</sup> +  4·10<sup class="eSub">3</sup> + 1·10<sup class="eSub">4</sup> = 1464.</span></div>
+<div>Тем не менее, одно из их наиболее популярных практических и одновременно развлекательных приложений биномиальных коэффициентов связано с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">треугольником Паскаля</a></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-28/">← Оглавление</a>
         <a href="/rk6-edu/course-28/mod-3.html">‹ Предыдущий</a>

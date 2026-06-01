@@ -23,7 +23,21 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-6.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Монитор транзакций</a>
+</div>
+<a name="T1567779370"></a>
+<a name="T1982262519"></a>
+<a name="T461615033"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Монитор транзакций</a> — программный продукт, предназначенный для контроля <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">целостности</a> данных при выполнении <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">транзакций</a> данных.</div>
+<a name="T65018"></a>
+<a name="T1009763924"></a>
+<a name="T177416211"></a>
+<div>Для общения прикладной программы с монитором транзакций используется специализированный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">API</a>, который реализуется в виде библиотеки, содержащей вызовы основных функций (установить соединение, вызвать определенный сервис и т.д.). <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Серверы приложений</a> (сервисы) также создаются с помощью этого API, каждому сервису присваивается уникальное имя. Монитор транзакций, получив запрос от прикладной программы, передает ее вызов соответствующему сервису, после обработки запроса сервером приложений возвращает результаты клиенту. Для взаимодействия мониторов транзакций с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">серверами баз данных</a> разработан протокол XA. Наличие такого унифицированного интерфейса позволяет использовать в рамках одного приложения несколько различных СУБД. </div>
+<div>Мониторы транзакций применяются в системах <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">OLTP</a>, обеспечивая работу приложений с данными из многих источников при сохранении их целостности. Если в рамках транзакции хотя бы один источник данных не будет переведен в последующее состояние, то  остальные источники будут возвращены в состояние до начала транзакции. Это гарантирует целостность данных, предотвращает рассогласование данных в источниках. При этом источники данных могут быть как локальными, так и распределенными, находясь на различных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">серверах</a> и платформах.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-4.html">‹ Предыдущий</a>

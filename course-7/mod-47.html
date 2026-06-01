@@ -23,7 +23,135 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-7/mod-48.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Описание бизнес-процессов с помощью BPEL</a>
+</div>
+<a name="T1781533359"></a>
+<div> Язык  <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">BPEL</a> предназначен для интеграции систем автоматизации в рамках общих бизнес процессов.  Он  используется при   создании новых масштабных систем  автоматизации, охватывающих несколько предприятий или подразделений холдинга. При этом необязательно, чтобы все участники использовали общую платформу интеграции, поскольку BPEL ориентирован на взаимодействие разнородных платформ и приложений. </div>
+<a name="T889762808"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Бизнес-процесс</a>, выраженный средствами языка BPEL, называют BPEL-процессом. </div>
+<a name="T1838246005"></a>
+<a name="T412168747"></a>
+<a name="T344720773"></a>
+<div>Перед описанием процесса на BPEL полезно предварительно отобразить его в виде <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">диаграмм активности</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">UML</a>. Пример такой диаграммы для процесса покупки книги взят из [1] и представлен на рис. 1. Этот процесс является асинхронным и включает в себя обращения к трем  <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Web-сервисам</a>. Сначала используется Web-сервис оценки полезности книги. Этот Web-сервис вызывается синхронно  и возвращает значение  рейтинга книги.   Затем процесс запрашивает цену книги в двух книжных магазинах. Для этого асинхронно вызываются два идентичных Web-сервиса этих книжных магазинов. Затем процесс выбирает более дешевую книгу  и асинхронно производит закупку. </div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Под синхронизмом связи подразумевается приостановка процесса до получения ответа (как в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">RPC</a>). </div>
+<div>Для асинхронных связей клиенту требуются два потока для вызова службы: один - для передачи запроса, второй – для приема ответа (и соответственно в BPEL-процессе два типа портов: один для клиентских запросов, другой – для исполнения BPEL-процессом возврата к клиенту). Брокер, предоставляющий возможность потребителю вызывать Web-службу асинхронно, реализуется при помощи системы обмена сообщениями, которая использует очереди сообщений для передачи запроса и получения ответа. </div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=230_CALS/web223.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp; UML-диаграмма для BPEL-процесса</div></div>
+<div>BPEL-процесс задает  порядок исполнения  задействованных Web-сервисов (возможны последовательное или параллельное выполнение).  Собственно   BPEL-процесс инициируется получением запроса на выполнение некоторых действий. </div>
+<div>В языке BPEL предусмотрены условные переходы, циклы, объявления и  изменения переменных и другие операции.  Простыми шагами (операциями) BPEL-процесса могут быть:</div>
+<a name="T107605555"></a>
+<div>  &lt;invoke&gt; - вызов   нужного Web-сервиса (связь с другими Web-сервисами устанавливается, благодаря наличию описания Web-сервисов на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке WSDL</a>); </div>
+<div>&lt;receive&gt; - посылка сообщения;</div>
+<div>&lt;reply&gt; - генерация ответа;  </div>
+<div>&lt;assign&gt; - управление значениями переменных;   </div>
+<div>&lt;throw&gt; - индикация ошибок и исключений;  </div>
+<div>&lt;wait&gt; - задержка; </div>
+<div>&lt;terminate&gt; - завершение  процесса. </div>
+<div>Операции управления определяют структуру бизнес-процессов:  </div>
+<div>&lt;sequence&gt; - определяет  набор последовательно выполняемых действий; </div>
+<div>&lt;flow&gt; - поток,   определяет  набор параллельно выполняемых действий; </div>
+<div>&lt;switch&gt; -  переключатель  на ту или иную ветвь процесса;</div>
+<div>  &lt;while&gt; - оператор цикла; </div>
+<div>&lt;pick&gt; -  выбор  одной из  альтернатив;  </div>
+<div>&lt;variable&gt; - декларация переменной;</div>
+<div>&lt;partnerLink&gt; -  определение партнерских связей.   </div>
+<div>Разработка BPEL-процесса начинается с ознакомления с Web-сервисами, участвующими в описываемом бизнес-процессе. Эти сервисы называются partner Web services (партнерские Web-сервисы).  </div>
+<a name="T1996004208"></a>
+<div>Затем создается  WSDL-описание BPEL-процесса.  При этом указываются требуемые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространства имен</a> (namespaces). Типы партнерских связей определены в WSDL-описании в  пространстве имен   http://schemas.xmlsoap.org/ws/2003/05/partner-link/.  </div>
+<a name="T1945387555"></a>
+<div>Далее в  создаваемом BPEL-процессе  нужно указать типы партнерских связей, т.е. описать  взаимодействие между BPEL-процессом, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">клиентом</a>, который вызывает BPEL-процесс, и вовлеченными   Web-сервисами. При этом определяются роли связей: для синхронных связей роль одна, для асинхронных  роли две. В асинхронных операциях  первая роль описывает вызов операции клиентом, вторая роль - вызов возвращения. </div>
+<div> BPEL-процесс  имеет следующую структуру::</div>
+<ul class="eList"><li>декларация (объявление) процесса </li>
+<li>объявление партнерских ссылок </li>
+<li>объявление переменных </li>
+<li>тело процесса, которое соответствует диаграмме активности.   </li>
+</ul>
+<div>Другими словами, структура имеет вид:</div>
+<pre class="eListing">&lt;process name=". . ." ... &gt;
+   &lt;partnerLinks&gt;
+      &lt;! -- Определение партнерских связей --&gt;
+   &lt;/partnerLinks&gt;
+   &lt;variables&gt;
+      &lt;!-- Определение переменных --&gt;
+   &lt;/variables&gt;
+   &lt;sequence&gt;
+      &lt;!-- Определение основной части BPEL бизнес-процесса --&gt;
+   &lt;/sequence&gt;
+&lt;/process&gt;
+</pre>
+<div>В элементе &lt;partnerLinks&gt; каждая партнерская связь соотносится с определенным типом partnerLinkType, который характеризует ее. Каждая партнерская связь также специфицирует один или два атрибута.</div>
+<div>Переменные (Variables) в BPEL-процессах используются, чтобы хранить, повторно форматировать и преобразовывать сообщения. </div>
+<div>Основная часть BPEL-процесса  определяет порядок, в котором вызываются партнерские Web-сервисы. Обычно старт начинается с тега &lt;sequence&gt;, который определяет несколько действий, которые будут выполнены последовательно. В этой последовательности надо сначала определить входное сообщение, которое запускает бизнес-процесс. Это делается с помощью тега &lt;receive&gt;, который ждет соответствующего сообщения. После получения сообщения BPEL-процесс выполняет остальные действия.  </div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Пример описания партнерской связи, ее ролей и портов [1]:</div>
+<pre class="eListing">&lt;plnk:partnerLinkType name="travelLT"&gt;
+  &lt;plnk:role name="travelService"&gt;
+    &lt;plnk:portType name="tns:TravelApprovalPT" /&gt;
+  &lt;/plnk:role&gt;
+  &lt;plnk:role name="travelServiceCustomer"&gt;
+    &lt;plnk:portType name="tns:ClientCallbackPT" /&gt;
+&lt;/plnk:role&gt;
+&lt;/plnk:partnerLinkType&gt;
+</pre>
+<div>Пример структуры описания переменных:</div>
+<pre class="eListing">   &lt;variables&gt;
+      &lt;!-- input for BPEL process  --&gt;      
+      &lt;variable name=". . ." 
+                messageType=". . ."/&gt;
+      &lt;!-- input for  service S1--&gt;
+      &lt;variable name=". . ." 
+                messageType=". . ."/&gt;
+      &lt;!-- output from service S1--&gt;
+      &lt;variable name=". . ." 
+                messageType=". . ."/&gt;
+      &lt;!-- input service S2 --&gt;
+      &lt;variable name=". . ." 
+                messageType=". . ."/&gt;
+      &lt;!-- output from service S2 --&gt;
+      &lt;variable name=". . ." 
+                messageType=". . ."/&gt;
+                             
+      &lt;!-- output from BPEL process --&gt;
+      &lt;variable name=". . ." 
+                messageType="..."/&gt;
+   &lt;/variables&gt;
+</pre>
+<div>Пример структуры начала основной части:</div>
+<pre class="eListing">&lt;sequence&gt;      
+      &lt;receive partnerLink="client" 
+               portType=". . ." 
+               operation=". . ." 
+               variable=". . ."
+               createInstance="yes" /&gt;
+...
+</pre>
+</div>
+<a name="T1009763924"></a>
+<div>BPEL-процесс может выполняться на любом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сервере приложений</a>, имеющем механизм исполнения BPEL. </div>
+<div>Имеются средства  преобразования UML-моделей    в наборы BPEL и WSDL-файлов, например, Emerging Technologies Toolkit 1.1 корпорации IBM.</div>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1.  Matjaz Juric. A Hands-on Introduction to BPEL. -   http://www.oracle.com/technology/pub/articles/matjaz_bpel1.html<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-7/">← Оглавление</a>
         <a href="/rk6-edu/course-7/mod-46.html">‹ Предыдущий</a>

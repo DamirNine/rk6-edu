@@ -23,7 +23,62 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-3/mod-46.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Событийное моделирование в VHDL</a>
+</div>
+<a name="T388279394"></a>
+<a name="T107645917"></a>
+<a name="T52529026"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Моделирование</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">VHDL</a> осуществляется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">событийным методом</a>. Реализуется этот метод, благодаря не только учету задержек, но и специальным механизмам таким, как оператор process или охраняемые блоки.</div>
+<a name="T467781681"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Оператор process</a> — это блок, выполняемый только тогда, когда происходят изменения его входных параметров (хотя бы с одним из них). Структура этого блока:</div>
+<pre class="eListing">[&lt;метка&gt;:] process [(&lt;список_параметров&gt;)]
+&lt;тело_процесса&gt; -- здесь описываются вложенные в процесс типы и операторы
+end process [&lt;метка&gt;];
+</pre>
+<div>Охраняемый (guarded) блок имеет вид:</div>
+<pre class="eListing">&lt;метка&gt;: block (&lt;охранное_выражение&gt;)
+begin &lt;операторы&gt;
+end block &lt;метка&gt;;
+</pre>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=010_EDA/eda067.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div> Пример архитектурного тела для модели схемы рис. 1 с использованием оператора process:</div>
+<pre class="eListing">architecture alg of schema is
+signal z1,z2: BIT;
+begin process (a,b,d,e,c)
+begin
+z1 &lt;= not ((a and c) or (b and c));
+z2 &lt;= not ((d and c) or (e and c));
+y &lt;= not (z1 or z2);
+end process;
+end alg;
+</pre>
+<div>Операторы блока выполняются только при истинном значении охранного выражения.</div>
+<div>При поведенческом описании сущностей архитектурное тело представляет алгоритмы, реализуемые в схеме. Подразумевается, что все операторы в архитектурном теле выполняются параллельно (последовательное выполнение имеет место внутри процессов и подпрограмм).</div>
+<div>Нижеследующий пример D-триггера — это пример использования охраняемого блока. D-триггер при R = '1' переходит в состояние '0', иначе, если C = '1', на выходе Q устанавливается значение входного сигнала S.</div>
+<pre class="eListing">D: block (C='1' or R='1')
+begin
+Q &lt;= guarded '0' when R='1' else S when C='1' else Q;
+end block D;
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-3/">← Оглавление</a>
         <a href="/rk6-edu/course-3/mod-44.html">‹ Предыдущий</a>

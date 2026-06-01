@@ -23,7 +23,71 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-68.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сравнение блоков памяти</a>
+</div>
+<a name="T1936219473"></a>
+<div>Сравнение блоков памяти реализует <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функция memcmp</a>. Формат ее вызова имеет вид:</div>
+<pre class="eListing">int memcmp(const void* mem1, const void* mem2, unsigned len);
+</pre>
+<div>Функция memcmp последовательно сравнивает значения первых len байтов, занимающих одинаковые позиции в областях памяти, которые адресуют указатели mem1 и mem2. Сопоставляемые байты интерпретируются как данные типа <span class="eOperator">unsigned char</span>. Процесс сопоставлений значений байтов прерывается, когда будет обнаружена первая пара несовпадающих байтов или исчерпан диапазон сравнения, который установлен значением параметра <span class="eOperator">len.</span> Результат сравнения функция memcmp передает через код возврата. Нулевой возврат имеет место, когда адресованные блоки памяти идентичны в заданном диапазоне сравнения. При наличии несовпадений код возврата функции <span class="eOperator">memcmp</span> не равен нулю. Его знак совпадает со знаком разности значений первой пары несовпадающих байтов сравниваемых областей памяти. Например, сравнение блоков памяти двух массивов, содержащих по паре 16-ти разрядных целых чисел без знака, специфицирует следующий фрагмент исходного кода:</div>
+<pre class="eListing">static unsigned short june[] = { 0X756A, 0X656E };
+static unsigned short july[] = { 0X756A, 0X796C };
+unsigned len = 2 * sizeof(unsigned short);   /* 2 * 2 */
+int rez = memcmp(july, june, len);
+</pre>
+<a name="T1992766606"></a>
+<div>В условиях этого примера функции memcmp возвращает отрицательное значение. Для реализации сравнения функция она интерпретирует <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массивы</a> july и june как блоки памяти, которые содержат следующие последовательности байтов: 6A756C79 и 6A756E65, соответственно, где каждый байт кодирует пара цифр системы счисления по основанию 16. Таким образом, результат сравнения массивов july и june определяет знак разности первой пары несовпадающих байтов со значениями 6C и 6E, которая, очевидно, меньше нуля.</div>
+<a name="T90937292"></a>
+<div>Практическое применение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции сравнения</a> блоков памяти демонстрирует исходный код прикладной функции <span class="eOperator">memident.</span> Она реализует циклический вызов функции <span class="eOperator">memcmp,</span> чтобы определить количество начальных байтов, значения которых равны в адресованных блоках памяти заданного размера.</div>
+<pre class="eListing">/* Измерение степени совпадения блоков памяти */
+int memident(const void* mem1, const void* mem2, unsigned len) {
+int count;      /* счетчик совпадения блоков памяти */
+for(count = len; count &gt; 0; count--)
+  if(memcmp(mem1, mem2, count) == 0)
+    break;
+return(count);
+} /* memident */
+</pre>
+<div>При вызове функции <span class="eOperator">memident</span> для измерения длины совпадающих начальных фрагментов, например, целочисленных массивов <span class="eOperator">july</span> и <span class="eOperator">june</span>, которые были специфицированы выше для иллюстрации действия функции memcmp, будет получен результат: два байта.</div>
+<div>Для выполнения операции поиска необходимой информации в блоках памяти предусмотрена функция memchr. Спецификация формата ее вызова имеет вид:</div>
+<pre class="eListing">void* memchr(const void* mem, int src, unsigned len);
+</pre>
+<div>При вызове функция <span class="eOperator">memchr</span> последовательно рассматривает не более, чем <span class="eOperator">len</span> байтов области памяти, адресуемой через указатель <span class="eOperator">mem,</span> чтобы найти первый байт, который имеет значение, заданное параметром <span class="eOperator">src.</span> Функция memchr интерпретирует все байты, значения которых сравниваются при поиске, как данные типа <span class="eOperator">unsigned char</span>. Функция <span class="eOperator">memchr</span> возвращает адрес найденного байта при успехе поиска или нулевой указатель NULL, если заданный байт не обнаружен.</div>
+<div>Рассмотренная стандартная функциональная реализация операции поиска может быть использована для конструирования разнообразных прикладных процедур контекстной обработки содержимого блоков памяти. В частности, следующий исходный код прикладной функции memrpl демонстрирует, каким образом можно применить стандартную функцию memchr для организации контекстной замены определенных байтов блоков памяти.</div>
+<pre class="eListing">/* Контекстная замена байтов блока памяти */
+
+unsigned memrpl(void* mem, int src, unsigned len, int dest) {
+unsigned count = 0;           /* счетчик замен */
+unsigned char* ptr;           /* адрес замены */
+/* Цикл поиска и замены */
+
+while((ptr = memchr(mem, src, len)) != NULL) {
+  *ptr = dest;        /* замена значения байта */
+  count++;            /* увеличение счетчика замен */
+} /* while */
+return(count);        /* Возврат общего числа замен */
+} /* memrpl */
+
+</pre>
+<div>Функция <span class="eOperator">memrpl</span> обеспечивает замену всех байтов со значением <span class="eOperator">src</span> в блоке памяти длиной <span class="eOperator">len</span> байтов, который адресуется через указатель <span class="eOperator">mem,</span> новым значением, заданным параметром <span class="eOperator">dest.</span> Адреса заменяемых байтов блока памяти предоставляет циклический вызов функции <span class="eOperator">memchr.</span> Суммарное число сделанных замен функция <span class="eOperator">memrpl</span> передает через код возврата.</div>
+<div>В заключение следует отметить, что во многих популярных версиях системы программирования C стандартный набор функций манипулирования блоками памяти расширяют дополнительные процедуры, уникальные только для данной конкретной реализации. В частности, в системе программирования Borlan C для манипулирования блоками памяти дополнительно к стандартным введены функции <span class="eOperator">setmem,</span> <span class="eOperator">movedata</span> и <span class="eOperator">memicmp,</span> а также функция <span class="eOperator">memccpy,</span> которая включена в стандартную библиотеку объектных модулей некоторых версий OS Unix. Однако, при разработке мобильного программного обеспечения целесообразно воздержаться от использования специфических особенностей отдельных реализаций и применять только стандартные функции обработки блоков памяти.</div>
+<br>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-66.html">‹ Предыдущий</a>

@@ -23,7 +23,33 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-64.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Массивы символов</a>
+</div>
+<a name="T525529701"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Символьная строка</a> — это последовательность символов из некоторого набора, например из таблицы кодирования ASCII. В языке Си для хранения символьных строк используются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">символьные массивы</a>. Например, для того, чтобы зарезервировать место для  буфера объемом в 1кбайт, можно воспользоваться следующим объявлением:</div>
+<div><span class="eOperator">char buf[1024];</span></div>
+<a name="T600009389"></a>
+<div>Строки в языке Си должны заканчиваться <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">признаком конца строки</a> — “нулевым” символом <span class="eOperator">'\0',</span> т.е. байтом, все биты которого равны 0. Библиотечные функции, которые работают со строками, “ищут” нулевой символ, так как это единственный способ определить конец строки. Таким образом, при объявлении символьного массива, в котором будет храниться строка, необходимо предусмотреть дополнительный байт для признака конца строки.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">/* запрашивает у пользователя имя и выводит его*/
+#include &lt;stdio.h&gt;
+int main()
+ { int   i;
+   char first[11];    /* длина имени  до 10 символов */
+
+   printf ("Пожалуйста, введите имя \n");
+   i = 0;
+   while (i&lt;10 &amp;&amp; (first[i] = getchar ()) != '\n')
+     i += 1;
+   first[i] = '\0';
+   printf (" Введено имя: %s\n", first);
+ }
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-62.html">‹ Предыдущий</a>

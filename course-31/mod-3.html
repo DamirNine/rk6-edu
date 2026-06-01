@@ -23,7 +23,138 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-4.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Характеристики непрерывных и дискретных систем</a>
+</div>
+<div>Проведем сравнение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">непрерывных</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дискретных</a> систем управления по трем группам критериев:</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Сравнение с точки зрения самого процесса управления</span></div>
+<ol class="eList"><li>Устойчивость: <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=1/?k=10"> при <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=2/?k=10"> <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=3/?k=10">;</li>
+<li>Точность: <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=4/?k=10">;</li>
+<li>Качество процесса управления, т.е. параметры переходного процесса: перерегулирование (должно быть по возможности меньше) и время переходного процесса (также должно быть по возможности меньше).</li>
+</ol>
+<div><span style="font-weight:bold; text-decoration:underline; ">Сравнение по общетехническим характеристикам</span></div>
+<ol class="eList"><li>Масса и габариты;</li>
+<li>Энергопотребление;</li>
+<li>Надежность.</li>
+</ol>
+<div><span style="font-weight:bold; text-decoration:underline; ">Сравнение по технико-экономическим параметрам</span></div>
+<ol class="eList"><li>Стоимость разработки и изготовления;</li>
+<li>Стоимость модернизации (изменение алгоритма управления).</li>
+</ol>
+<div>Сравнение будем проводить на примере системы, приведенной на рис.&nbsp;1</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_03.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div class="eSubTitle">Сравнение с точки зрения процесса управления</div>
+<div>Рассмотрим вначале вариант непрерывной реализации блока управления.</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Устойчивость</span><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=5/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=6/?k=10"><br></div>
+<div>Замкнутая система представляет собой апериодическое звено, устойчивое при любом коэффициенте усиления <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=7/?k=10">.</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Точность</span> Система имеет астатизм 1-го порядка, следовательно, установившаяся ошибка равна нулю, если <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=8/?k=10">(<img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=9/?k=10">)=const. Если <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=10/?k=10">, ошибка обратно пропорциональна коэффициенту усиления <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=7/?k=10"></div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Переходной процесс</span><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=11/?k=10"><br></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_03.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>Перерегулирования нет, уменьшая постоянную времени Т мы можем добиться уменьшения времени переходного процесса.</div>
+<div>Теперь рассмотрим вариант дискретной организации блока управления. Так как значения управляющего сигнала <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=12/?k=10"> на выходе блока управления определены лишь в дискретные моменты времени, необходимо использовать экстраполяцию для определения значения <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=12/?k=10"> на всем интервале <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=13/?k=10">. Будем считать, что в течение периода <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=13/?k=10"> <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=14/?k=10"> (рис.&nbsp;3)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_03.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<div>Рассмотрим произвольно взятый интервал времени (рис.&nbsp;4)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_03.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<div>Можем записать следующие соотношения:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=15/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=16/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=17/?k=10"><br>Пусть <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=18/?k=10">, тогда <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=19/?k=10">.</div>
+<div>Для рассматриваемого временного отрезка можем записать дифференциальное уравнение:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=20/?k=10"><br>Найдем постоянную <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=21/?k=10">, рассматривая момент времени <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=22/?k=10">:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=23/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=24/?k=10"><br>В результате получаем выражение для <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=25/?k=10">:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=26/?k=10"><br>Рассмотрим момент времени <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=27/?k=10">:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=28/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=29/?k=10"><br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=30/?k=10"><br>Для момента времени <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=31/?k=10">,будем иметь:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=32/?k=10"><br>Для произвольного момента времени:<br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=33/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=34/?k=10"> определяется начальными условиями.</div>
+<div>Рассмотрим различные варианты:</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Вариант 1.</span>&nbsp;&nbsp;<img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=35/?k=10">, например <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=36/?k=10">:</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=37/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=38/?k=10"></td></tr>
+<tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=39/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=40/?k=10"></td></tr>
+<tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=41/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=42/?k=10"></td></tr>
+<tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=43/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=44/?k=10"></td></tr>
+<tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=45/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=46/?k=10"></td></tr>
+</tbody></table><br>
+<div>В этом случае будем иметь некое подобие апериодического процесса (рис.&nbsp;5).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_03.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;</div></div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Вариант 2.</span>&nbsp;&nbsp;<img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=47/?k=10">, например <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=48/?k=10">:</div>
+<div class="auto" style="text-align:right">Таблица 2&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=37/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=38/?k=10"></td></tr>
+<tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=39/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=40/?k=10"></td></tr>
+<tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=41/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=49/?k=10"></td></tr>
+<tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=43/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=44/?k=10"></td></tr>
+<tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=45/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=50/?k=10"></td></tr>
+</tbody></table><br>
+<div>В этом случае будем иметь колебательный сходящийся (устойчивый) процесс (рис.&nbsp;6)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_03.mod/?n=6"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;</div></div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Вариант 3.</span>&nbsp;&nbsp;<img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=51/?k=10">, например <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=52/?k=10">:</div>
+<div class="auto" style="text-align:right">Таблица 3&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=37/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=38/?k=10"></td></tr>
+<tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=39/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=40/?k=10"></td></tr>
+<tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=41/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=53/?k=10"></td></tr>
+<tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=43/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=54/?k=10"></td></tr>
+<tr><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=45/?k=10"></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=55/?k=10"></td></tr>
+</tbody></table><br>
+<div>В этом случае будем иметь колебательный расходящийся (неустойчивый) процесс (рис.&nbsp;7)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_03.mod/?n=7"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;7.&nbsp;&nbsp;</div></div>
+<a name="T964969223"></a>
+<div>Таким образом, мы видим, что в цифровой системе устойчивость, точность и качество управления зависят от параметров системы, и прежде всего, от значения <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=13/?k=10"> (<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">периода дискретизации</a>, который определяется временем работы алгоритма управления). В зависимости от значения величины <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=56/?k=10"> система может стать неустойчивой, чем больше значение этой величины, тем хуже вид переходного процесса. Существуют ограничения на значение <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=56/?k=10">, то есть существует предельное значение <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=56/?k=10">, при превышении которого система теряет устойчивость. Следовательно, при фиксированном <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=13/?k=10"> существует ограничение на значение коэффициента усиления <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=7/?k=10">. Если же предположить, что фиксирован коэффициент усиления <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=7/?k=10">, показатели системы ухудшаются при увеличении периода дискретизации <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=13/?k=10">, и мы можем сказать, что при увеличении <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=13/?k=10"> выше некоего предельного значения, система теряет устойчивость.</div>
+<div>На основании этого можно сделать вывод, что при использовании линейных алгоритмов управления, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">цифровая система</a> всегда хуже <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">непрерывной системы</a> с точки зрения процесса управления. Одна из причин такого положения заключается в том, что в дискретной системе сигнал обратной связи вводится в дискретные моменты времени, следовательно в течение интервала времени <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_03.mod/?n=13/?k=10"> система существует без обратной связи.</div>
+<div class="eSubTitle">Сравнение по общетехническим характеристикам</div>
+<div class="auto" style="text-align:right">Таблица 4&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTableT">Параметр сравнения</td><td class="eTableT">Непрерывная система</td><td class="eTableT">Дискретная система</td></tr>
+<tr><td class="eTableT">Масса и габариты</td><td class="eTable">Приблизительно одинаковы</td><td class="eTable">Приблизительно одинаковы</td></tr>
+<tr><td class="eTableT">Энергопотребление</td><td class="eTable">Хуже</td><td class="eTable">Лучше</td></tr>
+<tr><td class="eTableT">Надежность</td><td class="eTable">Приблизительно одинакова</td><td class="eTable">Приблизительно одинакова</td></tr>
+</tbody></table><br>
+<div class="eSubTitle">Сравнение по технико-экономическим характеристикам</div>
+<div class="auto" style="text-align:right">Таблица 5&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTableT">Параметр сравнение</td><td class="eTableT">Непрерывная система</td><td class="eTableT">Дискретная система</td></tr>
+<tr><td class="eTableT">Стоимость разработки</td><td class="eTable">Приблизительно одинакова</td><td class="eTable">Приблизительно одинакова</td></tr>
+<tr><td class="eTableT">Стоимость модернизации</td><td class="eTable">Выше</td><td class="eTable">Ниже</td></tr>
+</tbody></table><br>
+<div>Существует также зависимость эффективности непрерывной и дискретной реализации блока управления от сложности реализуемого алгоритма (рис.&nbsp;8).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_03.mod/?n=8"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;8.&nbsp;&nbsp;</div></div>
+<div>Из графика видно, что по мере усложнения алгоритма, эффективность непрерывной системы уменьшается, так как возрастает число включенных в нее электронных элементов, а следовательно, усложняется конструкция, увеличиваются масса, габариты, стоимость, уменьшается точность и общая надежность. Для дискретной же системы усложнение алгоритма приводит лишь к изменению программы, что не влияет ни на массу и габариты, ни на стоимость технической реализации, так как не меняется конструкция самого блока управления. Правда, при дальнейшем усложнении алгоритма наступает критический момент, когда эффективность дискретной системы резко падает. Это связано с чрезмерным усложнением программы, сложностью ее отладки и уменьшением общей надежности системы.</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Вывод:</span> Дискретная система управления имеет два основных преимущества по сравнению с непрерывной системой:</div>
+<ol class="eList"><li>Простота модернизации (изменения алгоритма);</li>
+<li>Большая эффективность при использовании сложных (нелинейных, адаптивных) алгоритмов управления.</li>
+</ol>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-2.html">‹ Предыдущий</a>

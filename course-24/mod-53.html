@@ -23,7 +23,55 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-54.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Назначение стека при вызове функции</a>
+</div>
+<a name="T33524358"></a>
+<a name="T1248933124"></a>
+<a name="T756911212"></a>
+<a name="T1015173096"></a>
+<a name="T33298498"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Стек</a> — это область памяти, используемая выполняемой программой для временного запоминания значений. При <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызове функции</a> все значения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">фактических параметров</a> функции помещаются на стек. Затем запоминаются значения существенных регистров, таких как, например, указатель текущей команды. Значения регистров восстанавливаются при завершении управления вызванной функцией. При передаче управления вызванной функции значения фактических параметров связываются с соответствующими областями памяти на стеке, выделенными под <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формальные параметры</a>. Затем определяется расположение на стеке для локальных (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">автоматических</a>) <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">переменных</a>. Этот набор параметров, регистров и автоматических переменных для вызова функции называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">кадром</a> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">frame</a>). Если вызванная функция выполняет вызов другой функции, на стек помещается еще один кадр. Только один кадр является активным в любой момент времени. Активная часть стека "растет" при вызове функции и "сокращается" при выходе из функции. Стековое пространство все время повторно используется, и это является причиной того, почему автоматические переменные имеют до инициализации неопределенные значения. Они зависят от того, какие значения запоминались в соответствующем месте памяти до данного вызова функции.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">int main()
+{
+   int x = 10, y = 100;
+   f(5, 10);
+. . .
+}
+double f (int x, int sum)
+{
+   double total;
+   g(20.5);
+. . .
+}
+float g(double val)
+{
+int count;
+. . .
+}
+</pre>
+</div>
+<div>Показанная на рис.&nbsp;1 диаграмма показывает гипотетическую систему построения стека. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Компиляторы</a> Си управляют стеком различными способами. Например, стек может расти от больших адресов к меньшим или наоборот; количество запоминаемых регистров зависит от системы; стековое пространство в некоторых системах может выделяться динамически по мере требований и т.д.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/stak.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Диаграмма построения стека</div></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-52.html">‹ Предыдущий</a>

@@ -23,7 +23,26 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-42.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Древовидная сортировка</a>
+</div>
+<br>
+<a name="T1356058257"></a>
+<div>Данный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> является способом сортировки <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a> элементов. Реализуется в виде простой программы, использующей деревья поиска. Идея заключается в занесении всех элементов в дерево поиска и затем в интерактивном удалении наименьшего элемента до тех пор, пока не будут удалены все элементы.</div>
+<div>Программа heapSort(пирамидальная сортировка) сортирует массив s из n элементов, используя функцию сравнения cmp: </div>
+<br>
+<pre class="eListing">template&lt;class T&gt; void heapSort (T s[], int n, int(*cmp) (T,T) )
+{
+  SearchTree&lt;T&gt; t(cmp);
+  for (int i = 0; i &lt; n; i++)
+    t.insert(s[i]);
+  for (i = 0; i &lt; n; i++)
+    s[i) = t.removeMin();
+}
+</pre>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-40.html">‹ Предыдущий</a>

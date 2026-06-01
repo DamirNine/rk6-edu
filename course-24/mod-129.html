@@ -23,7 +23,35 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-130.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функции преобразования ASCII-строки в числовые значения</a>
+</div>
+<a name="T2118806434"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функции преобразования ASCII-строки</a> в числовые значения являются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функциями</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеки</a> общего назначения.</div>
+<div>Эти <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> принимают в качестве <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргумента</a> строку в коде ASCII и возвращают соответствующее число: целое, длинное целое или двойной точности с плавающей точкой. Если первый символ в строке не цифра, то возвращается 0.</div>
+<div>Объявления этих функций находится в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">заголовочном файле</a> <span class="eOperator">&lt;stdlib.h&gt;</span>. поэтому в программах, использующих эти функции, необходимо включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div><span class="eOperator">#include &lt;stdlib.h&gt;</span></div>
+<div><span class="eOperator">int atoi(const char *str)</span> - функция переводит строку <span class="eOperator">str</span> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">целое типа</a> <span class="eOperator">int</span></div>
+<div><span class="eOperator">long atol(const char *str)</span>- функция переводит строку <span class="eOperator">str</span> в целое типа <span class="eOperator">long</span></div>
+<div><span class="eOperator">double atof(const char *str)</span>- функция переводит строку <span class="eOperator">str</span> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вещественное</a> типа <span class="eOperator">double</span></div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main(0
+{
+int quantity;
+double percentage;
+char line[81];
+gets(line);
+quantity=atoi(line);
+gets(line);
+percentage=atof(line);
+}
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-128.html">‹ Предыдущий</a>

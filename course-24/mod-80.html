@@ -23,7 +23,55 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-81.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Метод обменов</a>
+</div>
+<a name="T1885846268"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метод обменов</a> или метод пузырька является прямым методом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a>.</div>
+<div>Алгоритм метода обмена основан на сравнении пары соседних элементов. Если расположение элементов не удовлетворяет условиям сортировки, то их меняют местами. Сравнения и перестановки продолжаются до тех пор, пока не будут упорядочены все элементы. Определить, что элементы упорядочены, можно, считая количество выполненных перестановок: если количество перестановок равно нулю, то массив отсортирован.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/sort3.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Алгоритм метода обменов</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/sort3.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<pre class="eListing">k=1;                    /*количество перестановок, в начале не 0*/
+i=1;                    /*номер очередного просмотра, в начале 1*/
+while(k!=0)             /*пока есть перестановки*/
+   {
+    k=0;                /*обнуляем счетчик перестановок*/
+    for(j=0; j&lt;n-i; j++)/*цикл сравнения соседних элементов*/
+       if(a[j]&gt;a[j+1])  /*если предыдущий элемент больше последующего, то*/
+          {
+           b=a[j];      /*осуществляем перестановку*/
+           a[j]=a[j+1];
+           a[j+1]=b;
+           k=k+1;       /*счетчик перестановок увеличиваем на 1*/
+           }
+     i=i+1;             /*увеличиваем номер просмотра на 1*/
+     }
+
+</pre>
+<div>Оценим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительную сложность</a> данного метода. Очевидно, что она сильно зависит от исходного расположения элементов массива. Так в лучшем случае, когда массив уже отсортирован, потребуется выполнить n-1 сравнение для проверки правильности расположения элементов массива, т.е. вычислительная сложность равна O(n).</div>
+<div>В худшем случае, если массив отсортирован в обратном порядке, будет выполнено n-1, n-2, ... 1 операций сравнения, т.е. всего (n<sup class="eSub">2</sup>-n)/2 операций сравнения, следовательно, вычислительная сложность равна O(n<sup class="eSub">2</sup>).</div>
+<div>Выполнить усредненную оценку данного метода достаточно сложно, так как зависимость времени выполнения от количества неправильно стоящих элементов не является линейной.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-79.html">‹ Предыдущий</a>

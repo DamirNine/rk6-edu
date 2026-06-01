@@ -23,7 +23,88 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-29/mod-63.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Описание входного синтаксиса</a>
+</div>
+<a name="T895398568"></a>
+<div>В этом разделе приведено описание синтаксиса yacc. Зависимость от контекста не рассматривается. Грамматика yacc лучше всего может быть описана как LR(2), основные трудности начинаются при обнаружении идентификатора в правиле, идущем непосредственно после действия. Если после идентификатора стоит двоеточие, это начало следующего правила, иначе это продолжение текущего правила, которое содержит встроенное действие. Реализован алгоритм, при котором лексический анализатор делает опережающий просмотр в поисках идентификатора и определяет, является ли следующая <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">лексема</a> двоеточием.  Если да, то возвращается значение C_IDENTIFIER. Иначе возвращается IDENTIFIER. Литералы всегда возвращаются как IDENTIFIER и никогда как часть C_IDENTIFIER.</div>
+<br>
+<pre class="eListing">/*  grammar  for  the  input  to  Yacc  */
+/*  basic  entities  */
+%token IDENTIFIER     /*includes  identifiers   and  literals  */
+%token C_IDENTIFIER   /*identifier  (but  not  literal) followed  by  colon    */
+%token NUMBER         /*  [0-9]+  */
+              /*reserved  words: %type =&gt; TYPE, %left =&gt; LEFT,etc.*/
+%token LEFT  RIGHT  NONASSOC  TOKEN  PREC  TYPE  START  UNION
+%token MARK          /*  the  %%  mark  */
+%token LCURL         /*  the  %{  mark  */
+%token RCURL         /*  the  %}  mark  */
+             /*  ascii  character  literals  stand  for  themselves  */ 
+% start    spec
+%%
+spec :   defs  MARK  rules  tail
+         ;
+tail :   MARK  {In this action, eat up the rest of the file}
+         |    /*  empty:  the  second  MARK  is  optional  */
+         ;
+defs :   /*  empty  */
+         |     defs  def
+         ;
+def  :   START  IDENTIFIER
+         |     UNION  {  Copy union  definition  to  output  }
+         |     LCURL  {  Copy  C  code  to  output  file   }  RCURL
+         |     ndefs  rword  tag  nlist
+         ;
+rword :  TOKEN
+         |     LEFT
+         |     RIGHT
+         |     NONASSOC
+         |     TYPE
+         ;
+         tag   :      /*  empty:  union  tag  is  optional  */
+                  |   '&lt;'  IDENTIFIER  '&gt;'
+                  ;
+         nlist :  nmno
+                  |    nlist  nmno
+                  |    nlist  ','  nmno
+                  ;
+         nmno  :  IDENTIFIER                 /*  NOTE:  literal  illegal  with  %type  */
+                  |    IDENTIFIER  NUMBER    /*  NOTE:  illegal  with  %type  */
+                  ;
+                  /*  rules  section  */
+         rules :  C_IDENTIFIER  rbody  prec
+                  |    rules  rule
+                  ;
+         rule  :  C_IDENTIFIER  rbody  prec
+                  |    '|'  rbody  prec
+                  ;
+         rbody :  /*  empty  */
+                  |    rbody  IDENTIFIER
+                  |    rbody  act
+                  ;
+         act   :  '{'  {  Copy  action,  translate  $$,  etc.  }  '}'
+                  ;
+         prec  :  /*  empty  */
+                  |    PREC  IDENTIFIER
+                  |    PREC  IDENTIFIER  act
+                  |    prec  ';'
+                  ;
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-29/">← Оглавление</a>
         <a href="/rk6-edu/course-29/mod-61.html">‹ Предыдущий</a>

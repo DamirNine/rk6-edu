@@ -23,7 +23,99 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-87.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Мониторы операционных систем</a>
+</div>
+<a name="T601372728"></a>
+<a name="T660051112"></a>
+<a name="T2111903000"></a>
+<a name="T469209868"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Монитор операционной системы</a> — специальный модуль в составе <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операционной системы</a>, решающий задачу предоставления <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ресурсов</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессам.</a> Все процессы обращаются к монитору за ресурсами, которые они предполагают использовать. Наличие монитора позволяет централизовать процесс распределения ресурсов и учет их использования.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_15.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T392857773"></a>
+<div>На входе в монитор решается <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задача взаимоисключения</a>. Только один процесс может попасть в монитор в данный момент времени.</div>
+<div>Пусть вычислительная система располагает <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=1/?k=10"> различными ресурсами, доступ к которым организован через монитор. В общем случае, за использование каждого ресурса в мониторе отвечает своя процедура, к которой и обращается процесс, желающий получить доступ к данному ресурсу (рис.&nbsp;2).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_15.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>Пусть процесс <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=2/?k=10"> претендует на использование ресурса <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=3/?k=10">. <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=2/?k=10"> обращается к соответствующей процедуре <span class="eOperator">Procedure L</span>. При таком обращении возможны два варианта.</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Вариант 1.</span> Ресурс <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=3/?k=10"> занят другим процессом и не может быть предоставлен процессу <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=2/?k=10">. В этом случае <span class="eOperator">Procedure L</span> сообщает процессу, что ресурс занят. Процесс выводится из монитора и помещается в список-очередь процессов, ожидающих предоставления ресурса <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=3/?k=10">. Для каждого ресурса монитор поддерживает такой список-очередь (рис.&nbsp;3).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_15.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<a name="T402501956"></a>
+<a name="T963726541"></a>
+<div>При этом, конечно, сам процесс никуда не перемещается, в список заносится лишь его <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатор</a>. Процесс переводится монитором в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">состояние блокировки</a> (ожидания).</div>
+<div>В этом варианте сама процедура <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=3/?k=10"> выполняет единственное действие: сообщает процессу <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=2/?k=10"> о занятости ресурса. Вывод процесса из монитора, занесение его в список ожидающих и изменение его состояния выполняет глобальная процедура монитора</div>
+<pre class="eListing">Wait (condition)
+</pre>
+<div><span class="eOperator">Condition</span> — переменная, значение которой определяется тем, к какому ресурсу пытался получить доступ процесс <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=2/?k=10">. В соответствии с этим значением процедура <span class="eOperator">Wait</span> заносит процесс в ту или иную очередь.</div>
+<div>Таким образом, процедура <span class="eOperator">Wait</span> выполняет следующие действия:</div>
+<ol class="eList"><li>Вывод процесса из монитора.</li>
+<li>Занесение идентификатора процесса в список процессов, ожидающих ресурса <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=4/?k=10">.</li>
+<li>Перевод процесса в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">состояние блокировки</a> (ожидания).</li>
+</ol>
+<div><span style="font-weight:bold; text-decoration:underline; ">Вариант 2.</span> Ресурс <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=3/?k=10"> свободен и может быть предоставлен процессу. В этом случае процедура <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=3/?k=10"> помечает ресурс как занятый и процесс выводится из монитора, получая ресурс в свое распоряжение (рис.&nbsp;4).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_15.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<div>Завершив использование ресурса, процесс снова пытается войти в монитор для того, чтобы освободить ресурс. При этом он обращается к той же самой процедуре <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=3/?k=10">. Очевидно, процедура <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=3/?k=10"> должна иметь параметр, определяющий, собирается ли процесс захватывать или освобождать ресурс.</div>
+<div>Процедура <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=3/?k=10"> помечает ресурс <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_15.mod/?n=3/?k=10"> как свободный и вызывает глобальную процедуру монитора</div>
+<pre class="eListing">Signal (condition)
+</pre>
+<div>Процедура <span class="eOperator">Signal</span> выполняет следующие действия:</div>
+<ol class="eList"><li>Выводит процесс из монитора.</li>
+<li>Если очередь на получение данного ресурса не пуста, из нее, в соответствии с определенными правилами и приоритетами выбирается один из процессов и переводится в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">состояние готовности</a>, получая при этом в свое распоряжения запрашиваемый ресурс. Ресурс помечается как занятый (рис.&nbsp;5).</li>
+</ol>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_15.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;</div></div>
+<div>Рассмотрим пример простейшего монитора, осуществляющего распределение ресурсов.</div>
+<pre class="eListing">Program Monitor1;
+var Res_free : condition;
+    Res_busy : boolean;
+
+Procedure Get_Res;
+begin
+  If Res_busy then Wait(Res_free);
+  Res_busy:=True;
+end;
+
+Procedure Put_Res;
+begin
+  Res_busy:=False;
+  Signal(condition);
+end;
+
+begin
+  Res_busy:=False;
+end.
+</pre>
+<div>Монитор работает в полном соответствии с описанной нами выше логикой. Данный простейший пример монитора обеспечивает доступ к одному ресурсу. Соответственно, имеются две процедуры: для запроса ресурса (<span class="eOperator">Get_Res</span>) и для освобождения ресурса (<span class="eOperator">Put_Res</span>). Глобальная процедура <span class="eOperator">Res_busy</span> фиксирует текущее состояние ресурса (занят или свободен), переменная <span class="eOperator">Res_free</span> является идентификатором ресурса, используемым в глобальных процедурах <span class="eOperator">Wait</span> и <span class="eOperator">Signal</span> для помещения процесса в соответствующую очередь ожидания ресурса (сами глобальные процедуры в нашем примере не рассматриваются).</div>
+<div>Для захвата ресурса процесс вызывает процедуру <span class="eOperator">Get_Res</span>. Происходит проверка свободности ресурса, если он свободен — помечается как занятый и процесс выводится их монитора, получая ресурс в свое распоряжение. Если ресурс занят, вызывается глобальная процедура <span class="eOperator">Wait,</span> помещающая ресурс в очередь и переводящая его в состояние блокировки. Процесс, переведенный в состояние блокировки "засыпает" на выполнении процедуры <span class="eOperator">Wait</span>.</div>
+<div>Для освобождения ресурса процесс вызывает процедуру <span class="eOperator">Put_Res</span>. Ресурс помечается как свободный, вызывается процедура <span class="eOperator">Signal</span> для опроса очереди ожидающих процессов и возможного перевода одного из них в состояние готовности.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-85.html">‹ Предыдущий</a>

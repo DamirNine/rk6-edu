@@ -23,7 +23,30 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-27/mod-37.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Перегрузка операций приведения типа</a>
+</div>
+<a name="T1230519255"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Преобразования типов</a> бывают сужающими и расширяющими. Сужающие трансформируют величину в тип, который не может содержать всех значений данного типа. Расширяющие преобразования трансформируют величину в тип, который может содержать как минимум все значения исходного типа. Расширяющий тип преобразований безопасен в программировании всегда, сужающий – нет. Преобразование типов может  быть как явным, так и неявным. Несмотря на отсутствие в <span style="font-weight:bold; ">С++</span> механизмов уточнения подтипов, имеется мощная поддержка <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">перегрузки</a> функций. При проверке соответствия учитывается преобразование типов, (переопределение), как встроенное в язык, так и определенное программистом. Принцип, лежащий в основе применяемых преобразований состоит в том, что  следует отдавать предпочтение преобразованиям наименее опасным с точки зрения возможных ошибок, наименее «сомнительным». Определенные пользователем преобразования рассматриваются только в том случае, если без них вызов разрешить нельзя. </div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">void g (int);
+
+double d = 1.234;
+char *str = "Строка";
+
+g(d); // допустимо, т.к. существует неявное преобразование double к int
+g(str); // ошибка
+</pre>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><br>
+<div><span style="font-weight:bold; ">monstr::operator int() {return health;}</span></div>
+<div><span style="font-weight:bold; ">monstr Vasia;</span> </div>
+<div><span style="font-weight:bold; ">cout&lt;&lt;int(Vasia);</span></div>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-27/">← Оглавление</a>
         <a href="/rk6-edu/course-27/mod-35.html">‹ Предыдущий</a>

@@ -23,7 +23,112 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-41.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сортировка Шелла</a>
+</div>
+<br>
+<a name="T1356058257"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сортировка</a> Шелла является модификацией <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a> сортировки простыми вставками.</div>
+<div>Рассмотрим следующий алгоритм сортировки <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a> a[0].. a[15].</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.8.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<br>
+<div><span style="font-weight:bold; ">1.</span> Вначале сортируем простыми вставками каждые 8 групп из 2-х элементов (a[0], a[8[), (a[1], a[9]), ... , (a[7], a[15]).</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.8.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<br>
+<div><span style="font-weight:bold; ">2.</span> Потом сортируем каждую из четырех групп по 4 элемента (a[0], a[4], a[8], a[12]), ..., (a[3], a[7], a[11], a[15]). </div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.8.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<br>
+<div>В нулевой группе будут элементы 4, 12, 13, 18, в первой - 3, 5, 8, 9 и т.п.</div>
+<br>
+<div><span style="font-weight:bold; ">3.</span> Далее сортируем 2 группы по 8 элементов, начиная с (a[0], a[2], a[4], a[6], a[8], a[10], a[12], a[14]).</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.8.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<br>
+<div><span style="font-weight:bold; ">4.</span> В конце сортируем вставками все 16 элементов.</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.8.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;</div></div>
+<br>
+<div>Очевидно, лишь последняя сортировка необходима, чтобы расположить все элементы по своим местам. Так зачем нужны остальные ? </div>
+<div>Hа самом деле они продвигают элементы максимально близко к соответствующим позициям, так что в последней стадии число перемещений будет весьма невелико. Последовательность и так почти отсортирована. Ускорение подтверждено многочисленными исследованиями и на практике оказывается довольно существенным.</div>
+<div>Единственной характеристикой сортировки Шелла является приращение - расстояние между сортируемыми элементами, в зависимости от прохода. В конце приращение всегда равно единице - метод завершается обычной сортировкой вставками, но именно последовательность приращений определяет рост эффективности.</div>
+<div>Использованный в примере набор ..., 8, 4, 2, 1 - неплохой выбор, особенно, когда количество элементов - степень двойки. Однако гораздо лучший вариант предложил Р.Седжвик. Его последовательность имеет вид</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.8.mod/?n=6"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;</div></div>
+<br>
+<div>При использовании таких приращений среднее количество операций: O(n7/6), в худшем случае - порядка O(n4/3).</div>
+<div>Обратим внимание на то, что последовательность вычисляется в порядке, противоположном используемому: inc[0] = 1, inc[1] = 5, ... Формула дает сначала меньшие числа, затем все большие и большие, в то время как расстояние между сортируемыми элементами, наоборот, должно уменьшаться. Поэтому массив приращений inc вычисляется перед запуском собственно сортировки до максимального расстояния между элементами, которое будет первым шагом в сортировке Шелла. Потом его значения используются в обратном порядке.</div>
+<div>При использовании формулы Седжвика следует остановиться на значении inc[s-1], если 3*inc[s] &gt; size.</div>
+<div> </div>
+<pre class="eListing">int increment(long inc[], long size) {
+  int p1, p2, p3, s;
+  p1 = p2 = p3 = 1;
+  s = -1;
+  do {
+    if (++s % 2) {
+      inc[s] = 8*p1 - 6*p2 + 1;
+    } else {
+      inc[s] = 9*p1 - 9*p3 + 1;
+      p2 *= 2;
+      p3 *= 2;
+    }
+p1 *= 2;
+  } while(3*inc[s] &lt; size);  
+  return s &gt; 0 ? --s : 0;
+}
+template&lt;class T&gt;
+void shellSort(T a[], long size) {
+  long inc, i, j, seq[40];
+  int s;
+  // вычисление последовательности приращений
+  s = increment(seq, size);
+  while (s &gt;= 0) {
+// сортировка вставками с инкрементами inc[] 
+inc = seq[s--];
+    for (i = inc; i &lt; size; i++) {
+      T temp = a[i];
+      for (j = i-inc; (j &gt;= 0) &amp;&amp; (a[j] &gt; temp); j -= inc)
+        a[j+inc] = a[j];
+      a[j+inc] = temp;
+    }
+  }
+}
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-39.html">‹ Предыдущий</a>

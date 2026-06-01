@@ -23,7 +23,158 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-7/mod-34.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Типы данных в языке Express</a>
+</div>
+<a name="T1133808979"></a>
+<a name="T674463047"></a>
+<div>В теле схемы декларируются типы данных (Data Type). <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Тип данных</a> — это множество значений некоторой величины или множество объектов (набор экземпляров). В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке Express</a> используются следующие типы данных: сущность (Entity), простой (Simple Type), агрегативный (Aggregation Data Type), определяемый (Defined Data Type), нечисловой (Enumeration Data Type) и выделяемый (Select Data Type) типы.</div>
+<a name="T474320637"></a>
+<a name="T100241030"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сущность</a> — тип данных, представляющий набор концептуальных или реальных физических объектов с некоторыми общими свойствами. Сущности используют для описания объектов приложений. Свойства сущности выражают в виде <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">атрибутов</a> (Attributes). К характеристикам сущностей относятся также ограничения, накладываемые на значения атрибутов или на отношения между атрибутами.</div>
+<div>Описание сущности начинается со служебного слова <span class="eOperator">ENTITY</span>, за которым следуют идентификатор сущности, описания ее атрибутов и возможно также правил. Каждый из атрибутов представлен его идентификатором и типом:</div>
+<pre class="eListing">ENTITY &lt;имя_сущности&gt;;
+&lt;идентификатор_атрибута&gt;:&lt;тип_атрибута&gt;;
+...
+END_ENTITY;
+</pre>
+<div>Например, задание прямой линии (line) в виде двух инцидентных точек р0 и р1 (атрибутов типа point) выглядит следующим образом:</div>
+<pre class="eListing">ENTITY line;
+p0,p1: point;
+END_ENTITY;
+</pre>
+<div>Атрибуты и переменные сами могут быть сущностями, так тип атрибутов p0 и p1 предыдущего примера декларируется, как сущность, атрибутами которой в случае пространства 3D являются геометрические координаты x,y,z:</div>
+<pre class="eListing">ENTITY point;
+x,y,z: REAL;
+END_ENTITY;
+</pre>
+<a name="T381072063"></a>
+<div>В языке <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Express-G</a> сущности изображаются прямоугольниками, внутри прямоугольника записывается имя сущности (рис.&nbsp;1).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=230_CALS/cals108.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Изображение сущности в языке Express-G</div></div>
+<div>Если свойство является необязательным для данной сущности, то его выражают так называемым необязательным (optional) атрибутом. В его описании перед типом атрибута добавляется служебное слово <span class="eOperator">OPTIONAL</span>:</div>
+<pre class="eListing">&lt;идентификатор_атрибута&gt;: OPTIONAL &lt;тип_атрибута&gt;;
+</pre>
+<div>Изображение атрибутов в Express-G поясняет рис.&nbsp;2, из которого, в частности, следует, что атрибут представлен прямоугольником, а связи "сущность-атрибут" или "сущность-сущность" отображаются линиями, причем в случае связи с optional атрибутом используется пунктирная линия. Направление связи обозначается окружностью на конце линии, ведущей к атрибуту. Имя атрибута записывается рядом с этой линией. В прямоугольнике атрибута записывается тип атрибута.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=230_CALS/cals108.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Изображение атрибутов в языке Express-G</div></div>
+<div>Некоторые из атрибутов могут определяться через другие атрибуты. Тогда атрибуты, выражаемые через другие атрибуты, называют порожденными (derived), что отображается служебным словом derive в декларации атрибута. Например, описание окружности, кроме обязательных атрибутов, которыми в нижеследующем примере выбраны радиус и центр окружности, может включать порожденный атрибут площадь круга:</div>
+<pre class="eListing">ENTITY point;
+x,y,z: REAL;
+END_ENTITY;
+ENTITY cycle;
+center: point;
+radius: REAL;
+DERIVE
+area: REAL := pi*radius**2;
+END_ENTITY;
+</pre>
+<div>В этом примере использованы явные атрибуты center, radius и порожденный атрибут area.</div>
+<div>Отметим, что между символами <span class="eOperator">(*</span> и <span class="eOperator">*)</span> записывается комментарий — произвольный текст по усмотрению автора модели. Если комментарий умещается в одной строчке, то достаточно перед его текстом поставить двойной дефис ( <span class="eOperator">--</span> ).</div>
+<div>К простым типам данных относятся следующие типы:</div>
+<ul class="eList"><li><span class="eOperator">integer</span> — целые числа;</li>
+<li><span class="eOperator">real</span> — вещественные числа;</li>
+<li><span class="eOperator">number</span> — тип, объединяющий типы integer и real;</li>
+<li><span class="eOperator">logical</span> — его значениями могут быть <span class="eOperator">true</span>, <span class="eOperator">false</span> или <span class="eOperator">unknown</span> (неопределенность);</li>
+<li><span class="eOperator">Boolean</span> — с возможными значениями <span class="eOperator">true</span> или <span class="eOperator">false</span>;</li>
+<li><span class="eOperator">binary</span> — последовательность битов 1 или 0;</li>
+<li><span class="eOperator">string</span> — строка символов.</li>
+</ul>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=230_CALS/cals108.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Изображения простых типов в языке Express-G</div></div>
+<div>Изображения простых типов на языке Express-G показаны на рис.&nbsp;3.</div>
+<div>Для <span class="eOperator">binary</span> и <span class="eOperator">STRING</span> в круглых скобках можно указать максимально возможное число элементов множества, например, если строка A может включать до 24-х символов, то:</div>
+<pre class="eListing">A: STRING(24);
+</pre>
+<div>Если строка должна содержать ровно 24 символа, то:</div>
+<pre class="eListing">A: STRING(24) FIXED;
+</pre>
+<div>Если же ограничений на длину строки нет, то:</div>
+<pre class="eListing">A: STRING;
+</pre>
+<div>Если переменная х имеет тип binary, то выражение х[5:7] означает биты с 5-го по 7-й в коде х.</div>
+<div>Значения простых типов выражаются с помощью литералов. Литералы — это числа (целые, вещественные), двоичные коды, логические значения (true, false, unknown), фрагменты текста (строковый тип). Примеры записи литералов:</div>
+<ul class="eList"><li>двоичный (начинается с знака %) <span class="eOperator">%100101110</span></li>
+<li>целое десятичное число <span class="eOperator">1052</span></li>
+<li>вещественный (обязательна десятичная точка) <span class="eOperator">34.е-3</span> или <span class="eOperator">0.034</span></li>
+<li>строковый (занимает не более одной строки) <span class="eOperator">'first name'</span></li>
+</ul>
+<div>Агрегативный тип данных — множество элементов некоторого типа.</div>
+<div>Различают четыре разновидности агрегативных типов, сведения о которых приведены в табл.&nbsp;1.</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTable">Тип данных</td><td class="eTable">Упорядоченность</td><td class="eTable">Различие элементов</td></tr>
+<tr><td class="eTable">ARRAY</td><td class="eTable">Да</td><td class="eTable">Необязательно</td></tr>
+<tr><td class="eTable">BAG</td><td class="eTable">Нет</td><td class="eTable">Необязательно</td></tr>
+<tr><td class="eTable">LIST</td><td class="eTable">Да</td><td class="eTable">Обязательно</td></tr>
+<tr><td class="eTable">SET</td><td class="eTable">Нет</td><td class="eTable">Обязательно</td></tr>
+</tbody></table><br>
+<div>При описании типа массив (array) после слова array в квадратных скобках указываются нижняя и верхняя границы индексов. Для остальных агрегативных типов записываются не граничные значения индекса, а нижняя и верхняя границы числа элементов. Например:</div>
+<pre class="eListing">F1: ARRAY[2:8] of REAL;
+(* массив F1 из 7-и элементов, элементы имеют тип REAL и нумеруются, начиная с индекса 2 *);
+F2: LIST[1:?] of INTEGER;
+(* множество F2 содержит, по крайней мере, один элемент типа INTEGER *)
+matr: ARRAY[1:10] of ARRAY[9:12] of atrac;
+(* массив matr состоит из 10 четырехэлементных массивов, элементы типа atrac *)
+</pre>
+<div>Записи вида array[2:8] или list[1:?] в Express-G преобразуются в форму A[2:8] или L[1:?], указываемую около линии атрибута агрегативного типа после имени этого атрибута. Так, первый из вышеприведенных примеров представлен на рис.&nbsp;4.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=230_CALS/cals108.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;Пример изображения агрегативного типа в языке Express-G</div></div>
+<div>Определяемый тип данных обычно вводится пользователем для улучшения читаемости модели. Нечисловой тип — тип данных, экземплярами которого являются нечисловые (предметные) переменные. Выделяемый тип соответствует поименованной совокупности других типов. Описание этих типов данных начинается со служебного слова type, за которым следует идентификатор типа и его определение. Пример описания определяемого типа:</div>
+<pre class="eListing">TYPE volume = real;
+END_TYPE;
+ENTITY manual;
+name: STRING;
+v1,v2,v3: volume;
+END_ENTITY;
+</pre>
+<div>Определение нечислового типа начинается со служебных слов enumeration of, после которых в скобках перечисляются элементы множества. Например:</div>
+<pre class="eListing">TYPE color = ENUMERATION OF (red, green, blue);
+END_TYPE;
+</pre>
+<div>Ссылка на значение red теперь возможна в виде red или color.red.</div>
+<div>Выделяемый тип соответствует одному из некоторого списка уже введенных типов. Этот список записывается после служебного слова select. Ссылка на имя выделяемого типа означает, что выбирается один из типов совокупности:</div>
+<pre class="eListing">TYPE a_c = SELECT (one, two, three);
+END_TYPE;
+...
+proc: a_c; (* proc может быть объектом одного из типов one, two, three *)
+</pre>
+<div>Графические изображения определяемых, нечисловых и выделяемых типов данных показаны на рис.&nbsp;5. Внутри прямоугольников, ограничиваемых пунктирными линиями, записывается имя типа.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=230_CALS/cals108.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;Изображения определяемых, нечисловых и выделяемых типов данных в языке Express-G</div></div>
+<div>Способ описания констант очевиден из следующего фрагмента модели:</div>
+<pre class="eListing">CONSTANT
+year: INTEGER := 1995;
+start: date := date(12,16,1982);
+(* подразумевается, что при описании типа date указаны три атрибута
+ месяц, число, год *)
+END_CONSTANT;
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-7/">← Оглавление</a>
         <a href="/rk6-edu/course-7/mod-32.html">‹ Предыдущий</a>

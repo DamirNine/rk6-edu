@@ -23,7 +23,76 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-22/mod-24.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функции обработки массивов для получения соответствия</a>
+</div>
+<a name="T1236198656"></a>
+<a name="T537769185"></a>
+<div>В параллельных ЯВУ для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-конвейерных вычислительных систем</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">векторно-параллельных вычислительных систем</a> имеется множество арифметических, реляционных и логических бинарных операций над массивами, которые выполняются параллельно над всеми элементами этих массивов. Имеются также унарные операции, относящиеся ко всем элементам массивов.</div>
+<a name="T1971893422"></a>
+<div>При выполнении бинарных операций над массивами оба массива должны иметь одинаковые ранги и размерности. Равенство рангов и размерностей массивов будем называть <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">соответствием массивов</a>. Такое ограничение требует введения в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык</a> программирования конструкций, предоставляющих возможность сжатия, расширения или переформирования массивов с целью достижения их соответствия. Средства, рассмотренные в параграфе 1, могут быть использованы для этой цели. Другие средства рассмотрены в данном параграфе. Заметим, что альтернативой является дополнение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятором</a> неопределенных элементов массивом, например, нулями.</div>
+<div class="eSubTitle">Функции понижения ранга.</div>
+<a name="T128982104"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функции понижения ранга массива</a> основаны на использовании некоторого бинарного оператора ко всем элементам массива в одной размерности.</div>
+<div>Положим, что <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=1/?k=10"> – числовой массив, а <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=2/?k=10"> – логический массив. Пусть массивы <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=1/?k=10">,<img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=2/?k=10"> имеют ранг <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=3/?k=10"> и все размерности этих массивов одинаковы и равны <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=4/?k=10">. Приведем примеры наиболее распространенных функций понижения ранга.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Функция <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=5/?k=10"> вызывает суммирование элементов числового массива <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=6/?k=10"> по <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=7/?k=10">-ой размерности:</div>
+<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=8/?k=10">.</div>
+<div>Результирующий массив имеет ранг <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=9/?k=10">. Например, если <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=10/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=11/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=12/?k=10">, то <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=13/?k=10">.</div>
+<div>Заметим, что все суммирования при выполнении операции <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=5/?k=10"> производятся параллельно.</div>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>Функция <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=14/?k=10"> вызывает перемножение элементов числового массива <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=6/?k=10"> по <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=7/?k=10">-ой размерности:</div>
+<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=15/?k=10">.</div>
+<div>Результирующий массив имеет ранг <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=9/?k=10">, все произведения при выполнении операции <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=14/?k=10"> производятся параллельно.</div>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div>Функция <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=16/?k=10"> вызывает логическое перемножение элементов логического массива <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=6/?k=10"> по <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=7/?k=10">-ой размерности:</div>
+<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=17/?k=10">.</div>
+<div>Результирующий массив имеет ранг <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=9/?k=10">. Например, если <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=10/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=11/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=18/?k=10">, то <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=19/?k=10">.</div>
+<div>Все логические умножения при выполнении операции <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=16/?k=10"> производятся параллельно.</div>
+</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><div>Функция <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=20/?k=10"> вызывает логическое сложение элементов логического массива <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=6/?k=10"> по <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=7/?k=10">-ой размерности:</div>
+<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=21/?k=10">.</div>
+<div>Результирующий массив имеет ранг <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=9/?k=10">, все логические суммирования при выполнении операции <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=22/?k=10">(<img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=23/?k=10">,<img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=7/?k=10">) производятся параллельно.</div>
+</div>
+<div class="auto">Пример 5</div>
+<div class="eExample"><div>Функция <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=24/?k=10"> вызывает замену элементов числового массива <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=6/?k=10"> по <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=7/?k=10">-ой размерности максимальным элементом:</div>
+<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=25/?k=10">.</div>
+<div>Результирующий массив имеет ранг <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=9/?k=10">. Например, если если <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=10/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=11/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=26/?k=10">, то <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=27/?k=10">.</div>
+<div>Все операции отыскания максимума при выполнении операции <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=24/?k=10"> производятся параллельно.</div>
+</div>
+<div class="auto">Пример 6</div>
+<div class="eExample"><div>Функция <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=28/?k=10"> вызывает замену элементов числового массива <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=6/?k=10"> по <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=7/?k=10">-ой размерности минимальным элементом:</div>
+<div><img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=29/?k=10">.</div>
+<div>Результирующий массив имеет ранг <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=9/?k=10">. Все операции отыскания минимума при выполнении операции <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=28/?k=10"> производятся параллельно.</div>
+</div>
+<div class="eSubTitle">Функции повышения ранга.</div>
+<a name="T347807676"></a>
+<div>Примером <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функции повышения ранга массива</a> является функция <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=30/?k=10">. Результатом выполнения этой функции является матрица, полученная повторением <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=4/?k=10"> раз матрицы <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=1/?k=10"> по <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=31/?k=10">-ой размерности. Пусть, например, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=32/?k=10">, тогда <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=33/?k=10">=<img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=34/?k=10">.</div>
+<div>Любое повышение ранга может быть выполнено с помощью повторного использовании этой функции.</div>
+<div class="eSubTitle">Операции переформирования.</div>
+<a name="T512934154"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операции переформирования массивов</a> могут быть необходимы при выполнении операций, над массивами, имеющими различные ранги и/или размерности, но одинаковое количество элементов. </div>
+<div>Положим, что матрица <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=1/?k=10"> имеет ранг <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=35/?k=10"> и размерности <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=36/?k=10">. Каждый элемент матрицы <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=1/?k=10">, положим, занимает в памяти один байт. Напомним, что тогда описание <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=37/?k=10"> вводит <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=38/?k=10"> байтов памяти и функцию отображения, которая определяет положение элемента в памяти <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=39/?k=10">.</div>
+<div>В качестве примера операции переформирования рассмотрим операцию <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=40/?k=10">, где <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=41/?k=10">. </div>
+<div>Операция <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=40/?k=10"> вводит новый массив с таким же количеством элементов, что и в массиве <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=1/?k=10">, и новой функций отображения <img align="absmiddle" src="/?frm/?doc=Parallel/ch020402.mod/?n=42/?k=10">.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-22/">← Оглавление</a>
         <a href="/rk6-edu/course-22/mod-22.html">‹ Предыдущий</a>

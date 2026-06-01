@@ -23,7 +23,98 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-21/mod-46.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Метод линейной аппроксимации</a>
+</div>
+<a name="T1869977390"></a>
+<a name="T28590070"></a>
+<div>Сделаем ряд дополнительных допущений. Пусть <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">множество допустимых значений</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=1/?k=10"> определяется только ограничениями типа неравенств и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ограничивающие функции</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=2/?k=10"> являются непрерывными, дифференцируемыми и выпуклыми:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=3/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=4/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br></div>
+<div>Пусть функция <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=5/?k=10"> также непрерывна, дифференцируема и выпукла во множестве <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=1/?k=10">.</div>
+<div class="eSubTitle">Суть метода линейной аппроксимации.</div>
+<a name="T185065604"></a>
+<a name="T1207549686"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метод линейной аппроксимации </a>использует на каждой итерации линейную аппроксимацию <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">целевой функции</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=5/?k=10"> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ограничивающих функций</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=2/?k=10"> в окрестности текущей точки <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=6/?k=10"><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=7/?k=10"></td><td align="right" class="eFormula">&nbsp;(3)</td></tr></tbody></table><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=8/?k=10"></td><td align="right" class="eFormula">&nbsp;(4)</td></tr></tbody></table><br></div>
+<a name="T1838146648"></a>
+<div>Вместо задачи (1) на каждой итерации решается вспомогательная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задача линейного программирования</a><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=9/?k=10"></td><td align="right" class="eFormula">&nbsp;(5)</td></tr></tbody></table><br></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=10/?k=10">.</div>
+<div>В изложенном виде метод может привести к выходу точки <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=11/?k=10"> за пределы допустимой области (см. прим.&nbsp;1).</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><a name="T1631944645"></a>
+<div>Рассмотрим следующую двумерную <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задачу условной оптимизации</a> с тремя ограничениями типа неравенств (первое ограничение – нелинейное, второе и третье ограничения — линейные):</div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=12/?k=10"></div>
+<div>где</div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=13/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=14/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=15/?k=10"></div>
+<div>Положим, что текущая точка есть <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=16/?k=10">. Линеаризуем <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">целевую функцию</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=17/?k=10"> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ограничивающую функцию</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=18/?k=10"> в окрестности этой точки. Поскольку <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=19/?k=10"> <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=20/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=21/?k=10"> по формуле (3) имеем</div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=22/?k=10"></div>
+<div>Аналогично для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ограничивающих функции</a> по формуле (4) имеем:</div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=23/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=24/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=25/?k=10"></div>
+<div>Пример иллюстрирует рис.&nbsp;1, на котором линии уровня <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">целевой функции</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=26/?k=10"> получены с помощью следующей MATLAB-программы:</div>
+<pre class="eListing">x = -2 : 0.1 : 6;
+y = x;
+[X, Y] = meshgrid(x);
+Z = X.^2 + (Y - 6.).^2 - 12;
+V = [-10, -5, 0, 5, 10, 20, 40, 80];
+[C, h] = contour(X, Y, Z, V);
+clabel(C, h);
+</pre>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0904.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Точка X<sup class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">r+1</span></sup> лежит вне области допустимых значений D.</div></div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Прямая <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=27/?k=10"> представляет собой след от пересечения плоскости, которая является касательной к поверхности <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=28/?k=10"> в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=29/?k=10">, с плоскостью 0x<sub class="eSub">1</sub>x<sub class="eSub">2</sub>. Эта прямая не обязательно является касательной к линии <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=30/?k=10"> — прямая <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=31/?k=10"> может пересекать кривую <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=30/?k=10">, быть касательной к ней или не иметь с ней общих точек. Аналогично, линия уровня <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=32/?k=10"> функции <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=17/?k=10"> представляет собой след от пересечения плоскости, которая является касательной к поверхности <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=33/?k=10"> в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=29/?k=10">, с плоскостью <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=34/?k=10">.</div>
+</div>
+<div>Чтобы избежать выхода текущей точки за границы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">области допустимых значений</a>, следующее приближение <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=11/?k=10"> к точке минимума <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=35/?k=10"> функции <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=5/?k=10"> из множества <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=1/?k=10"> находится по формуле<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=36/?k=10"></td><td align="right" class="eFormula">&nbsp;(6)</td></tr></tbody></table><br></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=37/?k=10"> — решение вспомогательной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задачи линейного программирования</a> (5).</div>
+<div>Величина шага <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=38/?k=10"> в формуле (6) в разных вариантах <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метода линейной аппроксимации</a> может определяться разными способами. Приведем два из множества возможных способов.</div>
+<a name="T1911623276"></a>
+<div><span class="eOperator">1-й способ выбора величины шага</span> <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=39/?k=10">. Величина <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=39/?k=10"> находится как решение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задачи одномерной оптимизации</a> функции <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=40/?k=10"> на отрезке <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=41/?k=10">:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=42/?k=10"></td><td align="right" class="eFormula">&nbsp;(7)</td></tr></tbody></table><br></div>
+<div><span class="eOperator">2-й способ выбора величины шага</span> <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=39/?k=10">. Полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=43/?k=10"> и по формуле (6) находим вектор <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=11/?k=10">. Вычисляем значение <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=44/?k=10"> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">целевой функции</a> в полученной точке. Если условие<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=45/?k=10"></td><td align="right" class="eFormula">&nbsp;(8)</td></tr></tbody></table><br></div>
+<div>не выполнено, то уменьшаем величину шага <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=39/?k=10"> (например, в два раза) и повторно проверяем выполнение условия (8). Дробление шага <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=39/?k=10"> и вычисление <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=11/?k=10"> производим до выполнения условия (8).</div>
+<div class="eSubTitle">Схема метода линейной аппроксимации.</div>
+<div>Рассмотрим вариант метода, в котором используется 1-й способ выбора величины шага <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=39/?k=10">.</div>
+<ol class="eList"><li>Задаем начальную точку <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=46/?k=10"> и полагаем счетчик числа итераций <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=47/?k=10">.</li>
+<li>Вычисляем градиенты функций <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=48/?k=10"> в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=49/?k=10">.</li>
+<li>Решаем <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задачу линейного программирования</a> (5) – находим точку <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=50/?k=10">.</li>
+<li>Решаем одномерную задачу минимизации (7) – находим величину шага <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=51/?k=10"> и вектор <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=52/?k=10">.</li>
+<li>Проверяем условие окончания поиска (см. ниже). Если условие окончания поиска выполнено, то полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=53/?k=10"> и завершаем итерации. Иначе – полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=54/?k=10"> и переходим к п.2<img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=55/?k=10"></li>
+</ol>
+<a name="T1219941941"></a>
+<div>В качестве критерия окончания поиска можно использовать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стандартные условия окончания итераций</a></div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=56/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=57/?k=10"></div>
+<div>или условие</div>
+<div><img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=58/?k=10"></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=59/?k=10"> — константа, определяющая требуемую точность решения по градиенту функции <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=60/?k=10">.</div>
+<div>Отметим следующие трудности, возникающие при использовании <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метода линейной аппроксимации</a>:</div>
+<ol class="eList"><li>Если функция <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=61/?k=10"> имеет высокую степень нелинейности, то на основе решения вспомогательной задачи минимизации (5) направление поиска может быть выбрано слишком неточно (см. рис.&nbsp;2), что приводит к медленной сходимости метода.</li>
+<li>Метод требует, чтобы точка <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=62/?k=10"> принадлежала <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">множеству допустимых значений</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0904.mod/?n=63/?k=10">. Если это требование не выполнено, то прежде приходится использовать какой-либо метод поиска точки, принадлежащей множеству допустимых значений.</li>
+</ol>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0904.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Направление поиска <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:normal;">(</span>X<sup class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">r+1</span></sup>-X<sup class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">r</span></sup><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:normal;">)</span>, которое обеспечивает метод на основе линейной аппроксимации, далеко от оптимального направления <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:normal;">(</span>X<sup class="eSub">*</sup>-X<sup class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">r</span></sup><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:normal;">)</span>.</div></div>
+<div>Возможны модификации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метода линейной аппроксимации</a>, при которых необходимые производные вычисляются с помощью конечных разностей.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-21/">← Оглавление</a>
         <a href="/rk6-edu/course-21/mod-44.html">‹ Предыдущий</a>

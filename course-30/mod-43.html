@@ -23,7 +23,121 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-44.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Хеширование. Хеш-функции.</a>
+</div>
+<br>
+<a name="T328781301"></a>
+<a name="T1153797611"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Хеш-таблица</a> - это обычный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a> с необычной <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">адресацией</a>, задаваемой хеш-функцией. Например, на hashTable рис. 1 - это массив из 8 элементов. Каждый элемент представляет собой указатель на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">линейный список</a>, хранящий числа. Хеш-функция в этом примере просто делит <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключ</a> на 8 и использует остаток как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">индекс</a> в таблице. Это дает нам числа от 0 до 7 Поскольку для адресации в hashTable нам и нужны числа от 0 до 7, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> гарантирует допустимые значения индексов.</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.12.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Хеш-таблица</div></div>
+<br>
+<div>Чтобы вставить в таблицу новый элемент, мы хешируем ключ, чтобы определить список, в который его нужно добавить, затем вставляем элемент в начало этого списка. Например, чтобы добавить 11, мы делим 11 на 8 и получаем остаток 3. Таким образом, 11 следует разместить в списке, на начало которого указывает hashTable[3]. Чтобы найти число, мы его хешируем и проходим по соответствующему списку. Чтобы удалить число, мы находим его и удаляем элемент списка, его содержащий. </div>
+<a name="T2120834539"></a>
+<div>При добавлении элементов в хеш-таблицу выделяются куски <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">динамической памяти</a>, которые организуются в виде связанных списков, каждый из которых соответствует входу хеш-таблицы. Этот <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод</a> называется связыванием. Другой метод, в котором все элементы располагаются в самой хеш-таблице, известен как прямая или открытая адресация; его описание вы найдете в цитируемой литературе. </div>
+<br>
+<a name="T1122385346"></a>
+<div>Если хеш-функция распределяет совокупность возможных ключей равномерно по множеству индексов, то <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">хеширование</a> эффективно разбивает множество ключей. Наихудший случай - когда все ключи хешируются в один индекс. При этом мы работаем с одним линейным списком, который и вынуждены последовательно сканировать каждый раз, когда что-нибудь делаем. Отсюда видно, как важна хорошая хеш-функция. Здесь мы рассмотрим лишь несколько из возможных подходов. При иллюстрации методов предполагается, что unsigned char располагается в 8 битах, unsigned short int - в 16, unsigned long int - в 32. </div>
+<div>Деление (размер таблицы hashTableSize - простое число). Этот метод использован в последнем примере. Хеширующее значение hashValue, изменяющееся от 0 до (hashTableSize - 1), равно остатку от деления ключа на размер хеш-таблицы. Вот как это может выглядеть:</div>
+<br>
+<pre class="eListing">typedef int HashIndexType;
+HashIndexType Hash(int Key) {
+    return Key % HashTableSize;
+}
+</pre>
+<br>
+<div>Для успеха этого метода очень важен выбор подходящего значения hashTableSize. Если, например, hashTableSize равняется двум, то для четных ключей хеш-значения будут четными, для нечетных - нечетными. Ясно, что это нежелательно - ведь если все ключи окажутся четными, они попадут в один элемент таблицы. Аналогично, если все ключи окажутся четными, то hashTableSize, равное степени двух, попросту возьмет часть битов Key в качестве индекса. Чтобы получить более случайное распределение ключей, в качестве hashTableSize нужно брать простое число, не слишком близкое к степени двух. </div>
+<div>Мультипликативный метод (размер таблицы hashTableSize есть степень 2n). Значение key умножается на константу, затем от результата берется необходимое число битов. В качестве такой константы Кнут рекомендует золотое сечение</div>
+<div>(sqrt(5) - 1)/2 = 0.6180339887499. Пусть, например, мы работаем с байтами. Умножив золотое сечение на 28, получаем 158. Перемножим 8-битовый ключ и 158, получаем 16-битовое целое. Для таблицы длиной 25 в качестве хеширующего значения берем 5 младших битов младшего слова, содержащего такое произведение. Вот как можно реализовать этот метод:</div>
+<br>
+<pre class="eListing">/* 8-bit index */
+typedef unsigned char HashIndexType;
+static const HashIndexType K = 158;
+/* 16-bit index */
+typedef unsigned short int HashIndexType;
+static const HashIndexType K = 40503;
+/* 32-bit index */
+typedef unsigned long int HashIndexType;
+static const HashIndexType K = 2654435769;
+/* w=bitwidth(HashIndexType), size of table=2**m */
+static const int S = w - m;
+HashIndexType HashValue = (HashIndexType)(K * Key) &gt;&gt; S;
+</pre>
+<br>
+<div>Пусть, например, размер таблицы hashTableSize равен 1024 (210). Тогда нам достаточен 16-битный индекс и S будет присвоено значение 16 - 10 = 6. В итоге получаем:</div>
+<div> </div>
+<pre class="eListing">typedef unsigned short int HashIndexType;
+HashIndexType Hash(int Key) {
+    static const HashIndexType K = 40503;
+    static const int S = 6;
+    return (HashIndexType)(K * Key) &gt;&gt; S;
+}
+</pre>
+<br>
+<div>Аддитивный метод для строк переменной длины (размер таблицы равен 256). Для строк переменной длины вполне разумные результаты дает сложение по модулю 256. В этом случае результат hashValue заключен между 0 и 255.</div>
+<br>
+<pre class="eListing">typedef unsigned char HashIndexType;
+HashIndexType Hash(char *str) {
+    HashIndexType h = 0;
+    while (*str) h += *str++;
+    return h;
+}
+</pre>
+<br>
+<div>Исключающее ИЛИ для строк переменной длины (размер таблицы равен 256). Этот метод аналогичен аддитивному, но успешно различает схожие слова и анаграммы (аддитивный метод даст одно значение для XY и YX). Метод, как легко догадаться, заключается в том, что к элементам строки последовательно применяется операция "исключающее или". В нижеследующем алгоритме добавляется случайная компонента, чтобы еще улучшить результат.</div>
+<br>
+<pre class="eListing">typedef unsigned char HashIndexType;
+unsigned char Rand8[256];
+HashIndexType Hash(char *str) {
+    unsigned char h = 0;
+    while (*str) h = Rand8[h ^ *str++];
+    return h;
+}
+</pre>
+<br>
+<div>Здесь Rand8 - таблица из 256 восьмибитовых случайных чисел. Их точный порядок не критичен. Корни этого метода лежат в криптографии; он оказался вполне эффективным (Pearson [1990]). </div>
+<div>Исключающее ИЛИ для строк переменной длины (размер таблицы &lt;= 65536). Если мы хешируем строку дважды, мы получим хеш-значение для таблицы любой длины до 65536. Когда строка хешируется во второй раз, к первому символу прибавляется 1. Получаемые два 8-битовых числа объединяются в одно 16-битовое.</div>
+<br>
+<pre class="eListing">typedef unsigned short int HashIndexType;
+unsigned char Rand8[256];
+HashIndexType Hash(char *str) {
+    HashIndexType h;
+    unsigned char h1, h2;
+    if (*str == 0) return 0;
+    h1 = *str; h2 = *str + 1;
+    str++;
+    while (*str) {
+        h1 = Rand8[h1 ^ *str];
+        h2 = Rand8[h2 ^ *str];
+        str++;
+    }
+    /* h is in range 0..65535 */
+    h = ((HashIndexType)h1 &lt;&lt; 8)|(HashIndexType)h2;
+    /* use division method to scale */
+    return h % HashTableSize
+}
+</pre>
+<br>
+<div>Размер хеш-таблицы должен быть достаточно большим, чтобы в ней оставалось разумно большое число пустых мест. Как видно из таблицы 1, чем меньше таблица, тем больше среднее время поиска ключа в ней. Хеш-таблицу можно рассматривать как совокупность связанных списков. По мере того, как таблица растет, увеличивается количество списков и, соответственно, среднее число узлов в каждом списке уменьшается. Пусть количество элементов равно n. Если размер таблицы равен 1, то таблица вырождается в один список длины n. Если размер таблицы равен 2 и хеширование идеально, то нам придется иметь дело с двумя списками по n/100 элементов в каждом. Это сильно уменьшает длину списка, в котором нужно искать. Как мы видим в таблице 1, имеется значительная свободы в выборе длины таблицы. </div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-42.html">‹ Предыдущий</a>

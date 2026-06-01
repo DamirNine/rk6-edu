@@ -23,7 +23,44 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-29/mod-3.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Стадии работы компилятора</a>
+</div>
+<div>Работа компилятора состоит из нескольких стадий, которые могут выполняться последовательно, либо совмещаться по времени. Эти стадии могут быть представлены в виде схемы. </div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/gram02.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<br>
+<a name="T1683739359"></a>
+<a name="T112759672"></a>
+<a name="T181004492"></a>
+<a name="T895398568"></a>
+<div>Первая стадия работы <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">компилятора</a> называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">лексическим анализом</a>, а программа, её реализующая, - <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">лексическим анализатором</a> (ЛА). На вход лексического анализатора подаётся последовательность символов входного языка. ЛА выделяет в этой последовательности простейшие конструкции языка, которые называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">лексическими единицами</a> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">лексемами</a>). Примерами лексических единиц являются идентификаторы, числа, символы операций, служебные слова и т.д. ЛА преобразует исходный текст, заменяя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">лексические единицы</a> их внутренним представлением - <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">лексемами</a>. Лексема может включать информацию о классе лексической единицы и её значении. Кроме того, для некоторых классов лексических единиц ЛА строит таблицы, например, таблицу идентификаторов, констант, которые используются на последующих стадиях компиляции.</div>
+<a name="T1207006674"></a>
+<a name="T1706429990"></a>
+<a name="T1023565051"></a>
+<div>Вторую стадию работы компилятора называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">синтаксическим анализом</a>, а соответствующую программу - <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">синтаксическим анализатором</a> (СА). На вход СА подается последовательность <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">лексем</a>, которая преобразуется в промежуточный код, представляющий собой последовательность символов действия или <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">атомов</a>. Каждый атом включает описание операции, которую нужно выполнить, с указанием используемых операндов. При этом последовательность расположения атомов, в отличие от <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">лексем</a>, соответствует порядку выполнения операций, необходимому для получения результата. </div>
+<a name="T1515318212"></a>
+<a name="T584913216"></a>
+<div>На третьей стадии работы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятора</a> осуществляется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">построение выходного текста</a>, или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синтез исходного кода программы</a>. Программа, реализующая эту стадию, называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">генератором выходного текста</a> (Г). Генератор каждому символу действия, поступающему на его вход, ставит в соответствие одну или несколько команд выходного языка. В качестве выходного языка могут быть использованы команды устройства, команды ассемблера, либо операторы какого-либо другого языка.</div>
+<div>Рассмотренная схема компилятора является упрощенной, поскольку реальные компиляторы, как правило, включают стадии оптимизации.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-29/">← Оглавление</a>
         <a href="/rk6-edu/course-29/mod-1.html">‹ Предыдущий</a>

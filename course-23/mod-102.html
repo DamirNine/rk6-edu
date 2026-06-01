@@ -23,7 +23,61 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-103.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Структура как параметр функции</a>
+</div>
+<a name="T1503632839"></a>
+<a name="T696383489"></a>
+<a name="T1015173096"></a>
+<a name="T33524358"></a>
+<a name="T33298498"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Структура</a> может быть передана <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параметр</a>. При этом на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кадре</a> вызываемой функции размещаются значения всех элементов структуры, а затем они ставятся в соответствие формальному параметру.</div>
+<div>Функция может возвращать структурное значение.</div>
+<a name="T2082564907"></a>
+<a name="T147950291"></a>
+<div>В языке Си реализована <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операция копирования структур</a> — присваивание значений элементов одной структуры элементам другой структуры того же типа при помощи <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции присваивания</a>. Первые компиляторы Си не обеспечивали этой возможности.</div>
+<div>В прим.&nbsp;1 показано, как в функцию передается структура и как функция возвращает структурное значение.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
+#include "emp.h"        /* содержит шаблон структуры emp */
+int main()
+{
+   struct emp prgmr, raise(struct emp, double);
+   ...
+   printf("Old salary: %.2f\n", prgmr.salary);
+   prgmr = raise(prgmr, .12);
+   printf("New salary: %.2f\n", prgmr.salary);
+}
+struct emp raise(struct emp person, double increase)
+{
+  person.salary *= (1+ increase);
+  return person;
+}
+</pre>
+</div>
+<a name="T541845194"></a>
+<div>Данная программа выполнялась бы более эффективно, если в функцию <span class="eOperator">raise()</span> передавался <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на структуру. В этом случае при передаче управления в функцию передается лишь значение указателя, что делает доступными в функции элементы структуры. Этот вариант программы показан в прим.&nbsp;2.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
+#include "emp.h" /* содержит шаблон структуры emp */
+int main()
+{
+   struct emp prgmr;
+   void raise(struct emp *, double);
+   ...
+   printf("Old salary: %.2f\n", prgmr.salary);
+   raise(&amp;prgmr, .12);
+   printf("New salary: %.2f\n", prgmr.salary);
+}
+void raise(struct emp *person, double increase)
+{
+person-&gt;salary *= (1+ increase);
+}
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-101.html">‹ Предыдущий</a>

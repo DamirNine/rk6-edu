@@ -23,7 +23,66 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-21.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Доступ к XML-документам</a>
+</div>
+<a name="T2134277063"></a>
+<a name="T16696118"></a>
+<div>Для доступа к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-документам</a> разработаны объектная модель документа <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">DOM</a> и языки запросов XPath и XQuery.</div>
+<a name="T1572255721"></a>
+<div>Спецификация DOM, предложенная консорциумом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">W3C</a>, вводит модель XML-документа DOM в виде иерархии его элементов и язык запросов <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">XPath</a> (XML Path Language), позволяющий ссылаться на части XML-документов (на те или иные элементы).</div>
+<div>Прикладной интерфейс на основе DOM позволяет прикладным программам обращаться к структурам документов, извлекать, добавлять, изменять или удалять отдельные элементы или атрибуты. Спецификация DOM создана для использования практически с любым языком программирования.</div>
+<div>XPath обеспечивает синтаксис и семантику для запросов и ссылок на содержимое XML-документов. Если язык <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">SQL</a> служит для обращений к содержимому реляционных баз данных, то язык XPath предназначен для обращений к содержимому баз XML-документов. Выражение XPath представляют собой указание пути к узлу XML-документа в иерархической DOM-модели этого документа. Так, запрос "найти элементы 'termin' " при обращении к словарю приведенного в "<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Язык XML</a>" примера с помощью XPath-выражения <span class="eOperator">dictionary/item/termin</span> позволит получить список всех терминов словаря, а запрос <span class="eOperator">dictionary/item/termin[@group='networks']</span> список только тех терминов, у которых атрибут group равен 'networks'.</div>
+<div>Список некоторых операций и операторов языка XPath приведен в табл. 1.</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTable">Оператор</td><td class="eTable">Описание</td></tr>
+<tr><td class="eTable">/</td><td class="eTable">Выбирает дочерние элементы коллекции, находящейся слева от него. При использовании в начале шаблона означает поиск от корневого элемента.</td></tr>
+<tr><td class="eTable">//</td><td class="eTable">Рекурсивный спуск; ищет указанный элемент на любой глубине. При использовании в начале шаблона означает рекурсивный поиск от корневого элемента.</td></tr>
+<tr><td class="eTable">.</td><td class="eTable">Текущий контекст.</td></tr>
+<tr><td class="eTable">*</td><td class="eTable">Wildcard, выбирает все элементы, независимо от имени.</td></tr>
+<tr><td class="eTable">@</td><td class="eTable">Атрибут; префикс имени атрибута. При использовании без имени атрибута выбирает все атрибуты, независимо от их имени.</td></tr>
+<tr><td class="eTable">:</td><td class="eTable">Сепаратор пространств имен. Отделяет префикс пространства имен от имени элемента или атрибута.</td></tr>
+<tr><td class="eTable">( )</td><td class="eTable">Группирует операции для явного задания очередности.</td></tr>
+<tr><td class="eTable">[ ]</td><td class="eTable">1. Накладывает фильтр. 2. Используется для индексации коллекции.</td></tr>
+<tr><td class="eTable">+</td><td class="eTable">Сложение.</td></tr>
+<tr><td class="eTable">-</td><td class="eTable">Вычитание.</td></tr>
+<tr><td class="eTable">div</td><td class="eTable">Деление с плавающей точкой (согласно IEEE 754).</td></tr>
+<tr><td class="eTable">*</td><td class="eTable">Умножение.</td></tr>
+<tr><td class="eTable">mod</td><td class="eTable">Возвращает остаток при делении с остатком.</td></tr>
+</tbody></table><br>
+<a name="T1493781738"></a>
+<a name="T2703811"></a>
+<a name="T87217"></a>
+<a name="T412171630"></a>
+<a name="T108051180"></a>
+<div>Предложены и другие языки обращений к XML-документам, например гибкий язык запросов <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">XQuery</a> или язык XSLT (XSL Transformations). В языке XQuery запросы представляют собой последовательность выражений, задающих возвращаемые узлы, которыми могут быть элементы и атрибуты XML-документов. Язык <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">XSLT</a> — подмножество <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XSL</a>, предназначенное для преобразования одних XML-документов в другие документы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">HTML</a> или документы некоторых других форматов. Как XQuery, так и XSLT используют правила языка XPath. Результатом распространения DOM на мультимедийные данные является язык SMIL — Synchronized Multimedia Integration Language.</div>
+<div>При использовании современных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Web-браузеров</a> возможна привязка XML-документа к HTML-странице. Например, в Internet Explorer, начиная с пятой версии, для этой цели предусмотрен тег <span class="eOperator">&lt;XML&gt;</span>. Например:</div>
+<pre class="eListing">&lt;XML ID="имя_для_доступа_к_XML-документу"
+SRC="имя_файла_XML-документа"&gt; &lt;/XML&gt;
+</pre>
+<div>Сцепление осуществляется с помощью некоторых HTML-тегов, например тега <span class="eOperator">&lt;SPAN&gt;</span>:</div>
+<pre class="eListing">&lt;SPAN DATASRC="#имя_для_доступа_к_XML-документу"
+DATAFLD="элемент_XML-документа"&gt; &lt;/SPAN&gt;
+</pre>
+<div>Теперь <span class="eOperator">"элемент_XML-документа"</span> сцеплен с тегом <span class="eOperator">&lt;SPAN&gt;</span> и может быть отображен браузером с помощью записи строки</div>
+<pre class="eListing">&lt;SPAN параметры_стиля&gt; элемент_XML-документа &lt;/SPAN&gt;
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-19.html">‹ Предыдущий</a>

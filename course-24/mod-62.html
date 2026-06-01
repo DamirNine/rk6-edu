@@ -23,7 +23,104 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-63.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Доступ к элементам массива</a>
+</div>
+<a name="T1869388700"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция доступа к элементу массива</a> — операция "квадратные скобки", которая используется следующим образом:</div>
+<div><span class="eOperator">имя_массива[индекс]</span></div>
+<a name="T424168142"></a>
+<div>Эта операция относится к первичным и находится в самой высокой строке <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">таблицы приоритетов</a> (<a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Приоритеты операций</a>).</div>
+<a name="T1125359603"></a>
+<a name="T256200320"></a>
+<a name="T1992766606"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Имя массива</a> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатор</a>, которому ставится в соответствие начальный адрес <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массива</a> (адрес первого элемента).</div>
+<div>Для доступа к элементу массива (его изменения, печати, присваивания значения другой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">переменной</a> и т.д.) надо использовать операцию "квадратные скобки".</div>
+<a name="T803028594"></a>
+<div>В скобках должно стоять целочисленное <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражение</a>, значение которого должно находиться в диапазоне от 0 до (размер массива – 1).</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>В языке Си не выполняется проверка <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выхода за границу массива</a>. За этим должен следить программист.</div>
+</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div><span class="eOperator">char id[8];</span></div>
+<div><span class="eOperator">id[0] ='j';</span></div>
+<div>Элементу номер 0 массива <span class="eOperator">id </span>присваивается код символа<span class="eOperator"> 'j'</span>.</div>
+</div>
+<div>Результат операции доступа к элементу массива — значение, хранящееся по адресу необходимого элемента массива. Этот адрес определяется следующим образом:</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=OP2/dostup.mod/?n=1/?k=10"><br></div>
+<a name="T1341315124"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Смещение</a> — это разность между адресом данного элемента массива и начальным адресом массива.</div>
+<div>Для одномерного массива смещение определяется по формуле:</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=OP2/dostup.mod/?n=2/?k=10"><br></div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div><span class="eOperator">char id[8];</span></div>
+<div><span class="eOperator">id[3] = id[0];</span></div>
+<div>Байт из элемента <span class="eOperator">id[0]</span> копируется в элемент <span class="eOperator">id[3].</span></div>
+<div>Адрес элемента id[3]:</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=OP2/dostup.mod/?n=3/?k=10"><br></div>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div><span class="eOperator">float price[3];</span></div>
+<div><span class="eOperator">price[num] = price[num-1]*2;</span></div>
+<div>Если значение <span class="eOperator">num</span> равно 2, то <span class="eOperator">price[2] = price[1]*2;</span></div>
+<div>Адрес элемента price[2]:</div>
+<div>начальный адрес массива price + смещение = начальный адрес массива price + 2<img align="absmiddle" src="/?frm/?doc=OP2/dostup.mod/?n=4/?k=10">4</div>
+</div>
+<div>Для массива произвольной размерности смещение определяется по формуле:</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=OP2/dostup.mod/?n=5/?k=10"><br></div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><div><span class="eOperator">int table[4][3];</span> <span class="eOperator">/*table[длина 2-го измерения][длина 1-го измерения]*/</span></div>
+<div><span class="eOperator">printf ("%d\n", table[2][1]);</span> <span class="eOperator">/*table[индекс2][индекс1]*/</span></div>
+<div>Печатает целое число, хранящееся в 3-й строке 2-го столбца массива <span class="eOperator">table</span> .</div>
+<div>Адрес элемента table[2][1]:</div>
+<div>начальный адрес массива table + смещение =</div>
+<div>начальный адрес массива table + (индекс2 <img align="absmiddle" src="/?frm/?doc=OP2/dostup.mod/?n=4/?k=10"> (длина 1-го измерения ) + индекс1) <img align="absmiddle" src="/?frm/?doc=OP2/dostup.mod/?n=4/?k=10"> длина элемента в байтах =</div>
+<div>начальный адрес массива table + (2<img align="absmiddle" src="/?frm/?doc=OP2/dostup.mod/?n=4/?k=10">3 + 1)<img align="absmiddle" src="/?frm/?doc=OP2/dostup.mod/?n=4/?k=10">4</div>
+</div>
+<div class="auto">Пример 5</div>
+<div class="eExample"><div><span class="eOperator">/* Запоминает рост вклада по годам в массиве и печатает его */</span></div>
+<pre class="eListing">#include &lt;stdio.h&gt;
+int main()
+{
+const float investment = 6000, interest = .085;
+float  rate;
+double value[5];
+int    year;
+
+rate = 1 + interest;                    /* 108.5% от предыдущей суммы */
+value[0] = investment;
+year = 1;
+while (year &lt; 5)
+  {
+  value[year] = value[year-1] * rate;
+  year += 1;                           /* year = year+1 */
+  }
+printf("начальный вклад: %.2f\n", value[0]);
+year = 1;
+while (year &lt; 5)
+  {
+  printf("год %.d\n", year);
+  printf("%.2f\n", value[year]);
+  year += 1;                           /* year = year+1 */
+ }
+}
+</pre>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-61.html">‹ Предыдущий</a>

@@ -23,7 +23,85 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-5/mod-5.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Язык HTML</a>
+</div>
+<a name="T1123819543"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Язык разметки</a> HTML (HyperText Markup Language) разработан в  1991 г. с целью широкого применения разметки в документах, представляемых в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">WWW</a> технологиях.</div>
+<a name="T108051180"></a>
+<a name="T1904256177"></a>
+<div>Описание на <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">языке HTML</a> представляет собой текст в формате ASCII и последовательность включенных в него команд (управляющих кодов), называемых также дескрипторами или тегами. Этот текст называют HTML-документом, или HTML-страницей, или после размещения на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Web-сервере</a> — <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Web-страницей</a>. Теги расставляются в нужных местах исходного текста, они определяют шрифты, переносы, появление графических изображений, ссылки и т.п. При использовании WWW-редакторов вставка команд осуществляется простым нажатием соответствующих клавиш.</div>
+<div>Собственно команды имеют форму <span class="eOperator">&lt;команда&gt;</span>, где вместо слова "команда" записывается имя команды.</div>
+<div>Структура текста в HTML-странице имеет вид:</div>
+<pre class="eListing">&lt;HTML&gt;&lt;HEAD&gt;
+&lt;TITLE&gt;Заголовок текста&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+Текст HTML-документа
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+</pre>
+<div>В клиентской области окна при просмотре появляется только текст, помещенный между тегами <span class="eOperator">&lt;BODY&gt;</span> и <span class="eOperator">&lt;/BODY&gt;</span>. Заголовок между тегами <span class="eOperator">&lt;TITLE&gt;</span> и <span class="eOperator">&lt;/TITLE&gt;</span> выполняет лишь служебные функции.</div>
+<div>Приведем примеры HTML-тегов. К тегам форматирования текста (тегам компоновки) относятся:</div>
+<ul class="eList"><li><span class="eOperator">&lt;P&gt;</span> — конец абзаца;</li>
+<li><span class="eOperator">&lt;BR&gt;</span> — перевод строки;</li>
+<li><span class="eOperator">&lt;HR&gt;</span> — перевод строки с печатью горизонтальной линии, разделяющей части текста;</li>
+<li><span class="eOperator">&lt;CENTER&gt;</span> — выравнивание изображения по центру страницы;</li>
+<li><span class="eOperator">&lt;LISTING&gt;</span> Текст <span class="eOperator">&lt;/LISTING&gt;</span> — представление листингов программ;</li>
+<li><span class="eOperator">&lt;BLOCKQUOTE&gt;</span> Текст <span class="eOperator">&lt;/BLOCKQUOTE&gt;</span> — выделение цитат;</li>
+<li><span class="eOperator">&lt;FONT&gt;</span> — задание типа, размера и цвета используемого шрифта, имена этих параметров (атрибутов) <span class="eOperator">FACE</span>, <span class="eOperator">SIZE</span> и <span class="eOperator">COLOR</span> соответственно.</li>
+</ul>
+<div>Теги форматирования символов имеют вид <span class="eOperator">&lt;B&gt;</span>, <span class="eOperator">&lt;I&gt;</span>, <span class="eOperator">&lt;U&gt;</span>; текст между открывающем и закрывающем тегами будет выделен соответственно полужирным шрифтом, курсивом, подчеркиванием.</div>
+<div>Для форматирования заголовков используются теги <span class="eOperator">&lt;H1&gt;</span> ... <span class="eOperator">&lt;H6&gt;</span>:</div>
+<ul class="eList"><li><span class="eOperator">&lt;H1&gt;</span> Текст <span class="eOperator">&lt;/H1&gt;</span> — текст печатается наиболее крупным шрифтом, используется для заголовков верхнего уровня;</li>
+<li><span class="eOperator">&lt;H2&gt;</span> Текст <span class="eOperator">&lt;/H2&gt;</span> — для заголовков следующего уровня и т.д. вплоть до <span class="eOperator">&lt;H6&gt;</span>;</li>
+<li><span class="eOperator">&lt;PRE&gt;</span> Текст <span class="eOperator">&lt;/PRE&gt;</span> — указанный текст представлен заданным при его записи шрифтом.</li>
+</ul>
+<div>В HTML имеются теги форматирования списка. Это теги <span class="eOperator">&lt;OL&gt;</span> и <span class="eOperator">&lt;UL&gt;</span>, используемые для выделения пунктов списков с нумерацией или с пометкой специальным символом (например, *) соответственно. Каждый пункт в списке должен начинаться с тега <span class="eOperator">&lt;LI&gt;</span>. В словарях и глоссариях удобно применять тег <span class="eOperator">&lt;DL&gt;</span>, отмечающий начало списка, теги <span class="eOperator">&lt;DT&gt;</span> и <span class="eOperator">&lt;DD&gt;</span>, отмечающие очередной новый термин словаря и определяющий его текст соответственно.</div>
+<a name="T84303"></a>
+<div>В командах вставки графики и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">гипертекстовых</a> ссылок используются адреса вставляемого или ссылочного материала, называемые <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">URL</a> (Uniform Resourse Locator). Ссылаться можно как на определенные места в том же документе, в котором поставлена ссылка, так и на другие файлы, находящиеся в любом месте сети. Перед простановкой внутренней ссылки, т.е. ссылки на некоторую позицию в данном файле, нужно разместить метку в этой позиции. Тогда URL есть указание этой метки, например, URL=#a35 есть ссылка на метку a35. URL может представлять собой имя файла в данном узле сети или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IP-имя</a> другого <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">узла</a> с указанием местоположения файла в этом узле и, возможно, также метки внутри этого файла.</div>
+<div>Строка гипертекстовой ссылки в HTML-документе имеет вид:</div>
+<div><span class="eOperator">&lt;A HREF=</span>"URL"<span class="eOperator">&gt;</span>Текст<span class="eOperator">&lt;/A&gt;</span></div>
+<div>Текст, указанный в этой строке и отображаемый на экране дисплея, будет выделен цветом или подчеркиванием. Можно ссылаться на определенное место в документе. Тогда ссылка имеет вид:</div>
+<div><span class="eOperator">&lt;A HREF=</span>"URL<span class="eOperator">#</span>метка"<span class="eOperator">&gt;</span>Текст<span class="eOperator">&lt;/A&gt;</span></div>
+<div>Сама метка в документе имеет вид:</div>
+<div><span class="eOperator">&lt;A NAME=</span>"метка"<span class="eOperator">&gt;</span>Текст<span class="eOperator">&lt;/A&gt;</span></div>
+<div>Ссылки на фрагменты данного документа можно упростить:</div>
+<div><span class="eOperator">&lt;A HREF=</span>"<span class="eOperator">#</span>метка"<span class="eOperator">&gt;</span>Текст<span class="eOperator">&lt;/A&gt;</span></div>
+<div>Тег вставки графического изображения:</div>
+<div><span class="eOperator">&lt;IMG SRC=</span>"URL" [<span class="eOperator">ALIGN=TOP</span>|<span class="eOperator">MIDDLE</span>|<span class="eOperator">BOTTOM</span>] [<span class="eOperator">ALT=</span>"Текст"]<span class="eOperator">&gt;</span></div>
+<a name="T916043104"></a>
+<div>Здесь URL указывает адрес графического изображения, <span class="eOperator">ALIGN</span> — параметр выравнивания, указывает место в окне для расположения рисунка; <span class="eOperator">ALT</span> — параметр, задающий текст, который выводится на экран вместо рисунка в текстовых <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">браузерах</a>. Например:</div>
+<pre class="eListing">&lt;IMG src=""&gt;
+</pre>
+<div>Кроме параметров <span class="eOperator">ALIGN</span> и <span class="eOperator">ALT</span> можно использовать параметры <span class="eOperator">HEIGHT</span> и <span class="eOperator">WIDTH</span>, задающие высоту и ширину изображения (в пикселах), <span class="eOperator">HSPACE</span> и <span class="eOperator">VSPACE</span>, определяющие размер промежутка между изображением и границами страницы в горизонтальном и вертикальном направлениях, <span class="eOperator">BORDER</span>, задающий рамку вокруг изображения. Сами изображения должны быть в определенном формате (обычно это форматы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">GIF</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">JPEG</a>).</div>
+<div>Экран может быть разделен на несколько окон (областей, фреймов) с помощью парного тега <span class="eOperator">&lt;FRAMESET&gt;</span>. В каждом окне помещается содержимое файла (текст, изображение) указанием источника в теге <span class="eOperator">&lt;FRAME&gt;</span>, например:</div>
+<div><span class="eOperator">&lt;FRAME SRC=</span>"имя_файла"<span class="eOperator">&gt;</span></div>
+<div>Представление таблиц выполняется с помощью тегов формирования таблиц. Парные теги <span class="eOperator">&lt;TABLE&gt;</span> и <span class="eOperator">&lt;/TABLE&gt;</span> служат для указания начала и конца таблицы; <span class="eOperator">&lt;TH&gt;</span> и <span class="eOperator">&lt;/TH&gt;</span> — то же для шапки таблицы; <span class="eOperator">&lt;TR&gt;</span> и <span class="eOperator">&lt;/TR&gt;</span> — для строки таблицы; <span class="eOperator">&lt;TD&gt;</span> и <span class="eOperator">&lt;/TD&gt;</span> — для элемента таблицы. Для форматирования таблиц используются параметры, записываемые в открывающих тегах и задающие цвет фона, ширину таблицы, расположение текста в ячейках.</div>
+<div>Имеются возможности создания на Web-странице формы, в которую пользователи могут заносить информацию, передаваемую браузером на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сервер</a> (тег <span class="eOperator">&lt;FORM&gt;</span>) или управляющую выбором из меню (тег <span class="eOperator">&lt;INPUT&gt;</span>).</div>
+<div>Поскольку в языке HTML множество тегов ограниченное и фиксированное, действия, предусматриваемые ими, в частности, операции <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">форматирования</a>, реализованы в браузерах. При этом тегам, подобным <span class="eOperator">&lt;H1&gt;</span>, соответствует определенный стиль (тип, размер, цвет шрифта). Чтобы дать возможность пользователям устанавливать желаемый стиль изображения, разрабатывают таблицы стилей, представляющие информацию о параметрах стиля, и способы связывания таких таблиц с HTML-документом. Большинство браузеров поддерживают <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">каскадные таблицы стилей</a> CSS (Cascading Style Sheet).</div>
+<div>Таблица CSS состоит из правил форматирования. В каждом правиле указываются тип элемента, к которому относится форматирование, и список объявлений. Список обрамляется фигурными скобками, объявления в списке разделяются точками с запятой. Каждое объявление задает значение одного из свойств отображения элемента в виде свойство:значение. К свойствам относятся тип (гарнитура), размер, цвет, способ выравнивания и стиль (обычный, полужирный, курсив) шрифта, цвет или рисунок фона, межстрочные интервалы, наличие рамок, взаимное расположение блоков текста и другие характеристики, обычные для управления видом изображения в текстовых редакторах. Можно вместо типа элемента указать имя оригинального вводимого стиля, имя стиля должно начинаться с точки.</div>
+<div>Использование таблицы стилей подразумевает указание типа таблицы в разделе <span class="eOperator">&lt;HEAD&gt;</span> HTML-документа. Там же между тегами <span class="eOperator">&lt;STYLE&gt;</span> и <span class="eOperator">&lt;/STYLE&gt;</span> записываются правила форматирования. Можно все правила форматирования записать в отдельном файле и тогда в HTML-документе достаточно сослаться на этот файл в специальном теге <span class="eOperator">&lt;LINK&gt;</span>. Если вводимый стиль относится лишь к части документа, используется тег <span class="eOperator">&lt;SPAN&gt;</span> с параметром <span class="eOperator">CLASS</span>, например:</div>
+<div><span class="eOperator">&lt;SPAN CLASS=</span>"имя_вводимого_стиля"<span class="eOperator">&gt;</span>Часть документа<span class="eOperator">&lt;/SPAN&gt;</span></div>
+<div>Первые версии языка HTML были достаточно простыми, но не лишенными ряда недостатков. Прежде всего нужно отметить ограниченность набора тегов, что не соответствует потребностям многих приложений. Кроме того, в тегах HTML не отделены данные, задающие структуру документа, от данных по его изображению (форматированию) на экране дисплея при просмотре с помощью браузера, что затрудняет работу с документами. В результате в новые версии языка стали вводится усовершенствования, что заметно усложнило язык, но не устранило основные недостатки. Наиболее существенными недостатками HTML являются, во-первых, невозможность отделить информацию о структуре документа от информации о форматировании, во-вторых, отсутствие в языке HTML средств, позволяющих производить такие операции обработки текста, как сортировка, поиск фрагментов по определенным признакам и т.п.</div>
+<div>Поэтому в 1996 г. был предложен новый язык разметки — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык XML</a> (eXtensible Markup Language).</div>
+<a name="T65027567"></a>
+<div>Кроме того, было разработано расширение <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">DHTML</a> (Dynamic Hyper Text Markup Language) языка HTML, названное динамическим  языком разметки гипертекста. С помощью DHTML можно создавать Web-страницы, включающие  интерактивные элементы,  анимацию, движущиеся объекты и  фон, расположенный под основным содержимым документа, выпадающие меню  и т.п.  Стандарт DHTML используется для создания скриплетов --   сценариев,  обрабатываемых браузером совместно с кодом HTML.   </div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-5/">← Оглавление</a>
         <a href="/rk6-edu/course-5/mod-3.html">‹ Предыдущий</a>

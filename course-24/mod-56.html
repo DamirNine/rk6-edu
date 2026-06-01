@@ -23,7 +23,63 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-57.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Обзор классов памяти</a>
+</div>
+<a name="T277218859"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Класс памяти</a> - характеристика переменной, которая определяет   способ ее хранения .</div>
+<div>Язык Си реализует следующие классы памяти:</div>
+<ul class="eList"><li>автоматический</li>
+<li>регистровый</li>
+<li>внешний</li>
+<li>статический</li>
+</ul>
+<div>Характеристики классов памяти:</div>
+<ul class="eList"><a name="T1435803309"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">область действия</a> — часть программы, в которой определено имя;</li>
+<a name="T522299926"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">время жизни</a> — промежуток времени, в течении которого содержимое переменной остается правильным;</li>
+<a name="T256200320"></a>
+<li>размещение связанных с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатором</a> значений в памяти.</li>
+</ul>
+<div>В табл.&nbsp;1 обобщаются характеристики классов памяти языка Си. Правильное использование классов памяти улучшает структуру, модульность, повышает удобочитаемость и скорость работы программы.</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTableT">Класс</td><td class="eTableT">Область действия</td><td class="eTableT">Время жизни</td><td class="eTableT">Место хранения</td><td class="eTableT">Инициализация массивов, структур</td><td class="eTableT">Значение по умолчанию</td></tr>
+<tr align="center"><td class="eTable">Автоматический</td><td class="eTable"><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Блок</a></td><td class="eTable">Исполнение блока</td><td class="eTable"><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Стек</a></td><td class="eTable">Да</td><td class="eTable">Неопределено</td></tr>
+<tr align="center"><td class="eTable">Регистровый *</td><td class="eTable">Блок</td><td class="eTable">Исполнение блока</td><td class="eTable">Машинный регистр</td><td class="eTable">Нет</td><td class="eTable">Неопределено</td></tr>
+<tr align="center"><td class="eTable">Внешний **</td><td class="eTable">От объявление до конца файла</td><td class="eTable">Исполнение программы</td><td class="eTable">Область данных</td><td class="eTable">Да</td><td class="eTable">0</td></tr>
+<tr align="center"><td class="eTable">Статический внешний***</td><td class="eTable">От объявление до конца файла</td><td class="eTable">Исполнение программы</td><td class="eTable">Область данных</td><td class="eTable">Да</td><td class="eTable">0</td></tr>
+<tr align="center"><td class="eTable">Статический внутренний</td><td class="eTable">Блок</td><td class="eTable">Исполнение программы</td><td class="eTable">Область данных</td><td class="eTable">Да</td><td class="eTable">0</td></tr>
+</tbody></table><br>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>* — повышение быстродействия</div>
+<div>** — доступность из других файлов</div>
+<div>*** — недоступность из других файлов</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/view_class.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Размещение данных различных классов памяти</div></div>
+<div>На рис.&nbsp;1 показано, как типичный компилятор Си размещает команды и данные компилируемой программы на языке Си. Детали зависят от системы. Например, в некоторых системах стек растет от больших адресов к меньшим, в других справедливо обратное. Команды могут размещаться после данных или наоборот. Стек и области данных могут динамически расширяться посредством системных вызовов.</div>
+<div>Раздел команд содержит машинный код, определяющий логику программы. На некоторых машинах этот раздел защищен от записи, так как программы не могут сами себя изменять.</div>
+<div>Объектам, размещенным в области данных, назначается определенное расположение в этой области, остающееся неизменным во время выполнения этой программы (при использовании виртуальных адресов они имеют один и тот же относительный адрес). В этой области размещаются внешние и статические переменные. Если они не инициализируются в программе, то они устанавливаются в нуль перед выполнением программы и "остаются живыми" в течении времени выполнения программы. Строковые константы, например, заключенные в кавычки строки в вызове функции <span class="eOperator">printf()</span>, также запоминаются в этой области.</div>
+<div>Стек является динамической областью данных. Память в стеке многократно используется повторно при вызовах функций и выходе из них. На стеке размещаются автоматические переменные и параметры функции.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-55.html">‹ Предыдущий</a>

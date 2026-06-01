@@ -23,7 +23,67 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-38.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Логические операции</a>
+</div>
+<a name="T1145715435"></a>
+<a name="T1584705211"></a>
+<a name="T17759413"></a>
+<a name="T42429594"></a>
+<div>В языке Си существуют следующие <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">логические операции</a>: <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">логическое умножение</a> И — <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">коньюнкция</a> (<span class="eOperator">&amp;&amp;</span>), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">логическое сложение</a> ИЛИ — <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">дизьюнкция</a>(<span class="eOperator">||</span>), <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">логическое отрицание</a> НЕ (<span class="eOperator">!</span>).</div>
+<a name="T114264910"></a>
+<a name="T424168142"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Приоритеты</a> логических операций определяются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">таблицей приоритетов</a>  (<a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Приоритеты операций</a>).</div>
+<a name="T803028594"></a>
+<div>Значением логического <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражения</a> является 0 (ложь) или 1 (истина). Значения логических операций определяются в соответствии с таблицами истинности этих операций.</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="20.0%" align="center"><td width="33.333332%" class="eTableT">операнд 1</td><td width="33.333332%" class="eTableT">операнд 2</td><td width="33.333332%" class="eTableT">коньюнкция</td></tr>
+<tr height="20.0%" align="center"><td class="eTable">ложь</td><td class="eTable">ложь</td><td class="eTable">ложь</td></tr>
+<tr height="20.0%" align="center"><td class="eTable">ложь</td><td class="eTable">истина</td><td class="eTable">ложь</td></tr>
+<tr height="20.0%" align="center"><td class="eTable">истина</td><td class="eTable">ложь</td><td class="eTable">ложь</td></tr>
+<tr height="20.0%" align="center"><td class="eTable">истина</td><td class="eTable">истина</td><td class="eTable">истина</td></tr>
+</tbody></table><br>
+<div class="auto" style="text-align:right">Таблица 2&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="20.0%" align="center"><td width="33.333332%" class="eTableT">операнд 1</td><td width="33.333332%" class="eTableT">операнд 2</td><td width="33.333332%" class="eTableT">дизьюнкция</td></tr>
+<tr height="20.0%" align="center"><td class="eTable">ложь</td><td class="eTable">ложь</td><td class="eTable">ложь</td></tr>
+<tr height="20.0%" align="center"><td class="eTable">ложь</td><td class="eTable">истина</td><td class="eTable">истина</td></tr>
+<tr height="20.0%" align="center"><td class="eTable">истина</td><td class="eTable">ложь</td><td class="eTable">истина</td></tr>
+<tr height="20.0%" align="center"><td class="eTable">истина</td><td class="eTable">истина</td><td class="eTable">истина</td></tr>
+</tbody></table><br>
+<div class="auto" style="text-align:right">Таблица 3&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="33.333332%"><td width="50.0%" class="eTableT">операнд</td><td width="50.0%" class="eTableT">отрицание</td></tr>
+<tr height="33.333332%"><td class="eTable">ложь</td><td class="eTable">истина</td></tr>
+<tr height="33.333332%"><td class="eTable">истина</td><td class="eTable">ложь</td></tr>
+</tbody></table><br>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Логическое И</div>
+<div><span class="eOperator">(x &gt;= 1) &amp;&amp; (x &lt;= 500)</span></div>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>Логическое ИЛИ</div>
+<div><span class="eOperator">(input == 'q') || (input == 'Q')</span></div>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div>Логическое отрицание</div>
+<div><span class="eOperator">!(x&gt;y &amp;&amp; y&gt;z)</span></div>
+</div>
+<div>Для эффективности в языке Си вычисляется логическое выражение слева направо и прекращает вычисление, когда истинность значения определена.</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><div><span class="eOperator">(x&lt;y) &amp;&amp; (y&lt;z)</span></div>
+<div>Это выражение истинно, если истинно как выражение <span class="eOperator">(x&lt;y)</span>, так и выражение <span class="eOperator">(y&lt;z)</span>. Если <span class="eOperator">(x&lt;y)</span> ложно, то все выражение должно быть ложно и выражение<span class="eOperator"> (y&lt;z)</span> игнорируется.</div>
+</div>
+<div class="auto">Пример 5</div>
+<div class="eExample"><div><span class="eOperator">(x&lt;y) || (y&lt;z)</span></div>
+<div>Это выражение истинно, если истинно либо выражение <span class="eOperator">(x&lt;y)</span>, либо выражение <span class="eOperator">(y&lt;z)</span>, или если истинны оба выражения. Если <span class="eOperator">(x&lt;y)</span> истинно, все выражение истинно, так что в этом случае не вычисляется истинность выражения <span class="eOperator">(y&lt;z)</span>.</div>
+</div>
+<a name="T2042524345"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Унарная операция</a> <span class="eOperator">! </span>(НЕ) обращает логическое значение. Если <span class="eOperator">(x&lt; y)</span> ложно, то <span class="eOperator">!(x&lt; y)</span> истинно.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-36.html">‹ Предыдущий</a>

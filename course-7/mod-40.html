@@ -23,7 +23,61 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-7/mod-41.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Интегрированные ресурсы и компоненты в STEP</a>
+</div>
+<a name="T2016166974"></a>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">прикладных протоколах</a> широко используются типовые фрагменты <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">информационных моделей</a>, встречающиеся более чем в одном приложении. Эти фрагменты называют интегрированными общими и прикладными ресурсами.</div>
+<a name="T2108182528"></a>
+<div>Четвертая группа <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стандартов STEP</a> (тома с номерами 41...50) "Интегрированные общие ресурсы" описывает общие для приложений части моделей.</div>
+<div>Тома с номерами 101 по 199 отведены для документов, относящихся к более специальным средствам, называемым интегрированными прикладными ресурсами (Integrated application resources).</div>
+<a name="T620225157"></a>
+<div>Группа стандартов с номерами, начинающимися с N=501, служит для описания данных о геометрических элементах и моделях некоторых конкретных типовых объектов и конструкций, часто используемых в ряде <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">интегрированных ресурсов</a> и прикладных протоколов. Например, описания геометрических объектов в виде <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">форм Безье</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">B-сплайнов</a> могут использоваться во многих прикладных протоколах. Поэтому подобные общие описания вынесены в группу прикладных компонентов.</div>
+<div>Ниже приведены краткие сведения об основных протоколах STEP, описывающих интегрированные ресурсы и прикладные компоненты.</div>
+<ul class="eList"><li>N=41: Fundamentals of product description and support; основы описания и поддержки изделий. В протоколе определяются такие понятия и группы сущностей, как продукт, представление формы (shape_representation), операция (action), контекст — аспект описания (application and product context), статус утверждения (approval), контракт, дата, типы документов, исполнители (организации и персоналии), единицы измерения длин, площадей, масс, температур и др.</li>
+<li>N=42: Geometric and topological representation; представление геометрии и топологии. В стандарте определен ряд сущностей, их набор близок к набору, используемому в таком стандарте, как IGES. В частности, используются следующие понятия: положение координатной оси (axis_placement), модели кривых в форме B-сплайна (b_spline_curve) и Безье (bezier_curve), модели поверхности в форме B-сплайна (b_spline_surface), рационального B-сплайна (rational_b_spline_surface) и Безье (bezier_surface), точка в декартовых координатах (cartesian_point), преобразование декартовых координат (cartesian_transformation_operator_3d), геометрический аспект (geometric_representation_context), полигональная поверхность (offset_surface), поверхность вращения (surface_of_revolution) и др.</li>
+<li>N=43: Representation structures; представление структур. Средства описания аспектов документации, ее атрибутов, составных частей и т.п.</li>
+<li>N=44: Product structure configuration; конфигурация структуры изделий.</li>
+<li>N=45: Materials; представлены свойства материалов.</li>
+<li>N=46: Visual Presentation; визуализация. Стандарт построен на базе положений, ранее принятых в стандартах GKS (Graphic Kernel System) и PHIGS (Programmer's Hierarchical Interactive Graphic System). Вводятся группы терминов, относящихся к представлению (presentation), визуализации (visualization), цвету и др.</li>
+<li>N=47: Shape variation tolerance; допуски.</li>
+<li>N=48: Form features; свойства форм.</li>
+<li>N=49: Process structure and properties; структура процессов и свойства.</li>
+<li>N=101: Draughting; определяются сущности, относящиеся к процедурам черчения.</li>
+<li>N=104: Finite element analysis; анализ по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">методу конечных элементов</a>. Описание стандарта на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке Express</a> состоит из нескольких схем. В одной из них задаются геометрические аспекты модели. Здесь описываются следующие типы данных: система координат (декартова, цилиндрическая, сферическая); виды конечных элементов (объемный, поверхностный 2D или 3D, участок 2D или 3D кривой), форма элемента (линейный, квадратичный, кубический); степень свободы; параметры и дескрипторы элементов, позиция элемента, свойства элементов (например, масса, момент инерции, жесткость), материал и его свойства (плотность, эластичность, тепловое расширение), группа элементов и др. В другой схеме основное внимание уделено математическим представлениям. Например, здесь фигурируют такие сущности и типы данных, как тензоры; переменные, характеризующие напряжения; приложенные нагрузки; погрешности; шаги анализа и т.п.</li>
+<li>N=105: Kinematics; кинематика.</li>
+<li>N=106: Building construction core model; основная модель строительных конструкций.</li>
+<li>N=107: Engineering analysis core ARM; ядро инженерного анализа.</li>
+<li>N=109: Kinematic and geometric constraints for assembly models; кинематические и геометрические ограничения для моделей сборок.</li>
+<li>N=501: Edge-based wireframe; <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">каркасная модель</a> на основе граней.</li>
+<li>N=502: Shell-based wireframe; каркасная модель на основе оболочек.</li>
+<li>N=503 (CD): Geometrically bounded 2D wireframe; 2D каркасная модель с геометрически заданными границами.</li>
+<li>N=504: Draughting annotation; чертежные аннотации.</li>
+<li>N=506: Draughting elements; чертежные элементы.</li>
+<li>N=507: Application interpreted construct: Geometrically bounded surface; геометрически ограниченные поверхности.</li>
+<li>N=508: Application interpreted construct: Non-manifold surface — Поверхности,описанные не в-BREPS-форме.</li>
+<li>N=509: Application interpreted construct: Manifold surface — BREPS-поверхности.</li>
+<li>N=510: Geometrically bounded wireframe; геометрически ограниченная модель поверхности.</li>
+<li>N=511: Topologically bounded surface; топологически ограниченная модель поверхности.</li>
+<li>N=512: Faceted boundary representation; полигональное представление поверхностей деталей.</li>
+<li>N=515: Constructive solid geometry; конструктивная геометрия.</li>
+<li>N=519:   Geometric tolerances; допуски.</li>
+</ul>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-7/">← Оглавление</a>
         <a href="/rk6-edu/course-7/mod-39.html">‹ Предыдущий</a>

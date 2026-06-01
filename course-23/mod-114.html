@@ -23,7 +23,71 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-115.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функция fopen()</a>
+</div>
+<a name="T873242734"></a>
+<a name="T696383489"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция fopen()</a> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция</a> открытия файла.</div>
+<div><span class="eOperator">FILE *fopen(const char *имя_файла, const char *тип)</span></div>
+<a name="T756911212"></a>
+<div>Первым <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументом</a> функции <span class="eOperator">fopen() </span>является адрес строки, содержащей путевое имя файла. Второй аргумент—это адрес строки, определяющей тип работы с открываемым файлом.</div>
+<div>Заданный именем файл открывается в соответствии с указанным типом. Тип может принимать следующие значения:</div>
+<ul class="eList"><li><span class="eOperator">"r"</span> — текстовый файл открывается для чтения (read);</li>
+<li><span class="eOperator">"w"</span>- текстовый файл создается для записи; старое содержимое, если оно было, выбрасывается (write);</li>
+<li><span class="eOperator">"a"</span> — текстовый файл открывается или создается для записи в конец файла (add);</li>
+<li><span class="eOperator">"r+" </span>— текстовый файл открывается для исправления, т.е. для чтения и записи;</li>
+<li><span class="eOperator">"w+"</span>- текстовый файл создается для исправления, старое содержимое, если оно было, выбрасывается;</li>
+<li><span class="eOperator">"a+"</span> — текстовый файл открывается или создается для исправления уже существующей информации и добавления новой в конец файла.</li>
+</ul>
+<a name="T541845194"></a>
+<a name="T269665333"></a>
+<a name="T326195606"></a>
+<div>Функция <span class="eOperator">fopen()</span> возвращает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структуру FILE</a>, который затем присваивается переменной. Этот указатель называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">внутренним</a>. После открытия файла к нему обращаются с использованием указателя на этот файл, имя файла больше не потребуется.</div>
+<a name="T645587003"></a>
+<div>Для обозначения двоичных файлов к типу может добавляться символ <span class="eOperator">b </span>(например, <span class="eOperator">"rb"</span>, <span class="eOperator">"wb"</span>, <span class="eOperator">"r+b"</span>). Однако, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС UNIX</a> не делает никаких различий между двоичными и текстовыми файлами, следовательно, символ <span class="eOperator">b</span> игнорируется.</div>
+<a name="T581415280"></a>
+<a name="T37556405"></a>
+<a name="T637542155"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявление прототипа функции</a> <span class="eOperator">fopen() </span>находится в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эту функцию, должны включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div><span class="eOperator">#include &lt;stdio.h&gt;</span></div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
+int main()
+{
+  FILE *fp;
+  fp = fopen("logfile", "w");
+  if (fp==NULL)
+     printf("Open failed\n");
+  ...
+}
+</pre>
+</div>
+<div>Для обеспечения уверенности в успешном открытии файла необходимо проверять код, возвращаемый функцией <span class="eOperator">fopen()</span>.</div>
+<div>В таблице 1 приводятся результаты успешного открытия файла.</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTableT">&nbsp;</td><td class="eTableT">чтение "r"</td><td class="eTableT">запись "w"</td><td class="eTableT">добавление "a"</td></tr>
+<tr align="center"><td class="eTableT">файл существует</td><td class="eTable">-</td><td class="eTable">старое содержимое отбрасывается</td><td class="eTable">-</td></tr>
+<tr align="center"><td class="eTableT">файл не существует</td><td class="eTable">ошибка</td><td class="eTable">файл создается</td><td class="eTable">файл создается</td></tr>
+</tbody></table><br>
+<div>Если файл существует и открывается для чтения или дополнения, то он не изменяется при открытии. При открытии существующего файла для записи, он усекается. Если файл, открываемый для записи, не существует, то он будет создан. Однако, открытие несуществующего файла для чтения повлечет ошибку.</div>
+<div>Открытие файла с типом <span class="eOperator">"r+"</span>, <span class="eOperator">"w+"</span> или <span class="eOperator">"a+"</span> называют открытием для обновления, что означает, что все три типа допускают как чтение, так и запись. При таком открытии выполняются те же действия c существующими и несуществующими файлами, что и при открытии с соответствующими типами <span class="eOperator">"r"</span>, <span class="eOperator">"w"</span> и <span class="eOperator">"a"</span>. При использовании типов <span class="eOperator">"a"</span> и <span class="eOperator">"a+" </span>запись будет выполняться в конец файла.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-113.html">‹ Предыдущий</a>

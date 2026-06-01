@@ -23,7 +23,45 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-72.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Локальное запоминающее устройство</a>
+</div>
+<a name="T1932195852"></a>
+<a name="T953603266"></a>
+<a name="T1017069202"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Локальным запоминающим устройством</a>(ЛЗУ) называют буферное <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЗУ</a>, расположенное между <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессором</a> и основным ЗУ (рис.&nbsp;1)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_07.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Идея использования ЛЗУ базируется на том факте, что быстродействие ЛЗУ существенно больше быстродействия основного ЗУ. Это достигается за счет использования для построения ЛЗУ статических запоминающих элементов (в отличие динамических запоминающих элементов, используемых в ОЗУ). Но так как статическое ЗУ существенно дороже динамического, объем ЛЗУ существенно меньше объема ОЗУ.</div>
+<div>Итак, ЛЗУ характеризуется двумя основными моментами:</div>
+<ul class="eList"><li>Быстродействие ЛЗУ существенно больше быстродействия ОЗУ.</li>
+<li>Емкость ЛЗУ существенно меньше емкости ОЗУ.</li>
+</ul>
+<div>Использование ЛЗУ базируется на двух основополагающих допущениях:</div>
+<ul class="eList"><li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Микропроцессор</a> в процессе своей работы многократно обращается к одним и тем же данным</li>
+<li>Эти данные расположены в ЗУ компактно.</li>
+</ul>
+<div>Первое допущение в большинстве случаев справедливо. Данные, являющиеся кодами команд расположены в ЗУ последовательно. В случае наличия в программе циклов или многократно вызываемых процедур (а это почти всегда так), процессор действительно многократно обращается к одним и тем же командам, расположенным в ЗУ. Если же говорить о данных, являющихся собственно данными (числами — исходными или результатами вычислений) — их объем, как правило, невелик и с учетом цикличности любого расчетного алгоритма к ним происходит многократное обращение.</div>
+<div>Второе допущение, вообще говоря, можно считать справедливым только при определенной организации программы — оптимизации. Таким образом, получение полного эффекта от использования ЛЗУ возможно только при оптимизации программы.</div>
+<div>ЛЗУ является "невидимым" для МП и программы. МП, запрашивая данные из памяти по определенному адресу, не знает о наличии ЛЗУ. Поэтому ЛЗУ часто называют "кэш-памятью" (от английского слова cache — тайный склад, тайник).</div>
+<div>Так как объем ЛЗУ существенно меньше объема ЗУ, основная задача, решаемая при проектировании ЛЗУ — оптимальное отображение в ЛЗУ той части ОЗУ, к которой как раз обращается МП наиболее часто в данный интервал времени.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-70.html">‹ Предыдущий</a>

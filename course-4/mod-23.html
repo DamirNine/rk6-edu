@@ -23,7 +23,50 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-24.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Аплет</a>
+</div>
+<a name="T1023472569"></a>
+<a name="T635054945"></a>
+<a name="T1945387555"></a>
+<a name="T916043104"></a>
+<a name="T108051180"></a>
+<a name="T412171630"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Аплет</a> (applet) -это приложение, передаваемое через <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Internet</a> и  выполняемое на компьютере <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">клиенте</a> Java-совместимым <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">браузером</a>. Аплет представляет собой  программу, пересылаемую по сети подобно изображениям, звуковым файлам или видеоклипам. Это программа, которая может реагировать на команды пользователя и динамически изменять свое поведение. Аплеты могут использоваться для создания богатых графикой и интерактивными возможностями пользовательских интерфейсов, которые не способны выразить средствами обычного языка разметки <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">HTML</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML</a>.  </div>
+<a name="T3254818"></a>
+<div>Аплеты передаются по сети, автоматически устанавливаются и запускаются как часть HTML-документа. Если аплет доставлен клиенту, его доступ к ресурсам ограничен. Поэтому даже самый сложный аплет с мультимедиа-интерфейсом, предназначенный для выполнения сложных вычислений, не может повредить данные или действовать как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вирус</a>. Возможность запуска аплетов без нежелательных побочных явлений (в том числе сохранение неприкосновенности секретных данных) считается многими пользователями одним из важнейших достоинств <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Java</a>.</div>
+<div>Компилятор Java компилирует аплеты в файл с расширением .class. После компиляции аплет включается в файл HTML с помощью дескриптора APPLET. Браузер  начнет выполнение аплета при обнаружении  в файле HTML элемента вида</div>
+<pre class="eListing">&lt;applet code="MyApplet" width=ширина height=высота&gt;
+&lt;/applet
+</pre>
+<div>Когда появился язык Java, аплеты обещали стать почти идеальным со всех точек зрения решением: не требуют затрат на установку, соответствуют лозунгу сторонников чистого HTML ("написано однажды — работает везде") и отличаются богатым "родным" графическим пользовательским интерфейсом.</div>
+<a name="T1538316203"></a>
+<div>Но до сих пор (2000 г.) эти надежды не сбылись. Проведенный недавно опрос, касающийся использования аплетов Java, показал, что они применяются менее чем на 2% из 500 самых популярных Web-сайтов. Почему? Некоторые разработчики неверно оценили накладные расходы при интерпретации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">байт-кода</a> в виртуальной машине Java. У других множество нареканий вызывает защита, основанная на принципе "песочницы" (sandbox), который не позволяет Java использовать в полной мере локальные и удаленные службы. Третьи отмечают различия между виртуальными машинами основных браузеров, имеющихся на рынке. Так или иначе по прошествии пяти лет аплеты не оправдали ожиданий, и Web-приложения на базе HTML не были вытеснены Web-приложениями с равным уровнем переносимости и мобильности, но с функционально более мощным графическим пользовательским интерфейсом.</div>
+<div>Тем не менее, хотя аплеты не заслуживают той шумихи, которая была поднята при их появлении, они делают немало полезного. Вот несколько ярких примеров.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>AnywareOffice компании VistaSource (www.anywareoffice.com). VistaSource использует аплет Java для реализации Applixware, своего популярного офисного пакета, в браузерах, ориентированных на Java. Когда провайдер услуг доступа к приложениям использует AnywareOffice, приложения (такие, как текстовый процессор) работают на сервере, но отображаются в аплете.</div>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>QuestAgent компании JObjects (www.jobjects.com). Этот аплет представляет собой кроссплатформный механизм поиска, часто включаемый в состав компакт-диска с публикациями на базе HTML. Браузер может отображать информационное наполнение таких публикаций, но не может выполнять поиск в своем индексе. QuestAgent предлагает мобильный поиск и позволяет отказаться от необходимости создавать и отображать оригинальный механизм поиска.</div>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div>MindTerm компании Mindbright Technologies (www.mindbright.com). Предположим, что пользователь оказался вне офиса и при нем нет мобильного компьютера, а ему необходимо передать файл на домашний сервер. MindTerm — реализация защищенной версии интерпретатора команд Secure Shell (SSH) на базе Java позволяет преобразовать любой ориентированный на Java браузер в клиент SSH, который можно применять для шифрования сеансов передачи файла.</div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-22.html">‹ Предыдущий</a>

@@ -23,7 +23,70 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-48.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Последовательный поиск</a>
+</div>
+<br>
+<a name="T1676359876"></a>
+<a name="T1763610982"></a>
+<a name="T33309882"></a>
+<div>Название этой группы методов произошло от использования последовательного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">списка</a> в качестве структуры <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">данных</a> для хранения <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ключей</a>. Список называют упорядоченным, если он упорядочен по значениям ключей, в противном случае он не называется упорядоченным, хотя некоторый порядок ему можно придать за счет размещения в начале списка элементов, которые ищутся наиболее часто, то есть в порядке убывания вероятностей запросов P[1] ... P[N].</div>
+<br>
+<div class="eSubTitle">Последовательный поиск в неупорядоченном файле</div>
+<a name="T823713000"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Алгоритм</a> поиска имеет вид:</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/12.3.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<br>
+<div>Время работы алгоритма t примерно оценивается формулой:</div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/12.3.mod/?n=1/?k=10">,</div>
+<div>где a - неизвестная константа, зависящая от программной реализации алгоритма, а также от результата поиска: удачен-неудачен. Среднее время удачного поиска можно значительно сократить, если вероятности появления запросов на поиск различных ключей сильно отличаются друг о друга и ключи располагать в порядке убывания вероятностей. Алгоритм в этом случае не изменяется, но должен быть предварительный этап упорядочения списка. Также предполагается, что новые ключи при неудачном поиске не вставляются в список.</div>
+<br>
+<div class="eSubTitle">Последовательный поиск по связанному списку</div>
+<br>
+<a name="T1851536349"></a>
+<div>Вероятности появления запросов на поиск часто не известны заранее. В этом случае можно использовать эмпирический алгоритм, дающий на практике хорошие результаты: каждый раз при удачном поиске найденный ключ переставляется в начало списка. Естественно такие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">перестановки</a> удобно делать на связанном списке. Каждому ключу K[i] соответствует поле связи L[i], указывающее на следующий логически за ним ключ. На первый элемент указывает поле связи L[0].</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/12.3.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<br>
+<div>Этот алгоритм легко модифицируется и для случая, когда после неудачного поиска ключ Х должен быть вставлен первым в список. Время работы алгоритма t примерно оценивается формулой:</div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/12.3.mod/?n=1/?k=10">,</div>
+<div>где a - неизвестная константа, зависящая от программной реализации алгоритма, а также от результата поиска: удачен-неудачен.</div>
+<br>
+<div class="eSubTitle">Последовательный поиск в упорядоченном файле.</div>
+<br>
+<a name="T33596558"></a>
+<div>Если расположить ключи в возрастающем порядке, то время неудачного поиска можно существенно сократить. В простейшем алгоритме поиска в упорядоченном <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле</a> поиск прекращается, если при последовательном просмотре величина Х становится больше или равной очередному ключу K[i]. В среднем при этом сокращается время неудачного поиска до N/2, среднее время удачного поиска остается по-прежнему равным N/2. Алгоритм имеет вид:</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/12.3.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<br>
+<div>Время работы алгоритма t примерно оценивается формулой:</div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/12.3.mod/?n=1/?k=10">,</div>
+<div>где a - неизвестная константа, зависящая от программной реализации алгоритма и не зависящая для данного алгоритма от результата поиска: удачен-неудачен.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-46.html">‹ Предыдущий</a>

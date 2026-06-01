@@ -23,7 +23,130 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-42.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Управляющий оператор if</a>
+</div>
+<div class="eSubTitle">Простая форма оператора if</div>
+<a name="T750557117"></a>
+<a name="T494492918"></a>
+<a name="T1369433176"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Оператор if</a> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">управляющий оператор</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка Си</a>, реализующий <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ветвление</a> алгоритма.</div>
+<pre class="eListing">if (выражение)
+    оператор1
+</pre>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Блок-схема</a> простой формы оператора <span class="eOperator">if</span> представлена на рис.&nbsp;1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/if.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Блок-схема простой формы оператора if</div></div>
+<a name="T803028594"></a>
+<a name="T1233060480"></a>
+<a name="T1562731481"></a>
+<a name="T828724782"></a>
+<div>Если <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражение</a> в скобках истинно, то <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператор</a> выполняется, в противном случае оператор пропускается. Оператор может быть <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">простым</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">составным</a> (блоком). Скобки вокруг выражения обязательны.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">if  (x &gt; largest)
+   largest = x;
+</pre>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">if (val &lt; min || val &gt; max)
+  {
+   printf ("Значение %d выходит за пределы.\n", val);
+   printf ("Пределы %d - %d.\n",min, max);
+  }
+</pre>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">if (num &lt; 0)
+   num = - num;
+</pre>
+</div>
+<div class="eSubTitle">Полная форма оператора if</div>
+<pre class="eListing">if (выражение)
+    оператор1
+else
+    оператор2
+</pre>
+<div>Блок-схема полной формы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператора if-else</a> представлена на рис.&nbsp;2.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/if.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Блок-схема полной формы оператора if</div></div>
+<a name="T74783515"></a>
+<div>Если выражение в скобках истинно, то <span class="eOperator">оператор1</span> выполняется, а <span class="eOperator">оператор2</span> пропускается. Если выражение ложно, пропускается <span class="eOperator">оператор1</span>, а выполняется <span class="eOperator">оператор2</span>. <span class="eOperator">Оператор1</span> и <span class="eOperator">оператор2</span> могут быть простыми или блоками. Скобки вокруг выражения, следующего за <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевым словом</a> <span class="eOperator">if</span>, обязательны.</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><pre class="eListing">if (quantity &lt; 1000)
+  printf ("Количество недостаточное \n");
+else
+  printf ("Количество достаточное \n");
+</pre>
+</div>
+<div class="auto">Пример 5</div>
+<div class="eExample"><pre class="eListing">if ( x != 0)
+    y = y/x;
+else
+   {
+    printf ("Ошибка");
+    printf ("Деление на нуль\n");
+    y = 0;
+   }
+</pre>
+</div>
+<div>Обычными для многих программ являются серии вложенных операторов <span class="eOperator">if-else</span>. Такая серия может быть записана "ступеньками".</div>
+<div class="auto">Пример 6</div>
+<div class="eExample"><pre class="eListing">if (hour &gt;= 8 &amp;&amp; hour &lt; 17)
+   rate = rate * 1.02;
+else
+   if (hour &gt;= 17 &amp;&amp; hour &lt; 23)
+      rate = rate * 1.01;
+</pre>
+</div>
+<div class="auto">Пример 7</div>
+<div class="eExample"><pre class="eListing">if (age &lt; 13)
+   printf ("ребенок");
+else
+   if (age &lt; 21)
+     printf ("юноша");
+   else
+     printf ("мужчина");
+</pre>
+</div>
+<div>При использовании вложенных операторов <span class="eOperator">if-else</span> может возникнуть проблема связывания <span class="eOperator">else</span>. <span class="eOperator">else</span> связывается с ближайшим <span class="eOperator">if</span>.</div>
+<div class="auto">Пример 8</div>
+<div class="eExample"><pre class="eListing">if (c &gt; ' ')
+   if ( c &gt;= '0'&amp;&amp; c &lt;= '9')
+      digits += 1;
+   else
+      count += 1;
+</pre>
+<div><span class="eOperator">else</span> связывается со вторым <span class="eOperator">if</span>. Оператор, следующий за первым ключевым словом <span class="eOperator">if</span>, является оператором <span class="eOperator">if-else</span>. Переменная <span class="eOperator">count</span> является счетчиком нецифровых символов.</div>
+</div>
+<div class="auto">Пример 9</div>
+<div class="eExample"><div><span class="eOperator">if (c &gt; ' ')</span></div>
+<div>   <span class="eOperator"> {</span></div>
+<div>    <span class="eOperator"> if ( c &gt;=</span> '0' <span class="eOperator">&amp;&amp;</span><span class="eOperator"> c </span><span class="eOperator">&lt;=</span><span class="eOperator"> '9')</span></div>
+<div>       <span class="eOperator">  digits += 1;</span></div>
+<div>    <span class="eOperator"> }</span></div>
+<div><span class="eOperator">else</span></div>
+<div><span class="eOperator">   count += 1;</span></div>
+<div><span class="eOperator">else </span> связывается с первым <span class="eOperator">if</span>. Оператор, следующий за первым ключевым словом <span class="eOperator">if</span>, является блоком. Переменная <span class="eOperator">count</span> является счетчиком управляющих символов.</div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-40.html">‹ Предыдущий</a>

@@ -23,7 +23,72 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-17/mod-8.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Эквивалентные схемы гидравлических открытых подсистем</a>
+</div>
+<br>
+<div>В открытых гидросистемах давления определяются высотой столба жидкости или напором h, поэтому переменной типа потенциала можно выбрать эту величину, а переменной типа потока, как и в закрытых подсистемах, оставить объемный расход G. Сжимаемостью жидкости при давлениях, характерных для открытых гидросистем, можно пренебречь. Простейшие элементы: потеря давления R, емкость C, инерционность L, компонентные уравнения которых:</div>
+<div> G=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_otkr.mod/?n=1/?k=10">h            G=C<img align="absmiddle" src="/?frm/?doc=Mod/gidr_otkr.mod/?n=2/?k=10">             h=L<img align="absmiddle" src="/?frm/?doc=Mod/gidr_otkr.mod/?n=3/?k=10"> </div>
+<div>и источники расхода и напора с компонентными уравнениями:</div>
+<div>G=G(Z)  и h=h(Z),</div>
+<div>где в качестве Z может фигурировать время или фазовая переменная.</div>
+<div>Компонентные уравнения элементов потерь напора и инерционности можно получить из компонентных уравнений соответствующих элементов закрытой гидросистемы, учитывая соотношение:</div>
+<div>P=gρh+Po, где Po - атмосферное давление, которое может быть принято за точку отсчета, g - ускорение свободного падения. Тогда компонентное уравнение элемента потерь будет иметь вид:</div>
+<div>G=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_otkr.mod/?n=1/?k=10">h , где R= 128<img align="absmiddle" src="/?frm/?doc=Mod/gidr_otkr.mod/?n=4/?k=10"></div>
+<div>а уравнение элемента инерционности:</div>
+<div> h=L<img align="absmiddle" src="/?frm/?doc=Mod/gidr_otkr.mod/?n=3/?k=10">     L=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_otkr.mod/?n=5/?k=10"></div>
+<div>Компонентное уравнение емкости можно получить из условия заполняемости  </div>
+<div>резервуара источником расхода G (рис. 2.11).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mod/gidr_otkr.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Для такого резервуара можно записать уравнение </div>
+<div><img align="absmiddle" src="/?frm/?doc=Mod/gidr_otkr.mod/?n=2/?k=10">=<img align="absmiddle" src="/?frm/?doc=Mod/gidr_otkr.mod/?n=6/?k=10">G  или     G=S<img align="absmiddle" src="/?frm/?doc=Mod/gidr_otkr.mod/?n=2/?k=10">,  где S - площадь поперечного сечения резервуара.</div>
+<div>Условные изображения элементов аналогичны изображениям элементов закрытой гидросистемы.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mod/gidr_otkr.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<br>
+<div><span style="font-weight:bold; ">Алгоритм составления эквивалентных схем</span></div>
+<div>1. Базовый узел эквивалентной схемы соответствует атмосферному давлению.</div>
+<div>2. В подсистеме выделяются элементы, в которых возможно изменение уровня жидкости, на эквивалентных схемах такие элементы одним полюсом всегда подключаются к базовому узлу, все взаимодействия осуществляются через второй узел.</div>
+<div>3. Трубопроводы отображаются также как в закрытых гидросистемах.</div>
+<div>4. Слив из резервуара и перетекание жидкости из одного резервуара в другой моделируются с помощью зависимых источников расхода и давления, как это показано в следующем примере.</div>
+<div>Для участка некоторой технологической цепочки, представленной на рис.3 составлена эквивалентная схема, показанная на рис.4</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mod/gidr_otkr.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mod/gidr_otkr.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<div>На эквивалентной схеме: Go- подача насоса, R1- элемент потерь в трубопроводе Т1, C<sub class="eSub">T</sub> - емкость трубопровода T1, G1- зависимый источник расхода, моделирующий заполнение трубопровода, с компонентным уравнением:</div>
+<div>G1=GT1  при h1&gt;hT1, где GT1- расход через трубопровод Т1;</div>
+<div>G1=0      при h1&lt;hT1,</div>
+<div>С1,C2- емкости резервуаров, G2- зависимый источник расхода, моделирующий слив из резервуара C1 с компонентным уравнением:</div>
+<div>G2=GT2, где GT2- расход через трубопровод Т2,</div>
+<div>h- зависимый источник давления, моделирующий воздействие на элементы, находящиеся после слива, с компонентным уравнением:</div>
+<div>h=h2-h<sub class="eSub">T2</sub>, при h2&gt;h<sub class="eSub">T2</sub>;</div>
+<div>h=0,         при h2&lt;h<sub class="eSub">T2</sub>,</div>
+<div>R2- элемент потерь в трубопроводе Т2, R3- элемент потерь, моделирующий дроссель D1.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-17/">← Оглавление</a>
         <a href="/rk6-edu/course-17/mod-6.html">‹ Предыдущий</a>

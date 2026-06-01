@@ -23,7 +23,38 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-13/mod-26.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Метод "поведения толпы" (PSO)</a>
+</div>
+<div>Алгоритм PSO (называемый также методом роя частиц) первоначально был описан применительно к задачам математической биологии в 1987 г. [1]. Сведения об алгоритмах и результатах решения с помощью методов PSO ряда задач оптимизации приведены, например, в [2,3].</div>
+<a name="T32611087"></a>
+<div>В методе <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">PSO</a> (Particles Swarm Optimization) имитируется поведение множества <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">агентов</a>, стремящихся согласовать свое состояние с состоянием наилучшего агента. Положение <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=1/?k=10">-го агента описывается вектором <span class="eOperator">X</span><sub class="eSub">j</sub>=(<img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=2/?k=10">,<img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=3/?k=10">,…<img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=4/?k=10">), где <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=5/?k=10"> – <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=6/?k=10">-й параметр <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=1/?k=10">-го агента, а состояние <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=1/?k=10">-го агента характеризуется значением целевой функции <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=7/?k=10">=<img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=8/?k=10">(<span class="eOperator">X</span><sub class="eSub">j</sub>). Согласование происходит в многошаговом процессе путем корректировки на каждом шаге вектора <span class="eOperator">X</span><sub class="eSub">j</sub> с учетом положения <span class="eOperator">X</span><sub class="eSub">gl</sub> наилучшего агента, собственного наилучшего положения <span class="eOperator">X</span><sup class="eSub">*</sup><sub class="eSub">j</sub> на траектории предыдущего перемещения <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=1/?k=10">-го агента в пространстве параметров и фактора случайности.</div>
+<a name="T561166639"></a>
+<div>Базовый алгоритм PSO в случае задачи непрерывной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оптимизации</a> заключается в итерационном вычислении значений <span class="eOperator">X</span><sub class="eSub">j</sub> по формулам:</div>
+<div><span class="eOperator">V</span><sub class="eSub">j</sub> :=<img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=9/?k=10"> <span class="eOperator">V</span><sub class="eSub">j</sub> + <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=10/?k=10">(<span class="eOperator">X</span><sub class="eSub">gl</sub> — <span class="eOperator">X</span><sub class="eSub">j</sub>) + <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=11/?k=10"> (<span class="eOperator">X</span><sup class="eSub">*</sup><sub class="eSub">j</sub> — <span class="eOperator">X</span><sub class="eSub">j</sub>), (1)</div>
+<div><span class="eOperator">X</span><sub class="eSub">j</sub> := <span class="eOperator">X</span><sub class="eSub">j</sub> +<span class="eOperator">V</span><sub class="eSub">j</sub>;</div>
+<div>где <span class="eOperator">V</span><sub class="eSub">j</sub> – вектор корректировок <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=1/?k=10">-го агента, <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=9/?k=10"> – коэффициент инерционности в поведении агентов, <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=10/?k=10">, <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=11/?k=10"> – случайные коэффициенты, параметры распределения которых подбираются экспериментально.</div>
+<div>В задачах дискретной оптимизации пространство параметров часто оказывается неметризованным и формула (1) оказывается неприменимой. Однако использование идей PSO становится возможным, благодаря следующему способу выбора дискретных значений <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">генов</a>: ген <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=5/?k=10"> в формируемой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">хромосоме</a> <span class="eOperator">X</span><sub class="eSub">j</sub> выбирается равным <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=6/?k=10">-му гену одной из хромосом-родителей. Выбор конкретного родителя происходит случайным образом. В качестве хромосомы-родителя могут выступать или наилучшая хромосома <span class="eOperator">X</span><sub class="eSub">gl</sub> всей популяции, или хромосома <span class="eOperator">X</span><sup class="eSub">*</sup><sub class="eSub">j</sub>, наилучшая среди хромосом с номером <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=1/?k=10"> всех предшествующих поколений, или <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=1/?k=10">-я хромосома <span class="eOperator">X</span><sub class="eSub">j</sub> предыдущего поколения. Соответствующие вероятности <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=12/?k=10">, <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=13/?k=10">, <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=14/?k=10"> выбора каждого из этих вариантов подбираются экспериментально. Кроме того, добавляется вариант случайного выбора значения <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=5/?k=10"> с вероятностью <img align="absmiddle" src="/?frm/?doc=045_ga/6050.mod/?n=15/?k=10">.</div>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. Deneubourg J.-L., Goss S., Pasteels J.M., Fresneau D. and Lachaud J.-P. Self-organization mechanisms in ant societies (II): learning in foraging and division of labor. In: From Individual to Collective. Behavior in Social Insects. — Basel: Birkhauser, 1987.<br>
+2. Eberhart, R. C., and Kennedy, J. A New Optimizer Using Particles Swarm Theory, Proc. Sixth International Symposium on Micro Machine and Human Science. // IEEE Service Center, Piscataway, 1995.<br>
+3. Eberhart, R. C., Dobbins, R. W., and Simpson, P. Computational Intelligence PC Tools. — Boston: Academic Press , 1996.<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-13/">← Оглавление</a>
         <a href="/rk6-edu/course-13/mod-24.html">‹ Предыдущий</a>

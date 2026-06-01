@@ -23,7 +23,46 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-58.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Автоматический класс памяти</a>
+</div>
+<a name="T1835217675"></a>
+<a name="T828724782"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Автоматическая переменная</a> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">переменная</a>, которая объявляется внутри <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">блока</a>.</div>
+<a name="T1435803309"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Областью действия</a> автоматической переменной является блок, в котором она объявлена. Автоматическая переменная создается динамически (автоматически) при входе в блок и прекращает существование при выходе из него.</div>
+<a name="T522299926"></a>
+<a name="T1015173096"></a>
+<a name="T696383489"></a>
+<div>Область действия и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">время жизни</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параметра</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> такие же, как и у автоматической переменной.</div>
+<a name="T256200320"></a>
+<div>В программе может быть несколько совпадающих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификаторов</a>. Тем не менее, две переменные, объявленные в одном и том же блоке, не могут иметь одинаковых имен. Если переменная во внутреннем блоке имеет то же имя, что и объявленная во внешнем блоке переменная, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операторы</a> внутри блока ссылаются на переменную, объявленную во внутреннем блоке.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">int main()
+{
+void print_cube(int);
+int x;                         /* известно только в main() */
+
+x = getchar();
+if ( x == 'c')
+   {
+    float x;                   /* известно в этом блоке */
+    x = .75;                   /* ссылается на float x */
+   }
+print_cube(100);
+}
+void print_cube(int x)         /* известно только в print_cube()*/
+{
+    printf ("%d\n", x*x*x);
+}
+</pre>
+</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>На практике   лучше избегать таких ситуаций, так как они могут быть причиной ошибок.</div>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-56.html">‹ Предыдущий</a>

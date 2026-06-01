@@ -23,7 +23,72 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-2.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Непрерывные и дискретные системы автоматического управления</a>
+</div>
+<div>Структурную схему системы автоматического управления (САУ) можно представить в следующем виде (рис.&nbsp;1):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_01.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>В состав устройства управления входят корректирующее и вычитающее устройства.</div>
+<div>В процессе разработки системы автоматического управления решаются две основные задачи:</div>
+<ol class="eList"><li>Синтез корректирующего устройства, результатом которого является передаточная функция корректирующего устройства;</li>
+<li>Техническая реализация корректирующего устройства.</li>
+</ol>
+<div>Рассмотрим вопросы технической реализации корректирующего устройства на примере пропорционального регулятора (рис.&nbsp;2):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_01.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<a name="T1151187170"></a>
+<div><span style="font-weight:bold; text-decoration:underline; ">Вариант 1.</span> Реализация в виде электронной схемы (например, на основе операционного усилителя, рис.&nbsp;3). В этом случае значение управляющего сигнала <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_01.mod/?n=1/?k=10"> может быть измерено в любой момент времени и с любой точностью. Системы, сигналы в которых существуют (могут быть измерены) в любой произвольный момент времени называются <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">непрерывными системами</a>.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_01.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Вариант 2.</span> Реализация на основе специализированной ЭВМ (рис.&nbsp;4):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_01.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<div>В этом случае собственно корректирующее устройство реализуется программно в виде алгоритма расчета значения управляющего сигнала <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_01.mod/?n=1/?k=10"> по известным значениям <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_01.mod/?n=2/?k=10"> и <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_01.mod/?n=3/?k=10">. Блок-схема такого алгоритма выглядит следующим образом (рис.&nbsp;5):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_01.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;Алгоритм работы корректирующего устройства</div></div>
+<div>Весь управляющий цикл состоит из ввода исходных данных для расчета, собственно расчета и вывода полученного значения управляющей величины. Работа алгоритма может быть представлена на временной оси (рис.&nbsp;6):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_01.mod/?n=6"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;</div></div>
+<div>Так как реализация алгоритма представляет собой набор операций, а каждая операция выполняется внутри ЭВМ за конечное время, процессы ввода, расчета и вывода также занимают конечное время. Следовательно, значение управляющей величины <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_01.mod/?n=1/?k=10"> будет определено только по окончании фазы расчета, а на протяжении самого расчета и ввода данных будет оставаться неопределенным. Так как цикл "ввод-расчет-вывод" выполняется периодически, значение <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_01.mod/?n=1/?k=10"> будет определено лишь в отдельные моменты времени, соответствующие моменту окончания фазы расчета на рис.&nbsp;6. Временной интервал между этими моментами будет равен длительности одного цикла выполнения алгоритма <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_01.mod/?n=4/?k=10">: <br><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_01.mod/?n=5/?k=10"><br></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_01.mod/?n=7"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;7.&nbsp;&nbsp;</div></div>
+<div>То же самое можно сказать и о сигналах, вводимых в ЭВМ (рис.&nbsp;8). Эти сигналы определены внутри ЭВМ лишь в дискретные моменты времени (на фазе ввода <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_01.mod/?n=2/?k=10"> и <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_01.mod/?n=3/?k=10">). В промежутках между ними (на протяжении фазы расчета и вывода) ЭВМ не имеет информации об истинном значении величин <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_01.mod/?n=2/?k=10"> и <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_01.mod/?n=3/?k=10">.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_01.mod/?n=8"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;8.&nbsp;&nbsp;</div></div>
+<a name="T1056517565"></a>
+<div>Системы, сигналы в которых определены лишь в отдельные дискретные моменты времени, называются <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">дискретными системами</a>. Все системы, в состав которых входит ЭВМ, являются дискретными.</div>
+<div>Таким образом, все системы автоматического управления в зависимости от варианта технической реализации блока управления (корректирующего устройства) можно подразделить на непрерывные и дискретные.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a class="disabled">‹ Предыдущий</a>

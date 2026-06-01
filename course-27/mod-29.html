@@ -23,7 +23,158 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-27/mod-30.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Контейнерные классы</a>
+</div>
+<a name="T1782114175"></a>
+<a name="T719974517"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Контейнерные классы</a> — это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">классы</a>, предназначенные для хранения данных, организованных определенным образом. Примерами контейнеров могут служить массивы, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">линейные списки</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеки</a>. Для каждого типа контейнера определены методы для работы с его элементами, не зависящие от конкретного типа данных, которые хранятся в контейнере, поэтому один и тот же вид контейнера можно использовать для хранения данных различных типов. Эта возможность реализована с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шаблонов классов</a>, поэтому часть библиотеки C++, в которую входят контейнерные классы, а также алгоритмы и итераторы, называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">стандартной библиотекой шаблонов</a> (STL - Standard Template Library).</div>
+<div>Использование контейнеров позволяет значительно повысить надежность программ, их переносимость и универсальность, а также уменьшить сроки их разработки. Естественно, эти преимущества не даются даром: универсальность и безопасность использования <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контейнерных классов</a> не могут не отражаться на быстродействии программы. Снижение быстродействия в зависимости от реализации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятора</a> может быть весьма значительным. Кроме того, для эффективного использования контейнеров требуется затратить усилия на вдумчивое освоение библиотеки.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Контейнерный класс</a> содержит в своем определении несколько объектных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">полей</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателей</a> на объекты, причем если контейнерный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класс</a> использует механизм композиции,  то тип и количество управляемых объектов определены типом и количеством объектных полей. В случае, когда контейнерный класс использует механизм управления, подключение реализуется через указатели. Контейнер может управлять как объектами базового, так и всеми потомками этого класса. Обычно контейнерные классы реализуют некоторые типовые структуры (массивы, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеки</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">списки</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">очереди</a>) и типовые операции над данными, которые могут записаны в эти структуры и прочитаны из них. Существует два способа реализации контейнерных классов:</div>
+<ol class="eList"><li>Создание специальной процедуры просмотра всех элементов контейнера. В эту процедуру в качестве параметра передается имя функции или процедуры, реализующей алгоритм требуемой обработки элемента контейнера.</li>
+<li>Выполнение поэлементной обработки и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">реализация</a> через определение итератора или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a> итераторов, подходящих для данного контейнера. При помощи <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">итератора</a> можно управлять контейнером, не зная фактически типов, используемых для идентификации элементов. </li>
+</ol>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing"> class FixStack { /* спецификация класса подобъекта */}; 
+ class BracketSyntax { {/* спецификация контейнерного класса */}
+        public: FixStack stack; /* спецификация подобъекта */ 
+        private:                /* спецификация приватных данных */ 
+        public:                 /* спецификация компонентных методов, 
+                                  конструктора и деструктора */ 
+     }; 
+</pre>
+</div>
+<div>Контейнеры создают на основе <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шаблонов класса</a> - <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">STL</a> содержит контейнеры, реализующие основные структуры данных, используемые при написании программ — векторы, двусторонние <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">очереди</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">списки</a> и их разновидности, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">словари</a> и множества. В зависимости от используемых шаблонов классов и особенности <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">реализации</a> доступа к данным, контейнеры можно разделить на две группы: <span style="font-weight:bold; ">последовательные</span> и <span style="font-weight:bold; ">ассоциативные.</span></div>
+<div><span class="eOperator">Последовательные контейнеры</span> обеспечивают хранение конечного количества однотипных величин в виде непрерывной последовательности. К ним относятся векторы (vector), двусторонние <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">очереди</a> (deque) и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">списки</a> (list), а также так называемые адаптеры, то есть варианты, контейнеров — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеки</a> (stack), очереди (queue) и очереди с приоритетами (priority queue).</div>
+<div>Каждый вид контейнера обеспечивает свой набор действий над данными. Выбор вида контейнера зависит от того, что требуется делать с данными в программе.</div>
+<div>Например, при необходимости часто вставлять и удалять элементы из середины последовательности следует использовать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">список</a>, а если включение элементов выполняется главным образом в конец или начало — двустороннюю <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">очередь</a>. </div>
+<div><span class="eOperator">Ассоциативные контейнеры</span> обеспечивают быстрый доступ к данным по ключу Эти контейнеры построены на основе сбалансированных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">деревьев</a>. Существует пять типов ассоциативных контейнеров: </div>
+<ul class="eList"><li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">словари</a> (mар), </li>
+<li>словари с дубликатами (multimap), </li>
+<li>множества (set), </li>
+<li>множества с дубликатами (multiset) </li>
+<li> битовые множества (bitset).</li>
+</ul>
+<div>Программист может создавать собственные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контейнерные классы</a> на основе имеющихся в стандартной библиотеке.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Контейнерные классы</a> обеспечивают стандартизованный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">интерфейс</a> при их использовании. Смысл одноименных операций для различных контейнеров одинаков, основные операции применимы ко всем типам контейнеров. Стандарт определяет только интерфейс контейнеров, поэтому разные реализации могут сильно отличаться по эффективности.</div>
+<div>Практически в любом контейнерном классе определены поля перечисленных ниже типов:</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="9.090909%"><td class="eTableT">Поле</td><td class="eTableT">Пояснение</td></tr>
+<tr height="9.090909%"><td class="eTable">value type</td><td class="eTable">Тип элемента контейнера</td></tr>
+<tr height="9.090909%"><td class="eTable">size type</td><td class="eTable">Тип <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">индексов</a>, счетчиков элементов и т. д.</td></tr>
+<tr height="9.090909%"><td class="eTable">iterator</td><td class="eTable">Итератор</td></tr>
+<tr height="9.090909%"><td class="eTable">const iterator</td><td class="eTable">Константный итератор</td></tr>
+<tr height="9.090909%"><td class="eTable">reverse iterator</td><td class="eTable">Обратный итератор</td></tr>
+<tr height="9.090909%"><td class="eTable">const_reverse iterator</td><td class="eTable">Константный обратный итератор</td></tr>
+<tr height="9.090909%"><td class="eTable">reference</td><td class="eTable">Ссылка на элемент</td></tr>
+<tr height="9.090909%"><td class="eTable">const_reference</td><td class="eTable">Константная ссылка на элемент</td></tr>
+<tr height="9.090909%"><td class="eTable">key_type</td><td class="eTable">Тип <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключа</a> (для ассоциативных контейнеров)</td></tr>
+<tr height="9.090909%"><td class="eTable">key compare</td><td class="eTable">Тип критерия сравнения (для ассоциативных контейнеров)</td></tr>
+</tbody></table><br>
+<a name="T437476855"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Итератор</a> является аналогом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателя</a> на элемент. Он используется для просмотра контейнера в прямом или обратном направлении. Все, что требуется от итератора — уметь ссылаться на элемент контейнера и реализовывать операцию перехода к его следующему элементу. Константные итераторы используются то­гда, когда значения соответствующих элементов контейнера не изменяются.</div>
+<div>При помощи итераторов можно просматривать контейнеры, не заботясь о фактических типах данных, используемых для доступа к элементам.</div>
+<br>
+<div class="eSubTitle">Итераторы</div>
+<div>Представим себе данные как некую абстрактную последовательность. Вне зависимости от способа ее организации и типа данных нам требуются средства поэлементного просмотра последовательности и доступа к каждому ее элементу. Итератор обеспечивает эти средства просмотра.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Итератор</a> — это обобщение понятия <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателя</a> для работы с различными структурами данных стандартным способом. Для того, чтобы можно было реализовать алгоритмы, корректно и эффективно работающие с данными различной структуры, стандарт определяет не только <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">интерфейс</a>, но и требования ко времени доступа с помощью итераторов.</div>
+<div>Поскольку итератор является обобщением понятия «<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a>», семантика у них одинаковая, и все функции, принимающие в качестве параметра итераторы, могут также работать и с обычными указателями.</div>
+<div>В стандартной библиотеке итераторы используются для работы с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контейнерными классами</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потоками</a> и буферами потоков.</div>
+<div>В итераторах используются понятия «текущий указываемый элемент» и «указать на следующий элемент». Доступ к текущему элементу последовательности выполняется аналогично <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателям</a> с помощью операций * и -&gt;. Переход к следующему элементу - с помощью операции инкремента ++. Для всех итераторов определены также присваивание, проверка на равенство и неравенство. Данные могут быть организованы различным образом - например, в виде массива, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">списка</a>, вектора или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дерева</a>. Для каждого вида последовательности требуется свой тип итератора, поддерживающий различные наборы операций. В соответствии с набором обеспечиваемых операций итераторы делятся на пять категорий. Приведенные в таблице операции обеспечиваются за постоянное время.</div>
+<div>Пусть i и j — итераторы одного вида, х — переменная того же типа, что и элемент последовательности, п — целая величина. Тогда допустимы выражения:</div>
+<div>1++     ++i      i = j        i == j      i  != j</div>
+<div class="auto" style="text-align:right">Таблица 2&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="16.666666%"><td class="eTableT">Категория итератора</td><td class="eTableT">Операции</td><td class="eTableT">Контейнеры</td></tr>
+<tr height="16.666666%"><td class="eTable">входной (input)</td><td class="eTable">х = *i</td><td class="eTable">все</td></tr>
+<tr height="16.666666%"><td class="eTable">выходной (output)</td><td class="eTable">*i = х</td><td class="eTable">все</td></tr>
+<tr height="16.666666%"><td class="eTable">прямой (forward)</td><td class="eTable">х = *i, *i = x</td><td class="eTable">все</td></tr>
+<tr height="16.666666%"><td class="eTable">двунаправленный (bidirectional)</td><td class="eTable">x = *i, *i - x, --i, i--</td><td class="eTable">все</td></tr>
+<tr height="16.666666%"><td class="eTable">произвольного доступа (random access)</td><td class="eTable">x = *i, *i = x, --i, i--, i + n, i - n, i += n, i  -= n i &lt; j, i &gt; J, i &lt;= j, i &gt;= J</td><td class="eTable">все, кроме list</td></tr>
+</tbody></table><br>
+<div>Как видно из таблицы, прямой итератор поддерживает все операции входных и выходных итераторов и может использоваться везде, где требуются входные или выходные итераторы. Двунаправленный итератор поддерживает все операции прямого, а также декремент, и может использоваться везде, где требуется прямой итератор. Итератор произвольного доступа поддерживает все операции двунаправленного, а кроме того, переход к произвольному элементу последовательности и сравнение итераторов.</div>
+<div>Можно сказать, что итераторы образуют <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">иерархию</a>, на верхнем уровне которой находятся итераторы произвольного доступа. Чем выше уровень итератора, тем более высокие функциональные требования предъявляются к контейнеру, для которого используется итератор. Например, для списков итераторами произвольного доступа пользоваться нельзя, поскольку список не поддерживает требуемый набор операций итератора.</div>
+<div>Итераторные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">классы</a> и функции описаны в заголовочном <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле</a> &lt;iterator&gt;. При использовании стандартных контейнеров этот файл подключается автоматически.</div>
+<a name="T180537849"></a>
+<div>Итераторы могут быть константными. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Константные итераторы</a> используются тогда, когда изменять значения соответствующих элементов контейнера нет необходимости.</div>
+<div class="auto" style="text-align:right">Таблица 3&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="20.0%"><td class="eTableT">Метод</td><td class="eTableT">Пояснение</td></tr>
+<tr height="20.0%"><td class="eTable">iterator beginO, const iterator beginO const</td><td class="eTable">Указывают на первый элемент</td></tr>
+<tr height="20.0%"><td class="eTable">iterator end(), const iterator end() const</td><td class="eTable">Указывают на элемент, следующий за последним</td></tr>
+<tr height="20.0%"><td class="eTable">reverse iterator rbeginO, const reversejterator rbeginO const</td><td class="eTable">Указывают на первый элемент в обратной последовательности</td></tr>
+<tr height="20.0%"><td class="eTable">reverse iterator rendO, const reverse iterator rendO const</td><td class="eTable">Указывают на элемент, следующий за последним, в обратной последовательности</td></tr>
+</tbody></table><br>
+<div>В каждом контейнере эти типы и методы определяются способом, зависящим от их реализации.</div>
+<div>Во всех контейнерах определены методы, позволяющие получить сведения о размере контейнеров:</div>
+<div class="auto" style="text-align:right">Таблица 4&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="25.0%"><td class="eTableT">Метод</td><td class="eTableT">Пояснение</td></tr>
+<tr height="25.0%"><td class="eTable">size()</td><td class="eTable">Число элементов</td></tr>
+<tr height="25.0%"><td class="eTable">max_size()</td><td class="eTable">Максимальный размер контейнера (порядка миллиарда элементов)</td></tr>
+<tr height="25.0%"><td class="eTable">empty()</td><td class="eTable">Булевская функция, показывающая, пуст ли контейнер</td></tr>
+</tbody></table><br>
+<div>Другие ноля и методы контейнеров мы рассмотрим по мере необходимости. STL определяется в 13 заголовочных файлах:</div>
+<div>algorithm      deque       functional      iterator      list         map</div>
+<div>memory        numeric    queue    set       stack    utility    vector</div>
+<div class="eSubTitle">Последовательные контейнеры</div>
+<div>Векторы (vector), двусторонние <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">очереди</a> (deque) и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">списки</a> (list) поддерживают разные наборы операций, среди которых есть совпадающие операции. Они могут быть реализованы с разной эффективностью:</div>
+<div class="auto" style="text-align:right">Таблица 5&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="25.0%"><td class="eTableT">Операция</td><td class="eTableT">Метод</td><td class="eTableT">vector</td><td class="eTableT">deque</td><td class="eTableT">list</td></tr>
+<tr height="25.0%"><td class="eTable">Вставка в начало</td><td class="eTable">push_front</td><td class="eTable">-</td><td class="eTable">+</td><td class="eTable">+</td></tr>
+<tr height="25.0%"><td class="eTable">Удаление из начала</td><td class="eTable">pop front</td><td class="eTable">-</td><td class="eTable">+</td><td class="eTable">+</td></tr>
+<tr height="25.0%"><td class="eTable">Вставка в конец</td><td class="eTable">push_back</td><td class="eTable">+</td><td class="eTable">+</td><td class="eTable">+</td></tr>
+</tbody></table><br>
+<div class="auto" style="text-align:right">Таблица 6&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="20.0%"><td class="eTableT">Операция</td><td class="eTableT">Метод</td><td class="eTableT">vector</td><td class="eTableT">deque</td><td class="eTableT">list</td></tr>
+<tr height="20.0%"><td class="eTable">Удаление из конца</td><td class="eTable">pop back</td><td class="eTable">+</td><td class="eTable">+</td><td class="eTable">+</td></tr>
+<tr height="20.0%"><td class="eTable">Вставка в произвольное место</td><td class="eTable">insert</td><td class="eTable">(+)</td><td class="eTable">(+)</td><td class="eTable">+</td></tr>
+<tr height="20.0%"><td class="eTable">Удаление из произвольного места</td><td class="eTable">erase</td><td class="eTable">(+)</td><td class="eTable">(+)</td><td class="eTable">+</td></tr>
+<tr height="20.0%"><td class="eTable">Произвольный доступ к элементу</td><td class="eTable">[ ]. at</td><td class="eTable">+</td><td class="eTable">+</td><td class="eTable">-</td></tr>
+</tbody></table><br>
+<div>Знак + означает, что соответствующая операция реализуется за постоянное время, не зависящее от количества п элементов в контейнере. Знак (+) означает, что соответствующая операция реализуется за время, пропорциональное n. Для малых n время операций, обозначенных +, может превышать время операций, обо-значенных (+), но для большого количества элементов последние могут оказаться очень дорогими.</div>
+<div>Как видно из таблицы, такими операциями являются вставка и удаление произвольных элементов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">очереди</a> и вектора, поскольку при этом все последующие элементы требуется переписывать на новые места.</div>
+<div>Итак, вектор — это структура, эффективно реализующая произвольный доступ к элементам, добавление в конец и удаление из конца.</div>
+<div>Двусторонняя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">очередь</a> эффективно реализует произвольный доступ к элементам, добавление в оба конца и удаление из обоих концов.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Список</a> эффективно реализует вставку и удаление элементов в произвольное место, но не имеет произвольного доступа к своим элементам.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>Пример работы с вектором. В файле находится произвольное количество целых чисел. Программа считывает их в вектор и выводит на экран в том же порядке.</div>
+<div>#include &lt;fstream&gt; #iinclude &lt;vector&gt; using namespace std: int main(){</div>
+<div>ifstream in ("inpnum.txt");</div>
+<div>vector&lt;int&gt; v; int x; while ( in » x,  lin.eofO)</div>
+<div>v.push_back(x);</div>
+<div>for (vector&lt;int&gt;::iterator i = v.begin(); i  != v.end(); ++i)</div>
+<div>cout « *i « " ";</div>
+</div>
+<div>Поскольку <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файл</a> содержит целые числа, используется соответствующая специализация шаблона vector - vector&lt;int&gt;. Для создания вектора v используется конструктор по умолчанию. Организуется цикл до конца файла, в котором из него считывается очередное целое число. С помощью метода push_back оно заносится в вектор, размер которого увеличивается автоматически1.</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Размер вектора не изменяется каждый раз при добавлении элемента, это было бы нерационально. Он увеличивается по определенному алгоритму, которым можно управлять.</div>
+</div>
+<div>Для прохода по всему вектору вводится переменная i как итератор соответствующего типа (напомню, что операция :: обозначает доступ к области видимо-сти, то есть здесь объявляется переменная i типа «итератор для конкретной специализации шаблона»). С помощью этого итератора осуществляется доступ ко всем по порядку элементам контейнера, начиная с первого. Метод beginO возвращает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на первый элемент, метод end() — на элемент, следующий за последним. Реализация гарантирует, что этот указатель определен.</div>
+<div>Сравнивать текущее значение с граничным следует именно с помощью операции !=, так как операции &lt; или &lt;= могут быть для данного типа не определены. Опера-ция инкремента (i++) реализована так, чтобы после нее итератор указывал на следующий элемент контейнера в порядке обхода. Доступ к элементу вектора выполняется с помощью операции разадресации, как для обычных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателей</a>.</div>
+<div>В данном примере вместо вектора можно было использовать любой последова-тельный контейнер путем простой замены слова vector на deque или list. При этом изменилось бы внутреннее представление данных и набор доступных опе-раций, а в поведении программы никаких изменений не произошло бы.</div>
+<div>Однако если вместо цикла for вставить фрагмент</div>
+<pre class="eListing">for (int i = 0; i&lt;v.size(); i++) cout &lt;&lt; v[i] &lt;&lt; " ";
+</pre>
+<div>в котором использована операция доступа по индексу [ ], программа не будет работать для контейнера типа list, поскольку в нем эта операция не определена.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-27/">← Оглавление</a>
         <a href="/rk6-edu/course-27/mod-28.html">‹ Предыдущий</a>

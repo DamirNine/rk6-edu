@@ -23,7 +23,45 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-2/mod-16.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Каналы PDH</a>
+</div>
+<a name="T281709997"></a>
+<div>Различают несколько технологий связи, основанных на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">цифровых каналах</a>. Основными практически используемыми являются технологии плезиохронной и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синхронной цифровой иерархии</a>.</div>
+<a name="T665951515"></a>
+<a name="T300971546"></a>
+<a name="T94486251"></a>
+<a name="T80632971"></a>
+<div>К <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">магистральным каналам</a> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">плезиохронной цифровой иерархии</a> относятся <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">каналы T1/T4</a>, применяемые, в основном, в США и Японии, и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">каналы E1/E4</a>, описанные в стандартах G.700 — G.706 и преимущественно распространенные в Европе.</div>
+<a name="T171514714"></a>
+<a name="T171515179"></a>
+<a name="T343121463"></a>
+<div>Многоканальная система <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">E1</a> (иначе DS-1 или канал E1) включает в себя 32 <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">цифровых канала</a>, называемых DS-0 (Digital Signal-0). При этом 30 каналов используются для передачи информации (например, голосового трафика телефонных компаний), а 2 канала предназначены для передачи служебных данных. В системе T1/T4 в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">канал T1</a> входит 24 канала DS-0. В каждом канале применена <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">импульсно-кодовая модуляция</a> с частотой следования отсчетов 8 кГц и квантованием сигналов по 2<sup class="eSub">8</sup> = 256 уровням, что требует скорости передачи 64 кбит/с на один канал или 2048 кбит/с на аппаратуру E1 или 1544 Кбит/с на аппаратуру T1.</div>
+<a name="T171514717"></a>
+<a name="T171515182"></a>
+<div>Следующие уровни в иерархии E1/E4 представлены каналами E2-<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">E4</a> (DS-2, DS-3 и DS-4), причем канал каждого последующего уровня объединяет 4 канала предыдущего уровня, разделенных несколькими служебными битами. Поэтому требуемые в этих каналах скорости составляют 8488, 34368, 139264 Кбит/с соответственно. В иерархии T1/T4 канал <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">T4</a> рассчитан на скорости около 260000 кбит/с.</div>
+<a name="T1848782215"></a>
+<a name="T490783214"></a>
+<div>В каналах PDH использовано <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">временное мультиплексирование</a> (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TDM</a>). Так, в канале T1 все 24 канала DS-0 передают в мультиплексор по одному байту, образуя 192-битный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кадр</a> с добавлением одного бита синхронизации. Суперкадр канала DS-1 в T1 составляют 24 кадра. В нем имеются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">контрольный код</a> и синхронизирующая комбинация.</div>
+<div>Сборку информации из нескольких линий предыдущего уровня и ее размещение в магистрали следующего уровня осуществляет мультиплексор. Канал DS-0 (один слот) соответствует одной из входных линий, т.е. реализуется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммутация каналов</a>. Если какой-либо слот не используется из-за недогрузки канала, то возможно динамическое перераспределение слотов с помощью статистических мультиплексоров При этом временно весь канал DS-1 или его часть отдается одному соединению с интенсивным трафиком. Некоторые мультиплексоры позволяют маршрутизировать потоки данных, направляя их в другие мультиплексоры, связанные с другими каналами E1/T1, хотя собственно каналы E1/T1 называют некоммутируемыми.</div>
+<a name="T227522285"></a>
+<a name="T831169497"></a>
+<div>Передача информации в каналах PDH реализуется с помощью четырехпроводного кабеля, каждая пара проводов предназначена для передачи в одном направлении. В случае E1/T1 обычно используют <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">витую пару</a>, для более высоких уровней иерархии применяют коаксиальный кабель или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ВОЛС</a>. Кодирование выполняют с помощью разновидностей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кода AMI</a> с заменой последовательностей из пяти подряд идущих нулей специальными комбинациями импульсов. Соединение каналов T1/E1 с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ООД</a> осуществляется посредством специальных устройств DSU (Data Service Unit) и CSU (Channel Service Unit), формирующих кадры T1/E1 и, кроме того, выполняющих мультиплексирование потоков.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-2/">← Оглавление</a>
         <a href="/rk6-edu/course-2/mod-14.html">‹ Предыдущий</a>

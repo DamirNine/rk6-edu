@@ -23,7 +23,101 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-98.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Структуры</a>
+</div>
+<a name="T1503632839"></a>
+<a name="T1133808979"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Структура</a> — это набор элементов, которые могут иметь различные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типы</a>.</div>
+<div>Структуру можно представить себе как запись, состоящую из нескольких полей или элементов. Структуры обеспечивают удобный способ структурной организации связанных по смыслу переменных.</div>
+<a name="T949140871"></a>
+<a name="T2045169592"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Агрегатным типом</a> данных называется тип, конструируемый из элементов независимых (возможно различных) типов. Структуры являются одновременно агрегатным и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">производным типом</a> данных.</div>
+<div class="eSubTitle">Задание шаблонов и объявление структур</div>
+<div>Новый тип данных для структуры создается путем описания шаблона структуры.</div>
+<a name="T1239699667"></a>
+<a name="T359704857"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Шаблон структуры</a> представляет собой список <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">объявлений переменных</a>, описывающий элементы структуры .</div>
+<div><span class="eOperator">struct [имя_шаблона] {список_элементов};</span></div>
+<a name="T828724782"></a>
+<a name="T696383489"></a>
+<div>Область действия шаблона структуры определяется также, как и для переменной. Если шаблон объявляется внутри <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">блока</a>, то он известен только в пределах этого блока. Однако, обычно шаблон структуры задается в начале файла или в заголовочном файле. Таким способом шаблон можно сделать доступным всем определенным в файле <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функциям</a>. Как только шаблон описан, его имя может быть использовано в любом месте файла для объявления соответствующих переменных.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">struct emp {
+            char name[21];
+            char id[8];
+            double salary;   /*это шаблон, память не выделяется */
+            };
+int main ()
+{
+struct emp prgmr;            /*это объявление: выделяется память под переменную prgmr*/
+int num;
+...
+}
+int f(void)
+{
+struct emp supervisor;       /*это объявление: выделяется память под переменную supervisor*/
+...
+}
+</pre>
+</div>
+<div>Элементы структуры хранятся в памяти в том порядке, в каком они появляются в списке элементов. При этом в структуру могут быть включены неиспользуемые байты, необходимые для соблюдения требований процессора к выравниванию данных. Так числовые типы данных обычно выравниваются на границу слова. На рис.&nbsp;1 показана гипотетическая ситуация, так как фактический размер структуры машинно-зависим.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/struct.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Элементы структуры</div></div>
+<div>Ниже рассматриваются альтернативные способы объявления структур.</div>
+<div class="eSubTitle">Одновременное задание имени структуры и объявление структурных переменных</div>
+<a name="T1961386404"></a>
+<div>По желанию программиста, переменные типа структуры могут быть объявлены сразу после описания шаблона. Если шаблон и объявление переменной задаются вне функции, то переменная является <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внешней</a>, в противном случае область ее видимости ограничивается блоком.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">struct emp {
+            char   name[21];
+            char   id[8];
+            double salary;
+           } prgmr, employee[100], *p;
+</pre>
+</div>
+<a name="T541845194"></a>
+<div>В прим.&nbsp;2 объявляется структура <span class="eOperator">prgmr</span>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив структур</a> <span class="eOperator">employee </span>и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на структуру <span class="eOperator">p</span>.</div>
+<div class="eSubTitle">Пропуск имени структуры</div>
+<div>Другой способ состоит в том, чтобы опустить имя шаблона структуры. В этом случае все переменные данного типа должны быть перечислены после шаблона.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">struct {
+        char   name[21];
+        char   id[8];
+        double salary;
+       } prgmr, employee[100], *p;
+</pre>
+</div>
+<div class="eSubTitle">Использование объявления typedef</div>
+<a name="T1011348501"></a>
+<a name="T74783515"></a>
+<div>Третий способ состоит в том, чтобы использовать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператор typedef</a>. Это избавит программиста от необходимости писать как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевое слово</a> <span class="eOperator">struct</span>, так и имя структуры при объявлении структурных переменных. Использование оператора <span class="eOperator">typedef </span>для задания однословного имени нового типа может также способствовать повышению удобочитаемости программы.</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><pre class="eListing">typedef struct emp {
+                    char   name[21];
+                    char   id[8];
+                    double salary;
+                   } EMPLOYEE;
+EMPLOYEE prgmr, employee[100], *p;
+</pre>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-96.html">‹ Предыдущий</a>

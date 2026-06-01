@@ -23,7 +23,34 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-1/mod-31.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Алгоритм численного интегрирования систем дифференциальных уравнений</a>
+</div>
+<a name="T816772529"></a>
+<a name="T142723936"></a>
+<a name="T1371454889"></a>
+<div>Одна из удачных реализаций <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">неявного метода</a> второго порядка, которую можно считать модификацией <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">метода трапеций</a>, основана на комбинированном использовании явной и неявной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формул Эйлера</a>. Рассмотрим вопрос, почему такое комбинирование снижает погрешность и приводит к повышению порядка метода.</div>
+<div>Предварительно отметим, что в методах <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=1/?k=10">-го порядка локальная погрешность, т.е. погрешность, допущенная на одном <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=2/?k=10">-м шаге интегрирования, оценивается старшим из отбрасываемых членов<br><img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=3/?k=10"><br>в разложении решения <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=4/?k=10"> в ряд Тейлора, где <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=5/?k=10"> — постоянный коэффициент, зависящий от метода, <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=6/?k=10"> — норма вектора <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=7/?k=10">-х производных <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=4/?k=10">, которая оценивается с помощью конечно-разностной аппроксимации, <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=8/?k=10"> — значение времени <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=9/?k=10"> внутри шага.</div>
+<a name="T440674147"></a>
+<div>Если <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=2/?k=10">-й шаг интегрирования в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">комбинированном методе</a> был неявным, т.е. выполненным по неявной формуле, то следующий шаг с тем же значением <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=10/?k=10"> должен быть явным. Используя разложение решения <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=4/?k=10"> в ряд Тейлора в окрестностях точки <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=11/?k=10">, получаем для <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=12/?k=10">-го неявного шага<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=13/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br>и для <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=14/?k=10">-го явного шага<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=15/?k=10"></td><td align="right" class="eFormula">&nbsp;(2)</td></tr></tbody></table><br>где <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=16/?k=10"> и <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=17/?k=10"> — величины неявного и явного шагов, а значения производных относятся к моменту <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=11/?k=10">. Подставляя (1) в (2), при <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=18/?k=10"> получаем:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=19/?k=10"></td><td align="right" class="eFormula">&nbsp;(3)</td></tr></tbody></table><br>т.е. погрешности, обусловливаемые квадратичными членами в (1) и (2) взаимно компенсируются, и старшим из отбрасываемых членов становится член с <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=20/?k=10">. Следовательно, изложенное комбинирование неявной и явной формул Эйлера дает метод интегрирования второго порядка.</div>
+<div>Неявные методы и, в частности, рассмотренный комбинированный метод целесообразно использовать только при переменной величине шага. Действительно, при заметных скоростях изменения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">фазовых переменных</a> погрешность остается в допустимых пределах только при малых шагах, в квазистатических режимах шаг может быть во много раз больше.</div>
+<a name="T1188055803"></a>
+<div>Алгоритмы <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">автоматического выбора шага</a> основаны на сравнении допущенной и допустимой локальных погрешностей. Например, вводится некоторый диапазон (коридор) погрешностей <img align="absmiddle" src="/?frm/?doc=110_Simul/2007.mod/?n=21/?k=10">, в пределах которого шаг сохраняется неизменным. Если же допущенная погрешность превышает верхнюю границу диапазона, то шаг уменьшается, если же выходит за нижнюю границу, то шаг увеличивается.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-1/">← Оглавление</a>
         <a href="/rk6-edu/course-1/mod-29.html">‹ Предыдущий</a>

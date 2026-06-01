@@ -23,7 +23,49 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-13/mod-22.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Эволюционные вычисления</a>
+</div>
+<a name="T561166639"></a>
+<div>Потребности в решении  задач дискретной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оптимизации</a> имеют место в различных приложениях и,  в первую очередь, при проектировании технических объектов и при управлении сложными процессами. Наиболее важные задачи в этих приложениях относятся к классу NP-трудных  и характеризуются большими размерностями. Для решения таких задач применение известных точных методов оптимизации оказывается, как правило, невозможным. Поэтому находят применение приближенные методы оптимизации, среди которых  перспективными зарекомендовали себя эволюционные методы. В настоящее время активно изучаются и развиваются три группы эволюционных методов – <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">генетические методы</a> (Genetic Algorithms - GA), методы поведения «толпы» (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Particles Swarm Optimization</a> - PSO) и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">методы «колонии муравьев</a>» (Ant Colony Optimization - ACO).</div>
+<div>Начало применению генетических алгоритмов для решения задач оптимизации положил Д.Холланд в 1975 г. [1]. Фундаментальный вклад в развитие GA внес Д.Гольдберг [2]. В дальнейшем генетические алгоритмы успешно применялись для различных задач синтеза конструкций, составления расписаний, маршрутизации транспортных средств, компоновки оборудования, раскроя материалов и др.</div>
+<div>Алгоритм PSO первоначально был описан применительно к задачам математической биологии  в 1987 г. [3]. Сведения об   алгоритмах и результатах решения с помощью методов PSO ряда задач оптимизации приведены, например, в [4,5].</div>
+<div>Впервые идея использования для решения оптимизационных  задач аналогии с поведением колонии муравьев  высказана  в 1992 г. [6]. Применение методов ACO   показано на примерах задачи коммивояжера, раскроя и упаковки и др. Обзор методов ACO приведен в  [7].</div>
+<a name="T1594118679"></a>
+<a name="T803471561"></a>
+<div>Для применения эволюционных методов к решению конкретной задачи нужно, во-первых, сформулировать множество <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">управляемых параметров</a> X,   во-вторых, разработать модель приложения в виде алгоритма вычисления <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">целевой функции</a> F(X), в-третьих, разработать алгоритмическую реализацию эволюционного метода. При этом, учитывая приближенность и статистическую природу этих методов, нужно стремиться к получению высокоэффективных алгоритмов с позиции как точности, так и трудоемкости вычислений. </div>
+<a name="T164083053"></a>
+<div> Общая схема  вычислений на основе <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">эволюционных методов</a> представлена на рис. 1. </div>
+<div>Вычисления начинаются с формирования множества <img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=1/?k=10"> информационных объектов <img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=2/?k=10">=(<img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=3/?k=10">,<img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=4/?k=10">,…<img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=5/?k=10">),  <img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=6/?k=10">=1,2,…<img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=7/?k=10">, которые в соответствии с принятой в GA терминологией называют <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">хромосомами</a> (другие возможные названия – агенты, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">фреймы</a>, кортежи). Хромосома состоит из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">генов</a> <img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=8/?k=10">,  значения генов  называют <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аллелями</a>, а позиции генов в хромосоме - <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">локусами</a>. Обычно в задачах оптимизации гены отождествляют с управляемыми параметрами. Множество <img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=1/?k=10"> называют популяцией, а состав популяции в конкретный момент вычислений – поколением. </div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=120_Opt/5019.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp; Схема эволюционных вычислений</div></div>
+<div>Эволюция представляет собой многошаговый процесс. На каждом шаге формируются новые хромосомы и <img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=7/?k=10"> хромосом отбирается (селектируется) в новое поколение. Формирование хромосом нового поколения происходит с использованием генного материала текущего поколения и с учетом   качества этого материала.   Качество <img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=6/?k=10">-й хромосомы оценивается значением целевой функции <img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=9/?k=10">(<img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=10/?k=10">), а качество каждого поколения  – наилучшим (минимальным) значением <img align="absmiddle" src="/?frm/?doc=120_Opt/5019.mod/?n=11/?k=10"> целевой функции, полученным на данный момент вычислений.</div>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. Holland J. Adaptation in Natural and Artificial  Systems. – Univ. of Michigan Press, 1975.<br>
+2. Goldberg, D. E.   Genetic Algorithms in Search, Optimization, and Machine Learning. - Addison-Welsey, 1989.<br>
+3. Deneubourg J.-L., Goss S., Pasteels J.M., Fresneau D. and Lachaud J.-P. Self-organization mechanisms in ant societies (II): learning in foraging and division of labor. In: From Individual to Collective. Behavior in Social Insects. -  Basel: Birkhauser, 1987. <br>
+4. Eberhart, R. C., and Kennedy, J.   A New Optimizer Using Particles Swarm Theory, Proc. Sixth International Symposium on Micro Machine and Human Science. //    IEEE Service Center, Piscataway, 1995. <br>
+5. Eberhart, R. C., Dobbins, R. W., and Simpson, P.   Computational Intelligence PC Tools. - Boston: Academic Press , 1996.<br>
+6. Dorigo M. Optimization, Learning and Natural Algorithms. PhD thesis, Dipartimento di Electronica. - Politecnico di Milano, 1992.<br>
+7. Dorigo M., Caro G., Gambardella L.  Ant Algorithms for Discrete Optimization. //Artificial Life, v.5, 1999, # 3.<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-13/">← Оглавление</a>
         <a href="/rk6-edu/course-13/mod-20.html">‹ Предыдущий</a>

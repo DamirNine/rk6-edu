@@ -23,7 +23,116 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-13.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Таблица определения типов DTD</a>
+</div>
+<a name="T2098555490"></a>
+<a name="T2134277063"></a>
+<div>Декларация <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">DTD</a> используется для отображения структуры <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-документа</a> и состоит из объявлений используемых в документе типов элементов, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибутов</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сущностей</a>.</div>
+<div>Типы элементов задаются с помощью строк:</div>
+<pre class="eListing">&lt;!ELEMENT тип_элемента содержание&gt;
+</pre>
+<div>Содержание — либо тип содержимого элемента (модель элемента), либо список типов элементов, вложенных в данный элемент в иерархической структуре:</div>
+<pre class="eListing">&lt;!ELEMENT тип_элемента (#PCDATA)&gt;
+&lt;!ELEMENT тип_элемента (список_типов_вложенных_элементов)&gt;
+</pre>
+<div>Модель элемента (<span class="eOperator">#PCDATA</span>) означает, что элемент может состоять только из символьных данных, модель <span class="eOperator">ANY</span> допускает любые данные, а модель <span class="eOperator">EMPTY</span> соответствует пустому (бесконтейнерному) элементу. Возможен также смешанный тип содержимого, когда элемент может содержать и символьные данные, и вложенные элементы (т.е. одним из пунктов списка вложенных элементов будет <span class="eOperator">#PCDATA</span>).</div>
+<div>Пример описания типов элементов в DTD (назначение знаков <span class="eOperator">+</span> и <span class="eOperator">?</span>, имеющихся в примере, будет пояснено ниже):</div>
+<pre class="eListing">&lt;!ELEMENT metadata (name, authors, type, description, 
+    owner?, year?, price?)&gt;
+&lt;!ELEMENT name (#PCDATA)&gt;
+&lt;!ELEMENT authors (#PCDATA)+&gt;
+&lt;!ELEMENT type (#PCDATA)&gt;
+&lt;!ELEMENT description (#PCDATA)&gt;
+&lt;!ELEMENT owner (#PCDATA)&gt;
+&lt;!ELEMENT year (#PCDATA)?&gt;
+&lt;!ELEMENT price (#PCDATA)?&gt;
+</pre>
+<div>Атрибуты служат для характеристики типов элементов. С помощью типов элементов и значений их атрибутов можно сортировать части документа, устанавливать между ними отношения, выделять нужные экземпляры и т.п. Объявление атрибутов, относящихся к определенному типу элементов, имеет вид:</div>
+<pre class="eListing">&lt;!ATTLIST тип_элемента имя_атрибута тип_атрибута статус&gt;
+</pre>
+<div>Атрибуты могут быть строкового, маркерного или нумерованного типов. Строковый тип обозначается <span class="eOperator">CDATA</span> и соответствует типу данных string, т.е. атрибут типа <span class="eOperator">CDATA</span> в документе должен быть записан в виде строки символов в кавычках. Маркерный тип отличается от строкового тем, что на значения атрибута маркерного типа накладываются некоторые ограничения. Имеется несколько вариантов ограничений и для каждого из них выделен определенный идентификатор, записываемый в поле тип_атрибута. Значения атрибута нумерованного типа либо выбираются из конечного списка значений, записанного в поле тип_атрибута, либо представляют собой тексты предопределенного формата (например, форматов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">HTML</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">SGML</a> и т.п.), на что указывает запись <span class="eOperator">NOTATION  список_форматов </span> в поле тип_атрибута.</div>
+<div>Статус может иметь четыре значения (варианта). Вариант <span class="eOperator">#REQUIRED</span> используется, если для соответствующих типов элементов в документе запись значения данного атрибута обязательна. Вариант <span class="eOperator">#IMPLIED</span> используется, если значение атрибута в документе использовать необязательно. Значение "значение_по_умолчанию", записываемое в поле статус, есть значение атрибута, используемое по умолчанию. В случае варианта <span class="eOperator">#FIXED</span> "значение_по_умолчанию" никакое другое значение атрибута, кроме указанного по умолчанию, в документе использовать нельзя.</div>
+<div>Отметим, что в одной записи может быть описано более одного атрибута.</div>
+<div>Приведем несколько примеров объявлений атрибутов. Предварительно напомним, что размеченный текст в элементе "Документ" состоит из элементов, помещаемых в контейнеры, т.е. между парой тегов. Например, такими тегами могут быть <span class="eOperator">&lt;item&gt;</span> и <span class="eOperator">&lt;/item&gt;</span>, <span class="eOperator">&lt;termin&gt;</span> и <span class="eOperator">&lt;/termin&gt;</span>, <span class="eOperator">&lt;description&gt;</span> и <span class="eOperator">&lt;/description&gt;</span>, <span class="eOperator">&lt;examples&gt;</span> и <span class="eOperator">&lt;/examples&gt;</span>. Значения атрибутов могут включаться в открывающий тег, как это сделано для тега <span class="eOperator">&lt;T1&gt;</span> в следующем примере.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">&lt;!ATTLIST T1 A1 CDATA #REQUIRED&gt;
+</pre>
+<div>Здесь элемент типа T1 имеет атрибут A1, его значения относятся к типу данных CDATA, значение атрибута A1 должно быть указано в открывающем теге каждого элемента типа T1, например:</div>
+<pre class="eListing">&lt;T1 A1='high-level'&gt; Программный комплекс CATIA &lt;/T1&gt;
+</pre>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">&lt;!ATTLIST book title CDATA #REQUIRED author CDATA #IMPLIED 
+    publisher CDATA #REQUIRED&gt;
+</pre>
+<div>Элемент типа book имеет три атрибута строкового типа, значения атрибута author указывать необязательно, два других атрибута обязательны.</div>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">&lt;!ATTLIST ray color (red|green|blue) "red"&gt;
+</pre>
+<div>Атрибут color элемента типа ray может обозначать красный, зеленый или синий цвет, по умолчанию задается красный цвет.</div>
+</div>
+<div>Сущности используют для присвоения псевдонимов некоторым блокам данных, что позволяет в документе лаконично ссылаться на эти данные, на данные из ранее разработанных документов, на блок многократно используемых данных, включать в XML-документ данные различных форматов, например, графические данные.</div>
+<div>Блок данных может быть внутренним примитивом, т.е. фразой, непосредственно записываемой в объявлении:</div>
+<pre class="eListing">&lt;!ENTITY псевдоним "фраза"&gt;
+</pre>
+<div>Например, с помощью ENTITY можно вводить аббревиатуры для словосочетаний, как в следующей строке:</div>
+<pre class="eListing">&lt;!ENTITY IEEE "Institute of Electrical and Electronics Engineers"&gt;
+</pre>
+<div>В документе записи вида <span class="eOperator">&amp;IEEE</span>; будут заменены на блок XML-данных <span class="eOperator">Institute of Electrical and Electronics Engineers</span>.</div>
+<div>Блок XML-данных может быть внешним файлом, и тогда ссылка есть указание адреса файла:</div>
+<pre class="eListing">&lt;!ENTITY псевдоним SYSTEM "адрес_файла"&gt;
+</pre>
+<div>Например:</div>
+<pre class="eListing">&lt;!ENTITY Приложение SYSTEM "http://ifc.com/addition1.xml"&gt;
+</pre>
+<div>В документе записи вида <span class="eOperator">&amp;Приложение; </span> будут заменены на XML-содержимое файла с указанным адресом.</div>
+<div>Несколько сложнее выглядит включение в XML-документ внешних не XML-данных. В этом случае строка ссылки имеет вид:</div>
+<pre class="eListing">&lt;!ENTITY псевдоним SYSTEM "адрес_файла" NDATA имя_нотации&gt;
+</pre>
+<div>Здесь имя_нотации — описание формата не XML-данных или адрес программы для обработки этих данных.</div>
+<div>Например, если нужно внутри элемента типа item разместить рисунок, данные о котором находятся в файле fig.bmp в формате BMP, то в DTD нужно добавить строки</div>
+<pre class="eListing">&lt;!ELEMENT place EMPTY&gt;
+&lt;!ATTLIST place par ENTITY #REQUIRED&gt;
+&lt;!NOTATION BMP SYSTEM "pbrush.exe"&gt;
+&lt;!ENTITY figure SYSTEM "fig.bmp" NDATA BMP&gt;
+</pre>
+<div>Первые две строки объявляют пустой элемент place с атрибутом par маркерного типа, в котором используется идентификатор <span class="eOperator">ENTITY</span>. Назначение идентификатора <span class="eOperator">ENTITY</span> — ограничивать возможные значения атрибута значениями псевдонимов, введенных в DTD. Две следующие строки задают месторасположение графических данных (файл fig.bmp) и способ их обработки (программа pbrush.exe). В самом документе в контейнерах элементов типа item достаточно записать следующую строку, чтобы при визуализации элементов типа item появилось изображение в соответствии с данными файла fig.bmp:</div>
+<pre class="eListing">&lt;place par="figure" /&gt;
+</pre>
+<div>Блок данных, фигурирующий в DTD, может быть списком атрибутов, который используется в DTD многократно. Его целесообразно заменить псевдонимом, перед которым нужно записать символ <span class="eOperator">%</span>:</div>
+<pre class="eListing">&lt;!ENTITY % имя_перечня 'список_атрибутов'&gt;
+</pre>
+<div>Список атрибутов записывается по тем же правилам, что и в объявлении <span class="eOperator">ATTLIST</span>.</div>
+<div>Нужно сделать ряд дополнительных пояснений особенностей языка XML.</div>
+<div>Прежде всего рассмотрим, как в определении типов элементов оформляется содержание в виде списка типов элементов нижнего уровня, вложенных в элемент верхнего уровня.</div>
+<div>Во-первых, этот список может быть представлен перечислением типов элементов нижнего уровня в круглых скобках через запятую. Например:</div>
+<pre class="eListing">&lt;!ELEMENT item (termin,description,examples)&gt;
+</pre>
+<div>В этом случае вложенные типы termin, description, examples должны обязательно присутствовать в каждом элементе верхнего уровня типа item, причем по одному разу и в том же порядке, как они представлены в списке.</div>
+<div>Во-вторых, элементы списка можно отделять не запятыми, а символом "вертикальная черта":</div>
+<pre class="eListing">&lt;!ELEMENT item (termin|description|examples)&gt;
+</pre>
+<div>Теперь в элементе типа item может присутствовать единственный вложенный элемент одного из типов termin, description, examples.</div>
+<div>В обоих рассмотренных случаях можно варьировать характером ограничений, используя после элементов списка (или после скобки, закрывающей часть или весь список) соответствующие знаки <span class="eOperator">+</span>, <span class="eOperator">*</span> и <span class="eOperator">?</span>. Знак <span class="eOperator">+</span> означает, что элемент соответствующего типа (или группа элементов, типы которых перечислены в списке, заключенном в круглые скобки) может присутствовать в элементе верхнего уровня один или более раз. Знак <span class="eOperator">*</span> отличается от знака <span class="eOperator">+</span> тем, что указываемый им тип элемента может отсутствовать в элементе верхнего уровня. Знак <span class="eOperator">?</span> отличается от знака <span class="eOperator">*</span> тем, что позволяет использовать вложенный элемент не более одного раза. Так, в нашем примере благодаря знаку <span class="eOperator">?</span> после элемента типа examples, можно не во всех пунктах словаря приводить примеры, что и сделано для пункта с атрибутом number = '_14'. Если бы нам требовалось разрешить произвольные число и порядок следования вложенных элементов, то нужно было бы использовать описание элемента типа item в виде</div>
+<pre class="eListing">&lt;!ELEMENT item (termin|description|examples)+&gt;
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-11.html">‹ Предыдущий</a>

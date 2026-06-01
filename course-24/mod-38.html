@@ -23,7 +23,46 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-39.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Условная операция</a>
+</div>
+<a name="T575325934"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Условная операция</a>- операция языка Си, которая по действию аналогична <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператору if-else</a> (<a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Управляющий оператор if</a>).</div>
+<a name="T798225181"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Синтаксис</a> условной операции:</div>
+<div><span class="eOperator">выражение1 ? выражение2 : выражение3</span></div>
+<a name="T803028594"></a>
+<div>Если <span class="eOperator">выражение1 </span>истинно, значением всего <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражения</a> будет значение <span class="eOperator">выражения2</span>, иначе — <span class="eOperator">выражения3</span>.</div>
+<a name="T1233060480"></a>
+<div>Вместо оператора <span class="eOperator">if-else</span> иногда может быть использована условная операция <span class="eOperator">?:</span>. Она выполняет проверку и выбор между двумя значениями внутри одного выражения. В отличие от конструкции <span class="eOperator">if-else</span>, являющейся <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператором</a>, эта операция может использоваться там, где синтаксис требует указывать выражение. Поэтому использование условной операции зачастую является более кратким и эффективным.</div>
+<a name="T424168142"></a>
+<div>Подобно другим операциям языка Си, условная операция  указана в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">таблице приоритетов</a> (<a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Приоритеты операций</a>). </div>
+<div>Это единственная операция, составленная из двух символов, разделенных между собой выражениями (в отличии от операций <span class="eOperator">&amp;&amp;</span>, <span class="eOperator">||</span>, <span class="eOperator">&gt;=</span>, <span class="eOperator">&lt;=</span> и т.д.). Это единственная операция, требующая три операнда.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">/* Функция вычисления абсолютной величины*/
+int abs(int x)
+{
+   if ( x &gt;= 0)
+       return x;
+   else
+       return -x;
+}
+</pre>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">/* Альтернативный вариант*/
+int abs(int x)
+{
+   return (x &gt;= 0) ? x : -x;
+}
+</pre>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div><span class="eOperator">largest = x &gt; max ? x : max;</span></div>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-37.html">‹ Предыдущий</a>

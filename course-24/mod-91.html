@@ -23,7 +23,35 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-92.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Указатель на void</a>
+</div>
+<a name="T48143235"></a>
+<a name="T541845194"></a>
+<div>Тип "<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">указатель на неопределенный тип</a>" (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель на void</a>) — обобщенный указательный тип. Значение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указателя</a> любого типа может быть преобразовано и присвоено указателю на тип void и наоборот без изменения его значения. К такому указателю нельзя применять операцию косвенного доступа. Для применения этой операции указатель  на <span class="eOperator">void </span>надо привести к определеннму типу.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">int main()
+{
+  int a_function(void *);
+  char name[50] = "William";
+  int num = 95;
+
+  a_function(name);
+  /* передан указатель на char */
+  a_function(&amp;num);
+  /* передан указатель на int */
+}
+
+int a_function(void *vptr)
+{
+  ...
+}
+</pre>
+</div>
+<div>В общем случае, отличном от рассмотренного примера, результат преобразования значений и присваивания указателей различных типов непредсказуем.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-90.html">‹ Предыдущий</a>

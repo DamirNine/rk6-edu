@@ -23,7 +23,70 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-62.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Массивы</a>
+</div>
+<a name="T1992766606"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Массив</a> – это упорядоченный набор объектов, тип  которых совпадает, например, набор целых чисел или символов. В массиве можно хранить множество однотипных объектов без необходимости введения отдельного имени переменной для каждого из них. Массив может быть одномерным или многомерным. Количество измерений и длина каждого из измерений определяет общую длину массива, которая ограничена лишь адресным пространством конкретного компьютера. </div>
+<a name="T2045169592"></a>
+<a name="T1133808979"></a>
+<div>Массивы являются <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">производными типами</a> данных, создаваемыми из существующих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типов данных</a>.</div>
+<div>Массив, как и любой другой объект в языке Си, должен быть объявлен перед тем, как он будет использован:</div>
+<br>
+<div><span class="eOperator">тип  идентификатор[длина измерения 1][длина измерения 2]...[длина измерения n];</span><span class="eOperator"></span><span class="eOperator"> </span></div>
+<br>
+<a name="T256200320"></a>
+<div>В объявлении массива в квадратных скобках после <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатора</a> (имени массива) указывается длина каждого измерения. Количество измерений массива определяется по числу квадратных скобок в его объявлении.</div>
+<a name="T295013967"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Индекс массива</a> определяет используемый элемент массива и указывается в квадратных скобках после имени массива. Индекс массива — это целочисленное выражение, значение которого может быть в диапазоне от 0 до значения, равного длине измерения, уменьшенной на 1. </div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>В языке Си нумерация элементов массива всегда начинается с 0.</div>
+</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div><span class="eOperator">сhar id[8];</span></div>
+<div>Это объявление отводит 8 байт для 8-элементного массива символов.</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/massiv.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Одномерный массив</div></div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div><span class="eOperator">float price[3];</span></div>
+<div>Это объявление отводит место для 3 вещественных чисел.</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/massiv.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Одномерный массив</div></div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div><span class="eOperator">int table[3][3];</span></div>
+<div>Это объявление двумерного массива целых чисел.</div>
+<div>Этот массив можно рассматривать как набор из трех 3-элементных массивов целых чисел.</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/massiv.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Двумерный массив</div></div>
+<div>Аналогично, трехмерный массив <span class="eOperator">val[5][4][3]</span> можно рассматривать как пять массивов размерности 4 на 3.</div>
+<div>Обычно строкам и столбцам придается определенный смысл.</div>
+<div>Элементы массива хранятся в памяти последовательно. Если первый элемент символьного массива <span class="eOperator">id </span>хранится по адресу 5000, то второй будет храниться по адресу 5001, третий – по адресу 5002 и т.д.</div>
+<div>Двумерный массив располагается в памяти построчно: сначала нулевая строка, потом 1 и т.д. Можно сказать, что “последний индекс меняется быстрее других”. Элементы <span class="eOperator">table[3][3]</span> хранятся в следующем порядке:</div>
+<div>[0][0], [0][1], [0][2], [1][0], [1][1], [1][2], [2][0], [2][1], [2][2] </div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-60.html">‹ Предыдущий</a>

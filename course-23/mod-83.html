@@ -23,7 +23,78 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-84.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Поэлементная обработка матрицы</a>
+</div>
+<div>Задачи данной группы аналогичны задачам поэлементной обработки одномерных массивов. Реализуются эти задачи использованием вложенных циклов.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Дана матрица вещественного типа <span class="eOperator">p[3][5]</span>. Определить максимальный элемент матрицы и его координаты в матрице.</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/matr2.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<pre class="eListing">int max_matr(float p[][5])
+{ float pmax;
+int i,j,imax,jmax;
+pmax=-1e+6;
+imax=-1;
+jmax=-1;
+for(i=0;i&lt;3;i++)
+   for(j=0;j&lt;5;j++)
+     if (p[i][j]&gt;pmax)
+       {pmax=p[i][j];
+        imax=i;
+        jmax=j;
+       }
+printf("Max Elem. = %7.2f",pmax);
+printf(" imax= %4d",imax+1);
+printf(" jmax=%4d\n",jmax+1);
+return 0;
+}
+</pre>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>Дана вещественная матрица. Определить номер строки, содержащей самую большую сумму элементов.</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/matr2.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<pre class="eListing">int maix_sum(float s[][5])
+{float summ,sumt;
+int i,j,im;
+summ=-1e+6;
+im=-1;
+for(i=0;i&lt;3;i++)
+  {sumt=0;
+   for(j=0;j&lt;5;j++)
+     sumt+=s[i][j];
+   if (sumt&gt;summ)
+     {summ=sumt;
+      im=i;
+     }
+   }
+printf("Max Sum Elem. =");
+printf("%7.2f",Summ);
+printf(" im= %4d \n",im+1);
+return 0;
+}
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-82.html">‹ Предыдущий</a>

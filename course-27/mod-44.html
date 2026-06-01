@@ -23,7 +23,190 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-27/mod-45.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Определение линейного списка. Программирование связных списков в C++</a>
+</div>
+<br>
+<a name="T1676359876"></a>
+<a name="T2145470045"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Линейный список</a> представляет последовательность из n&gt;0 узлов x[1], x[2], ... ,x[n], важнейшей структурной особенностью которой является такое расположение элементов <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">списка</a> один относительно другого, как будто они находятся на одной линии. Иначе говоря, в такой структуре следует соблюдать условие: если n&gt;0 и x[1] является первым узлом, а x[n] – последним, то k-тый узел x[k] следует за x[k-1] узлом и перед x[k+1] узлом для любого k лежащего в промежутке от 1 до n.</div>
+<br>
+<div class="eSubTitle">С линейными списками могут выполняться следующие операции:</div>
+<ol class="eList"><li>получение доступа к x[k]  элементу списка для проверки и/или изменения содержания его полей.</li>
+<li>вставка нового узла сразу до или после x[k] узла.</li>
+<li>удаление x[k] узла.</li>
+<li>объединение в один список двух или более линейных списков.</li>
+<li>разбиение линейного списка на два и более списка.</li>
+<li>создание копии линейного списка.</li>
+<li>определение количества узлов с списке.</li>
+<li>сортировка узлов в порядке возрастания значений в определенных полях этих узлов.</li>
+<li>поиск узла с заданным значением некоторого поля.</li>
+</ol>
+<br>
+<a name="T1365804596"></a>
+<a name="T1200223553"></a>
+<a name="T33524358"></a>
+<a name="T226380583"></a>
+<a name="T1015016514"></a>
+<a name="T1068505"></a>
+<div>Линейные списки, в которых <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операции вставки</a>, удаления и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операции доступа к значению</a> чаще всего выполняются в первом и последнем узле получили специальное название: <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">стек</a> – линейный список, в котором операции вставки и удаления (и как правило доступа к данным) выполняются только на одном из концов списка; <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">очередь</a> (односторонняя очередь) – линейный список, в котором все операции вставки выполняются на одном конце списка, а все <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операции удаления</a> (и доступа, как правило) – на другом; <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">дек</a> (двухсторонняя очередь) – линейный список, в котором все операции вставки, удаления и доступа выполняются с обоих концов. Различают дек с ограниченным вводом и ограниченным выводом, в котором операция удаления и вставки элементов соответственно выполняется только на одном из концов.</div>
+<br>
+<br>
+<div class="eSubTitle">  Программирование связных списков в C++.</div>
+<br>
+<a name="T934904975"></a>
+<div>Под <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">связными списками</a> понимается набор элементов, причем каждый из них является часть узла Node, который также содержит ссылку Link.</div>
+<br>
+<div><span class="eOperator">struct node{Item item; node *next;};</span></div>
+<div><span class="eOperator">typedef node* Link;</span></div>
+<br>
+<div>Соответственно узлы в связном списке ссылаются на узлы и  поэтому связный список называется самоссылочным.</div>
+<div>Простые линейные списки можно рассматривать как последовательность , в которой принято одно из следующих соглашений для ссылки последнего узла, а именно:</div>
+<ol class="eList"><li>пустая (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">NULL</a>) ссылка, не указывает ни на какой узел</li>
+<li>ссылка, которая указывает на фиктивный узел, который не содержит элемента</li>
+<li>ссылка, которая указывает на первый узел, делает список циклическим</li>
+</ol>
+<br>
+<div>В каждом случае отслеживание ссылок от первого элемента до последнего формирует последовательность расположения элементов.</div>
+<div>При программировании связных списков как только возникает необходимость использовать новый узел в списке для него необходимо резервировать память. </div>
+<div>При объявлении переменной типа node для нее резервируется память во время компиляции. Однако часто приходится организовывать вычисления, связанные с резервирование памяти во время выполнения посредством вызовов системных операторов управления памятью.</div>
+<br>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">link x = new node;
+
+Struct node
+{
+Item item; 
+node *next;
+node (Item x; node *t)
+
+iteam = x;
+
+next = t;
+};
+link t = new(x,t);
+ 
+
+Если хотим удалить элемент
+ 
+t = x -&gt; next;
+x -&gt; next = t -&gt; next;
+или
+x -&gt; next = x -&gt; next;
+x -&gt; next = t;
+
+Если хотим добавить элемент
+ 
+t-&gt;next = x -&gt; next;
+t -&gt;next = t;
+</pre>
+</div>
+<br>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">Пример циклического списка (задача Иосифа).
+
+Struct node
+{
+Item item; 
+node *next;
+node (Item x; node *t)
+
+item = x;
+
+next = t;
+};
+
+typedef node *link;
+
+int main(int argc; char *argv[])
+{
+int i;
+N = atoi(argv[1]);
+M = atoi(argv[2]);
+
+link t = new node(1,1);
+t -&gt; next = t;
+link x = t;
+
+for(i=2; i&lt;=N; i++)
+
+x=(x -&gt; next = new node a,t);
+while(x! = x -&gt; next)
+{
+for(i=1; i&lt;N; i++)
+x = x -&gt; next;
+
+
+x -&gt; next + x -&gt; next -&gt; next;
+}
+cout &lt;&lt; x -&gt; item &lt;&lt; endl;
+}
+}
+</pre>
+<div>N=9   M=5</div>
+<div>517436928</div>
+</div>
+<div class="eSubTitle">Соглашение о ведущем и завершающем узлах связных списков.</div>
+<br>
+<div><span style="font-weight:bold; ">Список циклический (не бывает пустым)</span></div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="20.0%"><td width="50.0%" class="eTable">Операция</td><td width="50.0%" class="eTable">Реализация</td></tr>
+<tr height="20.0%"><td class="eTable">вставка t после i</td><td class="eTable">t -&gt; next = x -&gt; next;</td></tr>
+<tr height="20.0%"><td class="eTable">удаление после x</td><td class="eTable">x-&gt; next = t; x -&gt; next = x -&gt; next -&gt; next; </td></tr>
+<tr height="20.0%"><td class="eTable">цикл обхода</td><td class="eTable">t = head; do {...t= t -&gt; next;} while(t!= head)</td></tr>
+<tr height="20.0%"><td class="eTable">проверка на наличие минимум одного элемента</td><td class="eTable">if (head -&gt; next == head)</td></tr>
+</tbody></table><br>
+<br>
+<div><span style="font-weight:bold; ">Ведущий указатель, Null – указатель завершающего узла.</span></div>
+<div class="auto" style="text-align:right">Таблица 2&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="20.0%"><td width="50.0%" class="eTable">инициализация</td><td width="50.0%" class="eTable">head = 0</td></tr>
+<tr height="20.0%"><td class="eTable">вставка f после x</td><td class="eTable">if ( x==0 || head = t) head -&gt; next =0  else { t -&gt; next = x -&gt; next; x -&gt; next =t;  }</td></tr>
+<tr height="20.0%"><td class="eTable">удаление после x</td><td class="eTable">t = x -&gt; next; x -&gt; next = t -&gt; next;</td></tr>
+<tr height="20.0%"><td class="eTable">цикл обхода</td><td class="eTable">for( t= head; t!=; t = t -&gt; next) ...</td></tr>
+<tr height="20.0%"><td class="eTable">проверка на пустоту</td><td class="eTable">if(head == 0)</td></tr>
+</tbody></table><br>
+<br>
+<div><span style="font-weight:bold; ">Фиктивный ведущий узел, Null – указатель завершающего узла</span></div>
+<div class="auto" style="text-align:right">Таблица 3&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="20.0%"><td width="50.0%" class="eTable">инициализация</td><td width="50.0%" class="eTable">head = new node; head -&gt; next =0;</td></tr>
+<tr height="20.0%"><td class="eTable">вставка t после x</td><td class="eTable">t -&gt; next = x -&gt; next; x -&gt; next = t;</td></tr>
+<tr height="20.0%"><td class="eTable">удаление после x</td><td class="eTable">t = x -&gt; next; x -&gt; next = t -&gt; next;</td></tr>
+<tr height="20.0%"><td class="eTable">цикл обхода</td><td class="eTable">for( t = head -&gt;next; t!0; t = t-&gt; next)</td></tr>
+<tr height="20.0%"><td class="eTable">проверка на пустоту</td><td class="eTable">if( head -&gt; next == 0)</td></tr>
+</tbody></table><br>
+<br>
+<div><span style="font-weight:bold; ">Фиктивный ведущий и завершающий узлы.</span></div>
+<div class="auto" style="text-align:right">Таблица 4&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="20.0%"><td width="50.0%" class="eTable">инициализация</td><td width="50.0%" class="eTable">head = new node; z = new node; head -&gt; next = z; z -&gt; next -&gt; z;</td></tr>
+<tr height="20.0%"><td class="eTable">вставка t после x</td><td class="eTable">t -&gt; next = x -&gt; next; x -&gt; next = t;</td></tr>
+<tr height="20.0%"><td class="eTable">удаление после x</td><td class="eTable">x -&gt; next = x -&gt; next -&gt; next;</td></tr>
+<tr height="20.0%"><td class="eTable">цикл обхода</td><td class="eTable">for (t = head -&gt; next; t!= x; t=t -&gt; next)</td></tr>
+<tr height="20.0%"><td class="eTable">проверка на пустоту</td><td class="eTable">if( head -&gt; next == x)</td></tr>
+</tbody></table><br>
+<br>
+<div>Для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">связных списков</a> наиболее характерны следующие ошибки:</div>
+<div>1) ссылка на неопределенный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a></div>
+<div>2) использование указателя, который изменяется неизвестным образом</div>
+<div>Причина этих ошибок – возможное присутствие указателей на один и тот же узел.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-27/">← Оглавление</a>
         <a href="/rk6-edu/course-27/mod-43.html">‹ Предыдущий</a>

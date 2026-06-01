@@ -23,7 +23,49 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-21/mod-20.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Алгоритм деления пополам</a>
+</div>
+<a name="T1631944645"></a>
+<a name="T2039875528"></a>
+<a name="T1869977390"></a>
+<div>Рассмотрим следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задачу условной оптимизации</a>: найти минимум <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">одномерной унимодальной функции</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=1/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=2/?k=10">), определенной в замкнутой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">области допустимых значений</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=3/?k=10">=[<img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=4/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=5/?k=10">],<br><img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=6/?k=10"><br></div>
+<a name="T498727690"></a>
+<a name="T1803581065"></a>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм деления пополам</a> или <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">алгоритме равномерного дихотомического поиска</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">испытания</a> проводятся парами. Координаты каждой последующей пары испытаний разнесены между собой на величину <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=7/?k=10">, где <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=8/?k=10">- требуемая точность решения. Испытания производятся в середине ТИН. По значениям <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=9/?k=10">, полученным в этих точках, одна половина ТИН в силу унимодальности функции <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=9/?k=10"> исключается из дальнейшего рассмотрения. Величина <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=10/?k=10"> определяется требуемой точностью решения. Алгоритм относится к классу методов последовательного поиска.</div>
+<div>Более строго описанную схему алгоритма можно записать в нижеследующем виде.</div>
+<ol class="eList"><li>Выполняем присваивания <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=11/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=12/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=13/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=14/?k=10">.</li>
+<li>Вычисляем величины (см. рис.&nbsp;1)<br><img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=15/?k=10"><br></li>
+<li>Вычисляем значения <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=16/?k=10"> функции <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=17/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=18/?k=10">).</li>
+<li>Если <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=19/?k=10">, то выполняем присваивания <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=20/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=21/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=22/?k=10">. Иначе - выполняем присваивания <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=23/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=24/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=22/?k=10"></li>
+<li>Если <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=25/?k=10">, то заканчиваем вычисления. Иначе - выполняем присваивание <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=26/?k=10">=<img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=26/?k=10">+1 и переходим на п.2.<img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=27/?k=10"></li>
+</ol>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0402.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;К определению величин <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">x</span><sub class="eSub">0</sub><sup class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">r</span></sup>,<span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">x</span><sub class="eSub">1</sub><sup class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">r</span></sup>,<span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">x</span><sub class="eSub">2</sub><sup class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">r</span></sup>.</div></div>
+<div>В качестве приближенного значения точки минимума <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=28/?k=10"> с равными основаниями может быть принята любая точка последнего текущего интервала неопределенности.</div>
+<div>Приведенную схему <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма равномерного дихотомического поиска</a> иллюстрирует рис.&nbsp;2.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0402.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Первые две итерации поиска минимума одномерной унимодальной функции с помощью алгоритма равномерного дихотомического поиска.</div></div>
+<div>Легко видеть, что после одной итерации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма равномерного поиска</a> ТИН уменьшается в 2 раза. Поэтому количество итераций <img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=29/?k=10">, необходимых для нахождения минимума функции с точностью ε<sub class="eSub">x</sub>, находится из условия<br><img align="absmiddle" src="/?frm/?doc=MO/ch0402.mod/?n=30/?k=10"><br></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-21/">← Оглавление</a>
         <a href="/rk6-edu/course-21/mod-18.html">‹ Предыдущий</a>

@@ -23,7 +23,44 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-118.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функции getchar() и putchar()</a>
+</div>
+<a name="T234348466"></a>
+<a name="T696383489"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция getchar()</a> — стандартная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция</a> языка Си для ввода символа.</div>
+<a name="T581415280"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявление прототипа функции</a><span class="eOperator">getchar()</span>:</div>
+<div><span class="eOperator">int getchar(void)</span></div>
+<div><span class="eOperator"> </span></div>
+<a name="T1501375161"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция putchar()</a> — стандартная функция языка Си для вывода символа.</div>
+<div>Объявление прототипа функции <span class="eOperator">putchar()</span>:</div>
+<div><span class="eOperator">int putchar(int c)</span></div>
+<a name="T37556405"></a>
+<a name="T637542155"></a>
+<div>Эти объявления находятся в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эти функции, должны включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div><span class="eOperator">#include &lt;stdio.h&gt;</span></div>
+<a name="T68828"></a>
+<div>Функция <span class="eOperator">getchar()</span> читает из стандартного устройства ввода один символ и возвращает его код в соответствии с таблицей кодирования. Если при попытке чтения были обнаружены конец файла или ошибка, функция <span class="eOperator">getchar()</span> возвращает значение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">EOF</a>. При вводе с терминала <span class="eOperator">getchar()</span> возвращает <span class="eOperator">EOF</span>, если пользователь нажал в начале строки комбинацию клавиш &lt;CTRL&gt;, &lt;d&gt;.</div>
+<a name="T645587003"></a>
+<div>Программа, работающая в среде <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС UNIX</a> и использующая функцию <span class="eOperator">getchar()</span> для ввода, не получит вводимые с клавиатуры символы до тех пор, пока пользователь не нажал клавишу &lt;RETURN&gt;. Это позволяет пользователю корректировать набираемые символы (например, с помощью забоя) прежде, чем программа их получит. Однако, некоторые программы, например, редактор “vi”, работают с терминалом в режиме, при котором вводимые символы немедленно становятся доступными программе.</div>
+<div>Функция <span class="eOperator">putchar()</span> выводит один символ в стандартный вывод (по умолчанию — на экран терминала), возвращает при успешном завершении код выводимого символа иначе <span class="eOperator">EOF</span>. Обычно возвращаемое значение не обрабатывается.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
+/* копирование ввода на вывод */
+int main()
+{
+  int c;
+
+  while ((c=getchar())!=EOF)
+     putchar(c);
+}
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-116.html">‹ Предыдущий</a>

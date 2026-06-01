@@ -23,7 +23,88 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-2/mod-75.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Технология SOAP</a>
+</div>
+<a name="T555117299"></a>
+<a name="T1144989962"></a>
+<a name="T2134277063"></a>
+<a name="T752938439"></a>
+<div>В настоящее время все более широкое распространение приобретает технология интеграции Internet-ресурсов, основанная на <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">протоколе SOAP</a> (Simple Object Access Protocol). SOAP — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">транспортный протокол</a>, предназначенный для организации взаимодействия удаленных систем при помощи асинхронного обмена <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-документами</a>. Первоначально SOAP предназначался, в основном, для реализации удалённого вызова процедур (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">RPC</a>).</div>
+<a name="T412171630"></a>
+<div>SOAP — объектная технология, в которой объектами являются Web-службы (Web Services), а для представления обращений к Web-службам используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык XML</a>. Язык разметки XML распознается разными системами, и потому технология SOAP значительно проще реализуется, чем такие технологии как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">CORBA</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">DCOM</a>. </div>
+<a name="T555439606"></a>
+<div>Протокол SOAP обеспечивает взаимодействие распределенных систем независимо от типа объектной модели, операционной системы или языка программирования. Благодаря использованию XML, сообщения SOAP могут передаваться посредством транспортного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протокола HTTP</a>, как правило, не закрываемого <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевыми экранами</a>.</div>
+<div>В стандарте, описывающем протокол SOAP, изложены принципы, по которым может быть осуществлена привязка SOAP-сообщений к абстрактному транспортному протоколу, общая схема создания SOAP-оболочек для RPC-ориентированных интерфейсов, способы возврата сообщений о сбоях, а также конкретная реализация способа оформления сообщений SOAP в качестве содержимого команд GET и POST протокола HTTP.</div>
+<div>Структура SOAP-сообщения показана на рис.&nbsp;1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=270_Web/web208.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Структура SOAP-сообщения</div></div>
+<div>Заголовок HTTP может иметь вид:</div>
+<pre class="eListing">POST/OrderEntry HTTP/1.1
+Host: www.xmlbus.com
+Content-Type: text/xml; charset="utf-8"
+Content-Length: ...
+SOAPAction: ...
+</pre>
+<div>В строке SOAPAction указывается URI получателя запроса или посредника.</div>
+<div>SOAP-заголовок необязателен (но заголовков может быть несколько). Заголовки могут содержать любую информацию, связанную с приложением. В теле сообщения указываются запрашиваемый метод с его аргументами либо XML-документ.</div>
+<div>SOAP-заголовок и тело вложены в конверт, имеющий вид:</div>
+<pre class="eListing">&lt;soap-env:Envelope
+    xmlns:soap-env="http://www.w3.org/2001/06/soap-envelope"&gt;
+       &lt;!-- Далее следует заголовок --&gt;
+  &lt;soap-env:Header&gt;
+...
+  &lt;/soap-env:Header&gt;
+       &lt;!-- Далее следует тело --&gt;
+  &lt;soap-env:Body&gt;
+</pre>
+<pre class="eListing">. . .
+  &lt;/soap-env:Body&gt;
+&lt;/soap-env:Envelope&gt;
+</pre>
+<div>Прием информации, содержащейся в теле SOAP-сообщения, выполняется SOAP-процессором, который пересылает сведения из тела сообщения в запрошенную службу (например, EJB).</div>
+<div>Кроме языка XML и Интернет-протоколов, таких как HTTP, в технологии Web-служб входят следующие компоненты:</div>
+<ul class="eList"><li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык WSDL</a> (Web Service Description Language) — язык объявления возможностей (функций) Web-службы, описания на WSDL являются XML-документами;</li>
+<li>стандарт <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">UDDI</a> (Universal Description, Discovery and Integration), служащий для фиксации возможностей Web-службы.</li>
+</ul>
+<div>Стандарт UDDI помогает Web-сервис найти, WSDL — его охарактеризовать, а SOAP — взаимодействовать с ним.</div>
+<div>Механизм взаимодействия <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">клиента</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сервера</a> в технологии SOAP можно представить в виде последовательности следующих процедур (рис.&nbsp;2):</div>
+<ol class="eList"><li>Клиентское приложение создает экземпляр объекта <span class="eOperator">SOAPClient</span>;</li>
+<li><span class="eOperator">SOAPClient</span> просматривает UDDI, тем самым определяется нужный метод Web-сервиса;</li>
+<li><span class="eOperator">SOAPClient</span> формирует SOAP-сообщение и отправляет его серверу;</li>
+<li>Серверная программа Listener принимает SOAP-сообщение, создает объект <span class="eOperator">SOAPServer</span> и передает ему это сообщение;</li>
+<li><span class="eOperator">SOAPServer</span> вызывает метод Web-сервиса;</li>
+<li>Результаты помещаются объектом <span class="eOperator">SOAPServer</span> в ответное сообщение и передаются клиенту;</li>
+<li>Объект <span class="eOperator">SOAPClient</span> проводит разбор принятого сообщения и возвращает клиентскому приложению результаты работы Web-сервиса.</li>
+</ol>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=270_Web/web208.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Взаимодействие клиента и сервера в SOAP</div></div>
+<div>Пример системы интеграции Internet-ресурсов — платформа .NET Framework компании Microsoft. В нее входят семейство .NET Enterprise Servers, представляющее собой набор корпоративных серверных приложений, и визуальная среда VisualStudio.NET, поддерживающая все основные языки программирования и используемая для разработки и потребления Web-сервисов.</div>
+<div>Компания IBM предлагает сервер приложений <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">WebSphere</a> Application Server, MQ Series для управления сообщениями для объединения систем, включая поддержку SOAP и Web-сервисов на уровне СУБД DB2.</div>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. Понимание SOAP. — http://archival.ru/?q=node/469<br>
+2. SOAP 1.1 — http://www.w3.org/TR/SOAP/<br>
+3. SOAP 1.2 — http://www.w3.org/TR/soap12-part1/<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-2/">← Оглавление</a>
         <a href="/rk6-edu/course-2/mod-73.html">‹ Предыдущий</a>

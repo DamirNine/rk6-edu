@@ -23,7 +23,113 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-82.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Процессы и ресурсы</a>
+</div>
+<div class="eSubTitle">Понятие процесса</div>
+<a name="T1017069202"></a>
+<div>В процессе работы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессор</a> все время выполняет <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">команды</a>, составляющие реализацию <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a>.</div>
+<a name="T2028118192"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Поток</a> (поток команд) — последовательность команд, выполняемых микропроцессором.</div>
+<a name="T469209868"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Процесс</a> — поток вместе с ресурсами, выделенными для обеспечения выполнения программы.</div>
+<a name="T2111903000"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Ресурсы</a> — любые средства вычислительной системы, которые могут быть выделены процессу. Например, память, устройства ввода вывода и, конечно, сам процессор. Таким образом, процесс представляет собой поток команд вместе с выделенными ему (процессу) ресурсами.</div>
+<div>Вообще говоря, процесс может содержать более одного потока. Тем не менее, выделение ресурсов все равно происходит на уровне процесса, и все потоки, относящиеся к процессу, имеют доступ к выделенным ему ресурсам. В дальнейшем, для простоты изложения, будем рассматривать только однопоточные процессы.</div>
+<div>Все процессы можно классифицировать по нескольким параметрам:</div>
+<ol class="eList"><li><span style="font-weight:bold; text-decoration:underline; ">По принадлежности к ЦП:</span></li>
+<ul class="eList"><li>внутренние (выполняемые на центральном процессоре);</li>
+<li>внешние (выполняемые на других процессорах, входящих в вычислительную систему.</li>
+</ul>
+<li><span style="font-weight:bold; text-decoration:underline; ">По принадлежности к ОС:</span></li>
+<ul class="eList"><li>системные (выполняющие функции ОС);</li>
+<li>пользовательские.</li>
+</ul>
+<li><span style="font-weight:bold; text-decoration:underline; ">По генеалогическому признаку:</span></li>
+<ul class="eList"><li>порождающие;</li>
+<li>порожденные.</li>
+</ul>
+<li><span style="font-weight:bold; text-decoration:underline; ">По динамическому признаку:</span></li>
+<ul class="eList"><li>последовательные;</li>
+<li>параллельные;</li>
+<li>комбинированные.</li>
+</ul>
+<li><span style="font-weight:bold; text-decoration:underline; ">По связности:</span></li>
+<ul class="eList"><li>изолированные — не претендующие на какие-либо общие ресурсы, включая процессор (исполняющиеся на разных процессорах);</li>
+<li>информационно-независимые — не использующие общих информационных ресурсов, но в то же время не являющиеся изолированными (например, использующие один процессор);</li>
+<li>взаимодействующие;</li>
+<li>конкурирующие — использующие общий ресурс (ресурсы).</li>
+</ul>
+</ol>
+<div>Между процессами могут существовать следующие отношения:</div>
+<ul class="eList"><li><span style="font-weight:bold; text-decoration:underline; ">Отношение предшествования.</span> Для двух процессов это означает, что первый процесс должен переходить в активное состояние всегда раньше второго.</li>
+<li><span style="font-weight:bold; text-decoration:underline; ">Отношение приоритетности.</span> Процесс, имеющий больший приоритет, получит доступ к общему ресурсу раньше процесса, имеющего меньший приоритет, если оба процесса запросили ресурс одновременно.</li>
+<li><span style="font-weight:bold; text-decoration:underline; ">Отношение взаимного исключения</span> — процессы используют общий ресурс, который не может быть использован обоими процессами одновременно.</li>
+</ul>
+<div>Каждый процесс характеризуется состоянием. Существуют следующие основные состояния, в которых может находиться процесс.</div>
+<ul class="eList"><a name="T1948991315"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Активное состояние</a> (<span class="eOperator">A</span>). Процесс выполняется на процессоре и использует все необходимые ему ресурсы.</li>
+<a name="T394020448"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Состояние готовности</a> (<span class="eOperator">R</span>). Процессу выделены все необходимые ресурсы, за исключением процессора. Процесс не исполняется и ожидает момента, когда в его распоряжение будет предоставлен процессор.</li>
+<a name="T963726541"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Состояние ожидания</a> (блокировки) (<span class="eOperator">L</span>). Процесс не исполняется и ожидает, когда в его распоряжение будут предоставлены все необходимые ресурсы.</li>
+</ul>
+<div>Состояние процесса может изменяться в соответствии со следующей диаграммой (рис.&nbsp;1):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_10.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Если обратиться к примерам из модуля <a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Задачи управления в микропроцессорной системе</a>, то в случае <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">асинхронного обмена</a> при ожидании готовности ведомого устройства <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a> переводится из активного состояния в состояние блокировки до получения сигнала готовности от внешнего устройства. При получении такого сигнала процесс переводится в состояние готовности, а после освобождения процессора — в активное состояние.</div>
+<div>В случае нелинейной системы стабилизации процессы <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_10.mod/?n=1/?k=10"> и <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_10.mod/?n=2/?k=10"> попеременно переводятся в состояния активное и готовности при наступлении события смены знака произведения <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_3_10.mod/?n=3/?k=10">.</div>
+<a name="T648248918"></a>
+<div>Задача изменения состояния процесса в соответствии с определенными правилами при наступлении определенных событий называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">задачей диспетчеризации</a>.</div>
+<div class="eSubTitle">Понятие ресурса</div>
+<div>Как уже было сказано ранее, под ресурсами понимаются любые средства вычислительной системы, которые могут быть выделены процессу. Например, память, устройства ввода-вывода и, конечно, сам процессор. Ресурсы могут быть классифицированы по следующим категориям:</div>
+<ol class="eList"><li><span style="font-weight:bold; text-decoration:underline; ">По реальности существования:</span></li>
+<ul class="eList"><li>физический (реально существует и при распределении его между процессами обладает всеми присущими ему физическими характеристиками);</li>
+<li>виртуальный (своеобразная модель физического ресурса, реализуемая в некоей программно-аппаратной форме). Построение каждого виртуального ресурса производится на базе некоего физического. Имея один физический ресурс, можно построить на его основе несколько виртуальных. Это дает возможность существенно экономичнее использовать соответствующий физический ресурс, а также увеличить гибкость политики распределения ресурсов.</li>
+</ul>
+<li><span style="font-weight:bold; text-decoration:underline; ">По характеру использования:</span></li>
+<ul class="eList"><li>параллельно используемый (ЗУ);</li>
+<li>последовательно используемый (УВВ в режиме вывода).</li>
+</ul>
+<li><span style="font-weight:bold; text-decoration:underline; ">По степени активности:</span></li>
+<ul class="eList"><li>активный (способен выполнять действия по отношению к другим ресурсам или процессам, приводящие к изменению последних). Пример активного ресурса — процессор;</li>
+<li>пассивный.</li>
+</ul>
+<li><span style="font-weight:bold; text-decoration:underline; ">По форме реализации:</span></li>
+<ul class="eList"><li>мягкий (программное обеспечение, информационные ресурсы);</li>
+<li>твердый (аппаратные компоненты)</li>
+</ul>
+<li><span style="font-weight:bold; text-decoration:underline; ">По времени существования:</span></li>
+<ul class="eList"><li>постоянный (доступен для использования на всем протяжении интервала существования процесса);</li>
+<li>временный (динамически захватывается и освобождается процессом).</li>
+</ul>
+<li><span style="font-weight:bold; text-decoration:underline; ">По структуре:</span></li>
+<ul class="eList"><li>простой (не содержит составных элементов, например конкретное УВВ);</li>
+<li>составной (содержит ряд однотипных составных элементов, при этом любой из них может быть выделен процессу). Пример составного ресурса — память.</li>
+</ul>
+<li><span style="font-weight:bold; text-decoration:underline; ">По восстанавливаемости:</span></li>
+<ul class="eList"><li>воспроизводимый;</li>
+<li>потребляемый.</li>
+</ul>
+</ol>
+<div>С учетом всего вышесказанного можно обозначить основную задачу операционной системы как распределение ресурсов вычислительной системы между процессами.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-80.html">‹ Предыдущий</a>

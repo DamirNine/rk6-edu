@@ -23,7 +23,39 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-132.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Виртуальная память пользователя</a>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/mem1.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T737644348"></a>
+<div>Диаграмма на рис.&nbsp;1 показывает <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">виртуальную память пользователя</a>. Она организована из трех сегментов: текст, данные и стек.</div>
+<a name="T394050215"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Текстовый сегмент</a> – это просто выполняемый код, то есть машинный код программы.</div>
+<a name="T1991886585"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сегмент данных</a> используется для хранения внешних (<span class="eOperator">external</span>) и статических (<span class="eOperator">static</span>) переменных. Он содержит инициализированные и неинициализированные данные. Неинициализированные данные автоматически устанавливаются равными нулю при входе в программу. Адрес внешней памяти <span class="eOperator">etext </span>обозначает конец текстового сегмента. Конец инициализированных и неинициализированных данных обозначен адресом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внешних переменных</a> <span class="eOperator">edata</span> и <span class="eOperator">end</span>, соответственно. Переменные <span class="eOperator">etext,</span> <span class="eOperator">edata</span> и <span class="eOperator">end</span> – целые.</div>
+<div>Первоначально, граница выделяемой памяти программы – это адрес <span class="eOperator">end</span>. Граница выделяемой памяти может изменяться при вызове системных вызовов или библиотечных функций управления памятью. Однако адреса трех переменных <span class="eOperator">etext</span>, <span class="eOperator">edata</span> и <span class="eOperator">end </span>неизмены.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Стек</a> программы используется для хранения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументов</a> функции и ее локальных (<span class="eOperator">automatic</span>) переменных. Стек также используется для сохранения регистров при вызове функции. Расположение вершины стека труднодоступно.</div>
+<div>Любая попытка исправить память между концом данных и вершиной стека может привести к порче памяти. Также недоступна память расположенная ниже конца стека.</div>
+<div>Можно изменить размер сегмента данных с помощью системных вызовов <span class="eOperator">brk</span> и <span class="eOperator">sbrk</span>, изменяя границы выделяемой области.</div>
+<div>В отличие от сегмента данных, стек программы автоматически увеличивается и уменьшается с каждым вызовом функции и выходом из нее, соответственно.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-130.html">‹ Предыдущий</a>

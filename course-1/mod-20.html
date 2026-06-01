@@ -23,7 +23,79 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-1/mod-21.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Архитектуры серверов и суперкомпьютеров</a>
+</div>
+<a name="T441184725"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Серверы</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">суперкомпьютеры</a>, как правило, являются векторными или многопроцессорными <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительными системами</a>. По классификации вычислительных систем, предложенной Флинном, это системы типов SIMD или MIMD.</div>
+<a name="T423965550"></a>
+<a name="T1398057472"></a>
+<a name="T60848178"></a>
+<a name="T2078518894"></a>
+<div>Компьютеры типа <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">SIMD</a> подразделяются на классы SM-SIMD и DM-SIMD.Типичный <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">SM-SIMD</a> компьютер — это векторный компьютер, включающий в свой состав скалярный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессор</a> целочисленной арифметики, функциональные блоки для операций сложения и умножения чисел с плавающей точкой, векторный процессор и общую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">память</a>. Векторный процессор имеет конвейерную архитектуру — состоит из нескольких функциональных блоков. Примеры векторных компьютеров — NEC SX-8B, CDC Cyber 205, ETA-10.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=103_Computers/1011.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Архитектура SM-SIMD компьютера</div></div>
+<div>Многопроцессорная вычислительная система состоит из одного или более узлов. В свою очередь, узел определяется как вычислительная система, работающая под управлением одной операционной системы и состоящая из одного или нескольких процессоров, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оперативной памяти</a> и системы ввода-вывода.</div>
+<a name="T1825710799"></a>
+<div>Многопроцессорные системы класса <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">DM-SIMD</a> называют также матричными (processor-array machines). Процессоры в этих компьютерах образуют некоторую 2D или 3D сеточную структуру. Один из процессоров (control processor) выполняет управляющие функции. Поскольку все процессоры одновременно должны выполнять одну и ту же операцию, не любой вычислительный процесс может быть эффективно реализован на компьютере этого класса. Поэтому системы DM-SIMD, как правило, являются специализированными, примерами могут быть сигнальные процессоры, компьютеры для статистических расчетов по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">методу Монте-Карло</a> и т.п.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=103_Computers/1011.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Архитектура DM-SIMD компьютера</div></div>
+<a name="T714228049"></a>
+<a name="T1398236218"></a>
+<a name="T94067847"></a>
+<a name="T1552085960"></a>
+<a name="T1973957536"></a>
+<div>Компьютеры типа <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">MIMD</a> параллельно выполняют несколько потоков команд над несколькими потоками данных. К классу компьютеров <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">SM-MIMD</a>, называемых <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">мультипроцессорами</a>, относятся многопроцессорные векторные компьютеры <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">PVP</a> (Parallel Vector Processing) и симметричные многопроцессорные системы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">SMP</a> (Symmetric multiproccssor).</div>
+<a name="T169595280"></a>
+<div>Для PVP-систем характерно наличие специальных векторно-конвейерных процессоров, в которых предусмотрены команды однотипной обработки векторов независимых данных, эффективно выполняющиеся на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конвейерных функциональных устройствах</a>.</div>
+<div>В SMP-системах один узел содержит два или более одинаковых процессоров, разделяющих одно и то же адресное пространство и имеющих равноправный доступ к другим ресурсам узла. Так как с увеличением числа процессоров существенно возрастают сложности обеспечения их связи между собой и с общей памятью, архитектура SMP имеет ограничения по числу используемых процессоров — узел обычно включает не более 32 процессоров.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=103_Computers/1011.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Узел SMP</div></div>
+<a name="T465157812"></a>
+<div>В системах SMP-архитектуры одни и те же данные могут разделяться несколькими процессорами, а несколько копий одной и той же величины могут находиться в разных видах памяти. В этих условиях необходимо обеспечивать целостность данных или, другими словами, <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">когерентность данных</a>, означающую что все процессоры, если им необходимо в одно и то же время использовать одну и ту же переменную, то эта переменная для всех процессоров будет иметь одно и то же значение. А это означает, что изменения одной и той же величины в разных процессорах должны выполняться только последовательно.</div>
+<a name="T33723523"></a>
+<div>В узлах современных компьютеров SMP-архитектуры когерентность реализуется аппаратными средствами. Для этого имеется специальная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шина</a> слежения (snoopy bus), через которую происходит передача значений данных, обновляемых некоторым процессором, на другие процессоры, запрашивающие эти данные. Идентификация одних и тех же данных в разных кэшах происходит по их отношению к одной и той же части оперативной памяти. Например, в архитектуре Cray SuperServer 6400 SMP используются четыре шины. Для поддержки когерентности все процессоры подсоединяются к каждой из четырех шин и реализуют протокол следящей шины.</div>
+<a name="T695012387"></a>
+<a name="T1920268756"></a>
+<a name="T366724170"></a>
+<div>Архитектуры с поддержкой когерентности данных получили название архитектур с <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">неоднородным доступом к памяти</a> — NUMA (Non-Uniform Memory Access). Имеется ряд разновидностей NUMA архитектур. В архитектуре CC-NUMA для SMP компьютеров поддерживается когерентность кэшей внутри каждого узла. Комбинация элементов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">SMP</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPP</a> имеет место в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">архитектуре NUMA-Q</a>, предложенной компанией Sequent Corp., ныне входящей в IBM.</div>
+<div>В NUMA-Q вычислительные модули (quads) включают каждый четыре процессора, связанных высокоскоростной шиной. Множество таких модулей используются в качестве строительных блоков для формирования одного узла NUMA-Q, управляемого единой операционной системой. Модули одного узла соединены с общей оперативной памятью с помощью моста и внутренних для модулей шин. Используется протокол SCI (Scalable Coherent Interface). Такая конфигурация обеспечивает гораздо более короткий путь для сигналов обращения к памяти, чем общепринятая архитектура общей шины, которая требует, чтобы сигнал прошел весь путь по шине. Подавляющее большинство обращений к памяти при выполнении любой транзакции происходит внутри одного модуля.</div>
+<div>С помощью NUMA систем наиболее успешно решаются задачи, имеющие малое пересечение данных, либо при пересечении все процессы могут быть исполнены в рамках одного модуля. Поэтому требуется программное обеспечение, организующее вычислительный процесс в соответствии с принципами NUMA так, чтобы связанные по данным процессы находились в одном модуле.</div>
+<a name="T1825889545"></a>
+<div>В архитектурах <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">DM-MIMD</a> проблемы когерентности решаются на программном уровне, поэтому число узлов может быть заметно большим, чем в системах SM-MIMD. В частности, в узлах компьютеров MPP-архитектуры используются свои копии ОС и свое адресное пространство, поэтому не требуется аппаратная поддержка когерентности, она поддерживается программными средствами. Узлы в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPP</a> обычно состоят из одного процессора, небольшой памяти и нескольких устройств ввода-вывода. Настройка производительности MPP-систем включает распределение данных для того, чтобы минимизировать трафик между узлами.</div>
+<a name="T1686994031"></a>
+<div>Таким образом, практически все виды параллельных систем по классификации Флинна относятся к одной группе MIMD. Многие специалисты придерживаются классификации MIMD, представленной на рис. 4 [1], где DM-MIMD названы <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">мультикомпьютерами</a>, а SM-MIMD — мультипроцессорами:</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=103_Computers/1011.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;Типы компьютеров MIMD</div></div>
+<div>Данный поход позволяет различать два важных типа многопроцессорных систем – multiprocessors (мультипроцессоры или системы с общей разделяемой памятью) и multicomputers (мультикомпьютеры или системы с распределенной памятью).</div>
+<div><a class="eExtern" target="_blank" href="http://www.top500.org." onmouseover="on(this)" onmouseout="off(this)" title="Открыть ссылку в новом окне">Список Top500 — см. здесь</a>.</div>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. Классификация вычислительных систем. — http://winhpc.ru/?id=36<br>
+2. В.Н. Дацюк, А.А. Букатов, А.И. Жегуло/ МЕТОДИЧЕСКОЕ ПОСОБИЕ по курсу "Многопроцессорные системы и параллельное программирование". -http://rsusu1.rnd.runnet.ru/tutor/method/m1/content.html<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-1/">← Оглавление</a>
         <a href="/rk6-edu/course-1/mod-19.html">‹ Предыдущий</a>

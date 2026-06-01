@@ -23,7 +23,41 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-91.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Организация переключения задач</a>
+</div>
+<a name="T660051112"></a>
+<a name="T1095282403"></a>
+<a name="T469209868"></a>
+<div>Переключением задач занимается модуль <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС</a>, называемый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">диспетчером процессов</a>. По сути дела, переключение задач представляет собой передачу управления от одной задачи (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесса</a>) другой задаче (процессу). Это может быть сделано с помощью команд МП <span class="eOperator">JMP</span> (безусловный переход) или <span class="eOperator">CALL</span> (вызов подпрограммы).</div>
+<div>Однако есть одна особенность. Переключение задач должно выполняться незаметно для самих исполняемых задач. Следовательно, перед тем, как активизировать другую задачу, необходимо сохранить где-то адрес следующей исполняемой команды данной задачи (для того, чтобы потом продолжить ее выполнение с этого же места), а также содержимое всех внутренних регистров МП (для того, чтобы при возобновлении выполнения данной задачи восстановить содержимое всех регистров, сделав сам факт переключения незаметным для задачи). Очевидно, что задачу сохранения/восстановления контекста может решить только сам МП, и делать это он должен автоматически при переключении задачи операционной системой. Поддержка операции переключения задач появилась впервые в процессоре Intel 80286.</div>
+<a name="T1303208068"></a>
+<div>Для сохранения контекста задачи используется специальная область памяти, называемая <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сегментом состояния задачи</a> (TSS — Task State Segment). TSS создается ОС для каждой задачи. Обобщенный формат TSS приведен на рис.&nbsp;1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_3_19.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Процессор имеет специальный регистр, в котором хранится адрес TSS текущей задачи. Для выполнения переключения на другую задачу необходимо выполнить команду <span class="eOperator">JMP</span> или <span class="eOperator">CALL,</span> указав в качестве адреса перехода селектор дескриптора TSS. Процессор обнаруживает, что указанный селектор соответствует дескриптору TSS и выполняет следующие действия:</div>
+<ol class="eList"><li>Сохраняет контекст текущей задачи в ее TSS.</li>
+<li>Восстанавливает контекст активизируемой задачи из ее TSS.</li>
+<li>Передает управление новой задаче по адресу последней выполнявшейся команды, взятому из TSS.</li>
+</ol>
+<div>Если селектор дескриптора TSS указать в таблице векторов прерываний в качестве адреса подпрограммы обработки прерывания, при возникновении этого прерывания управление будет автоматически передано задаче, соответствующей указанному TSS. Это позволяет легко реализовать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">диспетчеризацию процессов</a>. Достаточно в обработчике прерываний указать TSS задачи — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">диспетчера процессов</a>, а для активизации этого прерывания использовать сигнал от программируемого таймера. При поступлении сигнала от таймера управление будет передано диспетчеру процессов, который, в свою очередь, выполнив перепланирование, передаст управление какому-то процессу в соответствии с логикой своей работы.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-89.html">‹ Предыдущий</a>

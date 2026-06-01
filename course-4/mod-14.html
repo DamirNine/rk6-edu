@@ -23,7 +23,89 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-15.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Языки представления документов с математической нотацией</a>
+</div>
+<a name="T108051180"></a>
+<a name="T412171630"></a>
+<a name="T1997382969"></a>
+<div>В базовых <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">HTML</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML</a> средствах недостаточно учтены требования к высококачественному представлению математических текстов в документах (книгах, статьях, учебных материалах, презентациях) с естественно-научным  и инженерным содержанием.   Поэтому существует и применяется ряд языков и основанных на них программных систем, специально предназначенных для описания документов с математической нотацией. Среди них наиболее известными являются система TEX, XML-приложение <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">MathML</a> (Mathematical Markup Language), а также математические пакеты, такие как Mathematica или Maple.</div>
+<a name="T988421902"></a>
+<div>TEX-технология создана для представления научных документов, включающая одноименный язык программирования и разметки документов, а также совокупность программных средств, поддерживающих этот язык. Различают физическую и логическую разметки. Первая из них используется для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">форматирования</a>, а вторая для структурирования текста.</div>
+<a name="T1812783589"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Программное обеспечение</a> TEX-технологии представлено  рядом программных средств. Это базовая компонента tex, компоненты для создания разнообразных шрифтов Metafont, для подготовки графических иллюстраций MetaPost, для обработки библиографических списков и ссылок bibtex. Эти или подобные им компоненты входят в макропакеты, реализующие TEX-технологию, примерами макропакетов могут служить  LATEX, Plain и др.</div>
+<div>Несмотря на свою универсальность, TEX-технология имеет и определенные недостатки. Во-первых, она довольно сложна в освоении. Во-вторых, в ней отсутствуют средства для вызова других программ и совместного с ними исполнения. В-третьих, язык TEX   не согласован с XML, так как TEX-технология создавалась еще в 80-е годы.  </div>
+<div>Поэтому при создании учебных материалов с математическими текстами все в большей мере используется язык MathML. </div>
+<div>В MathML, так же  как и в TEX, возможны физический (разметка представления) и логический (разметка содержания) типы описания текстов и, кроме того,  смешанный тип, использующий элементы обоих основных типов. </div>
+<div>Физический тип состоит из элементов представления, а логический тип - из элементов содержания. Элементы представления описывают ориентированную на визуализацию двухмерную структуру математической нотации. К простым элементам относятся цифры, буквы и  другие символы Unicode, более сложные элементы образуются  комбинированием простых элементов.  Как принято в XML, элементы представляют собой символы нотации вместе с парой обрамляющих тегов. </div>
+<div>В качестве примера рассмотрим запись на языке MathML простой математической формулы  <img align="absmiddle" src="/?frm/?doc=270_Web/web111.mod/?n=1/?k=10">.</div>
+<pre class="eListing">&lt;mrow&gt;
+   &lt;mi&gt;x&lt;/mi&gt;
+   &lt;mo&gt;=&lt;/mo&gt;
+   &lt;mrow&gt;
+      &lt;mn&gt;5&lt;/mn&gt;
+      &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt;
+      &lt;mfenced&gt;
+      &lt;mrow&gt;
+            &lt;msup&gt;
+               &lt;mi&gt;a&lt;/mi&gt;
+               &lt;mn&gt;2&lt;/mn&gt;
+            &lt;/msup&gt;
+            &lt;mo&gt;+&lt;/mo&gt;
+            &lt;mfrac&gt;
+               &lt;mrow&gt;
+                  &lt;mi&gt;b&lt;/mi&gt;
+                  &lt;mi&gt;c&lt;/mi&gt;
+          &lt;/mrow&gt;
+            &lt;/mfrac&gt;
+     &lt;/mrow&gt;
+      &lt;/mfenced&gt;
+   &lt;/mrow&gt;
+&lt;/mrow&gt;
+</pre>
+<div>В этом тексте использованы элементы   с тегами (токенами) mi, mn и mo, служащими для представления соответственно идентификаторов, чисел и операторов. Элемент mrow  предназначен  для обозначения последовательности данных с выравниванием по горизонтали. Элемент mfenced используется для ограничения формул различными типами скобок (по умолчанию используются круглые скобки). Элемент msup применяется в выражениях с верхними индексами и имеет два аргумента: основание (в нашем случае  a)  и показатель (в нашем случае 2). Элемент mfrac  используется для описания дроби. Аналогичным образом описываются и другие символы, выражения и уравнения математических текстов.</div>
+<div>  Разметка содержания отражает иерархическую структуру математических выражений. Эту структуру можно представить в виде <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">графа</a>,  каждый узел  графа   соответствует элементу MathML,  листья  соответствуют атомарным элементам, таким как числа, символы и т.п. Приведенный выше пример <img align="absmiddle" src="/?frm/?doc=270_Web/web111.mod/?n=2/?k=10"> в случае разметки содержания имеет следующий вид: </div>
+<pre class="eListing">&lt;mrow&gt;
+&lt;apply&gt;
+    &lt;eq/&gt;
+    &lt;ci&gt;x&lt;/ci&gt;
+    &lt;apply&gt;
+        &lt;times/&gt;
+        &lt;cn&gt;5&lt;/cn&gt;
+      &lt;apply&gt;
+            &lt;plus/&gt;
+          &lt;apply&gt;
+                &lt;power/&gt;
+                &lt;ci&gt;a&lt;/ci&gt;
+              &lt;cn&gt;2&lt;/cn&gt;
+          &lt;/apply&gt;
+          &lt;apply&gt;
+              &lt;divide/&gt;
+                &lt;ci&gt;b&lt;/ci&gt;
+                &lt;ci&gt;c&lt;/ci&gt;
+          &lt;/apply&gt;
+      &lt;/apply&gt;
+  &lt;/apply&gt;
+&lt;/apply&gt;
+&lt;/mrow&gt;
+</pre>
+<div> Описание функций, операций и их операндов выполняется в  элементе &lt;apply&gt;. Можно заметить, что  в контейнере этого элемента   используется префиксная форма записи выражений. </div>
+<div>Всего для разметки содержания в MathML введено около 120 элементов.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-13.html">‹ Предыдущий</a>

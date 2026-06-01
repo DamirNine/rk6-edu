@@ -23,7 +23,65 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-109.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Завершение обработки потока ввода-вывода</a>
+</div>
+<a name="T2117886198"></a>
+<a name="T829062930"></a>
+<div>После выполнения всех необходимых операций <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">буферизованного ввода-вывода</a> следует корректно завершить обработку файлового потока вызовом <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функции fclose</a>. Спецификация формата обращения к ней имеет вид:</div>
+<pre class="eListing">int fclose(FILE* stream);
+</pre>
+<div>Вызов функции fclose закрывает поток, указанный аргументом stream. При этом сначала выполняется обработка буфера потока, аналогичная обращению к функции fflush, чтобы передать буферизованные, но незаписанные данные или уничтожить буферизованные, но непрочитанные данные, для потоков вывода и ввода, соответственно. После этого в структуре управления потоком освобождается область памяти, которая была динамически распределена под буфер потока, когда поток был открыт для обработки ввода-вывода. При успешном завершении функция fclose должна возвращать нулевое значение. При ошибке возвращается отрицательный код. Нужно отметить, что без веских причин не следует закрывать стандартные потоки ввода-вывода и протокола диагностики, которые адресуют указатели <span class="eOperator">stdin,</span> <span class="eOperator">stdout</span> и <span class="eOperator">stderr.</span> Они будут автоматически закрыты при завершении процесса выполнения программы.</div>
+<div class="eSubTitle">Пример прикладной программы ввода-вывода</div>
+<div>Комплексное применение различных библиотечных функций буферизованного ввода-вывода иллюстрирует исходный код прикладной команды <span class="eOperator">cat,</span> которая используется в операционной системе Unix для конкатенации содержимого заданных файлов в потоке стандартного вывода. Имена файлов передаются команде <span class="eOperator">cat</span> через аргументы командной строки ее вызова. Команда <span class="eOperator">cat</span> реализует стандартный вывод содержимого указанных файлов или эхо-печать потока стандартного ввода при вызове без аргументов. Если указанные файлы не существуют или недоступны для чтения, команда cat отображает соответствующую системную диагностику через стандартный поток <span class="eOperator">stderr.</span> Например, следующий вызов команды <span class="eOperator">cat:</span></div>
+<pre class="eListing">$ cat /etc/motd /etc/issue
+</pre>
+<div>последовательно отображает в потоке стандартного вывода содержимое файлов <span class="eOperator">/etc/motd и /etc/issue</span> файловой системы OS Unix. Исходный код упрощенной версии программы cat, где исключена обработка ключевых параметров командной строки, приведен ниже.</div>
+<pre class="eListing">/* Программа конкатенации и стандартного вывода файлов */
+#include &lt;stdio.h&gt;     /* Заголовок стандартного ввода-вывода */
+int main(int argc, char* argv[]) {
+FILE* stream;          /* Указатель потока */
+int c;                 /* Код символа потока ввода-вывода */
+int count = 0;         /* Счетчик входных файлов */
+int state = 0;         /* Признак ошибки */
+/* Обработка потока стандартного ввода */
+if(argc == 1)
+  while((c = getchar()) != EOF)
+    putchar(c);
+/* Цикл обработки файловых потоков ввода */
+while(argv[++count] != NULL) {
+  if((stream = fopen(argv[count], "r")) == NULL) {
+    fprintf(stderr, "%s: ", argv[0]);
+    perror(argv[count]);
+    state++;
+    continue;
+  } /* if */
+  while((c = fgetc(stream)) != EOF)
+    fputc(c, stdout);
+  fflush(stdout);
+  fclose(stream);
+} /* while */
+return(state); /* возврат числа ошибок */
+} /* main */
+</pre>
+<a name="T1268224040"></a>
+<a name="T1111998379"></a>
+<div>Приведенный вариант исходного кода команды <span class="eOperator">cat</span> можно условно разделить на две части. В первой части реализована циклическая обработка потока стандартного ввода функциями <span class="eOperator">getchar</span> и <span class="eOperator">putchar.</span> Она выполняется, если программа <span class="eOperator">cat</span> не имеет аргументов в командной строке ее вызова. Вторая часть программы cat обеспечивает обработку файловых потоков, когда при ее вызове указаны имена файлов, содержимое которых требуется отобразить в потоке стандартного вывода. Имена файлов передаются в программу <span class="eOperator">cat</span> через массив аргументов <span class="eOperator">argv</span> основной функции <span class="eOperator">main.</span> Для буферизованной обработки заданных файлов команда <span class="eOperator">cat</span> последовательно открывает потоки потоки ввода, используя вызов функции fopen. Диагностику ошибки, когда поток не может быть открыт для чтения данных из файла, предоставляет вызов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции perror</a>. Она отображает диагностическое сообщение в потоке <span class="eOperator">stderr</span> после указания имени файла, который не существует или не может быть открыт в заданном режиме. Обработку корректно открытых файловых потоков обеспечивает циклический вызов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функций fgetc</a> и fputc для чтения символов из потока ввода и записи их в поток стандартного вывода. Цикл чтения-записи завершает вызов функций <span class="eOperator">fflush</span> и <span class="eOperator">fclose,</span> чтобы вытолкнуть остаток данных из буфера потока стандартного вывода и закрыть входной поток, освобождая его указатель для обработки следующего файла. После завершения стандартного вывода содержимого всех указанных файлов или эхо-печати потока стандартного ввода команда <span class="eOperator">cat</span> возвращает суммарное число файлов, которые не существуют или недоступны для чтения данных.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-107.html">‹ Предыдущий</a>

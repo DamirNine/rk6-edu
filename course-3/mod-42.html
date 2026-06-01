@@ -23,7 +23,42 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-3/mod-43.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">VHDL: операторы присваивания и моделирование задержек</a>
+</div>
+<a name="T107645917"></a>
+<a name="T82574570"></a>
+<a name="T166302733"></a>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке VHDL</a> используются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">последовательный  оператор</a>  присваивания :=, известный из других алгоритмических языков, и параллельный <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">оператор  назначения сигнала</a> &lt;=. </div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Очевидно, что интерпретация символа &lt;= как "присваивание значения сигнала" или того же знака как отношения "меньше или равно" определяется из контекста</div>
+</div>
+<div>Особенность оператора &lt;= в том, что присвоение значений сигналам всегда происходит с задержкой, большей нуля, хотя, если задержка не указана, то она является пренебрежимо малой, например:</div>
+<pre class="eListing">y &lt;= x1 and x2; -- задержка на малую величину &gt; 0.
+y &lt;= x1 and x2 after 200 ns; -- задержка на 200 нс.
+</pre>
+<div>Поэтому использование операторов присваивания и назначения сигналов в одной и той же ситуации может дать разные результаты. Например:</div>
+<pre class="eListing">A := B or X;
+C := A and Z;
+</pre>
+<div>Пусть B = 0, Z = 1 и в рассматриваемый момент времени X переключается из 0 в 1. После выполнения этих двух операторов C равно 1. В случае:</div>
+<pre class="eListing">A &lt;= B or X;
+C &lt;= A and Z;
+</pre>
+<div>в последнем операторе используется старое значение A. Поэтому поскольку старое значение A есть 0, то сигнал C в данный момент времени остается равным 0. Другими словами, в предыдущем примере имеем последовательное выполнение операторов, а в последнем — параллельное, не зависящее от того, в каком порядке операторы записаны.</div>
+<a name="T281272895"></a>
+<a name="T1360788693"></a>
+<div>Следует различать понятия инерционной и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">транспортной задержек</a>. В операторе y &lt;= x1 and x2 after 200 ns; подразумевается <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">инерционная задержка</a>, т.е. y примет после 200 нс новое значение x1 and x2, равное 1,только, если значение x1 and x2 оставалось равным 1 в течение этих 200 нс. В случае транспортной задержки, которая указывается в виде y &lt;= transport x1 and x2 after 200 ns; сигнал проходит на выход вне зависимости от его длительности.</div>
+<div>Оператор ожидания:</div>
+<div><span class="eOperator">wait on</span> &lt;список_сигналов&gt; <span class="eOperator">until</span> &lt;условие&gt;<span class="eOperator"> for</span> &lt;значение_времени&gt;;</div>
+<div>Возможны сокращенные формы:</div>
+<div><span class="eOperator">wait on</span> &lt;список_сигналов&gt;;</div>
+<div><span class="eOperator">wait until</span> &lt;условие&gt;;</div>
+<div><span class="eOperator">wait for</span> &lt;значение_времени&gt;;</div>
+<div>Здесь подразумевается задержка до изменения хотя бы одного  сигнала из списка, до выполнения условия или до исчерпания времени соответственно.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-3/">← Оглавление</a>
         <a href="/rk6-edu/course-3/mod-41.html">‹ Предыдущий</a>

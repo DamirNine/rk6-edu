@@ -23,7 +23,323 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-27/mod-49.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Потоковые классы</a>
+</div>
+<a name="T1037302591"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Потоки</a> в <span style="font-weight:bold; ">C++</span> отличаются от функций ввода/вывода в <span style="font-weight:bold; ">C</span>, обеспечивая работу как со <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стандартными потоками</a> данных, так и с типами данных, определяемыми пользователем, а также обеспечивая единообразный и понятный синтаксис. Чтение данных из потока называется извлечением, а вывод данных в поток – включением. Поток в <span style="font-weight:bold; ">C++</span> - последовательность байтов, независимых от конкретного устройства, с которого производится считывание данных.</div>
+<div>Обмен с потоком для увеличения скорости передачи данных производится через специальную область памяти – буфер. Передача данных выполняется при выводе после заполнения буфера и при вводе, если буфер исчерпан. По направлению обмена данных потоки делят на три группы:</div>
+<ul class="eList"><a name="T907267410"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">входные потоки</a> (позволяющие вводить данные в память)</li>
+<a name="T1456491947"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">выходные потоки</a> (осуществляющие вывод данных из памяти)</li>
+<a name="T1205108382"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">двунаправленные потоки</a> </li>
+</ul>
+<div>В зависимости от вида устройства, с которым работает поток данных, их делят на:</div>
+<ul class="eList"></ul>
+<ul class="eList"><li>стандартные потоки</li>
+<li>файловые потоки</li>
+<li>строковые потоки</li>
+</ul>
+<br>
+<a name="T804731842"></a>
+<a name="T109760136"></a>
+<a name="T892396981"></a>
+<a name="T892406686"></a>
+<a name="T263020051"></a>
+<a name="T1999195104"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Стандартные потоки</a> предназначены для передачи данных с клавиатуры на экран (это: <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">stdin</a> - стандартный поток ввода данных, <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">stdout</a> - стандартный поток вывода данных и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">stderr</a> - стандартный поток ошибок). <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Файловые потоки</a> – для обмена информацией с файлами. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Строковые потоки</a> – для работы с массивами символов в оперативной памяти. Для поддержки этих потоков в C++ стандартная библиотека содержит иерархию классов, построенную на основе двух базовых классов:</div>
+<ul class="eList"><a name="T104461"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ios</a> – базовый класс, содержащий общие для ввода/вывода поля и методы</li>
+<a name="T315621645"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">streambuf</a> – обеспечивает буферизацию потоков и их взаимодействие с физическими устройствами.</li>
+</ul>
+<br>
+<a name="T2101583145"></a>
+<a name="T1163329361"></a>
+<a name="T1443129382"></a>
+<div>От этих базовых классов наследуются классы <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">istream</a> и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ostream</a> для входных и выходных потоков соответственно. Эти потоки являются базовыми для <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">iostream</a>, который позволяет реализовывать двунаправленные потоки.  Ниже в иерархии находятся файловые и строковые потоки:</div>
+<ul class="eList"><li><span style="font-weight:bold; ">isstrinstream</span> – класс входного строкового потока</li>
+<li><span style="font-weight:bold; ">osstringstream</span> – класс выходного строкового потока</li>
+<li><span style="font-weight:bold; ">stringstream</span> – класс двунаправленного строкового потока</li>
+<li><span style="font-weight:bold; ">ifsteam</span> – класс входных файловых потоков</li>
+<li><span style="font-weight:bold; ">ofstream</span> – класс выходных файловых потоков</li>
+<li><span style=""><span style="font-weight:bold; ">fstream</span></span> – класс двунаправленных файловых потоков</li>
+</ul>
+<br>
+<div class="eSubTitle">Стандартный поток</div>
+<div>Чтобы использовать стандартные потоки ввода-вывода нужно включать заголовочный файл <span style="font-weight:bold; ">&lt;iostream.h&gt;</span>.Заголовочный файл &lt;iostream.h&gt; кроме описания потоков ввода-вывода содержит описание ещё и предопределенных объектов.</div>
+<br>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="20.0%"><td class="eTableT">Объект</td><td class="eTableT">Класс</td><td class="eTableT">Описание</td></tr>
+<tr height="20.0%"><td class="eTable">cin</td><td class="eTable">istream</td><td class="eTable">связывается с клавиатурой (со стандартным буфером ввода)</td></tr>
+<tr height="20.0%"><td class="eTable">cout</td><td class="eTable">ostream</td><td class="eTable">связывается с экраном (со стандартным буфером вывода)</td></tr>
+<tr height="20.0%"><td class="eTable">cerr</td><td class="eTable">ostream</td><td class="eTable">связывается с экраном (стандартный не буферизованный вывод, куда направляются сообщения об ошибках)</td></tr>
+<tr height="20.0%"><td class="eTable">clog</td><td class="eTable">ostream</td><td class="eTable">связывается с экраном (стандартный буферизованный вывод, куда направляются сообщения об ошибках)</td></tr>
+</tbody></table><br>
+<div>Эти объекты создаются при включении в программу файла <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">iostream</a>. При этом становятся доступными средства ввода-вывода. Соответствующие операции &lt;&lt; и &gt;&gt; определены путем <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">перегрузки</a> операции сдвига.</div>
+<br>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">#include&lt;iostream.h&gt;
+
+int main()
+{
+int i;
+cin&gt;&gt;i;
+</pre>
+<div><span style="font-weight:bold; ">cout &lt;&lt; ”Output i = ”&lt;&lt; i;</span></div>
+<pre class="eListing">return 0;
+}
+</pre>
+</div>
+<br>
+<div>Операции извлечения и чтения в качестве результата своего выполнения формирует ссылку на объект типа <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">istream</a> для извлечения и на объект типа <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ostream</a> для чтения.</div>
+<div class="eSubTitle">Файловые потоки.</div>
+<a name="T33596558"></a>
+<a name="T68828"></a>
+<div>Под <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">файлом</a> обычно подразумевается поименованная информация на внешнем носителе. Практически в <span style="font-weight:bold; ">С++</span> файл рассматривается как последовательный поток байтов.  Каждый файл завершается маркером <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">EOF</a> или указанием числа байтов, записанных в служебную структуру данных, поддерживаемую соответствующей системой.</div>
+<a name="T1698208349"></a>
+<a name="T1136979826"></a>
+<div>По способу доступа файлы делятся на последовательные и файлы с произвольным доступом. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Файлы с последовательным доступом</a> – файлы, в которых чтение и запись производятся сначала, байт за байтом. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Файлы с произвольным доступом</a> допускают чтение и запись в произвольной позиции. Стандартная библиотека содержит три класса для работы с файлами. Все три класса являются производными от классов : </div>
+<div> </div>
+<br>
+<div>Наследуют перегруженные операции &lt;&lt;, &gt;&gt;. Использование <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файловых потоков</a> в программе предполагает выполнение следующих операций:</div>
+<div>1) создание потока</div>
+<div>2) открытие потока и связывание его с файлом</div>
+<div>3) обмен данных (ввод / вывод)</div>
+<div>4) уничтожение потока</div>
+<div>5) закрытие файла</div>
+<br>
+<div>Каждый класс файловых потоков содержит <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструкторы</a>, с помощью которых можно создавать объекты этих классов различными способами. Конструкторы без параметров создают объект соответствующего класса, не связывая его с файлом. Конструктор с параметром создает объект соответствующего класса, открывает файл с указанным именем  и связывает файл с объектом.</div>
+<br>
+<div><span style="font-weight:bold; ">ifstream(char *name, int mode = ios::in);</span></div>
+<div><span style="font-weight:bold; ">ofstream(char *name, int mode = ios::out);</span></div>
+<div><span style="font-weight:bold; ">fstream(char *name, int mode = ios::in [ios::out] );</span></div>
+<br>
+<div>Вторым параметром <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструктора</a> является режим открытия файла. Если установленное по умолчанию значение не устраивает программиста, можно указать другой, составив его из битовых масок, определенных в классе ios.</div>
+<br>
+<div class="auto" style="text-align:right">Таблица 2&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTable">in </td><td class="eTable">= 0x01; //открыт для чтения</td></tr>
+<tr><td class="eTable">out </td><td class="eTable">= 0x02; // открыт для записи</td></tr>
+<tr><td class="eTable">ate </td><td class="eTable">= 0x04; // установить <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> на конец файла</td></tr>
+<tr><td class="eTable">app</td><td class="eTable">= 0x08; // открыть на добавление в конец</td></tr>
+<tr><td class="eTable">trune</td><td class="eTable">=0x19; // если файл существует, удалить</td></tr>
+<tr><td class="eTable">nocreate</td><td class="eTable">= 0x20; // если файл не существует, выдать ошибку</td></tr>
+<tr><td class="eTable">noreplace </td><td class="eTable">= 0x40; // если файл существует, выдать ошибку</td></tr>
+<tr><td class="eTable">binary</td><td class="eTable">= 0x80; // открыть в двоичном режиме</td></tr>
+</tbody></table><br>
+<br>
+<div>Открыть файл в программе можно с использованием конструктора, либо методом open. В open должны быть такие же параметры, как и в соответствующем конструкторе.</div>
+<br>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div><span style="font-weight:bold; ">ifstream inpf(‘input.txt’, .ios::n| ios::nocreate); // использование конструктора</span></div>
+<pre class="eListing">if(!inpf)
+{
+</pre>
+<div><span style="font-weight:bold; ">cout &lt;&lt; “ невозможно открыть файл для чтения”;</span></div>
+<pre class="eListing">return 1;
+}
+
+ofstream f;
+</pre>
+<div><span style="font-weight:bold; ">fopen(“output.txt”); // использование метода open</span></div>
+<pre class="eListing">if(!f)
+{
+</pre>
+<div><span style="font-weight:bold; ">cout&lt;&lt; “ невозможно открыть файл для записи ”;</span></div>
+<pre class="eListing">return 1;
+}
+</pre>
+</div>
+<br>
+<div>Чтение и запись выполняются с помощью операций чтения и извлечения аналогичных потоковым классам, либо с помощью методов класса.</div>
+<br>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">#include&lt;fstream.h&gt;
+int main()
+{
+char text[81], buf[81];
+</pre>
+<div><span style="font-weight:bold; ">cout&lt;&lt;” введите имя файла “;</span></div>
+<pre class="eListing">cin&gt;&gt;text;
+
+ifstream(text, ios::in| ios::nocreate);
+if(!f)
+{
+</pre>
+<div><span style="font-weight:bold; ">cout&lt;&lt;” ошибка открытия файла “;</span></div>
+<pre class="eListing">return 1;
+}
+
+while(!f, eof())
+{
+f.getline(buf, 81);
+cout&lt;&lt;buf&lt;&lt;endl;
+}
+
+return 0;
+
+}
+</pre>
+</div>
+<br>
+<div>Для закрытия потока определен метод close, но поскольку он неявно выполняется деструктором, то явный вызов требуется, когда необходимо закрыть поток раньше конца его области видимости.</div>
+<div class="eSubTitle">Строковые потоки</div>
+<div>Строковые потоки позволяют считывать и записывать информацию из области оперативной памяти так же как из файла. консоли, экрана.</div>
+<div>В стандартных библиотеках в потоковых потока определено три класса:</div>
+<div><span style="font-weight:bold; ">isstringstream</span> – входной </div>
+<div><span style="font-weight:bold; ">ostringstream</span> – выходной </div>
+<div><span style="font-weight:bold; ">stringstream</span> – двунаправленный </div>
+<div>Эти классы определяются в заголовочном файле &lt;sstream&gt;. Они являются производными от классов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">istream</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ostream</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">iostream</a>. Соответственно наследуют &lt;&lt; и &gt;&gt;, флаги форматирования, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">манипуляторы</a>.</div>
+<div>Строковые классы определяются в соответствии с правилами <span style="font-weight:bold; ">C++</span>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">строковые потоки</a> создаются с соответствующими участками памяти с помощью конструкторов.</div>
+<br>
+<div><span style="font-weight:bold; ">explicit istringstream (int mode = ios::in);</span></div>
+<div><span style="font-weight:bold; ">explicit istringstream (const string &amp;name, int mode = ios::in);</span></div>
+<div><span style="font-weight:bold; ">explicit ostringstream (int mode = ios::out);</span></div>
+<div><span style="font-weight:bold; ">explicit ostringstream (const string &amp; name, int mode = ios::out);</span></div>
+<div><span style="font-weight:bold; ">explicit stringstream (int mode = ios::in | ios::out );</span></div>
+<div><span style="font-weight:bold; ">explicit stringstream (const strin &amp;name, int mode = ios::in | ios::out);</span></div>
+<br>
+<div>Строковые потоки являются аналогами sprintf, sscanf, и могут использоваться для преобразования данных, когда они заносятся в некоторый участок памяти, а затем считываются в величины требуемых типов. Эти потоки могут применятся для обмена информацией между модулями программы. </div>
+<div>В строковых потоках описан метод str, возвращающий копию строки или устанавливающий ее значение.</div>
+<br>
+<div><span style="font-weight:bold; ">string str() const;</span></div>
+<div><span style="font-weight:bold; ">void str(const string &amp;s);</span></div>
+<br>
+<div>Проверять строковый поток на переполнения  не требуется, т.к. размер строки изменятся динамически.</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><pre class="eListing">Пример программы, в которой строковый поток используется для формирования сообщений,  включающих текущее время и передает в качестве параметра.
+
+#include&lt;sstream&gt;
+#include&lt;string&gt;
+#include&lt;iostream&gt;
+#include&lt;time&gt;
+
+using namespace std;
+string message(int i;)
+{
+osting stream os;
+time_t t;
+time(&amp;t);
+</pre>
+<div><span style="font-weight:bold; ">os&lt;&lt;”time”&lt;&lt; ctime(&amp;t) &lt;&lt; “number:“ &lt;&lt; i &lt;&lt; endl;</span></div>
+<pre class="eListing">return os.str();
+}
+
+int main()
+{
+</pre>
+<div><span style="font-weight:bold; ">cout &lt;&lt; message (22);</span></div>
+<pre class="eListing">return 0;
+}
+</pre>
+</div>
+<br>
+<div class="eSubTitle">Потоки и типы, определяемые пользователем.</div>
+<a name="T1769194691"></a>
+<div>Для ввода-вывода в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">потоках, определяемых пользователем</a> также используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">перегрузка</a> для всех стандартных типов операций чтения и извлечения, при этом выбор конкретной операции определяется типом фактических параметров.</div>
+<div>Чтобы вводить/выводить величины типов, определяемых пользователем требуется перегрузить эти операции. Это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">бинарные операции</a>, левым операндом которых является объект-поток, а правым – объект, который требуется извлечь/поместить в этот поток. Возвращенное значение должно быть ссылкой на поток, чтобы можно было организовать цепочки операций.</div>
+<br>
+<div class="auto">Пример 5</div>
+<div class="eExample"><pre class="eListing">class b1
+{
+...
+int x;
+float y;
+...
+//Чтобы  вводить/выводить объекты класса b1 требуется определить в классе b1 операции следующего вида
+
+
+friends ostream &amp;operator &lt;&lt; (ostream out, b1 &amp;c)
+
+{
+</pre>
+<div><span style="font-weight:bold; ">return out &lt;&lt; “ x= “ &lt;&lt; c.x &lt;&lt; “ y= “ &lt;&lt; c.y;</span></div>
+<pre class="eListing">}
+
+friend istream &amp;operator &gt;&gt; (istream in, b1 &amp;c)
+{
+</pre>
+<div><span style="font-weight:bold; ">cout &lt;&lt; “Enter x:”;  in&gt;&gt; c.x;</span></div>
+<div><span style="font-weight:bold; ">cout &lt;&lt; “Enter y:”;  in&gt;&gt; c.y;</span></div>
+<pre class="eListing">return in;
+}
+...
+};
+</pre>
+</div>
+<br>
+<div>После того как в программе определены операции ввода/вывода, в данной программе можно использовать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">объекты класса</a> b1 в операторах ввода/вывода наряду с величинами стандартных типов.</div>
+<br>
+<div class="auto">Пример 6</div>
+<div class="eExample"><pre class="eListing">#include&lt;iostream.h&gt;
+
+class b1
+{
+int x;
+float y;
+public:
+b1(int nx = 1, float ny = 0.01)
+{
+
+x=nx;
+
+y=ny;
+}
+
+
+friends ostream &amp;operator &lt;&lt; (ostream out, b1 &amp;c)
+
+{
+</pre>
+<div><span style="font-weight:bold; ">return out &lt;&lt; “ x= “ &lt;&lt; c.x &lt;&lt; “ y= “ &lt;&lt; c.y;</span></div>
+<pre class="eListing">}
+
+friend istream &amp;operator &gt;&gt; (istream in, b1 &amp;c)
+{
+</pre>
+<div><span style="font-weight:bold; ">cout &lt;&lt; “Enter x:”;  in&gt;&gt; c.x;</span></div>
+<div><span style="font-weight:bold; ">cout &lt;&lt; “Enter y:”;  in&gt;&gt; c.y;</span></div>
+<pre class="eListing">return in;
+}
+
+};
+
+int main()
+{
+b1 c;
+
+cout &lt;&lt; c &lt;&lt; endl;
+b1 c1(100,100);
+cout &lt;&lt; c1 &lt;&lt; endl;
+
+b1 c2;
+cin &gt;&gt; c2;
+cout &lt;&lt; c2 &lt;&lt; endl;
+
+return 0;
+}
+
+</pre>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-27/">← Оглавление</a>
         <a href="/rk6-edu/course-27/mod-47.html">‹ Предыдущий</a>

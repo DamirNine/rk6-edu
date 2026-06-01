@@ -23,7 +23,176 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-62.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Динамическое размещение массивов</a>
+</div>
+<a name="T755805056"></a>
+<a name="T830825773"></a>
+<a name="T171833037"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Динамическое разменщение массивов</a> осуществляется с помощью библиотечных функций системы программирования С: calloc() и realloc(). При <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">динамическом распределении памяти</a> для массивов следует описать соответствующий указатель и присваивать ему значение при помощи функции <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">calloc</a>. Одномерный массив a[10] из элементов типа float можно создать следующим образом</div>
+<pre class="eListing">float *a;
+a=(float*)(calloc(10,sizeof(float));
+</pre>
+<div>Для создания двумерного массива вначале нужно распределить память для массива указателей на одномерные массивы, а затем распределять память для одномерных массивов. Пусть, например, требуется создать массив a[n][m], это можно сделать при помощи следующего фрагмента программы:</div>
+<pre class="eListing">#include
+main ()
+ { double **a;
+   int n,m,i;
+   scanf("%d %d",&amp;n,&amp;m);
+   a=(double **)calloc(m,sizeof(double *));
+   for (i=0; i&lt;=m; i++)
+     a[i]=(double *)calloc(n,sizeof(double));
+     . . . . . . . . . . . .
+ }
+</pre>
+<a name="T3151468"></a>
+<div>Аналогичным образом можно распределить память и для трехмерного массива размером n,m,l. Следует только помнить, что ненужную для дальнейшего выполнения программы память следует освобождать при помощи функции <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">free</a>.</div>
+<pre class="eListing">#include
+main ()
+ { long ***a;
+   int n,m,l,i,j;
+   scanf("%d %d %d",&amp;n,&amp;m,&amp;l);
+/* --------  распределение памяти -------- */
+   a=(long ***)calloc(m,sizeof(long **));
+   for (i=0; i&lt;=m; i++)
+      {  a[i]=(long **)calloc(n,sizeof(long *));
+         for (j=0; i&lt;=l; j++)
+         a[i][j]=(long *)calloc(l,sizeof(long));
+      }
+  . . . . . . . . . . . .
+/* --------- освобождение памяти ----------*/
+   for (i=0; i&lt;=m; i++)
+      {  for (j=0; j&lt;=l; j++)
+         free (a[i][j]);
+         free (a[i]);
+      }
+   free (a);
+ }
+
+</pre>
+<div>Рассмотрим еще один интересный пример, в котором память для массивов распределяется в вызываемой функции, а используется в вызывающей. В таком случае в вызываемую функцию требуется передавать указатели, которым будут присвоены адреса выделяемой для массивов памяти.</div>
+<pre class="eListing">#include
+main()
+{ int vvod(double ***, long **);
+  double **a;     /*  указатель для массива  a[n][m]   */
+  long *b;        /*  указатель для массива  b[n]      */
+  vvod (&amp;a,&amp;b);
+  ..   /* в функцию vvod передаются адреса указателей, */
+  ..   /* а не их значения                             */
+  ..
+}
+int vvod(double ***a, long **b)
+{ int n,m,i,j;
+  scanf (" %d %d ",&amp;n,&amp;m);
+  *a=(double **)calloc(n,sizeof(double *));
+  *b=(long *)calloc(n,sizeof(long));
+  for (i=0; i&lt;=n; i++)
+     *a[i]=(double *)calloc(m,sizeof(double));
+     .....
+}
+</pre>
+<div>Отметим также то обстоятельство, что указатель на массив не обязательно должен показывать на начальный элемент некоторого массива. Он может быть сдвинут так, что начальный элемент будет иметь индекс отличный от нуля, причем он может быть как положительным так и отрицательным.</div>
+<pre class="eListing">#include
+int main()
+{ float *q, **b;
+  int i, j, k, n, m;
+  scanf("%d %d",&amp;n,&amp;m);
+  q=(float *)calloc(m,sizeof(float));
+/* сейчас указатель q показывает на начало массива    */
+  q[0]=22.3;
+  q-=5;
+/* теперь начальный элемент массива имеет индекс 5,   */
+/* а конечный элемент индекс n-5                      */
+  q[5]=1.5;
+/* сдвиг индекса не приводит к перераспределению      */
+/* массива в памяти и изменится начальный элемент     */
+  q[6]=2.5;   /*  -  это второй элемент              */
+  q[7]=3.5;   /*  -  это третий элемент              */
+  q+=5;
+/* теперь начальный элемент вновь имеет индекс 0,     */
+/* а значения элементов q[0], q[1], q[2] равны        */
+/* соответственно 1.5, 2.5, 3.5                       */
+  q+=2;
+/* теперь начальный элемент имеет индекс -2,          */
+/* следующий -1, затем 0 и т.д. по порядку            */
+  q[-2]=8.2;
+  q[-1]=4.5;
+  q-=2;
+/* возвращаем начальную индексацию, три первых        */
+/* элемента массива q[0], q[1], q[2], имеют           */
+/* значения 8.2, 4.5, 3.5                             */
+  q--;
+/* вновь изменим индексацию .                         */
+/* Для освобождения области памяти в которой размещен */
+/* массив q используется функция free(q), но поскольку */
+/* значение указателя q смещено, то выполнение     */
+/* функции free(q) приведет к непредсказуемым последствиям. */
+/* Для правильного выполнения этой функции    */
+/* указатель q должен быть возвращен в первоначальное положение */
+  free(++q);
+/* Рассмотрим возможность изменения индексации и      */
+/* освобождения памяти для двумерного массива         */
+  b=(float **)calloc(m,sizeof(float *));
+  for (i=0; i &lt; m; i++)
+  b[i]=(float *)calloc(n,sizeof(float));
+/* После распределения памяти начальным элементом массива будет элемент b[0][0] */
+/* Выполним сдвиг индексов так, чтобы начальным элементом стал элемент b[1][1]  */
+  for (i=0; i &lt; m ; i++) --b[i];
+  b--;
+/* Теперь присвоим каждому элементу массива сумму его индексов */
+  for (i=1; i&lt;=m; i++)
+  for (j=1; j&lt;=n; j++)
+  b[i][j]=(float)(i+j);
+/* Обратите внимание на начальные значения счетчиков   */
+/* циклов i и j, он начинаются с 1 а не с 0            */
+/* Возвратимся к прежней индексации                    */
+  for (i=1; i&lt;=m; i++) ++b[i];
+  b++;
+/* Выполним освобождение памяти                        */
+  for (i=0; i &lt; m; i++)  free(b[i]);
+  free(b);
+  ...
+  ...
+  return 0;
+}
+</pre>
+<div>В качестве последнего примера рассмотрим динамическое распределение памяти для массива указателей на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a>, имеющие один входной параметр типа <span class="eOperator">double</span> и возвращающие значение типа <span class="eOperator">double</span>.</div>
+<pre class="eListing">#include
+#include
+double cos(double);
+double sin(double);
+double tan(double);
+int main()
+ { double (*(*masfun))(double);
+   double x=0.5, y;
+   int i;
+   masfun=(double(*(*))(double))
+       calloc(3,sizeof(double(*(*))(double)));
+   masfun[0]=cos;
+   masfun[1]=sin;
+   masfun[2]=tan;
+   for (i=0; i&lt;3; i++);
+     {  y=masfun[i](x);
+        printf("\n x=%g  y=%g",x,y);
+     }
+   return 0;
+ }
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-60.html">‹ Предыдущий</a>

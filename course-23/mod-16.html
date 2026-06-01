@@ -23,7 +23,74 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-17.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Общая структура программы на языке Си</a>
+</div>
+<a name="T2119303568"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Программа на языке Си</a> — это набор функций и объявлений данных, содержащийся в одном или более файлах. Одна из этих функций — функция main().</div>
+<a name="T696383489"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция</a> — это именованный фрагмент программы. Данные могут передаваться в функцию и функция может возвращать значение.</div>
+<a name="T1065317809"></a>
+<div>Программа на языке Си состоит из функций, произвольным образом упорядоченных в файле. Фактически функции могут быть размещены и в разных файлах. Концепция функции в языке Си покрывает все типы подпрограмм в других <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языках программирования</a>: функции и процедуры.</div>
+<div>Функции позволяют писать модульные программы, в которых каждая функция выполняет собственную задачу. Функции обычно невелики (страница или меньше, могут быть и однострочные).</div>
+<div>Функции позволяют избежать дублирования кода в одной программе. Кроме того, несколько программ могут совместно использовать код функции.</div>
+<div>Программы легче читаются, так как детали “скрыты” внутри функций.</div>
+<div>Программы легче пишутся, поскольку функции позволяют разбить большие задачи на задачи меньшего размера, более простые для решения.</div>
+<a name="T990387577"></a>
+<div>Выполнение программы всегда начинается с <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функции main()</a>. Обычно функция <span class="eOperator">main()</span> располагается в начале файла. Порядок расположения функций в файле не имеет значения. Часто они располагаются в алфавитном порядке для удобства поиска при модификации программы.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Структура программы на языке Си:</div>
+<pre class="eListing">объявления
+int main(...)/*определение прототипа функции*/
+ {
+  объявления
+
+  операторы
+ }
+
+объявления
+int f(...) /*определение прототипа функции*/
+ {
+  объявления
+
+  операторы
+ }
+
+void g(...)/*определение прототипа функции*/
+ {
+   объявления
+
+   операторы
+ }
+</pre>
+</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Определения прототипов функций</a> не могут быть вложенными.</div>
+</div>
+<a name="T396025840"></a>
+<div>Язык Си использует свободный, а не позиционный формат расположения программы, что делает несущественным позиции размещения элементов программы. При чтении текста программы на Си компилятор распознает <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">лексемы</a>, разделенные <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">символами  промежутков</a> (пробелы, знаки табуляции и символы перевода строки). Как правило, символы промежутков  игнорируются.</div>
+<div>Имя файла, содержащего программу на языке Си должно оканчиваться расширением <span class="eOperator">.с</span>.</div>
+<div class="eSubTitle">Минимальная программа на языке Си</div>
+<div>Минимальная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программа на языке Си</a> должна включать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функцию</a> с именем <span class="eOperator">main()</span>. В начале выполнения программы управление из операционной системы всегда передается функции <span class="eOperator">main()</span>.</div>
+<a name="T798225181"></a>
+<div>Примеры минимальной программы, допустимые с точки зрения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синтаксиса</a>, но ничего не делающие:</div>
+<pre class="eListing">int main ( )
+{
+}
+</pre>
+<div>или</div>
+<pre class="eListing">int main ( ){}
+</pre>
+<div>или</div>
+<pre class="eListing">int main
+(
+ )
+{
+}
+</pre>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-15.html">‹ Предыдущий</a>

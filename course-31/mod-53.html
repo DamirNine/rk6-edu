@@ -23,7 +23,145 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-54.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Система команд микроконтроллера PIC16F877</a>
+</div>
+<a name="T1083090817"></a>
+<div>Каждая <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">команда микроконтроллера</a> состоит из одного 14-разрядного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">слова</a> разделенного на код <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции</a>, определяющий действие команды, один или несколько <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операндов</a>, указывающих на данные, над которыми будет проводиться действие.</div>
+<div>Полный список команд смотрите в табл.&nbsp;1, табл.&nbsp;2, табл.&nbsp;3. Команды разделены на следующие группы:</div>
+<ul class="eList"><li>байтовые команды (табл.&nbsp;1);</li>
+<li>битовые команды (табл.&nbsp;2);</li>
+<li>команды управления и операций с константами (табл.&nbsp;3).</li>
+</ul>
+<div>На рис.&nbsp;1 показан формат команд трех основных групп.</div>
+<div>Для байт ориентированных команд:</div>
+<ul class="eList"><li><img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=1/?k=10"> является указателем регистра и определяет какой регистр должен использоваться в команде;</li>
+<li><img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=2/?k=10"> указателем адресата результата и определяет, где будет сохранен результат.</li>
+</ul>
+<div>Если <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=3/?k=10">, результат сохраняется в регистре <span class="eOperator">W</span>.</div>
+<div>Если <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=4/?k=10">, результат сохраняется в регистре, который используется в команде.</div>
+<div>В бит ориентированных командах:</div>
+<ul class="eList"><li><img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=5/?k=10"> определяет номер бита участвующего в операции;</li>
+<li><img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=1/?k=10"> — указатель регистра, который содержит этот бит.</li>
+</ul>
+<div>В командах управления или операциях с константами:</div>
+<ul class="eList"><li><img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=6/?k=10"> представляет восемь или одиннадцать бит константы.</li>
+</ul>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Все команды выполняются за один машинный цикл, кроме команд условия, в которых замещается значение программного счетчика. В случае выполнения команды за два машинных цикла, во втором цикле выполняется инструкция <span class="eOperator">NOP</span>. Один машинный цикл состоит из четырех тактов генератора. Для тактового генератора с частотой 4 МГц команда выполняется за 2 мкс.</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTableT">Мнемоника команды</td><td class="eTableT">Операция</td><td class="eTableT">Циклы</td><td class="eTableT">Код команды</td><td class="eTableT">Флажки</td><td class="eTableT">Примечание</td></tr>
+<tr><td class="eTable">ADDWF f, d</td><td class="eTable">Сложение (W + f <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> d)</td><td class="eTable">1</td><td class="eTable">00 0111 dfff ffff</td><td class="eTable">C.DC.Z</td><td class="eTable">1,2</td></tr>
+<tr><td class="eTable">ANDWF f, d</td><td class="eTable">Логическое "И" (W and f <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> d)</td><td class="eTable">1</td><td class="eTable">00 0101 dfff ffff</td><td class="eTable">Z</td><td class="eTable">1,2</td></tr>
+<tr><td class="eTable">CLRF f</td><td class="eTable">Обнулить f</td><td class="eTable">1</td><td class="eTable">00 0001 1fff ffff</td><td class="eTable">Z</td><td class="eTable">2</td></tr>
+<tr><td class="eTable">CLRW -</td><td class="eTable">Обнулить W</td><td class="eTable">1</td><td class="eTable">00 0001 0xxx xxxx</td><td class="eTable">Z</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">COMF f, d</td><td class="eTable">Дополнение f (Логическое "НЕ")</td><td class="eTable">1</td><td class="eTable">00 1001 dfff ffff</td><td class="eTable">Z</td><td class="eTable">1,2</td></tr>
+<tr><td class="eTable">DECF f, d</td><td class="eTable">Декремент f</td><td class="eTable">1</td><td class="eTable">00 0011 dfff ffff</td><td class="eTable">Z</td><td class="eTable">1,2</td></tr>
+<tr><td class="eTable">DECFSZ f, d</td><td class="eTable">Декремент f, пропуск если "0"</td><td class="eTable">1(2)</td><td class="eTable">00 1011 dfff ffff</td><td class="eTable">&nbsp;</td><td class="eTable">1,2,3</td></tr>
+<tr><td class="eTable">INCF f, d</td><td class="eTable">Инкремент f</td><td class="eTable">1</td><td class="eTable">00 1010 dfff ffff</td><td class="eTable">Z</td><td class="eTable">1,2</td></tr>
+<tr><td class="eTable">INCFSZ f, d</td><td class="eTable">Инкремент f, пропуск если "0"</td><td class="eTable">1(2)</td><td class="eTable">00 1111 dfff ffff</td><td class="eTable">&nbsp;</td><td class="eTable">1,2,3</td></tr>
+<tr><td class="eTable">IORWF f, d</td><td class="eTable">Логическое "ИЛИ" (W or f <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> d)</td><td class="eTable">1</td><td class="eTable">00 0100 dfff ffff</td><td class="eTable">Z</td><td class="eTable">1,2</td></tr>
+<tr><td class="eTable">MOVF f, d</td><td class="eTable">Пересылка (f <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> W)</td><td class="eTable">1</td><td class="eTable">00 1000 dfff ffff</td><td class="eTable">Z</td><td class="eTable">1,2</td></tr>
+<tr><td class="eTable">MOVWF f</td><td class="eTable">Пересылка (W <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> f)</td><td class="eTable">1</td><td class="eTable">00 0000 1fff ffff</td><td class="eTable">&nbsp;</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">NOP</td><td class="eTable">Пустая операция</td><td class="eTable">1</td><td class="eTable">00 0000 0xx0 0000</td><td class="eTable">&nbsp;</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">RLF f, d</td><td class="eTable">Сдвиг влево через перенос</td><td class="eTable">1</td><td class="eTable">00 1101 dfff ffff</td><td class="eTable">С</td><td class="eTable">1,2</td></tr>
+<tr><td class="eTable">RRF f, d</td><td class="eTable">Сдвиг вправо через перенос</td><td class="eTable">1</td><td class="eTable">00 1100 dfff ffff</td><td class="eTable">C</td><td class="eTable">1, 2</td></tr>
+<tr><td class="eTable">SUBWF f, d</td><td class="eTable">Вычитание (f <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=8/?k=10"> W <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> d)</td><td class="eTable">1</td><td class="eTable">00 0010 dfff ffff</td><td class="eTable">C,DC,Z</td><td class="eTable">1, 2</td></tr>
+<tr><td class="eTable">SWAPF f, d</td><td class="eTable">Обменять полубайты f</td><td class="eTable">1</td><td class="eTable">00 1110 dfff ffff</td><td class="eTable">&nbsp;</td><td class="eTable">1,2</td></tr>
+<tr><td class="eTable">XOFWF f, d</td><td class="eTable">Исключающее "ИЛИ" (W or f <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> d)</td><td class="eTable">1</td><td class="eTable">00 0110 dfff ffff</td><td class="eTable">Z</td><td class="eTable">1,2</td></tr>
+</tbody></table><br>
+<div class="auto" style="text-align:right">Таблица 2&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTableT">Мнемоника команды</td><td class="eTableT">Операция</td><td class="eTableT">Циклы</td><td class="eTableT">Код команды</td><td class="eTableT">Флажки</td><td class="eTableT">Примечание</td></tr>
+<tr><td class="eTable">BCF f. b</td><td class="eTable">Обнулить бит b в f</td><td class="eTable">1</td><td class="eTable">01 00bb bfff ffff</td><td class="eTable">&nbsp;</td><td class="eTable">1,2</td></tr>
+<tr><td class="eTable">BSF f, b</td><td class="eTable">Установить бит b в f</td><td class="eTable">1</td><td class="eTable">01 0lbb bfff ffff</td><td class="eTable">&nbsp;</td><td class="eTable">1,2</td></tr>
+<tr><td class="eTable">BTFSC f, b</td><td class="eTable">Тест бита b в f, пропуск если "0"</td><td class="eTable">1(2)</td><td class="eTable">01 l0bb bfff ffff</td><td class="eTable">&nbsp;</td><td class="eTable">3</td></tr>
+<tr><td class="eTable">BTFSS f, b</td><td class="eTable">Тест бита b в f пропуск если "1"</td><td class="eTable">1(2)</td><td class="eTable">01 11bb bfff ffff</td><td class="eTable">&nbsp;</td><td class="eTable">3</td></tr>
+</tbody></table><br>
+<div class="auto" style="text-align:right">Таблица 3&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTableT">Мнемоника команды</td><td class="eTableT">Операция</td><td class="eTableT">Циклы</td><td class="eTableT">Код команды</td><td class="eTableT">Флажки</td><td class="eTableT">Примечание</td></tr>
+<tr><td class="eTable">ADDLW к</td><td class="eTable">Сложение (k + W <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> W)</td><td class="eTable">1</td><td class="eTable">11 111x kkkk kkkk</td><td class="eTable">C,DC,Z</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">ANDLW к</td><td class="eTable">Логическое "И" (k and W <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> W)</td><td class="eTable">1</td><td class="eTable">11 1001 kkkk kkkk</td><td class="eTable">Z</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">CALL k</td><td class="eTable">Вызов подпрограммы k</td><td class="eTable">2</td><td class="eTable">10 0kkk kkkk kkkk</td><td class="eTable">&nbsp;</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">CLRWDT -</td><td class="eTable">Обнулить WDT</td><td class="eTable">1</td><td class="eTable">00 0000 0110 0100</td><td class="eTable">TO,PD</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">GOTO k</td><td class="eTable">Переход к адресу k</td><td class="eTable">2</td><td class="eTable">10 1kkk kkkk kkkk</td><td class="eTable">&nbsp;</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">IORLW k</td><td class="eTable">Логическое "ИЛИ" (К or W <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> W)</td><td class="eTable">1</td><td class="eTable">11 1000 kkkk kkkk</td><td class="eTable">Z</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">MOVLW k</td><td class="eTable">Пересылка (k <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> W)</td><td class="eTable">1</td><td class="eTable">11 00xx kkkk kkkk</td><td class="eTable">&nbsp;</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">RETFIE -</td><td class="eTable">Возврат из прерывания</td><td class="eTable">2</td><td class="eTable">00 0000 0000 1001</td><td class="eTable">&nbsp;</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">RETLW k</td><td class="eTable">Возврат с константой</td><td class="eTable">2</td><td class="eTable">11 01xx kkkk kkkk</td><td class="eTable">&nbsp;</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">RETURN -</td><td class="eTable">Возврат из подпрограммы</td><td class="eTable">2</td><td class="eTable">00 0000 0000 1000</td><td class="eTable">&nbsp;</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">SLEEP -</td><td class="eTable">Останов</td><td class="eTable">1</td><td class="eTable">00 0000 0110 0011</td><td class="eTable">TO,PD</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">SUBLW k</td><td class="eTable">Вычитание (k <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=8/?k=10"> W <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> W)</td><td class="eTable">1</td><td class="eTable">11 110х kkkk kkkk</td><td class="eTable">C,DC,Z</td><td class="eTable">&nbsp;</td></tr>
+<tr><td class="eTable">XORLW k</td><td class="eTable">Исключающее "ИЛИ"(k or W <img align="absmiddle" src="/?frm/?doc=MPSU/%D1%E8%F1%F2%E5%EC%E0+%EA%EE%EC%E0%ED%E4+%CC%CA.mod/?n=7/?k=10"> W)</td><td class="eTable">1</td><td class="eTable">11 1010 kkkk kkkk</td><td class="eTable">Z</td><td class="eTable">&nbsp;</td></tr>
+</tbody></table><br>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Если регистр ввода/вывода изменяется, то исходным значением будет величина, считанная непосредственно с контактов.</div>
+</div>
+<div class="auto">Примечание 2</div>
+<div class="eNote"><div>Если команда модифицирует регистр TMR0, то предделитель будет обнулен.</div>
+</div>
+<div class="auto">Примечание 3</div>
+<div class="eNote"><div>Если в счетчик программ записывается адрес (т.е. условие проверки "истина"), то команда выполняется за два цикла. Второй цикл выполняется как команда <span class="eOperator">NOP</span>.</div>
+</div>
+<div class="eSubTitle">Рекомендуемая структура программы для микроконтроллера PIC16F877</div>
+<pre class="eListing">list      p=16f877          ;  директива определения процессора
+
+#include &lt;p16f877.inc&gt;      ; подключение списка определений переменных процессора
+
+__CONFIG _CP_OFF &amp; _WDT_ON &amp; _BODEN_ON &amp; _PWRTE_ON &amp; _RC_OSC &amp; _WRT_ENABLE_ON &amp; _LVP_ON &amp; _DEBUG_OFF &amp; _CPD_OFF
+; '__CONFIG'  - директива определения битов конфигурации процессора
+
+;***** ОПРЕДЕЛЕНИЕ ПЕРЕМЕННЫХ
+w_temp        EQU     0x70   ; переменная для сохранения текущего состояния при обработке прерывания
+status_temp   EQU     0x71   ; переменная для сохранения текущего состояния при обработке прерывания
+
+;*****
+
+ORG     0x000           ; размещение команд по адресу сброса процессора
+clrf    PCLATH          ; очистка старших бит счетчика команд
+
+goto    main            ; переход на основную программу
+
+ORG     0x004           ; размещение команд по вектору прерывания процессора
+
+movwf   w_temp          ; сохранение текущего значения регистра W
+movf  STATUS,w          ; сохранение текущего значения регистра STATUS
+movwf  status_temp
+
+; ПРЕРЫВАЮЩАЯ ПРОГРАММА
+
+movf    status_temp,w   ; восстановление значения регистра STATUS
+movwf   STATUS
+swapf   w_temp,f
+swapf   w_temp,w        ; восстановление значения регистра W
+retfie                  ; возврат в основную программу
+
+main
+
+; ОСНОВНАЯ ПРОГРАММА
+
+END                     ; директива конца программы
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-52.html">‹ Предыдущий</a>

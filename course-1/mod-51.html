@@ -23,7 +23,66 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-1/mod-52.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Анализ сетей Петри</a>
+</div>
+<a name="T50273086"></a>
+<a name="T130920907"></a>
+<div>Анализ <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сложных систем</a> на базе <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетей Петри</a> можно выполнять посредством <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">имитационного моделирования</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">СМО</a>, представленных моделями сетей Петри. При этом задают входные потоки заявок и определяют соответствующую реакцию системы. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Выходные параметры</a> СМО рассчитывают путем обработки накопленного при моделировании статистического материала.</div>
+<div>Возможен и другой подход к использованию сетей Петри для анализа объектов, исследуемых на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">системном уровне</a>. Он не связан с имитацией процессов и основан на исследовании таких свойств сетей Петри, как ограниченность, безопасность, сохраняемость, достижимость, живость.</div>
+<div>Ограниченность (или K-ограниченность) имеет место, если число меток в любой позиции сети не может превысить значения <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=1/?k=10">. При проектировании автоматизированных систем определение <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=1/?k=10"> позволяет обоснованно выбирать емкости накопителей. Возможность неограниченного роста числа меток свидетельствует об опасности неограниченного роста длин очередей.</div>
+<div>Безопасность — частный случай ограниченности, а именно это 1-ограниченность. Если для некоторой позиции установлено, что она безопасна, то ее можно представлять одним триггером.</div>
+<div>Сохраняемость характеризуется постоянством загрузки ресурсов, т.е.<br><img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=2/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=3/?k=10"> — число маркеров в <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=4/?k=10">-й позиции, <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=5/?k=10"> — весовой коэффициент.</div>
+<a name="T525166086"></a>
+<a name="T931877664"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Достижимость</a> <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=6/?k=10"> характеризуется возможностью достижения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">маркировки</a> <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=7/?k=10"> из состояния сети, характеризуемого маркировкой <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=8/?k=10">.</div>
+<a name="T1928716977"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Живость сети Петри</a> определяется возможностью срабатывания любого перехода при функционировании моделируемого объекта. Отсутствие живости означает либо избыточность аппаратуры в проектируемой системе, либо свидетельствует о возможности возникновения зацикливаний, тупиков, блокировок.</div>
+<div>В основе исследования перечисленных свойств сетей Петри лежит анализ достижимости.</div>
+<a name="T751921563"></a>
+<div>Один из методов анализа достижимости любой маркировки из состояния <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=9/?k=10"> — построение <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">графа достижимости</a>. Начальная вершина графа отображает <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=9/?k=10">, а остальные вершины соответствуют маркировкам. Дуга из <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=10/?k=10"> в <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=7/?k=10"> означает событие <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=11/?k=10"><sub class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">j</span></sub> и соответствует срабатыванию перехода <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=12/?k=10">. В сложных сетях граф может содержать чрезмерно большое число вершин и дуг. Однако при построении графа можно не отображать все вершины, так как многие из них являются дублями (действительно, от маркировки <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=8/?k=10"> всегда порождается один и тот же подграф вне зависимости от того. из какого состояния система пришла в <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=8/?k=10">). Тупики обнаруживаются по отсутствию разрешенных переходов из какой-либо вершины, т.е. по наличию листьев — терминальных вершин. Неограниченный рост числа маркеров в какой-либо позиции свидетельствует о нарушениях ограниченности.</div>
+<div>Приведем примеры анализа достижимости.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Сеть Петри и граф достижимых разметок представлены на рис.&nbsp;1.</div>
+<div>На рисунке вершины графа изображены в виде маркировок, дуги помечены срабатывающими переходами. Сеть является неограниченной и живой, так как метки могут накапливаться в позиции <img align="absmiddle" src="/?frm/?doc=110_Simul/3019.mod/?n=13/?k=10">, срабатывают все переходы, тупики отсутствуют.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/3019.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Сеть Петри и ее граф достижимости для примера 1</div></div>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>Сеть Петри и граф достижимых разметок представлены на рис.&nbsp;2.</div>
+<div>Сеть, моделирующая двухпроцессорную вычислительную систему с общей памятью, является безопасной, живой, все разметки достижимы.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/3019.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Сеть Петри и ее граф достижимости для примера 2 </div></div>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div>На рис. 3 представлены сеть Петри и ее граф достижимости из работы [1].</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/3019.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Сеть Петри и ее граф достижимости для примера 3</div></div>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. В.Э.Малышкин. Основы параллельных вычислений. -2003 ЦИТ СГГА, http://www.ssga.ru/metodich/paral1/contents.html<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-1/">← Оглавление</a>
         <a href="/rk6-edu/course-1/mod-50.html">‹ Предыдущий</a>

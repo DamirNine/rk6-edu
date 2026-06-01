@@ -23,7 +23,52 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-7/mod-39.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Express-X</a>
+</div>
+<a name="T1794729701"></a>
+<a name="T2108182528"></a>
+<div>Семантически эквивалентные прикладные объекты и элементы могут фигурировать в разных моделях. Естественно, что авторы этих моделей, работающие независимо друг от друга, могут использовать разные средства для их описания (например, разные идентификаторы). Если  же независимо созданные модели потребуется использовать совместно и соединить в некоторой общей модели, то необходимо описать имеющиеся соответствия параметров. Для таких описаний разработан язык <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Express-X</a>, вошедший в качестве стандарта ISO 10303-14 в лингвистическое обеспечение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">STEP</a>.</div>
+<a name="T674463047"></a>
+<div>Приводимый ниже пример характеризует способ установления соответствия между сущностями и атрибутами двух моделей на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке Express</a>.  </div>
+<pre class="eListing">SCHEMA  Old_data; 
+  ENTITY Metadata; 
+    faculty : STRING; 
+    lecturer : STRING; 
+    volume : STRING;
+    annotation  : STRING;  
+  END_ENTITY; 
+  ENTITY Subject;
+    name : STRING; 
+    info: Metadata; 
+  END_ENTITY; 
+END_SCHEMA; 
+
+SCHEMA  New_data; 
+  ENTITY Course; 
+    title : STRING; 
+    tutor : STRING; 
+    preface : STRING; 
+  END_ENTITY; 
+END_SCHEMA; 
+ 
+SCHEMA_Map Data_Mapping; 
+  GLOBAL 
+    DECLARE source INSTANCE OF SOURCE_SCHEMA  Old_data; 
+    DECLARE target INSTANCE OF TARGET_SCHEMA  New_data; 
+  END_GLOBAL; 
+  MAP lecture FOR tgtInstance:target::Course; 
+    FROM (srcInstance:source::Subject)WHEN TRUE; 
+    BEGIN_MAP 
+      tgtInstance.title := srcInstance.name;
+      tgtInstance.tutor := srcInstance.info.lecturer;
+      tgtInstance.preface := srcInstance.info.annotation;  
+    END_MAP; 
+END_SCHEMA_MAP; 
+</pre>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-7/">← Оглавление</a>
         <a href="/rk6-edu/course-7/mod-37.html">‹ Предыдущий</a>

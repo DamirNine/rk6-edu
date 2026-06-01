@@ -23,7 +23,28 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-20/mod-2.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Введение</a>
+</div>
+<a name="T1389204488"></a>
+<div>Язык Пролог предназначен для представления и использования знаний в различных предметных областях. Математическую основу языка составляет исчисление предикатов первого порядка (ИППП), при этом объекты предметной области, их свойства и связи представляются конъюнкцией правильно построение формул специального вида, называемых <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">дизъюнктами Хорна</a>. Для решения задачи получения новой информации об отношениях предметной области, формулируемой как задача доказательства теоремы, в интерпретаторе системы программирования Пролог реализован метод резолюции.</div>
+<div>Примечание. Дизъюнктом Хорна называется формула, имеющая следующий общий вид записи:</div>
+<div><br><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=1/?k=10"><br></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=2/?k=10">0, <img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=3/?k=10"> - атомарная формула (предикат), все переменные связаны не указанными явно кванторами всеобщности, областью действия которых служит вся формула. Атомарная формула, входящая в дизъюнкт с отрицанием, называется отрицательным литералом, а формула без отрицания - положительном литералом.</div>
+<div>Эквивалентной, но более удобной для человека, является импликативная форма записи дизъюнктов Хорна: <br><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=4/?k=10"><br> которую, с учётом правила Modus Ponens, можно трактовать как "Если ..., то ...".</div>
+<div>Различные типы дизъюнктов Хорна имеют специальные названия в языке Пролог, что иллюстрирует следующая таблица.</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTableT">Дизъюнкт Хорна</td><td class="eTableT">Импликативная форма</td><td class="eTableT">Утверждение Пролога</td></tr>
+<tr align="center"><td class="eTable">P<sub class="eSub">0</sub></td><td class="eTable">P<sub class="eSub">0</sub></td><td class="eTable">Факт</td></tr>
+<tr align="center"><td class="eTable">P<sub class="eSub">0</sub><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=5/?k=10">P<sub class="eSub">1</sub><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=5/?k=10">P<sub class="eSub">2</sub><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=6/?k=10">P<sub class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">n</span></sub></td><td class="eTable">(P<sub class="eSub">1</sub><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=7/?k=10">P<sub class="eSub">2</sub><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=8/?k=10">P<sub class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">n</span></sub>)<img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=9/?k=10">P<sub class="eSub">0</sub></td><td class="eTable">Правило</td></tr>
+<tr align="center"><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=10/?k=10">P<sub class="eSub">1</sub><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=5/?k=10">P<sub class="eSub">2</sub><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=6/?k=10">P<sub class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">n</span></sub></td><td class="eTable"><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=10/?k=10">(P<sub class="eSub">1</sub><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=7/?k=10">P<sub class="eSub">2</sub><img align="absmiddle" src="/?frm/?doc=Prolog/Intro.mod/?n=8/?k=10">P<sub class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">n</span></sub>)</td><td class="eTable">Запрос (цель)</td></tr>
+</tbody></table><br>
+<div>Программа на языке Пролог состоит из утверждений (предложений, дизъюнктов Хорна), составляющих базу фактов и базу правил, к которым допустимо обращение с запросами. Запросы называются также целевыми утверждениями или просто целями. Термин "программа" мы применяем к Прологу по "традиции", т.к. Пролог - декларативный язык.</div>
+<div>Большинство существующих систем программирования Пролог являются комбинированными в том смысле, что допускают как интерпретацию программ, так и их компиляцию.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-20/">← Оглавление</a>
         <a class="disabled">‹ Предыдущий</a>

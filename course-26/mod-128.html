@@ -23,7 +23,53 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-129.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сортировка структур</a>
+</div>
+<a name="T1954137032"></a>
+<div>В большинстве прикладных программ, в которых используется сортировка, предусмотрена <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сортировка структур</a> данных. Например, списки почтовой рассыпки, складские базы данных и журналы сотрудников содержат наборы разнотипных данных. В программах на языке С совокупности данных обычно хранятся в структурах. Хотя структура обычно содержит несколько членов, структуры, как правило, сортируются только по одному получлену, который используется в качестве ключа сортировки. За исключением выбора ключа, приемы сортировки структур ничем не отличаются от приемов сортировки других типов данных.</div>
+<div>Чтобы проиллюстрировать пример сортировки структур, создадим структуру под называнием <span class="eOperator">address,</span> в которой можно хранить почтовый адрес. Подобная структура может применяться в программе почтовой рассылки. Описание структуры <span class="eOperator">address</span> показано ниже:</div>
+<pre class="eListing">struct address   {
+char name[40]; .
+/*  имя  */
+char street[40];
+/*  улица  */
+char city[20];
+/*   город  */
+char state[3];
+/*  штат   */
+char zip[ll];
+/* индекс */
+};
+</pre>
+<div>Поскольку представляется разумным организовать список адресов в виде массива структур, в данном примере предположим, что процедура сортировки будет сортиро¬вать массив структур типа <span class="eOperator">address.</span> Такая процедура показана ниже. Она сортирует адреса по почтовому индексу.</div>
+<pre class="eListing">/*  Быстрая  сортировка  структур  типа  address.   */ 
+void quick_struct(struct  address  items[],  int  count)
+{
+qs_ struct(items,0,count-l) ;
+}
+void qs_struct(struct address items[], int left, int right)
+register int i, j;
+char *x;
+struct address temp;
+i = left; j = right;
+x = items [ (left+fright)/2] . zip; /* сортировка по почтовому индексу */
+do {
+while({strcmp(items[i].zip,x) &lt; 0) &amp;&amp; (i &lt; right}) i++; while((strcmp(items[j].zip,x) &gt; 0) &amp;&amp; (j &gt; left)) j--; 
+if(i &lt;= j) {
+temp = items[i];
+items[i] = items[j];
+items[j] = temp;
+}
+} while(i &lt;= j) ;
+if(left &lt; j) qs_struct(items, left, j);
+ if(i &lt; right) qs_struct(items, i, right);
+}
+</pre>
+<br>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-127.html">‹ Предыдущий</a>

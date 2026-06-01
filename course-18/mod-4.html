@@ -23,7 +23,60 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-18/mod-5.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сигмоидальный нейрон</a>
+</div>
+<a name="T84963802"></a>
+<a name="T137875650"></a>
+<a name="T1075309993"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сигмоидальный нейрон</a> устраняет основной недостаток <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">персептрона</a> — разрывность <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции активации</a> <img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=1/?k=10">. Структурная схема нейрона данного типа представлена на рис.&nbsp;1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=NN/012-neurons.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Структурная схема сигмоидального нейрона</div></div>
+<div>В качестве функции активации <img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=1/?k=10"> выступает сигмоидальная функция (т.е. функция, график которой похож на букву "S"). На практике используются как униполярные, так и биполярные функции активации.</div>
+<div>Униполярная функция, как правило, представляется формулой <br><img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=2/?k=10"><br>тогда как биполярная функция задается в виде <br><img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=3/?k=10"><br></div>
+<div>Графики униполярных и биполярных сигмоидальных функций представлены на рис.&nbsp;2 и рис.&nbsp;3 соответственно.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=NN/012-neurons.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;График униполярной сигмоидальной функции</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=NN/012-neurons.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;График биполярной сигмоидальной функции</div></div>
+<div>Коэффициент <img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=4/?k=10"> определяет "крутизну" функций и выбирается разработчиком сети (на практике <img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=4/?k=10"> для упрощения назначают обычно равным 1).</div>
+<div>Производная униполярной функции активации имеет вид <br><img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=5/?k=10"><br>а производная биполярной функции — <br><img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=6/?k=10"><br></div>
+<div>Графики производных имеют колоколобразный вид и представлены на рис.&nbsp;4 и рис.&nbsp;5.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=NN/012-neurons.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;График производной униполярной сигмоидальной функции</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=NN/012-neurons.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;График производной биполярной сигмоидальной функции</div></div>
+<div>Для обучения сигмоидального нейрона используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стратегия "с учителем"</a>, однако, в отличие от персептрона, для поиска минимума целевой функции <br><img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=7/?k=10"><br>здесь используются методы поисковой оптимизации первого порядка, в которых целенаправленное изменение весовых коэффициентов <img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=8/?k=10"> осуществляется в направлении отрицательного градиента <img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=9/?k=10"></div>
+<div><img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=10/?k=10">-ая компонента вектора градиента имеет вид <br><img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=11/?k=10"><br></div>
+<div>Обозначив <img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=12/?k=10">, имеем <br><img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=13/?k=10"><br></div>
+<div>Также возможно обучение сигмоидального нейрона и дискретным способом — сериями циклов уточнения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">входных весов</a> для каждой эталонной пары <img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=14/?k=10"> (см. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">правило персептрона</a>). При этом коррекция весов после каждого цикла выполняется по следующей формуле: <br><img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=15/?k=10"><br>где <img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=16/?k=10"> — коэффициент обучения, значение которого выбирается из диапазона (0, 1).</div>
+<div>Необходимо напомнить, что все методы поисковой оптимизации первого порядка — это методы локального поиска, не гарантирующие достижения глобального экстремума. В качестве попытки преодолеть этот недостаток было предложено обучение с моментом, в котором коррекция весов выполняется следующим образом: <br><img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=17/?k=10"><br></div>
+<div>Последнее слагаемое в формуле называется моментом и характеризует фактическое изменение веса в предыдущем цикле (<img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=18/?k=10"> выбирается в диапазоне (0, 1)). Существует надежда, что при приближении к точке локального минимума (где градиентная составляющая <img align="absmiddle" src="/?frm/?doc=NN/012-neurons.mod/?n=19/?k=10"> стремится к нулю) составляющая момента выведет поиск из области локального минимума в более перспективную область.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-18/">← Оглавление</a>
         <a href="/rk6-edu/course-18/mod-3.html">‹ Предыдущий</a>

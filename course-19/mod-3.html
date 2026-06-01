@@ -23,7 +23,128 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-19/mod-4.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Интерпретация ИППП</a>
+</div>
+<a name="T489292980"></a>
+<div>Использование <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ИППП</a> в качестве инструмента для представления знаний и манипулирования ими связано с возможностью интерпретации п.п.ф. как утверждений, касающихся предметной области.</div>
+<a name="T648689948"></a>
+<div>Под <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">интерпретацией ИППП</a> понимается непустое множество <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=1/?k=10"> (называемое областью интерпретации) и однозначное отображение, которое:</div>
+<ol class="eList"><a name="T988952615"></a>
+<li>каждой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">предикатной букве</a> <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=2/?k=10"> ставит в соответствие <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=3/?k=10">-местное отношение на <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=4/?k=10">,</li>
+<a name="T1619298105"></a>
+<li>каждой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функциональной букве</a> <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=5/?k=10"> — <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=6/?k=10">-местную операцию на <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=4/?k=10">,</li>
+<a name="T2111608831"></a>
+<li>каждой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">предметной константе</a> — элемент <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=4/?k=10">.</li>
+</ol>
+<a name="T1447318761"></a>
+<div>При этом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">предметная переменная</a> может принимать значение любого элемента <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=1/?k=10">.</div>
+<a name="T1978205887"></a>
+<div>Всякая <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">замкнутая</a> (т.е. не содержащая свободных переменных) п.п.ф. представляет собой <span style="font-style:italic; ">высказывание</span> об элементах, отношениях и операциях на <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=1/?k=10">, которое может быть истинным или ложным. При этом атомарной формуле <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=7/?k=10"> приписывается значение истины, если термы <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=8/?k=10"> соответствуют элементам из <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=1/?k=10">, удовлетворяющим отношению, определяемому данной интерпретацией. Значение истинности составных формул вычисляется в соответствие с входящими в них знаками связок, интепретируемых как логические операции (<img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=9/?k=10"> — И, <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=10/?k=10"> — ИЛИ, <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=11/?k=10"> — НЕ, <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=12/?k=10"> — импликация).</div>
+<div>Логическая операция "импликация" имеет следующую таблицу истинности:</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td width="33.333332%" class="eTable"><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=13/?k=10"></td><td width="33.333332%" class="eTable"><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=14/?k=10"></td><td width="33.333332%" class="eTable"><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=15/?k=10"></td></tr>
+<tr align="center"><td class="eTable">ложь</td><td class="eTable">ложь</td><td class="eTable">истина</td></tr>
+<tr align="center"><td class="eTable">ложь</td><td class="eTable">истина</td><td class="eTable">истина</td></tr>
+<tr align="center"><td class="eTable">истина</td><td class="eTable">ложь</td><td class="eTable">ложь</td></tr>
+<tr align="center"><td class="eTable">истина</td><td class="eTable">истина</td><td class="eTable">истина</td></tr>
+</tbody></table><br>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Следует учитывать, что в случае п.п.ф. с кванторами построить разрешающий алгоритм, связанный с вычислением значений истинности п.п.ф., не удается по причине возможной бесконечности <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=16/?k=10"> (отсюда возможны бесконечные таблицы истинности).</div>
+</div>
+<a name="T1084539175"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Незамкнутая п.п.ф.</a> соответствует некоторому отношению на <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=1/?k=10">, при подстановке предметных констант она превращается в высказывание, которое может быть <span style="font-style:italic; ">истинным</span> или <span style="font-style:italic; ">ложным</span> в зависимости от того, находятся или нет в данном отношении элементы <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=1/?k=10">, соответствующие предметным константам.</div>
+<div>Незамкнутая формула называется <span style="font-style:italic; ">выполнимой</span> в данной интерпретации, если существует такая подстановка предметных констант, при которой она превращается в истинное высказывание.</div>
+<div>Формула называется <span style="font-style:italic; ">общезначимой</span>, если она выполняется (т.е. превращается в истинное высказывание) при любой подстановке констант, и <span style="font-style:italic; ">противоречивой</span>, если она невыполнима при любой подстановке констант.</div>
+<div>Интерпретация ставит вопрос об адекватности:</div>
+<ul class="eList"><li>с одной стороны — содержательно построенной теории предметной области, рассматриваемой как множество объектов, отношений и операций на нем;</li>
+<li>с другой стороны — множества высказываний об этой теории, построенного как формальная система.</li>
+</ul>
+<div><span style="font-weight:bold; text-decoration:underline; ">Внимание!</span> Существует глубокая принципиальная разница между концепциями <span style="font-style:italic; ">доказуемости</span> некоторой формулы ИППП и <span style="font-style:italic; ">истинности</span> высказывания, представленной этой формулой.</div>
+<div>Имеются четыре варианта взаимоотношения между доказуемостью и значением истинности, представленные табл.&nbsp;2:</div>
+<div class="auto" style="text-align:right">Таблица 2&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTable">&nbsp;</td><td class="eTable">теорема</td><td class="eTable">нетеорема</td></tr>
+<tr align="center"><td class="eTable">истина</td><td class="eTable">?</td><td class="eTable">?</td></tr>
+<tr align="center"><td class="eTable">ложь</td><td class="eTable">?</td><td class="eTable">?</td></tr>
+</tbody></table><br>
+<a name="T409244305"></a>
+<div>Если каждая п.п.ф. в некотором множестве п.п.ф. является истинной при одной и той же подстановке предметных констант, то говорят, что эта подстановка <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">удовлетворяет</a> множеству п.п.ф..</div>
+<a name="T980603151"></a>
+<div>Некоторая п.п.ф. <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=17/?k=10"> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">логически следует</a> из множества <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=18/?k=10"> п.п.ф., если каждая подстановка констант, удовлетворяющая <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=18/?k=10">, также удовлетворяет и <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=17/?k=10">.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Формула <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=19/?k=10"> логически следует из множества <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=20/?k=10">.</div>
+</div>
+<div>Имеется важное соответствие между понятием логического следования п.п.ф. из некоторого множества п.п.ф. и представлением о п.п.ф. как о теореме, выводимой из этого множества п.п.ф. с помощью правил вывода.</div>
+<a name="T1968344155"></a>
+<div>Формальная система (система правил вывода) <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">логична</a>, если любая п.п.ф., выводимая из множества п.п.ф. с помощью ее правил вывода, также логически следует из этого множества.</div>
+<div class="auto">Примечание 2</div>
+<div class="eNote"><div>Доказано, что правило заключения (modus ponens) ИППП является логичным правилом вывода.</div>
+</div>
+<a name="T658064414"></a>
+<div>Формальная система называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">полной</a>, если все п.п.ф., являющиеся ее теоремами, также и логически следуют из множества п.п.ф., являющихся ее аксиомами. Для формальной системы, обладающей полнотой, таблица соотношения между доказуемостью и истинностью имеет следующий вид.</div>
+<div class="auto" style="text-align:right">Таблица 3&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTable">&nbsp;</td><td class="eTable">теорема</td><td class="eTable">нетеорема</td></tr>
+<tr align="center"><td class="eTable">истина</td><td class="eTable">да</td><td class="eTable">нет</td></tr>
+<tr align="center"><td class="eTable">ложь</td><td class="eTable">нет</td><td class="eTable">да</td></tr>
+</tbody></table><br>
+<div>Доказано, что ИППП — полная формальная система. Это означает, что с помощью ИППП возможно адекватно описывать реальный мир (представленный областью интерпретации) и обосновывать суждения о нем, добывая новую информацию.</div>
+<div>Таким образом, ИППП является тем математическим аппаратом, который позволяет представлять знания о некоторой предметной области в рамках формальной системы. При этом сама предметная область выступает в качестве области интерпретации, а знания (в виде отношений над понятиями предметной области) представляются собственными специфическими аксиомами, добавляемыми к чисто логическим аксиомам ИППП.</div>
+<a name="T919275451"></a>
+<div>Прикладные теории, построенные на основе ИППП, носят название <span style="font-style:italic; ">теорий первого порядка</span>. В них полностью задействованы все символы алфавита ИППП (в том числе предметные константы и функциональные буквы), вследствие чего две последние <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аксиомы ИППП</a> в них принимают более общий вид:</div>
+<ul class="eList"><li><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=21/?k=10"> <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=22/?k=10">,</li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=23/?k=10"> <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=24/?k=10">,</li>
+</ul>
+<div>где <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=25/?k=10"> — произвольный терм.</div>
+<div>Еще одним полезным правилом-"метатеоремой" является <span style="font-style:italic; ">правило специализации</span>:<br><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=26/?k=10"><br> где <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=27/?k=10"> — любая предметная константа.</div>
+<div>Доказательство для правила R6:</div>
+<ul class="eList"><li>а) <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=28/?k=10"> (по условию).</li>
+<li>б) <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=29/?k=10"> (аксиома <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=30/?k=10">).</li>
+<li>в) <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=31/?k=10"> или <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=32/?k=10"> (правило заключения к а и б, где в качестве терма <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=33/?k=10"> принимается предметная константа <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=34/?k=10">).</li>
+</ul>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>Пусть необходимо построить теорию первого порядка на базе ИППП для следующей чрезвычайно упрощенной предметной области "проектирование башен".</div>
+<div>Башня представляет собой сооружение из крыши и поддерживающего ее ствола. Крыша может быть призматической высотой 4 м или плоской высотой 1 м. Ствол башни может состоять из 1, 2 или 3 блоков одинаковой формы. Цилиндрические блоки имеют высоту 5 и 3 м, а блоки в виде параллелепипеда — 4 и 2 м.</div>
+<div>Основной задачей, рещаемой в этой предметной области, является создание проекта башни заданной высоты.</div>
+<div>Предметные аксиомы теории первого порядка для представления знаний из области конструирования башен могут иметь следующий вид.</div>
+<ol class="eList"><li><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=35/?k=10"></li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=36/?k=10"></li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=37/?k=10"></li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=38/?k=10"></li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=39/?k=10"></li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=40/?k=10"></li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=41/?k=10"></li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=42/?k=10"></li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=43/?k=10"></li>
+<li><img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=44/?k=10"></li>
+</ol>
+<div>Приведенные выше формулы записаны с отступлением от канонического синтаксиса ИППП для предикатных букв и предметных констант. Сделано это в целях упрощения понимания формул.</div>
+<div>Первые шесть формул не содержат предметных переменных, они описывают факты предметной области (конкретные конструкционные элементы) и составляют <span style="font-style:italic; ">экстенсиональную</span> часть базы знаний.</div>
+<div>Остальные п.п.ф., содержащие квантифицированные переменные, выражают синтаксические знания о всех возможных схемах построения башен и составляют <span style="font-style:italic; ">интенсиональную</span> часть базы знаний.</div>
+<div>Областью действия переменных является только одна формула.</div>
+<div>Предметные переменные <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=45/?k=10"> и <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=46/?k=10"> используются для обозначения формы элементов (крыш и блоков), узлов (стволов) и конструкции в целом (башен). Предметные переменные <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=47/?k=10"> обозначают их высоты. Функциональные буквы <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=48/?k=10"> и <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=49/?k=10"> определяют операцию суммирования высот (двух и трех, соответственно).</div>
+<div>Предикат РАВНО в аксиоме 8 ограничивает построение стволов башен из двух блоков одинаковой формы. Однако, форма записи аксомы 9 показывает избыточность применения в таком контексте предиката РАВНО (эдесь одна и та же переменная <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=45/?k=10"> используется в качестве первого аргумента всех предикатов БЛОК, описывающих блоки одинаковой формы одного ствола).</div>
+<div>Аксиома 9 может быть прочитана по-русски (с учетом правила заключения — modus ponens) следующим образом: "Если взять блок любой формы <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=45/?k=10"> и любой высоты, обозначаемой <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=50/?k=10">, и еще 2 блока той же формы <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=45/?k=10"> с любыми высотами <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=51/?k=10"> и <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=52/?k=10">, то получим ствол башни формы <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=45/?k=10"> и высотой <img align="absmiddle" src="/?frm/?doc=IPPP/interpret.mod/?n=53/?k=10">".</div>
+<div>Отметим, что предикат НА в данной системе аксиом играет чисто иллюстративную роль, поскольку башня в нашей предметной области представляет из себя конструкцию из элементов, установленных только друг над другом (но не "слева", "справа" или "спереди").</div>
+<div>Очевидно, что представленный вариант системы предметных аксиом является компактным, но не единственно возможным.</div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-19/">← Оглавление</a>
         <a href="/rk6-edu/course-19/mod-2.html">‹ Предыдущий</a>

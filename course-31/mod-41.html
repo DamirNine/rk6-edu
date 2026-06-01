@@ -23,7 +23,42 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-42.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">УСО для ввода данных в последовательной форме</a>
+</div>
+<a name="T136385577"></a>
+<a name="T432216122"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">УСО такого типа</a> могут использоваться для ввода данных с ЭВМ верхнего уровня или с удаленных датчиков. Предполагается, что ко входу УСО подключена <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">последовательная линия связи</a>, с которой принимаются данные.</div>
+<div>Для ввода данных в последовательной форме используется программируемый последовательный интерфейс (рис.&nbsp;1).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_09_3.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T1341214224"></a>
+<a name="T1418249701"></a>
+<div>Интерфейс представляет собой готовое <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">УВВ</a>, подключаемое к магистрали <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a>. Такое подключение обеспечивает возможность программирования устройства и считывания принятой информации (путем обращения к различным внутренним регистрам последовательного интерфейса). Вход <span class="eOperator">RxD</span> подключается к последовательной линии приема данных.</div>
+<a name="T541472668"></a>
+<a name="T409478196"></a>
+<a name="T1616495597"></a>
+<div>Так как данные по последовательной линии поступают в произвольный момент времени, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МП</a> должен сначала убедиться в их наличии во входном буферном регистре и только после этого выполнять чтение. Возникает необходимость проверки готовности УВВ, следовательно, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синхронный метод</a> взаимодействия данного УСО с ведущим устройством не может быть применен. Могут быть использованы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">асинхронный обмен</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">обмен по прерываниям</a>.</div>
+<ul class="eList"><li><span style="font-weight:bold; text-decoration:underline; ">Асинхронный обмен.</span> Перед чтением данных из входного буферного регистра последовательного интерфейса МП должен убедиться в их наличии. Для этого он анализирует соответствующий бит в регистре состояния интерфейса: считывает значения из регистра состояния и проверяет бит готовности. Если данные готовы (были приняты с линии), выполняется их чтение.</li>
+<li><span style="font-weight:bold; text-decoration:underline; ">Обмен по прерываниям.</span> Последовательный интерфейс имеет специальный выход запроса на прерывание <span class="eOperator">IRQ</span>, который подключается непосредственно к контроллеру прерываний. При завершении приема очередного байта данных, формируется сигнал запроса на прерывание. После чего микропроцессор, выполняя подпрограмму обработки прерывания, считывает данные из входного буферного регистра последовательного интерфейса.</li>
+</ul>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-40.html">‹ Предыдущий</a>

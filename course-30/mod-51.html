@@ -23,7 +23,53 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-52.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Поиск с использованием индексации по ключам</a>
+</div>
+<br>
+<a name="T33309882"></a>
+<a name="T823713000"></a>
+<a name="T1992766606"></a>
+<div>Предположим, что значения <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ключей</a> - отдельные небольшие числа. В этом случае простейший <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритм</a> поиска основывается на сохранении элементов в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массиве</a>, индексированном по ключам.</div>
+<br>
+<pre class="eListing">template &lt;class Item, class Key&gt;
+class ST {
+private:
+Item nullItem, *st;
+int M;
+public:
+ST(int maxN)
+{ M = nullItem.key(); st = new Item[M]; }
+int count()
+{ int N = 0;
+for(int i = 0; i &lt; M; i++)
+if(!st[i].null()) N++;
+return N;
+}
+void insert(Item x)
+{ st[x.key()] = x; }
+Item search(Key v)
+{return st[v];}
+void remove(Item x)
+{st[x.key()] = nullItem; }
+Item select(int k)
+{for(int i = 0; i &lt; M; i++)
+if(!st[i].null())
+if(k-- == 0) return st[i];
+return nullItem;
+}
+void show(ostream&amp; os)
+{ for(int i = 0; i &lt; M; i++)
+if(!st[i].null()) st[i].show(os); }
+};
+</pre>
+<br>
+<a name="T1233060480"></a>
+<a name="T1356058257"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Оператор</a> new[] инициализирует все записи значением nullItem, затем мы вставляем (insert) элемент со значением ключа k, просто сохраняя его в массиве st[k], и выполняем поиск (search) элемента со значением ключа k, отыскивая его в st[k]. Для удаления (remove) элемента со значением ключа k значение nullItem помещается в st[k]. Реализация операций выбора (select), <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> (sort) и подсчёта (count) в программе использует линейный просмотр массива с пропуском нулевых элементов. Реализация предоставляет клиенту решать задачи обработки элементов с дублированными ключами и проверки таких условий, как указание операции remove для ключа, отсутствующего в таблице.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-50.html">‹ Предыдущий</a>

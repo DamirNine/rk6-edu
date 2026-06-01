@@ -23,7 +23,88 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-110.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Условная компиляция</a>
+</div>
+<a name="T77802253"></a>
+<a name="T748507610"></a>
+<a name="T1233060480"></a>
+<a name="T1369433176"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Условная компиляция</a> — это средство <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">препроцессора</a>, которое в зависимости от условия включает в программу <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операторы</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка Си</a> или препроцессора.</div>
+<div>Условная компиляция позволяет строить гибкие программы на языке Си. Это средство особенно часто используется при разработке программ, которые должны переноситься на различные процессоры, в различные операционные системы и в прочие операционные среды.</div>
+<a name="T637542155"></a>
+<div>Условная компиляция реализуется с помощью следующих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директив препроцессора</a>:</div>
+<ul class="eList"><li><span class="eOperator">#if</span></li>
+<li><span class="eOperator">#else</span></li>
+<li><span class="eOperator">#elif</span> (аналогично <span class="eOperator">else if</span>)</li>
+<li><span class="eOperator">#endif</span></li>
+<li><span class="eOperator">#ifdef</span></li>
+<li><span class="eOperator">#ifndef</span></li>
+</ul>
+<div>В основном, условная компиляция выполняется следующим образом:</div>
+<pre class="eListing">если это-и-это истинно
+     вставить указанные здесь операторы в исполнимую программу
+</pre>
+<div>Можно задать и ветвь <span class="eOperator">иначе</span>.</div>
+<div>Директивы <span class="eOperator">#if</span> используются для вставки строк в файл, в случае, если истинно некоторое константное выражение.</div>
+<a name="T1329324165"></a>
+<div>Директивы <span class="eOperator">#ifdef</span> используются для вставки строк, если определена указанная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поименованная константа</a>.</div>
+<div>Для вставки строк при условии, что константа не имеет определения, вместо директивы <span class="eOperator">#ifdef</span> можно использовать директиву <span class="eOperator">#ifndef</span>.</div>
+<div>Большинство препроцессоров Си включает предопределенную константу, имя которой указывает на используемый компьютер, со значением равным 1 (истина). Это надо проверять в документации используемого препроцессора.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">#include "local.h"
+#if vax||u3b
+#define MAGIC 330
+#elif u3b5
+#define MAGIC 430
+#elif u3b2
+#define MAGIC 530
+#else
+#define MAGIC 500
+#endif
+</pre>
+</div>
+<a name="T256200320"></a>
+<a name="T1992557309"></a>
+<div>Чтобы изменить значение используемой поименованной константы, следует применять директиву <span class="eOperator">#undef</span> перед изменяющей значение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директивой #define</a> (этого требуют многие препроцессоры). Не является ошибкой применение <span class="eOperator">#undef</span> к еще неопределенному <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатору</a>, либо переопределение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">макроса</a> или поименованной константы той же самой строкой-шаблоном.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">#ifdef LIMIT      /* #if определена константа LIMIT*/
+#undef LIMIT
+#endif
+#define LIMIT 1000
+</pre>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">f()
+{
+...
+#ifdef DEBUG
+   printf ("x=%d\n", x);
+   printf ("y=%d\n", y);
+#endif
+...
+}
+</pre>
+</div>
+<div>Для запуска программы в режиме отладки надо включить в файл определение поименованной константы:</div>
+<div><span class="eOperator">#define DEBUG</span></div>
+<div>Тогда любые операторы, находящиеся между <span class="eOperator">#ifdef DEBUG</span> и <span class="eOperator">#endif</span> будут включены в исполнимый код.  Возможно любое количество пар <span class="eOperator">#ifdef</span> и <span class="eOperator">#endif</span>. В системах UNIX константа <span class="eOperator">DEBUG</span> может быть определена не в программе, а в вызывающей ее командной строке:</div>
+<div><span class="eOperator">$cc -DDEBUG prog.c</span></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-108.html">‹ Предыдущий</a>

@@ -23,7 +23,43 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-80.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функция ispunct</a>
+</div>
+<pre class="eListing">#include &lt;ctype.h&gt; 
+int isprint(int ch );
+</pre>
+<a name="T341130738"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция ispunct</a>()  возвращает ненулевое значение, если аргумент <span class="eOperator">ch</span> является знаком пунктуации. В противном случае возвращается нуль. Под знаками пунктуации подразумеваются печатаемые символы за исключением пробела, которые не относятся к алфавитно-цифровым.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Данная программа проверяет все символы, прочитанные из стандартного входного потока stdin, и выдает сообщение о каждом знаке пунктуации.</div>
+</div>
+<pre class="eListing">#include   &lt;ctype.h&gt;
+#include   &lt;stdio.h&gt;
+int main(void)
+{
+char  ch;
+for(;;)    {
+ch = getchar();
+if(ispunct(ch))   
+printf{"%c  является знаком пунктуации\n",   ch);
+if(ch ==   '.')  
+break;
+}
+return   0;
+}
+</pre>
+<a name="T343655437"></a>
+<a name="T2018496596"></a>
+<a name="T1494061019"></a>
+<a name="T2068814555"></a>
+<a name="T846014726"></a>
+<a name="T1446491458"></a>
+<div>Здесь использованы следующие зависимые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции isalnum</a>(),  <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">isalpha</a>(), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">iscntrl</a>(),  <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">isdigit</a>(), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">isgraph</a>(), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">isspace</a>().</div>
+<br>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-78.html">‹ Предыдущий</a>

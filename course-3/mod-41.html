@@ -23,7 +23,182 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-3/mod-42.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Поведенческие описания в VHDL</a>
+</div>
+<a name="T1377052855"></a>
+<a name="T1884736932"></a>
+<a name="T2128372489"></a>
+<div> Только <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структурных описаний</a> недостаточно для задания объекта, нужно описывать также поведение (функции объекта). <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Поведенческое описание</a>, как минимум, должно быть задано для сущностей нижнего иерархического уровня. Однако в практике проектирования СБИС превалирует <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нисходящий стиль</a>, следовательно, проектирование начинается с разработки алгоритмов (поведенческих описаний) верхнего иерархического уровня.</div>
+<div>В описаниях поведения фигурируют типы данных, операторы, процессы, процедуры, функции и т.п.</div>
+<div>Семантика простых типов данных понятна уже из их названий: INTEGER (целые числа), REAL (вещественные числа, их нужно записывать с десятичной точкой), BIT (со значениями 0 и 1), BOOLEAN (со значениями TRUE и FALSE), BIT_VECTOR (строка бит), POSITIVE (положительные целые числа), NATURAL (натуральные числа), CHARACTER (символы кода ASCII), STRING (строка символов).</div>
+<div>Отметим, что после символа — (двойной дефис) следует примечание.</div>
+<a name="T107645917"></a>
+<div>Константы в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">VHDL</a> описываются следующим образом:</div>
+<pre class="eListing">constant &lt;имя&gt;: &lt;тип&gt; := &lt;значение&gt;;
+</pre>
+<div>Например:</div>
+<pre class="eListing">constant numb: integer := 1025;
+constant col: string := "black";
+</pre>
+<div>Переменные декларируются следующим образом:</div>
+<pre class="eListing">variable &lt;имя&gt;: &lt;тип&gt;;
+</pre>
+<div>Начальные значения переменных могут быть заданы в декларациях, например:</div>
+<pre class="eListing">signal reg: BIT_VECTOR := "1001100101";
+variable vol: real := 5.4;
+</pre>
+<div>Отметим, что значения величин типа BIT и CHARACTER так же, как и отдельных элементов массивов BIT_VECTOR и STRING, обрамляются апострофами, а сочетания из более чем одного значения этих массивов заключаются в кавычки.</div>
+<div>Типы могут быть введены разработчиком модели с помощью описаний следующего вида:</div>
+<pre class="eListing">type &lt;идентификатор&gt; is (&lt;список_значений&gt;);
+</pre>
+<div>Например, конечное множество значений задается в виде перечислимого типа</div>
+<pre class="eListing">type octal_digits is ('0','1','2','3','4','5','6','7');
+type color is ("red","green","blue");
+</pre>
+<div>Список значений может иметь одну из следующих форм.</div>
+<div>В случае скалярных величин — диапазон возможных значений в виде</div>
+<pre class="eListing">range &lt;минимальное_значение&gt; to &lt;максимальное_значение&gt;;
+</pre>
+<div>Например:</div>
+<pre class="eListing">range 1 to 10;
+range 10 downto 1;
+</pre>
+<div>Другой пример — задание часто используемого типа Time:</div>
+<pre class="eListing">type Time is range -1E9 to 1E9
+units
+fs;
+ps = 1000 fs;
+ns = 1000 ps;
+us = 1000 ns;
+ms = 1000 us;
+sec = 1000 ms;
+min = 60 sec;
+hr = 60 min;
+end units;
+</pre>
+<div>Аналогично с помощью конструкции units задаются единицы измерения других физических величин.</div>
+<div>В случае массива</div>
+<pre class="eListing">array (&lt;диапазон_индексов&gt;) of &lt;тип_элементов_массива&gt;;
+</pre>
+<div>Например, вектор из 16 действительных чисел:</div>
+<pre class="eListing">array (0 to 15) of real;
+</pre>
+<div>Отметим, что границы диапазонов значений величин или индексов могут быть представлены не только конкретными числовыми значениями, но и в параметрическом виде, если предварительно определены их значения с помощью декларации generic.</div>
+<div>В случае записи</div>
+<pre class="eListing">record
+&lt;список_идентификаторов_и_их_типов&gt;;
+end record;
+</pre>
+<div>Например:</div>
+<div><img align="absmiddle" src="/?frm/?doc=010_EDA/eda063.mod/?n=1/?k=10"></div>
+<pre class="eListing">Day: INTEGER range 1 to 31;
+Month: month_list; -- month_list - ранее описанный тип;
+Year: INTEGER range 1900 to 2100;
+end record;
+</pre>
+<a name="T1968319020"></a>
+<a name="T935254723"></a>
+<a name="T1792766775"></a>
+<a name="T588216674"></a>
+<div>В VHDL применяются операторы присваивания, назначения сигнала, управления, вызова процедур и ряд других. В арифметических выражениях, встречающихся в операторах, используются знаки операций + (сложение), — (вычитание), * (умножение), / (деление), mod (деление по модулю), rem (остаток), ** (возведение в степень), abs (абсолютная величина); в логических выражениях — not (НЕ — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">отрицание</a>), and (И — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конъюнкция</a>), or (ИЛИ — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дизъюнкция</a>), nand (И-НЕ), nor (ИЛИ-НЕ), xor (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">исключающее ИЛИ</a>). Знак &amp; использован для указания операции конкатенации. Знаки отношений составляют множество {=, /=, &lt;, &lt;=, &gt;, &gt;=}.</div>
+<div>Рассмотрим примеры поведенческого описания схемы рис. 1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=010_EDA/eda063.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Первый вариант:</div>
+<pre class="eListing">architecture alg of schema is
+signal z1,z2: BIT;
+begin
+z1 &lt;= not ((a and c) or (b and c));
+z2 &lt;= not ((d and c) or (e and c));
+y &lt;= not (z1 or z2);
+end alg;
+</pre>
+<div>Второй вариант, в котором сигналы a,b,d,e представлены в виде элементов двоичного вектора X:</div>
+<pre class="eListing">entity schema is
+port (c: in BIT; X: in BIT_VECTOR (1 to 4); y: out BIT);
+end schema;
+architecture alg of schema is
+signal z1,z2: BIT;
+begin
+z1 &lt;= not ((X(1) and c) or (X(2) and c));
+z2 &lt;= not ((X(3) and c) or (X(4) and c));
+y &lt;= not (z1 or z2);
+end alg;
+</pre>
+<div>Форма представления процедур и функций в VHDL аналогична формам, используемым во многих алгоритмических языках. Вид описания процедуры:</div>
+<pre class="eListing">procedure &lt;имя&gt; (&lt;список_параметров&gt;) is &lt;описания_типов&gt;;
+begin &lt;тело&gt;
+end &lt;имя&gt;;
+</pre>
+<div>Описание функции:</div>
+<pre class="eListing">function &lt;имя&gt; (&lt;список_параметров&gt;) return &lt;тип_функции&gt; is
+begin &lt;тело&gt;
+end &lt;имя&gt;;
+</pre>
+<div>В теле функции имеется оператор return, выражение, записанное в нем,  определяет возвращаемое  значение функции.</div>
+<div>В пакеты оформляются части описаний, используемые неоднократно в разных местах VHDL-модели. Пакет имеет форму:</div>
+<pre class="eListing">package &lt;имя&gt; is &lt;описание_типов_и/или_функций&gt; end &lt;имя&gt;;
+</pre>
+<div>Коды функций помещаются в тело пакета:</div>
+<pre class="eListing">package body &lt;имя&gt; is
+&lt;описание_процедур_и/или_функций&gt;
+end &lt;имя&gt;;
+</pre>
+<div>Если описываются только типы, тело пакета не требуется.</div>
+<div>Если пакет нужно использовать в некоторой сущности, то перед ее описанием (перед фразой entity) достаточно сделать ссылку на пакет в виде:</div>
+<pre class="eListing">use &lt;имя_пакета&gt;;
+</pre>
+<div>Например, в нижеследующей записи отражено использование библиотек компонентов IEEE, DW03 и широко распространенных пакетов IEEE.std_logic_1164.all, IEEE.std_logic_arith.all и DW03.DW03_components.all:</div>
+<pre class="eListing">library IEEE, DW03;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+use DW03.DW03_components.all;
+entity unit1 is port (....
+</pre>
+<div>В VHDL имеются стандартные (предопределенные) атрибуты:</div>
+<ul class="eList"><li>S'LAST_VALUE — предыдущее (перед последним изменением) значение сигнала S;</li>
+<li>S'STABLE (T) — принимает значение true, если сигнал S не изменялся в течение времени T;</li>
+<li>S'DELAYED (T) — значение сигнала S в момент времени t-T, где t — текущее время;</li>
+<li>S'EVENT — принимает значение true, если с сигналом S произошло событие (сигнал изменился);</li>
+<li>A'RANGE, A'LEFT, A'RIGHT — диапазон, нижняя и верхняя границы массива A и некоторые другие.</li>
+</ul>
+<div>В частности, эти стандартные значения позволяют лаконично описывать некоторые важные ситуации. Например:</div>
+<pre class="eListing">X='1' and not X'STABLE
+X='1' and X'EVENT
+</pre>
+<div>Эти выражения оказываются истинным в момент положительного фронта сигнала X и, следовательно, с помощью любого из этих выражений можно представлять события, происходящие по положительному фронту сигнала. Если вместо X = '1' записать X = '0', то эти выражения будут соответствовать отрицательному фронту сигнала X.</div>
+<div>Как уже отмечалось, в программах моделирования на VHDL используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">событийный метод</a>. Можно выделить две фазы моделирования. На первой из них устанавливаются исходные значения переменных и сигналов, настраиваются внешние сигналы, модельное время устанавливается в ноль. Вторая фаза — моделирование до истечения установленного времени T.</div>
+<a name="T807580547"></a>
+<div>В языке VHDL допускаются смешанные описания, имеющие место, если в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">архитектурном теле</a> одновременно присутствуют как операторы поведенческого моделирования, так и элементы структурного описания. Например,</div>
+<pre class="eListing">architecture unit of schema is
+component add
+port (x1,x2: in BIT; y: out BIT);
+end component;
+signal b: BIT;
+begin
+b &lt;= not a;
+E1: add
+port map (a,b,d);
+end unit;
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-3/">← Оглавление</a>
         <a href="/rk6-edu/course-3/mod-40.html">‹ Предыдущий</a>

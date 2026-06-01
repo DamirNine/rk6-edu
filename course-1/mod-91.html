@@ -23,7 +23,32 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-1/mod-92.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Программирование для станков с ЧПУ</a>
+</div>
+<a name="T1055307"></a>
+<a name="T881196247"></a>
+<a name="T1548006824"></a>
+<a name="T1578441292"></a>
+<div>Исходными данными для составления программ для станков с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЧПУ</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">АСТПП</a> являются результаты конструкторского проектирования, поступающие из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">CAD</a>. Но возможно <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программирование</a> и при наличии в качестве исходных данных лишь чертежа детали и параметров технологического процесса.</div>
+<a name="T65029"></a>
+<a name="T1324271739"></a>
+<div>При программировании определяют и кодируют геометрию заготовки, траектории движения подвижных органов станка и параметры обработки. Для этих целей используют специализированные языки, примером которых может служить язык <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">APT</a> (Automatically Programmed Tools), относящийся к языкам высокого уровня. Полученный исходный код на языке APT преобразуется в программу перемещений инструмента, управления подачей и т.п., представляемую в виде аппаратно независимого файла <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">CLData</a> (Cutter Location Data). Файл CLData поступает в постпроцессор, который переводит программу в вид, требуемый для конкретного типа станка.</div>
+<div>В языке APT имеются следующие группы команд:</div>
+<ul class="eList"><li>идентифицирующие — для указания названия обрабатываемой детали и типа используемого постпроцессора;</li>
+<li>геометрические — для указания геометрических особенностей детали;</li>
+<li>управляющие перемещениями режущего инструмента;</li>
+<li>управляющие режимами обработки (определяющие скорость подачи, скорость вращения шпинделя, включение охлаждения и т.п.);</li>
+<li>дополнительные (например, выбор инструмента).</li>
+</ul>
+<div>Примеры команд APT:</div>
+<ul class="eList"><li><span class="eOperator">P5 = POINT/0.0. 2.5. 0.4</span> — задание точки P5 с координатами X=0, Y=2,5, Z=0,4.</li>
+<li><span class="eOperator">GOTO/P7</span> — перемещение в точку P7.</li>
+<li><span class="eOperator">FEDRAT/6.0</span> — задание скорости подачи 6 дюйм/мин.</li>
+</ul>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-1/">← Оглавление</a>
         <a href="/rk6-edu/course-1/mod-90.html">‹ Предыдущий</a>

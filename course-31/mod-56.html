@@ -23,7 +23,54 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-57.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">УСО для вывода информации</a>
+</div>
+<a name="T842523107"></a>
+<div>Рассмотрим следующие варианты <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">УСО</a> для вывода информации:</div>
+<ul class="eList"><li>УСО для вывода данных без преобразования;</li>
+<li>УСО с преобразованием из дискретной формы в непрерывную;</li>
+<li>УСО для вывода данных в последовательном формате.</li>
+</ul>
+<div class="eSubTitle">УСО для вывода данных без преобразования</div>
+<a name="T925980355"></a>
+<div>Для вывода данных без преобразования (т.е. в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельном двоичном коде</a>) может быть использован любой внутренний параллельный порт микроконтроллера.</div>
+<div class="eSubTitle">УСО для вывода данных с преобразованием из дискретной формы в непрерывную</div>
+<a name="T2080076116"></a>
+<a name="T1163657660"></a>
+<div>Собственно преобразование осуществляется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">цифро-аналоговым преобразователем</a> (ЦАП), подключаемым к одному из параллельных портов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микроЭВМ</a>. (рис.&nbsp;1)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_13_1.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>В случае если разрядность ЦАП больше разрядности параллельного порта (8 бит), необходимо использовать несколько параллельных портов. (рис.&nbsp;2)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_2_13_1.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>При этом, для обеспечения одновременной передачи в ЦАП и старшего и младшего байта необходимо управление линией "разрешение записи" ЦАП. Эта линия подключается к одному из выходов какого-либо параллельного порта микроконтроллера, в данном примере — <span class="eOperator">Р0.0</span>. Процедура вывода данных будет выглядеть следующим образом:</div>
+<ol class="eList"><li>Установить бит 0 порта <span class="eOperator">Р0</span> в "1" (на линии <span class="eOperator">WR</span> устанавливается неактивный уровень логической "1").</li>
+<li>Записать в порт <span class="eOperator">Р2</span> младший байт передаваемых данных.</li>
+<li>Записать в порт <span class="eOperator">Р1</span> старший байт передаваемых данных.</li>
+<li>Установить бит 0 порта <span class="eOperator">Р0</span> в "0" (на линии <span class="eOperator">WR</span> устанавливается активный уровень логического "0", данные с выходов портов <span class="eOperator">Р2</span> и <span class="eOperator">Р1</span> записываются во внутренний регистр ЦАП и преобразуются в непрерывный сигнал).</li>
+</ol>
+<div class="eSubTitle">УСО для вывода данных в последовательном формате</div>
+<div>Для вывода данных в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">последовательном формате</a> используется внутренний последовательный порт микроконтроллера, выходом которого является линия <span class="eOperator">Р3.1</span>.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-55.html">‹ Предыдущий</a>

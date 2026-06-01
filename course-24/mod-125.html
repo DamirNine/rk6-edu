@@ -23,7 +23,64 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-126.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функции обработки ошибок</a>
+</div>
+<a name="T581415280"></a>
+<a name="T37556405"></a>
+<a name="T637542155"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявления прототипов функций</a> обработки ошибок находятся в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эти функции, должны включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div><span class="eOperator">#include &lt;stdio.h&gt;</span></div>
+<a name="T269665333"></a>
+<div>Каждая <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структура FILE</a> содержит информацию о том, был ли достигнут конец соответствующего файла и о том, произошла ли ошибка ввода-вывода (например, попытка писать в файл, который был открыт только для чтения).</div>
+<a name="T793848662"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция feof()</a> - стандартная функция ввода-вывода, которая проверяет достижение конца файла. </div>
+<div>Объявление прототипа функции <span class="eOperator">feof()</span>:</div>
+<div><span class="eOperator">int feof(FILE *stream)</span></div>
+<div>Функция <span class="eOperator">feof()</span> возвращает отличное от нуля значение, если в процессе чтения или записи был достигнут конец файла,  иначе она возвращает 0.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">while (1)
+   {
+   n=fread(buf, 1, BUFSIZ, rp);
+   fwrite(buf, 1, n, wp);
+   if (feof(rp))
+     break;
+   }
+</pre>
+</div>
+<div>Попытка записи в файл может быть безуспешной, если размер файла достиг максимума или исчерпалось свободное дисковое пространство.</div>
+<a name="T1516458206"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция ferror()</a> - стандартная функция ввода-вывода, которая выполняет проверку полей структуры <span class="eOperator">FILE</span>.</div>
+<a name="T486604920"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция clearerr()</a> - стандартная функция ввода-вывода, которая выполняет очистку полей структуры <span class="eOperator">FILE</span>.</div>
+<div>Объявления прототипов функциий <span class="eOperator">ferror()</span> и <span class="eOperator">clearerr()</span>:</div>
+<div><span class="eOperator">int ferror(FILE *stream)</span></div>
+<div><span class="eOperator">void clearerr(FILE *stream)</span></div>
+<div>Функция <span class="eOperator">ferror()</span> возвращает отличное от нуля значение, если перед этим произошла ошибка ввода-вывода, иначе - 0.</div>
+<div>Функция <span class="eOperator">clearerr()</span> сбрасывает признаки ошибки и конца файла в 0.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">/*пытается MAX раз выполнить чтение с устройства*/
+success = 0;
+clearerr(rp);
+for(i=1; i&lt;MAX; i++)
+   {
+   fread(buf, BUFSIZ, 1, rp);
+   if(!ferror(rp))
+     {
+     success = 1;
+     break;
+     }
+   clearerr(rp);
+   }
+if (success)
+   printf("Чтение выполнено\n");
+else
+   printf("После максимального числа попыток чтение не выполнено\n");
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-124.html">‹ Предыдущий</a>

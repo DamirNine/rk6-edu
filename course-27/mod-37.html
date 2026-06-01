@@ -23,7 +23,62 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-27/mod-38.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Правила выбора реализации перегружаемых функций в C++</a>
+</div>
+<br>
+<a name="T893330412"></a>
+<div>Далее приведены правила выбора <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">реализации</a> перегружаемых функций в C++ (тип, указанный слева от стрелки, преобразуется к типу, указанному справа).</div>
+<div class="eSubTitle">- преобразования, выполняющиеся по умолчанию</div>
+<pre class="eListing">Array -&gt; pointer
+T -&gt; const T
+</pre>
+<div class="eSubTitle">- стандартные преобразования</div>
+<pre class="eListing">int -&gt; double
+double -&gt; int
+производный тип -&gt; базовый
+</pre>
+<div class="eSubTitle">- расширяющие разрядности преобразования</div>
+<pre class="eListing">int -&gt; double
+short -&gt; int
+float -&gt; double
+</pre>
+<br>
+<div class="eSubTitle">Формат перегрузки операции приведения типа:</div>
+<pre class="eListing">operator &lt;имя нового типа&gt; ();
+
+
+</pre>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">char c = 256; // из-за потери 8 старших битов c ='\0';
+
+double d = 0.999999999999999999;
+long n = d; // n=0;
+
+long m = 32768; // двоичное представление числа 32768 содержит единственную единицу - в 15 разряде
+int k = m; // k = -32768, т.к. 15-й разряд для int является знаковым
+unsigned u = m; // m = 32768
+</pre>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">void g (int);
+
+double d = 1.234;
+char *str = "Строка";
+
+g(d); // допустимо, т.к. существует неявное преобразование double к int
+g(str); // ошибка
+</pre>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><br>
+<div><span style="font-weight:bold; ">monstr::operator int() {return health;}</span></div>
+<div><span style="font-weight:bold; ">monstr Vasia;</span> </div>
+<div><span style="font-weight:bold; ">cout&lt;&lt;int(Vasia);</span></div>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-27/">← Оглавление</a>
         <a href="/rk6-edu/course-27/mod-36.html">‹ Предыдущий</a>

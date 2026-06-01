@@ -23,7 +23,38 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-81.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функция isupper</a>
+</div>
+<pre class="eListing">#include  &lt;ctype.h&gt;
+int isupper(int  ch);
+</pre>
+<a name="T342440794"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция isupper</a>() возвращает ненулевое значение, если аргумент <span class="eOperator">ch</span> является прописной буквой. В противном случае возвращается нуль.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Данная программа проверяет все символы, прочитанные из стандартного входного потока stdin, и выдает сообщение о каждой прописной букве.</div>
+</div>
+<pre class="eListing">#include &lt;ctype.h&gt;
+#include &lt;stdio.h&gt;
+int main(void)
+{
+char ch;
+for (;;) {
+ch = getchar();
+if(ch = = '.') 
+break;
+if(isupper(ch)) 
+printf("%c является прописной буквой\n", ch);
+}
+return 0;
+}
+</pre>
+<a name="T922677753"></a>
+<div>Зависимые функции, используемые здесь – <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">islower</a>().</div>
+<br>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-79.html">‹ Предыдущий</a>

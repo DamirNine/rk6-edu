@@ -23,7 +23,66 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-21/mod-28.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Метод перебора. Одномерный метод Монте-Карло</a>
+</div>
+<a name="T1434734618"></a>
+<a name="T1835387678"></a>
+<div>Некоторые методы решения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многомерных задач оптимизации</a> требуют решения одномерной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задачи глобальной оптимизации</a> (или совокупности таких задач).</div>
+<a name="T488061011"></a>
+<a name="T1750847045"></a>
+<a name="T1869977390"></a>
+<div>Рассматривается следующая одномерная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задача условной глобальной оптимизации</a>): найти минимум, вообще говоря, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многоэкстремальной функции</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=1/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=2/?k=10">), определенной в замкнутой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">области допустимых значений</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=3/?k=10">,</div>
+<div><br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=4/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
+<div class="eSubTitle">Метод перебора</div>
+<a name="T1514641079"></a>
+<div>Схема <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">метода перебора</a> (см. рис.&nbsp;1):</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0501.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;К схеме метода перебора.</div></div>
+<ol class="eList"><li>Покрываем интервал <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=5/?k=10"> некоторой сеткой с узлами <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=6/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=7/?k=10">[1,<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=8/?k=10">].</li>
+<a name="T1803581065"></a>
+<li>Производим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">испытание</a> в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=9/?k=10">, т.е. вычисляем значения <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=10/?k=10"> функции <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=11/?k=10"> в этой точке.</li>
+<li>Полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=12/?k=10">.</li>
+<li>Производим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">испытание</a> в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=13/?k=10"> - вычисляем значение <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=14/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=13/?k=10">) функции <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=15/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=16/?k=10">) в этой точке.</li>
+<li>Если <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=17/?k=10"> , то выполняем присваивания <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=18/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=19/?k=10"> .</li>
+<li>Если <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=20/?k=10"> , то выполняем присваивание <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=21/?k=10">1 и переходим на п.4). Иначе - заканчиваем вычисления.</li>
+<a name="T187492505"></a>
+<li>Принимаем <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=22/?k=10"> в качестве приближенного значения точки глобального минимума функции <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=15/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=16/?k=10">) на интервале [<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=23/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=24/?k=10">] или каким-либо из рассмотренных одномерных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">методов локальной оптимизации</a> организуем в окрестности точки <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=22/?k=10"> поиск локального минимума этой функции<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=25/?k=10"></li>
+</ol>
+<br>
+<div>При выборе количества узлов сетки <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=26/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=27/?k=10">[1,<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=28/?k=10">] можно исходить из требуемой точности решения <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=29/?k=10"> – максимальный шаг сетки принять равным этой величине. </div>
+<div>Отметим, что <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод перебора</a>, как и любой другой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод глобальной оптимизации</a>, при отсутствии априорной информации о свойствах минимизируемой функции не гарантирует нахождение глобального минимума (см. пунктирный график на рис.&nbsp;1).</div>
+<br>
+<div class="eSubTitle">Одномерный метод Монте-Карло</div>
+<a name="T1877864504"></a>
+<div>Схема <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">одномерного метода Монте-Карло</a>:</div>
+<ol class="eList"><li>Генерируем с помощью какого-либо программного генератора случайных чисел, равномерно распределенных в интервале [<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=23/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=24/?k=10">], случайное число <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=30/?k=10">.</li>
+<li>Производим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">испытание</a> в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=30/?k=10"> - вычисляем значения <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=10/?k=10"> функции <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=15/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=16/?k=10">) в этой точке.</li>
+<li>Полагаем <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=31/?k=10">2.</li>
+<li>Аналогично п. 1) генерируем случайное число <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=32/?k=10">[<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=23/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=24/?k=10">] .</li>
+<li>Производим <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">испытание</a> в точке <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=13/?k=10"> - вычисляем значение <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=14/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=13/?k=10">) функции <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=15/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=16/?k=10">) в этой точке.</li>
+<li>Если <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=17/?k=10"> , то выполняем присваивания <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=18/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=19/?k=10">.</li>
+<li>Если <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=20/?k=10">, то выполняем присваивание <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=33/?k=10">1 и переходим на п. 4). Иначе - заканчиваем вычисления. Здесь <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=8/?k=10"> – количество <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">испытаний</a>.</li>
+<li>Принимаем <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=22/?k=10"> в качестве приближенного значения точки глобального минимума функции <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=15/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=16/?k=10">) на интервале [<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=23/?k=10">,<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=24/?k=10">] или каким-либо из рассмотренных одномерных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">методов локальной оптимизации</a> организуем в окрестности точки <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=22/?k=10"> поиск локального минимума этой функции<img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=25/?k=10"></li>
+</ol>
+<div>При достаточно большом <img align="absmiddle" src="/?frm/?doc=MO/ch0501.mod/?n=28/?k=10"> метода гарантирует нахождение глобального минимума с высокой вероятностью.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-21/">← Оглавление</a>
         <a href="/rk6-edu/course-21/mod-26.html">‹ Предыдущий</a>

@@ -23,7 +23,46 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-28/mod-10.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Определение перестановки</a>
+</div>
+<a name="T1851536349"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Перестановкой</a> называется упорядоченная запись всех элементов конечного множества без повторений, когда фиксировано взаимное расположение элементов. Различные перестановки совпадают по составу и отличаются позициями своих элементов. Например, из множества трех латинских букв <span class="eOperator">{X, Y, Z}</span> можно получить следующие <span class="eOperator">6</span> различных перестановок:</div>
+<div><span style="font-weight:bold; ">(XYZ); (YZX); (ZXY); (YXZ); (XZY); (ZYX).</span></div>
+<div>В общем случае для множества из <span class="eOperator">n</span> элементов можно построить <span class="eOperator">n!</span> различных перестановок. При этом значение <span class="eOperator">0!</span> принимается равным <span class="eOperator">1</span>, а для любых целых положительных чисел <span class="eOperator">n&gt;0</span> величину <span class="eOperator">n!</span> можно вычислить по следующему рекуррентному соотношению:</div>
+<div><span style="font-weight:bold; ">n! = n(n−1)! </span></div>
+<div>В следующем примере показано использование этого рекуррентного определения факториала для рекурсивного вычисления значения <span class="eOperator">4!</span>:</div>
+<div><span style="font-weight:bold; ">4! = 4.3! = 4.3.2! = 4.3.2.1! = 4.3.2.1 = 24.</span></div>
+<div>Менее известно следующее рекуррентное соотношение для факториалов, по которому можно рекурсивно вычислять их величины при любых значениях <span class="eOperator">n&gt;2</span>:</div>
+<div><span style="font-weight:bold; ">n! = (n−1)[(n−1)! + (n−2)!].</span></div>
+<div>Следующий пример показывает вычисление величины <span class="eOperator">4!</span> по этой рекуррентной формуле, где учитываются очевидные значения <span class="eOperator">2!=2</span> и <span class="eOperator">1!=1</span>:</div>
+<div><span style="font-weight:bold; ">4! = 3( 3! + 2! ) = 3( 2( 2! + 1! ) + 2! ) = 3( 3.2! + 2.1! ) = 24.</span></div>
+<div>Чтобы определить значение <span class="eOperator">n!</span> по рассмотренным рекуррентным соотношениям, необходимо последовательно вычислить факториалы всех целых чисел от <span class="eOperator">1</span> до <span style="font-weight:bold; ">(n−1)</span>. Для непосредственной оценки значения <span class="eOperator">n!</span> без таких промежуточных умножений можно воспользоваться следующей приближенной формулой Стирлинга:</div>
+<div><span style="font-weight:bold; ">n!&nbsp;~ (2πn)<sup class="eSub">1/2</sup>(ne)<sup class="eSub">n</sup></span></div>
+<div>Относительная ошибка вычисления значения <span class="eOperator">n!</span> по формуле Стирлинга равна приблизительно <span class="eOperator">(1/12n)</span>. Например, точное значение <span class="eOperator">8!</span> равно <span class="eOperator">40320</span>, а вычисления по формуле Стирлинга дает приближенный результат <span class="eOperator">39902</span> с ошибкой около <span class="eOperator">1% (1/96)</span>:</div>
+<div><span style="font-weight:bold; ">40320 = 8! ~ (17π)<sup class="eSub">1/2</sup>(8e)<sup class="eSub">8</sup> ~&nbsp;39902</span></div>
+<div>Качество приближенного вычисления значения факториала можно еще больше увеличить, если использовать следующий уточненный вариант формулы Стирлинга:</div>
+<div><span style=""><span style="font-weight:bold; ">n!&nbsp;~ (2πn)<sup class="eSub">1/2</sup></span>(<span style="font-weight:bold; ">ne</span>)<span style="font-weight:bold; "><sup class="eSub">n</sup></span>(<span style="font-weight:bold; ">1+&nbsp;112n</span>)</span></div>
+<div>Вычислительный эксперимент позволяет отметить быстрый рост значения <span class="eOperator">n!</span> с увеличением <span class="eOperator">n</span>. В частности, <span class="eOperator">10!</span> превышает <span class="eOperator">3.5</span> миллиона <span class="eOperator">(3628800)</span>, а <span class="eOperator">1000!</span> представляет собой целое число с более чем <span class="eOperator">2500</span> десятичными знаками. Еще один интересный факт заключается в том, что число десятичных цифр в записи <span class="eOperator">n!</span> превышает <span class="eOperator">n</span>, начиная с <span class="eOperator">n=25</span>. В общем случае можно показать, что факториальная функция растет даже быстрее экспоненты. Справедливость такого вывода следует из следующего анализа выражения для квадрата факториальной функции:</div>
+<div>(<span style="font-weight:bold; ">n!)<sup class="eSub">2</sup> = n∏k=1k(n - k + 1) ≥ n∏k=1n = n<sup class="eSub">n</sup></span></div>
+<div>Сопоставление левой и правой частей в этом неравенстве дает следующее соотношение между факториальной функцией и экспонентой:</div>
+<div><span style="font-weight:bold; ">n! ≥ n<sup class="eSub">(n/2)</sup></span></div>
+<div>Полученная оценка скорости возрастания факториальной функции имеет важное практическое значение, определяя вычислительную сложность прикладных комбинаторных задач, в которых требуется реализовать перебор перестановок различных элементов. Для практического решения таких задач было разработано большое число разнообразных комбинаторных алгоритмов систематического <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">перечисления</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">перестановок</a> в различном порядке. Наиболее известными из них являются различные варианты лексиграфических алгоритмов, алгоритм циклических сдвигов (вращения) перестановок, а также алгоритмы транспозиции смежных элементов. Особенности реализации этих перестановочных алгоритмов рассмотрены ниже.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-28/">← Оглавление</a>
         <a href="/rk6-edu/course-28/mod-8.html">‹ Предыдущий</a>

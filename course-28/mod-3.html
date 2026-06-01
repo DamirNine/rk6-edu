@@ -23,7 +23,54 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-28/mod-4.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Тождества сочетаний</a>
+</div>
+<div>Практическое использование мультипликативной и факториальной формул для определения числа <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сочетаний</a> при произвольных значениях <span class="eOperator">n</span> и <span class="eOperator">m</span> оказывается мало продуктивно из-за экспоненциального роста факториальных произведений их числителя и знаменателя. Даже при сравнительно небольших величинах <span class="eOperator">n</span> и <span class="eOperator">m</span> эти произведения часто превосходят возможности представления целых чисел в современных вычислительных и программных системах. При этом их величины оказываются значительно больше результирующего значения числа сочетаний, которое может быть сравнительно невелико. Например, число сочетаний из <span class="eOperator">n=10</span> по <span class="eOperator">m=8</span> элементов равно всего <span class="eOperator">45</span>. Однако чтобы найти это значение по факториальной формуле нужно сначала вычислить значительно большие величины <span class="eOperator">10!</span> в числителе и <span class="eOperator">8!</span> в знаменателе как показано в следующем примере:</div>
+<div><span style="font-weight:bold; ">С(10,8)=С810=</span><img align="absmiddle" src="/?frm/?doc=Comby/comb_identity.mod/?n=1/?k=10"><span style="font-weight:bold; ">=10!8!(10 − 8)!=362880040320.2=45</span></div>
+<div>Чтобы исключить трудоемкие операции обработки больших величин, для определения числа <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сочетаний</a> можно воспользоваться различными рекуррентными соотношениями, которые непосредственно следуют из мультипликативной или факториальной формул. В частности, из мультипликативной формулы числа сочетаний может быть получено следующее рекуррентное соотношение, которое позволяет выносить за знак числа сочетаний отношение его нижнего и верхнего индексов:</div>
+<div><span style="font-weight:bold; ">С810=nm</span><img align="absmiddle" src="/?frm/?doc=Comby/comb_identity.mod/?n=2/?k=10"><span style="font-weight:bold; ">=nmСmn-1</span></div>
+<div>Наконец, сохранение неизменным нижнего индекса обеспечивает следующее рекуррентное соотношение, которое получается из факториальной формулы числа сочетаний умножением ее числителя и знаменателя на <span class="eOperator">(n-m+1)</span> и последующей группировки</div>
+<div><span style="font-weight:bold; ">Сmn=(n − (m − 1))m(n!(m − 1)!(n − (m − 1))!)=(n − m + 1)mСm-1n</span></div>
+<div>После элементарных преобразований все три полученные рекуррентные соотношения можно представить в следующих видах:</div>
+<div><span style="font-weight:bold; ">(n-m)Сmn=nСmn-1; mСmn=nСm-1n-1; (n-m+1)Сm-1n=mСmn</span></div>
+<div>Если теперь сложить левые и правые части двух первых формул и сократить результат на n, то получится рекуррентное соотношение, которое называется тождеством сложения для чисел сочетаний:</div>
+<div><span style="font-weight:bold; ">Сmn=Сmn-1+Сm-1n-1</span></div>
+<div>Тождество сложения предоставляет основное рекуррентное правило для эффективного определения числа сочетаний при больших значениях <span class="eOperator">n</span> и <span class="eOperator">m</span>, так как оно позволяет заменить операции умножения в факториальных произведениях более простыми операциями сложения, причем для меньших чисел сочетаний. В частности, используя тождество сложения, теперь несложно определить число сочетаний из <span class="eOperator">n=10</span> по <span class="eOperator">m=8</span> элементов, которое рассматривалось выше, выполнив следующую последовательность рекуррентных преобразований</div>
+<div><span style="font-weight:bold; ">C810 = C89+C79 = C88+C78+C78+C68 =…= C88+2C77+3C66+4C55+5C44+6C33+7C22+8C11+9C01=45</span></div>
+<div>Кроме того, из тождества сложения можно вывести несколько полезных соотношений для вычисления конечных сумм, в частности, формулу суммирования по нижнему индексу, которая имеет следующий вид:</div>
+<div><span style="font-weight:bold; ">Cm0+Cm1+Cm2+...+Cmk+...+Cmn=Cm+1n+1</span></div>
+<div>Такое соотношение получается, если в тождестве сложения разворачивать рекуррентность по слагаемому с наибольшим верхним индексом, пока его нижний индекс больше <span class="eOperator">0</span>. Следующий численный пример иллюстрирует указанный процесс рекуррентных преобразований:</div>
+<div><span style="font-weight:bold; ">C24 = C23+C13 = C22+C12+C13=C21+C11+C12+C13=(C20=0)+C10+C11+C12+C13=C10+C11+C12+C13</span></div>
+<div>Формула суммирования по нижнему индексу часто применяется для вычисления суммы степеней натуральных чисел. В частности, полагая <span class="eOperator">m=1</span>, по этой формуле легко найти сумму <span class="eOperator">n</span> первых чисел натурального ряда:</div>
+<div><span style="font-weight:bold; ">0 + 1 + 2 + … + n =C10+C11+C12+C13+...+C1n=C2n+1=(n+1)n2</span></div>
+<div>Еще один полезный вариант формулы суммирования можно получить, если разворачивать рекуррентность для тождества сложения по слагаемому с наименьшим верхним индексом. Следующий численный пример иллюстрирует этот вариант рекуррентных преобразований:</div>
+<div><span style="font-weight:bold; ">C35 = C34+C24 = C34+C23+C13=C34+C23+C12+C02=C34+C23+C12+C01+(C-11=0)</span></div>
+<div>В общем случае в результате таких преобразований получается сумма чисел <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сочетаний</a>, оба индекса которых отличаются на единицу от соседних слагаемых, а разность индексов сохраняет постоянную величину (в рассмотренном примере она также равна единице). Таким образом, получается следующая формула суммирования по обоим индексам чисел сочетаний:</div>
+<div><span style="font-weight:bold; ">C0r+C1r+1+C2r+2+...+Ckr+k...+Cnr+n=Cnr+n+1</span></div>
+<a name="T1765016572"></a>
+<div>Кроме рекуррентных соотношений и формул суммирования, которые были рассмотрены выше, в комбинаторном анализе получено много других полезных тождеств для чисел сочетаний. Наиболее важным среди них является <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">тождество симметрии</a>, которое получается взаимной заменой <span class="eOperator">m</span> на <span class="eOperator">(n-m)</span> в факториальной формуле числа сочетаний и имеет следующий вид:</div>
+<div><span style="font-weight:bold; ">Cmn=Cn-mn</span></div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Тождество симметрии</a> имеет очевидный комбинаторный смысл, так как, определяя количество вариантов выбора <span class="eOperator">m</span> элементов из <span class="eOperator">n</span>, оно одновременно устанавливает число сочетаний для остальных <span class="eOperator">(n-m)</span> элементов, которые не были выбраны. В этом можно легко убедиться на следующем примере, сопоставив числа сочетаний из <span class="eOperator">n=5</span> элементов по <span class="eOperator">m=2</span> и по <span class="eOperator">(n-m)=5-2</span></div>
+<div><span style="font-weight:bold; ">C25=C5-25=C35=10</span></div>
+<div>В обширной литературе по комбинаторному анализу можно найти много других полезных тождеств для чисел сочетаний. Но сейчас будет достаточно упомянуть только одно тождество, которое обеспечивает следующее упрощение произведений чисел сочетаний:</div>
+<div><span style="font-weight:bold; ">CmnCkm=CknCm-kn-k</span></div>
+<div>Числа и тождества сочетаний широко используются в различных областях современной вычислительной математики. Однако наиболее известное их применение связано с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">биномом Ньютона</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">треугольником Паскаля</a>.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-28/">← Оглавление</a>
         <a href="/rk6-edu/course-28/mod-2.html">‹ Предыдущий</a>

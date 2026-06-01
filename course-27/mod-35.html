@@ -23,7 +23,116 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-27/mod-36.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Перегрузка операций new и delete</a>
+</div>
+<a name="T108960"></a>
+<a name="T1335458389"></a>
+<div>Эти операции используются для обеспечения альтернативных вариантов управления памятью. Перегрузка операции <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">new</a> используется для выделения динамической памяти под объекты либо массивы объектов. Перегрузка операции <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">delete</a> используется для освобождения памяти, занятой объектом, или массивом объектов.</div>
+<div>Использование <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функциональных операций</a> <span style="">new</span> и delete должно соответствовать следующим правилам: этим функциям не требуется передавать параметр типа класса. Первым параметром функциям new и new[] должен передаваться размер объекта типа size. Этот тип, возвращаемый функцией sizeof, определяется в заголовочном файле &lt;stddef.h&gt;. При вызове он передается функции неявным образом. Функции new и delete должны определяться с типом возвращаемого значения void* даже если <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">return</a> возвращает указатель на другие типы (например на класс). Операция delete должна иметь тип возврата <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">void</a> и первый аргумент типа *void. Операции new и delete являются статическими элементами класса. Поведение перегруженной операции должно соответствовать действиям, выполняемым ими по умолчанию. Для операции new это означает, что она должна возвращать правильное значение, корректно обработав запрос на выделение памяти нулевого размера или порождать исключения при невозможности выполнения запроса. Для операции delete следует соблюдать условие: удаление любого указателя должно быть безопасным, следовательно внутри операции delete необходимо проверять указатель на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">NULL</a> (при этом должно быть отсутствие каких-либо действий в случае равенства). Стандартные операции выделения и освобождения памяти могут использоваться в области действия класса наряду с перегруженными операциями. Это осуществляется с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции доступа к области видимости</a> для объектов этого класса (::) и непосредственно для всех других.</div>
+<div>Перезагрузка операций выделения памяти используется для экономии памяти, либо для размещения данных в некоторой конкретной области, если это необходимо.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><br>
+<pre class="eListing">class Obj {...};
+class pObj
+{
+private:
+obj *p;
+};
+PObj *p = new pObj;  /* Для выделении памяти под объект типа pObj с помощью стандартной функции new */
+
+</pre>
+</div>
+<a name="T111433423"></a>
+<div>Для небольших объемов накладные расходы могут оказать весьма значительными. Для экономии памяти можно написать собственную операцию new класса pObj. Она будет выдавать большой блок памяти и размещать в нем указатели на Obj. Для этого в объект pObj вводится статическое поле, в котором хранится указатель на первую свободную ячейку блока для размещения очередного объекта. Неиспользуемые ячейки связываются в список. Чтобы не занимать память под поле связи, можно использовать объединения (<a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">union</a>), с помощью которых одна и та же ячейка используется либо для хранения указателя, либо для связи со следующей свободной ячейкой.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><br>
+<pre class="eListing">class pObj
+{
+public:
+static void *operator new (size_t size);
+
+private:
+union
+{
+obj p; / *  указатель на объект */
+pObj next /* указатель на следующую свободную ячейку */
+}
+
+static const int BLOCK_SIZE; /* размер блока */
+/* заголовок списка свободных ячеек */
+static pObj *headOfFree;
+};
+</pre>
+<br>
+<pre class="eListing">void *pObj::operator new(size_t size)
+{
+/* перенаправить запрос неверного количества памяти стандартной операции new */
+if(size!=sizeof(pObj))  return::operator new(size);
+
+pObj *p = headOfFree;
+/* указатель на первую свободную ячейку */
+/* переместить указатель списка свободных ячеек */
+
+if(p)  headOfFree = p-&gt;next;
+/* если свободной памяти нет - выделить очередной блок */
+else
+pObj *new block = static_cast&lt;pObj *&gt;(::operator new(BLOCK_SIZE *sizeof(pObj)));
+/* здесь используется явное преобразование типа с помощью операции static_cast */
+
+/* все ячейки кроме первой свободны, связываем их */
+for(int i = 1; i&lt;BLOCK_SIZE-1; ++i)
+
+new block[i].next = &amp;new block[i+1];
+
+new block[BLOCK_SIZE-1.next=0];
+/* устанавливаем начало списка свободных ячеек */
+
+headOfFree = &amp;newblock[1];
+p = newblock;
+return p; /*  возвращаем указатель на память */
+}
+/* должна присутствовать инициализация статических полей класса pObj */
+
+
+pObj*pObj::headOfFree;
+/* устанавливаются нули по умолчанию */
+
+const int pObj::BLOCK_SIZE = 1024;
+/* операция delete должна добавлять ячейку памяти к списку свободных ячеек */
+
+void pObj::operator delete(void * ObjToDie, size_t size)
+{
+if(ObjToDie == 0) return;
+if(size!=sizeof(pObj))
+{
+::operator delete(ObjToDit);
+return;
+}
+pObj p = static_cast&lt;pObj&gt;(ObjToDie);
+p-&gt;next=headOfFree;
+headOfFree=p;
+}
+
+</pre>
+</div>
+<div>Если перегруженная операция <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">new</a> наследуется, то она вызывается для производных объектов. Причем если их размер не соответствует размеру базового объекта (это встречается часто), то это приводит к проблемам. Для избежания проблем необходимо осуществлять проверку на размер. Если размер объекта не равен тому, для которого перегружалась new, то запрос на выделение памяти следует осуществлять с помощью не перегруженной new. </div>
+<div>В случае когда стандартная операция <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">delete</a> не найдет в начале объекта верной информации о его размере, это приводит к неверному поведению программы. В рассматриваемом примере операция delete должна добавлять освобождающуюся ячейку памяти к списку свободных ячеек. В операции delete выполняется проверка соответствия размеров объектов по объему выделенной памяти.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-27/">← Оглавление</a>
         <a href="/rk6-edu/course-27/mod-34.html">‹ Предыдущий</a>

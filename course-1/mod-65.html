@@ -23,7 +23,46 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-1/mod-66.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Классификация методов математического программирования</a>
+</div>
+<a name="T561166639"></a>
+<a name="T2062334901"></a>
+<div>Основными методами <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оптимизации</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">САПР</a> являются поисковые методы. Поисковые методы основаны на пошаговом изменении управляемых параметров<br><img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=1/?k=10"><br>где в большинстве методов приращение <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=2/?k=10"> вектора управляемых параметров вычисляется по формуле<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=3/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br>Здесь <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=4/?k=10"> — значение вектора управляемых параметров на <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=5/?k=10">-м шаге; <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=6/?k=10"> — шаг; а <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=7/?k=10"> — направление поиска. Следовательно, если выполняются условия сходимости, то реализуется пошаговое (итерационное) приближение к экстремуму.</div>
+<div>Методы оптимизации классифицируют по ряду признаков.</div>
+<a name="T1395512093"></a>
+<div>В зависимости от числа управляемых параметров различают методы одномерной и многомерной оптимизации. В методах <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">одномерной оптимизации</a> управляемый параметр единственный, во вторых размер вектора <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=8/?k=10"> не менее двух. Реальные задачи в САПР многомерны, методы одномерной оптимизации играют вспомогательную роль на отдельных этапах многомерного поиска.</div>
+<a name="T1247769263"></a>
+<a name="T1194276764"></a>
+<div>Различают методы условной и безусловной оптимизации по наличию или отсутствию ограничений. Для реальных задач характерно наличие ограничений, однако методы <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">безусловной оптимизации</a> также представляют интерес, поскольку задачи <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">условной оптимизации</a> с помощью специальных методов могут быть сведены к задачам без ограничений.</div>
+<a name="T1496140851"></a>
+<a name="T773374231"></a>
+<a name="T1795947475"></a>
+<div>В зависимости от числа экстремумов различают задачи одно- и многоэкстремальные. Если метод ориентирован на определение какого-либо локального экстремума, то такой метод относится к локальным методам. Его называют методом <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">локального поиска</a>. Если же результатом является глобальный экстремум, то метод называют методом <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">глобального поиска</a>. Удовлетворительные по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительной эффективности</a> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">методы глобального поиска</a> для общего случая отсутствуют и потому на практике в САПР используют методы поиска локальных экстремумов.</div>
+<div>Наконец, в зависимости от того, используются при поиске производные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">целевой функции</a> по управляемым параметрам или нет, различают методы нескольких порядков. Если производные не используются, то имеет место метод нулевого порядка, если используются первые или вторые производные, то соответственно метод первого или второго порядка. Методы первого порядка называют также градиентными, поскольку вектор первых производных <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=9/?k=10"> по <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=8/?k=10"> есть градиент целевой функции<br><img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=10/?k=10"><br></div>
+<div>Конкретные методы определяются следующими факторами:</div>
+<ol class="eList"><li>способом вычисления направления поиска <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=11/?k=10"> в формуле (1);</li>
+<li>способом выбора шага <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=12/?k=10">;</li>
+<li>способом определения окончания поиска.</li>
+</ol>
+<div>Определяющим фактором является первый из перечисленных в этом списке.</div>
+<div>Шаг может быть или постоянным, или выбираться исходя из одномерной оптимизации — поиска минимума целевой функции в выбранном направлении <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=7/?k=10">. В последнем случае шаг будем называть оптимальным.</div>
+<div>Окончание поиска обычно осуществляют по правилу: если на протяжении <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=13/?k=10"> подряд идущих шагов траектория поиска остается в малой <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=14/?k=10">-окрестности текущей точки поиска <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=4/?k=10">, то поиск следует прекратить, следовательно,. условие окончания поиска имеет вид <img align="absmiddle" src="/?frm/?doc=120_Opt/5003.mod/?n=15/?k=10">.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-1/">← Оглавление</a>
         <a href="/rk6-edu/course-1/mod-64.html">‹ Предыдущий</a>

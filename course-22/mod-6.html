@@ -23,7 +23,80 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-22/mod-7.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Компоненты коммуникационной среды</a>
+</div>
+<div>Структурно коммуникационная среда состоит из трех следующих компонентов (см. рис.&nbsp;1), где <img align="absmiddle" src="/?frm/?doc=Parallel/ch010201.mod/?n=1/?k=10"> - узел сети (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессор</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компьютер</a>).</div>
+<ul class="eList"><a name="T1443394336"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сетевые адаптеры</a>;</li>
+<a name="T1108520035"></a>
+<li> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">коммуникационная сеть</a>;</li>
+<a name="T1495837329"></a>
+<li><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сетевые коммутаторы</a>.</li>
+</ul>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch010201.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Структура коммуникационной среды.</div></div>
+<div class="eSubTitle">Сетевые адаптеры.</div>
+<div>При обмене данными между узлами сети, не являющимися ближайшими соседями, происходит трансляция данных через промежуточные узлы. Очевидно, что в узлах должны находиться какие-то аппаратные средства, которые освобождают <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоры</a> узлов от участия в трансляции данных. Одной из основных функций <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевых адаптеров</a> является обеспечение трансляционных обменов данными в сети.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Сетевой адаптер</a> содержит приемопередающую часть, связанную с узловым <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессором</a> сети, приемопередающую часть, связанную с сетью, и, обычно, согласующие буферы (см. рис.&nbsp;2).</div>
+<div>Основной функцией приемопередающей части адаптера, связанной с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шиной</a> узла, является реализация <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протокола</a> этой шины. Основной функцией приемопередающей части адаптера, связанной с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникационной сетью</a>, является реализация протокола сети. Функцией <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевого адаптера</a> может быть также обеспечение когерентности памяти узла сети.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch010201.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Структура сетевого адаптера.</div></div>
+<a name="T816474114"></a>
+<div>Заметим, что на основе высокоскоростных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевых адаптеров</a>, поддерживающих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протоколы</a> когерентности <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кэш-памяти</a>, строятся <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">NUMA-системы</a>.</div>
+<div>Если на узловом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоре</a> одновременно функционирует несколько прикладных процессов, то <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевой адаптер</a> узла может стать узким местом системы, поскольку за доступ к нему могут бороться прикладные процессы и процессы операционной системы. Поэтому иногда узловой процессор снабжают двумя сетевыми адаптерами: одним - для процессов операционной системы; другим – для прикладных процессов.</div>
+<div class="eSubTitle">Коммуникационные сети.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Коммуникационные сети</a> подразделяются на широкомасштабные коммуникационные сети (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Wide Area Networks</a>) – WAN-сети  и локальные коммуникационные сети (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Local Area Networks</a>) – LAN-сети.</div>
+<a name="T1854411075"></a>
+<div><span class="eOperator">Адресация в сетях.</span> Множество адресов, допустимых в рамках некоторой схемы адресации, называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">адресным пространством коммуникационной сети</a>. Адресное пространство может иметь линейную или иерархическую организацию. </div>
+<a name="T990938163"></a>
+<div>В <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">линейном адресном пространстве коммуникационной сети</a> множество адресов не структурировано, все адреса равноправны. Примером линейного адресного пространства является пространство <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MAC</a> (Media Access Control)-адресов, которые предназначены для однозначной идентификации сетевых интерфейсов в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">локальных сетях</a>. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MAC-адреса</a> распределяются между изготовителями специальным комитетом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IEEE</a> и встраиваются в аппаратуру при ее изготовлении.</div>
+<a name="T1189267449"></a>
+<div>Типичным представителем <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">иерархического адресного пространства коммуникационной сети</a> является пространство сетевых 4-байтовых <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IP</a> (Internet Protocol)-адресов, используемых для адресации узлов в WAN-сетях. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">IP-адреса</a> являются двухуровневыми: адрес делится на старшую часть (номер сети) и младшую часть (номер узла в сети). Такая организация IP-адресов позволяет передавать сообщения между сетями только на основании номера сети. Номер узла используется после доставки сообщения внутри сети.</div>
+<a name="T628554566"></a>
+<div><span class="eOperator">Сетевые протоколы.</span> Правила, определяющие последовательность и формат сообщений, которыми обмениваются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">узлы сети</a>, называются <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сетевым коммуникационным протоколом</a>. Обычно используется набор <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протоколов</a> различного уровня. </div>
+<div>В WAN-сетях обычно используются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протоколы</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммутации пакетов</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">OSI</a> (Open System Interconnection): в пункте отправления сообщение разбивается на порции (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пакеты</a>); пакеты посылаются по адресу назначения; в пункте назначения осуществляется сборка сообщения из пакетов. </div>
+<div>В параллельных вычислительных системах используются LAN-сети и как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протоколы</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммутации пакетов</a>, так и протоколы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммутации каналов</a>. Для того, чтобы уменьшить накладные расходы в LAN-сетях используют более простые протоколы обмена.</div>
+<div>Основным стандартом для коммуникационных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протоколов</a> является широко известная модель <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">OSI</a>, разработанная в начале 80-х годов. Модель OSI имеет семь уровней (см. рис.&nbsp;3).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch010201.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;К модели OSI</div></div>
+<div>Самой распространенной технологией на физическом и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">канальном уровнях</a> является технологии <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Ethernet</a>. Обычно <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">локальные сети</a> строятся на основе именно этих технологи. Технологии Ethernet, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Fast Ethernet</a>, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Gigabit Ethernet</a> обеспечивают скорость передачи данных, соответственно, 10, 100 и 1000 Мбит/с.</div>
+<a name="T1616473215"></a>
+<div>Поскольку коммуникационная среда является разделяемым ресурсом, возможны ситуации, когда два узла пытаются одновременно передать <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кадр</a> данных. Такая ситуация приводит к искажению информации и называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">коммуникационной коллизией</a>. В технологии <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Ethernet</a> предусмотрен специальный механизм для разрешения коллизий. </div>
+<div>Основной недостаток сетей, построенных по технологии <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Ethernet</a>, состоит в том, что в них в единицу времени может передаваться только один <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пакет</a> данных. Для обеспечения высокой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">производительности</a> таких сетей их не следует загружать более чем на 30–40% ее максимальной пропускной способности. Пропускная способность Ethernet-сетей значительно повышается при использовании <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевых коммутаторов</a>.</div>
+<div>Для построения высокоскоростных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникационных сетей</a> используют, например, технологию SCI (Scalable Coherent Interface) с пиковой пропускной способностью на аппаратном уровне 400 Мбит/сек.</div>
+<a name="T244466913"></a>
+<div>Важнейшей характеристикой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникационной сети</a> является <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">топология коммуникационной сети</a>, под которой понимается способ соединения процессорных узлов между собой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">каналами</a> передачи данных. Топологию коммуникационной сети принято изображать в виде графа, вершины которого соответствуют процессорным узлам, а ребра – каналам связи. </div>
+<div>Практически каждая параллельная вычислительная система имеет свою оригинальную <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">топологию коммуникационной сети</a>. Это связано с тем, что невозможно соединить много узлов быстрыми <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">каналами связи</a> по типу «каждый с каждым». Поэтому в параллельных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительных системах</a> быстрый обмен информацией осуществляется не между всеми узлами, а только между некоторыми. Все остальные обмены осуществляются относительно медленно. </div>
+<div>Указанное разделение связей на быстрые и медленные, во-первых, порождает многообразие <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">топологий коммуникационных сетей</a>, а, во-вторых, является одной из основных причин ограниченности класса алгоритмов, которые могут быть эффективно реализованы на параллельной вычислительной системе.</div>
+<div>Быстрые обмены осуществляются по некоммутируемым <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">линиям связи</a>, медленные – либо через <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевые коммутаторы</a>, либо с помощью последовательных быстрых обменов.</div>
+<div class="eSubTitle">Сетевые коммутаторы.</div>
+<div>Существует много типов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевых коммутаторов</a> (commutator, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">switch</a>) - (см. ниже). При построении LAN-сетей широко используются также сетевые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">концентраторы</a> (concentrator, hub). Концентратор на один из своих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">портов</a> принимает сигналы от одного из <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">узлов сети</a> и синхронно передает их на все свои остальные порты, соединенные с другими узлами сети (см. рис.&nbsp;4). </div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch010201.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;Схема использования сетевого концентратора. </div></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-22/">← Оглавление</a>
         <a href="/rk6-edu/course-22/mod-5.html">‹ Предыдущий</a>

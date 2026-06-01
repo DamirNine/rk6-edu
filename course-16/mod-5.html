@@ -23,7 +23,65 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-16/mod-6.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Решение линейных одномерных стационарных краевых задач с помощью МКР</a>
+</div>
+<div>Предположим необходимо определить распределение температуры в стержне, теплоизолированном с цилиндрической стороны, и с заданной температурой на боковых гранях.</div>
+<div>Одномерное стационарное уравнение теплопроводности для изотропной среды выглядит следующим образом:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=1/?k=10"><br></div>
+<a name="T2039822428"></a>
+<div>В соотвествии с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритмом решения стационарных краевых задач методом конечных разностей</a> наносим на объект равномерную сетку, как это показано на рис.&nbsp;1.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mkr/one_mkr.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Для каждого внутреннего узла сетки записываем разностный аналог исходного дифференциального уравнения:</div>
+<ul class="eList"><li>для узла 1:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=2/?k=10"><br></li>
+<li>для узла 2:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=3/?k=10"><br></li>
+</ul>
+<a name="T1939952474"></a>
+<div>В результате получили замкнутую систему линейных алгебраических уравнений, где неизвестными являются <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=4/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=5/?k=10">, а <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=6/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=7/?k=10"> — известные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">граничные условия</a>.</div>
+<div>Решив систему уравнений, получим <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=8/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=9/?k=10">. Это решение является точным, поскольку в исходной постановке задача линейная.</div>
+<a name="T354256103"></a>
+<div>Рассмотрим теперь решение задачи с <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">краевым условием</a> второго рода, на правой границе стержня задан тепловой поток:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=10/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
+<div>Пусть <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=11/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=12/?k=10">.</div>
+<div>Запишем разностные аналоги для внутренних узлов сетки:</div>
+<ul class="eList"><li>для узла 1:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=2/?k=10"><br></li>
+<li>для узла 2<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=3/?k=10"><br></li>
+</ul>
+<div>Получили незамкнутую систему алгебраических уравнений (неизвестными являются <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=4/?k=10">, <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=5/?k=10"> и <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=7/?k=10">), дополнить которую можно разностным аналогом краевого условия (1).</div>
+<a name="T947554540"></a>
+<div>Проще всего воспользоваться <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">левой разностью</a>:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=13/?k=10"><br></div>
+<div>Решая эту систему уравнений, получим <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=14/?k=10">, <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=15/?k=10">, <img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=16/?k=10">.</div>
+<div>Однако можно заметить, что аппроксимация задачи во внутренних узлах имеет второй порядок точности, а на границе — первый.</div>
+<a name="T1701571044"></a>
+<div>Можно вспомнить, что аппроксимация первой производной с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">центральной разности</a> имеет второй порядок точности, но для этого необходимо, чтобы граничный узел 3 был бы центральным узлом. Используется следующий прием: вводиться дополнительный фиктивный узел за пределами области, бывший граничный узел 3 становиться как бы внутренним (см. рис.&nbsp;2)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Mkr/one_mkr.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>Теперь можно записать следующую систему конечно-разностных уравнений:</div>
+<ul class="eList"><li>для узла 1:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=2/?k=10"><br></li>
+<li>для узла 2:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=17/?k=10"><br></li>
+<li>для узла 3:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=18/?k=10"><br></li>
+<a name="T108068573"></a>
+<li><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">граничное условие второго рода</a>:<br><img align="absmiddle" src="/?frm/?doc=Mkr/one_mkr.mod/?n=19/?k=10"><br></li>
+</ul>
+<div>За повышение точности пришлось заплатить увеличением размерности системы конечно-разностных уравнений.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-16/">← Оглавление</a>
         <a href="/rk6-edu/course-16/mod-4.html">‹ Предыдущий</a>

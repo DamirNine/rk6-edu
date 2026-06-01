@@ -23,7 +23,161 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-29/mod-21.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Представление арифметических, алгебраических и логических выражений в виде польской записи</a>
+</div>
+<a name="T2068726117"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Арифметические выражения</a> состоят из операндов и знаков операций, при этом под операндом следует понимать знак-цифровое выражение, обозначающее некую формальную переменную.</div>
+<br>
+<div>V = { [a-z], [0-9], +, -, *, /, **, ), ( }</div>
+<br>
+<a name="T1002254412"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Алгебраические выражения</a> включают в себя все арифметические выражения, а также описания алгебраических функций.</div>
+<a name="T1481190088"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Логическое выражение</a> - это объединение алгебраических выражений и логических функций.</div>
+<div>В арифметических выраженниях существует два типа операций.</div>
+<a name="T1385667668"></a>
+<a name="T770284378"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Одноместные операции</a> (операции с одним операндом) и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">двуместные операции</a> (оперaции с двумя операндами).</div>
+<br>
+<div>-B + А * С</div>
+<div>"-" - одноместная операция, "*" - двуместная.</div>
+<br>
+<a name="T1706239756"></a>
+<div>Для получения алгебраических и арифметических выражений используются <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">стековые методы трансляции</a>. Для этого применяются </div>
+<a name="T539233454"></a>
+<div>два стека и т.н. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">таблица переходов</a>. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Таблица переходов</a> определяет старшинство выполняемых операций и связывает последовательность действий. </div>
+<div>Используемые стеки: </div>
+<ol class="eList"><li>стек транслятора (внутреннее представление);</li>
+<li>стек для исполнения</li>
+</ol>
+<br>
+<div><span style="color:#0000FF; font-weight:bold; font-style:italic; ">Правила получения польской записи</span></div>
+<br>
+<a name="T623876021"></a>
+<div><span style="color:#0000FF; "><span style="">1.</span></span> Идентификаторы <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">польской записи</a> следуют в том же порядке, что и в инфиксной записи. </div>
+<div>(a+b)/c</div>
+<div>ab+c/ - постфиксная запись;</div>
+<div>+ab/c - инфиксная запись.</div>
+<br>
+<div><span style="color:#0000FF; ">2.</span> Операторы в польской записи следуют в том же порядке, в каком они должны вычисляться при чтении выражения слева направо.</div>
+<br>
+<div><span style="color:#0000FF; ">3.</span> Операторы располагаются непосредственно за своими операндами.</div>
+<br>
+<div>&lt;идентификатор&gt;</div>
+<div>&lt;операнд&gt;</div>
+<div>&lt;оператор&gt;</div>
+<div>&lt;оператор&gt; ::= &lt;идетификатор&gt; | &lt;операнд&gt;</div>
+<div>&lt;операнд&gt;&lt;оператор&gt;;</div>
+<br>
+<div>При стековой трансляции выражений выполняются два типа команд транслятора:</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/gram20.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<br>
+<a name="T1545171975"></a>
+<div><span style="color:#0000FF; ">1.</span> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ki</a>  - взять операнд с именем i и отправить его на вершину стека, перейти к просмотру следующего символа;</div>
+<a name="T1545172828"></a>
+<div><span style="color:#0000FF; ">2.</span> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">kξ</a> - взять два верхних операнда из стека, произвести над ними операцию ξ и новый операнд (результат) поместить  на вершину стека</div>
+<div>η - символ на вершине стека транслятора;</div>
+<div>ξ - символ, который принимаетсчя транслятором.</div>
+<br>
+<div>При выполнении этих команд возможно четыре действия транслятора:</div>
+<a name="T1459804437"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">I </a>  - отправить пришедший символ на вершину стека и читать следующий символ;</div>
+<a name="T1990702636"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">II</a>  - выполнить операцию над двумя операндами, результат занести на вершину стека и читать следующий символ;</div>
+<a name="T1582239499"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">III</a> - при прочтении символа ')' удалить ')' с вершины стека и читать следующий символ (действие удаления скобки);</div>
+<a name="T1990702623"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">IV</a> - взять два операнда, выполить над ними команду kξ и повторить чтение входного символа.</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=LO-SAPR/gram20.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<br>
+<div>На вершине стека не может быть символа ')'.</div>
+<div>λ - пустой символ (пробел, пустота на вершине стека, заключающий символ).</div>
+<div>Ош - ошибка</div>
+<br>
+<div>Пример:</div>
+<br>
+<div>(a * b + c * d) / (A - d) + b * c</div>
+<br>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTable">T </td><td class="eTable">ξ </td><td class="eTable">действие </td><td class="eTable">команда</td></tr>
+<tr align="center"><td class="eTable">λ</td><td class="eTable">(</td><td class="eTable">I</td><td class="eTable">-</td></tr>
+<tr align="center"><td class="eTable">(</td><td class="eTable">a</td><td class="eTable">-</td><td class="eTable">k<sub class="eSub">a</sub></td></tr>
+<tr align="center"><td class="eTable">(</td><td class="eTable">*</td><td class="eTable">I</td><td class="eTable">-</td></tr>
+<tr align="center"><td class="eTable">(*</td><td class="eTable">b</td><td class="eTable">-</td><td class="eTable">k<sub class="eSub">b</sub></td></tr>
+<tr align="center"><td class="eTable">(*</td><td class="eTable">+</td><td class="eTable">IV</td><td class="eTable">k<sub class="eSub">a</sub></td></tr>
+<tr align="center"><td class="eTable">(</td><td class="eTable">+(повтор)</td><td class="eTable">I</td><td class="eTable">-</td></tr>
+<tr align="center"><td class="eTable">(+</td><td class="eTable">c</td><td class="eTable">-</td><td class="eTable">k<sub class="eSub">c</sub></td></tr>
+<tr align="center"><td class="eTable">(+</td><td class="eTable">*</td><td class="eTable">I</td><td class="eTable">-</td></tr>
+<tr align="center"><td class="eTable">(+*</td><td class="eTable">d</td><td class="eTable">-</td><td class="eTable">k<sub class="eSub">d</sub></td></tr>
+<tr align="center"><td class="eTable">(+*</td><td class="eTable">)</td><td class="eTable">IV</td><td class="eTable">k<sub class="eSub">*</sub></td></tr>
+<tr align="center"><td class="eTable">(+</td><td class="eTable">)(повтор)</td><td class="eTable">IV</td><td class="eTable">k<sub class="eSub">+</sub></td></tr>
+<tr align="center"><td class="eTable">(</td><td class="eTable">)(повтор)</td><td class="eTable">III</td><td class="eTable">-</td></tr>
+<tr align="center"><td class="eTable">λ</td><td class="eTable">/</td><td class="eTable">I</td><td class="eTable">-</td></tr>
+<tr align="center"><td class="eTable">/</td><td class="eTable">(</td><td class="eTable">I</td><td class="eTable">-</td></tr>
+<tr align="center"><td class="eTable">/(</td><td class="eTable">A</td><td class="eTable">-</td><td class="eTable">k<sub class="eSub">A</sub></td></tr>
+<tr align="center"><td class="eTable">/(</td><td class="eTable">-</td><td class="eTable">I</td><td class="eTable">-</td></tr>
+<tr align="center"><td class="eTable">/(-</td><td class="eTable">d</td><td class="eTable">-</td><td class="eTable">k<sub class="eSub">d</sub></td></tr>
+<tr align="center"><td class="eTable">/(-</td><td class="eTable">)</td><td class="eTable">IV</td><td class="eTable">k<sub class="eSub">-</sub></td></tr>
+<tr align="center"><td class="eTable">/(</td><td class="eTable">)(повтор)</td><td class="eTable">III</td><td class="eTable">-</td></tr>
+<tr align="center"><td class="eTable">/</td><td class="eTable">+</td><td class="eTable">IV</td><td class="eTable">k<sub class="eSub">/</sub></td></tr>
+<tr align="center"><td class="eTable">λ</td><td class="eTable">+(повтор)</td><td class="eTable">I</td><td class="eTable">-</td></tr>
+<tr align="center"><td class="eTable">+</td><td class="eTable">b</td><td class="eTable">-</td><td class="eTable">k<sub class="eSub">b</sub></td></tr>
+<tr align="center"><td class="eTable">+</td><td class="eTable">*</td><td class="eTable">I</td><td class="eTable">-</td></tr>
+<tr align="center"><td class="eTable">+*</td><td class="eTable">c</td><td class="eTable">-</td><td class="eTable">k<sub class="eSub">c</sub></td></tr>
+<tr align="center"><td class="eTable">+*</td><td class="eTable">λ</td><td class="eTable">IV</td><td class="eTable">k<sub class="eSub">*</sub></td></tr>
+<tr align="center"><td class="eTable">+</td><td class="eTable">λ(повтор)</td><td class="eTable">IV</td><td class="eTable">k<sub class="eSub">+</sub></td></tr>
+<tr align="center"><td class="eTable">λ</td><td class="eTable">λ(повтор)</td><td class="eTable">k</td><td class="eTable">-</td></tr>
+</tbody></table><br>
+<br>
+<br>
+<br>
+<br>
+<div>ab*cd*+Ad-/bc*+</div>
+<br>
+<div><span style="color:#0000FF; font-weight:bold; font-style:italic; ">Представление арифметических, алгебраических и логических выражений в виде тетрад.</span></div>
+<br>
+<a name="T1474656906"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Тетрады</a> - представление выражений в виде:</div>
+<div>1. для бинарных операций</div>
+<div>&lt;оператор&gt;&lt;операнд1&gt;&lt;операнд2&gt;&lt;результат&gt;</div>
+<br>
+<div>A * B</div>
+<div>* A B T, где Т - результат</div>
+<br>
+<div>2. для унарных операций:</div>
+<div>&lt;оператор&gt;&lt;операнд&gt;&lt; &gt;&lt;результат&gt;</div>
+<br>
+<div>-B + C * D</div>
+<div>-B _ T<sub class="eSub">1</sub></div>
+<div>*C D T<sub class="eSub">2</sub> </div>
+<div>+ T<sub class="eSub">1</sub> T<sub class="eSub">2</sub> T<sub class="eSub">3</sub></div>
+<br>
+<div>В отличие от обычной инфиксной записи, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">тетрады</a> раполагаются в том порядке, в котором они должны выполняться.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-29/">← Оглавление</a>
         <a href="/rk6-edu/course-29/mod-19.html">‹ Предыдущий</a>

@@ -23,7 +23,203 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-36.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Язык WSDL</a>
+</div>
+<a name="T107605555"></a>
+<a name="T344720773"></a>
+<a name="T412171630"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Язык WSDL</a> (Web Service Description Language) предназначен для описания <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Web-служб</a>. В основе WSDL лежит <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык XML</a>.</div>
+<div>С помощью WSDL представляются типы данных, операции и привязки.</div>
+<div>Описание сервиса на языке WSDL выглядит довольно громоздко. Однако это не является осложняющим фактором, поскольку для генерации WSDL-файлов имеются удобные редакторы, примером которых могут служить XML Spy.</div>
+<a name="T1996004208"></a>
+<div>В начале WSDL-описания указывается имя сервиса, ссылка на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространство имен</a> WSDL и на целевое пространство имен (targetNamespace), которому будут принадлежать все имена, объявляемые в этом документе.</div>
+<div>Далее следуют части WSDL-описания: типы данных, используемых Web-службой (types); сообщения (message) — формат запросов и ответов; типы портов (portType) — набор операций, выполняемых Web-службой; связи (binding) — адрес для вызова операции (service):</div>
+<pre class="eListing">&lt;definitions
+name="имя сервиса"
+xmlns="http://schemas.xmlsoap.org/wsdl/"
+targetNamespace="http://...
+&gt;
+&lt;types&gt; ...
+&lt;message&gt; ...
+&lt;portType&gt; ...
+&lt;binding&gt; ...
+&lt;service&gt; ...
+&lt;/definition&gt;
+</pre>
+<a name="T1968667247"></a>
+<div>Типы данных, фигурирующие в сообщениях, которыми обмениваются пользователи распределенных приложений, должны правильно интерпретироваться как отправителем, так и получателем. Поэтому типы описываются с помощью <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-схемы</a>, входящей в WSDL-файл, т.е. становятся доступными обоим участникам связи. Пример части types (вместо многоточия должны быть указаны конкретные имена и элементы):</div>
+<pre class="eListing">&lt;types&gt;
+  &lt;xsd:schema
+    targetNamespace="http://..."
+    xmlns:xsd="http://www.w3.org/2000/10/XMLSchema"&gt;
+     &lt;xsd:complexType&gt;
+       &lt;xsd:sequence&gt;
+        &lt;xsd:element name="..." type="..."/&gt;
+         ...
+       &lt;/xsd:sequence&gt;
+     &lt;/xsd:complexType&gt;
+     &lt;/xsd:element name="..." type="..."/&gt;&gt;
+         ...
+   &lt;/xsd:schema&gt;
+&lt;/types&gt;
+</pre>
+<div>Часть message служит для указания данных, которыми будут обмениваться участники связи.</div>
+<div>Часть message состоит из одного или более элементов part, где каждый элемент part ассоциирован или с element (при использовании документ-стиля), или с type (при использовании RPC-стиля). В случае документ-стиля базовая структура описания сообщения имеет вид (* означает нуль или более):</div>
+<pre class="eListing">&lt;message name="..."&gt; *
+  &lt;part name="..." element="..."/&gt; *
+&lt;/message&gt;
+</pre>
+<div>В случае RPC-стиля в теге part вместо element="..." записывается type="..." и значение атрибута name из тега part становится именем элемента в конкретном сообщении.</div>
+<div>Часть portType (иначе интерфейс) определяет группу операций. Операции в WSDL служат для интерпретации данных, содержащихся в сообщениях.</div>
+<div>Каждая операция (operation) содержит элементы input и/или output (при наличии элемента output возможен еще элемент fault). Параметр message у элементов input и output указывает на описание соответствующего сообщения (message).</div>
+<pre class="eListing">&lt;portType name="..."&gt;
+...
+  &lt;operation name="..."&gt;
+    &lt;input message="..."/&gt;
+    &lt;output message="..."/&gt;
+  &lt;/operation&gt;
+...
+</pre>
+<pre class="eListing">&lt;/portType&gt;
+</pre>
+<div>Имеется несколько вариантов операций. Если элемент input предшествует элементу output, то конечный узел получает сообщение и отправляет соответствующий ответ. Такая операция называется запрос-ответ (request-response). Обратный порядок output и input определяет операцию требование-ответа (solicit-response), при которой конечный узел отправляет сообщение и получает соответствующий ответ. При наличии только элемента input имеем однонаправленную операцию — сообщение получает конечный узел. Операция, содержащая только элемент output, означает отправку сообщения конечным узлом.</div>
+<a name="T1144989962"></a>
+<div>Связи (привязки) используются для отображения типов данных и операций на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">транспортный протокол</a>. Атрибут type в теге binding ссылается на конкретный portType (интерфейс). Далее указываются тип сервиса (например, SOAP или MIME), стиль представления (document или RPC), транспортный протокол (атрибут transport). Для каждой операции нужно задать URI получателя сообщения (атрибут soapAction, его значение используется в HTTP-заголовке). Имя в теге operation ссылается на имя операции в части portType.</div>
+<div>Элемент soap:body определяет, как части сообщения появляются в SOAP-элементе Body. В случае документ-стиля значение атрибута use есть "literal" и это означает, что тело сообщения будет содержать XML-документ и что части сообщения определяют XML-элементы. Использование стиля RPC в SOAP показывает, что тело будет содержать XML-представление вызова метода и что части сообщения представляют параметры метода (use="encoded").</div>
+<div>Структура части binding в случае SOAP, транспортного протокола <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">HTTP</a> и стиля RPC имеет вид:</div>
+<pre class="eListing">&lt;binding name="..." type="..."&gt;
+  &lt;soap:binding style="rpc"
+     transport=
+      "http://schemas.xmlsoap.org/soap/http"/&gt;
+  &lt;operation name="..."&gt;
+      &lt;soap:operation soapAction="..."/&gt;
+          &lt;input&gt;
+              &lt;soap:body
+               use="encoded"
+               encodingStyle=
+        "http://schemas.xmlsoap.org/soap/encoding/" /&gt;
+          &lt;/input&gt;
+          &lt;output&gt;
+              &lt;soap:body
+               use="encoded"
+               encodingStyle=
+        "http://schemas.xmlsoap.org/soap/encoding/" /&gt;
+          &lt;/output&gt;
+   &lt;/operation&gt;
+   ...
+</pre>
+<pre class="eListing">   &lt;operation name="..."&gt;
+       &lt;soap:operation soapAction="..."/&gt;
+          &lt;input&gt;
+               &lt;soap:body use="literal"/&gt;
+          &lt;/input&gt;
+          &lt;output&gt;
+               &lt;soap:body use="literal"/&gt;
+          &lt;/output&gt;
+   &lt;/operation&gt;
+&lt;/binding&gt;
+</pre>
+<div>Часть service может описывать несколько портов для разных транспортных протоколов и служит для задания имени (service name="...") и адреса сервиса (location="http:..."). Атрибут binding указывает на имя, присвоенное помещенной выше части binding.</div>
+<pre class="eListing">&lt;service name="..."&gt;
+      &lt;port name="..."
+        binding="..."&gt;
+         &lt;soap:address
+           location="http:..."/&gt;
+      &lt;/port&gt;
+&lt;/service&gt;
+</pre>
+<div>Ниже приведен пример, взятый из источника [1], WSDL-документа, описывающего Веб-сервис, предоставляющий всего одну операцию Sum (сложение двух целых чисел).</div>
+<pre class="eListing">&lt;definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:s="http://www.w3.org/2001/XMLSchema"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns:s0="http://tempuri.org"
+                  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  targetNamespace="http://tempuri.org" xmlns="http://schemas.xmlsoap.org/wsdl/"&gt;
+</pre>
+<pre class="eListing">//Описание типов данных аргументов метода и возвращаемого значения
+  &lt;types&gt;
+      &lt;s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org"&gt;
+// Методу Sum передаются два аргумента val1 и val2 с указанными типами данных
+      &lt;s:element name="Sum"&gt;
+         &lt;s:complexType&gt;
+            &lt;s:sequence&gt;
+               &lt;s:element name="val1" type="s:long" minOccurs="0" /&gt;
+               &lt;s:element name="val2" type="s:long" minOccurs="0" /&gt;
+            &lt;/s:sequence&gt; 
+         &lt;/s:complexType&gt; 
+      &lt;/s:element&gt;
+// Описание типа данных возвращаемого методом значения
+      &lt;s:element name="SumResponse"&gt;
+         &lt;s:complexType&gt;
+            &lt;s:sequence&gt;
+                &lt;s:element name="SumResult" type="s:long" minOccurs="0" /&gt;
+            &lt;/s:sequence&gt;
+         &lt;/s:complexType&gt;
+      &lt;/s:element&gt;
+     &lt;/schema&gt;
+  &lt;/types&gt;
+// Описание входящего сообщения метода Sum c входящим сообщением; ассоциирован 
+//тип данных Sum
+  &lt;message name="SumSoapIn"&gt;
+     &lt;part name="parameters" element="s0:Sum" /&gt;
+  &lt;/message&gt;
+// Описание исходящего сообщения метода Sum c исходящим сообщением; ассоциирован тип данных 
+//  SumResponse
+  &lt;message name="SumSoapOut"&gt;
+     &lt;part name="parameters" element="s0:SumResponse" /&gt;
+  &lt;/message&gt;
+// Описание операций (методов), предоставляемых Веб-сервисом
+  &lt;portType name="ArithmeticSoap"&gt;
+// Данный Веб-сервис предоставляет операцию Sum, операция имеет входящее сообщение SumSoapIn
+// и исходящее сообщение SumSoapOut
+      &lt;operation name="Sum"&gt;
+          &lt;input message="s0:SumSoapIn" /&gt;
+          &lt;output message="s0:SumSoapOut" /&gt;
+      &lt;/operation&gt;
+  &lt;/portType&gt;
+// Определение формата сообщения и деталей протокола для каждого порта
+  &lt;binding name="ArithmeticSoap" type="s0:ArithmeticSoap"&gt;
+        &lt;soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" /&gt;
+     &lt;operation name="Sum"&gt;
+        &lt;soap:operation soapAction="http://tempuri.org/Web.Arithmetic.Sum" style="document" /&gt;
+        &lt;input&gt;
+           &lt;soap:body use="literal" /&gt;
+        &lt;/input&gt;
+        &lt;output&gt;
+           &lt;soap:body use="literal" /&gt;
+        &lt;/output&gt;
+    &lt;/operation&gt;
+  &lt;/binding&gt;
+// Определяет имя сервера Веб-служб, позволяет объединить внутри себя несколько портов 
+// (наборов методов), определяет расположение сервиса
+  &lt;service name="Arithmetic"&gt;
+      &lt;port name="ArithmeticSoap" binding="s0:ArithmeticSoap"&gt;
+          &lt;soap:address location="http://MASHA:1972/csp/www/Web.Arithmetic.cls" /&gt;
+      &lt;/port&gt;
+  &lt;/service&gt;
+&lt;/definitions&gt;
+</pre>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. Использование Веб-сервисов в Caché. — http://itsecure.org.ua/publ/52-1-0-198<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-34.html">‹ Предыдущий</a>

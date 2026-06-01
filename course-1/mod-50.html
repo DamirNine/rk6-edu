@@ -23,7 +23,81 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-1/mod-51.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сети Петри</a>
+</div>
+<a name="T50273086"></a>
+<a name="T388279394"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сети Петри</a> — аппарат для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">моделирования</a> динамических дискретных систем (преимущественно асинхронных параллельных процессов). Сеть Петри определяется как четверка <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=1/?k=10">, где <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=2/?k=10"> и <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=3/?k=10"> — конечные множества позиций и переходов, <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=4/?k=10"> и <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=5/?k=10"> — множества входных и выходных функций. Другими словами, сеть Петри представляет собой двудольный ориентированный граф, в котором позициям соответствуют вершины, изображаемые кружками, а переходам — вершины, изображаемые утолщенными черточками; функциям <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=4/?k=10"> соответствуют дуги, направленные от позиций к переходам, а функциям <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=5/?k=10"> — от переходов к позициям.</div>
+<a name="T828201748"></a>
+<div>Как и в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">системах массового обслуживания</a>, в сетях Петри вводятся объекты двух типов: динамические — изображаются метками (маркерами) внутри позиций и статические — им соответствуют вершины сети Петри.</div>
+<a name="T931877664"></a>
+<div>Распределение маркеров по позициям называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">маркировкой</a>. Маркеры могут перемещаться в сети. Каждое изменение маркировки называют событием, причем каждое событие связано с определенным переходом. Считается, что события происходят мгновенно и разновременно при выполнении некоторых условий.</div>
+<div>Каждому условию в сети Петри соответствует определенная позиция. Совершению события соответствует срабатывание (возбуждение или запуск) перехода, при котором маркеры из входных позиций этого перехода перемещаются в выходные позиции. Последовательность событий образует моделируемый процесс.</div>
+<div>Правила срабатывания переходов (рис.&nbsp;1), конкретизируют следующим образом: переход срабатывает, если для каждой из его входных позиций выполняется условие <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=6/?k=10">, где <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=7/?k=10"> — число маркеров в <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=8/?k=10">-й входной позиции, <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=9/?k=10"> — число дуг, идущих от <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=8/?k=10">-й позиции к переходу; при срабатывании перехода число маркеров в <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=8/?k=10">-й входной позиции уменьшается на <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=9/?k=10">, а в <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=10/?k=10">-й выходной позиции увеличивается на <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=11/?k=10">, где <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=11/?k=10"> — число дуг, связывающих переход с <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=10/?k=10">-й позицией.</div>
+<div>На рис.&nbsp;1 показан пример распределения маркеров по позициям перед срабатыванием, эту маркировку записывают в виде (2,2,3,1). После срабатывания перехода маркировка становится иной: (1,0,1,4).</div>
+<a name="T22965347"></a>
+<div>Можно вводить ряд дополнительных правил и условий в алгоритмы моделирования, получая ту или иную разновидность сетей Петри. Так, прежде всего полезно ввести модельное время, чтобы моделировать не только последовательность событий, но и их привязку ко времени. Это осуществляется приданием переходам веса — продолжительности (задержки) срабатывания, которую можно определять, используя задаваемый при этом алгоритм. Полученную модель называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">временной сетью Петри</a>.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/3018.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Фрагмент сети Петри</div></div>
+<a name="T570354291"></a>
+<div>Если задержки являются случайными величинами, то сеть называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">стохастической сетью Петри</a>. В стохастических сетях возможно введение вероятностей срабатывания возбужденных переходов. Так, на рис.&nbsp;2 представлен фрагмент сети Петри, иллюстрирующий конфликтную ситуацию — маркер в позиции <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=12/?k=10"> может запустить либо переход <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=13/?k=10">, либо переход <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=14/?k=10">. В стохастической сети предусматривается вероятностный выбор срабатывающего перехода в таких ситуациях.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/3018.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Конфликтная ситуация</div></div>
+<a name="T1903595386"></a>
+<div>Если задержки определяются как функции некоторых аргументов, которыми могут быть количества маркеров в каких-либо позициях, состояния некоторых переходов и т.п., то имеем <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функциональную сеть Петри</a>.</div>
+<a name="T794818337"></a>
+<div>Во многих задачах динамические объекты могут быть нескольких типов, и для каждого типа нужно вводить свои алгоритмы поведения в сети. В этом случае каждый маркер должен иметь хотя бы один параметр, обозначающий тип маркера. Такой параметр обычно называют цветом; цвет можно использовать как аргумент в функциональных сетях. Сеть при этом называют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">цветной сетью Петри</a>.</div>
+<a name="T1679357671"></a>
+<div>Среди других разновидностей сетей Петри следует упомянуть <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ингибиторные сети Петри</a>, характеризующиеся тем, что в них возможны запрещающие (ингибиторные) дуги. Наличие маркера во входной позиции, связанной с переходом ингибиторной дугой, означает запрещение срабатывания перехода.</div>
+<div>Введенные понятия поясним на следующих примерах.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Требуется описать с помощью сети Петри работу группы пользователей на единственной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">рабочей станции</a> WS при заданных характеристиках потока запросов на пользование WS и характеристиках поступающих задач. Сеть Петри представлена на рис.&nbsp;3.</div>
+<div>Здесь переходы связаны со следующими событиями: <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=15/?k=10"> — поступление запроса на использование WS, <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=16/?k=10"> — занятие станции, <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=17/?k=10"> — освобождение станции, <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=18/?k=10"> — выход обслуженной заявки; позиция <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=19/?k=10"> используется для отображения состояния WS: если в <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=19/?k=10"> имеется метка, то WS свободна и пришедшая заявка вызывает срабатывание перехода <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=16/?k=10">; пока эта заявка не будет обслужена, метки в <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=19/?k=10"> не будет, следовательно, пришедшие в позицию <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=20/?k=10"> запросы вынуждены ожидать срабатывания перехода <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=17/?k=10">.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/3018.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Сеть Петри для примера 1</div></div>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><div>На рис. 4 представлена сеть Петри, соответствующая организации параллельных вычислений на основе асинхронного message passing interface (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPI</a>) [1].</div>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/3018.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;Сеть Петри для  примера 2</div></div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div>Требуется описать с помощью сети Петри процессы возникновения и устранения неисправностей в некоторой технической системе, состоящей из множества однотипных блоков; в запасе имеется один исправный блок; известны статистические данные об интенсивностях возникновения отказов и длительностях таких операций, как поиск неисправностей, замена и ремонт отказавшего блока. Поиск и замену отказавшего блока производит одна бригада, а ремонт замененного блока — другая бригада. Сеть Петри показана на рис.&nbsp;5. Отметим, что при числе меток в позиции, равном <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=21/?k=10">, можно в ней не ставить <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=21/?k=10"> точек, а записать в позиции значение <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=21/?k=10">.</div>
+<div>В нашем примере значение <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=21/?k=10"> в позиции <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=22/?k=10"> соответствует числу имеющихся в системе блоков. Переходы отображают следующие события: <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=15/?k=10"> — отказ блока, <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=16/?k=10"> — поиск неисправного блока, <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=17/?k=10"> — его замена, <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=18/?k=10"> — окончание ремонта.</div>
+<div>Очевидно, что при непустой позиции <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=22/?k=10"> переход <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=15/?k=10"> срабатывает, но с задержкой, равной вычисленному случайному значению моделируемого отрезка времени между отказами. После выхода маркера из <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=15/?k=10"> он попадает через <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=20/?k=10"> в <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=16/?k=10">, если имеется метка в позиции <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=23/?k=10">, это означает, что обслуживающая систему бригада специалистов свободна и может приступить к поиску возникшей неисправности. В переходе <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=16/?k=10"> метка задерживается на время, равное случайному значению длительности поиска неисправности. Далее маркер оказывается в <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=24/?k=10"> и, если имеется запасной блок (маркер в <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=19/?k=10">), то запускается переход <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=17/?k=10">, из которого маркеры выйдут в <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=22/?k=10">, <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=25/?k=10"> и в <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=23/?k=10"> через отрезок времени, требуемый для замены блока. После этого в <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=18/?k=10"> имитируется восстановление неисправного блока.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=110_Simul/3018.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;Сеть Петри для примера 3</div></div>
+<div>Рассматриваемая модель описывает функционирование системы в условиях, когда отказы могут возникать и в рабочем, и в неисправном состояниях системы. Поэтому не исключены ситуации, при которых более чем один маркер окажется в позиции <img align="absmiddle" src="/?frm/?doc=110_Simul/3018.mod/?n=20/?k=10">.</div>
+</div>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. В.Э.Малышкин. Основы параллельных вычислений. -2003 ЦИТ СГГА, http://www.ssga.ru/metodich/paral1/contents.html<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-1/">← Оглавление</a>
         <a href="/rk6-edu/course-1/mod-49.html">‹ Предыдущий</a>

@@ -23,7 +23,46 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-38.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Шейкерная сортировка</a>
+</div>
+<br>
+<a name="T1356058257"></a>
+<div>Данный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод</a> <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> является улучшением <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a> сортировки пузырьком. Получен алгоритм Шейкерной сортировки из  следующего наблюдения. Хотя легкий пузырек снизу поднимется наверх за один проход, тяжелые пузырьки опускаются со минимальной скоростью: один шаг за <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">итерацию</a>. Так что <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a> 2 3 4 5 6 1 будет отсортирован за 1 проход, а сортировка последовательности 6 1 2 3 4 5 потребует 5 проходов.</div>
+<div>Чтобы избежать подобного эффекта, можно менять направление следующих один за другим проходов.</div>
+<div> </div>
+<pre class="eListing">template&lt;class T&gt;
+void shakerSort(T a[], long size) {
+  long j, k = size-1;
+  long lb=1, ub = size-1; // границы неотсортированной части массива
+  T x;
+  do {
+// проход снизу вверх 
+    for( j=ub; j&gt;0; j-- ) {
+      if ( a[j-1] &gt; a[j] ) {
+        x=a[j-1]; a[j-1]=a[j]; a[j]=x;
+        k=j;
+      }
+    }
+    lb = k+1;
+    // проход сверху вниз 
+    for (j=1; j&lt;=ub; j++) {
+      if ( a[j-1] &gt; a[j] ) {
+        x=a[j-1]; a[j-1]=a[j]; a[j]=x;
+        k=j;
+      }
+    }
+    ub = k-1;
+  } while ( lb &lt; ub );
+}
+</pre>
+<br>
+<div>Среднее количество сравнений, хоть и уменьшилось, но остается O(n2), в то время как число обменов не поменялось вообще никак. Среднее(оно же худшее) количество операций остается квадратичным.</div>
+<div>Дополнительная <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">память</a>, очевидно, не требуется. Поведение усовершенствованного (но не начального) метода довольно естественное, почти отсортированный массив будет отсортирован намного быстрее случайного. Сортировка пузырьком устойчива, однако шейкер-сортировка утрачивает это качество.</div>
+<div>На практике метод пузырька, даже с улучшениями, работает, увы, слишком медленно. А потому - почти не применяется.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-36.html">‹ Предыдущий</a>

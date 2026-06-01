@@ -23,7 +23,80 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-43.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Оператор цикла while</a>
+</div>
+<a name="T1796572622"></a>
+<a name="T494492918"></a>
+<a name="T823713000"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Оператор цикла while</a> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">управляющий оператор</a> языка Си, реализующий выполнение <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">цикла-пока</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритме</a>.</div>
+<a name="T798225181"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Синтаксис</a> оператора цикла <span class="eOperator">while</span> определяется следующим образом:</div>
+<pre class="eListing">while (выражение)
+   оператор1
+</pre>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/while.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Цикл while</div></div>
+<a name="T803028594"></a>
+<a name="T1233060480"></a>
+<a name="T1562731481"></a>
+<a name="T828724782"></a>
+<div>На рис.&nbsp;1 представлена <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">блок-схема</a> цикла <span class="eOperator">while</span>. Вычисляется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражение</a>; если оно истинно (ненулевое), выполняется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператор</a>. Выражение вычисляется снова и, если оно остается истинным, снова выполняется оператор, и т.д. Если выражение ложно, происходит выход из цикла. Как правило, значение выражения изменяется в результате выполнения некоторых действий в цикле. Оператор в цикле <span class="eOperator">while</span> выполняется 0 или более раз. Оператор может быть  <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">простым</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">составным</a> (блоком). Частный случай простого оператора - <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пустой оператор</a>.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">count = 1;
+while (count &lt; 100)
+    {
+     оператор
+     оператор
+     count += 1;
+    }
+</pre>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">while ((c = getchar()) != '\n')
+   {
+    оператор
+    оператор
+    оператор
+   }
+</pre>
+</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">/* Эта программа считает и строки */
+/* и символы во входном потоке */
+#include &lt;stdio.h&gt;
+int main ()
+{
+  int lines = 0, chars = 0, c;
+ /* читать до конца EOF */
+  while ((c = getchar()) != EOF)
+      {
+       chars += 1;
+       if (c == '\n')
+           lines += 1;
+       }
+    printf ("%d lines \n", lines);
+    printf ("%d characters \n", chars);
+  }
+</pre>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-41.html">‹ Предыдущий</a>

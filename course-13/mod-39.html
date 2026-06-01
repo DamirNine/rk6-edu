@@ -23,7 +23,83 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-13/mod-40.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Адаптивные генетические алгоритмы</a>
+</div>
+<a name="T906593840"></a>
+<a name="T254321975"></a>
+<a name="T2104358968"></a>
+<a name="T1134612592"></a>
+<a name="T895689311"></a>
+<a name="T1701344150"></a>
+<a name="T1055552654"></a>
+<div>Очевидно, что эффективность генетического поиска зависит от типов используемых в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ГА</a> операторов и других параметров алгоритма. К числу таких параметров можно отнести вероятности <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кроссовера</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мутаций</a>, вероятности выбора тех или иных <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">эвристик</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">методе комбинирования эвристик</a>, число точек разрыва <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">хромосом</a> при кроссовере и др. Как правило, генетические операторы и параметры определяются пользователем априорно, однако при этом велика опасность использования неудачных вариантов и, как следствие, значительное снижение эффективности генетического поиска. Кроме того, на разных этапах генетического поиска те или иные операторы могут быть эффективными в различной степени. Выход из ситеации — применение <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">адаптивных генетических алгоритмов</a>.</div>
+<div>Известен ряд работ, посвященных адаптивным ГА. Идея адаптации применительно к ГА высказывалась в тработе [1]. Наибольшее внимание уделялось алгоритмам с использованием адаптации к такому параметру, как вероятность мутации. Так, в работе [2] рассмотрена стратегия, при которой вероятность мутации изменяется с ходом эволюции и для каждой  хромосомы вероятность мутации настраивается   индивидуально.  </div>
+<a name="T1548330793"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Метагенетический алгоритм</a> с использованием генетического поиска для решения как основной задачи, так и вспмомогательной задачи настройки  параметров адаптации предложен в [3]. Ниже приведено его описание в виде <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">псевдокода</a>.</div>
+<pre class="eListing">GENETIC ALGORITHM STEP()
+begin
+for i = 1 to n {
+select parent1 and parent2 from population P1;
+offspring = crossover(parent1, parent2)
+mutation(offspring)
+if suited(offspring) then
+replace(P1, offspring);
+}
+end
+META-GENETIC ALGORITHM
+begin
+create initial population P1;
+create initial population P2;
+do{
+for i = 1 to n {
+select parent1 and parent2 from P2;
+offspring = crossover(parent1, parent2)
+mutation(offspring)
+evaluate(offspring)
+add offspring tmpPop
+}
+meta-population = tmpPop;
+}
+GENETIC ALGORITHM STEP(select answer from P2)
+} until stopping condition
+//report the best answer;
+end.
+</pre>
+<div>Рассматриваются два множества хромосом. В генах хромосом первого множества (P1) хранятся номера эвристик для выполнения очередного шага синтеза решения. Вторая популяция (P2) состоит из хромосом, в генах которого хранятся конфигурационные параметры для основного генетического алгоритма.</div>
+<div>Каждая хромосома из популяции P2 оценивается следующим образом:</div>
+<pre class="eListing">SIMPLE_STEP ( P2(ti) )
+begin
+P2(ti)-&gt;select parent1 and parent2 from population P1;
+offspring = P2(ti)-&gt;crossover(parent1, parent2)
+P2(ti)-&gt;mutation(offspring)
+return P2(ti)-&gt;evaluate(offspring)
+end
+</pre>
+<div>Для каждой конфигурации (для каждой хромосомы популяции P2(ti)) выполняется процедура SIMPLE_STEP, в которой из популяции P1 выбираются (P2(ti)-&gt;select) родители. В результате их скрещивания (P2(ti)-&gt;crossover) появляется потомок (offspring) – новая хромосома, которая впоследствии мутируется (P2(ti)-&gt;mutation). Оценка потомка также является оценкой для данной конфигурации P2(ti).</div>
+<div>После очередной генерации метагенетического алгоритма с помощью метода турнирной селекции из популяции P2 выбирается хромосома, и с данной конфигурацией формируется очередное поколение с помощью основного генетического алгоритма.</div>
+<div>В Simple GA начальная популяция генерируется случайным образом. Впоследствии, сгенерированная популяция оценивается, и из нее n раз выбираются два решения, от скрещивания которых генерируются два потомка. Созданные индивидуумы подвергаются мутации с заданной вероятностью.</div>
+<div>Этот цикл повторяется до тех пор, пока новая популяция не заполнится. Когда новая популяция заполняется, старая может быть удалена с сохранением наилучших решений.</div>
+<div class="auto">Список литературы</div>
+<div class="eLiter">1. Батищев Д.И., Исаев С.А. Оптимизация многоэкстремальных функций с помощью генетических алгоритмов. — http://www.algo.4u.ru/<br>
+2.  Back T.  Self-Adaptation in Genetic Algorithms. In Toward a Practice of Autonomous Systems: Proceedings of the First European Coneference on Artificial Life, 1992. <br>
+3. Норенков И.П., Арутюнян Н.М. Адаптивные генетические алгоритмы // Информационные технологии, 2007, N 3<br>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-13/">← Оглавление</a>
         <a href="/rk6-edu/course-13/mod-38.html">‹ Предыдущий</a>

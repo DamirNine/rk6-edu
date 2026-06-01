@@ -23,7 +23,57 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-49.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Архитектура микроконтроллера PIC16F877</a>
+</div>
+<a name="T2031943815"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Архитектура</a> микроконтроллера (МК) показана на рис.&nbsp;1. МК можно условно разделить на две части: вычислительное ядро (серый цвет) и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">периферийные модули</a> (белый цвет).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/%C0%F0%F5%E8%F2%E5%EA%F2%F3%F0%E0.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T128670443"></a>
+<a name="T1878524024"></a>
+<div>Вычислительное ядро работает следующим образом. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Программа</a> работы МК находится в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">flash-памяти</a> программ. Программа выполняется последовательно до тех пор, пока не встретится команда перехода. <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Регистр команд</a> (РК) содержит текущую команду на время ее дешифрации и выполнения, а программный счетчик (ПС) предназначен для хранения адреса следующей команды. Когда текущая команда завершена, то:</div>
+<ol class="eList"><li>По адресу из ПС производится выборка команды из памяти программ в РК;</li>
+<li>Пока дешифрируется эта команда, производится инкремент ПС на единицу и ПС адресует следующую команду;</li>
+<li>Когда выполнение данной команды заканчивается, содержимое ПС выдается памяти программ и цикл повторяется.</li>
+</ol>
+<div>Команды безусловного перехода позволяют изменить естественный порядок следования команд путем замещения содержимого ПС (т. е. адреса следующей по порядку команды) адресом, определяемым самой командой перехода.</div>
+<div>Команды условных переходов замещают или не замещают содержимое ПС в зависимости от признаков результатов предыдущих команд. Признаки результатов предыдущих команд находится в регистре <span class="eOperator">STATUS</span>. В этом регистре имеются биты, показывающие такие условия, как получение в предыдущих операциях положительного, отрицательного или нулевого результата. Когда реализован переход, начинается новая последовательность команд с адреса, к которому осуществлен переход.</div>
+<div>Циклы реализуются с помощью команд условных переходов.</div>
+<div>Действия, связанные с вызовом подпрограммы, требуют специальной разновидности перехода. Как и в других переходах, вызов подпрограммы также заменяет содержимое ПС на адрес перехода, но при этом запоминается текущее содержимое ПС в специальной области памяти, называемой стеком. Команда возврата должна восстановить в ПС адрес возврата, чтобы после завершения подпрограммы продолжалось последовательное выполнение основной программы.</div>
+<div>Арифметико-логическое устройство (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">АЛУ</a>) выполняет арифметические и логические операции над данными. Входные данные АЛУ в зависимости от кода операции могут находиться:</div>
+<ul class="eList"><li>в регистре <span class="eOperator">W</span>;</li>
+<li>в регистре команд;</li>
+<li>в памяти данных.</li>
+</ul>
+<div>Мультиплексор данных подключает к входу АЛУ в соответствии с кодом операции либо РК (в режиме непосредственной адресации), либо память данных (в режиме прямой и косвенной адресации).</div>
+<div>Мультиплексор адреса в зависимости от режима адресации позволяет адресовать ячейки памяти данных либо от РК (в режиме прямой адресации), либо от регистра косвенной адресации <span class="eOperator">FSR</span> (в режиме косвенной адресации).</div>
+<div>Биты конфигурации задают режим функционирования МК:</div>
+<ul class="eList"><li>сброс по включению питания (<span class="eOperator">POR</span>);</li>
+<li>таймер включения питания (<span class="eOperator">PWRT</span>);</li>
+<li>таймер запуска генератора (<span class="eOperator">OSC</span>);</li>
+<li>сброс по снижению напряжения питания (<span class="eOperator">BOR</span>);</li>
+<li>сторожевой таймер (<span class="eOperator">WDT</span>);</li>
+<li>режим низковольтного последовательного программирования (<span class="eOperator">LVP</span>);</li>
+<li>режим внутрисхемной отладки (<span class="eOperator">ICD</span>).</li>
+</ul>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-47.html">‹ Предыдущий</a>

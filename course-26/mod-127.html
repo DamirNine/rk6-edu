@@ -23,7 +23,74 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-128.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сортировка строк</a>
+</div>
+<a name="T2095193718"></a>
+<a name="T495048589"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Cортировка строк</a> является распространенной задачей программирования. Строки легче всего сортировать, когда они хранятся в таблице строк. Таблица строк — это просто массив строк. А массив строк — это двумерный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив символов</a>, в котором количество строк в таблице определяется размером левого измерения, а максимальная длина строки — размером правого измерения. Нижеследующая строковая версия <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">быстрой сортировки</a> принимает массив строк, в котором размер каждой строки ограничен десятью символами. Данная версия сортирует строки в лексикографиче¬ском порядке.</div>
+<pre class="eListing">/* Быстрая сортировка строк. */
+void quick_string (char items[][10], int count)
+{
+qs_string(items, 0, count-1);
+}
+void qs_string(char items[][10], int left, int right)
+{
+register int i, j;
+char *x;
+char temp[10];
+i = left; j = right;
+x = items [(left+right)/2];
+do {
+while((strcmp(items[i],x) &lt; 0) &amp;&amp; (i &lt; right)) i++;
+while (strcmp(items[j] , x) &gt; 0) &amp;&amp; (j &gt; left)) j -- ;
+if(i &lt;= j) {
+strcpy(temp, items[i]);
+strcpy(items[i], items[j]);
+strcpy(items[j], temp);
+i++; j--;
+}
+ } while(i &lt;= j);
+if (left &lt; j) qs_string (items, left, j) ; 
+if(i &lt; right) qs_string(items, i, right);
+ }
+</pre>
+<a name="T78978677"></a>
+<a name="T79076699"></a>
+<div>Во фрагменте сравнения теперь используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция strcmp</a>(). Эта функция возвращает отрицательное число, если первая строка лексикографически меньше второй, возвращает ноль, если строки равны, и положительное число, если первая строка лексикографически больше второй. Также следует отметить, что для обмена двух строк требуется три вызова <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции strcpy</a> ().</div>
+<div>Функция strcmp() замедляет сортировку по двум причинам. Во-первых, в программе появляется вызов функции, что всегда отнимает время. Во-вторых, сама функция strcmp() выполняет несколько сравнений, чтобы определить, какая из двух строк больше. В первом случае, если скорость очень важна, можно поместить код сравнения строк непосредственно в функцию сортировки, продублировав код функции strcmp(). Во втором случае нет никакого способа избежать сравнения строк, поскольку по определению это именно то, что требуется в данной задаче. Те же рассуждения относятся и к функции strcpy(). Обмен двух строк с помошью strcpy() включает в себя вызов функции и посимвольный обмен содержимого строк — каждая из этих операций занимает время. Накладные расходы на вызов функции можно устранить, вставив код копирования прямо в алгоритм сортировки. Однако тот факт, что обмен двух строк означает обмен отдельных символов (один за другим), изменить невозможно.</div>
+<div>Ниже приведена простая функция <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">main</a>() , демонстрирующая работу функции быстрой сортировки строк quick_string ():</div>
+<br>
+<pre class="eListing">#include &lt;stdio.h&gt;
+#include  &lt;string.h&gt;
+void quick_string(char items[] [10],   int  count);
+void qs_string(char  items[] [10],   int   left,   int  right);
+char str[][10]   =   {   "один", "два", "три", "четыре"
+};
+int main(void)
+{
+int i;
+quick__string(str, 4);
+for (i=0; i&lt;4; i++) printf("%s ", str[i]);
+return  0;
+}
+</pre>
+<br>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-126.html">‹ Предыдущий</a>

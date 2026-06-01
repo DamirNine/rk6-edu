@@ -23,7 +23,53 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-53.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Аргументы функции</a>
+</div>
+<a name="T756911212"></a>
+<a name="T803028594"></a>
+<a name="T1248933124"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Фактический параметр</a> — <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражение</a>, которое указывается в круглых скобках в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызове функции.</a> Часто фактические параметры функции называют <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументами</a>.</div>
+<div>В вызове функции должно быть указано правильное количество фактических параметров. Желательно явно привести фактические параметры к требуемому  типу. Для этого используется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операция приведения</a> <span class="eOperator">(type)</span>.</div>
+<a name="T2026410311"></a>
+<div>Компилятор <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стандарта ANSI языка Си</a> проверяет согласованность фактических параметров вызова функции ее формальным  параметрам  в следующих случаях:</div>
+<ul class="eList"><li>если <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция объявлена</a> в программе перед ее вызовом;</li>
+<li>если <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция определена</a> в исходном файле перед вызовом.</li>
+</ul>
+<a name="T1821205864"></a>
+<a name="T1133808979"></a>
+<div>Компилятор ANSI Си проверяет правильность вызова функции: правильно ли указано количество фактических параметров и их типы. Если необходимо, компилятор выполнит автоматическое <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">преобразование</a> фактических параметров вызова функции к соответствующему <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типу</a>. Если преобразование не имеет смысла, во время компиляции выдается сообщение об ошибке.</div>
+<div>В функцию передается значение аргумента или фактического параметра, которое присваивается соответствующему формальному параметру.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
+int main()
+{
+void print_growth (float, float);          /*объявление прототипа функции */
+float  amount = 250.,                      /*начальный вклад */
+       interest = .075;                    /* процент 7.5% */
+
+print_growth (amount, interest);           /*вызов функции */
+                                           /* amount, interest - фактические параметры*/
+printf ("main: amount is %.2f \n", amount);
+}
+
+void print_growth (float val, float rate)  /*определение прототипа функции */
+ /*val, rate -формальные параметры, при вызове принимают значения фактических параметров:*/
+ /* val = 250., rate=.075 */
+{
+   val = (1+rate)* val;
+   printf ("Value after 1 year: %.2f\n", val);
+ }
+Результат выполнения программы:
+Value after 1 year: 268.75
+main: amount is 250.00
+</pre>
+<a name="T1015173096"></a>
+<div>При вызове в функцию <span class="eOperator">print_growth()</span> передаются значения фактических параметров: в данном случае значения переменных <span class="eOperator">amount</span> и <span class="eOperator">interest</span>. Эти значения присваиваются новым переменным (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">формальным параметрам</a>) <span class="eOperator">val </span>и <span class="eOperator">rate</span>, имеющим свои собственные адреса в памяти. Значение переменных <span class="eOperator">amount</span> и <span class="eOperator">interest</span> не изменяются вызовом функции <span class="eOperator">print_growth()</span>.</div>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-51.html">‹ Предыдущий</a>

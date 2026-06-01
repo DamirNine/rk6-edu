@@ -23,7 +23,74 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-141.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Двоичная арифметика</a>
+</div>
+<a name="T2016743724"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Двоичная арифметика</a> включает в себя арифметические действия над двоичными числами.</div>
+<div>Правила выполнения арифметических действий над двоичными числами задаются таблицами двоичного сложения, вычитания и умножения:</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTableT">Слагаемое 1</td><td class="eTableT">Слагаемое 2</td><td class="eTableT">Сумма</td></tr>
+<tr align="center"><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">0</td></tr>
+<tr align="center"><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">1</td></tr>
+<tr align="center"><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">1</td></tr>
+<tr align="center"><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">0 (единица переноса в старший разряд)</td></tr>
+</tbody></table><br>
+<div class="auto" style="text-align:right">Таблица 2&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTableT">Уменьшаемое</td><td class="eTableT">Вычитаемое</td><td class="eTableT">Разность</td></tr>
+<tr align="center"><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">0</td></tr>
+<tr align="center"><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">1(заем единицы из старшего разряда)</td></tr>
+<tr align="center"><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">1</td></tr>
+<tr align="center"><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">0</td></tr>
+</tbody></table><br>
+<div class="auto" style="text-align:right">Таблица 3&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr align="center"><td class="eTableT">Сомножитель 1</td><td class="eTableT">Сомножитель 2</td><td class="eTableT">Произведение</td></tr>
+<tr align="center"><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">0</td></tr>
+<tr align="center"><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">0</td></tr>
+<tr align="center"><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">0</td></tr>
+<tr align="center"><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">1</td></tr>
+</tbody></table><br>
+<a name="T781810841"></a>
+<div>Правила арифметики во всех <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">позиционных системах счисления</a> аналогичны. Поэтому сложение двух чисел в двоичной системе можно выполнять столбиком, начиная с младшего разряда, подобно тому, как это делается в десятичной системе. В каждом разряде в соответствии с таблицей двоичного сложения производится сложение двух цифр слагаемых или этих двух цифр и 1, если имеется перенос из соседнего младшего разряда. В результате получается цифра соответствующего разряда суммы и, возможно, также 1 переноса в старший разряд.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/arifmetic.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Сложение</div></div>
+<div>Вычитание чисел в двоичной системе выполняется подобно вычитанию в десятичной системе. При вычитании в данном разряде при необходимости занимается 1 из следующего старшего разряда. Эта занимаемая 1 равна двум 1 данного разряда. Занимание производится каждый раз, когда цифра в разряде вычитаемого больше цифры в том же разряде уменьшаемого.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/arifmetic.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Вычитание</div></div>
+<div>Умножение двоичных многоразрядных чисел производится путем образования частичных произведений и последующего их суммирования. В соответствии с таблицей двоичного умножения каждое частичное произведение равно 0, если в соответствующем разряде множителя стоит 0, или равно множимому, сдвинутому на соответствующее число разрядов влево, если в разряде множителя стоит 1. Таким образом, операция умножения многоразрядных двоичных чисел сводится к операциям сдвига и сложения. Положение запятой определяется так же, как при умножении десятичных чисел.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/arifmetic.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Умножение</div></div>
+<div>Деление чисел в двоичной системе производится аналогично делению десятичных чисел. Достаточно рассмотреть деление двух целых двоичных чисел, так как делимое и делитель всегда могут быть приведены к такому виду путем переноса запятой в делителе и делимом на одинаковое число разрядов и дописывания 0 в недостающие справа разряды.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/arifmetic.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;Деление</div></div>
+<a name="T1902915004"></a>
+<div>Благодаря простоте правил двоичного сложения, вычитания и умножения применение в ЭВМ двоичной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">системы счисления</a> позволяет упростить схемы устройств, выполняющих арифметические операции.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-139.html">‹ Предыдущий</a>

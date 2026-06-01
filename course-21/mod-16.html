@@ -23,7 +23,61 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-21/mod-17.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Экспериментальное тестирование алгоритмов оптимизации</a>
+</div>
+<a name="T832386551"></a>
+<div>В качестве <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">критерия качества алгоритма оптимизации</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=1/?k=10"> обычно рассматривают затраты времени на поиск. Эти затраты складываются</div>
+<ul class="eList"><a name="T1803581065"></a>
+<li>из затрат на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">испытания</a> </li>
+<li>из затрат на нахождение точек <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=2/?k=10"> по информации о предыдущих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">испытаниях</a> (можно сказать – из затрат на вычисления значений функции <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=3/?k=10">).</li>
+</ul>
+<div>Поскольку в задачах САПР последние затраты много меньше первых, в качестве <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">критерия качества алгоритма оптимизации</a> A можно использовать количество <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">испытаний</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=4/?k=10">, необходимых для нахождения минимума функции <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=5/?k=10"> с заданной точностью <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=6/?k=10"> при начальном приближении <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=7/?k=10">.</div>
+<a name="T489664079"></a>
+<div>Для корректного сравнения эффективности различных алгоритмов, <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">экспериментальное тестирование алгоритмов оптимизации</a> необходимо выполнять при одинаковых значениях заданной точности решения <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=6/?k=10">. Поэтому будем в качестве <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">критерия качества алгоритма оптимизации</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=8/?k=10"> на классе функций {<img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=9/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=10/?k=10">)} использовать критерий <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=11/?k=10">.</div>
+<a name="T1778662243"></a>
+<a name="T1869977390"></a>
+<div>При заданной точности решения эффективность любого <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма поисковой оптимизации</a> зависит от начального приближения <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=7/?k=10"> . Поэтому при экспериментальном тестировании обычно критерий <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=11/?k=10"> усредняют по <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">множеству допустимых значений вектора варьируемых параметров</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=12/?k=10">. Обозначим такой критерий <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=13/?k=10">.</div>
+<div>Точность решения задачи оптимизации определяется используемым условием окончания поиска. При экспериментальном тестировании в качестве такого условия обычно используют одно из двух следующих условий:<br><img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=14/?k=10"><br></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=15/?k=10"> - значение функции <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=9/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=10/?k=10">) в точке истинного минимума;<br><img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=16/?k=10"><br></div>
+<div>где <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=17/?k=10"> - точка истинного минимума функции <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=9/?k=10">(<img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=10/?k=10">), <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=18/?k=10">*<img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=18/?k=10"> - некоторая векторная норма.</div>
+<div>Заметим, что эти условия накладывают на класс тестовых функций дополнительное требование: у этих функций априори должно быть известно положение истинного минимума <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=19/?k=10">.</div>
+<div>Первоначально в качестве тестовых функций использовали одну или несколько наиболее «трудных» тестовых функций (многоэкстремальных, овражных и т.п.). В настоящее время для оценки качества <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритмов поисковой оптимизации</a> обычно используют среднее значение критерия <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=20/?k=10"> на классе функций <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=21/?k=10">. Обозначим такой критерий через<img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=22/?k=10">.</div>
+<a name="T103254861"></a>
+<div>Тогда формально задачу поиска <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">наилучшего алгоритма оптимизации</a> можно записать в следующем виде:<br><table border="0" cellpadding="0" cellspacing="0" width="97%" style="display:inline"><tbody><tr valign="middle"><td align="left"><img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=23/?k=10"></td><td align="right" class="eFormula">&nbsp;(1)</td></tr></tbody></table><br></div>
+<div>Особенности задачи (1):</div>
+<ul class="eList"><li>высокая дисперсия оценки <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=24/?k=10">;</li>
+<li>функция <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=24/?k=10"> может оказаться многоэкстремальной;</li>
+<li>может оказаться, что при некоторых <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=25/?k=10"> решение задачи минимизации затягивается сверх допустимого времени.</li>
+</ul>
+<div>Последняя особенность приводит к тому, что кроме критерия <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=26/?k=10"> приходится использовать еще вероятность локализации минимума функции <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=27/?k=10"> за допустимое количество <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">испытаний</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=28/?k=10"> . Таким образом, вообще говоря, задача экспериментального тестирования является <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">задачей многокритериальной оптимизации</a> (точнее, задачей двухкритериальной оптимизации).</div>
+<div>Сделаем следующие предположения:</div>
+<ul class="eList"><li>множество тестируемых алгоритмов {<img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=29/?k=10">} состоит из <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=30/?k=10"> алгоритмов <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=31/?k=10"> </li>
+<li>при тестировании алгоритма <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=32/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=33/?k=10">[1,<img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=30/?k=10">] используется совокупность <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=34/?k=10"> тестовых функций <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=35/?k=10"></li>
+<a name="T1331332996"></a>
+<li>при тестировании алгоритма <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=36/?k=10"> с помощью функции <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=37/?k=10"> используется <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=38/?k=10"> начальных приближений <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вектора варьируемых параметров</a> <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=39/?k=10">.</li>
+</ul>
+<div>В сделанных предположениях общую схему <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">экспериментального тестирования алгоритмов оптимизации</a> можно представить в следующем виде (см. рис.&nbsp;1).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MO/ch0303.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Общая схема экспериментального тестирования алгоритмов поисковой оптимизации.</div></div>
+<div>Заметим, что для получения статистически достоверных оценок значений <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=20/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=40/?k=10">, величины <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=41/?k=10">, <img align="absmiddle" src="/?frm/?doc=MO/ch0303.mod/?n=42/?k=10"> должны быть достаточно велики.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-21/">← Оглавление</a>
         <a href="/rk6-edu/course-21/mod-15.html">‹ Предыдущий</a>

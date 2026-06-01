@@ -23,7 +23,78 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-36.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Операции инкрементации и декрементации</a>
+</div>
+<a name="T2042524345"></a>
+<div>Операции инкрементации и декрементации являются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">унарными операциями</a>, то есть операциями, имеющими один операнд.</div>
+<div><span class="eOperator">операнд++</span></div>
+<div><span class="eOperator">++операнд</span></div>
+<a name="T1747189769"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция инкрементации</a> <span class="eOperator">++ </span>добавляет к операнду единицу.</div>
+<div><span class="eOperator">операнд--</span></div>
+<div><span class="eOperator">--операнд</span></div>
+<a name="T1606239493"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция декрементации</a> <span class="eOperator">--</span> вычитает из операнда единицу.</div>
+<a name="T708113156"></a>
+<div>Операндом может быть <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">именующее выражение</a>, например, имя переменной.</div>
+<a name="T424168142"></a>
+<div>Приоритет этих операций определяется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">таблицей приоритетов</a> языка Си (<a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Приоритеты операций</a>).</div>
+<div>Следующие три строки увеличивают переменную <span class="eOperator">x</span> на 1:</div>
+<pre class="eListing">x = x + 1;
+++x;
+x++;
+</pre>
+<a name="T100018855"></a>
+<a name="T2009635419"></a>
+<div>Операции инкрементации и декрементации имеют <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">префиксную</a> (<span class="eOperator">++x, --x</span> ) и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">постфиксную</a> (<span class="eOperator">x++, x--</span>) форму записи. Они удобны при использовании в более сложных, чем приведенный пример, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражениях</a>.</div>
+<div> При префиксной форме записи операнд увеличивается или уменьшается сразу же, а после этого используется.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">x = 3;
+y = ++x;
+</pre>
+<div>Переменная<span class="eOperator"> х</span> сразу же увеличивается до 4 и это значение присваивается переменной <span class="eOperator">y</span>.</div>
+</div>
+<div>При  постфиксной форме записи операнд увеличивается или уменьшается после того, как он используется.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">x = 3;
+y = x++;
+</pre>
+<div>Переменной <span class="eOperator">y</span> присваивается значение 3, а затем переменная <span class="eOperator">х</span> увеличивается до 4.</div>
+</div>
+<div>Эти операции используются для сокращения текста программы и облегчения набора программы с клавиатуры, и для большинства компьютеров повышают эффективность работы программы. Они часто используются для увеличения или уменьшения индекса массива при переборе его элементов.</div>
+<div>Но при работе с операциями инкрементации и декрементации надо быть осторожными: их операнд, являющийся именующим выражением, не следует использовать более одного раза в одном и том же выражении.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">/*Пример плохого стиля:*/
+array[num] = ++num;
+</pre>
+<div>Различные компиляторы могут интерпретировать это выражение по-разному и нельзя точно сказать, какой результат будет получен. Возьмите себе за правило: переменную, увеличиваемую или уменьшаемую в данном выражении, используйте в нем только один раз.</div>
+</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><pre class="eListing">/*Более ясный стиль:*/
+array[num] = num + 1;
+++num;
+</pre>
+</div>
+<div class="auto">Пример 5</div>
+<div class="eExample"><pre class="eListing">i = 0;
+while (i &lt; size)
+   {
+    table[i] = 0;
+    i = i+1;
+   }
+</pre>
+</div>
+<div class="auto">Пример 6</div>
+<div class="eExample"><pre class="eListing">/*Эквивалентный примеру 5*/
+i = 0;
+while (i &lt; size)
+    table[i++] = 0;
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-34.html">‹ Предыдущий</a>

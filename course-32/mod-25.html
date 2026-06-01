@@ -23,7 +23,139 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-32/mod-26.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Трехмерная графика и ее реализация в пакете MATLAB</a>
+</div>
+<a name="T1044123741"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Трехмерные поверхности</a> обычно описываются функцией двух переменных z(x,y), причем аргументы x и y задаются, как правило в виде опорной сетчатой плоскости, т.е. двумерных массивов.</div>
+<a name="T428286800"></a>
+<a name="T514141629"></a>
+<div>Для отображения зависимостей критериев качества системы от параметров при проведении <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параметрических исследовани</a>й можно использовать возможности 3D изображения, и в частности, трехмерную графику пакета MATLAB, причем в качестве аргументов x и y используются параметры системы, например, два из трех параметров ПИД- регулятора, в качестве функции z - исследуемый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">критерий качества</a>.</div>
+<div>Далее приведено описание графических функций пакета. </div>
+<div>В системе MATLAB предусмотрено несколько команд и функций для построения трехмерных графиков. Значения элементов числового массива рассматриваются как z-координаты точек над плоскостью, определяемой координатами х и у. Возможно несколько способов соединения этих точек. Первый из них - это соединение точек в сечении (функция plot3), второй -построение сетчатых поверхностей (функции mesh и surf). Поверхность, построенная с помощью функции mesh, - это сетчатая поверхность, ячейки которой имеют цвет фона, а их границы могут иметь цвет, который определяется свойством EdgeColor графического объекта surface. Поверхность, построенная с помощью функции surf, - это сетчатая поверхность, у которой может быть задан цвет не только границы, но и ячейки; последнее управляется свойством FaceColor графического объекта surface. </div>
+<div><span class="eOperator">Команда plot3 </span>:Построение линий и точек в трехмерном пространстве</div>
+<div>Синтаксис:</div>
+<div>plot3(x,у,z)</div>
+<div>plot3(X,Y,Z)</div>
+<div>plot3(x,у,z,s) </div>
+<div>plot3(x1,y1.z1,s1,x2,y2,z2,s2,...)</div>
+<div>Описание:</div>
+<div>Команды plot3(...) являются трехмерными аналогами функции plot(...).</div>
+<div>Команда plot3(x,у,z), где х, у, z - одномерные массивы одинакового размера, строит точки с координатами x(i), y(i), z(i) и соединяет их прямыми линиями.</div>
+<div>Команда plot3(X,Y,Z), где X, Y, Z - двумерные массивы одинакового размера, строит точки с координатами x(i,:), y(i,:), z(i,:) для каждого столбца и соединяет их прямыми линиями.</div>
+<div>Команда plot3(x,у,z,s) позволяет выделить график функции z(x, у), указав способ отображения линии, способ отображения точек, цвет линий и точек с помощью строковой переменной s, которая может включать до трех символов из следующей таблицы.</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr><td class="eTable">Тип линии </td><td class="eTable">Тип точки</td><td class="eTable">Цвет</td></tr>
+<tr><td class="eTable">Непрерывная    -</td><td class="eTable">Точка  .</td><td class="eTable">Желтый y</td></tr>
+<tr><td class="eTable">Штриховая      --</td><td class="eTable">Плюс   +</td><td class="eTable">Фиолетовый m</td></tr>
+<tr><td class="eTable">Двойной пунктир :</td><td class="eTable">Звездочка *</td><td class="eTable">Голубой  c</td></tr>
+<tr><td class="eTable">Штрих –пунктирная -. </td><td class="eTable">Кружок <img align="absmiddle" src="/?frm/?doc=Paransys/par6_1.mod/?n=1/?k=10"></td><td class="eTable">Красный  r</td></tr>
+<tr><td class="eTable">&nbsp;</td><td class="eTable">Крестик  ×</td><td class="eTable">Зеленый  g</td></tr>
+<tr><td class="eTable">&nbsp;</td><td class="eTable">&nbsp;</td><td class="eTable">Синий   b</td></tr>
+<tr><td class="eTable">&nbsp;</td><td class="eTable">&nbsp;</td><td class="eTable">Белый  w</td></tr>
+<tr><td class="eTable">&nbsp;</td><td class="eTable">&nbsp;</td><td class="eTable">Черный  k</td></tr>
+</tbody></table><br>
+<div>Если цвет линии не указан, он выбирается по умолчанию из шести первых цветов, с желтого до синего, повторяясь циклически.</div>
+<div>Команда plot3(x1, yl, z1, s1, x2, y2, z2, s2, ...) позволяет объединить на одном графике несколько функций z1(x1, y1), z2(x2, y2), ..., определив для каждой из них свой способ отображения.</div>
+<div>Обращение к команде plot3 вида plot3(x, у, z, s1, х, у, z, s2) позволяет для графика z(x, у) определить дополнительные свойства, для указания которых применения одной строковой переменной s1 недостаточно, например, при задании разных цветов для линии и для точек на ней. </div>
+<div>Сопутствующие функции и команды: plot, line, axis, view, mesh, surf.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Paransys/par6_1.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;График функции z=xe<sup class="eSub">(-x<sup class="eSub">2</sup>-y<sup class="eSub">2</sup>)</sup> ,  x,y-одномерные векторы, команда plot3(x, y, z)</div></div>
+<div><span class="eOperator">Команда</span> <span class="eOperator">meshgrid:</span> Формирование двумерных массивов X и Y</div>
+<div>Синтаксис:</div>
+<div>[X,Y] = meshgrid(x,у) </div>
+<div>[X,Y] = meshgrid(x)</div>
+<div>Описание:</div>
+<div>Функция [X,Y] = meshgrid(x,у) задает сетку на плоскости х-у в виде двумерных массивов X, Y, которые определяются одномерными массивами х и у. Строки массива Х являются копиями вектора х, а столбцы - копиями вектора у. Формирование таких массивов упрощает вычисление функций двух переменных, позволяя применять операции над массивами.</div>
+<div>Функция (X,Y] = meshgrid(x) представляет собой упрощенную форму записи для функции [X,Y] = meshgrid(x,х). </div>
+<div>Сопутствующие функции и команды: mesh, surf.</div>
+<div>На рис.2 представлено использование команды plot3  с предварительным формированием двумерной сетки по команде meshgrid(x)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Paransys/par6_1.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;График функции z=xe<sup class="eSub">(-x<sup class="eSub">2</sup>-y<sup class="eSub">2</sup>)</sup> ,              X,Y - двумерные сетки по x,y; команда plot3(X,Y,Z)</div></div>
+<div><span class="eOperator">Команды MESH,MESHC,MESHZ</span>:Трехмерная сетчатая поверхность </div>
+<div>Синтаксис:</div>
+<div>mesh(X,Y,Z,С)   meshc(X,Y,Z,С)  meshz(X,Y,Z,С) </div>
+<div>mesh(x,у,Z,С )  meshc(x,у,Z,С )  meshz(x,у,Z,С ) </div>
+<div>mesh(Z,С)        meshc(Z, С)       meshz(Z, С) </div>
+<div>mesh(X, Y, Z)   meshc(X, Y, Z)    meshz(X, Y, Z)</div>
+<div>mesh(x, y, Z)   meshc (х, y, Z)    meshz(x, y, Z) </div>
+<div>mesh(Z)           meshc(Z)            meshz(Z)</div>
+<div>Описание:</div>
+<div>Команда mesh(X, Y, Z, С) выводит на экран сетчатую поверхность для значений массива Z, определенных на множестве значений массивов Х и Y. Цвета узлов поверхности задаются массивом С. Цвета ребер определяются свойством EdgeColor объекта surface. Можно задать одинаковый цвет для всех ребер, определив его в виде вектора [r b g] интенсивности трех цветов -красного, зеленого, синего. Если определить спецификацию none, то ребра не будут прорисовываться. Если определить спецификацию flat, то цвет ребер ячейки определяется цветом того узла, который был первым при обходе этой ячейки. Поскольку одни и те же ребра обходятся несколько раз, то цвета будут замещаться. Если определить спецификацию interp, то будет реализована линейная интерполяция цвета между вершинами ребра.</div>
+<div>Команда mesh(x, у, Z, С) выполняет ту же функцию, но вместо двумерных массивов X, Y использует их одномерные проекции, так что если length(x) = n, a length(y) = m, то [m, n] = size(Z). В этом случае узлы сетчатой поверхности определяются тройками {x(j), y(i), Z(i, j)}, где вектор х определяет столбцы массива Z, а у - строки.</div>
+<div>Команда mesh(Z. С) использует сетку, которая определяется одномерными массивами х = 1 ; n и у = 1 : m.</div>
+<div>Команды mesh(X, Y, Z), mesh(x, у, Z), mesh(Z) используют в качестве массива цвета С = Z, то есть цвет в этом случае пропорционален высоте поверхности.</div>
+<div>Группа команд meshc(...) в дополнение к трехмерным поверхностям строит проекцию линий постоянного уровня.</div>
+<div>Группа команд meshz(...) в дополнение к трехмерным поверхностям строит плоскость отсчета на нулевом уровне, закрывая поверхность, лежащую ниже этого уровня.</div>
+<div>Функция h = mesh(...) возвращает дескриптор h для графического объекта surface. </div>
+<div>Сопутствующие функции и команды. surf, waterfall</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Paransys/par6_1.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Трехмерная поверхность функции z=xe<sup class="eSub">(-x<sup class="eSub">2</sup>-y<sup class="eSub">2</sup>)</sup> с проекциями линии постоянного уровня.</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Paransys/par6_1.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;Трехмерная поверхность функции z=xe<sup class="eSub">(-x<sup class="eSub">2</sup>-y<sup class="eSub">2</sup>)</sup> с пьедесталом отсчета meshz(X, Y, Z)</div></div>
+<div><span class="eOperator">Команда SURF,SURFC</span>:Затененная сетчатая поверхность</div>
+<div>Синтаксис:</div>
+<div>surf(X,Y,Z,С)  surfc(X,Y,Z,C)</div>
+<div>surf(x,y,Z,С )  surfc(x,y,Z,С)</div>
+<div>surf(Z,C)         surfc(Z,C)</div>
+<div>surf(X,Y,Z)      surfc(X,Y,Z)</div>
+<div>surf(x,y,Z)       surfc (x,y,Z) </div>
+<div>surf(Z)            surfc(Z)</div>
+<div>Описание:</div>
+<div>Команда surf(X, Y, Z, С) выводит на экран затененную сетчатую поверхность для значений массива Z, определенных на множестве значений массивов Х и Y. Цвет ячейки определяется массивом С. Цвет ребер - черный, определяется свойством EdgeColor, специфицированным как [0 0 0]. Можно задать одинаковый цвет для всех ребер, определив его в виде вектора [г g b] интенсивности трех цветов - красного, зеленого, синего. Если определить спецификацию none, то ребра не будут прорисовываться</div>
+<div>Команда surf(x, y, Z, С) выполняет ту же функцию, но вместо двумерных массивов X, Y использует их одномерные проекции, так что если length(x) = = n, a length(y) = m, то [m, n] = size(Z). В этом случае узлы сетчатой поверхности определяются тройками {x(j), y(i), Z(i, j)}, где вектор x определяет столбцы массива Z, a y - строки.</div>
+<div>Команда surf(Z, С) использует сетку, которая определяется одномерными массивами х = 1 : n и у = 1 : m.</div>
+<div>Команды surf(X, Y. Z), surf(x, y. Z), surf(Z) используют в качестве массива цвета С = Z, то есть цвет в этом случай пропорционален высоте поверхности.</div>
+<div>Группа команд surfc(...) в дополнение к трехмерным затененным поверхностям строит проекцию линий постоянного уровня.</div>
+<div>Функция h = surf(...) возвращает дескриптор h для графического объекта surface. </div>
+<div>На рис.5 представлен результат работы функций surf(X, Y, Z);colormap(jet); shading interp </div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Paransys/par6_1.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;Трехмерная затененная поверхность  функции z=xe<sup class="eSub">(-x<sup class="eSub">2</sup>-y<sup class="eSub">2</sup>)</sup> со шкалой затененности </div></div>
+<div><span class="eOperator">Команда SURF</span>: Затененная поверхность с подсветкой</div>
+<div>Синтаксис:</div>
+<div>surfl(X,Y,Z,s)  </div>
+<div>surfl(Z,s) </div>
+<div>surfl(X,Y,Z,s,k)</div>
+<div>surfl(Z,s,k)</div>
+<div>surfl(X,Y,Z)</div>
+<div>surfl(Z)</div>
+<div>Описание:</div>
+<div>Команда surfl(X. Y, Z, s) выводит на экран затененную поверхность с подсветкой для значений массива Z, определенных на множестве значений массивов Х и Y. Направление на источник света может быть задано с помощью вектора s = [Sx, Sy, Sz] в декартовых координатах или вектора s = [az, elev] в сферических координатах. По умолчанию азимут az = -37.5°, возвышение elev = 30°. Подсветка учитывает модели рассеяния, отражения и зеркального эффекта освещения поверхности.</div>
+<div>Команда surfl(X, Y, Z, s, k) позволяет управлять параметрами рассеяния, отражения и зеркального эффекта, используя вектор k = [ka, kd, ks, spread], который учитывает эффекты отраженного света ka, диффузного отражения kd, зеркального отражения ks и зеркального распространения spread. По умолчанию вектор k имеет значения [0.55 0.6 0.4 10].</div>
+<div>Команда surfl(X, Y, Z) использует значения параметров по умолчанию.</div>
+<div>Команды surfl(Z, ...) строят графики, не учитывая истинных значений массивов Х и Y.</div>
+<div>Из-за того что алгоритм surfl вычисляет нормали к поверхности, необходимо, чтобы входные матрицы имели размер, по крайней мере 3х3. </div>
+<div>На рис.6 представлено изображение функции z=xe<sup class="eSub">(-x<sup class="eSub">2</sup>-y<sup class="eSub">2</sup>)</sup> с помощью surfl(X,Y,Z,s), s = [az, elev];az = -37.5 ° (азимут), elev =30° (возвышение)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Paransys/par6_1.mod/?n=6"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;Изображение функции  z=xe<sup class="eSub">(-x<sup class="eSub">2</sup>-y<sup class="eSub">2</sup>)</sup>с помощью surfl(X,Y,Z,s)</div></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-32/">← Оглавление</a>
         <a href="/rk6-edu/course-32/mod-24.html">‹ Предыдущий</a>

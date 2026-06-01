@@ -23,7 +23,66 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-36.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Сортировка выбором</a>
+</div>
+<br>
+<div>Идея <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метода</a> состоит в том, чтобы создавать отсортированную последовательность путем присоединения к ней одного элемента за другим в правильном порядке. </div>
+<a name="T1992766606"></a>
+<div>Будем строить готовую последовательность, начиная с левого конца <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">массива</a>. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Алгоритм</a> состоит из n последовательных шагов, начиная от нулевого и заканчивая (n-1)-м.</div>
+<div>На i-м шаге выбираем наименьший из элементов a[i] ... a[n] и меняем его местами с a[i]. Последовательность шагов при n=5 изображена на рисунке ниже.</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.2.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<br>
+<div>Вне зависимости от номера текущего шага i, последовательность a[0]...a[i] (выделена курсивом) является упорядоченной. Таким образом, на (n-1)-м шаге вся последовательность, кроме a[n] оказывается отсортированной, а a[n] стоит на последнем месте по праву: все меньшие элементы уже ушли влево.</div>
+<br>
+<pre class="eListing">template&lt;class T&gt;
+void selectSort(T a[], long size) {
+  long i, j, k; 
+  T x;
+  for( i=0; i &lt; size; i++) {   // i - номер текущего шага
+    k=i; x=a[i];
+    for( j=i+1; j &lt; size; j++)// цикл выбора наименьшего элемента
+      if (  a[j] &lt; x ) {
+        k=j; x=a[j];        // k - индекс наименьшего элемента
+      }
+    a[k] = a[i]; a[i] = x;   // меняем местами наименьший с a[i]
+  }
+}
+</pre>
+<br>
+<div>Для нахождения наименьшего элемента из n+1 рассматриваемых алгоритм совершает n сравнений. С учетом того, что количество рассматриваемых на очередном шаге элементов уменьшается на единицу, общее количество операций:</div>
+<div><img align="absmiddle" src="/?frm/?doc=PO_CAD/13.2.mod/?n=1/?k=10"> </div>
+<br>
+<div>Таким образом, так как число обменов всегда будет меньше числа сравнений, время <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> растет квадратично относительно количества элементов.</div>
+<div>Алгоритм не использует дополнительной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">памяти</a>: все операции происходят "на месте".</div>
+<div>Рассмотрим последовательность из трех элементов, каждый из которых имеет два поля, а сортировка идет по первому из них. </div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.2.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<br>
+<div>Результат ее сортировки можно увидеть уже после шага 0, так как больше обменов не будет. Порядок ключей 2a, 2b был изменен на 2b, 2a, так что метод неустойчив.</div>
+<div>Если входная последовательность почти упорядочена, то сравнений будет столько же, значит алгоритм ведет себя неестественно.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-34.html">‹ Предыдущий</a>

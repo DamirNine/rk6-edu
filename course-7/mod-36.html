@@ -23,7 +23,75 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-7/mod-37.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Язык Express: процедуры и функции</a>
+</div>
+<a name="T290349931"></a>
+<a name="T378481247"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Процедуры</a> и <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">функции в языке Express</a> служат для описания процедурной части модели. Как и в алгоритмических языках, используется концепция формальных и фактических параметров. Описание процедуры начинается с служебного слова procedure, за которым следуют идентификатор процедуры и описание формальных параметров в круглых скобках. Пример описания заголовка процедуры:</div>
+<pre class="eListing">PROCEDURE eq (x,y: REAL; n: INTEGER; VAR RESULT: route);
+</pre>
+<div>Аналогично описываются функции, их отличает только описание в заголовке типа результата после закрывающей скобки:</div>
+<pre class="eListing">FUNCTION log (a: REAL; m: INTEGER): REAL;
+</pre>
+<div>Локальные переменные, описанные в блоке действуют только в пределах данных функции или процедуры:</div>
+<pre class="eListing">LOCAL
+...
+END_LOCAL;
+</pre>
+<div>Ряд функций и процедур относится к стандартным и потому не требует описания во вновь разрабатываемых моделях. Отметим следующие стандартные функции: <span class="eOperator">Abs</span> — абсолютная величина; <span class="eOperator">Sqrt</span> — корень квадратный; <span class="eOperator">Exp</span> — экспонента; <span class="eOperator">Log</span>, <span class="eOperator">Log2</span>, <span class="eOperator">Log10</span> — логарифмы натуральный, двоичный, десятичный соответственно; <span class="eOperator">Sin</span>, <span class="eOperator">Cos</span>, <span class="eOperator">Tan</span>, <span class="eOperator">Acos</span>, <span class="eOperator">Asin</span>, <span class="eOperator">Atan</span> — тригонометрические и обратные тригонометрические функции sin, cos, tg, arc cos, arc sin, arc tg.</div>
+<a name="T100241030"></a>
+<a name="T474320637"></a>
+<div>В число стандартных входят также функции: <span class="eOperator">BLength</span> — подсчет числа бит в двоичном коде; <span class="eOperator">HiBound</span> — верхняя граница индекса у array или верхняя граница числа элементов у set, bag, list; <span class="eOperator">LoBound</span> — то же в отношении нижних границ; <span class="eOperator">Length</span> — подсчет числа символов в строке; <span class="eOperator">Odd</span> — возвращает значение true, если аргумент — нечетное число; <span class="eOperator">SizeOf</span> — возвращает число элементов в объекте агрегативного типа; <span class="eOperator">TypeOf</span> — возвращает список типов, к которым принадлежит параметр этой функции; <span class="eOperator">Exists</span> — возвращает значение true, если аргумент этой функции входит в число <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибутов</a> соответствующей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сущности</a>, и др.</div>
+<div>К стандартным процедурам относятся процедуры <span class="eOperator">Insert</span> и <span class="eOperator">Remove</span> — вставка или изъятие элемента в заданной позиции у объекта агрегативного типа соответственно.</div>
+<div>При описании алгоритмов в телах процедур и функций могут использоваться <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операторы</a> пустой (Null), присваивания (Assignment), выбора (Case), составной (Compound Statement), условный (if..then..else), цикла (Repeat), выхода из функции или процедуры (Return), перехода на конец цикла (Skip).</div>
+<div>В выражениях используются операнды, знаки операций, вызовы функций. Так, для арифметических операций над числами типа real применяются следующие знаки: <span class="eOperator">*</span> — умножение, <span class="eOperator">/</span> — деление, <span class="eOperator">DIV</span> — целочисленное деление, <span class="eOperator">+</span> — сложение, <span class="eOperator">-</span> — вычитание, <span class="eOperator">**</span> — возведение в степень, <span class="eOperator">MOD</span> — деление по модулю.</div>
+<div>Знаки <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">логических операций</a>: <span class="eOperator">not</span> — отрицание, <span class="eOperator">and</span> — конъюнкция, <span class="eOperator">or</span> — дизъюнкция, <span class="eOperator">xor</span> — исключающее ИЛИ. В применении к величинам типа logical эти операции выполняются по правилам действий в трехзначном алфавите. Логическое выражение a1 in a2 принимает значение true, если a1 содержится в a2. Оператор <span class="eOperator">like</span> используется для посимвольного сравнения строк. Знаки отношений равно <span class="eOperator">=</span>, не равно <span class="eOperator">&lt;&gt;</span>, больше <span class="eOperator">&gt;</span>, меньше <span class="eOperator">&lt;</span>, больше или равно <span class="eOperator">&gt;=</span>, меньше или равно <span class="eOperator">&lt;=</span>. Для сравнения экземпляров сущностей используют операции "равно" и "неравно" со знаками<span class="eOperator"> :=:</span> и <span class="eOperator">:&lt;&gt;:</span> соответственно.</div>
+<div>Операции над множествами (типами bag и set) — пересечение (Intersection), объединение (Union), разность (Difference). Их знаки суть * (умножение), + (плюс), — (минус) соответственно. Оператор Query (A &lt;* B | C) возвращает подмножество тех элементов из агрегативного типа B, для которых выполняется условие C, здесь A — простая переменная, используемая в C.</div>
+<div>Знак <span class="eOperator">+</span> (плюс) по отношению к операндам типа binary или string есть знак конкатенации.</div>
+<a name="T1133808979"></a>
+<div>В качестве формальных параметров процедур и функций, кроме <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типов данных</a>, применяемых в других конструкциях языка и охарактеризованных выше, могут использоваться обобщенные типы: generic, aggregate и некоторые другие. Тип generic формального параметра означает, что соответствующий фактический параметр может иметь любой тип данных из числа предусмотренных при описании процедуры. Аналогично тип aggregate обобщает агрегативные типы данных — array, bag, list, set. Например:</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">FUNCTION add (a,b: GENERIC: intype): GENERIC: intype;
+LOCAL
+nr: number;
+vr: vector;
+END_LOCAL;
+IF ('number' IN TYPEOF (a)) AND ('number' IN TYPEOF (b))
+THEN nr := a+b;
+(* функция typeof (a) возвращает тип аргумента а и,
+   если этот тип есть number, то первый операнд логического выражения равен true *)
+RETURN (nr);
+ELSE
+IF ('this schema.vector' IN TYPEOF (a)) AND ('this schema.vector' IN TYPEOF (b)) THEN
+vr.i := a.i + b.i;
+vr.j := a.j + b.j;
+vr.k := a.k + b.k;
+(* подразумевается, что декларация типа vector
+   была произведена в схеме с именем this schema *)
+RETURN (vr);
+END_IF;
+END_IF;
+END_FUNCTION;
+</pre>
+</div>
+<a name="T381072063"></a>
+<div>В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке Express-G</a> специальные символы для изображения правил, процедур и функций не оговорены.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-7/">← Оглавление</a>
         <a href="/rk6-edu/course-7/mod-35.html">‹ Предыдущий</a>

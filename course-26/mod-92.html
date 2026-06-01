@@ -23,7 +23,38 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-93.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функция difftime</a>
+</div>
+<pre class="eListing">#include   &lt;time.h&gt;
+double   difftime(time_t   time2,   time_t   timel);
+</pre>
+<a name="T931327406"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция difftime</a>() возвращает разность в секундах между значениями параметров time1 и time2, т.е. возвращается значение выражения time2-time1.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Эта программа отображает время в секундах, требуемое для выполнения пустого цикла 5 000 000 раз:</div>
+</div>
+<pre class="eListing">#include &lt;time.h&gt; #include &lt;stdio.h&gt;
+int main(void)
+{
+time_t start,end; 
+volatile long unsigned t;
+start = time(NULL);
+for(t=0; t&lt;5000000; t++);
+end = time(NULL);
+printf("Цикл использовал %f секунд.\n", difftime(end, start));
+return 0;
+}
+</pre>
+<a name="T1328539162"></a>
+<a name="T1214678477"></a>
+<a name="T1198290317"></a>
+<a name="T1064711968"></a>
+<div>Здесь используются зависимые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции localtime</a>(), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">gmtime</a>(), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">time</a>() и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">asctime</a>().</div>
+<br>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-91.html">‹ Предыдущий</a>

@@ -23,7 +23,35 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-129.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функции случайных чисел</a>
+</div>
+<a name="T273487257"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функции случайных чисел</a> являются <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функциями</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеки</a> общего назначения.</div>
+<div>Объявления этих функций и необходимых макроопределений находится в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">заголовочном файле</a> <span class="eOperator">&lt;stdlib.h&gt;</span>, поэтому в программах, использующих эти функции, необходимо включать следующую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>: <span class="eOperator">#include &lt;stdlib.h&gt;</span>.</div>
+<div><span class="eOperator">int rand(void)</span></div>
+<div>Функция <span class="eOperator">rand()</span> возвращает псевдослучайное число в диапазоне от 0 до <span class="eOperator">RAND_MAX</span> (<span class="eOperator">RAND_MAX </span>не менее 32767)</div>
+<div><span class="eOperator">int srand(unsigned int seed)</span></div>
+<div>Функция <span class="eOperator">srand()</span> использует <span class="eOperator">seed</span> в качестве семени для новой последовательности псевдослучайных чисел. Изначально параметр <span class="eOperator">seed</span> равен 1.</div>
+<div>Функцию <span class="eOperator">srand()</span> достаточно использовать один раз в начале программы для того, чтобы при каждом исполнении программы была получена новая последовательность случайных чисел.</div>
+<div>Часто в качестве семени используют значение текущего времени.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+void fun(void)
+{int i, a;
+srand(time(NULL));
+for (i=0; i&lt;10; i++)
+  {a=rand()%15-10; /*получаем случайное число в интервале от -10 до 4*/
+   printf ("%d|n", a);
+  }
+}
+</pre>
+</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-127.html">‹ Предыдущий</a>

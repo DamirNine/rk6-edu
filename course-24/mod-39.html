@@ -23,7 +23,90 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-24/mod-40.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Побитовые операции</a>
+</div>
+<a name="T1890701130"></a>
+<a name="T1133808979"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Побитовые операции</a> — это операции, работающие с отдельными битами операндов. Операнд должен быть целочисленным, т.е. иметь <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">тип</a> <span class="eOperator">long</span><span class="eOperator"> long</span>, <span class="eOperator">long</span>, <span class="eOperator">unsigned</span>, <span class="eOperator">int</span>, <span class="eOperator">short </span>или <span class="eOperator">char</span>.</div>
+<a name="T114264910"></a>
+<a name="T424168142"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Приоритеты</a> побитовых операций приведены в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">таблице приоритетов</a> (<a class="eLModul" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Открыть учебный модуль">Приоритеты операций</a>).</div>
+<a name="T119936423"></a>
+<a name="T2042524345"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Поразрядное дополнение</a> (<span class="eOperator">~</span>) – это <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">унарная</a> операция, результатом которой является значение, полученное поразрядным дополнением операнда, т.е. каждый бит со значением 0 заменяется на 1 и наоборот.</div>
+<a name="T1562934040"></a>
+<a name="T803028594"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Поразрядное умножение</a> И (<span class="eOperator">&amp;</span>) – значением <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">выражения</a>, использующего эту операцию, является поразрядное логические умножение двух операндов.</div>
+<a name="T2135300675"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Исключающее ИЛИ</a> (<span class="eOperator">^</span>) — значением выражения, использующего эту операцию, является поразрядное исключающее ИЛИ ее операндов.</div>
+<a name="T686215520"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Поразрядное сложение</a> ИЛИ (<span class="eOperator">|</span>) — значением выражения, использующего эту операцию, является поразрядное логические сложение двух операндов.</div>
+<a name="T1584705211"></a>
+<a name="T17759413"></a>
+<div>Знаки этих побитовых операций являются односимвольными. Не путайте их с операциями <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">логического умножения</a> <span class="eOperator">&amp;&amp;</span> (И) и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">логического сложения</a><span class="eOperator">||</span> (ИЛИ). Значением выражений, использующих логические операции может быть только истина или ложь. Значением побитовых операций обычно является новое битовое значение.</div>
+<a name="T18611314"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сдвиг влево</a> (<span class="eOperator">&lt;&lt;</span>) — значением выражения, использующего эту операцию, является битовое представление левого операнда, сдвинутого влево на число битов, определяемое значением правого операнда.</div>
+<a name="T580971311"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Сдвиг вправо</a> (<span class="eOperator">&gt;&gt;</span>) — значением выражения, использующего эту операцию, является битовое представление левого операнда, сдвинутого вправо на число битов, определяемое значением правого операнда.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">int num1, num2;
+num1 = 5;  /* 00101 */
+num2 = 11; /* 01011 */
+</pre>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/bit_oper.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Поразрядное И</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/bit_oper.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Поразрядное ИЛИ</div></div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/bit_oper.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Исключающее ИЛИ</div></div>
+<div>Значением выражения, содержащего операцию поразрядного дополнения, является логическое отрицание значения операнда. Значения битов инвертируются: единицы заменяются нулями, нули – единицами.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">num1 = 5;    /* 00101 */
+num1             00101
+~num1            11010
+</pre>
+</div>
+<div class="eSubTitle">Операции сдвига &lt;&lt; и &gt;&gt;</div>
+<pre class="eListing">Целочисленное_выражение &lt;&lt; Целочисленное_выражение
+Целочисленное_выражение &gt;&gt; Целочисленное_выражение
+</pre>
+<div>При сдвиге значения операнда влево биты справа заполняются нулями.</div>
+<div>При сдвиге вправо возможны следующие ситуации:</div>
+<ul class="eList"><li>при сдвиге положительных и беззнаковых значений биты слева заполняются нулями;</li>
+<li>при сдвиге отрицательных значений результат совпадает с результатом арифметического или логического сдвига в зависимости от аппаратного обеспечения компьютера: логический сдвиг вправо заполняет освобождающиеся слева биты нулями; арифметический сдвиг размножает знаковый разряд, т.е. самый левый бит.</li>
+</ul>
+<div class="auto">Пример 3</div>
+<div class="eExample"><div>Предположим, что программа выполняется  на 8-разрядном компьютере. Первый (старший) разряд является знаковым.</div>
+<div><span class="eOperator">x = x&lt;&lt;2;     /* сдвиг значения переменной x влево на 2 бита */</span><span class="eOperator"> </span><span class="eOperator"> </span></div>
+<div>исходное <span class="eOperator">x = 00011000</span></div>
+<div>Результат операции <span class="eOperator">x&lt;&lt;2</span> есть <span class="eOperator">01100000</span>.</div>
+<div><span class="eOperator">y &gt;&gt;= 3; /* сдвиг значения переменной y вправо на 3 бита */</span></div>
+<div>исходное <span class="eOperator">y =11011001</span></div>
+<div>Результат операции<span class="eOperator"> y&gt;&gt;3</span> есть <span class="eOperator">00011011</span> для логического сдвига и <span class="eOperator">11111011</span> для арифметического сдвига.</div>
+</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-24/">← Оглавление</a>
         <a href="/rk6-edu/course-24/mod-38.html">‹ Предыдущий</a>

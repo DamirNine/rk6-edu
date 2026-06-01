@@ -23,7 +23,135 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-22/mod-28.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">MPMD-языки высокого уровня. Средства конфигурирования</a>
+</div>
+<a name="T2131760710"></a>
+<a name="T469209868"></a>
+<a name="T1046981721"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Средствами конфигурирования</a> называются средства описания топологии сети <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> и топологии взаимосвязей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессов</a>, а также <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">отображение</a> процессов на процессоры.</div>
+<a name="T1307907309"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Средства конфигурирования</a> могут встраиваться в параллельный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">MPMD-ЯВУ</a> (например, Occam) или выделяться в самостоятельный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык</a> (система 3L-Parallel C).</div>
+<div class="eSubTitle">Модели многопроцессорной системы и задачи.</div>
+<a name="T1672495953"></a>
+<div><span style="font-weight:bold; ">Модель вычислительной системы</span>. Обычно <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">средства конфигурирования</a> использует простую модель <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорной вычислительной системы</a> в виде множества <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a>, связанных между собой двунаправленными проводами. В системе всегда должен присутствовать "корневой" процессор (см. рис.&nbsp;1).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020503.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Пример модели трехпроцессорной системы.</div></div>
+<div>Каждый <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессор</a>, полагается, имеет некоторый набор двунаправленных портов процессоров.</div>
+<a name="T1108520035"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Средства конфигурирования</a> позволяют задать перечень <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> системы с их именами и, возможно, их типами, а также топологию связей портов процессоров в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникационную сеть</a>.</div>
+<div>Рассмотрим средства описания модели вычислительной системы на примере системы 3L Parallel C.</div>
+<div>Оператор <span class="eOperator">PROCESSOR</span>. Оператор предназначен для спецификации <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> системы и имеет <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синтаксис</a></div>
+<pre class="eListing">processor &lt;идентификатор процессора&gt;
+</pre>
+<div>Специфицированы должны быть все <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоры</a> системы, включая корневой процессор (в виде processor host).</div>
+<div>Оператор <span class="eOperator">WIRE</span> служит для описания связей портов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникационную сеть</a> системы. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Синтаксис</a> оператора</div>
+<pre class="eListing">wire? &lt;спецификатор порта&gt; &lt;спецификатор порта&gt;
+</pre>
+<div>Пусть, например, в системе имеется два <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессора</a> с именами <span class="eOperator">proc_one</span>, <span class="eOperator">proc_two</span> и каждый из этих процессоров имеет по 4 двунаправленных порта с номерами 0 – 3. Тогда спецификация</div>
+<pre class="eListing">processor proc_one
+processor proc_two
+wire? proc_one[2] proc_two[3]
+</pre>
+<div>задает топологию системы, которая приведена на рис.2.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020503.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Пример топологии вычислительной системы.</div></div>
+<div><span style="font-weight:bold; ">Модель задачи</span>. Каждая задача имеет два вектора портов входа задачи и портов выхода задачи  (см. рис.&nbsp;3). Из входных портов задача может читать сообщения, а в выходные порты — отправлять сообщения.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020503.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Модель задачи.</div></div>
+<div>Обычно используется также простая модель программы в виде множества задач, имеющих взаимосвязанные входные и выходные порты. Пример модели программы приведен на рис.&nbsp;4. Программа здесь состоит из 4-х задач <img align="absmiddle" src="/?frm/?doc=Parallel/ch020503.mod/?n=1/?k=10"> — <img align="absmiddle" src="/?frm/?doc=Parallel/ch020503.mod/?n=2/?k=10">, из которых задача <img align="absmiddle" src="/?frm/?doc=Parallel/ch020503.mod/?n=1/?k=10"> имеет два выходных порта, задача <img align="absmiddle" src="/?frm/?doc=Parallel/ch020503.mod/?n=3/?k=10"> – входной и выходной порты, задачи <img align="absmiddle" src="/?frm/?doc=Parallel/ch020503.mod/?n=4/?k=10">, <img align="absmiddle" src="/?frm/?doc=Parallel/ch020503.mod/?n=2/?k=10"> – по одному входному порту. </div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Средства конфигурирования</a> позволяют перечислить имена задач программы, а также топологию связей их портов.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020503.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;Пример модели программы. </div></div>
+<div>Рассмотрим средства описания модели задачи на примере системы 3L Parallel C.</div>
+<div>Оператор <span class="eOperator">TASK</span> предназначен для описания задач и имеет <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синтаксис</a></div>
+<pre class="eListing">task &lt;идентификатор задачи&gt; {&lt;атрибуты задачи&gt;}
+</pre>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Атрибуты</a> задачи включают в себя, в частности</div>
+<ul class="eList"><li><span class="eOperator">INS</span> =&lt;const&gt; — количество входных портов задачи (обязательный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибут</a>);</li>
+<li><span class="eOperator">OUTS</span> =&lt;const&gt; — количество выходных портов задачи (обязательный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибут</a>);</li>
+<li><span class="eOperator">FILE</span> = &lt;имя <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файла</a>&gt;, в котором находится объектный код задачи (необязательный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибут</a>);</li>
+<li><span class="eOperator">DATA</span> = &lt;требуемый размер памяти&gt; (необязательный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">атрибут</a>);</li>
+<li>………..</li>
+</ul>
+<div>Оператор <span class="eOperator">CONNECT</span> объявляет логические связи межу портами двух задач и имеет <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синтаксис</a></div>
+<pre class="eListing">connect?&lt;спецификатор входного порта задачи&gt; &lt; спецификатор выходного порта задачи&gt;
+</pre>
+<div>Пусть, например, программа состоит из двух задач с именами <span class="eOperator">task_1</span>, <span class="eOperator">task_2</span>, каждая из которых имеет по одному входному порту (<span class="eOperator">INS</span>=1) и одному выходному порту (<span class="eOperator">OUTS</span>=1) с номерами 0, 1, соответственно. Тогда спецификация</div>
+<pre class="eListing">task task_1,INS=1,OUTS=1
+task task_2,INS=1,OUTS=1
+connect? task_1[1] task_2[0]
+connect? task_2[1] task_1[0]
+</pre>
+<div>задает топологию связи задач, приведенную на рис.&nbsp;5.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020503.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;Пример топология связей программы, состоящей из двух задач.</div></div>
+<div class="eSubTitle">Отображение задач на процессоры.</div>
+<div>Оператор <span class="eOperator">PLACE</span> определяет <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессор</a>, на котором должна быть выполнена задача. <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Синтаксис</a> оператора:</div>
+<pre class="eListing">place &lt;имя задачи&gt; &lt;имя процессора&gt;
+</pre>
+<a name="T109040626"></a>
+<div>Пусть, например, программа имеет топологию связей задач, приведенную на рис.&nbsp;5, и должна исполняться на вычислительной системе, изображенной на рис.2. Тогда <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">отображение</a> программы на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">архитектуру вычислительной системы</a> может быть реализовано спецификацией (см. Рис. 6)</div>
+<pre class="eListing">place task_1 processor_one
+place task_2 processor_two
+</pre>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020503.mod/?n=6"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;Пример отображения программы на архитектуру вычислительной системы.</div></div>
+<div class="eSubTitle">"Процессорная ферма"</div>
+<div>При использовании <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">средств конфигурирования</a>, аналогичных рассмотренным выше, описание топологии вычислительной системы, топологии программы и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">отображение</a> программы на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вычислительную систему</a> оформляются в виде конфигурационного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файла</a>. Написание конфигурационного файла является трудоемкой процедурой. Но основная проблема заключается в другом – при изменении конфигурации используемой вычислительной системы требуется изменение конфигурационного файла (проблема переносимости параллельного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">программного обеспечения</a>).</div>
+<div>Одним из решений проблемы переносимости является следующий подход. Программы разрабатываются в ориентации на некоторую простую, фиксированную <span class="eOperator">логическую</span> структуру <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникационной сети</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a>. Средствами операционной системы параллельной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЭВМ</a> поддерживается <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">отображение</a> этой логической структуры на физическую структуру ЭВМ. При этом пропадает необходимость в написании конфигурационного <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файла</a>.</div>
+<a name="T1847431279"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">"Процессорная ферма"</a> — это логическая структура <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммуникационной сети</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> типа двухуровневого дерева (см. Рис.7).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=Parallel/ch020503.mod/?n=7"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;7.&nbsp;&nbsp;Логическая структура сети "процессорная ферма". <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">P</span><sub class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:normal;">0</span></sub> – master-процессор; <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">P</span><sub class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:normal;">0</span></sub>, <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">P</span><sub class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:normal;">1</span></sub>, ..., <span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">P</span><sub class="eSub"><span style="font-size:115%; font-family:serif; font-weight:normal; font-style:italic;">n</span></sub> — slave- или worker-процессоры.</div></div>
+<a name="T445283805"></a>
+<a name="T1043098456"></a>
+<div>Имеется жесткое ограничение на логическую организацию программы, которая должна исполняться на "<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорной ферме</a>". Программа должна состоять из совокупности одинаковых задач, каждая из которых выполняется на своем подчиненном <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоре</a>, и из основной задачи, которая выполняется на <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">master-процессоре</a>. Другими словами, все <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">slave-процессоры</a> или <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">worker-процессоры</a> <img align="absmiddle" src="/?frm/?doc=Parallel/ch020503.mod/?n=5/?k=10"> должны выполнять одну и ту же задачу (но, разумеется, над разными данными), а master-процессор должен выполнять задачу, которая распределяет исходные данные между рабочими процессорами, получает от этих процессоров результаты и, возможно, обрабатывает их, отображает и сохраняет.</div>
+<div>При изменении числа <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> реконфигурация прикладной программы не нужна.</div>
+<div>Назовем задачи, выполняемые на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">подчиненных процессорах</a>, P- задачами, а задачу, выполняемую на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">главном процессоре</a>, — M- задачей.</div>
+<div>Обмен данными между P- задачами и M- задачей выполняется с помощью двух операций типа <span class="eOperator">SEND</span>, <span class="eOperator">RECEIVE</span>.</div>
+<div>Если операция <span class="eOperator">SEND</span> выполняется M-задачей, то она вызывает пересылку данных из этой задачи первому свободной в данный момент <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">подчиненному процессору</a>. Если эта операция выполняется P-задачей, то она пересылает данных из этой задачи M-задаче.</div>
+<div>Аналогично, если операция <span class="eOperator">RECEIVE</span> вызывается M-задачей, то она читает очередной пакет данных, передаваемый P-задачей. Если эта операция выполняется P-задачей, то она читает пакет сообщения, передаваемый M-задачей.</div>
+<div>Операционная система используемой параллельной <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ЭВМ</a> должна обеспечивать сохранение того же порядка поступления элементов сообщения, состоящего из нескольких пакетов, что и при их передаче.</div>
+<div>В качестве примера рассмотрим операции обмена данными между P- задачами и M- задачей в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке</a> 3L Parallel C.</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Язык</a> 3L Parallel C использует для этого обмена две библиотечных функции:</div>
+<div>1) функция типа <span class="eOperator">SEND</span></div>
+<pre class="eListing">int net_send(nbytes, packet, complete)
+</pre>
+<div>где <span class="eOperator">nbytes</span> – количество передаваемых данных в байтах, <span class="eOperator">packet</span> – имя массива передаваемых данных, <span class="eOperator">complete</span>=0 – признак того, что сообщение длинное (разбито на ряд пакетов и данный пакет является не последним), <span class="eOperator">complete</span>=1 – признак того, что данное сообщение представляет последний или единственным пакет. Функция возвращает количество переданных байтов <span class="eOperator">nbytes</span>;</div>
+<div>2) функция типа <span class="eOperator">RECEIVE</span></div>
+<pre class="eListing">int net_receive(packet, complete)
+</pre>
+<div>с аналогичными аргументами.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-22/">← Оглавление</a>
         <a href="/rk6-edu/course-22/mod-26.html">‹ Предыдущий</a>

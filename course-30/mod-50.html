@@ -23,7 +23,39 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-51.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Интерполяционный поиск</a>
+</div>
+<br>
+<div>Представьте себе, что Вы ищете слово в словаре. Маловероятно, что Вы сначала загляните в середину словаря, затем отступите от начала на 1/4 или 3/4 и т.д, как в бинарном поиске.</div>
+<a name="T1034263903"></a>
+<div>Если нужное слово начинается с буквы 'А', вы наверное начнете поиск где-то в начале словаря. Когда найдена отправная точка для поиска, ваши дальнейшие действия мало похожи на рассмотренные выше <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">методы</a>.</div>
+<a name="T823713000"></a>
+<div>Если Вы заметите, что искомое слово должно находиться гораздо дальше открытой страницы, вы пропустите порядочное их количество, прежде чем сделать новую попытку. Это в корне отличается от предыдущих <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритмов</a>, не делающих разницы между 'много больше' и 'чуть больше'.</div>
+<a name="T33309882"></a>
+<div>Мы приходим к алгоритму, называемому интерполяционным поиском: Если известно, что К лежит между Kl и Ku, то следующую пробу делаем на расстоянии (u-l)(K-Kl)/(Ku-Kl) от l, предполагая, что <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ключи</a> являются числами, возрастающими приблизительно в арифметической прогрессии.</div>
+<br>
+<pre class="eListing">// Поиск в массиве K[1..N] числа X интерполяционным поиском
+
+</pre>
+<pre class="eListing">l=1; u=N;
+while(u&gt;=l) {
+</pre>
+<pre class="eListing">    i=l+(u-l)*(X-K[l])/(K[u]-K[l]);
+</pre>
+<pre class="eListing">    if(X&lt;K[i]]  u=i-1;
+    else if(X&gt;K[i]] l=i+1;
+    else printf ("\nНАШЛИ"), X==K[i].
+</pre>
+<pre class="eListing">}
+
+</pre>
+<div>Не нашли.</div>
+<a name="T1763610982"></a>
+<div>Интерполяционный поиск работает за log log N операций, если <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">данные</a> распределены равномерно. Как правило, он используется лишь на очень больших таблицах, причем делается несколько шагов интерполяционного поиска, а затем на малом подмассиве используется бинарный или последовательный варианты.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-49.html">‹ Предыдущий</a>

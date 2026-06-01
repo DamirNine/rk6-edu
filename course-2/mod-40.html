@@ -23,7 +23,71 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-2/mod-41.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Протоколы управления в стеке TCP/IP</a>
+</div>
+<a name="T708672982"></a>
+<div>Рост сложности сетей повышает значимость и сложность средств управления сетью. Управление осуществляется с помощью <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">протоколов управления</a>.</div>
+<a name="T1657172318"></a>
+<a name="T555426369"></a>
+<a name="T555117888"></a>
+<div>Среди протоколов управления различают <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протоколы</a>, реализующие управляющие функции <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевого уровня</a>, и протоколы мониторинга за состоянием сети, относящиеся к более высоким уровням. В сетях <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TCP/IP</a> роль первых из них выполняет <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">протокол ICMP</a> (Internet Control Message Protocol), роль вторых — <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">протокол SNMP</a> (Simple Network Management Protocol).</div>
+<div>На сетевом уровне управление связано с регулированием нагрузок и исключением блокировок. Различают несколько уровней управления.</div>
+<div>Межузловое управление связано с распределением буферной памяти в промежуточных узлах (выделением каждому направлению определенного числа буферов), сводящееся к ограничению длин канальных очередей.</div>
+<a name="T665885197"></a>
+<div>Управление "вход-выход" направлено на предотвращение блокировок. Реализуется указанием в первом <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пакете</a> сообщения его длины, что позволяет приемному узлу прогнозировать заполнение памяти и запрещать прием <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дейтаграмм</a> определенных сообщений, если прогнозируется блокировка памяти.</div>
+<div>Управление внешними потоками (доступом) реализуется путем предоставления приоритета в передаче внутренним потокам перед внешними, ограничением числа пакетов в сети (пакет принимается, если у узла есть соответствующее разрешение), посылкой предупредительных пакетов-заглушек в адрес источника, от которого идут пакеты в перегруженную <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">линию связи</a>.</div>
+<div>Основные функции ICMP:</div>
+<ul class="eList"><li>оповещение отправителя с чрезмерным трафиком о необходимости уменьшить интенсивность посылки пакетов; при перегрузке адресат (или промежуточный узел) посылает ICMP-пакеты, указывающие о необходимости сокращения интенсивности входных потоков;</li>
+<li>оповещение отправителя о недостижимости адресата (отправление ICMP-пакета с сообщением о невозможности достичь адресата осуществляет <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">маршрутизатор</a>);</li>
+<a name="T3441010"></a>
+<li>формирование и посылка временных меток (измерение задержки) для контроля <img align="absmiddle" src="/?frm/?doc=210_netw/nw408.mod/?n=1/?k=10"> — времени доставки пакетов, что нужно для "<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оконного" управления</a>. Например, время доставки <img align="absmiddle" src="/?frm/?doc=210_netw/nw408.mod/?n=1/?k=10"> определяется следующим образом. Отправитель формирует ICMP-запрос с временной меткой и отсылает пакет. Получатель меняет адреса местами и отправляет пакет обратно. Отправитель сравнивает метку с текущим временем и тем самым определяет <img align="absmiddle" src="/?frm/?doc=210_netw/nw408.mod/?n=1/?k=10">. Такие ICMP-запросы выполняются по команде <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ping</a>. В частности, они позволяют определить достижимость адресата.</li>
+</ul>
+<div>ICMP-пакеты вкладываются в IP-дейтаграммы при доставке.</div>
+<div>Основные функции протоколов мониторинга заключаются в сборе информации о состоянии сети, в предоставлении этой информации нужным лицам путем посылки ее на соответствующие узлы, в возможном автоматическом принятии необходимых управляющих мер.</div>
+<div>К функциям мониторинга относятся:</div>
+<ul class="eList"><a name="T658309897"></a>
+<a name="T1428755254"></a>
+<li>управление конфигурацией сети (определение виртуальных маршрутов, настройка портов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">коммутаторов</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">маршрутизаторов</a>, визуализация топологии сети и т.п.);</li>
+<li>диагностика сбоев и отказов с возможным автоматическим или полуавтоматическим их устранением;</li>
+<li>анализ производительности и надежности;</li>
+<a name="T1825528934"></a>
+<li>защита информации (<a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аутентификация</a> пользователей, управление правами доступа, поддержка шифрования данных);</li>
+<li>сбор и анализ статистики, расчет платы за предоставленные услуги.</li>
+</ul>
+<a name="T198766953"></a>
+<div>Собираемая информация о состоянии сети хранится в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">базах данных MIB</a> (Managment Information Bases). Примеры данных в MIB: статистика по числу пакетов и байтов, отправленных или полученных правильно или с ошибками, длины очередей, максимальное число соединений и др.</div>
+<a name="T533380785"></a>
+<a name="T405434167"></a>
+<a name="T489834242"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Протокол SNMP</a> относится к <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">прикладному уровню</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке протоколов</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">TCP/IP</a>. Он работает по <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">системе "менеджер-агент</a>". <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Менеджер</a> (серверная программа) обычно работает на отдельном компьютере. В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">корпоративной сети</a> может быть несколько менеджеров, за каждым из них закреплен определенный участок сети. Менеджеры могут быть связаны друг с другом по одноранговой или иерархической схемам.</div>
+<a name="T1023109559"></a>
+<div>Менеджер посылает запросы <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">агентам</a>, агенты (т.е. программы SNMP объектов управления) устанавливаются в контролируемых узлах, они собирают информацию (например, о загрузке, очередях, временах совершения событий), и передают ее серверу для принятия нужных мер. В общем случае агентам можно поручить и обработку событий, и автоматическое реагирование на них. Для этого в агентах имеются триггеры, фиксирующие наступление событий, и средства их обработки. Команды SNMP могут запрашивать значения объектов MIB, посылать ответы, менять значения параметров.</div>
+<div>Для посылки команд SNMP используется транспортный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">протокол UDP</a>.</div>
+<div>Одной из проблем управления по SNMP является защита агентов и менеджеров от ложных команд и ответов, которые могут дезорганизовать работу сети.</div>
+<a name="T555148580"></a>
+<div>Расширением SNMP являются <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">протоколы RMON</a> (Remote Monitoring) для сетей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Ethernet</a> и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Token Ring</a> и RMON2 для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сетевого уровня</a>. Преимущество RMON заключается в меньшем трафике, так как здесь агенты более самостоятельны и сами выполняют часть необходимых управляющих воздействий на состояние контролируемых ими узлов. В <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке протоколов</a> OSI аналогом SNMP является протокол CMIP.</div>
+<div>На основе базовых функций протокола SNMP разработан ряд мощных средств управления, примерами которых могут служить продукт ManageWISE фирмы Novell или система UnicenterTNG фирмы Computer Associates. С их помощью администратор сети может:</div>
+<ul class="eList"><li>строить на экране дисплея 2D-изображение топологии сети, причем на разных иерархических уровнях, перемещаясь от региональных масштабов до подсетей ЛВС (при интерактивной работе);</li>
+<li>разделять сеть на домены управления по функциональным, географическим или другим принципам с установлением своей политики управления в каждом домене;</li>
+<li>разрабатывать нестандартные агенты с помощью имеющихся инструментальных средств.</li>
+</ul>
+<div>Дальнейшее развитие подобных систем может идти в направлении связи сетевых ресурсов с проектными или бизнес-процедурами и сетевых событий с событиями в процессе проектирования или управлении предприятиями. Тогда система управления сетью станет комплексной системой управления процессами проектирования и управления предприятием.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-2/">← Оглавление</a>
         <a href="/rk6-edu/course-2/mod-39.html">‹ Предыдущий</a>

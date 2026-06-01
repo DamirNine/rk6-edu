@@ -23,7 +23,54 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-27/mod-28.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Шаблоны функций</a>
+</div>
+<a name="T1064783077"></a>
+<div>Простейший  <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">шаблон функции</a> имеет форму:</div>
+<pre class="eListing">template &lt;class Type&gt; &lt;заголовок&gt;
+{
+&lt;тело функции&gt;
+}
+</pre>
+<br>
+<div>В общем случае <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шаблон функции</a> может содержать несколько параметров, каждый из которых может быть не только типом, но и просто переменной.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">template &lt;class A, class B, int i&gt; void f() {...}
+
+</pre>
+</div>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Шаблон функции</a> использует в качестве аргумента тип переменной.</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">template&lt;class T&gt;  Tsgr_it(T x)
+{
+...
+return x*x;
+}
+</pre>
+</div>
+<div>В шаблоне может использоваться необязательный первый тип как параметр</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">template&lt;class T1, class T2&gt;
+max(T1 x, T2 y)
+{ return (x&gt;y) ? x : y; }
+
+</pre>
+</div>
+<div>В <span style="font-weight:bold; ">C++</span> вызов <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шаблона функции</a>, использующий конкретный тип данных, приводит к тому, что компилятор создает код соответствующей версии функции. Этот процесс называется инстанцированием. Конкретный тип для инстанцирования определяется компилятором автоматически, исходя из типов параметров при вызове функции, либо задается явным образом. При повторном вызове с тем же типом данных код заново не генерируется. Если на месте параметра шаблона находится не тип, а переменная, то должно указываться константное выражение. </div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><div> Явное задание аргументов при вызове:</div>
+<pre class="eListing">template&lt;class x, class y, class z&gt;void (x, y, z);
+void g()
+{
+f &lt; int, char*
+}
+</pre>
+</div>
+<div>Как и обычные <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции, шаблоны</a> функций могут быть перегружены как с помощью шаблона, так и с помощью обычной функции. В программе можно предусмотреть специальную обработку.</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-27/">← Оглавление</a>
         <a href="/rk6-edu/course-27/mod-26.html">‹ Предыдущий</a>

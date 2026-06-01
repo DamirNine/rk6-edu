@@ -23,7 +23,50 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-13.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Контроль правильности передачи данных</a>
+</div>
+<div>Проверка правильности передачи данных может выполняться с использованием 3-х различных подходов:</div>
+<ol class="eList"><li>Обнаружение ошибок.</li>
+<li>Контроль ошибок (обнаружение + попытка исправления путем запроса повторной передачи данных).</li>
+<li>Исправление ошибок (восстановление искаженных данных без их повторной передачи). Вместе с основной информацией по каналу связи передаются дополнительные контрольные данные, позволяющие приемнику самому восстановить информацию в случае ее искажения при передаче.</li>
+</ol>
+<a name="T1955419431"></a>
+<a name="T714407434"></a>
+<div>Простейшим способом обнаружения ошибок при <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">асинхронной последовательной передаче</a> является <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">контроль четности</a>.</div>
+<a name="T33298498"></a>
+<div>При этом в состав <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">кадра</a> вводится дополнительный служебный бит — бит паритета (рис.&nbsp;1).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_10_1.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<div>Собственно алгоритм обнаружения ошибок выглядит следующим образом:</div>
+<div><span style="font-weight:bold; text-decoration:underline; ">Действия передатчика</span></div>
+<ol class="eList"><li>Бит паритета устанавливается в "0"</li>
+<li>Подсчитывается количество единиц во всех информационных битах</li>
+<li>Значение бита паритета устанавливается таким, чтобы полученная сумма плюс бит паритета была четной</li>
+</ol>
+<div><span style="font-weight:bold; text-decoration:underline; ">Действия приемника</span></div>
+<ol class="eList"><li>Подсчитывается количество единиц во всех принятых информационных битах полюс бит паритета.</li>
+<li>Если полученная сумма является четной, данные приняты без искажений, в противном случае имела место ошибка.</li>
+</ol>
+<div>Достоинством данного метода является его простота. Недостатком — то, что он может определить состояние ошибки, только если искажению подверглось нечетное количество бит. При искажении, например, двух бит в символе, данный метод не выявит ошибки. Тем не менее, он получил очень широкое распространение и реализован на аппаратном уровне в большинстве современных асинхронных приемопередатчиков.</div>
+<div>Метод контроля четности может быть использован также и при параллельной передаче данных, если это необходимо. В этом случае необходимо использовать дополнительную линию связи для передачи бита паритета.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-11.html">‹ Предыдущий</a>

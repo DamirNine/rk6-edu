@@ -23,7 +23,96 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-23/mod-105.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Объединения</a>
+</div>
+<a name="T1177411456"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Объединение</a> — объект, который в каждый момент времени содержит один из нескольких элементов различных типов.</div>
+<a name="T1503632839"></a>
+<a name="T1239699667"></a>
+<a name="T74783515"></a>
+<div>Все компоненты объявления <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структур</a>, такие как <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">шаблоны</a>, имена типа, имена элементов и т.д. применимы и при объявлении объединений. Единственное отличие состоит в том, что при объявлении объединения вместо <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевого слова</a> <span class="eOperator">struct </span>используется <span class="eOperator">union</span>.</div>
+<div class="auto">Примечание 1</div>
+<div class="eNote"><div>Объединение не может иметь битовые поля.</div>
+</div>
+<a name="T1155602332"></a>
+<a name="T1992766606"></a>
+<a name="T541845194"></a>
+<a name="T696383489"></a>
+<div><a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Операции доступа к элементу структуры</a> (операция . и операция -&gt;) могут применяться и к объединениям. Допустимы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массивы</a> объединений и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатели</a> на объединения. Объединения могут передаваться <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> как параметры и возвращаться функцией.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><pre class="eListing">struct s_tag{
+            char c;
+            int i;
+            doubl d;
+            } s_item;
+</pre>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/union.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;Структура</div></div>
+</div>
+<div class="auto">Пример 2</div>
+<div class="eExample"><pre class="eListing">union u_tag{
+           char c;
+           int i;
+           doubl d;
+           } u_item;
+</pre>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/union.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;Объединение</div></div>
+<div>В отличие от структуры, объединение может в любой момент времени содержать только один из своих элементов. Объединение позволяет использовать одну область памяти для хранения различных видов данных в разные моменты времени. Фактически, объединение — это структура, в которой все поля начинаются со смещением 0, таким образом, поля накладываются друг на друга.</div>
+<div class="auto">Пример 3</div>
+<div class="eExample"><pre class="eListing">printf("размер структуры = %d\n", sizeof(s_item));
+printf("размер объединения = %d\n", sizeof(u_item));
+</pre>
+<div>Вывод:</div>
+<div>размер структуры = 16</div>
+<div>размер объединения = 8</div>
+</div>
+<div>Объединения часто включаются в структуры, один из элементов которых является ключом, указывающим тип хранимого в памяти элемента объединения.</div>
+<div class="auto">Пример 4</div>
+<div class="eExample"><pre class="eListing">/* содержит информацию о работающих служащих и пенсионерах */
+struct mail {
+            char id;      /* a - active (), r - retired()*/
+            union{
+                 struct{char name[30];
+                        char dept[10];
+                        char location[3];
+                        } active;
+                 struct{char name[30];
+                        char street[20];
+                        char city_state[3];
+                        char zip[5];
+                        } retired;
+                 } info;
+             } preson;
+</pre>
+<div>Структура типа <span class="eOperator">struct mail</span> используется для хранения почтового адреса работающего служащего или пенсионера. При заполнении структуры этого типа информацией в нее заносится порция данных, соответствующая элементам  <span class="eOperator">active</span> или <span class="eOperator">retired</span> объединения <span class="eOperator">info</span>. Поле <span class="eOperator">id</span> устанавливается равным <span class="eOperator">'a'</span>  или <span class="eOperator">'r'</span> для указания фактически записанного в объединении элемента. При применении объединения используется меньше памяти, чем в случае применения структуры, которая имела бы идентичные поля, но некоторые из них не использовались бы.</div>
+<pre class="eListing"></pre>
+</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=OP2/union.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;Объединение как элемент структуры</div></div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-23/">← Оглавление</a>
         <a href="/rk6-edu/course-23/mod-103.html">‹ Предыдущий</a>

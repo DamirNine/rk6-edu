@@ -23,7 +23,89 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-31/mod-21.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Команды микропроцессора. Система команд</a>
+</div>
+<a name="T823713000"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Алгоритм</a> — строго определенная последовательность действий, направленная на достижение заданного результата.</div>
+<a name="T595154646"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Программа</a> — запись алгоритма с использованием языка программирования.</div>
+<a name="T1017069202"></a>
+<div>При рассмотрении основных принципов построения <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессора</a>, любой алгоритм может быть представлен в виде последовательности простейших действий. Следовательно, программа, описывающая алгоритм на языке программирования, должна быть преобразована в этот набор простейших действий.</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_11.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<a name="T1233056807"></a>
+<div>Действие по обработке информации называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операцией</a>, например:</div>
+<a name="T455418341"></a>
+<div><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=1/?k=10"> — операция возведения в квадрат (<img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=2/?k=10"> — <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">операнд</a>, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=3/?k=10"> — результат операции);</div>
+<div><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=3/?k=10"> = <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=4/?k=10"> — операция дифференцирования (<img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=2/?k=10"> — операнд, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=5/?k=10"> — оператор).</div>
+<div>В качестве примера описания операции в виде последовательности простейших действий рассмотрим сложение двоичных чисел на примере одного разряда двоичного числа (рис.&nbsp;2)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_11.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<div>Представим операцию в следующем виде (рис.&nbsp;3)</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_11.mod/?n=3"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;3.&nbsp;&nbsp;</div></div>
+<a name="T57881506"></a>
+<div>Здесь <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=6/?k=10"> и <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=7/?k=10"> — значения соответствующего <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">разряда</a> в первом и втором слагаемом, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=8/?k=10"> — перенос из младшего разряда, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=9/?k=10"> — значение соответствующего разряда суммы, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=10/?k=10"> — значение переноса в старший разряд.</div>
+<div>Рассматриваемая операция может быть представлена таблицей:</div>
+<div class="auto" style="text-align:right">Таблица 1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="5">
+<tbody><tr height="11.111111%"><td width="20.0%" class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=11/?k=10"></td><td width="20.0%" class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=12/?k=10"></td><td width="20.0%" class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=13/?k=10"></td><td width="20.0%" class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=14/?k=10"></td><td width="20.0%" class="eTable"><img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=15/?k=10"></td></tr>
+<tr height="11.111111%"><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">0</td></tr>
+<tr height="11.111111%"><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">0</td></tr>
+<tr height="11.111111%"><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">0</td></tr>
+<tr height="11.111111%"><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">0</td></tr>
+<tr height="11.111111%"><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">0</td><td class="eTable">1</td></tr>
+<tr height="11.111111%"><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">1</td></tr>
+<tr height="11.111111%"><td class="eTable">0</td><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">0</td><td class="eTable">1</td></tr>
+<tr height="11.111111%"><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">1</td><td class="eTable">1</td></tr>
+</tbody></table><br>
+<div>Таким образом, операция сложения одного двоичного разряда сводится к поиску по указанной таблице выходных значений <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=9/?k=10"> и <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=10/?k=10"> для заданной на входе сумматора комбинации <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=6/?k=10">, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=7/?k=10">, <img align="absmiddle" src="/?frm/?doc=MPSU/MPSU_1_11.mod/?n=8/?k=10">.</div>
+<a name="T1083090817"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Команда</a> — указание микропроцессору выполнить некоторое действие. Команда должна включать информацию об <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операндах</a> и описание самой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции,</a> которую необходимо выполнить. Структура команды получила название "формат команды" (рис.&nbsp;4).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_11.mod/?n=4"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;4.&nbsp;&nbsp;</div></div>
+<a name="T717333618"></a>
+<div>Так как описание операции может быть достаточно громоздким, нецелесообразно иметь его непосредственно в составе команды. Учитывая, что каждый микропроцессор способен выполнить ограниченное количество операций, каждой операции может быть присвоен числовой код — <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">код операции</a> (КОП). В самой команде при этом можно указывать только этот код, который будет характеризовать операцию (рис.&nbsp;5).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_11.mod/?n=5"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;5.&nbsp;&nbsp;</div></div>
+<a name="T668398066"></a>
+<div>В составе микропроцессора необходимо иметь блок, который по коду операции будет определять собственно ее описание — последовательность элементарных действий, которые должны быть выполнены. Такой блок называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">дешифратором команд</a> и входит в состав устройства управления микропроцессора (рис.&nbsp;6).</div>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_11.mod/?n=6"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;6.&nbsp;&nbsp;</div></div>
+<div>Дешифратор команд можно представить в виде таблицы из двух столбцов, в одном из них — код операции, в другом – ее описание. Получив очередную команду, блок управления обращается к дешифратору команд, передает ему код операции и получает описание операции в виде последовательности элементарных действий, которые затем выполняются.</div>
+<a name="T1413363038"></a>
+<div>Вся совокупность команд, которая может выполняться <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессором</a>, называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">системой команд</a>. В систему команд входит ограниченное число команд. Естественно, все они должны быть представлены в дешифраторе команд — микропроцессор не может выполнить команду, код которой неизвестен дешифратору.</div>
+<a name="T164539181"></a>
+<a name="T164542854"></a>
+<div>Таким образом, преобразование, представленное на рис.&nbsp;1 представляет собой преобразование программы, написанной на языке программирования, в последовательность команд микропроцессора. Оно называется <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">трансляцией</a> и выполняется специальной программой — <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">транслятором</a>. Трансляторы подразделяются на <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компиляторы</a> (преобразуют сразу всю программу) и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">интерпретаторы</a> (выполняют построчное преобразование и исполнение программы).</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-31/">← Оглавление</a>
         <a href="/rk6-edu/course-31/mod-19.html">‹ Предыдущий</a>

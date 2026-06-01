@@ -23,7 +23,30 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-4/mod-14.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Форматирование Web-страниц</a>
+</div>
+<a name="T988421902"></a>
+<a name="T1123819543"></a>
+<div>Под <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">форматированием</a> в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языках разметки</a> понимают указание в документе сведений, необходимых для его визуализации. Форматирование определяет вид документа, получаемый в устройстве вывода (обычно на экране дисплея)</div>
+<a name="T299401933"></a>
+<a name="T412171630"></a>
+<a name="T87217"></a>
+<div>Средствами форматирования в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Web-технологиях</a> являются каскадные таблицы стилей и языки форматирования. Специально разработанный для <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML</a> язык форматирования <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">XSL</a> (eXtensible Stylesheet Language) предоставляет более богатые возможности форматирования по сравнению с каскадными таблицами стилей <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">CSS</a>.</div>
+<a name="T916043104"></a>
+<div>Указания по форматированию, выраженные средствами языка XSL, составляют XSL-таблицу, с помощью которой <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-документ</a> преобразуется в HTML-страницу, отображаемую <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">браузером</a>. Использование XSL обеспечивает ряд преимуществ по сравнению с применением CSS, поскольку появляется возможность сортировать и фильтровать элементы документа при его выводе на экран. Кроме того, изменяя XSL-таблицу, можно один и тот же документ изображать по-разному в соответствии с потребностями конкретной ситуации.</div>
+<a name="T108051180"></a>
+<div>В XSL шаблоны, по которым браузер определяет отображение элементов документа на экране, обрамляются выделенными для этого тегами, например, <span class="eOperator">&lt;xsl:template&gt;</span> и <span class="eOperator">&lt;/xsl:template&gt;</span>. Шаблоны содержат правила, в которых указываются типы XML-элементов, к которым правило относится, и задаются инструкции отображения, например, аналогичные принятым в <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языке HTML</a>. Шаблон может относиться ко всему XML-документу или к его части. В первом случае в теге <span class="eOperator">&lt;xsl:template&gt;</span> указывается атрибут match со значением "/": <span class="eOperator">&lt;xsl:template match="/"&gt;</span>. Во втором случае значением атрибута match будет имя типа соответствующего XML-элемента.</div>
+<div>В шаблонах можно использовать как HTML-элементы, так и XSL-элементы. Последние имеют вид</div>
+<pre class="eListing">&lt;xsl:имя_xsl_элемента имя_параметра="значение_параметра"/&gt;
+</pre>
+<div>Например, значениями параметра с именем select могут быть типы отображаемых XML-элементов. В качестве имен XSL-элементов используются value-of (выбор для отображения текущего XML-элемента, тип которого указан в параметре select), for-each (команда отображения всех XML-элементов, тип которых указан в параметре select) и некоторые другие. Нужно отметить, что для сортировки XML-элементов используется параметр order-by, указываемый в XSL-теге <span class="eOperator">&lt;xsl:for-each&gt;</span>.</div>
+<div>Таблица стилей помещается в отдельный файл, ссылка на который обычно включается в заголовок XML-документа и имеет вид:</div>
+<pre class="eListing">&lt;?xml-stylesheet type="text/xsl" href=путь_к_файлу?&gt;
+</pre>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-4/">← Оглавление</a>
         <a href="/rk6-edu/course-4/mod-12.html">‹ Предыдущий</a>

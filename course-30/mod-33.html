@@ -23,7 +23,139 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-30/mod-34.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Поразрядная сортировка</a>
+</div>
+<br>
+<div>Поразрядный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">метод</a> <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> обладает следующими особенностями:</div>
+<br>
+<div>Во-первых, данный метод совсем не использует сравнений сортируемых элементов.</div>
+<div>Во-вторых, <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключ</a>, по которому происходит сортировка, необходимо разделить на части, разряды ключа. Например, слово можно разделить по буквам, число - по цифрам... </div>
+<div>До сортировки необходимо знать два параметра: <span style="font-weight:bold; ">k и m</span>, где </div>
+<br>
+<div>k - количество разрядов в самом длинном ключе</div>
+<div>m - разрядность данных: количество возможных значений разряда ключа</div>
+<br>
+<div>При сортировке русских слов m = 33, так как буква может принимать не более 33 значений. Если в самом длинном слове 10 букв, k = 10.</div>
+<div>Аналогично, для для шестнадцатеричных чисел m=16, если в качестве разряда брать цифру, и m=256, если использовать побайтовое деление.</div>
+<div>Эти параметры нельзя изменять в процессе работы <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a>.</div>
+<br>
+<div class="eSubTitle">Поразрядная сортировка беззнаковых целых чисел</div>
+<br>
+<div>На хранение каждого из базовых типов выделяется строго определенное количество байт. Как правило, распределение такое:</div>
+<div>unsigned char- 1 байт,</div>
+<div>unsigned short int - 2 байта, </div>
+<div>unsigned long int- 4 байта.</div>
+<a name="T2078518894"></a>
+<div>При этом большинство <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a> использует обратный порядок записи: от младшего байта к старшему. Так число типа short int i = 669110 = 0x1A23 непосредственно в <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">памяти</a> хранится так:</div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.10.mod/?n=1"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
+<br>
+<div>Если это число имеет тип long int, то под него выделяется 4 байта: long int i = 669110 = 0x00001A23. </div>
+<br>
+<div class="eImage">
+<table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
+<tbody><tr><td><img src="/?img/?doc=PO_CAD/13.10.mod/?n=2"></td></tr></tbody></table>
+<div class="eImageTxt">Рис.&nbsp;2.&nbsp;&nbsp;</div></div>
+<br>
+<div>В конце расположены ведущие нули. Таким образом, необходимо провести сортировку от начала числа к концу. Каждый байт может принимать в общем случае 256 значений: m=256.</div>
+<br>
+<pre class="eListing">// Создать счетчики.
+// data-сортируемый массив, counters-массив для счетчиков, N-число элементов в data
+template&lt;class T&gt;
+void createCounters(T *data, long *counters, long N) {
+    // i-й массив count расположен, начиная с адреса counters+256*i
+memset( counters, 0, 256*sizeof(T)*sizeof(long) ); 
+uchar *bp = (uchar*)data;
+uchar *dataEnd = (uchar*)(data + N);
+ushort i;
+while ( bp != dataEnd ) {
+// увеличиваем количество байт со значением *bp
+// i - текущий массив счетчиков
+for (i=0; i&lt;sizeof(T);i++)
+counters[256*i + *bp++]++;
+}
+}
+// Функция radixPass принимает в качестве параметров
+// номер байта Offset,
+// число элементов N, 
+// исходный массив source, 
+// массив dest, куда будут записываться числа, отсортированные по байту Offset
+// массив счетчиков count, соответствующий текущему проходу.
+template&lt;class T&gt;
+void radixPass (short Offset, long N, T *source, T *dest, long *count) {
+    // временные переменные
+T *sp;
+long s, c, i, *cp;
+uchar *bp;
+    // шаг 3
+s = 0; // временная переменная, хранящая сумму на данный момент
+cp = count;
+for (i = 256; i &gt; 0; --i, ++cp) {
+c = *cp;
+*cp = s;
+s += c;
+}
+// шаг 4
+bp = (uchar *)source + Offset;
+sp = source;
+for (i = N; i &gt; 0; --i, bp += sizeof(T) , ++sp) {
+cp = count + *bp;
+dest[*cp] = *sp;
+++(*cp);
+}
+}
+</pre>
+<br>
+<div>Процедура сортировки заключается в осуществлении sizeof(T) проходов по направлению от младшего байта к старшему.</div>
+<div> </div>
+<pre class="eListing">// сортируется массив in из N элементов
+// T - любой беззнаковый целый тип
+template&lt;class T&gt;
+void radixSort (T* &amp;in, long N) {
+T *out = new T[N];
+long *counters = new long[sizeof(T)*256], *count;
+createCounters(in, counters, N);
+for (ushort i=0; i&lt;sizeof(T); i++) {
+count = counters + 256*i;         // count - массив счетчиков для i-го разряда
+//f ( count[0] == N ) continue;    // (*** оптимизация)
+radixPass (i, N, in, out, count); // после каждого шага входной и 
+swap(in, out);                    // выходной массивы меняются местами
+}
+                          // по окончании проходов
+delete out;           // вся информация остается во входном массиве.
+delete counters;
+}
+</pre>
+<br>
+<a name="T1992766606"></a>
+<div>Обратим внимание, что если число проходов нечетное(например, T=unsigned char), то из-за <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">перестановки</a> swap() реально уничтожается исходный <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массив</a>, а указатель in приобретает адрес out. Об этом следует помнить, используя указатели на сортируемый массив во внешней программе.</div>
+<div>Такая организация процедуры также является прототипом для сортировки строк: достаточно сделать проходы radixPass от последней буквы к первой. </div>
+<br>
+<div class="eSubTitle">Эффективность поразрядной сортировки</div>
+<br>
+<div>Рост быстрой сортировки мы уже знаем: O(nlogn). Судя по оценке, поразрядная сортировка растет линейным образом по n, так как k,m - константы. Также она растет линейным образом по k - при увеличении длины типа(количества разрядов) соответственно возрастает число проходов. Однако, в последний пункт реальные условия вносят свои коррективы. </div>
+<div>Дело в том, что основной цикл сортировки по i-му байту состоит в движении указателя uchar* bp шагами sizeof(T) по массиву для получения очередного разряда. Когда T=char, шаг равен 1, T=short - шаг равен 2, T=long - шаг равен 4... Чем больше размер типа, тем менее последовательный доступ к памяти осуществляется, а это весьма существенно для скорости работы. Поэтому реальное время возрастает чуть быстрее, нежели теоретическое.</div>
+<div>Кроме того, поразрядная сортировка уже по своей сути неинтересна для малых массивов. Каждый проход содержит минимум 256 <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">итераций</a>, поэтому при небольших n общее время выполнения (n+m) определяется константой m=256. </div>
+<div>Поведение неестественно, так как проходы выполняются полностью, вне зависимости от исходного состояния массива. Поразрядная сортировка является устойчивой.</div>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-30/">← Оглавление</a>
         <a href="/rk6-edu/course-30/mod-32.html">‹ Предыдущий</a>

@@ -23,7 +23,41 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-26/mod-96.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Функция localtime</a>
+</div>
+<pre class="eListing">#include  &lt;time.h&gt;
+struct   tm *localtime(const time_t  *time);
+</pre>
+<a name="T1328539162"></a>
+<a name="T1782956174"></a>
+<div><a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция localtime</a>() возвращает указатель на структуру типа <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">tm</a>, содержащую время в разделенной на компоненты форме. Время представлено как местное. Указатель time обычно получают с помощью функции time().</div>
+<div>Память для структуры, в которой localtime() сохраняет разделенное на компоненты время, выделяется <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">статически</a>. Поэтому эта структура перезаписывается при каждом вызове функции. Для сохранения содержания структуры, ее надо скопировать в какую-нибудь другую область памяти.</div>
+<div class="auto">Пример 1</div>
+<div class="eExample"><div>Эта программа печатает местное время и координированное всемирное время системы:</div>
+</div>
+<pre class="eListing">#include &lt;time.h&gt;
+#include &lt;stdio.h&gt;
+/* Печатать местное и координированное всемирное (UTC) время. */
+int main(void)
+{
+struct tm * local;
+time_t t;
+t - time(NULL) ;
+local = localtime(&amp;t);
+printf("Местное время и дата: %s\n", asctime(local));
+local = gmtime(&amp;t);
+printf("Координированное всемирное время (UTC) и дата: %s\n", asctime(local));
+return 0;
+}
+</pre>
+<a name="T1214678477"></a>
+<a name="T1198290317"></a>
+<a name="T1064711968"></a>
+<div>При этом используются зависимые <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции gmtime</a>(), <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">time</a>() и <a href="#" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">asctime</a>().</div>
+</div>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-26/">← Оглавление</a>
         <a href="/rk6-edu/course-26/mod-94.html">‹ Предыдущий</a>

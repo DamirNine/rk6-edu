@@ -23,7 +23,260 @@
         <span class="spacer"></span>
         <a href="/rk6-edu/course-29/mod-64.html">Следующий ›</a>
       </nav>
-<main><div class="dModul"></div></main>
+<main><div class="dModul">
+<div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Пример использования</a>
+</div>
+<div>В этом разделе приводится пример использования yacc, в котором применяются развитые средства описания грамматики, объясненные в предыдущих разделах. Пример программы-калькулятора модифицирован таким образом, чтобы добавить интервальную арифметику с плавающей точкой. Калькулятор воспринимает константы с плавающей точкой, все операции и допускает 26 переменных (от a до z). Более того, можно задавать интервалы в виде (x,y), где x меньше или равен y. Допустимо использование 26 интервальных переменных от A до Z.  Операции присваивания значений не возвращают и не выводят, результат вычисления выражений выводится.</div>
+<div>В этом примере используются некоторые интересные особенности yacc и языка С. Интервалы представлены в виде структуры, состоящей из левого и правого значений, хранящихся как число с плавающей точкой. Этой структуре присвоено имя типа INTERVAL.  Стек значений yacc также может содержать и плавающие и целые числа. Заметьте, что вся стратегия построена на возможности языка Си выполнять присваивание структур и объединений. Фактически, большинство действий вызывают функции, возвращающие структуры. Обратите внимание и на использование YYERROR для обработки ошибок: деление на интервал, содержащий 0, или с неверным порядком границ. Механизм восстановления после ошибок отбрасывает всю ошибочную строку.</div>
+<div>В дополнение к смешанным типам в стеке значений эта грамматика демонстрирует интересную синтаксическую конструкцию для отслеживания типов в промежуточных вычислениях. Заметьте, что скалярная величина может автоматически преобразовываться в интервал, если того требует контекст. Это приводит к большому числу конфликтов при обработке: 18 типа свдиг-свертка и 26 типа сверткасвертка. Эта проблема иллюстрируется следующими строками:</div>
+<br>
+<pre class="eListing">      2.5+(3.5-4.)
+      2.5+(3.5,4.)
+</pre>
+<br>
+<div>Заметьте, что 2.5 должно использоваться во второй строке в интервальном выражении, но этот факт обнаруживается только при чтении символа `,'. К этому моменту обработка 2.5 закончена и распознаватель не может вернуться назад. Обобщая, можно сказать, что существует необходимость опережающего просмотра на неизвестное число лексем для принятия решения о переводе скаляра в интервал. Проблема еще более осложняется наличием двух правил для каждой бинарной операции: одного, когда левый операнд скаляр, и одного, когда левый операнд интервал. Во второй строке правый операнд интервал, поэтому преобразование будет выполняться автоматически. Однако, могут существовать и другие случаи, в которых преобразования могут и не выполняться, что ведет к конфликтам. Они разрешаются путем перечисления правил, возвращающих скаляры, первыми. Таким образом, конфликты разрешаются сохранением значения скалярных правил как скаляра, пока не понадобится явное преобразование его в интервал. Этот способ весьма поучителен, но не универсален. При наличии большого количества типов выражений число правил, а с ними и число конфликтов, значительно возрастают. Поэтому более целесообразно при практическом применении считать информацию о типе частю значения, а не грамматики.</div>
+<div>И наконец, несколько слов о лексическом анализе. Единственной необычной особенностью служит обработка плавающих констант. Для преобразования строки в константу двойной точности используется библиотечная функция atof(S).</div>
+<a name="T895398568"></a>
+<div>Если лексический анализатор обнаруживает ошибку, он возвращает <a href="#" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">лексему</a>, недопустимую в грамматике, что ведет к возникновению синтаксической ошибки и действиям по восстановлению.</div>
+<br>
+<pre class="eListing">%{
+#include&lt;stdio.h&gt;
+#include&lt;ctype.h&gt;
+typedef struct interval { double lo, hi;} INTERVAL;
+          INTERVAL vmul(), vdiv();
+          double atof();
+          double dreg[ 26 ]; 
+          INTERVAL vreg[ 26 ];
+%}
+%start  lines
+%union  {
+int ival;
+double dval;
+INTERVAL vval;
+        }
+%token &lt;ival&gt; DREG VREG      /*  indices  into  dreg,  vreg  arrays  */
+%token &lt;dval&gt; CONST          /*  floating  point  constant  */
+%type &lt;dval&gt; dexp            /*  expression  */
+%type &lt;vval&gt; vexp            /*  interval  expression  */
+               /*  precedence  information  about  the  operators  */
+%left '+'  '-'
+%left '*'  '/'
+%left UMINUS            /*  precedence  for  unary  minus  */
+%%
+
+lines :     /*  empty  */
+            |      lines  line
+            ;
+line  :     dexp  '\n'
+                     { printf( "%15.8f\n", $1 );}
+            |      vexp  '\n'
+                     { printf("(%15.8f,%15.8f)\n",$1.lo,$1.hi);}
+            |      DREG  '='  dexp  '\n'
+                     { dreg[$1] = $3;}
+            |      VREG  '='  vexp  '\n'
+                     { vreg[$1] = $3;}
+            |      error  '\n'
+                     { yyerrok;}
+            ;
+dexp  :     CONST
+            |      DREG
+                     { $$ = dreg[$1];}
+            |      dexp  '+'  dexp
+                     { $$ = $1 + $3;}
+            |      dexp  '-'  dexp
+                     { $$ = $1 - $3;}
+            |      dexp  '*'  dexp
+                     { $$ = $1 * $3;}
+            |      dexp  '/'  dexp
+                     { $$ = $1 / $3;}
+            |      '-' dexp     %prec  UMINUS
+                     { $$ = - $2;}
+            |      '('  dexp  ')'
+                     { $$ = $2;}
+            ;
+vexp  :     dexp
+                     { $$.hi = $$.lo = $1;}
+            |      '('  dexp  ','  dexp  ')'
+                     {
+                       $$.lo = $2;
+                       $$.hi = $4;
+                       if( $$.lo &gt; $$.hi ){
+                         printf( "interval out of order\n" ); YYERROR;
+                       }
+                     }
+            |      VREG
+                     { $$ = vreg[$1];}
+            |      vexp  '+'  vexp
+                     { $$.hi = $1.hi + $3.hi;
+                       $$.lo = $1.lo + $3.lo; }
+            |      dexp  '+'  vexp
+                     { $$.hi = $1 + $3.hi;
+                       $$.lo = $1 + $3.lo;    }
+            |      vexp  '-'  vexp
+                     { $$.hi = $1.hi - $3.lo;
+                       $$.lo = $1.lo - $3.hi; }
+            |      dexp  '-'  vexp
+                     { $$.hi = $1 - $3.lo;
+                       $$.lo = $1 - $3.hi;    }
+            |      vexp  '*'  vexp
+                     { $$ = vmul( $1.lo, $1.hi, $3 );}
+            |      dexp  '*'  vexp
+                     { $$ = vmul( $1, $1, $3 );}
+            |      vexp  '/'  vexp
+                     { if( dcheck( $3 ) )  YYERROR;
+                       $$ = vdiv( $1.lo,  $1.hi, $3 );}
+            |      dexp  '/'  vexp
+                     { if( dcheck( $3 ) )  YYERROR;
+                       $$ = vdiv( $1, $1, $3 );}
+            |      '-'  vexp     %prec  UMINUS 
+                     { $$.hi = -$2.lo;  $$.lo = -$2.hi;}
+            |      '('  vexp  ')'
+                     { $$ = $2;}
+            ;
+%%
+#define BSZ 50     /*  buffer  size  for  floating  point  numbers  */
+                 /*  lexical  analysis  */
+yylex(){
+         register c;
+         while( (c = getchar()) == ' ' ){
+         /*  skip  over  blanks  */  }
+         if( isupper( c ) ){
+           yylval.ival = c - 'A';
+           return( VREG );
+         }
+
+         if( islower( c ) ){
+           yylval.ival = c - 'a'; return( DREG );
+         }
+
+         if( isdigit( c ) || c=='.' ){
+            /*  gobble  up  digits,  points,  exponents  */
+            char buf[BSZ+1], *cp = buf;
+            int dot = 0, exp = 0;
+            for( ; (cp-buf)&lt;BSZ ; ++cp,c=getchar() ){
+                *cp = c;
+                if( isdigit( c ) )  continue;
+                if( c == '.' ){
+                     if( dot++ || exp )
+                        return ( '.' );
+                     /* will cause syntax error  */ 
+                     continue;
+                 }
+                if( c == 'e' ){
+                     if( exp++ )
+                        return( 'e' ); 
+                      /* will cause syntax error */ 
+                     continue;
+                 }
+                /* end of number */
+                break;
+          }
+         *cp = '\0';
+         if( (cp-buf) &gt;= BSZ )
+            printf( "constant too long: truncated\n" );
+         else  ungetc( c, stdin );
+          /* push back last char read */
+         yylval.dval = atof( buf );
+         return ( CONST );
+        }
+ return( c );
+}
+
+INTERVAL  hilo(a,b,c,d)
+double a,b,c,d; { 
+/*  returns the smallest interval containing a, b, c, and d used by *, / routines  */
+INTERVAL  v;
+if( a &gt; b )  { v.hi = a; v.lo = b; }  else  { v.hi = b; v.lo = a; }
+if( c &gt; d )  {
+                if( c &gt; v.hi )  v.hi = c; if( d &lt; v.lo )  v.lo = d; }
+else  {
+        if( d &gt; v.hi )  v.hi = d; if( c&lt; v.lo )  v.lo = c; }
+return( v );
+}
+
+INTERVAL vmul( a, b, v )
+double a, b; INTERVAL v;  {
+                            return(hilo(a*v.hi, a*v.lo, b*v.hi, b*v.lo));
+}
+
+dcheck( v ) INTERVAL v; {
+         if( v.hi &gt;= 0. &amp;&amp; v.lo &lt;= 0. ) {
+             printf( "divisor interval contains 0.\n" ); return( 1 );
+             }
+         return( 0 );
+         }
+
+INTERVAL vdiv( a, b, v )
+double a, b; INTERVAL v; {
+return( hilo( a/v.hi, a/v.lo, b/v.hi, b/v.lo ) ); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+<hr width="90%">
+<noindex>
+<center><table border="0" cellspacing="0" cellpadding="0"><tbody><tr align="center" valign="top">
+<td class="menu"><a class="menuLnk" href="/"><img border="0" src=""><br>Главная страница</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Оглавление курса</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Предыдущий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Следующий модуль</a></td>
+<td class="menu"><a class="menuLnk" href="javascript:termSearch()"><img border="0" src=""><br>Поиск терминов</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#" target="FPopUp"><img border="0" src=""><br>Настройки</a></td><td>
+</td><td class="menu"><a class="menuLnk" href="#"><img border="0" src=""><br>Версия для печати</a></td><td>
+</td></tr></tbody></table></center>
+</noindex>
+</div> 
+</body></html></div></main>
 <nav class="module-nav module-nav-bottom">
         <a href="/rk6-edu/course-29/">← Оглавление</a>
         <a href="/rk6-edu/course-29/mod-62.html">‹ Предыдущий</a>
