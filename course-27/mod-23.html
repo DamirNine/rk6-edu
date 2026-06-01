@@ -27,24 +27,24 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Виртуальное наследование</a>
 </div>
 <a name="T924560900"></a>
-<div>При <a class="term" data-term="множественном наследовании" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">множественном наследовании</a> базовый <a class="term" data-term="класс" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класс</a> не может быть задан в <a class="term" data-term="производном классе" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">производном классе</a> более одного раза. На практике возникает ситуация, когда производный класс будет содержать несколько копий одного <a class="term" data-term="базового класса" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">базового класса</a>. Чтобы избежать многократного включения в производный класс компонент базового класса, используется <a class="term" data-term="виртуальное наследование" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">виртуальное наследование</a>. </div>
+<div>При <a class="term" data-term="множественном наследовании" href="javascript:void(0)">множественном наследовании</a> базовый <a class="term" data-term="класс" href="javascript:void(0)">класс</a> не может быть задан в <a class="term" data-term="производном классе" href="javascript:void(0)">производном классе</a> более одного раза. На практике возникает ситуация, когда производный класс будет содержать несколько копий одного <a class="term" data-term="базового класса" href="javascript:void(0)">базового класса</a>. Чтобы избежать многократного включения в производный класс компонент базового класса, используется <a class="term" data-term="виртуальное наследование" href="javascript:void(0)">виртуальное наследование</a>. </div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=VU/010b.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
-<div>При виртуальном <a class="term" data-term="наследовании" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">наследовании</a> производный класс описывается так:</div>
+<div>При виртуальном <a class="term" data-term="наследовании" href="javascript:void(0)">наследовании</a> производный класс описывается так:</div>
 <pre class="eListing">сlass &lt;имя производного класса&gt;:
 virtual &lt;вид наследования&gt; &lt;имя базового класса&gt;
 {...};
 </pre>
-<div>Включение в производный <a class="term" data-term="класс" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класс</a> полей <a class="term" data-term="базового класса" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">базового класса</a> осуществляется один раз, а их инициализация происходит в <a class="term" data-term="производном классе" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">производном классе</a>, который не является прямым потомком базового класса. Вызов <a class="term" data-term="конструкторов" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструкторов</a> при этом происходит в следующем порядке:</div>
+<div>Включение в производный <a class="term" data-term="класс" href="javascript:void(0)">класс</a> полей <a class="term" data-term="базового класса" href="javascript:void(0)">базового класса</a> осуществляется один раз, а их инициализация происходит в <a class="term" data-term="производном классе" href="javascript:void(0)">производном классе</a>, который не является прямым потомком базового класса. Вызов <a class="term" data-term="конструкторов" href="javascript:void(0)">конструкторов</a> при этом происходит в следующем порядке:</div>
 <ul class="eList"><li>конструктор виртуально наследованного базового класса</li>
 <li>конструкторы базовых классов, в порядке их перечисления при объявлении</li>
 <li>конструкторы объектных полей</li>
 <li>конструктор производного класса</li>
 </ul>
-<div><a class="term" data-term="Деструкторы" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Деструкторы</a> вызываются в обратном порядке.</div>
-<div>Виртуально наследованный класс должен содержать <a class="term" data-term="конструктор" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">конструктор</a> без параметров. Он активизируется при выполнении конструкторов классов, являющихся прямыми потомками виртуально наследованного класса.</div>
+<div><a class="term" data-term="Деструкторы" href="javascript:void(0)">Деструкторы</a> вызываются в обратном порядке.</div>
+<div>Виртуально наследованный класс должен содержать <a class="term" data-term="конструктор" href="javascript:void(0)">конструктор</a> без параметров. Он активизируется при выполнении конструкторов классов, являющихся прямыми потомками виртуально наследованного класса.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">class fixed
 {

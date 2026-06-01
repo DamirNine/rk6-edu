@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Перегрузка унарных операций</a>
 </div>
 <a name="T421408058"></a>
-<div>Унарная <a class="term" data-term="операторная функция" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операторная функция</a> может быть определена как внутри, так и вне <a class="term" data-term="класса" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a>. <a class="term" data-term="Унарная функциональная операция" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Унарная функциональная операция</a>, определенная внутри класса должна быть представлена с помощью нестатического метода. При этом операндом является вызывающий её объект.</div>
+<div>Унарная <a class="term" data-term="операторная функция" href="javascript:void(0)">операторная функция</a> может быть определена как внутри, так и вне <a class="term" data-term="класса" href="javascript:void(0)">класса</a>. <a class="term" data-term="Унарная функциональная операция" href="javascript:void(0)">Унарная функциональная операция</a>, определенная внутри класса должна быть представлена с помощью нестатического метода. При этом операндом является вызывающий её объект.</div>
 <br>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">class monstr
@@ -60,7 +60,7 @@ return M;
 </pre>
 <br>
 </div>
-<div>Если не описывать функцию внутри класса как <a class="term" data-term="дружественную функцию" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дружественную функцию</a>, нужно учитывать доступность полей. В данном примере поле health не доступно извне, т.к. описано как <a class="term" data-term="private" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">private</a>. Для его изменения следует использовать специальные методы. Введем в класс monstr специальный метод change_health, который будет позволять менять значение health:</div>
+<div>Если не описывать функцию внутри класса как <a class="term" data-term="дружественную функцию" href="javascript:void(0)">дружественную функцию</a>, нужно учитывать доступность полей. В данном примере поле health не доступно извне, т.к. описано как <a class="term" data-term="private" href="javascript:void(0)">private</a>. Для его изменения следует использовать специальные методы. Введем в класс monstr специальный метод change_health, который будет позволять менять значение health:</div>
 <div class="auto">Пример 3</div>
 <div class="eExample"><br>
 <pre class="eListing">void change_health( int he ) {health =he;} 

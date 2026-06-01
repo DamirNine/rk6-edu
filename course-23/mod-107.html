@@ -27,17 +27,17 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Макросы</a>
 </div>
 <a name="T1992557309"></a>
-<div><a class="term" data-term="Макрос" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Макрос</a> — это короткая процедура, у которой могут быть аргументы.</div>
+<div><a class="term" data-term="Макрос" href="javascript:void(0)">Макрос</a> — это короткая процедура, у которой могут быть аргументы.</div>
 <a name="T575090800"></a>
-<div>Макрос определяется с помощью <a class="term" data-term="директивы препроцессора #define" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директивы препроцессора #define</a>.</div>
+<div>Макрос определяется с помощью <a class="term" data-term="директивы препроцессора #define" href="javascript:void(0)">директивы препроцессора #define</a>.</div>
 <a name="T1329324165"></a>
-<div>Определение макроса похоже на определение <a class="term" data-term="поименованной константы" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поименованной константы</a>.</div>
+<div>Определение макроса похоже на определение <a class="term" data-term="поименованной константы" href="javascript:void(0)">поименованной константы</a>.</div>
 <div><span class="eOperator">#define идентификатор(аргумент[,аргумент]...) строка-шаблон</span></div>
 <a name="T256200320"></a>
 <a name="T396025840"></a>
 <a name="T748507610"></a>
 <a name="T798225181"></a>
-<div>В скобках непосредственно после <a class="term" data-term="идентификатора" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">идентификатора</a> могут быть указаны имена аргументов. Между идентификатором и символом <span class="eOperator">(</span> не должно быть <a class="term" data-term="символов промежутка" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">символов промежутка</a>. При расширении макроса <a class="term" data-term="препроцессор" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">препроцессор</a> осуществляет вставку строк. Препроцессор ничего не знает о <a class="term" data-term="синтаксисе языка" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">синтаксисе языка</a> Си или логике программы. Поэтому такие подстановки могут быть источниками синтаксических ошибок.</div>
+<div>В скобках непосредственно после <a class="term" data-term="идентификатора" href="javascript:void(0)">идентификатора</a> могут быть указаны имена аргументов. Между идентификатором и символом <span class="eOperator">(</span> не должно быть <a class="term" data-term="символов промежутка" href="javascript:void(0)">символов промежутка</a>. При расширении макроса <a class="term" data-term="препроцессор" href="javascript:void(0)">препроцессор</a> осуществляет вставку строк. Препроцессор ничего не знает о <a class="term" data-term="синтаксисе языка" href="javascript:void(0)">синтаксисе языка</a> Си или логике программы. Поэтому такие подстановки могут быть источниками синтаксических ошибок.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">#define SQUARE(X) ((X)*(X))
 #define MAX(A,B) ((A)&gt;(B)?(A):(B))
@@ -64,9 +64,9 @@ max = 100
 <div><span class="eOperator">int2 = int1 + 1 * int1 + 1;</span></div>
 <div>Для просмотра результата препроцессирования надо использовать команду компиляции <span class="eOperator">cc</span> с опцией <span class="eOperator">-E</span>.</div>
 <a name="T645587003"></a>
-<div>Макрос может использовать другие ранее определенные макросы. Многие препроцессоры Си, включая препроцессор системы <a class="term" data-term="ОС UNIX" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ОС UNIX</a>, не допускают использования рекурсивных макросов.</div>
+<div>Макрос может использовать другие ранее определенные макросы. Многие препроцессоры Си, включая препроцессор системы <a class="term" data-term="ОС UNIX" href="javascript:void(0)">ОС UNIX</a>, не допускают использования рекурсивных макросов.</div>
 <a name="T828724782"></a>
-<div>Иногда удобно определять макрос так, чтобы он был <a class="term" data-term="блоком операторов" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">блоком операторов</a>.</div>
+<div>Иногда удобно определять макрос так, чтобы он был <a class="term" data-term="блоком операторов" href="javascript:void(0)">блоком операторов</a>.</div>
 <div>Одно из преимуществ блока — возможность определить локальные переменные. Если только макрос содержит более одного оператора, эти операторы должны быть включены в блок, иначе возможны неприятности.</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><pre class="eListing">/* Эти операторы следует заключить в блок */
@@ -83,12 +83,12 @@ void f(void)
 </pre>
 </div>
 <a name="T750557117"></a>
-<div>Хотя этот фрагмент программы и выглядит корректно, однако после расширения препроцессором компилятор обнаружит ошибку. Синтаксис <a class="term" data-term="оператора if-else" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператора if-else</a> требует единственного оператора между <span class="eOperator">if </span>и <span class="eOperator">else</span>. В такой ситуации использование блока в макросе устранит проблему.</div>
+<div>Хотя этот фрагмент программы и выглядит корректно, однако после расширения препроцессором компилятор обнаружит ошибку. Синтаксис <a class="term" data-term="оператора if-else" href="javascript:void(0)">оператора if-else</a> требует единственного оператора между <span class="eOperator">if </span>и <span class="eOperator">else</span>. В такой ситуации использование блока в макросе устранит проблему.</div>
 <a name="T2026410311"></a>
-<div><a class="term" data-term="Стандарт ANSI языка Си" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Стандарт ANSI языка Си</a> запрещает макроподстановки в строковых литералах.</div>
+<div><a class="term" data-term="Стандарт ANSI языка Си" href="javascript:void(0)">Стандарт ANSI языка Си</a> запрещает макроподстановки в строковых литералах.</div>
 <div class="eSubTitle">Операция #</div>
 <a name="T443383196"></a>
-<div><a class="term" data-term="Операция #" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция #</a>- операция для создания строки из аргумента макроса.</div>
+<div><a class="term" data-term="Операция #" href="javascript:void(0)">Операция #</a>- операция для создания строки из аргумента макроса.</div>
 <div class="auto">Пример 3</div>
 <div class="eExample"><div>Определение макроса:</div>
 <div><span class="eOperator">#define string(x) #x</span></div>
@@ -121,7 +121,7 @@ num1: 30, num2: 90
 </div>
 <div class="eSubTitle">Операция ##</div>
 <a name="T859977223"></a>
-<div><a class="term" data-term="Операция ##" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Операция ##</a> — операция для объединения лексем в определении макросов в одну лексему .</div>
+<div><a class="term" data-term="Операция ##" href="javascript:void(0)">Операция ##</a> — операция для объединения лексем в определении макросов в одну лексему .</div>
 <div class="auto">Пример 5</div>
 <div class="eExample"><pre class="eListing">#define WheatBread 0
 #define RyeBread 1
@@ -145,12 +145,12 @@ Value of WhiteBread is 2
 <div class="eSubTitle">Сравнение функций и макросов</div>
 <a name="T696383489"></a>
 <a name="T1248933124"></a>
-<div>Большим преимуществом макросов является то, что они быстрее <a class="term" data-term="функций" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функций</a>. Потери времени при <a class="term" data-term="вызове функции" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызове функции</a> включают в себя время на сохранение <a class="term" data-term="аргументов" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументов</a> и регистров на <a class="term" data-term="стек (память)" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стеке</a> и восстановление их при возврате. При вызове макроса этого не происходит.</div>
+<div>Большим преимуществом макросов является то, что они быстрее <a class="term" data-term="функций" href="javascript:void(0)">функций</a>. Потери времени при <a class="term" data-term="вызове функции" href="javascript:void(0)">вызове функции</a> включают в себя время на сохранение <a class="term" data-term="аргументов" href="javascript:void(0)">аргументов</a> и регистров на <a class="term" data-term="стек (память)" href="javascript:void(0)">стеке</a> и восстановление их при возврате. При вызове макроса этого не происходит.</div>
 <div>Однако, если макрос используется много раз, исполняемая программа будет иметь больший размер, чем при использовании функций.</div>
 <a name="T1138660427"></a>
-<div>Преимуществом функций является возможность возвратить результат при помощи <a class="term" data-term="оператора возврата return" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">оператора return</a>. В макросе оператор <span class="eOperator">return</span> вызовет немедленный выход из функции, в которой вызван макрос.</div>
+<div>Преимуществом функций является возможность возвратить результат при помощи <a class="term" data-term="оператора возврата return" href="javascript:void(0)">оператора return</a>. В макросе оператор <span class="eOperator">return</span> вызовет немедленный выход из функции, в которой вызван макрос.</div>
 <a name="T2060402596"></a>
-<div>Кроме того, функции могут быть <a class="term" data-term="рекурсивная функция" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">рекурсивными</a>. Большая же часть препроцессоров Си (в том числе и в операционной системе UNIX) запрещают рекурсивные макросы.</div>
+<div>Кроме того, функции могут быть <a class="term" data-term="рекурсивная функция" href="javascript:void(0)">рекурсивными</a>. Большая же часть препроцессоров Си (в том числе и в операционной системе UNIX) запрещают рекурсивные макросы.</div>
 <div>К тому же макросы сложнее для отладки, чем функции. Отлаживая макрос, надо смотреть на результат работы препроцессора. Для этого в операционной системе UNIX можно воспользоваться следующими командами:</div>
 <div><span class="eOperator">$cc  -E -o  proc.i proc.c</span></div>
 <div><span class="eOperator">$cat proc.i</span></div>

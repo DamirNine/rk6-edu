@@ -28,13 +28,13 @@
 </div>
 <a name="T2125353086"></a>
 <a name="T1503632839"></a>
-<div><a class="term" data-term="Инициализация структуры" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Инициализация структуры</a> заключается в присваивании начальных значений элементам <a class="term" data-term="структуры" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">структуры</a>. Структуры могут быть проинициализированы при их объявлении.</div>
+<div><a class="term" data-term="Инициализация структуры" href="javascript:void(0)">Инициализация структуры</a> заключается в присваивании начальных значений элементам <a class="term" data-term="структуры" href="javascript:void(0)">структуры</a>. Структуры могут быть проинициализированы при их объявлении.</div>
 <a name="T519461911"></a>
 <a name="T176682325"></a>
 <a name="T1961386404"></a>
 <a name="T1043767464"></a>
 <a name="T1835217675"></a>
-<div> <a class="term" data-term="Инициализирующая запись" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Инициализирующая запись</a> - это заключенный в фигурные скобки список, элементы которого разделяются запятыми и являются <a class="term" data-term="константами" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">константами</a>. Любые неинициализированные элементы <a class="term" data-term="внешняя переменная" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">внешних</a> или <a class="term" data-term="статическая переменная" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">статических</a> структур по умолчанию равны 0. Значения неинициализированных элементов <a class="term" data-term="автоматическая переменная" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">автоматических</a> структур неопределены.</div>
+<div> <a class="term" data-term="Инициализирующая запись" href="javascript:void(0)">Инициализирующая запись</a> - это заключенный в фигурные скобки список, элементы которого разделяются запятыми и являются <a class="term" data-term="константами" href="javascript:void(0)">константами</a>. Любые неинициализированные элементы <a class="term" data-term="внешняя переменная" href="javascript:void(0)">внешних</a> или <a class="term" data-term="статическая переменная" href="javascript:void(0)">статических</a> структур по умолчанию равны 0. Значения неинициализированных элементов <a class="term" data-term="автоматическая переменная" href="javascript:void(0)">автоматических</a> структур неопределены.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">struct course {
               char name[30];
@@ -61,7 +61,7 @@ static struct mailinfo admin =
 </pre>
 </div>
 <a name="T541845194"></a>
-<div>В качестве признака окончания массива часто используется "нулевая" запись, поэтому зачастую используют циклы подобные прим.&nbsp;2. Цикл будет выполняться до тех пор, пока первый символ поля <span class="eOperator">name</span> структуры, на которую указывает <a class="term" data-term="указатель" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">указатель</a> <span class="eOperator">p</span>, не равен <span class="eOperator">'\0'</span>.</div>
+<div>В качестве признака окончания массива часто используется "нулевая" запись, поэтому зачастую используют циклы подобные прим.&nbsp;2. Цикл будет выполняться до тех пор, пока первый символ поля <span class="eOperator">name</span> структуры, на которую указывает <a class="term" data-term="указатель" href="javascript:void(0)">указатель</a> <span class="eOperator">p</span>, не равен <span class="eOperator">'\0'</span>.</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><pre class="eListing">for (p = proj_member; *p-&gt;name != '\0'; p++)
    printf ("%s %s \n", p-&gt;name, p-&gt;mail_addr);

@@ -29,37 +29,37 @@
 <br>
 <a name="T1727527532"></a>
 <a name="T2013011311"></a>
-<div>В потоковых <a class="term" data-term="классах" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">классах</a> наряду с операторами извлечения из <a class="term" data-term="потока" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потока</a> и включения в поток определены также методы для неформатированного чтения (<a class="term" data-term="неформатированного ввода" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">неформатированного ввода</a>) и записи в поток (<a class="term" data-term="неформатированного вывода" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">неформатированного вывода</a>). При этом преобразование данных не выполняется. </div>
+<div>В потоковых <a class="term" data-term="классах" href="javascript:void(0)">классах</a> наряду с операторами извлечения из <a class="term" data-term="потока" href="javascript:void(0)">потока</a> и включения в поток определены также методы для неформатированного чтения (<a class="term" data-term="неформатированного ввода" href="javascript:void(0)">неформатированного ввода</a>) и записи в поток (<a class="term" data-term="неформатированного вывода" href="javascript:void(0)">неформатированного вывода</a>). При этом преобразование данных не выполняется. </div>
 <br>
 <br>
-<div>Функции чтения, определенные в классе <a class="term" data-term="istream" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">istream</a>:</div>
+<div>Функции чтения, определенные в классе <a class="term" data-term="istream" href="javascript:void(0)">istream</a>:</div>
 <div><span class="eOperator">gcout</span> – возвращает количество символов, считанных с помощью последней функции неформатированного ввода.</div>
-<div><span class="eOperator">get()</span> – возвращает код извлеченного из <a class="term" data-term="потока" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потока</a> символа или <a class="term" data-term="EOF" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">EOF</a>.</div>
-<div><span class="eOperator">get(c)</span> – возвращает ссылку на <a class="term" data-term="поток" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поток</a>, из которого выполнялось чтение, и записывает извлеченный символ в c.</div>
+<div><span class="eOperator">get()</span> – возвращает код извлеченного из <a class="term" data-term="потока" href="javascript:void(0)">потока</a> символа или <a class="term" data-term="EOF" href="javascript:void(0)">EOF</a>.</div>
+<div><span class="eOperator">get(c)</span> – возвращает ссылку на <a class="term" data-term="поток" href="javascript:void(0)">поток</a>, из которого выполнялось чтение, и записывает извлеченный символ в c.</div>
 <div><span class="eOperator">get (buf, num, lim= </span>'\n’<span class="eOperator">)</span> – считывает num-1 символов или пока не встретится символ lim и копирует их в символьную строку buf, вместо символа lim в строку записывается признак конца строки. Символ lim остается в потоке. Возвращает ссылку на текущий поток.</div>
 <div><span class="eOperator">getline(buf, num, lim</span> = ‘\n’<span class="eOperator">)</span> – аналогична функции get(...) копирует в строку и символ lim.</div>
 <div><span class="eOperator">ignore(num = 1, lim = EOF)</span> – считывает и пропускает символы до тех пор, пока не будет прочитано num символов или не встретится разделитель, заданный параметром lim. Возвращает ссылку на текущий поток.</div>
 <br>
-<div><span class="eOperator">peek()</span> – возвращает следующий символ без удаления его из <a class="term" data-term="потока" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потока</a> или EOF, если достигнут конец файла</div>
+<div><span class="eOperator">peek()</span> – возвращает следующий символ без удаления его из <a class="term" data-term="потока" href="javascript:void(0)">потока</a> или EOF, если достигнут конец файла</div>
 <div><span class="eOperator">putback(c)</span> – помещает в поток символ с, который становится текущим при извлечении его из потока.</div>
-<div><span class="eOperator">read(buf, num)</span> – считывает num символов, или все символы до конца файла, если их меньше num соответственно в символьный массив buf и возвращает ссылку на текущий <a class="term" data-term="поток" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поток</a>.</div>
+<div><span class="eOperator">read(buf, num)</span> – считывает num символов, или все символы до конца файла, если их меньше num соответственно в символьный массив buf и возвращает ссылку на текущий <a class="term" data-term="поток" href="javascript:void(0)">поток</a>.</div>
 <div><span class="eOperator">readsome(buf, num)</span> – считывает num символов или все символы, если их меньше num в массив buf и возвращает количество символов.</div>
 <div><span class="eOperator">seekg (pos)</span> – устанавливает текущую позицию чтения в значение pos.</div>
 <div><span class="eOperator">seekq (offs, org)</span> – перемещает текущую позицию чтения на offs байтов, считая от одной из трех позиций, определенных вторым параметром (ios::cur – от текущей позиции, ios::end – от конца файла).</div>
-<div><span class="eOperator">tellq()</span> – возвращает текущую позицию чтения <a class="term" data-term="потока" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потока</a>.</div>
-<div><span class="eOperator">unget()</span> – помещает последний прочитанный символ в <a class="term" data-term="поток" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поток</a> и возвращает ссылку на текущий поток.</div>
+<div><span class="eOperator">tellq()</span> – возвращает текущую позицию чтения <a class="term" data-term="потока" href="javascript:void(0)">потока</a>.</div>
+<div><span class="eOperator">unget()</span> – помещает последний прочитанный символ в <a class="term" data-term="поток" href="javascript:void(0)">поток</a> и возвращает ссылку на текущий поток.</div>
 <br>
 <br>
-<div>В <a class="term" data-term="классе" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">классе</a> <a class="term" data-term="ostream" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ostream</a> определены аналогичные функции для <a class="term" data-term="неформатированного вывода" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">неформатированного вывода</a>.</div>
-<div><span class="eOperator">flush(c)</span> –  описывает содержание <a class="term" data-term="потока" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потока</a> выводя на физическое устройство.</div>
-<div><span class="eOperator">put(c)</span> – выводит в <a class="term" data-term="поток" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поток</a> символ с и возвращает ссылку на поток.</div>
+<div>В <a class="term" data-term="классе" href="javascript:void(0)">классе</a> <a class="term" data-term="ostream" href="javascript:void(0)">ostream</a> определены аналогичные функции для <a class="term" data-term="неформатированного вывода" href="javascript:void(0)">неформатированного вывода</a>.</div>
+<div><span class="eOperator">flush(c)</span> –  описывает содержание <a class="term" data-term="потока" href="javascript:void(0)">потока</a> выводя на физическое устройство.</div>
+<div><span class="eOperator">put(c)</span> – выводит в <a class="term" data-term="поток" href="javascript:void(0)">поток</a> символ с и возвращает ссылку на поток.</div>
 <div><span class="eOperator">seek(pos)</span> – устанавливает позицию записи в значение pos.</div>
 <div><span class="eOperator">seek(offs, org)</span> – перемещает текущую позицию записи на offs байтов, считая от одной из трех позиций, определенных вторым параметром (ios::beg, ios::cur, ios::end).</div>
-<div><span class="eOperator">tellq()</span> – возвращает текущую позицию записи <a class="term" data-term="потока" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потока</a>.</div>
-<div><span class="eOperator">write(buf, num)</span> – записывает в <a class="term" data-term="поток" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поток</a> num символов из массива buf и возвращает ссылку на поток.</div>
+<div><span class="eOperator">tellq()</span> – возвращает текущую позицию записи <a class="term" data-term="потока" href="javascript:void(0)">потока</a>.</div>
+<div><span class="eOperator">write(buf, num)</span> – записывает в <a class="term" data-term="поток" href="javascript:void(0)">поток</a> num символов из массива buf и возвращает ссылку на поток.</div>
 <br>
 <div class="auto">Пример 1</div>
-<div class="eExample"><div>Пример программы, считывающей строки из массива buf и возвращающей ссылку на <a class="term" data-term="поток" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поток</a>:</div>
+<div class="eExample"><div>Пример программы, считывающей строки из массива buf и возвращающей ссылку на <a class="term" data-term="поток" href="javascript:void(0)">поток</a>:</div>
 <br>
 <pre class="eListing">#include&lt;iostream.h&gt;
 int main()
@@ -178,7 +178,7 @@ return 0;
 </pre>
 </div>
 <br>
-<div>После выполнения функции символ-разделитель ‘/n’ остается во входном <a class="term" data-term="потоке" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потоке</a>, следовательно необходим вызов функции get для пропуска одного символа. Альтернативный способ – использование функции getline, которая извлекает символ-разделитель из потока</div>
+<div>После выполнения функции символ-разделитель ‘/n’ остается во входном <a class="term" data-term="потоке" href="javascript:void(0)">потоке</a>, следовательно необходим вызов функции get для пропуска одного символа. Альтернативный способ – использование функции getline, которая извлекает символ-разделитель из потока</div>
 </div>
 <hr width="90%">
 

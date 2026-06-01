@@ -29,7 +29,7 @@
 <br>
 <a name="T1218190476"></a>
 <a name="T25532232"></a>
-<div>При использовании <a class="term" data-term="библиотеки ввода-вывода" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">библиотеки ввода-вывода</a> необходимо помнить, что в <span style="font-weight:bold; ">C++</span> <a class="term" data-term="классы ввода-вывода" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">классы ввода-вывода</a> используют операции: включение в <a class="term" data-term="поток" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поток</a>, исключение из потока.  Эти операции используются только для стандартных типов данных. Поэтому, при разработке программ для определяемых пользователем типов полей класса и для классов целиком при выводе объектов этих классов операции включения/исключения должны переопределяться для каждого класса.</div>
+<div>При использовании <a class="term" data-term="библиотеки ввода-вывода" href="javascript:void(0)">библиотеки ввода-вывода</a> необходимо помнить, что в <span style="font-weight:bold; ">C++</span> <a class="term" data-term="классы ввода-вывода" href="javascript:void(0)">классы ввода-вывода</a> используют операции: включение в <a class="term" data-term="поток" href="javascript:void(0)">поток</a>, исключение из потока.  Эти операции используются только для стандартных типов данных. Поэтому, при разработке программ для определяемых пользователем типов полей класса и для классов целиком при выводе объектов этих классов операции включения/исключения должны переопределяться для каждого класса.</div>
 <div>Формат операций включения/исключения из потока:</div>
 <br>
 <pre class="eListing">ostream &amp;operator &lt;&lt; (ostream &amp;out, &lt;новый тип&gt; &lt;имя&gt;)
@@ -38,7 +38,7 @@ istream &amp;operator &gt;&gt; (istream &amp;in, &lt;новый тип&gt; &lt;&
 {&lt;тело функции оператора&gt;};
 </pre>
 <br>
-<div>Если операции включения/исключения используются для полей описания, как <a class="term" data-term="private" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">private</a> или <a class="term" data-term="protected" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">protected</a>, то эти операции должны описываться как <a class="term" data-term="дружественные" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">дружественные</a>.</div>
+<div>Если операции включения/исключения используются для полей описания, как <a class="term" data-term="private" href="javascript:void(0)">private</a> или <a class="term" data-term="protected" href="javascript:void(0)">protected</a>, то эти операции должны описываться как <a class="term" data-term="дружественные" href="javascript:void(0)">дружественные</a>.</div>
 <br>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">#include&lt;iostream.h&gt;

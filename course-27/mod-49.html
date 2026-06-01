@@ -28,9 +28,9 @@
 </div>
 <br>
 <a name="T2105839928"></a>
-<div>В потоковых классах <a class="term" data-term="форматирование данных" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">форматирование данных</a> можно осуществить тремя способами, а именно, с помощью:</div>
+<div>В потоковых классах <a class="term" data-term="форматирование данных" href="javascript:void(0)">форматирование данных</a> можно осуществить тремя способами, а именно, с помощью:</div>
 <ul class="eList"><li><span style="font-style:italic; ">флагов</span></li>
-<li><a class="term" data-term="манипуляторов" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">манипуляторов</a></li>
+<li><a class="term" data-term="манипуляторов" href="javascript:void(0)">манипуляторов</a></li>
 <li><span style="font-style:italic; ">форматирующих методов</span></li>
 </ul>
 <div class="eSubTitle">Форматирование данных с помощью флагов.</div>
@@ -51,29 +51,29 @@
 <tr><td class="eTable">scientific</td><td class="eTable">0x0800</td><td class="eTable">&nbsp;</td><td class="eTable">печатает веществ числа в форме мантиссы с порядком</td></tr>
 <tr><td class="eTable">fixed</td><td class="eTable">0x1000</td><td class="eTable">&nbsp;</td><td class="eTable">печатает вещественные числа в форме с фиксированной точкой, точность определяется полем precision</td></tr>
 <tr><td class="eTable">unitouf</td><td class="eTable">0x2000</td><td class="eTable">&nbsp;</td><td class="eTable">выгружает буферы всех потоков после каждого вывода</td></tr>
-<tr><td class="eTable">stdio</td><td class="eTable">0x4000</td><td class="eTable">&nbsp;</td><td class="eTable">выгружает буферы из потоков <a class="term" data-term="stdout" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">stdout</a> и <a class="term" data-term="stderr" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">stderr</a> после каждого вывода</td></tr>
+<tr><td class="eTable">stdio</td><td class="eTable">0x4000</td><td class="eTable">&nbsp;</td><td class="eTable">выгружает буферы из потоков <a class="term" data-term="stdout" href="javascript:void(0)">stdout</a> и <a class="term" data-term="stderr" href="javascript:void(0)">stderr</a> после каждого вывода</td></tr>
 </tbody></table><br>
 <div><span style="font-weight:bold; ">Флаги</span> </div>
 <div>1)<span style="font-style:italic; "> left, right, internal</span></div>
 <div>2) <span style="font-style:italic; ">dec, oct, hex</span></div>
 <div>3) <span style="font-style:italic; ">scientific, fixed</span></div>
 <div>взаимно исключают друг друга, то есть в каждый момент времени может быть установлен только один флаг из каждой группы.</div>
-<div>Для управления флагами в <a class="term" data-term="классе" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">классе</a> ios есть методы: <span style="font-style:italic; ">flags, setf, unsetf</span>.</div>
-<div><span style="font-style:italic; ">longios::flags();</span> - возвращает текущие флаги <a class="term" data-term="потока" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">потока</a></div>
+<div>Для управления флагами в <a class="term" data-term="классе" href="javascript:void(0)">классе</a> ios есть методы: <span style="font-style:italic; ">flags, setf, unsetf</span>.</div>
+<div><span style="font-style:italic; ">longios::flags();</span> - возвращает текущие флаги <a class="term" data-term="потока" href="javascript:void(0)">потока</a></div>
 <div><span style="font-style:italic; ">longios::flags(long)</span>; - присваивает флагам значения параметров</div>
 <div><span style="font-style:italic; ">longios::setf(long long)</span>; - присваивает флагам, биты которых в первом параметре, соответствующие значения во втором</div>
 <div><span style="font-style:italic; ">longios::setf(long)</span>; - устанавливает флаги, биты которых установлены в параметре</div>
 <div><span style="font-style:italic; ">longios::unsetf(long)</span>; - сбрасывает флаги, биты которых установлены в параметрах</div>
 <br>
-<div>Кроме флагов для форматирования используются следующие поля <a class="term" data-term="классов" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">классов</a> ios:</div>
-<div>- <span style="font-style:italic; ">int x_width </span>– минимальная ширина <a class="term" data-term="поля" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поля</a> ввода</div>
+<div>Кроме флагов для форматирования используются следующие поля <a class="term" data-term="классов" href="javascript:void(0)">классов</a> ios:</div>
+<div>- <span style="font-style:italic; ">int x_width </span>– минимальная ширина <a class="term" data-term="поля" href="javascript:void(0)">поля</a> ввода</div>
 <div>- <span style="font-style:italic; ">int x_precision</span> – количество цифр в дробной части при выводе вещественных чисел с фиксированной точкой, либо общее количество значащих цифр при выводе числа с мантиссой и порядком</div>
 <div>- <span style="font-style:italic; ">int x_fill</span> – символ заполнения поля ввода. </div>
-<div>Для управления этими <a class="term" data-term="полями" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">полями</a>, используются методы width, precision, fill.</div>
+<div>Для управления этими <a class="term" data-term="полями" href="javascript:void(0)">полями</a>, используются методы width, precision, fill.</div>
 <div><span style="font-style:italic; ">int ios:: width()</span></div>
 <div>возвращает значение ширины поля ввода</div>
 <div><span style="font-style:italic; ">int ios:: width(int)</span></div>
-<div>устанавливает значение ширины <a class="term" data-term="поля" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">поля</a> ввода в соответствии с параметром</div>
+<div>устанавливает значение ширины <a class="term" data-term="поля" href="javascript:void(0)">поля</a> ввода в соответствии с параметром</div>
 <div><span style="font-style:italic; ">int ios:: precision()</span></div>
 <div>возвращает значение точности представления при выводе вещественного числа</div>
 <div><span style="font-style:italic; ">int ios:: precision(int)</span></div>

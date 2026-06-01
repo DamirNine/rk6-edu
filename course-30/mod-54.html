@@ -29,13 +29,13 @@
 <div><span style="font-weight:bold; font-size:150.0%; ">Что такое комбинаторика?</span></div>
 <br>
 <a name="T443701412"></a>
-<div>  Вам наверняка встречались такие задачи, в которых нужно найти количество способов, которыми можно расположить некоторые предметы, сделать действие и т.д. Именно такие задачи и решает <a class="term" data-term="комбинаторика" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">комбинаторика</a>.</div>
+<div>  Вам наверняка встречались такие задачи, в которых нужно найти количество способов, которыми можно расположить некоторые предметы, сделать действие и т.д. Именно такие задачи и решает <a class="term" data-term="комбинаторика" href="javascript:void(0)">комбинаторика</a>.</div>
 <br>
 <a name="T1851536349"></a>
 <a name="T1473818478"></a>
 <a name="T350955073"></a>
 <a name="T1984638707"></a>
-<div>  Основные понятия комбинаторики - <a class="term" data-term="перестановка" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">перестановка</a>, <a class="term" data-term="размещение" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">размещение</a> и <a class="term" data-term="сочетание" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">сочетание</a>. Также на важном месте находится <a class="term" data-term="факториал" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">факториал</a>.</div>
+<div>  Основные понятия комбинаторики - <a class="term" data-term="перестановка" href="javascript:void(0)">перестановка</a>, <a class="term" data-term="размещение" href="javascript:void(0)">размещение</a> и <a class="term" data-term="сочетание" href="javascript:void(0)">сочетание</a>. Также на важном месте находится <a class="term" data-term="факториал" href="javascript:void(0)">факториал</a>.</div>
 <div><span style="font-weight:bold; font-size:150.0%; ">Факториал</span></div>
 <br>
 <div>n! (n факториал) - это произведение всех натуральных чисел от 1 до n (n! = 1 * 2 * 3 * ... * n).</div>
@@ -55,7 +55,7 @@ End Function
 </pre>
 </div>
 <a name="T823713000"></a>
-<div>  Факториал можно также вычислить с помощью рекурсивного <a class="term" data-term="алгоритма" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">алгоритма</a>:</div>
+<div>  Факториал можно также вычислить с помощью рекурсивного <a class="term" data-term="алгоритма" href="javascript:void(0)">алгоритма</a>:</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><br>
 <pre class="eListing">Private Function fact (ByVal n As Integer) As Double
@@ -71,7 +71,7 @@ End Function
 <div>  Заметьте, что возвращаемое значение должно иметь тип Double. Это сделано, потому что факториал растёт очень быстро и уже 13! не умещается в рамки типа Long. Тип Double позволяет вычислять факториалы чисел до 170.</div>
 <br>
 <a name="T33524358"></a>
-<div>  Лучше использовать нерекурсивный алгоритм вычисления факториала, так как этот способ быстрее и при использовании рекурсии возможно переполнение <a class="term" data-term="стека" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стека</a>.</div>
+<div>  Лучше использовать нерекурсивный алгоритм вычисления факториала, так как этот способ быстрее и при использовании рекурсии возможно переполнение <a class="term" data-term="стека" href="javascript:void(0)">стека</a>.</div>
 <div><span style="font-weight:bold; font-size:150.0%; ">Последовательности</span></div>
 <br>
 <div>  Предположим, нам нужно вывести в Textbox все последовательности длины N из чисел 1, 2, 3, ..., M. Первая последовательность будет иметь следующий вид:</div>
@@ -85,7 +85,7 @@ End Function
 <div>  Всего таких последовательностей будет M ^ N.</div>
 <br>
 <a name="T1992766606"></a>
-<div>  Пусть последовательность находится в одномерном <a class="term" data-term="массиве" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">массиве</a> X. Создадим процедуру NextS, которая будет генерировать последовательность. Её нужно будет вызвать M ^ N раз. В процедуре NextS нужно перебрать все N знаков последовательности, начиная с последнего. Если знак равен M, то присваиваем ему значение 1, в ином случае увеличиваем его на единицу и выходим из цикла.</div>
+<div>  Пусть последовательность находится в одномерном <a class="term" data-term="массиве" href="javascript:void(0)">массиве</a> X. Создадим процедуру NextS, которая будет генерировать последовательность. Её нужно будет вызвать M ^ N раз. В процедуре NextS нужно перебрать все N знаков последовательности, начиная с последнего. Если знак равен M, то присваиваем ему значение 1, в ином случае увеличиваем его на единицу и выходим из цикла.</div>
 <div class="auto">Пример 3</div>
 <div class="eExample"><br>
 <pre class="eListing">Dim M As Integer

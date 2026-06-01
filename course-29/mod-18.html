@@ -27,7 +27,7 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Преобразование неукорачивающих грамматик</a>
 </div>
 <a name="T1152891697"></a>
-<div><span style="color:#0000FF; font-weight:bold; font-style:italic; ">Определение.</span> Грамматика называется <a class="term" data-term="Неукорачивающая грамматика" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">неукорачивающей</a> или грамматикой без аннулирующих правил, если либо</div>
+<div><span style="color:#0000FF; font-weight:bold; font-style:italic; ">Определение.</span> Грамматика называется <a class="term" data-term="Неукорачивающая грамматика" href="javascript:void(0)">неукорачивающей</a> или грамматикой без аннулирующих правил, если либо</div>
 <ol class="eList"><li>схема грамматики не содержит аннулирующих правил,</li>
 <li>либо схема грамматики содержит только одно правило вида &lt;I&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=1/?k=10"> $, где &lt;I&gt; - начальный символ грамматики, и символ &lt;I&gt; не встречается в правых частях остальных правил грамматики.</li>
 </ol>
@@ -38,7 +38,7 @@
 <br>
 <a name="T1349591688"></a>
 <a name="T1161666805"></a>
-<div>Построение неукорачивающей грамматики предполагает увеличение числа правил заданной грамматики путем построения дополнительных правил, получаемых в результате исключения нетерминалов аннулирующих правил. Чтобы построить дополнительные правила необходимо выполнить все возможные подстановки пустой цепочки вместо <a class="term" data-term="Аннулирующий нетерминал" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">аннулирующего нетерминала</a> во все правила грамматики. Если же в грамматике есть правило вида &lt;I&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> $ и символ &lt;I&gt; входит в правые части других правил грамматики, то следует ввести новый <a class="term" data-term="Начальный символ грамматики" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">начальный символ</a> &lt;I'&gt; и заменить правило &lt;I&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> $ двумя новыми правилами: &lt;I'&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> $ и &lt;I'&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> &lt;I&gt;.</div>
+<div>Построение неукорачивающей грамматики предполагает увеличение числа правил заданной грамматики путем построения дополнительных правил, получаемых в результате исключения нетерминалов аннулирующих правил. Чтобы построить дополнительные правила необходимо выполнить все возможные подстановки пустой цепочки вместо <a class="term" data-term="Аннулирующий нетерминал" href="javascript:void(0)">аннулирующего нетерминала</a> во все правила грамматики. Если же в грамматике есть правило вида &lt;I&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> $ и символ &lt;I&gt; входит в правые части других правил грамматики, то следует ввести новый <a class="term" data-term="Начальный символ грамматики" href="javascript:void(0)">начальный символ</a> &lt;I'&gt; и заменить правило &lt;I&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> $ двумя новыми правилами: &lt;I'&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> $ и &lt;I'&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> &lt;I&gt;.</div>
 <div>В качестве иллюстрации способа построения неукорачивающих грамматик, исключим аннулирующие правила из следующей грамматики:</div>
 <div>Г<sub class="eSub">2.3</sub> :</div>
 <div> R = { &lt;I&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> a&lt;I&gt;b&lt;I&gt;, </div>
@@ -54,7 +54,7 @@
 <div>&lt;I&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> b&lt;I&gt;a&lt;I&gt;,    &lt;I&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> ba&lt;I&gt;,    &lt;I&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> b&lt;I&gt;a,    &lt;I&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> ba</div>
 <br>
 <a name="T22245338"></a>
-<div>Учитывая, что начальный символ, образующий <a class="term" data-term="Аннулирующее правило" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">аннулирующее правило</a>, входит в правые части других правил грамматики, заменим правило</div>
+<div>Учитывая, что начальный символ, образующий <a class="term" data-term="Аннулирующее правило" href="javascript:void(0)">аннулирующее правило</a>, входит в правые части других правил грамматики, заменим правило</div>
 <div> &lt;I&gt; <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=LO-SAPR/gram18.mod/?n=2/?k=10"> $</div>
 <div><span style="font-weight:bold; font-style:italic; "> </span></div>
 <div>правилами вида</div>

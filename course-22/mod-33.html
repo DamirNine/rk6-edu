@@ -31,27 +31,27 @@
 <a name="T1173704784"></a>
 <a name="T1804257827"></a>
 <a name="T1760416960"></a>
-<div>Основными средствами программирования для <a class="term" data-term="многопроцессорных вычислительных систем" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">многопроцессорных вычислительных систем</a> являются три библиотеки, оформленные как стандарты: <a class="term" data-term="библиотека OpenMP" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">библиотека OpenMP</a> для <a class="term" data-term="систем с общей памятью" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">систем с общей памятью</a> (<a class="term" data-term="мультипроцессоров" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессоров</a>) и <a class="term" data-term="библиотека MPI" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотека MPI</a> (Message Passing Interface) для <a class="term" data-term="систем с распределенной памятью" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">систем с распределенной памятью</a> (<a class="term" data-term="мультикомпьютеров" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультикомпьютеров</a>). Для программирования <a class="term" data-term="гетерогенных вычислительных систем" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">гетерогенных вычислительных систем</a> с <a class="term" data-term="распределенной памятью" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распределенной памятью</a> используется <a class="term" data-term="библиотека PVM" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотека PVM</a>. Все указанные библиотеки написаны на <a class="term" data-term="языках" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языках</a> высокого уровня и являются в достаточной степени аппаратно-независимыми. В то же время наблюдается зависимость этих библиотек от операционной среды. В некоторых случаях библиотеки строятся не из процедур, а из классов С++.</div>
+<div>Основными средствами программирования для <a class="term" data-term="многопроцессорных вычислительных систем" href="javascript:void(0)">многопроцессорных вычислительных систем</a> являются три библиотеки, оформленные как стандарты: <a class="term" data-term="библиотека OpenMP" href="javascript:void(0)">библиотека OpenMP</a> для <a class="term" data-term="систем с общей памятью" href="javascript:void(0)">систем с общей памятью</a> (<a class="term" data-term="мультипроцессоров" href="javascript:void(0)">мультипроцессоров</a>) и <a class="term" data-term="библиотека MPI" href="javascript:void(0)">библиотека MPI</a> (Message Passing Interface) для <a class="term" data-term="систем с распределенной памятью" href="javascript:void(0)">систем с распределенной памятью</a> (<a class="term" data-term="мультикомпьютеров" href="javascript:void(0)">мультикомпьютеров</a>). Для программирования <a class="term" data-term="гетерогенных вычислительных систем" href="javascript:void(0)">гетерогенных вычислительных систем</a> с <a class="term" data-term="распределенной памятью" href="javascript:void(0)">распределенной памятью</a> используется <a class="term" data-term="библиотека PVM" href="javascript:void(0)">библиотека PVM</a>. Все указанные библиотеки написаны на <a class="term" data-term="языках" href="javascript:void(0)">языках</a> высокого уровня и являются в достаточной степени аппаратно-независимыми. В то же время наблюдается зависимость этих библиотек от операционной среды. В некоторых случаях библиотеки строятся не из процедур, а из классов С++.</div>
 <div class="eSubTitle">Общие сведения об интерфейсе OpenMP.</div>
-<div>Стандартом OpenMP занимается организация OpenMP ARB (ARchitecture Board). В 1997 года этой организацией был выпущен стандарт для <a class="term" data-term="языка" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка</a> OpenMP Fortran – расширения языка Фортран 77. Позже вышли аналогичные стандарты для языков Си и Фортран 90/95.</div>
+<div>Стандартом OpenMP занимается организация OpenMP ARB (ARchitecture Board). В 1997 года этой организацией был выпущен стандарт для <a class="term" data-term="языка" href="javascript:void(0)">языка</a> OpenMP Fortran – расширения языка Фортран 77. Позже вышли аналогичные стандарты для языков Си и Фортран 90/95.</div>
 <a name="T707096810"></a>
 <a name="T469209868"></a>
 <a name="T70414198"></a>
 <a name="T1192323770"></a>
-<div>OpenMP расширяет последовательный <a class="term" data-term="язык" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык</a> программирования для <a class="term" data-term="мультипроцессорных систем" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессорных систем</a> набором директив <a class="term" data-term="компилятора" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятора</a> и библиотечных функций. <a class="term" data-term="OpenMP-программа" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">OpenMP-программа</a> (программа, построенная с использованием средств <a class="term" data-term="библиотеки OpenMP" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">библиотеки OpenMP</a>) начинает свое выполнение как один <a class="term" data-term="процесс" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процесс</a>, называемый главной <a class="term" data-term="нитью" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитью</a>.  Главная нить выполняется последовательно, пока не встретится первая <a class="term" data-term="параллельная область" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">параллельная область</a> программы.</div>
-<div><a class="term" data-term="OpenMP-программа" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">OpenMP-программа</a> должна без всяких изменений работать на однопроцессорной платформе в качестве последовательной программы. Директивы OpenMP в этом случае просто игнорируются <a class="term" data-term="компилятором" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятором</a>, а вместо вызовов функций OpenMP вставляются "заглушки".</div>
-<div>OpenMP можно рассматривать как высокоуровневую надстройку над <a class="term" data-term="легковесными процессами" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">легковесными процессами</a> (threads) – параграф 1.2.</div>
+<div>OpenMP расширяет последовательный <a class="term" data-term="язык" href="javascript:void(0)">язык</a> программирования для <a class="term" data-term="мультипроцессорных систем" href="javascript:void(0)">мультипроцессорных систем</a> набором директив <a class="term" data-term="компилятора" href="javascript:void(0)">компилятора</a> и библиотечных функций. <a class="term" data-term="OpenMP-программа" href="javascript:void(0)">OpenMP-программа</a> (программа, построенная с использованием средств <a class="term" data-term="библиотеки OpenMP" href="javascript:void(0)">библиотеки OpenMP</a>) начинает свое выполнение как один <a class="term" data-term="процесс" href="javascript:void(0)">процесс</a>, называемый главной <a class="term" data-term="нитью" href="javascript:void(0)">нитью</a>.  Главная нить выполняется последовательно, пока не встретится первая <a class="term" data-term="параллельная область" href="javascript:void(0)">параллельная область</a> программы.</div>
+<div><a class="term" data-term="OpenMP-программа" href="javascript:void(0)">OpenMP-программа</a> должна без всяких изменений работать на однопроцессорной платформе в качестве последовательной программы. Директивы OpenMP в этом случае просто игнорируются <a class="term" data-term="компилятором" href="javascript:void(0)">компилятором</a>, а вместо вызовов функций OpenMP вставляются "заглушки".</div>
+<div>OpenMP можно рассматривать как высокоуровневую надстройку над <a class="term" data-term="легковесными процессами" href="javascript:void(0)">легковесными процессами</a> (threads) – параграф 1.2.</div>
 <div class="eSubTitle">Основные директивы.</div>
 <a name="T1943507977"></a>
-<div>Директивы OpenMP с точки зрения <a class="term" data-term="языка" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка</a> Фортран являются комментариями и начинаются с комбинации символов <span class="eOperator">!$OMP</span>, <span class="eOperator">*$OMP</span>. Директивы можно разделить на 3 категории: определение <a class="term" data-term="параллельной области" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельной области</a>, определение <a class="term" data-term="параллельных конструкций" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">параллельных конструкций</a>, синхронизация.</div>
+<div>Директивы OpenMP с точки зрения <a class="term" data-term="языка" href="javascript:void(0)">языка</a> Фортран являются комментариями и начинаются с комбинации символов <span class="eOperator">!$OMP</span>, <span class="eOperator">*$OMP</span>. Директивы можно разделить на 3 категории: определение <a class="term" data-term="параллельной области" href="javascript:void(0)">параллельной области</a>, определение <a class="term" data-term="параллельных конструкций" href="javascript:void(0)">параллельных конструкций</a>, синхронизация.</div>
 <br>
 <div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=1/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=2/?k=10"></div>
-<div>Директивы определения <a class="term" data-term="параллельной области " href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельной области </a>имеют вид</div>
+<div>Директивы определения <a class="term" data-term="параллельной области " href="javascript:void(0)">параллельной области </a>имеют вид</div>
 <pre class="eListing">!$OMP PARALLEL [список спецификаций]
       блок
 !$OMP END PARALLEL
 </pre>
-<div>В списке спецификаций могут описываться классы данных, используемых в <a class="term" data-term="параллельной области" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельной области</a>, условия выполнения области и пр. Допускаются следующие спецификации:</div>
+<div>В списке спецификаций могут описываться классы данных, используемых в <a class="term" data-term="параллельной области" href="javascript:void(0)">параллельной области</a>, условия выполнения области и пр. Допускаются следующие спецификации:</div>
 <pre class="eListing">PRIVATE();
 SHARED();
 DEFAULT();
@@ -61,18 +61,18 @@ IF();
 COPYIN()
 </pre>
 <a name="T1782899684"></a>
-<div>Условие выполнения имеет вид <span class="eOperator">IF &lt;скалярное логическое выражение&gt;</span>. Если условие выполнения задано, то вход в данную <a class="term" data-term="параллельную область" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельную область</a> осуществляется только при выполнении указанного условия. Эта возможность может быть полезна, например, для того, чтобы избежать <a class="term" data-term="распараллеливания" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">распараллеливания</a> при малом объеме вычислений в блоке.</div>
+<div>Условие выполнения имеет вид <span class="eOperator">IF &lt;скалярное логическое выражение&gt;</span>. Если условие выполнения задано, то вход в данную <a class="term" data-term="параллельную область" href="javascript:void(0)">параллельную область</a> осуществляется только при выполнении указанного условия. Эта возможность может быть полезна, например, для того, чтобы избежать <a class="term" data-term="распараллеливания" href="javascript:void(0)">распараллеливания</a> при малом объеме вычислений в блоке.</div>
 <div>Остальные из указанных спецификаций будут рассмотрены позже.</div>
-<div>При входе в <a class="term" data-term="параллельную область" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельную область</a> порождается некоторое количество N новых <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a>, т.е. образуется бригада из N нитей, а порождающая нить получает номер 0 и становится главной нитью бригады. При выходе из параллельной области главная нить дожидается завершения остальных нитей и продолжает выполнение. Число нитей определяется с помощью  переменной окружения <span class="eOperator">OMP_NUM_THREADS</span> либо путем вызова функции <span class="eOperator">OMP_SET_NUM_THREAD</span>S. Нити, соответствующие параллельной области, выполняются параллельно на разных <a class="term" data-term="процессорах" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессорах</a> мультипроцессора. Распределение нитей по процессорам <a class="term" data-term="мультипроцессора" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">мультипроцессора</a> находится в ведении его операционной системы. </div>
-<div><a class="term" data-term="Параллельные области" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Параллельные области</a> могут быть вложенными. Внутренней параллельной области при этом ставится в соответствие <span class="eOperator">одна</span> из <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a> бригады нитей, которая выполняет внешнюю параллельную область.</div>
+<div>При входе в <a class="term" data-term="параллельную область" href="javascript:void(0)">параллельную область</a> порождается некоторое количество N новых <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a>, т.е. образуется бригада из N нитей, а порождающая нить получает номер 0 и становится главной нитью бригады. При выходе из параллельной области главная нить дожидается завершения остальных нитей и продолжает выполнение. Число нитей определяется с помощью  переменной окружения <span class="eOperator">OMP_NUM_THREADS</span> либо путем вызова функции <span class="eOperator">OMP_SET_NUM_THREAD</span>S. Нити, соответствующие параллельной области, выполняются параллельно на разных <a class="term" data-term="процессорах" href="javascript:void(0)">процессорах</a> мультипроцессора. Распределение нитей по процессорам <a class="term" data-term="мультипроцессора" href="javascript:void(0)">мультипроцессора</a> находится в ведении его операционной системы. </div>
+<div><a class="term" data-term="Параллельные области" href="javascript:void(0)">Параллельные области</a> могут быть вложенными. Внутренней параллельной области при этом ставится в соответствие <span class="eOperator">одна</span> из <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a> бригады нитей, которая выполняет внешнюю параллельную область.</div>
 <br>
 <div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=3/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=4/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=5/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=6/?k=10"></div>
-<div>К директивам определения <a class="term" data-term=" параллельных конструкций" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)"> параллельных конструкций</a> относится директивы <span class="eOperator">DO ... ENDDO, SECTIONS ... ENDSECTIONS</span>, <span class="eOperator">SINGLE ... ENDSINGLE</span>. Параллельная конструкция определяет объем работ <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a> в бригаде, но не создает новых нитей. Конструкция <span class="eOperator">DO</span> служит для распределения витков цикла между нитями, а конструкция <span class="eOperator">SECTIONS</span> – для распределения между нитями указанных секций программы.</div>
-<div>Для <a class="term" data-term="параллельной области" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельной области</a> можно указать классы используемых в ней данных:</div>
+<div>К директивам определения <a class="term" data-term=" параллельных конструкций" href="javascript:void(0)"> параллельных конструкций</a> относится директивы <span class="eOperator">DO ... ENDDO, SECTIONS ... ENDSECTIONS</span>, <span class="eOperator">SINGLE ... ENDSINGLE</span>. Параллельная конструкция определяет объем работ <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a> в бригаде, но не создает новых нитей. Конструкция <span class="eOperator">DO</span> служит для распределения витков цикла между нитями, а конструкция <span class="eOperator">SECTIONS</span> – для распределения между нитями указанных секций программы.</div>
+<div>Для <a class="term" data-term="параллельной области" href="javascript:void(0)">параллельной области</a> можно указать классы используемых в ней данных:</div>
 <ul class="eList"><a name="T298749363"></a>
-<li><a class="term" data-term="общие данные" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">общие данные</a> (<a class="term" data-term="разделяемые данные" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">разделяемые данные</a>) – данные, общие для всех <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a> бригады;</li>
+<li><a class="term" data-term="общие данные" href="javascript:void(0)">общие данные</a> (<a class="term" data-term="разделяемые данные" href="javascript:void(0)">разделяемые данные</a>) – данные, общие для всех <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a> бригады;</li>
 <a name="T1193728780"></a>
-<li><a class="term" data-term="приватные данные" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">приватные данные</a> (<a class="term" data-term="локальные данные" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">локальные данные</a>) – данные, локальные для каждой <a class="term" data-term="нити" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нити</a> в бригаде.</li>
+<li><a class="term" data-term="приватные данные" href="javascript:void(0)">приватные данные</a> (<a class="term" data-term="локальные данные" href="javascript:void(0)">локальные данные</a>) – данные, локальные для каждой <a class="term" data-term="нити" href="javascript:void(0)">нити</a> в бригаде.</li>
 </ul>
 <br>
 <div><span class="eOperator">Директивы определения параллельного цикла</span> имеют вид</div>
@@ -80,7 +80,7 @@ COPYIN()
        цикл
 [!$OMP ENDDO[NOWAIT]]
 </pre>
-<div>По умолчанию, в конце цикла происходит неявная синхронизация <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a> – дальнейшее выполнение нитей происходит только после достижения всеми ими данной точки. Синхронизацию можно запретить с помощью спецификации <span class="eOperator">NOWAIT</span>.</div>
+<div>По умолчанию, в конце цикла происходит неявная синхронизация <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a> – дальнейшее выполнение нитей происходит только после достижения всеми ими данной точки. Синхронизацию можно запретить с помощью спецификации <span class="eOperator">NOWAIT</span>.</div>
 <div>В заголовке параллельного цикла допускаются следующие спецификации:</div>
 <pre class="eListing">PRIVATE();
 FIRSTPRIVATE();
@@ -89,16 +89,16 @@ REDUCTION();
 SCHEDULE();
 ORDERED()
 </pre>
-<div>Спецификация <span class="eOperator">SCHEDULE (способ[,m])</span> определяет способ распределения итераций по <a class="term" data-term="нитям" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитям</a>. Допустимы следующие значения аргумента э той спецификации;:</div>
+<div>Спецификация <span class="eOperator">SCHEDULE (способ[,m])</span> определяет способ распределения итераций по <a class="term" data-term="нитям" href="javascript:void(0)">нитям</a>. Допустимы следующие значения аргумента э той спецификации;:</div>
 <ul class="eList"><li><span class="eOperator">STATIC [,m] </span>– статическое распределение блоками по m итераций;</li>
-<li><span class="eOperator">DYNAMIC [,m]</span> – динамическое распределение блоками по m итераций (каждая <a class="term" data-term="нить" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нить</a> берет на выполнение первый еще нераспределенный блок из <span class="eOperator">m</span> итераций);</li>
+<li><span class="eOperator">DYNAMIC [,m]</span> – динамическое распределение блоками по m итераций (каждая <a class="term" data-term="нить" href="javascript:void(0)">нить</a> берет на выполнение первый еще нераспределенный блок из <span class="eOperator">m</span> итераций);</li>
 <a name="T229852493"></a>
-<li><span class="eOperator">GUIDED [,m]</span> — динамическое распределение блоками, размер которых уменьшается экспоненциально до величины m (используется для лучшей <a class="term" data-term="балансировки загрузки" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">балансировки загрузки</a> <a class="term" data-term="процессоров" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a>);</li>
+<li><span class="eOperator">GUIDED [,m]</span> — динамическое распределение блоками, размер которых уменьшается экспоненциально до величины m (используется для лучшей <a class="term" data-term="балансировки загрузки" href="javascript:void(0)">балансировки загрузки</a> <a class="term" data-term="процессоров" href="javascript:void(0)">процессоров</a>);</li>
 <li><span class="eOperator">RUNTIME</span> – способ распределения итераций выбирается во время выполнения программы в зависимости от значения переменной окружения <span class="eOperator">OMP_SHEDULE</span>.</li>
 </ul>
 <div>Остальные спецификации будут рассмотрены позже.</div>
 <div class="auto">Пример 1</div>
-<div class="eExample"><div><a class="term" data-term="Параллельная область" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Параллельная область</a> содержит вложенный цикл. Внешний цикл будет выполняться параллельно, внутренний цикл – последовательно.</div>
+<div class="eExample"><div><a class="term" data-term="Параллельная область" href="javascript:void(0)">Параллельная область</a> содержит вложенный цикл. Внешний цикл будет выполняться параллельно, внутренний цикл – последовательно.</div>
 <pre class="eListing">!$OMP PARALLEL
 !$OMP DO
       DO I=1,N
@@ -126,7 +126,7 @@ FIRSTPRIVATE();
 LASTPRIVATE();
 REDUCTION()
 </pre>
-<div>Директивы <span class="eOperator">SECTIONS, ENDSECTIONS</span> являются не итерационными конструкциями и порождают количество <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a>, равное количеству директив <span class="eOperator">SECTIONS</span>. По умолчанию, перед директивой <span class="eOperator">ENDSECTIONS</span> происходит неявная синхронизация нитей, которая может быть отменена спецификацией <span class="eOperator">NOWAIT</span>.</div>
+<div>Директивы <span class="eOperator">SECTIONS, ENDSECTIONS</span> являются не итерационными конструкциями и порождают количество <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a>, равное количеству директив <span class="eOperator">SECTIONS</span>. По умолчанию, перед директивой <span class="eOperator">ENDSECTIONS</span> происходит неявная синхронизация нитей, которая может быть отменена спецификацией <span class="eOperator">NOWAIT</span>.</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><div>Параллельная секция содержит три блока операторов, которые могут выполняться параллельно.</div>
 <pre class="eListing">!$OMP PARALLEL
@@ -142,14 +142,14 @@ REDUCTION()
 </pre>
 <div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=7/?k=10"></div>
 </div>
-<div>В Open MP имеются также директивы определения параллельной секции, которая должна исполняться одной <a class="term" data-term="нитью" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитью</a>:</div>
+<div>В Open MP имеются также директивы определения параллельной секции, которая должна исполняться одной <a class="term" data-term="нитью" href="javascript:void(0)">нитью</a>:</div>
 <pre class="eListing">!$OMP SINGLE[список спецификаций]
    блок операторов
 !$OMP ENDSINGLE[NOWAIT]
 </pre>
 <div>Мы не будем останавливаться на данных директивах.</div>
 <div class="eSubTitle">Классы данных.</div>
-<div>Для управления данными во время выполнения <a class="term" data-term="параллельных конструкций" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельных конструкций</a> используются следующие спецификации:</div>
+<div>Для управления данными во время выполнения <a class="term" data-term="параллельных конструкций" href="javascript:void(0)">параллельных конструкций</a> используются следующие спецификации:</div>
 <pre class="eListing">SHARED;
 PRIVATE;
 DEFAULT;
@@ -162,11 +162,11 @@ COPYIN
 <div>Спецификаций</div>
 <pre class="eListing">SHARED(список переменных)
 </pre>
-<div>Здесь в списке переменных перечисляются переменные, которые являются общими для всех <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a> соответствующей <a class="term" data-term="параллельной области" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельной области</a> или конструкции. По умолчанию, переменные COMMON-блоков, а также переменные, порожденные вне параллельной области или конструкции, при входе в эту область или конструкцию остаются общими.</div>
+<div>Здесь в списке переменных перечисляются переменные, которые являются общими для всех <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a> соответствующей <a class="term" data-term="параллельной области" href="javascript:void(0)">параллельной области</a> или конструкции. По умолчанию, переменные COMMON-блоков, а также переменные, порожденные вне параллельной области или конструкции, при входе в эту область или конструкцию остаются общими.</div>
 <div>Спецификаций</div>
 <pre class="eListing">PRIVATE(список переменных)
 </pre>
-<div>В списке переменных перечисляются переменные, которые являются приватными для каждой из <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a>, соответствующих <a class="term" data-term="параллельной области" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельной области</a> или конструкции. При входе в параллельную область или конструкцию для каждой из нитей создается отдельный экземпляр переменных (локальная копия переменных). Начальные значения этих данных по умолчанию не определены. Переменные, порожденные внутри параллельной области или конструкции, являются приватными.</div>
+<div>В списке переменных перечисляются переменные, которые являются приватными для каждой из <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a>, соответствующих <a class="term" data-term="параллельной области" href="javascript:void(0)">параллельной области</a> или конструкции. При входе в параллельную область или конструкцию для каждой из нитей создается отдельный экземпляр переменных (локальная копия переменных). Начальные значения этих данных по умолчанию не определены. Переменные, порожденные внутри параллельной области или конструкции, являются приватными.</div>
 <div>Спецификация</div>
 <pre class="eListing">DEFAULT(PRIVATE| SHARED| NONE)
 </pre>
@@ -174,11 +174,11 @@ COPYIN
 <div>Спецификаций</div>
 <pre class="eListing">FIRSTPRIVATE(список переменных)
 </pre>
-<div>В списке переменных перечисляются те приватные переменные, которые при входе в <a class="term" data-term="параллельную область" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельную область</a> или конструкцию должны инициализироваться значениям соответствующих исходных переменных.</div>
+<div>В списке переменных перечисляются те приватные переменные, которые при входе в <a class="term" data-term="параллельную область" href="javascript:void(0)">параллельную область</a> или конструкцию должны инициализироваться значениям соответствующих исходных переменных.</div>
 <div>Спецификаций</div>
 <pre class="eListing">COPYIN(список переменных)
 </pre>
-<div>В списке переменных могут содержаться имена COMMON-блоков и/или имена отдельных переменных из этих блоков. При входе в <a class="term" data-term="параллельную область" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельную область</a> или конструкцию приватные копии этих данных инициализируются значениям соответствующих исходных переменных. Указанные COMMON-блоки должны быть предварительно определены в директиве</div>
+<div>В списке переменных могут содержаться имена COMMON-блоков и/или имена отдельных переменных из этих блоков. При входе в <a class="term" data-term="параллельную область" href="javascript:void(0)">параллельную область</a> или конструкцию приватные копии этих данных инициализируются значениям соответствующих исходных переменных. Указанные COMMON-блоки должны быть предварительно определены в директиве</div>
 <pre class="eListing">THREADPRIVATE(/имя COMMON-блока/[, имя COMMON-блока]...)
 </pre>
 <div class="eSubTitle">Средства синхронизации.</div>
@@ -189,22 +189,22 @@ COPYIN
    блок операторов
 !$OMP END MASTER
 </pre>
-<div>определяют блок, который будет выполняться только главной <a class="term" data-term="нитью" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитью</a>. Остальные нити начнут работу только после завершения работы этого блока.</div>
+<div>определяют блок, который будет выполняться только главной <a class="term" data-term="нитью" href="javascript:void(0)">нитью</a>. Остальные нити начнут работу только после завершения работы этого блока.</div>
 <div>Директивы</div>
 <pre class="eListing">!$OMP CRITICAL[имя]
    блок операторов
 !$OMP END CRITICAL[имя]
 </pre>
 <a name="T1585736687"></a>
-<div>определяют <a class="term" data-term="критическую секцию" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">критическую секцию</a> (критическую область) – блок, операторы которого не должны выполняться одновременно двумя и более <a class="term" data-term="нитями" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитями</a>. "Имя", если оно имеется, идентифицирует соответствующую критическую секцию. Директивы могут использоваться, например, для обновления общих переменных.</div>
+<div>определяют <a class="term" data-term="критическую секцию" href="javascript:void(0)">критическую секцию</a> (критическую область) – блок, операторы которого не должны выполняться одновременно двумя и более <a class="term" data-term="нитями" href="javascript:void(0)">нитями</a>. "Имя", если оно имеется, идентифицирует соответствующую критическую секцию. Директивы могут использоваться, например, для обновления общих переменных.</div>
 <div>Директива</div>
 <pre class="eListing">!$OMP BARIER
 </pre>
-<div>определяет точку синхронизации. При достижении данной точки выполнение <a class="term" data-term="нити" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нити</a> приостанавливается. Нить продолжает выполнение лишь после достижения данной точки всеми нитями.</div>
+<div>определяет точку синхронизации. При достижении данной точки выполнение <a class="term" data-term="нити" href="javascript:void(0)">нити</a> приостанавливается. Нить продолжает выполнение лишь после достижения данной точки всеми нитями.</div>
 <div>Директива</div>
 <pre class="eListing">!$OMP ATOMIC
 </pre>
-<div>запрещает различным <a class="term" data-term="нитям" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитям</a> одновременное обновление общей переменной, используемой в левой части следующего за данной директивой оператора присваивания.</div>
+<div>запрещает различным <a class="term" data-term="нитям" href="javascript:void(0)">нитям</a> одновременное обновление общей переменной, используемой в левой части следующего за данной директивой оператора присваивания.</div>
 <div class="auto">Пример 3</div>
 <div class="eExample"><pre class="eListing">!$OMP ATOMIC
    A(INDEX(I)= A(INDEX(I)) + B(I)
@@ -219,59 +219,59 @@ COPYIN
 <div>Директива</div>
 <pre class="eListing">!$OMP FLUSH[(список переменных)]
 </pre>
-<div>определяет точку, в которой должно быть обеспечено согласованное между <a class="term" data-term="нитями" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитями</a> состояние тех переменных, которые перечислены в списке. Неявно директива <span class="eOperator">FLUSH </span>присутствует в директивах <span class="eOperator">BARRIER, CRITICAL, END CRITICAL, END DO, END</span> <span class="eOperator">PARALLEL, END SECTIONS, END SINGLE, ORDERED, END ORDERED</span>. </div>
+<div>определяет точку, в которой должно быть обеспечено согласованное между <a class="term" data-term="нитями" href="javascript:void(0)">нитями</a> состояние тех переменных, которые перечислены в списке. Неявно директива <span class="eOperator">FLUSH </span>присутствует в директивах <span class="eOperator">BARRIER, CRITICAL, END CRITICAL, END DO, END</span> <span class="eOperator">PARALLEL, END SECTIONS, END SINGLE, ORDERED, END ORDERED</span>. </div>
 <br>
 <div><img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=8/?k=10"> <img align="absmiddle" src="http://bigor.bmstu.ru/?frm/?doc=Parallel/ch020701.mod/?n=9/?k=10"></div>
 <div>Процедура синхронизации</div>
 <pre class="eListing">OMP_INIT_LOCK(переменная)
 </pre>
 <a name="T1926808446"></a>
-<div>выполняет создание и инициализация <a class="term" data-term="семафора" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафора</a> (замка) с указанным именем; В качестве семафоров в OpenMP могут использоваться общие переменные типа <span class="eOperator">INTEGE</span>R (их использование разрешено только в процедурах синхронизации).</div>
+<div>выполняет создание и инициализация <a class="term" data-term="семафора" href="javascript:void(0)">семафора</a> (замка) с указанным именем; В качестве семафоров в OpenMP могут использоваться общие переменные типа <span class="eOperator">INTEGE</span>R (их использование разрешено только в процедурах синхронизации).</div>
 <div>Процедура</div>
 <pre class="eListing">OMP_DESTROY_LOCK(переменная)
 </pre>
-<div>уничтожает <a class="term" data-term="семафор" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафор</a> с указанным именем.</div>
+<div>уничтожает <a class="term" data-term="семафор" href="javascript:void(0)">семафор</a> с указанным именем.</div>
 <div>Процедура</div>
 <pre class="eListing">OMP_SET_LOCK(переменная)
 </pre>
-<div>- вызывающая <a class="term" data-term="нить" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нить</a> ждет освобождения <a class="term" data-term="семафора" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафора</a> с указанным именем, а затем захватывает его.</div>
+<div>- вызывающая <a class="term" data-term="нить" href="javascript:void(0)">нить</a> ждет освобождения <a class="term" data-term="семафора" href="javascript:void(0)">семафора</a> с указанным именем, а затем захватывает его.</div>
 <div>Процедура</div>
 <pre class="eListing">OMP_UNSET_LOCK(переменная)
 </pre>
-<div>вызывает освобождение <a class="term" data-term="семафора" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафора</a>, захваченного вызывающей <a class="term" data-term="нитью" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитью</a>.</div>
+<div>вызывает освобождение <a class="term" data-term="семафора" href="javascript:void(0)">семафора</a>, захваченного вызывающей <a class="term" data-term="нитью" href="javascript:void(0)">нитью</a>.</div>
 <div>Процедура</div>
 <pre class="eListing">OMP_TEST_LOCK()
 </pre>
-<div>выполняет попытку захвата <a class="term" data-term="семафора" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">семафора</a> (если семафор захвачен, функция возвращает <span class="eOperator">FALSE</span>).</div>
+<div>выполняет попытку захвата <a class="term" data-term="семафора" href="javascript:void(0)">семафора</a> (если семафор захвачен, функция возвращает <span class="eOperator">FALSE</span>).</div>
 <div class="eSubTitle">Процедуры для запроса значений параметров среды исполнения.</div>
 <div>Процедура</div>
 <pre class="eListing">OMP_SET_NUM_THREADS(n)
 </pre>
-<div>устанавливает максимальное число <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a> (n) в следующей за вызовом процедуры <a class="term" data-term="параллельной области" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельной области</a> (если это число разрешено менять динамически).</div>
+<div>устанавливает максимальное число <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a> (n) в следующей за вызовом процедуры <a class="term" data-term="параллельной области" href="javascript:void(0)">параллельной области</a> (если это число разрешено менять динамически).</div>
 <div>Процедура</div>
 <pre class="eListing">MP_GET_MAX_THREADS()
 </pre>
-<div>возвращает максимальное возможное число <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a>.</div>
+<div>возвращает максимальное возможное число <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a>.</div>
 <div>Процедура</div>
 <pre class="eListing">MP_GET_NUM_THREADS()
 </pre>
-<div>возвращает фактическое число <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a> в <a class="term" data-term="параллельной области" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельной области</a>.</div>
+<div>возвращает фактическое число <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a> в <a class="term" data-term="параллельной области" href="javascript:void(0)">параллельной области</a>.</div>
 <div>Процедура</div>
 <pre class="eListing">MP_GET_NUM_PROCS()
 </pre>
-<div>возвращает число доступных <a class="term" data-term="процессоров" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">процессоров</a>.</div>
+<div>возвращает число доступных <a class="term" data-term="процессоров" href="javascript:void(0)">процессоров</a>.</div>
 <div>Процедура</div>
 <pre class="eListing">OMP_IN_PARALLEL()
 </pre>
-<div>возвращает значение TRUE, если вызов процедуры произведен из <a class="term" data-term="параллельной области" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельной области</a> программы, и FALSE – в противном случае.</div>
+<div>возвращает значение TRUE, если вызов процедуры произведен из <a class="term" data-term="параллельной области" href="javascript:void(0)">параллельной области</a> программы, и FALSE – в противном случае.</div>
 <div>Процедура</div>
 <pre class="eListing">OMP_SET_DYNAMIC(скалярное логическое выражение)
 </pre>
-<div>устанавливает состояние флага, разрешающего динамически изменять число <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a>.</div>
+<div>устанавливает состояние флага, разрешающего динамически изменять число <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a>.</div>
 <div>Процедура</div>
 <pre class="eListing">OMP_GET_DYNAMIC()
 </pre>
-<div>запрашивает состояние флага, разрешающего динамически изменять число <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a>.</div>
+<div>запрашивает состояние флага, разрешающего динамически изменять число <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a>.</div>
 <div>Процедура</div>
 <pre class="eListing">OMP_SET_NESTED(скалярное логическое выражение)
 </pre>
@@ -282,21 +282,21 @@ COPYIN
 <div>– если значение указанного логического выражения есть TRUE, то процедура устанавливает состояние флага, разрешающего вложенный параллелизм; если это значение равно FALSE, то процедура устанавливает состояние флага, запрещающего вложенный параллелизм.</div>
 <div class="eSubTitle">Параметры окружения.</div>
 <a name="T626767223"></a>
-<div>В целях создания переносимой среды запуска параллельных программ, в OpenMP определен ряд <a class="term" data-term="параметров окружения" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">параметров окружения</a> (<a class="term" data-term="переменных среды" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">переменных среды</a>), позволяющих контролировать из <a class="term" data-term="OpenMP-программы" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">OpenMP-программы</a> поведение приложения.</div>
+<div>В целях создания переносимой среды запуска параллельных программ, в OpenMP определен ряд <a class="term" data-term="параметров окружения" href="javascript:void(0)">параметров окружения</a> (<a class="term" data-term="переменных среды" href="javascript:void(0)">переменных среды</a>), позволяющих контролировать из <a class="term" data-term="OpenMP-программы" href="javascript:void(0)">OpenMP-программы</a> поведение приложения.</div>
 <div>Параметр</div>
 <div><span class="eOperator">OMP_SCHEDULE</span></div>
 <div>определяет способ распределения итераций в цикле, если в директиве DO использована спецификация SCHEDULE (RUNTIME).</div>
 <div>Параметр</div>
 <div><span class="eOperator">OMP_NUM_THREADS</span></div>
-<div>определяет число <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a> для исполнения <a class="term" data-term="параллельных областей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельных областей</a> приложения.</div>
+<div>определяет число <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a> для исполнения <a class="term" data-term="параллельных областей" href="javascript:void(0)">параллельных областей</a> приложения.</div>
 <div>Параметр</div>
 <div><span class="eOperator">OMP_DYNAMIC</span></div>
-<div>разрешает или запрещает динамическое изменение числа <a class="term" data-term="нитей" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">нитей</a>.</div>
+<div>разрешает или запрещает динамическое изменение числа <a class="term" data-term="нитей" href="javascript:void(0)">нитей</a>.</div>
 <div>Параметр</div>
 <div><span class="eOperator">OMP_NESTED</span></div>
 <div>разрешает или запрещает вложенный параллелизм.</div>
 <div>Рассмотренные выше средства OpenMP относятся к первой версии стандарта OpenMP, ориентированной на Фортран 77. В настоящее время имеется вторая версия стандарта OpenMP, ориентированная на Фортран 95. Отличия этих двух версий незначительны. Отметим лишь наличие во второй версии двух процедур для работы с таймером.</div>
-<div>Имеется также спецификация OpenMP для <a class="term" data-term="языков C" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языков C</a>, C++. Спецификация содержит в функциональность, в основном аналогичную рассмотренной. Отметим лишь, что вместо специальных комментариев <span class="eOperator">!$OMP</span> используются директивы <a class="term" data-term="компилятора" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятора</a> <span class="eOperator">#pragma omp</span>.</div>
+<div>Имеется также спецификация OpenMP для <a class="term" data-term="языков C" href="javascript:void(0)">языков C</a>, C++. Спецификация содержит в функциональность, в основном аналогичную рассмотренной. Отметим лишь, что вместо специальных комментариев <span class="eOperator">!$OMP</span> используются директивы <a class="term" data-term="компилятора" href="javascript:void(0)">компилятора</a> <span class="eOperator">#pragma omp</span>.</div>
 </div>
 <hr width="90%">
 

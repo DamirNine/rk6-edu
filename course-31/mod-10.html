@@ -27,22 +27,22 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Организация внутренних линий связи</a>
 </div>
 <a name="T925980355"></a>
-<div>Внутренняя магистраль микропроцессорной системы использует <a class="term" data-term="Параллельный способ передачи данных" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">параллельный способ обмена</a> данными. Все линии связи, входящие в нее, могут быть условно разделены на три группы:</div>
+<div>Внутренняя магистраль микропроцессорной системы использует <a class="term" data-term="Параллельный способ передачи данных" href="javascript:void(0)">параллельный способ обмена</a> данными. Все линии связи, входящие в нее, могут быть условно разделены на три группы:</div>
 <ol class="eList"><a name="T1942936499"></a>
-<li><a class="term" data-term="Шина данных" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Шина данных</a> несколько параллельно идущих линий (проводников), по которым передаются собственно данные. Количество линий в шине данных определяется разрядностью передаваемых данных. Информацию на шину данных выдает ведущее устройство — микропроцессор (если выполняется запись данных) или ведомое устройство (если выполняется чтение данных).</li>
+<li><a class="term" data-term="Шина данных" href="javascript:void(0)">Шина данных</a> несколько параллельно идущих линий (проводников), по которым передаются собственно данные. Количество линий в шине данных определяется разрядностью передаваемых данных. Информацию на шину данных выдает ведущее устройство — микропроцессор (если выполняется запись данных) или ведомое устройство (если выполняется чтение данных).</li>
 <a name="T1832195333"></a>
-<li><a class="term" data-term="Шина адреса" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Шина адреса</a> — несколько параллельно идущих линий (проводников), по которым передается адрес (уникальный номер) ведомого устройства (ячейки ЗУ или порта ввода-вывода). Количество линий в шине адреса определяется разрядностью адреса. Информацию (адрес) на шину адреса всегда выдает ведущее устройство (микропроцессор).</li>
+<li><a class="term" data-term="Шина адреса" href="javascript:void(0)">Шина адреса</a> — несколько параллельно идущих линий (проводников), по которым передается адрес (уникальный номер) ведомого устройства (ячейки ЗУ или порта ввода-вывода). Количество линий в шине адреса определяется разрядностью адреса. Информацию (адрес) на шину адреса всегда выдает ведущее устройство (микропроцессор).</li>
 <a name="T1405772177"></a>
 <a name="T1418249701"></a>
 <a name="T1017069202"></a>
-<li><a class="term" data-term="Шина управления" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Шина управления</a> содержит линии, по которым передаются управляющие сигналы (<span class="eOperator">RD</span>, <span class="eOperator">WR</span>, <span class="eOperator">DEN</span> и т.п.). Количество и перечень линий в шине управления определяется конструкцией конкретной <a class="term" data-term="МПС" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">МПС</a> и, прежде всего, <a class="term" data-term="микропроцессора" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">микропроцессора</a>.</li>
+<li><a class="term" data-term="Шина управления" href="javascript:void(0)">Шина управления</a> содержит линии, по которым передаются управляющие сигналы (<span class="eOperator">RD</span>, <span class="eOperator">WR</span>, <span class="eOperator">DEN</span> и т.п.). Количество и перечень линий в шине управления определяется конструкцией конкретной <a class="term" data-term="МПС" href="javascript:void(0)">МПС</a> и, прежде всего, <a class="term" data-term="микропроцессора" href="javascript:void(0)">микропроцессора</a>.</li>
 </ol>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_09.mod/?n=1"></td></tr></tbody></table>
 <div class="eImageTxt">Рис.&nbsp;1.&nbsp;&nbsp;</div></div>
 <a name="T389310717"></a>
-<div>Часто для передачи адреса и данных используют одни и те же линии связи, передавая по ним сначала адрес, потом данные с разделением во времени. Такое конструктивное решение получило название <a class="term" data-term="Мультиплексированная шина адреса-данных" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">мультиплексированная шина адреса-данных</a> (рис.&nbsp;2).</div>
+<div>Часто для передачи адреса и данных используют одни и те же линии связи, передавая по ним сначала адрес, потом данные с разделением во времени. Такое конструктивное решение получило название <a class="term" data-term="Мультиплексированная шина адреса-данных" href="javascript:void(0)">мультиплексированная шина адреса-данных</a> (рис.&nbsp;2).</div>
 <div class="eImage">
 <table align="center" border="1" bordercolorlight="#0000FF" bordercolordark="#0000FF" cellspacing="0" cellpadding="6">
 <tbody><tr><td><img src="/?img/?doc=MPSU/MPSU_1_09.mod/?n=2"></td></tr></tbody></table>

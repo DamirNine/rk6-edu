@@ -29,11 +29,11 @@
 <a name="T107605555"></a>
 <a name="T344720773"></a>
 <a name="T412171630"></a>
-<div><a class="term" data-term="Язык WSDL" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Язык WSDL</a> (Web Service Description Language) предназначен для описания <a class="term" data-term="Web-служб" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Web-служб</a>. В основе WSDL лежит <a class="term" data-term="язык XML" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">язык XML</a>.</div>
+<div><a class="term" data-term="Язык WSDL" href="javascript:void(0)">Язык WSDL</a> (Web Service Description Language) предназначен для описания <a class="term" data-term="Web-служб" href="javascript:void(0)">Web-служб</a>. В основе WSDL лежит <a class="term" data-term="язык XML" href="javascript:void(0)">язык XML</a>.</div>
 <div>С помощью WSDL представляются типы данных, операции и привязки.</div>
 <div>Описание сервиса на языке WSDL выглядит довольно громоздко. Однако это не является осложняющим фактором, поскольку для генерации WSDL-файлов имеются удобные редакторы, примером которых могут служить XML Spy.</div>
 <a name="T1996004208"></a>
-<div>В начале WSDL-описания указывается имя сервиса, ссылка на <a class="term" data-term="пространство имен" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">пространство имен</a> WSDL и на целевое пространство имен (targetNamespace), которому будут принадлежать все имена, объявляемые в этом документе.</div>
+<div>В начале WSDL-описания указывается имя сервиса, ссылка на <a class="term" data-term="пространство имен" href="javascript:void(0)">пространство имен</a> WSDL и на целевое пространство имен (targetNamespace), которому будут принадлежать все имена, объявляемые в этом документе.</div>
 <div>Далее следуют части WSDL-описания: типы данных, используемых Web-службой (types); сообщения (message) — формат запросов и ответов; типы портов (portType) — набор операций, выполняемых Web-службой; связи (binding) — адрес для вызова операции (service):</div>
 <pre class="eListing">&lt;definitions
 name="имя сервиса"
@@ -48,7 +48,7 @@ targetNamespace="http://...
 &lt;/definition&gt;
 </pre>
 <a name="T1968667247"></a>
-<div>Типы данных, фигурирующие в сообщениях, которыми обмениваются пользователи распределенных приложений, должны правильно интерпретироваться как отправителем, так и получателем. Поэтому типы описываются с помощью <a class="term" data-term="XML-схемы" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-схемы</a>, входящей в WSDL-файл, т.е. становятся доступными обоим участникам связи. Пример части types (вместо многоточия должны быть указаны конкретные имена и элементы):</div>
+<div>Типы данных, фигурирующие в сообщениях, которыми обмениваются пользователи распределенных приложений, должны правильно интерпретироваться как отправителем, так и получателем. Поэтому типы описываются с помощью <a class="term" data-term="XML-схемы" href="javascript:void(0)">XML-схемы</a>, входящей в WSDL-файл, т.е. становятся доступными обоим участникам связи. Пример части types (вместо многоточия должны быть указаны конкретные имена и элементы):</div>
 <pre class="eListing">&lt;types&gt;
   &lt;xsd:schema
     targetNamespace="http://..."
@@ -85,9 +85,9 @@ targetNamespace="http://...
 </pre>
 <div>Имеется несколько вариантов операций. Если элемент input предшествует элементу output, то конечный узел получает сообщение и отправляет соответствующий ответ. Такая операция называется запрос-ответ (request-response). Обратный порядок output и input определяет операцию требование-ответа (solicit-response), при которой конечный узел отправляет сообщение и получает соответствующий ответ. При наличии только элемента input имеем однонаправленную операцию — сообщение получает конечный узел. Операция, содержащая только элемент output, означает отправку сообщения конечным узлом.</div>
 <a name="T1144989962"></a>
-<div>Связи (привязки) используются для отображения типов данных и операций на <a class="term" data-term="транспортный протокол" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">транспортный протокол</a>. Атрибут type в теге binding ссылается на конкретный portType (интерфейс). Далее указываются тип сервиса (например, SOAP или MIME), стиль представления (document или RPC), транспортный протокол (атрибут transport). Для каждой операции нужно задать URI получателя сообщения (атрибут soapAction, его значение используется в HTTP-заголовке). Имя в теге operation ссылается на имя операции в части portType.</div>
+<div>Связи (привязки) используются для отображения типов данных и операций на <a class="term" data-term="транспортный протокол" href="javascript:void(0)">транспортный протокол</a>. Атрибут type в теге binding ссылается на конкретный portType (интерфейс). Далее указываются тип сервиса (например, SOAP или MIME), стиль представления (document или RPC), транспортный протокол (атрибут transport). Для каждой операции нужно задать URI получателя сообщения (атрибут soapAction, его значение используется в HTTP-заголовке). Имя в теге operation ссылается на имя операции в части portType.</div>
 <div>Элемент soap:body определяет, как части сообщения появляются в SOAP-элементе Body. В случае документ-стиля значение атрибута use есть "literal" и это означает, что тело сообщения будет содержать XML-документ и что части сообщения определяют XML-элементы. Использование стиля RPC в SOAP показывает, что тело будет содержать XML-представление вызова метода и что части сообщения представляют параметры метода (use="encoded").</div>
-<div>Структура части binding в случае SOAP, транспортного протокола <a class="term" data-term="HTTP" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">HTTP</a> и стиля RPC имеет вид:</div>
+<div>Структура части binding в случае SOAP, транспортного протокола <a class="term" data-term="HTTP" href="javascript:void(0)">HTTP</a> и стиля RPC имеет вид:</div>
 <pre class="eListing">&lt;binding name="..." type="..."&gt;
   &lt;soap:binding style="rpc"
      transport=

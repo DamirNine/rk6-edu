@@ -28,7 +28,7 @@
 </div>
 <a name="T1356058257"></a>
 <a name="T33524358"></a>
-<div>Для <a class="term" data-term="сортировки" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">сортировки</a> входного потока символов используются два <a class="term" data-term="стека" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">стека</a>: Lstack и Hstack. Первоначально Lstack инициализируется символом с кодом 0, Hstack инициализируется символом с максимальным кодом 255. В процессе сортировки часть символов сохраняется в стеке Lstack, другая часть - в стеке Hstack. Стек Lstack предназначен для хранения данных в порядке возрастания их величин. В стеке Hstack символы хранятся в порядке убывания их кодов. При этом, код символа в вершине стека Lstack не должен превосходить по величине код символа в вершине стека Hstack: </div>
+<div>Для <a class="term" data-term="сортировки" href="javascript:void(0)">сортировки</a> входного потока символов используются два <a class="term" data-term="стека" href="javascript:void(0)">стека</a>: Lstack и Hstack. Первоначально Lstack инициализируется символом с кодом 0, Hstack инициализируется символом с максимальным кодом 255. В процессе сортировки часть символов сохраняется в стеке Lstack, другая часть - в стеке Hstack. Стек Lstack предназначен для хранения данных в порядке возрастания их величин. В стеке Hstack символы хранятся в порядке убывания их кодов. При этом, код символа в вершине стека Lstack не должен превосходить по величине код символа в вершине стека Hstack: </div>
 <br>
 <pre class="eListing">Lstack_top &lt;= Hstack_top
 
@@ -51,7 +51,7 @@ Lstack&lt;--Hstack
 
 </pre>
 <a name="T62568241"></a>
-<div>где они автоматически будут расположены в порядке убывания их величин. Последовательное выталкивание данных из стека Hstack образует выходной поток, где символы располагаются в порядке возрастания их кодов <a class="term" data-term="ASCII" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">ASCII</a>: </div>
+<div>где они автоматически будут расположены в порядке убывания их величин. Последовательное выталкивание данных из стека Hstack образует выходной поток, где символы располагаются в порядке возрастания их кодов <a class="term" data-term="ASCII" href="javascript:void(0)">ASCII</a>: </div>
 <br>
 <pre class="eListing">Hstack --&gt; stdout.
 </pre>

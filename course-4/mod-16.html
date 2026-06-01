@@ -27,24 +27,24 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Пространство имен</a>
 </div>
 <a name="T1996004208"></a>
-<div>В разных приложениях возможно использование одних и тех же терминов для обозначения своих прикладных понятий. При объединении  документов из этих приложений   может возникнуть конфликт имен. Чтобы  избежать конфликтов, требуется сделать имена разных понятий гарантированно различными.  Для определенных приложений можно заранее договориться о именах используемых основных понятий, совокупность таких имен называют <a class="term" data-term="пространством имен" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">пространством имен</a>. Поэтому внутри конкретных приложений конфликты исключаются.</div>
+<div>В разных приложениях возможно использование одних и тех же терминов для обозначения своих прикладных понятий. При объединении  документов из этих приложений   может возникнуть конфликт имен. Чтобы  избежать конфликтов, требуется сделать имена разных понятий гарантированно различными.  Для определенных приложений можно заранее договориться о именах используемых основных понятий, совокупность таких имен называют <a class="term" data-term="пространством имен" href="javascript:void(0)">пространством имен</a>. Поэтому внутри конкретных приложений конфликты исключаются.</div>
 <div>Однако в каждом конкретном документе могут использоваться понятия из разных приложений. Чтобы избежать конфликта имен, применяют составные имена (QNames), состоящие из идентификатора приложения (префикса) и  собственно локального имени элемента. В качестве идентификатора приложения рекомендуется использовать ссылку на документ, задающий пространство имен. </div>
 <a name="T412171630"></a>
 <a name="T84300"></a>
-<div>Пространство имен <a class="term" data-term="XML" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML</a> — это идентифицируемая с помощью ссылки <a class="term" data-term="URI" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">URI</a> коллекция имен, используемых в XML документах для обозначения типов элементов и именования атрибутов.</div>
+<div>Пространство имен <a class="term" data-term="XML" href="javascript:void(0)">XML</a> — это идентифицируемая с помощью ссылки <a class="term" data-term="URI" href="javascript:void(0)">URI</a> коллекция имен, используемых в XML документах для обозначения типов элементов и именования атрибутов.</div>
 <a name="T84303"></a>
-<div> Ссылка есть URI документа, чаще всего это <a class="term" data-term="URL" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">URL</a>. Вместо громоздкого URI можно использовать его псевдоним. Тогда ссылка имеет вид: <span class="eOperator">псевдоним:локальное_имя</span></div>
+<div> Ссылка есть URI документа, чаще всего это <a class="term" data-term="URL" href="javascript:void(0)">URL</a>. Вместо громоздкого URI можно использовать его псевдоним. Тогда ссылка имеет вид: <span class="eOperator">псевдоним:локальное_имя</span></div>
 <div>Например: <span class="eOperator">rdfs:class</span>, где rdfs есть псевдоним. Псевдоним связывается с URL пространства имен следующим образом:</div>
 <pre class="eListing">&lt;x xmlns:rdfs="http://www.w3.org/2000/01/"&gt;
 &lt;!- для элемента "x" и его содержимого псевдоним "rdfs" заменяет ссылку 
 http://www.w3.org/2000/01/--&gt;&lt;/x&gt;
 </pre>
 <div>Примеры некоторых часто используемых префиксов:</div>
-<div>для <a class="term" data-term="XML-схем" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">XML-схем</a> <span class="eOperator"> xsd или xs</span>: namespace URI: <span class="eOperator">http://www.w3.org/2001/XMLSchema#</span></div>
-<div>для модели <a class="term" data-term="RDF" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">RDF</a><span class="eOperator"> rdf</span>: namespace URI: <span class="eOperator">http://www.w3.org/1999/02/22-rdf-syntax-ns#</span></div>
+<div>для <a class="term" data-term="XML-схем" href="javascript:void(0)">XML-схем</a> <span class="eOperator"> xsd или xs</span>: namespace URI: <span class="eOperator">http://www.w3.org/2001/XMLSchema#</span></div>
+<div>для модели <a class="term" data-term="RDF" href="javascript:void(0)">RDF</a><span class="eOperator"> rdf</span>: namespace URI: <span class="eOperator">http://www.w3.org/1999/02/22-rdf-syntax-ns#</span></div>
 <div> для RDF-схемы <span class="eOperator">rdfs</span>: namespace URI: <span class="eOperator">http://www.w3.org/2000/01/rdf-schema#</span></div>
-<div>для <a class="term" data-term="Дублинского ядра" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Дублинского ядра</a> <span class="eOperator">dc</span>: namespace URI: <span class="eOperator">http://purl.org/dc/elements/1.1/</span></div>
-<div>для <a class="term" data-term="языка онтологий" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">языка онтологий</a> <a class="term" data-term="OWL" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">OWL</a> <span class="eOperator">owl</span>: namespace URI: <span class="eOperator">http://www.w3.org/2002/07/owl#</span></div>
+<div>для <a class="term" data-term="Дублинского ядра" href="javascript:void(0)">Дублинского ядра</a> <span class="eOperator">dc</span>: namespace URI: <span class="eOperator">http://purl.org/dc/elements/1.1/</span></div>
+<div>для <a class="term" data-term="языка онтологий" href="javascript:void(0)">языка онтологий</a> <a class="term" data-term="OWL" href="javascript:void(0)">OWL</a> <span class="eOperator">owl</span>: namespace URI: <span class="eOperator">http://www.w3.org/2002/07/owl#</span></div>
 </div>
 </div> 
 </body></html></div></main>

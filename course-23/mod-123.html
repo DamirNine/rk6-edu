@@ -28,17 +28,17 @@
 </div>
 <a name="T797849314"></a>
 <a name="T696383489"></a>
-<div><a class="term" data-term="Функция fflush()" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция fflush()</a> — стандартная <a class="term" data-term="функция" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функция</a> языка Си для вытеснения содержимого пользовательского буфера в файл или в системный буфер, не дожидаясь заполнения пользовательского буфера.  </div>
+<div><a class="term" data-term="Функция fflush()" href="javascript:void(0)">Функция fflush()</a> — стандартная <a class="term" data-term="функция" href="javascript:void(0)">функция</a> языка Си для вытеснения содержимого пользовательского буфера в файл или в системный буфер, не дожидаясь заполнения пользовательского буфера.  </div>
 <a name="T581415280"></a>
-<div><a class="term" data-term="Объявление прототипа функции" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Объявление прототипа функции</a> <span class="eOperator">fflush()</span>:</div>
+<div><a class="term" data-term="Объявление прототипа функции" href="javascript:void(0)">Объявление прототипа функции</a> <span class="eOperator">fflush()</span>:</div>
 <div><span class="eOperator">int fflush(FILE *stream)</span></div>
 <div><span class="eOperator"> </span></div>
 <a name="T37556405"></a>
 <a name="T637542155"></a>
-<div>Это объявление находится в <a class="term" data-term="файле заголовков" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эту функцию, должны включать следующую <a class="term" data-term="директиву препроцессора" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">директиву препроцессора</a>:</div>
+<div>Это объявление находится в <a class="term" data-term="файле заголовков" href="javascript:void(0)">файле заголовков</a> <span class="eOperator">stdio.h</span>, поэтому программы, использующие эту функцию, должны включать следующую <a class="term" data-term="директиву препроцессора" href="javascript:void(0)">директиву препроцессора</a>:</div>
 <div><span class="eOperator">#include &lt;stdio.h&gt;</span></div>
 <a name="T68828"></a>
-<div>Функция <span class="eOperator">fflush()</span> обычно используется для файлов, открытых для записи, возвращает значение <a class="term" data-term="EOF" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">EOF</a> в случае возникшей при записи ошибки или нуль в противном случае.</div>
+<div>Функция <span class="eOperator">fflush()</span> обычно используется для файлов, открытых для записи, возвращает значение <a class="term" data-term="EOF" href="javascript:void(0)">EOF</a> в случае возникшей при записи ошибки или нуль в противном случае.</div>
 <div>Эту функцию можно использовать для сброса ввода (остатка входного файла).</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">fflush(stdin); /*не запрашивает уже выполненный ввод*/

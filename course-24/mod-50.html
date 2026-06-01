@@ -27,14 +27,14 @@
 <div class="eTitleModul"><a class="eTitleModul" target="FPopUp" href="#" onmouseover="on(this)" onmouseout="off(this)" title="Показать метаданные документа">Объявление функций</a>
 </div>
 <a name="T581415280"></a>
-<div>Оператор <a class="term" data-term="объявления функции" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">объявления функции</a> (<a class="term" data-term="объявление прототипа функции" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">объявление прототипа функции</a>) имеет следующий вид:</div>
+<div>Оператор <a class="term" data-term="объявления функции" href="javascript:void(0)">объявления функции</a> (<a class="term" data-term="объявление прототипа функции" href="javascript:void(0)">объявление прототипа функции</a>) имеет следующий вид:</div>
 <div><span class="eOperator">возвращаемый_тип имя_функции (список объявлений типов параметров);</span><span class="eOperator"> </span></div>
 <a name="T2026410311"></a>
 <a name="T1800284410"></a>
 <a name="T696383489"></a>
 <a name="T1133808979"></a>
 <a name="T998884589"></a>
-<div>В <a class="term" data-term="стандарте ANSI языка Си" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">стандарте ANSI языка Си</a> типы <a class="term" data-term="возвращаемого значения" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">возвращаемого значения</a> <a class="term" data-term="функции" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции</a> и <a class="term" data-term="тип данных" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">типы</a> каждого из аргументов указываются в <a class="term" data-term="определении функции" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">определении функции</a>.</div>
+<div>В <a class="term" data-term="стандарте ANSI языка Си" href="javascript:void(0)">стандарте ANSI языка Си</a> типы <a class="term" data-term="возвращаемого значения" href="javascript:void(0)">возвращаемого значения</a> <a class="term" data-term="функции" href="javascript:void(0)">функции</a> и <a class="term" data-term="тип данных" href="javascript:void(0)">типы</a> каждого из аргументов указываются в <a class="term" data-term="определении функции" href="javascript:void(0)">определении функции</a>.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><pre class="eListing">double area_circle(double rad)   /* это определение функции*/
 {
@@ -42,7 +42,7 @@
 }
 </pre>
 </div>
-<div>Любая <a class="term" data-term="вызывающая функция" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">вызывающая функция</a> должна быть проинформирована о типе <a class="term" data-term="возвращаемого значения" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">возвращаемого значения</a> и о типах каждого из <a class="term" data-term="аргументов" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">аргументов</a> путем использования оператора объявления функции (объявление прототипа функции). Если объявление прототипа функции задано, то <a class="term" data-term="компилятор" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">компилятор</a> проверяет правильность использования функции. В противном случае подобные ошибки дадут о себе знать только при выполнении программы. Если <a class="term" data-term="определение функции" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">определение функции</a> предшествует вызову, то объявление прототипа функции не требуется.</div>
+<div>Любая <a class="term" data-term="вызывающая функция" href="javascript:void(0)">вызывающая функция</a> должна быть проинформирована о типе <a class="term" data-term="возвращаемого значения" href="javascript:void(0)">возвращаемого значения</a> и о типах каждого из <a class="term" data-term="аргументов" href="javascript:void(0)">аргументов</a> путем использования оператора объявления функции (объявление прототипа функции). Если объявление прототипа функции задано, то <a class="term" data-term="компилятор" href="javascript:void(0)">компилятор</a> проверяет правильность использования функции. В противном случае подобные ошибки дадут о себе знать только при выполнении программы. Если <a class="term" data-term="определение функции" href="javascript:void(0)">определение функции</a> предшествует вызову, то объявление прототипа функции не требуется.</div>
 <div>Объявление может быть сделано перед вызывающей функцией или внутри ее.</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><pre class="eListing">int main()
@@ -54,7 +54,7 @@ area=area_circle(rad);
 }
 </pre>
 <a name="T990387577"></a>
-<div>Объявление функции <span class="eOperator">area_circle()</span> известно только той функции, в которой оно сделано, то есть <a class="term" data-term="функции main()" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции main()</a>.</div>
+<div>Объявление функции <span class="eOperator">area_circle()</span> известно только той функции, в которой оно сделано, то есть <a class="term" data-term="функции main()" href="javascript:void(0)">функции main()</a>.</div>
 </div>
 <div class="auto">Пример 3</div>
 <div class="eExample"><pre class="eListing">double area_circle(double); /* и это объявление функции*/
@@ -67,12 +67,12 @@ area=area_circle(rad);
 </pre>
 <div>Объявление известно всем функциям, расположенным в исходном файле после него. Если при определении функции она будет объявлена с другим типом возвращаемого значения (например, <span class="eOperator">float</span>), будет выдано сообщение об ошибке, состоящей в повторном объявлении функции.</div>
 </div>
-<div>В объявлении прототипа функции могут указываться необязательные (фиктивные) <a class="term" data-term="имена" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">имена</a>.</div>
+<div>В объявлении прототипа функции могут указываться необязательные (фиктивные) <a class="term" data-term="имена" href="javascript:void(0)">имена</a>.</div>
 <a name="T74783515"></a>
-<div>Для функций, не возвращающих никакого значения, используется тип данных (<a class="term" data-term="ключевое слово" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">ключевое слово</a>) <span class="eOperator">void</span>. Тогда при неумышленном использовании оператора:</div>
+<div>Для функций, не возвращающих никакого значения, используется тип данных (<a class="term" data-term="ключевое слово" href="javascript:void(0)">ключевое слово</a>) <span class="eOperator">void</span>. Тогда при неумышленном использовании оператора:</div>
 <div><span class="eOperator">X = f();</span></div>
 <a name="T147950291"></a>
-<div>во время компиляции будет выдано сообщение, указывающее на ошибку в <a class="term" data-term="операции присваивания" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">операции присваивания</a> (правая часть операции присваивания имеет тип <span class="eOperator">void</span>).</div>
+<div>во время компиляции будет выдано сообщение, указывающее на ошибку в <a class="term" data-term="операции присваивания" href="javascript:void(0)">операции присваивания</a> (правая часть операции присваивания имеет тип <span class="eOperator">void</span>).</div>
 <div class="auto">Пример 4</div>
 <div class="eExample"><pre class="eListing">#include &lt;stdio.h&gt;
 int main( )

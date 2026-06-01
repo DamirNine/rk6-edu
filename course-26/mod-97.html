@@ -30,11 +30,11 @@
 char  *setlocale(int   type,   const  char   * locale);
 </pre>
 <a name="T1492530786"></a>
-<div><a class="term" data-term="Функция setlocale" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Функция setlocale</a>() позволяет получить или установить некоторые параметры, которые зависят от геополитической среды выполнения программы. Если указатель <span class="eOperator">locale</span> является нулем, функция setlocale() возвращает указатель на строку текущей локализации. В противном случае функция setlocale() попытается использовать строку <span class="eOperator">locale</span> для установки локальных параметров в соответствии с параметром type. Для задания стандартных С-параметров региональной привязки надо использовать строку "С", а для задания собственных параметров среды — пустую строку (""). Чтобы получить подробную информацию о строках локализации, поддерживаемых конкретным компилятором, обратитесь к документации.</div>
+<div><a class="term" data-term="Функция setlocale" href="javascript:void(0)">Функция setlocale</a>() позволяет получить или установить некоторые параметры, которые зависят от геополитической среды выполнения программы. Если указатель <span class="eOperator">locale</span> является нулем, функция setlocale() возвращает указатель на строку текущей локализации. В противном случае функция setlocale() попытается использовать строку <span class="eOperator">locale</span> для установки локальных параметров в соответствии с параметром type. Для задания стандартных С-параметров региональной привязки надо использовать строку "С", а для задания собственных параметров среды — пустую строку (""). Чтобы получить подробную информацию о строках локализации, поддерживаемых конкретным компилятором, обратитесь к документации.</div>
 <a name="T110667730"></a>
-<div>При вызове функции setlocale() в качестве параметра <span class="eOperator">type</span> должен быть использован один из следующих макросов (определенных в заголовке &lt;<a class="term" data-term="locale.h" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">locale.h</a> &gt;).</div>
+<div>При вызове функции setlocale() в качестве параметра <span class="eOperator">type</span> должен быть использован один из следующих макросов (определенных в заголовке &lt;<a class="term" data-term="locale.h" href="javascript:void(0)">locale.h</a> &gt;).</div>
 <a name="T1292689092"></a>
-<div><a class="term" data-term="LC_ALL" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">LC_ALL</a></div>
+<div><a class="term" data-term="LC_ALL" href="javascript:void(0)">LC_ALL</a></div>
 <div>LC_COLLATE</div>
 <div>LC_CTYFE</div>
 <div>LC__MONETARY</div>
@@ -46,7 +46,7 @@ char  *setlocale(int   type,   const  char   * locale);
 <a name="T1794935512"></a>
 <a name="T1437486883"></a>
 <a name="T1447662242"></a>
-<div>Макрос LC_ALL относится ко всем категориям локализации. <a class="term" data-term="Макрос LCCOLLATE" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Макрос LCCOLLATE</a> оказывает влияние на выполнение функции <span class="eOperator">strcoll ()</span>. <a class="term" data-term="Макрос LC_CTYPE" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Макрос LC_CTYPE</a> изменяет характер работы символьных функций. <a class="term" data-term="Макрос LC_MONETARY" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Макрос LC_MONETARY</a> определяет денежный формат. <a class="term" data-term="Макрос LC_NUMERIC" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">Макрос LC_NUMERIC</a> изменяет символ десятичной точки для функций форматированного ввода-вывода. Наконец, <a class="term" data-term="макрос LCJTIME" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">макрос LCJTIME</a> определяет поведение <a class="term" data-term="функции strftime" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции strftime</a>().</div>
+<div>Макрос LC_ALL относится ко всем категориям локализации. <a class="term" data-term="Макрос LCCOLLATE" href="javascript:void(0)">Макрос LCCOLLATE</a> оказывает влияние на выполнение функции <span class="eOperator">strcoll ()</span>. <a class="term" data-term="Макрос LC_CTYPE" href="javascript:void(0)">Макрос LC_CTYPE</a> изменяет характер работы символьных функций. <a class="term" data-term="Макрос LC_MONETARY" href="javascript:void(0)">Макрос LC_MONETARY</a> определяет денежный формат. <a class="term" data-term="Макрос LC_NUMERIC" href="javascript:void(0)">Макрос LC_NUMERIC</a> изменяет символ десятичной точки для функций форматированного ввода-вывода. Наконец, <a class="term" data-term="макрос LCJTIME" href="javascript:void(0)">макрос LCJTIME</a> определяет поведение <a class="term" data-term="функции strftime" href="javascript:void(0)">функции strftime</a>().</div>
 <div>Функция setlocale() возвращает указатель на строку, связанную с параметром type.</div>
 <div class="auto">Пример 1</div>
 <div class="eExample"><div>Эта программа отображает текущую установку локализации:</div>
@@ -61,7 +61,7 @@ return 0;
 </pre>
 <a name="T1932770254"></a>
 <a name="T1198290317"></a>
-<div>Здесь используются зависимые <a class="term" data-term="функции localeconv" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">функции localeconv</a>(), <a class="term" data-term="time" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">time</a>(), strcoll()  и  strftime().</div>
+<div>Здесь используются зависимые <a class="term" data-term="функции localeconv" href="javascript:void(0)">функции localeconv</a>(), <a class="term" data-term="time" href="javascript:void(0)">time</a>(), strcoll()  и  strftime().</div>
 <br>
 </div>
 </div> 

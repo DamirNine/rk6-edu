@@ -41,15 +41,15 @@ float fn(float x); // прототип
 </pre>
 </div>
 <a name="T1191998074"></a>
-<div>Чтобы задать <a class="term" data-term="прототип функции" href="javascript:void(0)" class="eTermO" onmouseover="on(this)" onmouseout="off(this)">прототип функции</a>, которая принимает переменное количество аргументов, следует поставить три точки в том месте, с которого начинается список, состоящий из переменного числа параметров</div>
+<div>Чтобы задать <a class="term" data-term="прототип функции" href="javascript:void(0)">прототип функции</a>, которая принимает переменное количество аргументов, следует поставить три точки в том месте, с которого начинается список, состоящий из переменного числа параметров</div>
 <div class="auto">Пример 2</div>
 <div class="eExample"><pre class="eListing">int printf(const char *format, ...);
 </pre>
 </div>
-<div><a class="term" data-term="Компилятор" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">Компилятор</a> <span style="font-weight:bold; ">C++</span> позволяет объявлять более одной функции под одним и тем же именем, если у них различные списки аргументов.</div>
-<div>При задании прототипа для перегруженной функции каждая версия этой функции должна иметь собственный прототип. При объявлении функции-члена внутри своего <a class="term" data-term="класса" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">класса</a> используется прототип этой функции.</div>
-<div>В <span style="font-weight:bold; ">C</span> для задания прототипа функции, не имеющей параметров, вместо списка параметров используется ключевое слово <a class="term" data-term="void" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">void</a>.</div>
-<div>В <span style="font-weight:bold; ">C++</span> пустой список параметров в прототипе функции означает, что функция не имеет параметров. Слово <a class="term" data-term="void" href="javascript:void(0)" class="eTermI" onmouseover="on(this)" onmouseout="off(this)">void</a> в этом случае необязательно. Его использование в данном контексте разрешено, но излишне.</div>
+<div><a class="term" data-term="Компилятор" href="javascript:void(0)">Компилятор</a> <span style="font-weight:bold; ">C++</span> позволяет объявлять более одной функции под одним и тем же именем, если у них различные списки аргументов.</div>
+<div>При задании прототипа для перегруженной функции каждая версия этой функции должна иметь собственный прототип. При объявлении функции-члена внутри своего <a class="term" data-term="класса" href="javascript:void(0)">класса</a> используется прототип этой функции.</div>
+<div>В <span style="font-weight:bold; ">C</span> для задания прототипа функции, не имеющей параметров, вместо списка параметров используется ключевое слово <a class="term" data-term="void" href="javascript:void(0)">void</a>.</div>
+<div>В <span style="font-weight:bold; ">C++</span> пустой список параметров в прототипе функции означает, что функция не имеет параметров. Слово <a class="term" data-term="void" href="javascript:void(0)">void</a> в этом случае необязательно. Его использование в данном контексте разрешено, но излишне.</div>
 <div class="auto">Пример 3</div>
 <div class="eExample"><pre class="eListing">int f(void); // в С
 int f(); // в С++
