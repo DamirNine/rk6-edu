@@ -25,11 +25,28 @@
       popupTitle.textContent = term;
       popupBody.textContent = 'Определение не найдено.';
     } else {
-      var lines = terms[term].split('\n')
-        .map(l => l.trim())
-        .filter(l => l && l !== 'Дополнительно...');
-      popupTitle.textContent = lines[0] || term;
-      popupBody.innerHTML = lines.slice(1).map(l => '<p>' + l + '</p>').join('');
+      var raw = terms[term].split('\n');
+      // Пропускаем первую строку (название курса)
+      var rest = raw.slice(1);
+      // Разделяем: строки с отступом в начале = псевдонимы, потом идёт определение
+      var aliases = [];
+      var defLines = [];
+      var inDef = false;
+      for (var i = 0; i < rest.length; i++) {
+        var l = rest[i];
+        var trimmed = l.trim();
+        if (!trimmed || trimmed === 'Дополнительно...') continue;
+        var hasIndent = l.length > 0 && (l[0] === ' ' || l[0] === '\t');
+        if (!inDef && hasIndent) {
+          aliases.push(trimmed); // псевдоним термина
+        } else if (!hasIndent) {
+          inDef = true;
+          defLines.push(trimmed); // определение
+        }
+        // строки с отступом после определения = ссылки на модули, пропускаем
+      }
+      popupTitle.textContent = aliases.join(', ') || term;
+      popupBody.innerHTML = defLines.map(l => '<p>' + l + '</p>').join('');
     }
     popup.style.display = 'block';
   });
