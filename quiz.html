@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тест по Базам Данных</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f0f2f5; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 16px; }
+
+  .card { background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); max-width: 720px; width: 100%; padding: 32px; }
+
+  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+  .title { font-size: 18px; font-weight: bold; color: #333; }
+  .counter { font-size: 15px; color: #666; font-weight: bold; }
+
+  .progress-bar { background: #e0e0e0; border-radius: 4px; height: 6px; margin-bottom: 28px; }
+  .progress-fill { background: #333; border-radius: 4px; height: 6px; transition: width 0.4s; }
+
+  .question { font-size: 17px; font-weight: bold; color: #222; margin-bottom: 20px; line-height: 1.5; }
+
+  .answers { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+
+  .answer-btn {
+    background: #f7f7f7; border: 2px solid #ddd; border-radius: 8px;
+    padding: 13px 18px; font-size: 15px; text-align: left; cursor: pointer;
+    transition: background 0.15s, border-color 0.15s; color: #333; line-height: 1.4;
+  }
+  .answer-btn:hover:not(:disabled) { background: #eee; border-color: #bbb; }
+  .answer-btn.correct  { background: #e8f5e9; border-color: #4caf50; color: #1b5e20; font-weight: bold; }
+  .answer-btn.wrong    { background: #ffebee; border-color: #f44336; color: #b71c1c; }
+  .answer-btn:disabled { cursor: default; }
+
+  .nav { display: flex; justify-content: space-between; align-items: center; }
+  .nav-btn {
+    background: #333; color: white; border: none; border-radius: 8px;
+    padding: 11px 24px; font-size: 15px; cursor: pointer; transition: background 0.15s;
+  }
+  .nav-btn:hover:not(:disabled) { background: #555; }
+  .nav-btn:disabled { background: #ccc; cursor: default; }
+  .nav-btn.ghost { background: transparent; color: #333; border: 2px solid #333; }
+  .nav-btn.ghost:hover:not(:disabled) { background: #f0f0f0; }
+
+  .result-label { font-size: 14px; color: #666; text-align: center; }
+  .answered-mark { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-left: 6px; }
+  .answered-mark.ok  { background: #4caf50; }
+  .answered-mark.err { background: #f44336; }
+  .answered-mark.skip { background: #ccc; }
+
+  /* Результат в конце */
+  .finish-screen { text-align: center; }
+  .finish-screen h2 { font-size: 28px; margin-bottom: 12px; }
+  .finish-screen p { font-size: 16px; color: #555; margin-bottom: 24px; }
+  .score-big { font-size: 64px; font-weight: bold; color: #333; }
+  .restart-btn { background: #333; color: white; border: none; border-radius: 8px; padding: 14px 32px; font-size: 16px; cursor: pointer; margin-top: 24px; }
+  .restart-btn:hover { background: #555; }
+</style>
+</head>
+<body>
+<div class="card" id="app"></div>
+
+<script>
+const questions = [
+  {
+    q: 'Что такое банк данных?',
+    answers: ['Только база данных', 'Совокупность БД и СУБД', 'Программа для финансовых расчётов', 'Хранилище файлов на сервере'],
+    correct: 1
+  },
+  {
+    q: 'Как расшифровывается DDL?',
+    answers: ['Data Deletion Language', 'Data Definition Language', 'Database Design Logic', 'Dynamic Data Language'],
+    correct: 1
+  },
+  {
+    q: 'Как расшифровывается DML?',
+    answers: ['Data Management Language', 'Data Manipulation Language', 'Database Migration Logic', 'Data Modeling Language'],
+    correct: 1
+  },
+  {
+    q: 'Какой тип данных использовать для хранения денежных сумм (точные расчёты)?',
+    answers: ['FLOAT', 'DOUBLE', 'DECIMAL / NUMERIC', 'INT'],
+    correct: 2
+  },
+  {
+    q: 'Чем CHAR(n) отличается от VARCHAR(n)?',
+    answers: ['Хранит только цифры', 'Хранит строку переменной длины', 'Хранит строку фиксированной длины, дополняя пробелами', 'Хранит бинарные данные'],
+    correct: 2
+  },
+  {
+    q: 'Что делает ON DELETE RESTRICT?',
+    answers: ['Автоматически удаляет связанные дочерние записи', 'Запрещает удаление родительской записи при наличии дочерних', 'Ограничивает количество строк в таблице', 'Удаляет все записи из обеих таблиц'],
+    correct: 1
+  },
+  {
+    q: 'Что делает ON DELETE CASCADE?',
+    answers: ['Запрещает удаление', 'Автоматически удаляет дочерние записи при удалении родительской', 'Создаёт копию записи', 'Обновляет значения внешнего ключа'],
+    correct: 1
+  },
+  {
+    q: 'Связь 1:М в реляционной модели реализуется через:',
+    answers: ['Дублирование таблицы', 'Внешний ключ (FK) в дочерней таблице', 'Первичный ключ в родительской таблице', 'Создание отдельной таблицы связей'],
+    correct: 1
+  },
+  {
+    q: 'Что такое первичный ключ (PK)?',
+    answers: ['Поле для хранения паролей', 'Уникальный идентификатор строки в таблице', 'Внешний ключ', 'Индекс таблицы'],
+    correct: 1
+  },
+  {
+    q: 'Что делает условие LIKE \'M%\' в WHERE?',
+    answers: ['Ищет строки, равные \'M\'', 'Ищет строки, начинающиеся на \'M\'', 'Ищет строки, заканчивающиеся на \'M\'', 'Ищет строки, содержащие только \'M\''],
+    correct: 1
+  },
+  {
+    q: 'Какая групповая функция подсчитывает количество строк?',
+    answers: ['SUM', 'MAX', 'COUNT', 'AVG'],
+    correct: 2
+  },
+  {
+    q: 'Что сохраняется в базе данных при выполнении CREATE VIEW?',
+    answers: ['Результат SELECT-запроса', 'Только текст SQL-запроса (определение VIEW)', 'Индексированная копия данных', 'Снимок данных на момент создания'],
+    correct: 1
+  },
+  {
+    q: 'Что такое триггерная функция?',
+    answers: ['Функция с возвращаемым типом TRIGGER', 'Функция для создания индексов', 'Функция для резервного копирования', 'Функция для шифрования данных'],
+    correct: 0
+  },
+  {
+    q: 'Что должна вернуть триггерная функция?',
+    answers: ['Число обработанных строк', 'Булево значение (TRUE / FALSE)', 'NEW, OLD или NULL', 'Текст сообщения об ошибке'],
+    correct: 2
+  },
+  {
+    q: 'В чём разница между BEFORE и AFTER триггером?',
+    answers: ['BEFORE выполняется быстрее', 'В BEFORE можно изменить NEW, в AFTER — нельзя (только читать)', 'AFTER срабатывает до транзакции', 'BEFORE не может выполнять INSERT'],
+    correct: 1
+  },
+  {
+    q: 'Какой Fill Factor подходит для таблицы только для чтения?',
+    answers: ['70–80%', '80–90%', '100%', '50%'],
+    correct: 2
+  },
+  {
+    q: 'Какой Fill Factor рекомендуется при активной записи с частыми UPDATE?',
+    answers: ['100%', '80–90%', '50–60%', '70–80%'],
+    correct: 1
+  },
+  {
+    q: 'Что хранят листья B-tree индекса?',
+    answers: ['Данные из оперативной памяти', 'Ссылки на строки таблицы (ctid)', 'Агрегированные значения', 'Файлы журнала транзакций'],
+    correct: 1
+  },
+  {
+    q: 'Когда НЕ стоит строить индекс?',
+    answers: ['На часто запрашиваемых столбцах с высокой селективностью', 'На маленьких таблицах и неселективных столбцах', 'На внешних ключах', 'На столбцах, используемых в WHERE'],
+    correct: 1
+  },
+  {
+    q: 'Как расшифровывается ETL?',
+    answers: ['Encode, Transfer, Load', 'Extract, Transform, Load', 'Evaluate, Test, Launch', 'Export, Table, Link'],
+    correct: 1
+  },
+  {
+    q: 'Что хранит таблица измерений (DIM)?',
+    answers: ['Числовые показатели (суммы, количество)', 'Кто, что, где, когда — текстовые атрибуты', 'Агрегированные данные по периодам', 'Журнал транзакций'],
+    correct: 1
+  },
+  {
+    q: 'Что хранит таблица фактов (FACT)?',
+    answers: ['Текстовые описания и справочники', 'Числовые измерения (суммы, количество)', 'Схему базы данных', 'Пользовательские сессии'],
+    correct: 1
+  },
+  {
+    q: 'Чем отличается поставка данных в CDS от DWH?',
+    answers: ['В CDS данные за 1 день и более, в DWH — секунды', 'В CDS данные за секунды-часы, в DWH — 1 день и более', 'Скорость одинакова', 'CDS не поддерживает репликацию'],
+    correct: 1
+  },
+  {
+    q: 'Что такое HDFS в экосистеме Hadoop?',
+    answers: ['Планировщик ресурсов', 'SQL-интерфейс для запросов', 'Распределённая файловая система (хранилище)', 'Инструмент потоковой обработки'],
+    correct: 2
+  },
+  {
+    q: 'Что делает YARN в Hadoop?',
+    answers: ['Хранит данные в распределённой файловой системе', 'Выполняет SQL-запросы', 'Планировщик ресурсов кластера', 'Репликация данных между узлами'],
+    correct: 2
+  },
+  {
+    q: 'Как наследуются привилегии в PostgreSQL?',
+    answers: ['Автоматически по схеме', 'Через команду GRANT role TO role', 'Через CREATE USER WITH INHERIT', 'Через системный каталог pg_privilege'],
+    correct: 1
+  },
+  {
+    q: 'Как в Consistent Hashing ключ попадает на узел?',
+    answers: ['Равномерно по всем узлам', 'Ближайший узел по часовой стрелке на кольце', 'Случайно выбирает узел', 'Записывает на все узлы для надёжности'],
+    correct: 1
+  },
+  {
+    q: 'Что такое OLTP?',
+    answers: ['Хранилище исторических данных для аналитики', 'Оперативная транзакционная система (ERP, CRM, кассы)', 'Система аналитических запросов (BI)', 'Язык описания транзакций'],
+    correct: 1
+  },
+  {
+    q: 'Как расшифровывается SQL?',
+    answers: ['Simple Query Language', 'Structured Query Language', 'System Query Logic', 'Sequential Query Language'],
+    correct: 1
+  },
+  {
+    q: 'Что такое связь М:М?',
+    answers: ['Каждый экземпляр А связан только с одним Б', 'Каждый экземпляр А связан со многими Б, и наоборот', 'Одна запись ссылается на одну другую', 'Таблица ссылается на саму себя'],
+    correct: 1
+  },
+  {
+    q: 'Какой тип данных создаёт автоинкрементный ID в PostgreSQL?',
+    answers: ['INT AUTOINCREMENT', 'CHAR', 'SERIAL', 'BOOLEAN'],
+    correct: 2
+  },
+  {
+    q: 'Что делает команда TRUNCATE?',
+    answers: ['Удаляет таблицу и её структуру', 'Быстро очищает все строки таблицы, сохраняя структуру', 'Обрезает имена столбцов до 8 символов', 'Удаляет индексы таблицы'],
+    correct: 1
+  },
+  {
+    q: 'Из чего состоит схема «Звезда» (Star Schema)?',
+    answers: ['Только из таблицы фактов', 'Из таблицы фактов и окружающих таблиц измерений', 'Из нескольких таблиц фактов без измерений', 'Из нормализованных таблиц третьей нормальной формы'],
+    correct: 1
+  },
+  {
+    q: 'Порядок этапов проектирования банка данных:',
+    answers: [
+      'Физическое → Логическое → Инфологическое',
+      'Инфологическое → Логическое → Физическое',
+      'Логическое → Физическое → Инфологическое',
+      'Инфологическое → Физическое → Логическое'
+    ],
+    correct: 1
+  },
+  {
+    q: 'Что происходит при выполнении CREATE VIEW (что НЕ выполняется)?',
+    answers: ['Проверка синтаксиса запроса', 'Проверка существования таблиц', 'Построение плана запроса и выполнение SELECT', 'Сохранение определения в системном каталоге'],
+    correct: 2
+  },
+];
+
+let current = 0;
+let userAnswers = new Array(questions.length).fill(null); // null | {chosen, correct}
+let answered = false;
+
+function render() {
+  const app = document.getElementById('app');
+  if (current === questions.length) {
+    renderFinish(app);
+    return;
+  }
+  const q = questions[current];
+  const ua = userAnswers[current];
+  answered = ua !== null;
+
+  const pct = ((current) / questions.length * 100).toFixed(0);
+
+  app.innerHTML = `
+    <div class="header">
+      <div class="title">Тест по Базам Данных</div>
+      <div class="counter">${current + 1} / ${questions.length}</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <div class="question">${q.q}</div>
+    <div class="answers" id="answers"></div>
+    <div class="nav">
+      <button class="nav-btn ghost" id="btn-prev" ${current === 0 ? 'disabled' : ''}>← Назад</button>
+      <div class="result-label" id="result-label"></div>
+      <button class="nav-btn" id="btn-next">${current === questions.length - 1 ? 'Результат →' : 'Вперёд →'}</button>
+    </div>
+  `;
+
+  const answersEl = document.getElementById('answers');
+  q.answers.forEach((text, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'answer-btn';
+    btn.textContent = `${String.fromCharCode(65 + i)}. ${text}`;
+    if (answered) {
+      btn.disabled = true;
+      if (i === q.correct) btn.classList.add('correct');
+      else if (ua && i === ua.chosen) btn.classList.add('wrong');
+    }
+    btn.addEventListener('click', () => onAnswer(i));
+    answersEl.appendChild(btn);
+  });
+
+  if (answered) {
+    const label = document.getElementById('result-label');
+    if (ua.chosen === q.correct) {
+      label.textContent = '✓ Верно!';
+      label.style.color = '#388e3c';
+    } else {
+      label.textContent = '✗ Неверно';
+      label.style.color = '#d32f2f';
+    }
+  }
+
+  document.getElementById('btn-prev').addEventListener('click', () => { current--; render(); });
+  document.getElementById('btn-next').addEventListener('click', () => { current++; render(); });
+}
+
+function onAnswer(i) {
+  if (answered) return;
+  answered = true;
+  userAnswers[current] = { chosen: i, correct: questions[current].correct };
+  render();
+}
+
+function renderFinish(app) {
+  const correct = userAnswers.filter(a => a && a.chosen === a.correct).length;
+  const total = questions.length;
+  const pct = Math.round(correct / total * 100);
+  let grade = pct >= 90 ? 'Отлично! 🏆' : pct >= 70 ? 'Хорошо! 👍' : pct >= 50 ? 'Зачтено 😐' : 'Нужно повторить 📚';
+
+  app.innerHTML = `
+    <div class="finish-screen">
+      <div class="score-big">${correct} / ${total}</div>
+      <h2 style="margin-top:12px">${grade}</h2>
+      <p>${pct}% правильных ответов</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:16px 0">
+        ${questions.map((_, i) => {
+          const a = userAnswers[i];
+          const cls = !a ? 'skip' : a.chosen === a.correct ? 'ok' : 'err';
+          return `<span class="answered-mark ${cls}" title="Вопрос ${i+1}"></span>`;
+        }).join('')}
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center">
+        <button class="restart-btn" onclick="restart()">Начать заново</button>
+        <button class="restart-btn" style="background:#555" onclick="review()">Разбор ошибок</button>
+      </div>
+    </div>
+  `;
+}
+
+function restart() {
+  current = 0;
+  userAnswers = new Array(questions.length).fill(null);
+  render();
+}
+
+function review() {
+  // Перейти к первому неправильному ответу
+  const firstWrong = userAnswers.findIndex(a => a && a.chosen !== a.correct);
+  current = firstWrong >= 0 ? firstWrong : 0;
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
